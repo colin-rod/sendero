@@ -3,12 +3,12 @@ name: CI
 on:
   push:
     branches:
+      - development
       - main
-      - deployment
   pull_request:
     branches:
+      - development
       - main
-      - deployment
 
 jobs:
   lint-and-type-check:
