@@ -14,7 +14,9 @@
       "Bash(git branch:*)",
       "Bash(git push:*)",
       "Bash(vercel --prod:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(npx next lint:*)",
+      "Bash(npx next --version)"
     ],
     "deny": [],
     "ask": []

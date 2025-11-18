@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
 
     // Insert into Supabase
     // Note: We don't select the ID because RLS policy blocks selects for anon users
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     const { error } = await supabase
       .from('waitlist_signups')
       .insert(insertData as any);
