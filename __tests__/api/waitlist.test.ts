@@ -413,7 +413,7 @@ describe('POST /api/waitlist', () => {
         json: async () => {
           throw new Error('Invalid JSON');
         },
-      } as NextRequest;
+      } as unknown as NextRequest;
 
       const response = await POST(request);
       const data = await response.json();
@@ -444,7 +444,7 @@ describe('POST /api/waitlist', () => {
         json: async () => {
           throw error;
         },
-      } as NextRequest;
+      } as unknown as NextRequest;
 
       await POST(request);
 

@@ -286,7 +286,7 @@ test.describe('Accessibility', () => {
     await page.goto('/');
 
     const skipLink = page.getByText(/skip to content/i);
-    await expect(skipLink).toBeInTheDocument();
+    await expect(skipLink).toBeVisible();
   });
 
   test('should be keyboard navigable', async ({ page }) => {
