@@ -230,21 +230,21 @@ See [supabase/migrations/001_create_waitlist_signups.sql](supabase/migrations/00
 ### Branch Strategy
 
 ```
-main (development)
-└── deployment (production)
+development (development)
+└── main (production)
     └── feature/* (feature branches)
 ```
 
 ### Branch Purposes
 
-- **`main`** - Development branch
+- **`development`** - Development branch
   - Default branch for development
   - All feature branches merge here
   - CI runs on every push
 
-- **`deployment`** - Production branch
+- **`main`** - Production branch
   - Deploys to Vercel production
-  - Only merge from `main` after testing
+  - Only merge from `development` after testing
   - Full CI/CD pipeline runs on push
 
 - **`feature/*`** - Feature branches
@@ -253,19 +253,19 @@ main (development)
 
 ### Development Workflow
 
-1. **Create feature branch from `main`:**
+1. **Create feature branch from `development`:**
 
    ```bash
-   git checkout main
-   git pull origin main
+   git checkout development
+   git pull origin development
    git checkout -b feature/your-feature
    ```
 
 2. **Make changes and commit**
-3. **Push and create PR to `main`**
+3. **Push and create PR to `development`**
 4. **CI runs: lint, type-check, tests, build**
-5. **Merge to `main`**
-6. **When ready for production: merge `main` → `deployment`**
+5. **Merge to `development`**
+6. **When ready for production: merge `development` → `main`**
 7. **Deployment pipeline runs and deploys to Vercel**
 
 ---
@@ -274,25 +274,25 @@ main (development)
 
 ### GitHub Actions Workflows
 
-**On every push to `main` or `deployment`:**
+**On every push to `development` or `main`:**
 
 1. ✅ Lint (ESLint)
 2. ✅ Type Check (TypeScript)
 3. ✅ Unit Tests (Jest)
 4. ✅ Build Check (Next.js)
 
-**On push to `deployment` branch:**
+**On push to `main` branch:**
 
 5. ✅ All CI checks (above)
 6. ✅ Deploy to Vercel production
 
 ### Vercel Deployment
 
-| Branch       | Environment | Auto-Deploy | Status     |
-| ------------ | ----------- | ----------- | ---------- |
-| `deployment` | Production  | ✅ Yes      | 📋 Pending |
-| `main`       | Preview     | ✅ Yes      | 📋 Pending |
-| `feature/*`  | Preview     | ✅ Yes      | 📋 Pending |
+| Branch         | Environment | Auto-Deploy | Status     |
+| -------------- | ----------- | ----------- | ---------- |
+| `main`         | Production  | ✅ Yes      | 📋 Pending |
+| `development`  | Preview     | ✅ Yes      | 📋 Pending |
+| `feature/*`    | Preview     | ✅ Yes      | 📋 Pending |
 
 **Required GitHub Secrets:**
 
