@@ -1,0 +1,60 @@
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+export const metadata: Metadata = {
+  title: 'Sendero - Beginner-Friendly Hike & Bike Tours in Colombia',
+  description:
+    'Join the waitlist for sustainable, beginner-friendly hike and bike tours in Colombia\'s Coffee Region. E-bikes, women-only groups, and coffee farm experiences.',
+  keywords: [
+    'colombia tours',
+    'coffee region',
+    'pereira',
+    'bike tours',
+    'hiking',
+    'e-bike',
+    'sustainable travel',
+    'eco-tourism',
+    'beginner cycling',
+  ],
+  authors: [{ name: 'Sendero' }],
+  openGraph: {
+    title: 'Sendero - Hike & Bike Colombia',
+    description:
+      'Beginner-friendly, sustainable tours in Colombia\'s Coffee Region',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sendero - Hike & Bike Colombia',
+    description:
+      'Beginner-friendly, sustainable tours in Colombia\'s Coffee Region',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={inter.variable}>
+      <body className={`${inter.className} antialiased`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
