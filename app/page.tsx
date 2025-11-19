@@ -51,8 +51,8 @@ export default function HomePage() {
               </div>
               <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl lg:h-[500px]">
                 <Image
-                  src="https://placehold.co/800x1000/22c55e/ffffff?text=Colombia+Coffee+Region"
-                  alt="Colombia Coffee Region landscape"
+                  src="/hero-coffee-region.jpg"
+                  alt="Lush green rolling hills of Colombia's Coffee Region near Pereira"
                   fill
                   className="object-cover"
                   priority
