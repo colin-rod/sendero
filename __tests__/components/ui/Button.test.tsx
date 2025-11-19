@@ -34,13 +34,13 @@ describe('Button', () => {
     it('should render primary variant', () => {
       render(<Button variant="primary">Primary</Button>);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-primary-500', 'text-white');
+      expect(button).toHaveClass('bg-primary-500', 'text-foreground');
     });
 
     it('should render secondary variant', () => {
       render(<Button variant="secondary">Secondary</Button>);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-accent-500', 'text-white');
+      expect(button).toHaveClass('bg-accent-500', 'text-foreground');
     });
 
     it('should render outline variant', () => {

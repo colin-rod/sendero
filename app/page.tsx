@@ -79,30 +79,30 @@ export default function HomePage() {
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-3">
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-3xl text-white">
+              <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-3xl font-bold text-foreground shadow-md">
                   1
                 </div>
-                <h3 className="mb-2 text-xl font-semibold">Sign Up</h3>
+                <h3 className="mb-2 text-xl font-semibold text-foreground">Sign Up</h3>
                 <p className="text-muted-foreground">
                   Fill out the quick form below with your email and tour
                   preferences.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-500 text-3xl text-white">
+              <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-400 text-3xl font-bold text-foreground shadow-md">
                   2
                 </div>
-                <h3 className="mb-2 text-xl font-semibold">Stay Tuned</h3>
+                <h3 className="mb-2 text-xl font-semibold text-foreground">Stay Tuned</h3>
                 <p className="text-muted-foreground">
                   We'll keep you updated as we finalize tour dates and packages.
                 </p>
               </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-3xl text-white">
+              <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-3xl font-bold text-foreground shadow-md">
                   3
                 </div>
-                <h3 className="mb-2 text-xl font-semibold">Book Your Adventure</h3>
+                <h3 className="mb-2 text-xl font-semibold text-foreground">Book Your Adventure</h3>
                 <p className="text-muted-foreground">
                   Be among the first to book when tours officially launch.
                 </p>
