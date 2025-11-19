@@ -67,7 +67,8 @@ describe('HomePage', () => {
     it('should display key features', () => {
       expect(screen.getByText(/e-bikes available/i)).toBeInTheDocument();
       expect(screen.getByText(/eco-conscious tours/i)).toBeInTheDocument();
-      expect(screen.getByText(/coffee farm visits/i)).toBeInTheDocument();
+      // Coffee Farm Visits appears in both hero and form, so use getAllByText
+      expect(screen.getAllByText(/coffee farm visits/i).length).toBeGreaterThan(0);
     });
 
     it('should render hero image', () => {
@@ -123,7 +124,8 @@ describe('HomePage', () => {
       expect(screen.getByText(/beginner cyclists/i)).toBeInTheDocument();
       expect(screen.getByText(/eco-conscious travelers/i)).toBeInTheDocument();
       expect(screen.getByText(/coffee lovers/i)).toBeInTheDocument();
-      expect(screen.getByText(/women-only groups/i)).toBeInTheDocument();
+      // Women-only Groups appears in both Perfect For section and form, use getAllByText
+      expect(screen.getAllByText(/women-only groups/i).length).toBeGreaterThan(0);
       expect(screen.getByText(/nature enthusiasts/i)).toBeInTheDocument();
       expect(screen.getByText(/weekend adventurers/i)).toBeInTheDocument();
     });
@@ -145,11 +147,13 @@ describe('HomePage', () => {
 
   describe('Waitlist section', () => {
     it('should render section heading', () => {
-      expect(screen.getByText(/join the waitlist/i)).toBeInTheDocument();
+      // "Join the Waitlist" appears both as heading and button, use getAllByText
+      expect(screen.getAllByText(/join the waitlist/i).length).toBeGreaterThan(0);
     });
 
     it('should render section description', () => {
-      expect(screen.getByText(/be the first to know when tours open up/i)).toBeInTheDocument();
+      // Description appears in multiple places, use getAllByText
+      expect(screen.getAllByText(/be the first to know when tours open up/i).length).toBeGreaterThan(0);
     });
 
     it('should render waitlist form', () => {

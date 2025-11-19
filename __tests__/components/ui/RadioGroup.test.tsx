@@ -4,6 +4,7 @@
  * Tests for the RadioGroup UI component
  */
 
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { RadioGroup } from '@/components/ui/RadioGroup';
@@ -66,7 +67,18 @@ describe('RadioGroup', () => {
   describe('Interactions', () => {
     it('should select option on click', async () => {
       const user = userEvent.setup();
-      render(<RadioGroup name="test" options={mockOptions} />);
+      const ControlledRadioGroup = () => {
+        const [value, setValue] = React.useState<string>('');
+        return (
+          <RadioGroup
+            name="test"
+            options={mockOptions}
+            value={value}
+            onChange={setValue}
+          />
+        );
+      };
+      render(<ControlledRadioGroup />);
 
       const option1 = screen.getByLabelText(/option 1/i);
       await user.click(option1);
@@ -76,7 +88,18 @@ describe('RadioGroup', () => {
 
     it('should deselect previous option when new option is selected', async () => {
       const user = userEvent.setup();
-      render(<RadioGroup name="test" options={mockOptions} />);
+      const ControlledRadioGroup = () => {
+        const [value, setValue] = React.useState<string>('');
+        return (
+          <RadioGroup
+            name="test"
+            options={mockOptions}
+            value={value}
+            onChange={setValue}
+          />
+        );
+      };
+      render(<ControlledRadioGroup />);
 
       const option1 = screen.getByLabelText(/option 1/i);
       const option2 = screen.getByLabelText(/option 2/i);
@@ -117,7 +140,18 @@ describe('RadioGroup', () => {
 
     it('should select via label click', async () => {
       const user = userEvent.setup();
-      render(<RadioGroup name="test" options={mockOptions} />);
+      const ControlledRadioGroup = () => {
+        const [value, setValue] = React.useState<string>('');
+        return (
+          <RadioGroup
+            name="test"
+            options={mockOptions}
+            value={value}
+            onChange={setValue}
+          />
+        );
+      };
+      render(<ControlledRadioGroup />);
 
       const label = screen.getByText(/option 1/i);
       await user.click(label);
@@ -128,7 +162,18 @@ describe('RadioGroup', () => {
 
     it('should select via description click', async () => {
       const user = userEvent.setup();
-      render(<RadioGroup name="test" options={mockOptions} />);
+      const ControlledRadioGroup = () => {
+        const [value, setValue] = React.useState<string>('');
+        return (
+          <RadioGroup
+            name="test"
+            options={mockOptions}
+            value={value}
+            onChange={setValue}
+          />
+        );
+      };
+      render(<ControlledRadioGroup />);
 
       const description = screen.getByText(/first option/i);
       await user.click(description);
@@ -240,15 +285,11 @@ describe('RadioGroup', () => {
     });
 
     it('should have cursor pointer on labels', () => {
-      render(<RadioGroup name="test" options={mockOptions} />);
+      const { container } = render(<RadioGroup name="test" options={mockOptions} />);
 
-      const labels = screen.getAllByRole('radio').map((radio) => {
-        const id = radio.getAttribute('id');
-        return screen.getByLabelText(new RegExp(radio.getAttribute('value') || '', 'i')).parentElement;
-      });
-
+      const labels = container.querySelectorAll('label[for^="test-"]');
       labels.forEach((label) => {
-        expect(label?.querySelector('label')).toHaveClass('cursor-pointer');
+        expect(label).toHaveClass('cursor-pointer');
       });
     });
   });
@@ -262,7 +303,18 @@ describe('RadioGroup', () => {
 
     it('should be keyboard accessible', async () => {
       const user = userEvent.setup();
-      render(<RadioGroup name="test" options={mockOptions} />);
+      const ControlledRadioGroup = () => {
+        const [value, setValue] = React.useState<string>('');
+        return (
+          <RadioGroup
+            name="test"
+            options={mockOptions}
+            value={value}
+            onChange={setValue}
+          />
+        );
+      };
+      render(<ControlledRadioGroup />);
 
       const option1 = screen.getByLabelText(/option 1/i);
       option1.focus();

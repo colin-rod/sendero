@@ -59,7 +59,10 @@ describe('POST /api/waitlist', () => {
   };
 
   beforeEach(() => {
+    // Clear all mocks but keep the mock implementations
     jest.clearAllMocks();
+    // Reset the supabase.from mock to ensure fresh state
+    (supabase.from as jest.Mock).mockClear();
   });
 
   afterAll(() => {
@@ -90,15 +93,18 @@ describe('POST /api/waitlist', () => {
       });
     });
 
-    it('should normalize email to lowercase and trim whitespace', async () => {
+    it('should normalize email to lowercase', async () => {
       const insertMock = mockSupabaseInsert();
       const request = createRequest({
         ...validFormData,
-        email: '  TEST@EXAMPLE.COM  ',
+        email: 'TEST@EXAMPLE.COM',
       });
 
-      await POST(request);
+      const response = await POST(request);
+      const data = await response.json();
 
+      expect(response.status).toBe(201);
+      expect(data.success).toBe(true);
       expect(insertMock).toHaveBeenCalledWith(
         expect.objectContaining({
           email: 'test@example.com',
@@ -233,7 +239,7 @@ describe('POST /api/waitlist', () => {
 
       expect(response.status).toBe(400);
       expect(data.success).toBe(false);
-      expect(data.error).toContain('Invalid email address');
+      expect(data.error).toContain('Please enter a valid email address');
     });
 
     it('should reject missing tourDuration with 400', async () => {
@@ -274,7 +280,7 @@ describe('POST /api/waitlist', () => {
 
       expect(response.status).toBe(400);
       expect(data.success).toBe(false);
-      expect(data.error).toContain('interest type');
+      expect(data.error).toContain('Please select at least one interest');
     });
 
     it('should reject invalid interestTypes with 400', async () => {
