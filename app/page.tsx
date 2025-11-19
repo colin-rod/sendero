@@ -11,55 +11,59 @@ export default function HomePage() {
       <Header />
       <main id="main-content" className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-b from-primary-50 via-accent-50/30 to-white py-20 md:py-32">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-              <div className="flex flex-col justify-center">
-                <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        <section className="relative h-[600px] md:h-[700px] lg:h-[800px]">
+          {/* Background Image */}
+          <Image
+            src="/hero-coffee-region.jpg"
+            alt="Lush green rolling hills of Colombia's Coffee Region near Pereira"
+            fill
+            className="object-cover"
+            priority
+          />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+
+          {/* Content */}
+          <div className="relative z-10 flex h-full items-center">
+            <Container>
+              <div className="max-w-3xl">
+                <h1 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
                   Discover Colombia's Coffee Region
-                  <span className="block text-primary-600">
+                  <span className="block text-primary-400">
                     One Pedal at a Time
                   </span>
                 </h1>
-                <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+                <p className="mb-8 text-lg text-white/90 md:text-xl">
                   Beginner-friendly, sustainable hike & bike tours through
                   Pereira's stunning landscapes. E-bikes, women-only groups, and
                   authentic coffee farm experiences.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
-                      <Bike className="h-5 w-5 text-primary-600" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                      <Bike className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium">E-Bikes Available</span>
+                    <span className="text-sm font-medium text-white">E-Bikes Available</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
-                      <Leaf className="h-5 w-5 text-primary-600" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                      <Leaf className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium">
+                    <span className="text-sm font-medium text-white">
                       Eco-Conscious Tours
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-100">
-                      <Coffee className="h-5 w-5 text-accent-600" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                      <Coffee className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium">Coffee Farm Visits</span>
+                    <span className="text-sm font-medium text-white">Coffee Farm Visits</span>
                   </div>
                 </div>
               </div>
-              <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl lg:h-[500px]">
-                <Image
-                  src="/hero-coffee-region.jpg"
-                  alt="Lush green rolling hills of Colombia's Coffee Region near Pereira"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </Container>
+            </Container>
+          </div>
         </section>
 
         {/* How It Works Section */}
