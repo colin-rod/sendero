@@ -72,7 +72,7 @@ describe('HomePage', () => {
     });
 
     it('should render hero image', () => {
-      const image = screen.getByAltText(/colombia coffee region landscape/i);
+      const image = screen.getByAltText(/lush green rolling hills of colombia's coffee region/i);
       expect(image).toBeInTheDocument();
     });
   });

@@ -53,9 +53,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     // Variant classes using semantic color tokens
     const variantClasses = {
       primary:
-        'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 focus-visible:ring-primary-500',
+        'bg-primary-500 text-foreground hover:bg-primary-600 active:bg-primary-700 focus-visible:ring-primary-500 shadow-md',
       secondary:
-        'bg-accent-500 text-white hover:bg-accent-600 active:bg-accent-700 focus-visible:ring-accent-500',
+        'bg-accent-500 text-foreground hover:bg-accent-600 active:bg-accent-700 focus-visible:ring-accent-500',
       outline:
         'border border-border bg-transparent hover:bg-muted active:bg-muted/80 focus-visible:ring-primary-500',
       ghost:
