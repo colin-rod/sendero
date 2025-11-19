@@ -81,6 +81,9 @@ jobs:
       - name: Build Next.js app
         run: npm run build
         env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          # Using placeholder values for CI build
+          # TODO: Add real values as GitHub Secrets for production deployment
+          # Go to: Repository Settings > Secrets and variables > Actions > New repository secret
+          NEXT_PUBLIC_SUPABASE_URL: 'https://placeholder.supabase.co'
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: 'placeholder-anon-key-for-build-only'
+          NEXT_PUBLIC_SITE_URL: 'https://sendero.vercel.app'

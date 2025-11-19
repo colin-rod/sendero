@@ -16,7 +16,8 @@
       "Bash(vercel --prod:*)",
       "Bash(git checkout:*)",
       "Bash(npx next lint:*)",
-      "Bash(npx next --version)"
+      "Bash(npx next --version)",
+      "Bash(NEXT_PUBLIC_SUPABASE_URL='https://placeholder.supabase.co' NEXT_PUBLIC_SUPABASE_ANON_KEY='placeholder-anon-key-for-build-only' NEXT_PUBLIC_SITE_URL='https://sendero.vercel.app' npm run build:*)"
     ],
     "deny": [],
     "ask": []
