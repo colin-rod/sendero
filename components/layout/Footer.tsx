@@ -34,6 +34,17 @@ export function Footer() {
               <p className="text-sm text-muted-foreground">
                 Questions? We'd love to hear from you.
               </p>
+              <a
+                href="https://www.instagram.com/sendero_bike_tours/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-700"
+              >
+                Follow us on Instagram
+                <span className="ml-1" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
             </div>
           </div>
           <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
