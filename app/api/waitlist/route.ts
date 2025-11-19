@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase/client';
 import { validateWaitlistForm } from '@/lib/utils/validation';
-import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse } from '@/lib/types/database';
+import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse, WaitlistSignupInsert } from '@/lib/types/database';
 
 /**
  * POST /api/waitlist
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     const formData = body as WaitlistFormData;
 
     // Prepare data for Supabase insert
-    const insertData = {
+    const insertData: WaitlistSignupInsert = {
       email: formData.email.toLowerCase().trim(),
       tour_duration: formData.tourDuration,
       interest_types: formData.interestTypes,
@@ -36,9 +36,9 @@ export async function POST(request: NextRequest) {
 
     // Insert into Supabase
     // Note: We don't select the ID because RLS policy blocks selects for anon users
-     
     const { error } = await supabase
       .from('waitlist_signups')
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .insert(insertData as any);
 
     // Handle errors

@@ -11,7 +11,7 @@ export default function HomePage() {
       <Header />
       <main id="main-content" className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-b from-primary-50 to-white py-20 md:py-32">
+        <section className="relative bg-gradient-to-b from-primary-50 via-accent-50/30 to-white py-20 md:py-32">
           <Container>
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div className="flex flex-col justify-center">
@@ -42,8 +42,8 @@ export default function HomePage() {
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
-                      <Coffee className="h-5 w-5 text-primary-600" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-100">
+                      <Coffee className="h-5 w-5 text-accent-600" />
                     </div>
                     <span className="text-sm font-medium">Coffee Farm Visits</span>
                   </div>
@@ -86,7 +86,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-3xl text-white">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-500 text-3xl text-white">
                   2
                 </div>
                 <h3 className="mb-2 text-xl font-semibold">Stay Tuned</h3>
@@ -144,7 +144,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-lg bg-white p-6 shadow-sm">
                 <div className="mb-4">
-                  <Coffee className="h-10 w-10 text-primary-600" />
+                  <Coffee className="h-10 w-10 text-accent-600" />
                 </div>
                 <h3 className="mb-2 text-xl font-semibold">Coffee Lovers</h3>
                 <p className="text-muted-foreground">
