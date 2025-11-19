@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
+import { NumberBadge } from '@/components/ui/Badge';
 import { WaitlistForm } from '@/components/features/waitlist/WaitlistForm';
 import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
@@ -80,9 +81,9 @@ export default function HomePage() {
             </div>
             <div className="grid gap-8 md:grid-cols-3">
               <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-3xl font-bold text-foreground shadow-md">
+                <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
                   1
-                </div>
+                </NumberBadge>
                 <h3 className="mb-2 text-xl font-semibold text-foreground">Sign Up</h3>
                 <p className="text-muted-foreground">
                   Fill out the quick form below with your email and tour
@@ -90,18 +91,18 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-400 text-3xl font-bold text-foreground shadow-md">
+                <NumberBadge variant="accent" size="xl" className="mb-4 shadow-md">
                   2
-                </div>
+                </NumberBadge>
                 <h3 className="mb-2 text-xl font-semibold text-foreground">Stay Tuned</h3>
                 <p className="text-muted-foreground">
                   We'll keep you updated as we finalize tour dates and packages.
                 </p>
               </div>
               <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-3xl font-bold text-foreground shadow-md">
+                <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
                   3
-                </div>
+                </NumberBadge>
                 <h3 className="mb-2 text-xl font-semibold text-foreground">Book Your Adventure</h3>
                 <p className="text-muted-foreground">
                   Be among the first to book when tours officially launch.
