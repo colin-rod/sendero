@@ -20,6 +20,7 @@ const config: Config = {
         foreground: colors.foreground,
         muted: colors.muted,
         border: colors.border,
+        gray: colors.gray, // Add gray scale from Figma
         error: colors.error,
         success: colors.success,
         warning: colors.warning,

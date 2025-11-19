@@ -4,49 +4,66 @@
  * Semantic color definitions for the Sendero brand.
  * These tokens provide meaningful names that communicate intent
  * rather than specific color values.
+ *
+ * Updated to match Figma design system
  */
 
 export const colors = {
-  // Primary Brand Colors (Green - Nature, Eco-conscious, Sustainable)
+  // Primary Brand Colors (Golden Yellow - Warmth, Energy, Adventure)
   primary: {
-    50: '#f0fdf4',
-    100: '#dcfce7',
-    200: '#bbf7d0',
-    300: '#86efac',
-    400: '#4ade80',
-    500: '#22c55e', // Main brand color
-    600: '#16a34a',
-    700: '#15803d',
-    800: '#166534',
-    900: '#14532d',
-    950: '#052e16',
-  },
-
-  // Accent Colors (Coffee/Yellow - Warmth, Energy, Coffee farms)
-  accent: {
-    50: '#fefce8',
-    100: '#fef9c3',
-    200: '#fef08a',
-    300: '#fde047',
-    400: '#facc15',
-    500: '#eab308', // Main accent color
-    600: '#ca8a04',
-    700: '#a16207',
-    800: '#854d0e',
-    900: '#713f12',
+    50: '#fffbeb',
+    100: '#fff0bb', // Secondary from Figma
+    200: '#fde68a',
+    300: '#fcd34d',
+    400: '#fbbf24',
+    500: '#e2b71f', // Main brand color from Figma
+    600: '#ca9a1b',
+    700: '#a87c16',
+    800: '#865f11',
+    900: '#6b4a0e',
     950: '#422006',
   },
 
-  // Neutral Colors
-  background: '#ffffff',
-  foreground: '#0a0a0a',
+  // Secondary/Accent Colors (Light Cream - Soft, Warm accent)
+  accent: {
+    50: '#fffefb',
+    100: '#fffcf5',
+    200: '#fff8eb',
+    300: '#fff3d6',
+    400: '#fff0bb', // Secondary from Figma
+    500: '#ffe89a',
+    600: '#f5d980',
+    700: '#e5c566',
+    800: '#d4b04d',
+    900: '#c39b33',
+    950: '#a87c16',
+  },
+
+  // Neutral Colors - Updated from Figma
+  background: '#f1f1f1', // Background from Figma
+  foreground: '#1b1b1b', // Gravel Black from Figma
 
   muted: {
-    DEFAULT: '#f1f5f9',
-    foreground: '#64748b',
+    DEFAULT: '#f1f1f1', // Background from Figma
+    foreground: '#616161', // Steel Gray from Figma
   },
 
   border: '#e2e8f0',
+
+  // Grays from Figma
+  gray: {
+    50: '#f9f9f9',
+    100: '#f1f1f1', // Background from Figma
+    200: '#e5e5e5',
+    300: '#d4d4d4',
+    400: '#a3a3a3',
+    500: '#737373',
+    600: '#616161', // Steel Gray from Figma
+    700: '#494949', // Medium gray
+    800: '#262626',
+    900: '#1b1b1b', // Gravel Black from Figma
+    950: '#0a0a0a',
+  },
 
   // Semantic Colors
   error: {
@@ -60,7 +77,7 @@ export const colors = {
   success: {
     50: '#f0fdf4',
     100: '#dcfce7',
-    500: '#22c55e', // Uses primary green
+    500: '#22c55e',
     600: '#16a34a',
     700: '#15803d',
   },
@@ -85,19 +102,31 @@ export const colors = {
 /**
  * Color usage guidelines:
  *
- * PRIMARY (Green)
- * - Use for: Primary buttons, brand elements, key CTAs, icons
- * - Variants: 500 (default), 600 (hover), 100 (backgrounds), 50 (subtle backgrounds)
+ * PRIMARY (Golden Yellow - #e2b71f)
+ * - Use for: Primary buttons, brand elements, key CTAs, highlights
+ * - Variants: 500 (default), 600 (hover), 100 (light backgrounds), 50 (subtle backgrounds)
  *
- * ACCENT (Coffee/Yellow)
- * - Use for: Secondary buttons, highlights, warm accents
- * - Variants: 500 (default), 600 (hover)
+ * ACCENT (Light Cream - #fff0bb)
+ * - Use for: Secondary buttons, soft backgrounds, warm accents
+ * - Variants: 400 (default), 500 (hover)
+ *
+ * GRAVEL BLACK (#1b1b1b)
+ * - Use for: Primary text, headings, dark backgrounds
+ * - Access via: foreground or gray.900
+ *
+ * STEEL GRAY (#616161)
+ * - Use for: Secondary text, muted text, borders
+ * - Access via: muted.foreground or gray.600
+ *
+ * BACKGROUND (#f1f1f1)
+ * - Use for: Page backgrounds, card backgrounds
+ * - Access via: background or gray.100
  *
  * ERROR (Red)
  * - Use for: Validation errors, destructive actions, alerts
  * - Variants: 500 (default), 600 (hover)
  *
- * SUCCESS (Green - same as primary)
+ * SUCCESS (Green)
  * - Use for: Success messages, confirmations, positive feedback
  *
  * WARNING (Orange)

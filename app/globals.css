@@ -6,8 +6,8 @@
   }
 
   body {
-    background-color: rgb(255 255 255);
-    color: rgb(10 10 10);
+    background-color: rgb(241 241 241); /* #f1f1f1 - Background from Figma */
+    color: rgb(27 27 27); /* #1b1b1b - Gravel Black from Figma */
     font-feature-settings: 'rlig' 1, 'calt' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -137,7 +137,7 @@
   .btn:focus-visible {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(34 197 94);
+    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(226 183 31); /* #e2b71f - Primary */
   }
 
   .btn:disabled {
@@ -146,21 +146,21 @@
   }
 
   .btn-primary {
-    background-color: rgb(34 197 94);
-    color: rgb(255 255 255);
+    background-color: rgb(226 183 31); /* #e2b71f - Primary from Figma */
+    color: rgb(27 27 27); /* #1b1b1b - Gravel Black for contrast */
   }
 
   .btn-primary:hover {
-    background-color: rgb(22 163 74);
+    background-color: rgb(202 154 27); /* #ca9a1b - Darker golden yellow */
   }
 
   .btn-secondary {
-    background-color: rgb(234 179 8);
-    color: rgb(255 255 255);
+    background-color: rgb(255 240 187); /* #fff0bb - Secondary from Figma */
+    color: rgb(27 27 27); /* #1b1b1b - Gravel Black */
   }
 
   .btn-secondary:hover {
-    background-color: rgb(202 138 4);
+    background-color: rgb(245 217 128); /* Slightly darker cream */
   }
 
   .btn-outline {
@@ -190,13 +190,13 @@
   }
 
   .input::placeholder {
-    color: rgb(100 116 139);
+    color: rgb(97 97 97); /* #616161 - Steel Gray from Figma */
   }
 
   .input:focus-visible {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(34 197 94);
+    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(226 183 31); /* #e2b71f - Primary */
   }
 
   .input:disabled {
@@ -251,8 +251,8 @@
     left: -9999px;
     z-index: 999;
     padding: 1rem 1.5rem;
-    background-color: rgb(34 197 94);
-    color: rgb(255 255 255);
+    background-color: rgb(226 183 31); /* #e2b71f - Primary */
+    color: rgb(27 27 27); /* #1b1b1b - Gravel Black */
     text-decoration: none;
     border-radius: 0.375rem;
   }
