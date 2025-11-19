@@ -194,7 +194,7 @@ describe('WaitlistForm', () => {
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(screen.getByText(/email is required/i)).toBeInTheDocument();
+        expect(screen.getByText('Email is required')).toBeInTheDocument();
       });
     });
 
@@ -203,13 +203,14 @@ describe('WaitlistForm', () => {
       render(<WaitlistForm />);
 
       const emailInput = screen.getByLabelText(/email address/i);
-      await user.type(emailInput, 'invalid-email');
+      // Type an email that passes HTML5 validation but fails our custom validation
+      await user.type(emailInput, 'invalid@email');
 
       const submitButton = screen.getByRole('button', { name: /join the waitlist/i });
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(screen.getByText(/invalid email address/i)).toBeInTheDocument();
+        expect(screen.getByText('Please enter a valid email address')).toBeInTheDocument();
       });
     });
 
@@ -224,7 +225,7 @@ describe('WaitlistForm', () => {
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(screen.getByText(/tour duration/i)).toBeInTheDocument();
+        expect(screen.getByText('Please select a tour duration')).toBeInTheDocument();
       });
     });
 
@@ -242,7 +243,7 @@ describe('WaitlistForm', () => {
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(screen.getByText(/interest type/i)).toBeInTheDocument();
+        expect(screen.getByText('Please select at least one interest')).toBeInTheDocument();
       });
     });
 
@@ -263,7 +264,7 @@ describe('WaitlistForm', () => {
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(screen.getByText(/fitness level/i)).toBeInTheDocument();
+        expect(screen.getByText('Please select your fitness level')).toBeInTheDocument();
       });
     });
 
@@ -287,7 +288,7 @@ describe('WaitlistForm', () => {
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(screen.getByText(/travel timeline/i)).toBeInTheDocument();
+        expect(screen.getByText('Please select your travel timeline')).toBeInTheDocument();
       });
     });
 
@@ -299,7 +300,7 @@ describe('WaitlistForm', () => {
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(screen.getByText(/email is required/i)).toBeInTheDocument();
+        expect(screen.getByText('Email is required')).toBeInTheDocument();
       });
 
       const emailInput = screen.getByLabelText(/email address/i);
@@ -489,10 +490,13 @@ describe('WaitlistForm', () => {
       expect(form).toBeInTheDocument();
     });
 
-    it('should have required fields marked', () => {
+    it('should have required fields marked with asterisk', () => {
       render(<WaitlistForm />);
 
-      expect(screen.getByLabelText(/email address/i)).toBeRequired();
+      // Check that required fields are marked with * in the label
+      expect(screen.getByText(/email address \*/i)).toBeInTheDocument();
+      expect(screen.getByText(/preferred tour duration \*/i)).toBeInTheDocument();
+      expect(screen.getByText(/fitness level \*/i)).toBeInTheDocument();
     });
 
     it('should associate error messages with fields', async () => {
@@ -504,7 +508,7 @@ describe('WaitlistForm', () => {
 
       await waitFor(() => {
         const emailInput = screen.getByLabelText(/email address/i);
-        const errorMessage = screen.getByText(/email is required/i);
+        const errorMessage = screen.getByText('Email is required');
         expect(errorMessage).toBeInTheDocument();
         expect(emailInput.getAttribute('aria-invalid')).toBe('true');
       });

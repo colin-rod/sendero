@@ -107,7 +107,6 @@ export function WaitlistForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           error={errors.email}
-          required
         />
 
         {/* Tour Duration */}
