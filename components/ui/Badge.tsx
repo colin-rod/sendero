@@ -224,8 +224,8 @@ export const NumberBadge = React.forwardRef<HTMLDivElement, NumberBadgeProps>(
 
     // Variant styles
     const variantStyles = {
-      primary: 'bg-primary-500 text-white',
-      accent: 'bg-accent-500 text-white',
+      primary: 'bg-primary-500 text-gray-900',
+      accent: 'bg-accent-500 text-gray-900',
       muted: 'bg-muted text-foreground',
     };
 
