@@ -29,8 +29,15 @@ const config: Config = {
 
       // Font family
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-work-sans)', 'sans-serif'],
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
+      },
+
+      // Custom typography sizes from Figma
+      fontSize: {
+        'h1': ['34px', { lineHeight: '100%', letterSpacing: '-0.68px', fontWeight: '700' }],
+        'h2': ['20px', { lineHeight: '100%', letterSpacing: '-0.4px', fontWeight: '700' }],
+        'body': ['13px', { lineHeight: '100%', letterSpacing: '-0.26px', fontWeight: '400' }],
       },
 
       // Spacing

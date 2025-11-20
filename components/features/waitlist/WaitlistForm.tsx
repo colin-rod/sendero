@@ -125,7 +125,7 @@ export function WaitlistForm() {
 
         {/* Interest Types */}
         <div>
-          <label className="label mb-3 block text-sm font-medium">
+          <label className="label mb-3 block text-body">
             What interests you? (select all that apply) *
           </label>
           <div className="space-y-2">
@@ -156,7 +156,7 @@ export function WaitlistForm() {
             />
           </div>
           {errors.interestTypes && (
-            <p className="mt-1 text-sm text-red-500">{errors.interestTypes}</p>
+            <p className="mt-1 text-body text-red-500">{errors.interestTypes}</p>
           )}
         </div>
 
@@ -189,7 +189,7 @@ export function WaitlistForm() {
 
         {/* General Error */}
         {generalError && (
-          <div className="rounded-md bg-red-50 p-4 text-sm text-red-600">
+          <div className="rounded-md bg-red-50 p-4 text-body text-red-600">
             {generalError}
           </div>
         )}
@@ -205,7 +205,7 @@ export function WaitlistForm() {
           {isSubmitting ? 'Joining...' : 'Join the Waitlist'}
         </Button>
 
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-center text-body text-muted-foreground">
           We respect your privacy. No spam, just updates about tours.
         </p>
       </div>

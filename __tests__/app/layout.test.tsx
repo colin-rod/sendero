@@ -4,9 +4,9 @@ import '@testing-library/jest-dom';
 
 // Mock Next.js font
 jest.mock('next/font/google', () => ({
-  Inter: () => ({
-    className: 'inter-font',
-    variable: '--font-inter',
+  Work_Sans: () => ({
+    className: 'work-sans-font',
+    variable: '--font-work-sans',
   }),
 }));
 
