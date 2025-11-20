@@ -15,9 +15,9 @@ describe('Footer', () => {
       expect(footer).toBeInTheDocument();
     });
 
-    it('should render Sendero branding', () => {
+    it('should render Sendero Bike Trails branding', () => {
       render(<Footer />);
-      expect(screen.getByText('Sendero')).toBeInTheDocument();
+      expect(screen.getByText('Sendero Bike Trails')).toBeInTheDocument();
     });
 
     it('should render company description', () => {
@@ -40,7 +40,7 @@ describe('Footer', () => {
     it('should render copyright notice', () => {
       render(<Footer />);
       const currentYear = new Date().getFullYear();
-      expect(screen.getByText(new RegExp(`© ${currentYear} Sendero`))).toBeInTheDocument();
+      expect(screen.getByText(new RegExp(`© ${currentYear} Sendero Bike Trails`))).toBeInTheDocument();
     });
   });
 
@@ -101,7 +101,7 @@ describe('Footer', () => {
       );
 
       const headings = sections.map((s) => s.textContent);
-      expect(headings).toContain('Sendero');
+      expect(headings).toContain('Sendero Bike Trails');
       expect(headings).toContain('Quick Links');
       expect(headings).toContain('Contact');
     });
@@ -128,7 +128,7 @@ describe('Footer', () => {
 
     it('should have primary color on branding', () => {
       render(<Footer />);
-      const branding = screen.getByText('Sendero');
+      const branding = screen.getByText('Sendero Bike Trails');
       expect(branding).toHaveClass('text-primary-600');
     });
   });
@@ -150,7 +150,9 @@ describe('Footer', () => {
 
     it('should have semantic heading structure', () => {
       render(<Footer />);
-      expect(screen.getByRole('heading', { level: 3, name: /sendero/i })).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', { level: 3, name: /sendero bike trails/i })
+      ).toBeInTheDocument();
       expect(screen.getByRole('heading', { level: 4, name: /quick links/i })).toBeInTheDocument();
       expect(screen.getByRole('heading', { level: 4, name: /contact/i })).toBeInTheDocument();
     });

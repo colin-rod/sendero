@@ -8,7 +8,7 @@ export function Footer() {
           <div className="grid gap-8 md:grid-cols-3">
             <div>
               <h3 className="mb-3 text-lg font-semibold text-primary-600">
-                Sendero
+                Sendero Bike Trails
               </h3>
               <p className="text-sm text-muted-foreground">
                 Beginner-friendly hike & bike tours in Colombia's Coffee Region.
@@ -48,7 +48,7 @@ export function Footer() {
             </div>
           </div>
           <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Sendero. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Sendero Bike Trails. All rights reserved.</p>
           </div>
         </div>
       </Container>

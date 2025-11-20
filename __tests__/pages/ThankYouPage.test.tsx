@@ -57,7 +57,7 @@ describe('ThankYouPage', () => {
 
     it('should render thank you message', () => {
       expect(
-        screen.getByText(/thank you for joining the sendero waitlist/i)
+        screen.getByText(/thank you for joining the sendero bike trails waitlist/i)
       ).toBeInTheDocument();
     });
 
@@ -211,7 +211,7 @@ describe('ThankYouPage', () => {
   describe('Share URLs', () => {
     it('should encode share text and URL correctly', () => {
       const whatsappLink = screen.getByRole('link', { name: /whatsapp/i });
-      expect(whatsappLink.getAttribute('href')).toMatch(/text=.*Sendero/);
+      expect(whatsappLink.getAttribute('href')).toMatch(/text=.*Sendero%20Bike%20Trails/);
     });
 
     it('should include site URL in share links', () => {

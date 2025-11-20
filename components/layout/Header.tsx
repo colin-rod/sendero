@@ -40,9 +40,9 @@ export function Header() {
             <Link
               href="/"
               className="flex items-center space-x-2"
-              aria-label="Sendero home"
+              aria-label="Sendero Bike Trails home"
             >
-              <span className="text-2xl font-bold text-primary-600">Sendero</span>
+              <span className="text-2xl font-bold text-primary-600">Sendero Bike Trails</span>
             </Link>
 
             {/* Desktop Navigation */}

@@ -12,8 +12,8 @@ test.describe('Waitlist Signup Flow', () => {
   });
 
   test('should load the landing page successfully', async ({ page }) => {
-    await expect(page).toHaveTitle(/Sendero/i);
-    await expect(page.getByRole('heading', { name: /sendero/i })).toBeVisible();
+    await expect(page).toHaveTitle(/Sendero Bike Trails/i);
+    await expect(page.getByText(/sendero bike trails/i)).toBeVisible();
   });
 
   test('should display all landing page sections', async ({ page }) => {

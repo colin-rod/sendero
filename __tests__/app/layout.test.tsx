@@ -45,7 +45,9 @@ describe('RootLayout', () => {
 describe('Metadata', () => {
   describe('Basic Metadata', () => {
     it('has correct title', () => {
-      expect(metadata.title).toBe('Sendero - Beginner-Friendly Hike & Bike Tours in Colombia');
+      expect(metadata.title).toBe(
+        'Sendero Bike Trails - Beginner-Friendly Hike & Bike Tours in Colombia'
+      );
     });
 
     it('has correct description', () => {
@@ -61,7 +63,7 @@ describe('Metadata', () => {
     });
 
     it('has correct authors', () => {
-      expect(metadata.authors).toEqual([{ name: 'Sendero' }]);
+      expect(metadata.authors).toEqual([{ name: 'Sendero Bike Trails' }]);
     });
   });
 
@@ -71,7 +73,7 @@ describe('Metadata', () => {
     });
 
     it('has correct OpenGraph title', () => {
-      expect(metadata.openGraph?.title).toBe('Sendero - Hike & Bike Colombia');
+      expect(metadata.openGraph?.title).toBe('Sendero Bike Trails - Hike & Bike Colombia');
     });
 
     it('has correct OpenGraph description', () => {
@@ -98,7 +100,7 @@ describe('Metadata', () => {
     });
 
     it('has correct Twitter title', () => {
-      expect(metadata.twitter?.title).toBe('Sendero - Hike & Bike Colombia');
+      expect(metadata.twitter?.title).toBe('Sendero Bike Trails - Hike & Bike Colombia');
     });
 
     it('has correct Twitter description', () => {

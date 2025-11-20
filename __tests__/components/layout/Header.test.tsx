@@ -22,9 +22,9 @@ describe('Header', () => {
       expect(header).toBeInTheDocument();
     });
 
-    it('should render the Sendero logo/brand', () => {
+    it('should render the Sendero Bike Trails logo/brand', () => {
       render(<Header />);
-      expect(screen.getByText('Sendero')).toBeInTheDocument();
+      expect(screen.getByText('Sendero Bike Trails')).toBeInTheDocument();
     });
 
     it('should render desktop navigation links', () => {
@@ -56,14 +56,14 @@ describe('Header', () => {
   describe('Logo/Brand link', () => {
     it('should link to home page', () => {
       render(<Header />);
-      const logoLink = screen.getByRole('link', { name: /sendero home/i });
+      const logoLink = screen.getByRole('link', { name: /sendero bike trails home/i });
       expect(logoLink).toHaveAttribute('href', '/');
     });
 
     it('should have accessible label', () => {
       render(<Header />);
-      const logoLink = screen.getByRole('link', { name: /sendero home/i });
-      expect(logoLink).toHaveAttribute('aria-label', 'Sendero home');
+      const logoLink = screen.getByRole('link', { name: /sendero bike trails home/i });
+      expect(logoLink).toHaveAttribute('aria-label', 'Sendero Bike Trails home');
     });
   });
 
@@ -242,7 +242,7 @@ describe('Header', () => {
 
       // Second tab goes to logo
       await user.tab();
-      expect(screen.getByRole('link', { name: /sendero home/i })).toHaveFocus();
+      expect(screen.getByRole('link', { name: /sendero bike trails home/i })).toHaveFocus();
 
       // Tab to first nav link or mobile menu button (depends on viewport)
       await user.tab();
