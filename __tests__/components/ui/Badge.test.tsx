@@ -214,7 +214,7 @@ describe('NumberBadge', () => {
     it('renders with default variant and size', () => {
       render(<NumberBadge data-testid="badge">1</NumberBadge>);
       const badge = screen.getByTestId('badge');
-      expect(badge).toHaveClass('bg-primary-500', 'text-white');
+      expect(badge).toHaveClass('bg-primary-500', 'text-gray-900');
       expect(badge).toHaveClass('h-12', 'w-12', 'text-2xl');
     });
   });
@@ -222,12 +222,12 @@ describe('NumberBadge', () => {
   describe('Variants', () => {
     it('renders primary variant', () => {
       render(<NumberBadge variant="primary" data-testid="badge">1</NumberBadge>);
-      expect(screen.getByTestId('badge')).toHaveClass('bg-primary-500', 'text-white');
+      expect(screen.getByTestId('badge')).toHaveClass('bg-primary-500', 'text-gray-900');
     });
 
     it('renders accent variant', () => {
       render(<NumberBadge variant="accent" data-testid="badge">2</NumberBadge>);
-      expect(screen.getByTestId('badge')).toHaveClass('bg-accent-500', 'text-white');
+      expect(screen.getByTestId('badge')).toHaveClass('bg-accent-500', 'text-gray-900');
     });
 
     it('renders muted variant', () => {
