@@ -115,7 +115,7 @@ describe('Container', () => {
 
   describe('Edge Cases', () => {
     it('handles empty children', () => {
-      const { container } = render(<Container />);
+      const { container } = render(<Container>{null}</Container>);
       const div = container.firstChild;
       expect(div).toBeInTheDocument();
       expect(div).toBeEmptyDOMElement();
