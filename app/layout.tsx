@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Sendero - Beginner-Friendly Hike & Bike Tours in Colombia',
+  title: 'Sendero Bike Trails - Beginner-Friendly Hike & Bike Tours in Colombia',
   description:
     'Join the waitlist for sustainable, beginner-friendly hike and bike tours in Colombia\'s Coffee Region. E-bikes, women-only groups, and coffee farm experiences.',
   keywords: [
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     'eco-tourism',
     'beginner cycling',
   ],
-  authors: [{ name: 'Sendero' }],
+  authors: [{ name: 'Sendero Bike Trails' }],
   openGraph: {
-    title: 'Sendero - Hike & Bike Colombia',
+    title: 'Sendero Bike Trails - Hike & Bike Colombia',
     description:
       'Beginner-friendly, sustainable tours in Colombia\'s Coffee Region',
     type: 'website',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sendero - Hike & Bike Colombia',
+    title: 'Sendero Bike Trails - Hike & Bike Colombia',
     description:
       'Beginner-friendly, sustainable tours in Colombia\'s Coffee Region',
   },

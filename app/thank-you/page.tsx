@@ -14,7 +14,7 @@ export default function ThankYouPage() {
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const shareText = encodeURIComponent(
-    'Check out Sendero - beginner-friendly hike & bike tours in Colombia\'s Coffee Region!'
+    'Check out Sendero Bike Trails - beginner-friendly hike & bike tours in Colombia\'s Coffee Region!'
   );
   const shareUrl = encodeURIComponent(siteUrl);
 
@@ -59,7 +59,7 @@ export default function ThankYouPage() {
 
               {/* Message */}
               <p className="mb-8 text-lg text-muted-foreground">
-                Thank you for joining the Sendero waitlist. We'll be in touch when
+                Thank you for joining the Sendero Bike Trails waitlist. We'll be in touch when
                 tours open up with exclusive early access for waitlist members.
               </p>
 
