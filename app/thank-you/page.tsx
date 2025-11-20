@@ -53,20 +53,20 @@ export default function ThankYouPage() {
               </div>
 
               {/* Heading */}
-              <h1 className="mb-6 text-4xl font-bold text-foreground md:text-5xl">
+              <h1 className="mb-6 text-h1 text-foreground">
                 You're on the List!
               </h1>
 
               {/* Message */}
-              <p className="mb-8 text-lg text-muted-foreground">
+              <p className="mb-8 text-body text-muted-foreground">
                 Thank you for joining the Sendero Bike Trails waitlist. We'll be in touch when
                 tours open up with exclusive early access for waitlist members.
               </p>
 
               {/* What's Next Section */}
               <div className="mb-12 rounded-lg border border-border bg-muted/50 p-8 text-left">
-                <h2 className="mb-4 text-2xl font-semibold">What happens next?</h2>
-                <ul className="space-y-3 text-muted-foreground">
+                <h2 className="mb-4 text-h2">What happens next?</h2>
+                <ul className="space-y-3 text-body text-muted-foreground">
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
@@ -97,10 +97,10 @@ export default function ThankYouPage() {
 
               {/* Share Section */}
               <div className="mb-12">
-                <h2 className="mb-6 text-2xl font-semibold">
+                <h2 className="mb-6 text-h2">
                   Share the Adventure
                 </h2>
-                <p className="mb-6 text-muted-foreground">
+                <p className="mb-6 text-body text-muted-foreground">
                   Know someone who'd love this? Spread the word!
                 </p>
 

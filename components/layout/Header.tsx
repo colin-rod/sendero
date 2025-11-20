@@ -42,20 +42,20 @@ export function Header() {
               className="flex items-center space-x-2"
               aria-label="Sendero Bike Trails home"
             >
-              <span className="text-2xl font-bold text-primary-600">Sendero Bike Trails</span>
+              <span className="text-h2 text-primary-600">Sendero Bike Trails</span>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden items-center space-x-6 md:flex" aria-label="Main navigation">
               <Link
                 href="#about"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
+                className="text-body text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
               >
                 About
               </Link>
               <Link
                 href="#how-it-works"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
+                className="text-body text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
               >
                 How It Works
               </Link>
@@ -87,14 +87,14 @@ export function Header() {
               <nav className="space-y-1 pb-4 pt-2">
                 <Link
                   href="#about"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                  className="block rounded-md px-3 py-2 text-body text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   onClick={closeMobileMenu}
                 >
                   About
                 </Link>
                 <Link
                   href="#how-it-works"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                  className="block rounded-md px-3 py-2 text-body text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   onClick={closeMobileMenu}
                 >
                   How It Works

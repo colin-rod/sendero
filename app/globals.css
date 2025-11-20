@@ -24,77 +24,22 @@
       scroll-behavior: auto !important;
     }
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 600;
-  }
-
-  h1 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  h2 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  h4 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.625;
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 3rem;
-      line-height: 1;
-    }
-
-    h2 {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-
-    h3 {
-      font-size: 1.875rem;
-      line-height: 2.25rem;
-    }
-
-    h4 {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    h1 {
-      font-size: 3.75rem;
-      line-height: 1;
-    }
-
-    h2 {
-      font-size: 3rem;
-      line-height: 1;
-    }
-  }
 }
 
 @layer components {
+  /* Typography from Figma Design System */
+  .text-h1 {
+    @apply font-bold text-[34px] leading-[100%] tracking-[-0.68px];
+  }
+
+  .text-h2 {
+    @apply font-bold text-[20px] leading-[100%] tracking-[-0.4px];
+  }
+
+  .text-body {
+    @apply font-normal text-[13px] leading-[100%] tracking-[-0.26px];
+  }
+
   .container {
     margin-left: auto;
     margin-right: auto;

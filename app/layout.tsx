@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Work_Sans } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
-const inter = Inter({
+const workSans = Work_Sans({
   subsets: ['latin'],
+  weight: ['400', '700'], // Regular and Bold
+  variable: '--font-work-sans',
   display: 'swap',
-  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -50,8 +51,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={workSans.variable}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>

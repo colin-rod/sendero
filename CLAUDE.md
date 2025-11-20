@@ -347,29 +347,86 @@ npm run test:coverage
 
 ## 🎨 Design System
 
-**Design Theme:** Clean, modern, nature-inspired
+**Design Theme:** Warm, adventurous, golden - inspired by Colombian sunshine and coffee culture
 
 ### Colors
 
-**Primary (Green):**
-- Nature, eco-conscious, sustainable
-- `#22c55e` (green-500)
+**Primary (Golden Yellow):**
+- Warmth, energy, adventure
+- `#e2b71f` (primary-500) - Main brand color
+- `#ca9a1b` (primary-600) - Hover states
+- Full scale: 50-950 shades available
 
-**Accent (Coffee/Yellow):**
-- Warmth, energy, coffee farms
-- `#eab308` (yellow-500)
+**Accent (Light Cream):**
+- Soft, warm, approachable
+- `#fff0bb` (accent-400) - Secondary color
+- Complements the golden primary
 
-**Neutral:**
-- Background: `#ffffff`
-- Foreground: `#0a0a0a`
-- Muted: `#f1f5f9`
+**Neutral Palette:**
+- Background: `#f1f1f1` (Light Gray)
+- Foreground: `#1b1b1b` (Gravel Black)
+- Muted: `#f1f1f1` with `#616161` text (Steel Gray)
 - Border: `#e2e8f0`
+
+**Gray Scale (from Figma):**
+- Comprehensive 50-950 scale
+- Gravel Black (`#1b1b1b`) to Light Gray (`#f1f1f1`)
+- Steel Gray (`#616161`) for muted text
+
+**Semantic Colors:**
+- Error: `#ef4444` (red-500)
+- Success: `#22c55e` (green-500)
+- Warning: `#f59e0b` (amber-500)
+- Info: `#3b82f6` (blue-500)
 
 ### Typography
 
-- **Font:** Inter (Google Fonts)
-- **Headings:** Semibold (600)
+- **Font:** Work Sans (Google Fonts)
+- **Weights:** 400 (normal), 700 (bold)
+- **Headings:** Bold (700)
 - **Body:** Normal (400)
+
+**Custom Typography Specifications (from Figma):**
+
+- **H1:** 34px, line-height 100%, letter-spacing -0.68px, weight 700
+- **H2:** 20px, line-height 100%, letter-spacing -0.4px, weight 700
+- **Body:** 13px, line-height 100%, letter-spacing -0.26px, weight 400
+
+### Design Tokens Architecture
+
+**Centralized Token System:**
+
+The project uses a sophisticated design token architecture in `/lib/design-tokens/`:
+
+- `colors.ts` - Complete color palette with semantic naming
+- `shadows.ts` - Shadow definitions
+- `radius.ts` - Border radius tokens
+- `animations.ts` - Animation presets
+
+**Benefits:**
+
+- ✅ Single source of truth for design values
+- ✅ Type-safe design tokens
+- ✅ Consistent theming across components
+- ✅ Easy to update and maintain
+- ✅ Figma design system integration
+
+**Usage:**
+
+All tokens are imported into [tailwind.config.ts](tailwind.config.ts) and available as Tailwind utilities:
+
+```tsx
+// Use semantic tokens
+<button className="bg-primary-500 text-foreground hover:bg-primary-600">
+  Join Waitlist
+</button>
+
+// Use gray scale
+<p className="text-gray-600">Supporting text</p>
+
+// Use semantic colors
+<span className="text-error">Error message</span>
+```
 
 ### Components
 
@@ -387,9 +444,16 @@ npm run test:coverage
 - Header (sticky navigation)
 - Footer (links and info)
 
-**Design Tokens:**
+**Component Principles:**
 
-See [tailwind.config.ts](tailwind.config.ts) and [app/globals.css](app/globals.css)
+- No hardcoded colors - all use design tokens
+- Consistent spacing using Tailwind's spacing scale
+- Accessibility-first (WCAG AA compliant)
+- Mobile-responsive by default
+
+**Design Token Files:**
+
+See [lib/design-tokens/colors.ts](lib/design-tokens/colors.ts), [tailwind.config.ts](tailwind.config.ts), and [app/globals.css](app/globals.css)
 
 ---
 
