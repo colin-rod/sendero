@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import { NumberBadge } from '@/components/ui/Badge';
 import { WaitlistForm } from '@/components/features/waitlist/WaitlistForm';
+import HeroVideo from '@/components/HeroVideo';
 import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
@@ -13,14 +13,8 @@ export default function HomePage() {
       <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="relative h-[600px] md:h-[700px] lg:h-[800px]">
-          {/* Background Image */}
-          <Image
-            src="/hero-coffee-region.jpg"
-            alt="Lush green rolling hills of Colombia's Coffee Region near Pereira"
-            fill
-            className="object-cover"
-            priority
-          />
+          {/* Background Video */}
+          <HeroVideo />
 
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
