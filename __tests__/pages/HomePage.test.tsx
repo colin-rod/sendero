@@ -29,6 +29,18 @@ jest.mock('@/components/features/waitlist/WaitlistForm', () => ({
   WaitlistForm: () => <form data-testid="waitlist-form">Waitlist Form</form>,
 }));
 
+jest.mock('@/components/HeroVideo', () => ({
+  __esModule: true,
+  default: () => (
+    <div data-testid="hero-video">
+      <img src="/hero-coffee-region.jpg" alt="Coffee Region landscape" />
+      <video>
+        <source src="/hero-optimized.mp4" type="video/mp4" />
+      </video>
+    </div>
+  ),
+}));
+
 describe('HomePage', () => {
   beforeEach(() => {
     render(<HomePage />);
@@ -71,9 +83,16 @@ describe('HomePage', () => {
       expect(screen.getAllByText(/coffee farm visits/i).length).toBeGreaterThan(0);
     });
 
-    it('should render hero image', () => {
-      const image = screen.getByAltText(/lush green rolling hills of colombia's coffee region/i);
+    it('should render hero video component', () => {
+      const heroVideo = screen.getByTestId('hero-video');
+      expect(heroVideo).toBeInTheDocument();
+
+      // Check that it contains both image (poster) and video
+      const image = screen.getByAltText(/coffee region landscape/i);
       expect(image).toBeInTheDocument();
+
+      const video = heroVideo.querySelector('video');
+      expect(video).toBeInTheDocument();
     });
   });
 
