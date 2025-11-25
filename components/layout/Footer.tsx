@@ -15,7 +15,7 @@ export function Footer() {
               </p>
             </div>
             <div>
-              <h4 className="mb-3 text-body">Quick Links</h4>
+              <h4 className="mb-3 text-h4">Quick Links</h4>
               <ul className="space-y-2 text-body text-muted-foreground">
                 <li>
                   <a href="#about" className="hover:text-foreground">
@@ -30,7 +30,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="mb-3 text-body">Contact</h4>
+              <h4 className="mb-3 text-h4">Contact</h4>
               <p className="text-body text-muted-foreground">
                 Questions? We'd love to hear from you.
               </p>

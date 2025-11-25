@@ -2,111 +2,44 @@
  * Sendero Design System - Typography Tokens
  *
  * Font families, sizes, weights, and line heights
+ * Updated from Figma design specifications (November 2024)
  */
 
 export const typography = {
   // Font Families
   fontFamily: {
-    sans: ['Inter', 'system-ui', 'sans-serif'],
+    sans: ['var(--font-work-sans)', 'system-ui', 'sans-serif'],
     mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
   },
 
-  // Font Sizes (with responsive variants)
+  // Font Sizes (Tailwind standard scale from Figma)
   fontSize: {
-    // Display sizes (hero headings)
-    display: {
-      mobile: '2.25rem', // 36px
-      tablet: '3rem', // 48px
-      desktop: '3.75rem', // 60px
-      lineHeight: {
-        mobile: '2.5rem', // 40px
-        tablet: '1', // tight
-        desktop: '1', // tight
-      },
-    },
+    // Heading styles from Figma
+    h1: '3rem', // 48px - text-5xl
+    h2: '2.25rem', // 36px - text-4xl
+    h3: '1.5rem', // 24px - text-2xl
 
-    // H1
-    h1: {
-      mobile: '2.25rem', // 36px
-      tablet: '3rem', // 48px
-      desktop: '3.75rem', // 60px
-      lineHeight: {
-        mobile: '2.5rem',
-        tablet: '1',
-        desktop: '1',
-      },
-    },
+    // Body and utility sizes from Figma
+    base: '1rem', // 16px - text-base
+    label: '0.75rem', // 12px - text-xs
 
-    // H2
-    h2: {
-      mobile: '1.875rem', // 30px
-      tablet: '2.25rem', // 36px
-      desktop: '3rem', // 48px
-      lineHeight: {
-        mobile: '2.25rem',
-        tablet: '2.5rem',
-        desktop: '1',
-      },
-    },
-
-    // H3
-    h3: {
-      mobile: '1.5rem', // 24px
-      tablet: '1.875rem', // 30px
-      desktop: '1.875rem', // 30px
-      lineHeight: {
-        mobile: '2rem',
-        tablet: '2.25rem',
-        desktop: '2.25rem',
-      },
-    },
-
-    // H4
-    h4: {
-      mobile: '1.25rem', // 20px
-      tablet: '1.5rem', // 24px
-      desktop: '1.5rem', // 24px
-      lineHeight: {
-        mobile: '1.75rem',
-        tablet: '2rem',
-        desktop: '2rem',
-      },
-    },
-
-    // H5
-    h5: {
-      mobile: '1.125rem', // 18px
-      tablet: '1.25rem', // 20px
-      desktop: '1.25rem', // 20px
-      lineHeight: '1.5',
-    },
-
-    // H6
-    h6: {
-      mobile: '1rem', // 16px
-      tablet: '1.125rem', // 18px
-      desktop: '1.125rem', // 18px
-      lineHeight: '1.5',
-    },
-
-    // Body text
-    base: '1rem', // 16px
+    // Additional Tailwind sizes (for flexibility)
     lg: '1.125rem', // 18px
     sm: '0.875rem', // 14px
     xs: '0.75rem', // 12px
 
     // Utility sizes
     lead: '1.25rem', // 20px - Lead paragraphs
-    caption: '0.875rem', // 14px - Captions, labels
+    caption: '0.875rem', // 14px - Captions
     overline: '0.75rem', // 12px - Overlines, metadata
   },
 
-  // Font Weights
+  // Font Weights (from Figma)
   fontWeight: {
-    normal: '400',
-    medium: '500',
-    semibold: '600',
-    bold: '700',
+    normal: '400', // Body text
+    medium: '500', // Header 3
+    semibold: '600', // Labels
+    bold: '700', // Header 1 & 2
   },
 
   // Line Heights
@@ -117,6 +50,8 @@ export const typography = {
     normal: '1.5',
     relaxed: '1.625',
     loose: '2',
+    // Figma-specific line heights
+    base: '1rem', // 16px - used for body text (leading-4)
   },
 
   // Letter Spacing
@@ -131,28 +66,43 @@ export const typography = {
 } as const;
 
 /**
- * Typography usage guidelines:
+ * Typography usage guidelines (from Figma, November 2024):
  *
- * HEADINGS
- * - Always use semibold (600) weight
- * - Use display size for hero sections
- * - Maintain hierarchy: h1 > h2 > h3 > h4 > h5 > h6
+ * HEADER 1
+ * - Size: text-5xl (48px)
+ * - Weight: font-bold (700)
+ * - Usage: Main page headings, hero titles
+ * - Tailwind: text-5xl font-bold
  *
- * BODY TEXT
- * - Use normal (400) weight for readability
- * - Base size (16px) for primary content
- * - Use 'lead' size for important paragraphs
- * - Use 'sm' for secondary content
+ * HEADER 2
+ * - Size: text-4xl (36px)
+ * - Weight: font-bold (700)
+ * - Usage: Section headings, major content divisions
+ * - Tailwind: text-4xl font-bold
  *
- * LABELS & UI
- * - Use medium (500) weight for labels
- * - Use 'sm' or 'xs' for form labels
- * - Use 'caption' for helper text
+ * HEADER 3
+ * - Size: text-2xl (24px)
+ * - Weight: font-medium (500)
+ * - Usage: Sub-section headings, card titles
+ * - Tailwind: text-2xl font-medium
  *
- * LINE HEIGHT
- * - Headings: tight to none (1 to 1.25)
- * - Body: normal to relaxed (1.5 to 1.625)
- * - UI elements: normal (1.5)
+ * BODY
+ * - Size: text-base (16px)
+ * - Weight: font-normal (400)
+ * - Line Height: leading-4 (16px)
+ * - Usage: Primary body text, paragraphs
+ * - Tailwind: text-base font-normal leading-4
+ *
+ * LABEL
+ * - Size: text-xs (12px)
+ * - Weight: font-semibold (600)
+ * - Usage: Form labels, metadata, small UI text
+ * - Tailwind: text-xs font-semibold
+ *
+ * HIERARCHY
+ * - Maintain consistent hierarchy: H1 > H2 > H3
+ * - Use semantic HTML tags (h1, h2, h3) for accessibility
+ * - Apply styles via Tailwind utilities or custom classes
  */
 
 export type TypographyToken = typeof typography;

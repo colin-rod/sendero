@@ -17,7 +17,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           className={`h-4 w-4 rounded border-border text-primary-500 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${className}`}
           {...props}
         />
-        <label htmlFor={checkboxId} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+        <label htmlFor={checkboxId} className="text-label leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
           {label}
         </label>
       </div>

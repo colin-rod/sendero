@@ -33,11 +33,13 @@ const config: Config = {
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
 
-      // Custom typography sizes from Figma
+      // Custom typography sizes from Figma (November 2024)
       fontSize: {
-        'h1': ['34px', { lineHeight: '100%', letterSpacing: '-0.68px', fontWeight: '700' }],
-        'h2': ['20px', { lineHeight: '100%', letterSpacing: '-0.4px', fontWeight: '700' }],
-        'body': ['13px', { lineHeight: '100%', letterSpacing: '-0.26px', fontWeight: '400' }],
+        'h1': ['3rem', { fontWeight: '700' }], // 48px - text-5xl, bold
+        'h2': ['2.25rem', { fontWeight: '700' }], // 36px - text-4xl, bold
+        'h3': ['1.5rem', { fontWeight: '500' }], // 24px - text-2xl, medium
+        'body': ['1rem', { lineHeight: '1rem', fontWeight: '400' }], // 16px - text-base, normal, leading-4
+        'label': ['0.75rem', { fontWeight: '600' }], // 12px - text-xs, semibold
       },
 
       // Spacing

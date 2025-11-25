@@ -382,15 +382,38 @@ npm run test:coverage
 ### Typography
 
 - **Font:** Work Sans (Google Fonts)
-- **Weights:** 400 (normal), 700 (bold)
-- **Headings:** Bold (700)
-- **Body:** Normal (400)
+- **Weights:** 400 (normal), 500 (medium), 600 (semibold), 700 (bold)
 
-**Custom Typography Specifications (from Figma):**
+**Typography Specifications (from Figma, November 2024):**
 
-- **H1:** 34px, line-height 100%, letter-spacing -0.68px, weight 700
-- **H2:** 20px, line-height 100%, letter-spacing -0.4px, weight 700
-- **Body:** 13px, line-height 100%, letter-spacing -0.26px, weight 400
+| Style | Size (px) | Tailwind Class | Weight | Line Height | Usage |
+|-------|-----------|----------------|--------|-------------|-------|
+| **H1** | 48px | `text-5xl` | 700 (bold) | Default | Main page headings, hero titles |
+| **H2** | 36px | `text-4xl` | 700 (bold) | Default | Section headings |
+| **H3** | 24px | `text-2xl` | 500 (medium) | Default | Sub-section headings |
+| **H4** | 14px | `text-sm` | 600 (semibold) | Default | Secondary headings, footer headings |
+| **Body** | 16px | `text-base` | 400 (normal) | `leading-4` (16px) | Primary body text |
+| **Label** | 12px | `text-xs` | 600 (semibold) | Default | Form labels, metadata |
+
+**Implementation:**
+
+```tsx
+// Using Tailwind utilities
+<h1 className="text-5xl font-bold">Header 1</h1>
+<h2 className="text-4xl font-bold">Header 2</h2>
+<h3 className="text-2xl font-medium">Header 3</h3>
+<h4 className="text-sm font-semibold">Header 4</h4>
+<p className="text-base font-normal leading-4">Body text</p>
+<label className="text-xs font-semibold">LABEL</label>
+
+// Using custom CSS classes (recommended)
+<h1 className="text-h1">Header 1</h1>
+<h2 className="text-h2">Header 2</h2>
+<h3 className="text-h3">Header 3</h3>
+<h4 className="text-h4">Header 4</h4>
+<p className="text-body">Body text</p>
+<label className="text-label">LABEL</label>
+```
 
 ### Design Tokens Architecture
 
@@ -399,6 +422,7 @@ npm run test:coverage
 The project uses a sophisticated design token architecture in `/lib/design-tokens/`:
 
 - `colors.ts` - Complete color palette with semantic naming
+- `typography.ts` - Typography scale, font families, weights, and line heights
 - `shadows.ts` - Shadow definitions
 - `radius.ts` - Border radius tokens
 - `animations.ts` - Animation presets
