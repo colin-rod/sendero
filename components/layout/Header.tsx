@@ -51,7 +51,7 @@ export function Header() {
                 className="h-10 w-10"
                 priority
               />
-              <span className="text-h2 text-primary-600">Sendero Bike Trails</span>
+              <span className="text-h3 text-primary-600">Sendero Bike Trails</span>
             </Link>
 
             {/* Desktop Navigation */}
