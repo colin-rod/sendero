@@ -78,7 +78,7 @@ export default function HomePage() {
                 <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
                   1
                 </NumberBadge>
-                <h3 className="mb-2 text-h2 text-foreground">Sign Up</h3>
+                <h3 className="mb-2 text-h3 text-foreground">Sign Up</h3>
                 <p className="text-body text-muted-foreground">
                   Fill out the quick form below with your email and tour
                   preferences.
@@ -88,7 +88,7 @@ export default function HomePage() {
                 <NumberBadge variant="accent" size="xl" className="mb-4 shadow-md">
                   2
                 </NumberBadge>
-                <h3 className="mb-2 text-h2 text-foreground">Stay Tuned</h3>
+                <h3 className="mb-2 text-h3 text-foreground">Stay Tuned</h3>
                 <p className="text-body text-muted-foreground">
                   We'll keep you updated as we finalize tour dates and packages.
                 </p>
@@ -97,7 +97,7 @@ export default function HomePage() {
                 <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
                   3
                 </NumberBadge>
-                <h3 className="mb-2 text-h2 text-foreground">Book Your Adventure</h3>
+                <h3 className="mb-2 text-h3 text-foreground">Book Your Adventure</h3>
                 <p className="text-body text-muted-foreground">
                   Be among the first to book when tours officially launch.
                 </p>
@@ -123,7 +123,7 @@ export default function HomePage() {
                 <div className="mb-4">
                   <Bike className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h2">Beginner Cyclists</h3>
+                <h3 className="mb-2 text-h3">Beginner Cyclists</h3>
                 <p className="text-body text-muted-foreground">
                   Never biked long distances? No problem. Our e-bikes and gentle
                   routes make it easy for anyone to enjoy.
@@ -133,7 +133,7 @@ export default function HomePage() {
                 <div className="mb-4">
                   <Globe className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h2">
+                <h3 className="mb-2 text-h3">
                   Eco-Conscious Travelers
                 </h3>
                 <p className="text-body text-muted-foreground">
@@ -145,7 +145,7 @@ export default function HomePage() {
                 <div className="mb-4">
                   <Coffee className="h-10 w-10 text-accent-600" />
                 </div>
-                <h3 className="mb-2 text-h2">Coffee Lovers</h3>
+                <h3 className="mb-2 text-h3">Coffee Lovers</h3>
                 <p className="text-body text-muted-foreground">
                   Experience authentic coffee farm visits and learn from local
                   farmers.
@@ -155,7 +155,7 @@ export default function HomePage() {
                 <div className="mb-4">
                   <Users className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h2">Women-Only Groups</h3>
+                <h3 className="mb-2 text-h3">Women-Only Groups</h3>
                 <p className="text-body text-muted-foreground">
                   Safe, supportive group tours designed specifically for women
                   travelers.
@@ -165,7 +165,7 @@ export default function HomePage() {
                 <div className="mb-4">
                   <Mountain className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h2">Nature Enthusiasts</h3>
+                <h3 className="mb-2 text-h3">Nature Enthusiasts</h3>
                 <p className="text-body text-muted-foreground">
                   Explore stunning landscapes, cloud forests, and mountain
                   trails.
@@ -175,7 +175,7 @@ export default function HomePage() {
                 <div className="mb-4">
                   <Backpack className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h2">
+                <h3 className="mb-2 text-h3">
                   Weekend Adventurers
                 </h3>
                 <p className="text-body text-muted-foreground">
