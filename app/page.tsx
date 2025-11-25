@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { NumberBadge } from '@/components/ui/Badge';
 import { WaitlistForm } from '@/components/features/waitlist/WaitlistForm';
 import HeroVideo from '@/components/HeroVideo';
+import HeroEmailCapture from '@/components/HeroEmailCapture';
 import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
@@ -31,7 +32,7 @@ export default function HomePage() {
                   Pereira's stunning landscapes. E-bikes, women-only groups, and
                   authentic coffee farm experiences.
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 mb-8">
                   <div className="flex items-center space-x-2">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Bike className="h-5 w-5 text-white" />
@@ -53,6 +54,8 @@ export default function HomePage() {
                     <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Coffee Farm Visits</span>
                   </div>
                 </div>
+                {/* Hero Email Capture */}
+                <HeroEmailCapture />
               </div>
             </Container>
           </div>
