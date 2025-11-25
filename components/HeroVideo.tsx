@@ -1,25 +1,17 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroVideo() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
   const [hasError, setHasError] = useState(false);
-
-  // Show video after a brief delay to ensure poster image is visible first
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
 
   if (hasError) {
     // Fallback to static image if video fails to load
     return (
       <Image
-        src="/hero-coffee-region.jpg"
+        src="/hero-poster.jpg"
         alt="Coffee Region landscape"
         fill
         className="object-cover"
@@ -30,28 +22,29 @@ export default function HeroVideo() {
 
   return (
     <>
-      {/* Poster image - shows while video loads */}
-      {!isLoaded && (
-        <Image
-          src="/hero-coffee-region.jpg"
-          alt="Coffee Region landscape"
-          fill
-          className="object-cover"
-          priority
-        />
-      )}
+      {/* Poster image - fades out when video is ready */}
+      <Image
+        src="/hero-poster.jpg"
+        alt="Coffee Region landscape"
+        fill
+        className={`object-cover transition-opacity duration-1000 ${
+          isVideoReady ? 'opacity-0' : 'opacity-100'
+        }`}
+        priority
+      />
 
-      {/* Video element */}
+      {/* Video element - fades in when ready to play */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        preload="metadata"
-        poster="/hero-coffee-region.jpg"
+        preload="auto"
+        poster="/hero-poster.jpg"
+        onCanPlay={() => setIsVideoReady(true)}
         onError={() => setHasError(true)}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+          isVideoReady ? 'opacity-100' : 'opacity-0'
         }`}
       >
         <source src="/hero-optimized.mp4" type="video/mp4" />
