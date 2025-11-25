@@ -27,17 +27,29 @@
 }
 
 @layer components {
-  /* Typography from Figma Design System */
+  /* Typography from Figma Design System (November 2024) */
   .text-h1 {
-    @apply font-bold text-[34px] leading-[100%] tracking-[-0.68px];
+    @apply text-5xl font-bold;
   }
 
   .text-h2 {
-    @apply font-bold text-[20px] leading-[100%] tracking-[-0.4px];
+    @apply text-4xl font-bold;
+  }
+
+  .text-h3 {
+    @apply text-2xl font-medium;
   }
 
   .text-body {
-    @apply font-normal text-[13px] leading-[100%] tracking-[-0.26px];
+    @apply text-base font-normal leading-4;
+  }
+
+  .text-label {
+    @apply text-xs font-semibold;
+  }
+
+  .text-h4 {
+    @apply text-sm font-semibold;
   }
 
   .container {

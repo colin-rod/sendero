@@ -26,7 +26,7 @@ export function RadioGroup({
   return (
     <div className="w-full">
       {label && (
-        <label className="label mb-3 block text-sm font-medium">{label}</label>
+        <label className="label mb-3 block text-label">{label}</label>
       )}
       <div className="space-y-2">
         {options.map((option) => (
@@ -44,9 +44,9 @@ export function RadioGroup({
               htmlFor={`${name}-${option.value}`}
               className="ml-2 block cursor-pointer"
             >
-              <span className="text-sm font-medium">{option.label}</span>
+              <span className="text-label">{option.label}</span>
               {option.description && (
-                <span className="block text-sm text-muted-foreground">
+                <span className="block text-label text-muted-foreground">
                   {option.description}
                 </span>
               )}
@@ -54,7 +54,7 @@ export function RadioGroup({
           </div>
         ))}
       </div>
-      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+      {error && <p className="mt-1 text-label text-red-500">{error}</p>}
     </div>
   );
 }
