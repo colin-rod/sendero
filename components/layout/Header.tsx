@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Container } from '@/components/ui/Container';
@@ -39,9 +40,17 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-3"
               aria-label="Sendero Bike Trails home"
             >
+              <Image
+                src="/logo.svg"
+                alt="Sendero logo"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+                priority
+              />
               <span className="text-h2 text-primary-600">Sendero Bike Trails</span>
             </Link>
 
