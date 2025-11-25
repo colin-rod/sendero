@@ -23,6 +23,7 @@ export default function HeroEmailCapture() {
 
   const handleSubmit = async () => {
     setError('')
+    setShowSuccess(false)
 
     // Validate email
     if (!isValidEmail(email)) {
@@ -62,8 +63,16 @@ export default function HeroEmailCapture() {
         return
       }
 
-      // Success - redirect to thank you page
-      router.push('/thank-you')
+      // Success - show toast notification
+      setShowSuccess(true)
+      setEmail('')
+      setIsSubmitting(false)
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setShowSuccess(false)
+        setIsExpanded(false)
+      }, 5000)
     } catch {
       setError('Network error. Please check your connection and try again.')
       setIsSubmitting(false)
@@ -71,7 +80,7 @@ export default function HeroEmailCapture() {
   }
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && email) {
+    if (e.key === 'Enter') {
       handleSubmit()
     }
   }
@@ -117,15 +126,29 @@ export default function HeroEmailCapture() {
             ${isExpanded ? 'flex-shrink-0' : 'w-full'}
           `}
         >
-          {isExpanded && email ? 'SUBMIT' : 'SIGN UP'}
+          {isExpanded ? 'SUBMIT' : 'LEARN MORE'}
         </Button>
       </div>
+
+      {/* Helper Text - Shows when expanded */}
+      {isExpanded && !showSuccess && (
+        <p className="text-white/90 text-sm text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          No spam, just updates when we launch
+        </p>
+      )}
 
       {/* Error Message */}
       {error && (
         <p className="text-error-500 text-sm bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
           {error}
         </p>
+      )}
+
+      {/* Success Toast */}
+      {showSuccess && (
+        <div className="bg-green-500 text-white text-sm px-6 py-3 rounded-lg shadow-xl animate-fade-in">
+          ✓ Thanks! We'll keep you updated when we launch.
+        </div>
       )}
     </div>
   )
