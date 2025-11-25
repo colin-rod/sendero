@@ -16,44 +16,41 @@ export default function HomePage() {
           {/* Background Video */}
           <HeroVideo />
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
-
           {/* Content */}
           <div className="relative z-10 flex h-full items-center">
             <Container>
               <div className="max-w-3xl">
-                <h1 className="mb-6 text-h1 text-white">
+                <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                   Discover Colombia's Coffee Region
-                  <span className="block text-primary-400">
+                  <span className="block text-primary-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                     One Pedal at a Time
                   </span>
                 </h1>
-                <p className="mb-8 text-body text-white/90">
+                <p className="mb-8 text-body text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   Beginner-friendly, sustainable hike & bike tours through
                   Pereira's stunning landscapes. E-bikes, women-only groups, and
                   authentic coffee farm experiences.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Bike className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-body text-white">E-Bikes Available</span>
+                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">E-Bikes Available</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Leaf className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-body text-white">
+                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                       Eco-Conscious Tours
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Coffee className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-body text-white">Coffee Farm Visits</span>
+                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Coffee Farm Visits</span>
                   </div>
                 </div>
               </div>
