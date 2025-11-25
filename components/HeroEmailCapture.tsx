@@ -115,7 +115,8 @@ export default function HeroEmailCapture() {
             whitespace-nowrap
             shadow-xl
             !text-white font-semibold
-            ${isExpanded && email ? 'bg-primary-600 hover:bg-primary-700' : ''}
+            !bg-primary-500 hover:!bg-primary-600 active:!bg-primary-700
+            border-2 border-primary-400
             ${isExpanded ? 'flex-shrink-0' : 'w-full'}
           `}
         >
