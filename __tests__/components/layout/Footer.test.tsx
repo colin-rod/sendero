@@ -114,10 +114,10 @@ describe('Footer', () => {
       expect(footer).toHaveClass('border-t', 'border-border');
     });
 
-    it('should have muted background', () => {
+    it('should have dark background', () => {
       render(<Footer />);
       const footer = screen.getByRole('contentinfo');
-      expect(footer).toHaveClass('bg-muted/50');
+      expect(footer).toHaveClass('bg-gray-800', 'text-white');
     });
 
     it('should have proper spacing', () => {
@@ -129,7 +129,7 @@ describe('Footer', () => {
     it('should have primary color on branding', () => {
       render(<Footer />);
       const branding = screen.getByText('Sendero Bike Trails');
-      expect(branding).toHaveClass('text-primary-600');
+      expect(branding).toHaveClass('text-primary-400');
     });
   });
 
@@ -138,7 +138,7 @@ describe('Footer', () => {
       render(<Footer />);
       const links = screen.getAllByText(/about/i);
       const aboutLink = links.find((link) => link.tagName === 'A');
-      expect(aboutLink).toHaveClass('hover:text-foreground');
+      expect(aboutLink).toHaveClass('hover:text-white');
     });
   });
 
