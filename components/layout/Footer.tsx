@@ -35,7 +35,7 @@ export function Footer() {
                 Questions? We'd love to hear from you.
               </p>
               <a
-                href="https://www.instagram.com/sendero_bike_tours/"
+                href="https://www.instagram.com/sendero_bike_trails/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 inline-flex items-center text-body text-primary-600 hover:text-primary-700"
