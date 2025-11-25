@@ -1,16 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { isValidEmail } from '@/lib/utils/validation'
 import { Button } from '@/components/ui/Button'
 
 export default function HeroEmailCapture() {
-  const router = useRouter()
   const [isExpanded, setIsExpanded] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const handleButtonClick = () => {
     if (!isExpanded) {
@@ -18,10 +17,8 @@ export default function HeroEmailCapture() {
       return
     }
 
-    // If expanded and has email, submit
-    if (email) {
-      handleSubmit()
-    }
+    // If expanded, always allow submit
+    handleSubmit()
   }
 
   const handleSubmit = async () => {
