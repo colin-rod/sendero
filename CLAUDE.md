@@ -268,6 +268,34 @@ development (development)
 6. **When ready for production: merge `development` → `main`**
 7. **Deployment pipeline runs and deploys to Vercel**
 
+### 🤖 Git Workflow for Claude Code (AI Assistant)
+
+**IMPORTANT INSTRUCTIONS FOR CLAUDE:**
+
+When the user requests to commit and deploy changes:
+
+1. ✅ **DO**: Stage relevant files with `git add`
+2. ✅ **DO**: Create a commit with descriptive message
+3. ✅ **DO**: Push to `development` branch: `git push origin development`
+4. ❌ **DO NOT**: Merge to `main` branch
+5. ❌ **DO NOT**: Push to `main` branch
+6. ❌ **DO NOT**: Switch to `main` branch
+
+**Rationale:** The user will manually review changes in `development` and merge to `main` via GitHub UI or local Git when ready for production deployment.
+
+**Example workflow:**
+```bash
+# ✅ Correct workflow
+git add [files]
+git commit -m "feat: description"
+git push origin development
+
+# ❌ NEVER do this
+git checkout main
+git merge development
+git push origin main
+```
+
 ---
 
 ## 🚀 CI/CD Pipeline
