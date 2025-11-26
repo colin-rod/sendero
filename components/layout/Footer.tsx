@@ -35,6 +35,12 @@ export function Footer() {
                 Questions? We'd love to hear from you.
               </p>
               <a
+                href="mailto:info@senderobiketrails.com"
+                className="mt-3 block text-body text-primary-400 hover:text-primary-300 transition-colors"
+              >
+                info@senderobiketrails.com
+              </a>
+              <a
                 href="https://www.instagram.com/sendero_bike_trails/"
                 target="_blank"
                 rel="noopener noreferrer"
