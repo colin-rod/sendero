@@ -195,6 +195,16 @@
     },
     "backToHome": "Volver al Inicio"
   },
+  "contactPage": {
+    "title": "Contacto",
+    "sections": {
+      "whatsapp": "Enlace de WhatsApp",
+      "email": "Correo electrónico",
+      "smallForm": "Pequeño formulario de contacto",
+      "microcopy": "Microcopy: \"Estamos aquí para ti\""
+    },
+    "sectionsCount": "{{count}} secciones"
+  },
   "metadata": {
     "title": "Sendero Bike Trails - Descubre la Región Cafetera de Colombia",
     "description": "Tours de senderismo y ciclismo para principiantes en Pereira, Colombia. Bicicletas eléctricas, grupos solo para mujeres y experiencias auténticas en fincas cafeteras. ¡Únete a nuestra lista de espera hoy!",

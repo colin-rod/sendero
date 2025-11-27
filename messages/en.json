@@ -195,6 +195,16 @@
     },
     "backToHome": "Back to Home"
   },
+  "contactPage": {
+    "title": "Contact",
+    "sections": {
+      "whatsapp": "WhatsApp link",
+      "email": "Email",
+      "smallForm": "Small contact form",
+      "microcopy": "Microcopy: \"We're here for you\""
+    },
+    "sectionsCount": "{{count}} sections"
+  },
   "metadata": {
     "title": "Sendero Bike Trails - Discover Colombia's Coffee Region",
     "description": "Beginner-friendly hike & bike tours in Pereira, Colombia. E-bikes, women-only groups, and authentic coffee farm experiences. Join our waitlist today!",
