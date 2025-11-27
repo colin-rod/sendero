@@ -1,0 +1,203 @@
+{
+  "header": {
+    "skipToContent": "Saltar al contenido",
+    "logoAlt": "Logo de Sendero",
+    "brandName": "Sendero Bike Trails",
+    "ariaLabel": "Inicio de Sendero Bike Trails",
+    "nav": {
+      "about": "Acerca de",
+      "howItWorks": "Cómo Funciona"
+    },
+    "mobileMenu": {
+      "toggle": "Alternar menú de navegación",
+      "ariaLabel": "Navegación móvil"
+    }
+  },
+  "hero": {
+    "title": "Descubre la Región Cafetera de Colombia",
+    "subtitle": "Un Pedaleo a la Vez",
+    "description": "Tours de senderismo y ciclismo para principiantes, sostenibles a través de los impresionantes paisajes de Pereira. Bicicletas eléctricas, grupos solo para mujeres y experiencias auténticas en fincas cafeteras.",
+    "features": {
+      "eBikes": "Bicicletas Eléctricas Disponibles",
+      "ecoConscious": "Tours Eco-Conscientes",
+      "coffeeFarm": "Visitas a Fincas Cafeteras"
+    },
+    "emailCapture": {
+      "buttonLearnMore": "MÁS INFORMACIÓN",
+      "buttonSubmit": "ENVIAR",
+      "placeholder": "Ingresa tu correo",
+      "helperText": "Sin spam, solo actualizaciones cuando lancemos",
+      "successMessage": "✓ ¡Gracias! Te mantendremos informado cuando lancemos."
+    }
+  },
+  "howItWorks": {
+    "heading": "Cómo Funciona",
+    "description": "Únete a la lista de espera hoy y sé el primero en saber cuándo abrimos los tours. Simple, fácil y sin compromiso.",
+    "steps": {
+      "signUp": {
+        "title": "Regístrate",
+        "description": "Completa el formulario rápido con tu correo y preferencias de tour."
+      },
+      "stayTuned": {
+        "title": "Mantente Informado",
+        "description": "Te mantendremos actualizado mientras finalizamos fechas y paquetes de tours."
+      },
+      "bookAdventure": {
+        "title": "Reserva tu Aventura",
+        "description": "Sé de los primeros en reservar cuando los tours se lancen oficialmente."
+      }
+    }
+  },
+  "perfectFor": {
+    "heading": "Perfecto Para",
+    "description": "Nuestros tours están diseñados para todos, desde principiantes hasta ciclistas moderados que buscan una experiencia colombiana auténtica.",
+    "personas": {
+      "beginnerCyclists": {
+        "title": "Ciclistas Principiantes",
+        "description": "¿Nunca has pedaleado largas distancias? No hay problema. Nuestras bicicletas eléctricas y rutas suaves lo hacen fácil para todos."
+      },
+      "ecoTravelers": {
+        "title": "Viajeros Eco-Conscientes",
+        "description": "Turismo sostenible que respeta las comunidades locales y el medio ambiente."
+      },
+      "coffeeLovers": {
+        "title": "Amantes del Café",
+        "description": "Experimenta visitas auténticas a fincas cafeteras y aprende de los caficultores locales."
+      },
+      "womenGroups": {
+        "title": "Grupos Solo Mujeres",
+        "description": "Tours grupales seguros y de apoyo diseñados específicamente para mujeres viajeras."
+      },
+      "natureEnthusiasts": {
+        "title": "Entusiastas de la Naturaleza",
+        "description": "Explora paisajes impresionantes, bosques de niebla y senderos de montaña."
+      },
+      "weekendAdventurers": {
+        "title": "Aventureros de Fin de Semana",
+        "description": "Viajes cortos perfectos para quienes tienen poco tiempo pero mucho deseo de aventura."
+      }
+    }
+  },
+  "waitlist": {
+    "heading": "Únete a la Lista de Espera",
+    "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura."
+  },
+  "form": {
+    "labels": {
+      "email": "Correo electrónico *",
+      "tourDuration": "Duración preferida del tour *",
+      "interestTypes": "¿Qué te interesa? (selecciona todos los que apliquen) *",
+      "fitnessLevel": "Nivel de condición física *",
+      "travelTimeline": "¿Cuándo planeas viajar? *"
+    },
+    "placeholders": {
+      "email": "tu@ejemplo.com"
+    },
+    "tourDuration": {
+      "oneDay": {
+        "label": "1 Día",
+        "description": "Perfecto para una aventura rápida"
+      },
+      "weekend": {
+        "label": "Fin de Semana (2-3 días)",
+        "description": "Explora más a un ritmo relajado"
+      },
+      "oneWeek": {
+        "label": "1 Semana",
+        "description": "Experiencia de inmersión completa"
+      }
+    },
+    "interests": {
+      "hiking": "Senderismo",
+      "biking": "Ciclismo",
+      "eBike": "Bicicleta Eléctrica (e-bike)",
+      "womenOnly": "Tours solo para mujeres",
+      "coffeeFarm": "Experiencias en fincas cafeteras"
+    },
+    "fitnessLevel": {
+      "beginner": {
+        "label": "Principiante",
+        "description": "Nuevo en ciclismo o senderismo"
+      },
+      "moderate": {
+        "label": "Moderado",
+        "description": "Algo de experiencia, cómodo con actividad física"
+      }
+    },
+    "travelTimeline": {
+      "next3Months": "Próximos 3 meses",
+      "next6Months": "Próximos 6 meses",
+      "later": "Solo explorando por ahora"
+    },
+    "buttons": {
+      "submit": "Únete a la Lista de Espera",
+      "submitting": "Enviando..."
+    },
+    "helperText": "Respetamos tu privacidad. Sin spam, solo actualizaciones sobre tours."
+  },
+  "validation": {
+    "emailRequired": "El correo electrónico es obligatorio",
+    "emailInvalid": "Por favor ingresa un correo electrónico válido",
+    "tourDurationRequired": "Por favor selecciona una duración de tour",
+    "interestTypesRequired": "Por favor selecciona al menos un interés",
+    "fitnessLevelRequired": "Por favor selecciona un nivel de condición física",
+    "travelTimelineRequired": "Por favor selecciona cuándo planeas viajar",
+    "emailDuplicate": "Este correo ya está en la lista de espera",
+    "generalError": "Algo salió mal. Por favor intenta de nuevo.",
+    "networkError": "Error de red. Por favor verifica tu conexión e intenta de nuevo."
+  },
+  "footer": {
+    "brandDescription": "Tours de senderismo y ciclismo para principiantes en la Región Cafetera de Colombia.",
+    "quickLinks": {
+      "heading": "Enlaces Rápidos",
+      "about": "Acerca de",
+      "howItWorks": "Cómo Funciona"
+    },
+    "contact": {
+      "heading": "Contacto",
+      "description": "¿Preguntas? Nos encantaría saber de ti.",
+      "email": "info@senderobiketrails.com",
+      "instagram": "Síguenos en Instagram"
+    },
+    "copyright": "Todos los derechos reservados."
+  },
+  "thankYou": {
+    "heading": "¡Estás en la Lista!",
+    "message": "Gracias por unirte a la lista de espera de Sendero Bike Trails. Te contactaremos cuando los tours abran con acceso anticipado exclusivo para miembros de la lista de espera.",
+    "whatHappensNext": {
+      "heading": "¿Qué sigue?",
+      "steps": {
+        "checkInbox": {
+          "title": "Revisa tu bandeja de entrada",
+          "description": "Recibirás un correo de confirmación en breve"
+        },
+        "stayTuned": {
+          "title": "Mantente informado",
+          "description": "Te mantendremos actualizado sobre fechas y paquetes de tours"
+        },
+        "beFirst": {
+          "title": "Sé de los primeros",
+          "description": "Los miembros de la lista de espera obtienen acceso prioritario para reservar"
+        }
+      }
+    },
+    "share": {
+      "heading": "Comparte la Aventura",
+      "description": "¿Conoces a alguien a quien le gustaría esto? ¡Corre la voz!",
+      "buttons": {
+        "copyLink": "Copiar Enlace",
+        "copied": "¡Copiado!",
+        "whatsapp": "WhatsApp",
+        "twitter": "Twitter",
+        "facebook": "Facebook"
+      },
+      "shareText": "¡Mira Sendero Bike Trails - tours de senderismo y ciclismo para principiantes en la Región Cafetera de Colombia!"
+    },
+    "backToHome": "Volver al Inicio"
+  },
+  "metadata": {
+    "title": "Sendero Bike Trails - Descubre la Región Cafetera de Colombia",
+    "description": "Tours de senderismo y ciclismo para principiantes en Pereira, Colombia. Bicicletas eléctricas, grupos solo para mujeres y experiencias auténticas en fincas cafeteras. ¡Únete a nuestra lista de espera hoy!",
+    "keywords": "tours colombia, tours región cafetera, tours bicicleta pereira, tours e-bike, viajes sostenibles colombia, tours fincas cafeteras"
+  }
+}

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t('title'),
       description: t('description'),
       type: 'website',
-      locale: locale === 'en' ? 'en_US' : 'de_DE',
+      locale: locale === 'en' ? 'en_US' : locale === 'de' ? 'de_DE' : 'es_ES',
     },
     twitter: {
       card: 'summary_large_image',
@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         en: '/en',
         de: '/de',
+        es: '/es',
       },
     },
   };

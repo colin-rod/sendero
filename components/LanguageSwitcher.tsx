@@ -28,7 +28,11 @@ export default function LanguageSwitcher() {
             }
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
           `}
-          aria-label={`Switch to ${loc === 'en' ? 'English' : 'German'}`}
+          aria-label={`Switch to ${
+            loc === 'en' ? 'English' :
+            loc === 'de' ? 'German' :
+            'Spanish'
+          }`}
           aria-current={locale === loc ? 'true' : 'false'}
         >
           {loc.toUpperCase()}
