@@ -195,6 +195,16 @@
     },
     "backToHome": "Zurück zur Startseite"
   },
+  "contactPage": {
+    "title": "Kontakt",
+    "sections": {
+      "whatsapp": "WhatsApp-Link",
+      "email": "E-Mail",
+      "smallForm": "Kleines Kontaktformular",
+      "microcopy": "Microcopy: \"Wir sind für dich da\""
+    },
+    "sectionsCount": "{{count}} Abschnitte"
+  },
   "metadata": {
     "title": "Sendero Bike Trails - Entdecke Kolumbiens Kaffeeregion",
     "description": "Anfängerfreundliche Wander- und Radtouren in Pereira, Kolumbien. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse. Trage dich heute in unsere Warteliste ein!",
