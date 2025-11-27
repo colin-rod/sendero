@@ -35,6 +35,11 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
+                <Link href="/faq" className="hover:text-white transition-colors">
+                  {t('quickLinks.faq')}
+                </Link>
+              </li>
+                <li>
                   <Link href="/contact" className="hover:text-white transition-colors">
                     {t('quickLinks.contact')}
                   </Link>

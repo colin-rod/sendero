@@ -152,6 +152,7 @@
       "heading": "Quick Links",
       "about": "About",
       "howItWorks": "How It Works",
+      "faq": "FAQ"
       "contact": "Contact"
     },
     "contact": {
@@ -203,6 +204,40 @@
       "email": "Email",
       "smallForm": "Small contact form",
       "microcopy": "Microcopy: \"We're here for you\""
+    },
+    "sectionsCount": "{{count}} sections"
+  },
+  "faqPage": {
+    "title": "FAQ",
+    "sections": {
+      "safety": {
+        "title": "Safety",
+        "description": "Placeholder content for safety details."
+      },
+      "weather": {
+        "title": "Weather",
+        "description": "Placeholder content for weather guidance."
+      },
+      "fitness": {
+        "title": "Fitness & difficulty levels",
+        "description": "Placeholder content for fitness and difficulty information."
+      },
+      "transport": {
+        "title": "Transport & airport",
+        "description": "Placeholder content for transport and airport info."
+      },
+      "gear": {
+        "title": "Gear needed",
+        "description": "Placeholder content for gear recommendations."
+      },
+      "insurance": {
+        "title": "Insurance",
+        "description": "Placeholder content for insurance guidance."
+      },
+      "payments": {
+        "title": "Payments & booking changes",
+        "description": "Placeholder content for payments and booking changes."
+      }
     },
     "sectionsCount": "{{count}} sections"
   },

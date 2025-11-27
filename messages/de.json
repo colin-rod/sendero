@@ -152,6 +152,7 @@
       "heading": "Schnelllinks",
       "about": "Über uns",
       "howItWorks": "Wie es funktioniert",
+      "faq": "FAQ"
       "contact": "Kontakt"
     },
     "contact": {
@@ -203,6 +204,40 @@
       "email": "E-Mail",
       "smallForm": "Kleines Kontaktformular",
       "microcopy": "Microcopy: \"Wir sind für dich da\""
+    },
+    "sectionsCount": "{{count}} Abschnitte"
+  },
+  "faqPage": {
+    "title": "FAQ",
+    "sections": {
+      "safety": {
+        "title": "Sicherheit",
+        "description": "Platzhalterinhalt für Sicherheitsdetails."
+      },
+      "weather": {
+        "title": "Wetter",
+        "description": "Platzhalterinhalt für Wetterhinweise."
+      },
+      "fitness": {
+        "title": "Fitness- & Schwierigkeitsgrade",
+        "description": "Platzhalterinhalt für Fitness- und Schwierigkeitsinformationen."
+      },
+      "transport": {
+        "title": "Transport & Flughafen",
+        "description": "Platzhalterinhalt für Transport- und Flughafendetails."
+      },
+      "gear": {
+        "title": "Benötigte Ausrüstung",
+        "description": "Platzhalterinhalt für Ausrüstungsempfehlungen."
+      },
+      "insurance": {
+        "title": "Versicherung",
+        "description": "Platzhalterinhalt für Versicherungshinweise."
+      },
+      "payments": {
+        "title": "Zahlungen & Buchungsänderungen",
+        "description": "Platzhalterinhalt für Zahlungen und Buchungsänderungen."
+      }
     },
     "sectionsCount": "{{count}} Abschnitte"
   },
