@@ -144,7 +144,12 @@
     "travelTimelineRequired": "Please select when you're planning to travel",
     "emailDuplicate": "This email is already on the waitlist",
     "generalError": "Something went wrong. Please try again.",
-    "networkError": "Network error. Please check your connection and try again."
+    "networkError": "Network error. Please check your connection and try again.",
+    "nameRequired": "Name is required",
+    "nameTooShort": "Name must be at least 2 characters",
+    "messageRequired": "Message is required",
+    "messageTooShort": "Message must be at least 10 characters",
+    "invalidSubject": "Invalid subject selected"
   },
   "footer": {
     "brandDescription": "Beginner-friendly hike & bike tours in Colombia's Coffee Region.",
@@ -198,14 +203,59 @@
     "backToHome": "Back to Home"
   },
   "contactPage": {
-    "title": "Contact",
-    "sections": {
-      "whatsapp": "WhatsApp link",
-      "email": "Email",
-      "smallForm": "Small contact form",
-      "microcopy": "Microcopy: \"We're here for you\""
+    "title": "Contact Us",
+    "subtitle": "Get in Touch",
+    "description": "Have questions about our tours? We're here to help!",
+    "contactInfo": {
+      "heading": "Contact Information",
+      "email": {
+        "label": "Email",
+        "value": "info@senderobiketrails.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "cta": "Send us a message"
+      },
+      "instagram": {
+        "label": "Instagram",
+        "handle": "@sendero_bike_trails"
+      },
+      "responseTime": "We typically respond within 24 hours"
     },
-    "sectionsCount": "{{count}} sections"
+    "form": {
+      "heading": "Send us a Message",
+      "labels": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject (optional)",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "email": "your@email.com",
+        "subject": "Select a topic...",
+        "message": "Tell us how we can help..."
+      },
+      "subjects": {
+        "general": "General Inquiry",
+        "tour": "Tour Question",
+        "custom": "Custom Tour Request",
+        "feedback": "Feedback"
+      },
+      "buttons": {
+        "submit": "Send Message",
+        "submitting": "Sending..."
+      },
+      "success": {
+        "title": "Message Sent!",
+        "message": "Thank you for contacting us. We'll get back to you within 24 hours."
+      }
+    },
+    "faqLink": {
+      "text": "Looking for quick answers?",
+      "linkText": "Check our FAQ"
+    },
+    "whatsappMessage": "Hello! I'm interested in learning more about Sendero bike trails."
   },
   "faqPage": {
     "title": "FAQ",

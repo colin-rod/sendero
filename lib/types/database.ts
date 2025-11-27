@@ -59,6 +59,37 @@ export interface ApiErrorResponse {
 
 export type ApiResponse = ApiSuccessResponse | ApiErrorResponse;
 
+// Contact form types
+export type ContactSubject = 'general' | 'tour' | 'custom' | 'feedback';
+
+// Database row type for contact submissions
+export interface ContactSubmission {
+  id: string;
+  created_at: string;
+  email: string;
+  name: string;
+  subject: ContactSubject | null;
+  message: string;
+  locale: string;
+}
+
+// Insert type (without auto-generated fields)
+export interface ContactSubmissionInsert {
+  email: string;
+  name: string;
+  subject?: ContactSubject | null;
+  message: string;
+  locale: string;
+}
+
+// Form data type (matches API request body)
+export interface ContactFormData {
+  name: string;
+  email: string;
+  subject?: ContactSubject | null;
+  message: string;
+}
+
 // Supabase Database schema type
 export interface Database {
   public: {
@@ -67,6 +98,11 @@ export interface Database {
         Row: WaitlistSignup;
         Insert: WaitlistSignupInsert;
         Update: Partial<WaitlistSignupInsert>;
+      };
+      contact_submissions: {
+        Row: ContactSubmission;
+        Insert: ContactSubmissionInsert;
+        Update: Partial<ContactSubmissionInsert>;
       };
     };
   };

@@ -144,7 +144,12 @@
     "travelTimelineRequired": "Bitte wähle, wann du reisen möchtest",
     "emailDuplicate": "Diese E-Mail ist bereits auf der Warteliste",
     "generalError": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
-    "networkError": "Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es erneut."
+    "networkError": "Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es erneut.",
+    "nameRequired": "Name ist erforderlich",
+    "nameTooShort": "Name muss mindestens 2 Zeichen lang sein",
+    "messageRequired": "Nachricht ist erforderlich",
+    "messageTooShort": "Nachricht muss mindestens 10 Zeichen lang sein",
+    "invalidSubject": "Ungültiges Betreff ausgewählt"
   },
   "footer": {
     "brandDescription": "Anfängerfreundliche Wander- und Radtouren in Kolumbiens Kaffeeregion.",
@@ -199,13 +204,58 @@
   },
   "contactPage": {
     "title": "Kontakt",
-    "sections": {
-      "whatsapp": "WhatsApp-Link",
-      "email": "E-Mail",
-      "smallForm": "Kleines Kontaktformular",
-      "microcopy": "Microcopy: \"Wir sind für dich da\""
+    "subtitle": "Kontaktiere uns",
+    "description": "Hast du Fragen zu unseren Touren? Wir helfen dir gerne weiter!",
+    "contactInfo": {
+      "heading": "Kontaktinformationen",
+      "email": {
+        "label": "E-Mail",
+        "value": "info@senderobiketrails.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "cta": "Schreib uns eine Nachricht"
+      },
+      "instagram": {
+        "label": "Instagram",
+        "handle": "@sendero_bike_trails"
+      },
+      "responseTime": "Wir antworten in der Regel innerhalb von 24 Stunden"
     },
-    "sectionsCount": "{{count}} Abschnitte"
+    "form": {
+      "heading": "Schreib uns eine Nachricht",
+      "labels": {
+        "name": "Name",
+        "email": "E-Mail",
+        "subject": "Betreff (optional)",
+        "message": "Nachricht"
+      },
+      "placeholders": {
+        "name": "Dein Name",
+        "email": "deine@email.de",
+        "subject": "Wähle ein Thema...",
+        "message": "Sag uns, wie wir dir helfen können..."
+      },
+      "subjects": {
+        "general": "Allgemeine Anfrage",
+        "tour": "Tourfrage",
+        "custom": "Individuelle Touranfrage",
+        "feedback": "Feedback"
+      },
+      "buttons": {
+        "submit": "Nachricht senden",
+        "submitting": "Wird gesendet..."
+      },
+      "success": {
+        "title": "Nachricht gesendet!",
+        "message": "Vielen Dank für deine Nachricht. Wir melden uns innerhalb von 24 Stunden bei dir."
+      }
+    },
+    "faqLink": {
+      "text": "Suchst du schnelle Antworten?",
+      "linkText": "Schau dir unsere FAQ an"
+    },
+    "whatsappMessage": "Hallo! Ich interessiere mich für Sendero Radtouren."
   },
   "faqPage": {
     "title": "FAQ",
