@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/lib/i18n/routing';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
@@ -10,12 +11,11 @@ import { Check, Link as LinkIcon, MessageCircle, Facebook } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
 
 export default function ThankYouPage() {
+  const t = useTranslations('thankYou');
   const [copied, setCopied] = useState(false);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const shareText = encodeURIComponent(
-    'Check out Sendero Bike Trails - beginner-friendly hike & bike tours in Colombia\'s Coffee Region!'
-  );
+  const shareText = encodeURIComponent(t('shareText'));
   const shareUrl = encodeURIComponent(siteUrl);
 
   // WhatsApp share link
@@ -54,42 +54,41 @@ export default function ThankYouPage() {
 
               {/* Heading */}
               <h1 className="mb-6 text-h1 text-foreground">
-                You're on the List!
+                {t('heading')}
               </h1>
 
               {/* Message */}
               <p className="mb-8 text-body text-muted-foreground">
-                Thank you for joining the Sendero Bike Trails waitlist. We'll be in touch when
-                tours open up with exclusive early access for waitlist members.
+                {t('message')}
               </p>
 
               {/* What's Next Section */}
               <div className="mb-12 rounded-lg border border-border bg-muted/50 p-8 text-left">
-                <h2 className="mb-4 text-h2">What happens next?</h2>
+                <h2 className="mb-4 text-h2">{t('whatHappensNext.heading')}</h2>
                 <ul className="space-y-3 text-body text-muted-foreground">
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
                       <strong className="text-foreground">
-                        Check your inbox
+                        {t('whatHappensNext.step1.title')}
                       </strong>{' '}
-                      - You'll receive a confirmation email shortly
+                      - {t('whatHappensNext.step1.description')}
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
-                      <strong className="text-foreground">Stay tuned</strong> -
-                      We'll keep you updated on tour dates and packages
+                      <strong className="text-foreground">{t('whatHappensNext.step2.title')}</strong> -
+                      {t('whatHappensNext.step2.description')}
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
                       <strong className="text-foreground">
-                        Be among the first
+                        {t('whatHappensNext.step3.title')}
                       </strong>{' '}
-                      - Waitlist members get priority booking access
+                      - {t('whatHappensNext.step3.description')}
                     </span>
                   </li>
                 </ul>
@@ -98,10 +97,10 @@ export default function ThankYouPage() {
               {/* Share Section */}
               <div className="mb-12">
                 <h2 className="mb-6 text-h2">
-                  Share the Adventure
+                  {t('share.heading')}
                 </h2>
                 <p className="mb-6 text-body text-muted-foreground">
-                  Know someone who'd love this? Spread the word!
+                  {t('share.description')}
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3">
@@ -114,12 +113,12 @@ export default function ThankYouPage() {
                     {copied ? (
                       <>
                         <Check className="h-4 w-4" />
-                        <span>Copied!</span>
+                        <span>{t('share.buttons.copied')}</span>
                       </>
                     ) : (
                       <>
                         <LinkIcon className="h-4 w-4" />
-                        <span>Copy Link</span>
+                        <span>{t('share.buttons.copyLink')}</span>
                       </>
                     )}
                   </Button>
@@ -132,7 +131,7 @@ export default function ThankYouPage() {
                   >
                     <Button variant="secondary" className="flex items-center gap-2">
                       <MessageCircle className="h-4 w-4" />
-                      <span>WhatsApp</span>
+                      <span>{t('share.buttons.whatsapp')}</span>
                     </Button>
                   </a>
 
@@ -144,7 +143,7 @@ export default function ThankYouPage() {
                   >
                     <Button variant="outline" className="flex items-center gap-2">
                       <FaXTwitter className="h-4 w-4" />
-                      <span>Twitter</span>
+                      <span>{t('share.buttons.twitter')}</span>
                     </Button>
                   </a>
 
@@ -156,7 +155,7 @@ export default function ThankYouPage() {
                   >
                     <Button variant="outline" className="flex items-center gap-2">
                       <Facebook className="h-4 w-4" />
-                      <span>Facebook</span>
+                      <span>{t('share.buttons.facebook')}</span>
                     </Button>
                   </a>
                 </div>
@@ -165,7 +164,7 @@ export default function ThankYouPage() {
               {/* Back to Home */}
               <Link href="/">
                 <Button variant="primary" size="lg">
-                  Back to Home
+                  {t('backToHome')}
                 </Button>
               </Link>
             </div>
