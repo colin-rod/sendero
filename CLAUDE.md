@@ -16,6 +16,7 @@
 | **Waitlist Form**      | ✅ Complete | Multi-step form with validation                |
 | **API Integration**    | ✅ Complete | Supabase integration for data storage          |
 | **Thank You Page**     | ✅ Complete | Confirmation with share functionality          |
+| **Internationalization** | ✅ Complete | Trilingual support (EN, DE, ES)              |
 | **CI/CD Pipeline**     | ✅ Complete | GitHub Actions, automated testing & deployment |
 | **Testing**            | ✅ Complete | Jest unit tests for validation logic           |
 | **Supabase Setup**     | 📋 Pending  | Database needs to be configured                |
@@ -40,28 +41,41 @@ npm run test:coverage       # Run tests with coverage report
 ### Key Files & Directories
 
 ```
-📁 app/                   # Next.js App Router
-  ├── page.tsx            # Landing page
-  ├── thank-you/          # Thank you page
-  ├── api/waitlist/       # Waitlist API endpoint
-  ├── layout.tsx          # Root layout with Analytics
-  └── globals.css         # Global styles
+📁 app/                     # Next.js App Router
+  ├── [locale]/             # Locale-aware pages (en, de, es)
+  │   ├── layout.tsx        # Locale layout with next-intl provider
+  │   ├── page.tsx          # Landing page
+  │   ├── thank-you/        # Thank you page
+  │   └── api/waitlist/     # Waitlist API endpoint
+  ├── layout.tsx            # Root layout
+  └── globals.css           # Global styles
+
+📁 messages/                # Translation files (i18n)
+  ├── en.json               # English translations
+  ├── de.json               # German translations
+  └── es.json               # Spanish translations
 
 📁 components/
-  ├── ui/                 # Reusable UI components
-  ├── layout/             # Header, Footer
-  └── features/waitlist/  # WaitlistForm component
+  ├── ui/                   # Reusable UI components
+  ├── layout/               # Header, Footer
+  ├── LanguageSwitcher.tsx  # Language toggle (EN|DE|ES)
+  └── features/waitlist/    # WaitlistForm component
 
 📁 lib/
-  ├── supabase/           # Supabase client
-  ├── types/              # TypeScript types
-  └── utils/              # Validation utilities
+  ├── i18n/                 # Internationalization config
+  │   ├── config.ts         # Locale settings
+  │   ├── request.ts        # Request handler
+  │   └── routing.ts        # Navigation helpers
+  ├── supabase/             # Supabase client
+  ├── types/                # TypeScript types
+  └── utils/                # Validation utilities
 
 📁 supabase/
-  └── migrations/         # SQL migrations
+  └── migrations/           # SQL migrations
 
-📁 .github/workflows/     # CI/CD pipelines
-📁 __tests__/             # Jest tests
+📁 .github/workflows/       # CI/CD pipelines
+📁 __tests__/               # Jest tests
+middleware.ts               # Locale detection & routing
 ```
 
 ### Need Help?
@@ -141,6 +155,16 @@ npm run test:coverage       # Run tests with coverage report
   - Facebook share
 - ✅ Back to home button
 
+#### Internationalization (i18n)
+- ✅ Complete trilingual support (EN, DE, ES)
+- ✅ Path-based routing (`/en`, `/de`, `/es`)
+- ✅ 105+ strings translated in all languages
+- ✅ Language switcher in header (EN | DE | ES)
+- ✅ Automatic locale detection
+- ✅ SEO-optimized with hreflang tags
+- ✅ All UI components use translations
+- ✅ Form validation messages in all languages
+
 #### DevOps & Testing
 - ✅ Jest testing framework
 - ✅ Unit tests for validation logic
@@ -183,6 +207,123 @@ npm run test:coverage       # Run tests with coverage report
 - **Jest** - Unit testing
 - **ESLint** - Code linting
 - **TypeScript** - Type checking
+
+---
+
+## 🌍 Internationalization (i18n)
+
+### Supported Languages - ✅ Fully Implemented
+
+The application supports **three languages** with complete translations:
+
+- **English (EN)** - Default language, primary audience
+- **German (DE)** - European travelers
+- **Spanish (ES)** - Colombian locals and Latin American travelers
+
+### Implementation Details
+
+**Library:** `next-intl` (v3.x)
+- Purpose-built for Next.js App Router
+- Full TypeScript support
+- Path-based routing (`/en`, `/de`, `/es`)
+- Automatic locale detection from browser
+- SEO-optimized with hreflang tags
+
+**Architecture:**
+```
+app/[locale]/          # Locale-aware pages
+messages/
+  ├── en.json         # English translations (~105+ strings)
+  ├── de.json         # German translations (~105+ strings)
+  └── es.json         # Spanish translations (~105+ strings)
+lib/i18n/
+  ├── config.ts       # Locale configuration
+  ├── request.ts      # Request handler
+  └── routing.ts      # Navigation helpers
+middleware.ts         # Locale detection & routing
+```
+
+**Translation Coverage:**
+- ✅ All UI components
+- ✅ Form labels and validation messages
+- ✅ Navigation and footers
+- ✅ Error messages
+- ✅ SEO metadata (titles, descriptions)
+- ✅ Social sharing text
+- ✅ Thank you page content
+
+### **IMPORTANT: Multilingual Requirement for Frontend/CX**
+
+**❗ CRITICAL RULE for Claude Code:**
+
+**ALL frontend and customer-facing content MUST be implemented in all three languages (EN, DE, ES).**
+
+This includes:
+- ✅ Any new pages or routes
+- ✅ Any new UI components
+- ✅ Any user-facing text or copy
+- ✅ Form labels, buttons, and messages
+- ✅ Error messages and validation text
+- ✅ Navigation items
+- ✅ SEO metadata
+- ✅ Email templates (future)
+- ✅ Notifications (future)
+
+**How to implement:**
+1. Add English text to `messages/en.json`
+2. Add German translation to `messages/de.json`
+3. Add Spanish translation to `messages/es.json`
+4. Use `useTranslations()` hook in components
+5. Never hardcode user-facing strings
+
+**Example:**
+```tsx
+// ❌ WRONG - Hardcoded string
+<button>Submit</button>
+
+// ✅ CORRECT - Translated
+const t = useTranslations('form');
+<button>{t('buttons.submit')}</button>
+```
+
+**Backend/Internal Code:**
+- Server logs, internal comments, and development-only content can be in English
+- Database field names and API endpoints remain in English
+- Error logs and debugging info can be English-only
+
+**When adding new features:**
+- Plan for translations from the start
+- Update all three translation files simultaneously
+- Test in all three languages before committing
+- Ensure no UI text is hardcoded in English
+
+### Language Switcher
+
+**Location:** Header component (always visible)
+**UI:** EN | DE | ES buttons
+**Behavior:**
+- Switches language without page reload
+- Maintains current page path
+- Stores preference in cookies
+- Updates metadata and hreflang tags
+
+### Translation Notes
+
+**Spanish (ES):**
+- Uses Latin American Spanish (not European Spanish)
+- Target audience: Colombian locals + Latin American travelers
+- "Sendero" is already Spanish (means "trail/path")
+- "Región Cafetera" for "Coffee Region"
+
+**German (DE):**
+- Uses standard German (Hochdeutsch)
+- Target audience: European travelers
+- Professional translations for marketing copy
+
+**English (EN):**
+- Primary language and default
+- US English spelling and conventions
+- Source of truth for all translations
 
 ---
 
