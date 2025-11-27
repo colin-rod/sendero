@@ -151,7 +151,8 @@
     "quickLinks": {
       "heading": "Enlaces Rápidos",
       "about": "Acerca de",
-      "howItWorks": "Cómo Funciona"
+      "howItWorks": "Cómo Funciona",
+      "faq": "FAQ"
     },
     "contact": {
       "heading": "Contacto",
@@ -202,6 +203,40 @@
       "email": "Correo electrónico",
       "smallForm": "Pequeño formulario de contacto",
       "microcopy": "Microcopy: \"Estamos aquí para ti\""
+    },
+    "sectionsCount": "{{count}} secciones"
+  },
+  "faqPage": {
+    "title": "FAQ",
+    "sections": {
+      "safety": {
+        "title": "Seguridad",
+        "description": "Contenido de marcador de posición para detalles de seguridad."
+      },
+      "weather": {
+        "title": "Clima",
+        "description": "Contenido de marcador de posición para orientación sobre el clima."
+      },
+      "fitness": {
+        "title": "Condición física y niveles de dificultad",
+        "description": "Contenido de marcador de posición para información de condición física y dificultad."
+      },
+      "transport": {
+        "title": "Transporte y aeropuerto",
+        "description": "Contenido de marcador de posición para información de transporte y aeropuerto."
+      },
+      "gear": {
+        "title": "Equipo necesario",
+        "description": "Contenido de marcador de posición para recomendaciones de equipo."
+      },
+      "insurance": {
+        "title": "Seguro",
+        "description": "Contenido de marcador de posición para orientación de seguros."
+      },
+      "payments": {
+        "title": "Pagos y cambios de reserva",
+        "description": "Contenido de marcador de posición para pagos y cambios de reserva."
+      }
     },
     "sectionsCount": "{{count}} secciones"
   },

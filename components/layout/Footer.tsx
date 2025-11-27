@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/Container';
+import { Link } from '@/lib/i18n/routing';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -20,21 +21,26 @@ export function Footer() {
                 {t('brandDescription')}
               </p>
             </div>
-            <div>
-              <h4 className="mb-3 text-h4 text-white">{t('quickLinks.heading')}</h4>
-              <ul className="space-y-2 text-body text-gray-300">
-                <li>
-                  <a href="#about" className="hover:text-white transition-colors">
-                    {t('quickLinks.about')}
-                  </a>
-                </li>
-                <li>
-                  <a href="#how-it-works" className="hover:text-white transition-colors">
-                    {t('quickLinks.howItWorks')}
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h4 className="mb-3 text-h4 text-white">{t('quickLinks.heading')}</h4>
+            <ul className="space-y-2 text-body text-gray-300">
+              <li>
+                <a href="#about" className="hover:text-white transition-colors">
+                  {t('quickLinks.about')}
+                </a>
+              </li>
+              <li>
+                <a href="#how-it-works" className="hover:text-white transition-colors">
+                  {t('quickLinks.howItWorks')}
+                </a>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-white transition-colors">
+                  {t('quickLinks.faq')}
+                </Link>
+              </li>
+            </ul>
+          </div>
             <div>
               <h4 className="mb-3 text-h4 text-white">{t('contact.heading')}</h4>
               <p className="text-body text-gray-300">
