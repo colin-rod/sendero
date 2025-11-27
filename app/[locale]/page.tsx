@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
@@ -8,6 +9,11 @@ import HeroEmailCapture from '@/components/HeroEmailCapture';
 import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
+  const tHero = useTranslations('hero');
+  const tHowItWorks = useTranslations('howItWorks');
+  const tPerfectFor = useTranslations('perfectFor');
+  const tWaitlist = useTranslations('waitlist');
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -22,36 +28,38 @@ export default function HomePage() {
             <Container>
               <div className="max-w-3xl">
                 <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                  Discover Colombia's Coffee Region
+                  {tHero('title')}
                   <span className="block text-primary-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                    One Pedal at a Time
+                    {tHero('subtitle')}
                   </span>
                 </h1>
                 <p className="mb-8 text-body text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                  Beginner-friendly, sustainable hike & bike tours through
-                  Pereira's stunning landscapes. E-bikes, women-only groups, and
-                  authentic coffee farm experiences.
+                  {tHero('description')}
                 </p>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <div className="flex items-center space-x-2">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Bike className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">E-Bikes Available</span>
+                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                      {tHero('features.eBikes')}
+                    </span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Leaf className="h-5 w-5 text-white" />
                     </div>
                     <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      Eco-Conscious Tours
+                      {tHero('features.ecoConscious')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Coffee className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Coffee Farm Visits</span>
+                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                      {tHero('features.coffeeFarm')}
+                    </span>
                   </div>
                 </div>
                 {/* Hero Email Capture */}
@@ -66,11 +74,10 @@ export default function HomePage() {
           <Container>
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-h2 text-foreground">
-                How It Works
+                {tHowItWorks('heading')}
               </h2>
               <p className="mx-auto max-w-2xl text-body text-muted-foreground">
-                Join the waitlist today and be the first to know when tours open
-                up. Simple, easy, and no commitment required.
+                {tHowItWorks('description')}
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-3">
@@ -78,28 +85,27 @@ export default function HomePage() {
                 <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
                   1
                 </NumberBadge>
-                <h3 className="mb-2 text-h3 text-foreground">Sign Up</h3>
+                <h3 className="mb-2 text-h3 text-foreground">{tHowItWorks('steps.signUp.title')}</h3>
                 <p className="text-body text-muted-foreground">
-                  Fill out the quick form below with your email and tour
-                  preferences.
+                  {tHowItWorks('steps.signUp.description')}
                 </p>
               </div>
               <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
                 <NumberBadge variant="accent" size="xl" className="mb-4 shadow-md">
                   2
                 </NumberBadge>
-                <h3 className="mb-2 text-h3 text-foreground">Stay Tuned</h3>
+                <h3 className="mb-2 text-h3 text-foreground">{tHowItWorks('steps.stayTuned.title')}</h3>
                 <p className="text-body text-muted-foreground">
-                  We'll keep you updated as we finalize tour dates and packages.
+                  {tHowItWorks('steps.stayTuned.description')}
                 </p>
               </div>
               <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
                 <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
                   3
                 </NumberBadge>
-                <h3 className="mb-2 text-h3 text-foreground">Book Your Adventure</h3>
+                <h3 className="mb-2 text-h3 text-foreground">{tHowItWorks('steps.bookAdventure.title')}</h3>
                 <p className="text-body text-muted-foreground">
-                  Be among the first to book when tours officially launch.
+                  {tHowItWorks('steps.bookAdventure.description')}
                 </p>
               </div>
             </div>
@@ -111,11 +117,10 @@ export default function HomePage() {
           <Container>
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-h2 text-foreground">
-                Perfect For
+                {tPerfectFor('heading')}
               </h2>
               <p className="mx-auto max-w-2xl text-body text-muted-foreground">
-                Our tours are designed for everyone, from complete beginners to
-                moderate cyclists looking for an authentic Colombian experience.
+                {tPerfectFor('description')}
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -123,10 +128,9 @@ export default function HomePage() {
                 <div className="mb-4">
                   <Bike className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h3">Beginner Cyclists</h3>
+                <h3 className="mb-2 text-h3">{tPerfectFor('personas.beginnerCyclists.title')}</h3>
                 <p className="text-body text-muted-foreground">
-                  Never biked long distances? No problem. Our e-bikes and gentle
-                  routes make it easy for anyone to enjoy.
+                  {tPerfectFor('personas.beginnerCyclists.description')}
                 </p>
               </div>
               <div className="rounded-lg bg-white p-6 shadow-sm">
@@ -134,41 +138,37 @@ export default function HomePage() {
                   <Globe className="h-10 w-10 text-primary-600" />
                 </div>
                 <h3 className="mb-2 text-h3">
-                  Eco-Conscious Travelers
+                  {tPerfectFor('personas.ecoTravelers.title')}
                 </h3>
                 <p className="text-body text-muted-foreground">
-                  Sustainable tourism that respects local communities and the
-                  environment.
+                  {tPerfectFor('personas.ecoTravelers.description')}
                 </p>
               </div>
               <div className="rounded-lg bg-white p-6 shadow-sm">
                 <div className="mb-4">
                   <Coffee className="h-10 w-10 text-accent-600" />
                 </div>
-                <h3 className="mb-2 text-h3">Coffee Lovers</h3>
+                <h3 className="mb-2 text-h3">{tPerfectFor('personas.coffeeLovers.title')}</h3>
                 <p className="text-body text-muted-foreground">
-                  Experience authentic coffee farm visits and learn from local
-                  farmers.
+                  {tPerfectFor('personas.coffeeLovers.description')}
                 </p>
               </div>
               <div className="rounded-lg bg-white p-6 shadow-sm">
                 <div className="mb-4">
                   <Users className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h3">Women-Only Groups</h3>
+                <h3 className="mb-2 text-h3">{tPerfectFor('personas.womenGroups.title')}</h3>
                 <p className="text-body text-muted-foreground">
-                  Safe, supportive group tours designed specifically for women
-                  travelers.
+                  {tPerfectFor('personas.womenGroups.description')}
                 </p>
               </div>
               <div className="rounded-lg bg-white p-6 shadow-sm">
                 <div className="mb-4">
                   <Mountain className="h-10 w-10 text-primary-600" />
                 </div>
-                <h3 className="mb-2 text-h3">Nature Enthusiasts</h3>
+                <h3 className="mb-2 text-h3">{tPerfectFor('personas.natureEnthusiasts.title')}</h3>
                 <p className="text-body text-muted-foreground">
-                  Explore stunning landscapes, cloud forests, and mountain
-                  trails.
+                  {tPerfectFor('personas.natureEnthusiasts.description')}
                 </p>
               </div>
               <div className="rounded-lg bg-white p-6 shadow-sm">
@@ -176,11 +176,10 @@ export default function HomePage() {
                   <Backpack className="h-10 w-10 text-primary-600" />
                 </div>
                 <h3 className="mb-2 text-h3">
-                  Weekend Adventurers
+                  {tPerfectFor('personas.weekendAdventurers.title')}
                 </h3>
                 <p className="text-body text-muted-foreground">
-                  Short trips perfect for those with limited time but big
-                  wanderlust.
+                  {tPerfectFor('personas.weekendAdventurers.description')}
                 </p>
               </div>
             </div>
@@ -193,11 +192,10 @@ export default function HomePage() {
             <div className="mx-auto max-w-2xl">
               <div className="mb-12 text-center">
                 <h2 className="mb-4 text-h2 text-foreground">
-                  Join the Waitlist
+                  {tWaitlist('heading')}
                 </h2>
                 <p className="text-body text-muted-foreground">
-                  Be the first to know when tours open up. No spam, just
-                  adventure.
+                  {tWaitlist('description')}
                 </p>
               </div>
               <WaitlistForm />

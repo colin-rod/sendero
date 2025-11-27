@@ -1,0 +1,203 @@
+{
+  "header": {
+    "skipToContent": "Zum Inhalt springen",
+    "logoAlt": "Sendero Logo",
+    "brandName": "Sendero Bike Trails",
+    "ariaLabel": "Sendero Bike Trails Startseite",
+    "nav": {
+      "about": "Über uns",
+      "howItWorks": "Wie es funktioniert"
+    },
+    "mobileMenu": {
+      "toggle": "Navigationsmenü umschalten",
+      "ariaLabel": "Mobile Navigation"
+    }
+  },
+  "hero": {
+    "title": "Entdecke Kolumbiens Kaffeeregion",
+    "subtitle": "Ein Pedaltritt nach dem anderen",
+    "description": "Anfängerfreundliche, nachhaltige Wander- und Radtouren durch die atemberaubenden Landschaften Pereiras. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse.",
+    "features": {
+      "eBikes": "E-Bikes verfügbar",
+      "ecoConscious": "Umweltbewusste Touren",
+      "coffeeFarm": "Kaffeefarmen-Besuche"
+    },
+    "emailCapture": {
+      "buttonLearnMore": "MEHR ERFAHREN",
+      "buttonSubmit": "ABSENDEN",
+      "placeholder": "E-Mail-Adresse eingeben",
+      "helperText": "Kein Spam, nur Updates zum Start",
+      "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
+    }
+  },
+  "howItWorks": {
+    "heading": "Wie es funktioniert",
+    "description": "Trage dich heute in die Warteliste ein und erfahre als Erste/r, wenn die Touren starten. Einfach, unkompliziert und ohne Verpflichtung.",
+    "steps": {
+      "signUp": {
+        "title": "Anmelden",
+        "description": "Fülle das kurze Formular mit deiner E-Mail und Tourpräferenzen aus."
+      },
+      "stayTuned": {
+        "title": "Dran bleiben",
+        "description": "Wir halten dich auf dem Laufenden, während wir Tourdaten und Pakete finalisieren."
+      },
+      "bookAdventure": {
+        "title": "Abenteuer buchen",
+        "description": "Gehöre zu den Ersten, die buchen können, wenn die Touren offiziell starten."
+      }
+    }
+  },
+  "perfectFor": {
+    "heading": "Perfekt für",
+    "description": "Unsere Touren sind für alle konzipiert, von absoluten Anfängern bis zu moderaten Radfahrern, die ein authentisches kolumbianisches Erlebnis suchen.",
+    "personas": {
+      "beginnerCyclists": {
+        "title": "Anfänger-Radfahrer",
+        "description": "Noch nie lange Strecken geradelt? Kein Problem. Unsere E-Bikes und sanften Routen machen es jedem leicht."
+      },
+      "ecoTravelers": {
+        "title": "Umweltbewusste Reisende",
+        "description": "Nachhaltiger Tourismus, der lokale Gemeinschaften und die Umwelt respektiert."
+      },
+      "coffeeLovers": {
+        "title": "Kaffeeliebhaber",
+        "description": "Erlebe authentische Kaffeefarmenbesuche und lerne von lokalen Farmern."
+      },
+      "womenGroups": {
+        "title": "Reine Frauengruppen",
+        "description": "Sichere, unterstützende Gruppentouren speziell für Reisende Frauen."
+      },
+      "natureEnthusiasts": {
+        "title": "Naturliebhaber",
+        "description": "Erkunde atemberaubende Landschaften, Nebelwälder und Bergpfade."
+      },
+      "weekendAdventurers": {
+        "title": "Wochenendabenteurer",
+        "description": "Kurze Trips perfekt für alle mit wenig Zeit aber großem Fernweh."
+      }
+    }
+  },
+  "waitlist": {
+    "heading": "Zur Warteliste",
+    "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer."
+  },
+  "form": {
+    "labels": {
+      "email": "E-Mail-Adresse *",
+      "tourDuration": "Bevorzugte Tourdauer *",
+      "interestTypes": "Woran bist du interessiert? (alle zutreffenden auswählen) *",
+      "fitnessLevel": "Fitnesslevel *",
+      "travelTimeline": "Wann planst du zu reisen? *"
+    },
+    "placeholders": {
+      "email": "deine@email.de"
+    },
+    "tourDuration": {
+      "oneDay": {
+        "label": "1 Tag",
+        "description": "Perfekt für ein schnelles Abenteuer"
+      },
+      "weekend": {
+        "label": "Wochenende (2-3 Tage)",
+        "description": "Entspannt mehr erkunden"
+      },
+      "oneWeek": {
+        "label": "1 Woche",
+        "description": "Vollständiges Eintaucherlebnis"
+      }
+    },
+    "interests": {
+      "hiking": "Wandern",
+      "biking": "Radfahren",
+      "eBike": "E-Bike (Elektrofahrrad)",
+      "womenOnly": "Reine Frauentouren",
+      "coffeeFarm": "Kaffeefarm-Erlebnisse"
+    },
+    "fitnessLevel": {
+      "beginner": {
+        "label": "Anfänger",
+        "description": "Neu beim Radfahren oder Wandern"
+      },
+      "moderate": {
+        "label": "Moderat",
+        "description": "Etwas Erfahrung, wohl bei körperlicher Aktivität"
+      }
+    },
+    "travelTimeline": {
+      "next3Months": "Nächste 3 Monate",
+      "next6Months": "Nächste 6 Monate",
+      "later": "Schaue mich nur um"
+    },
+    "buttons": {
+      "submit": "Zur Warteliste",
+      "submitting": "Wird eingetragen..."
+    },
+    "helperText": "Wir respektieren deine Privatsphäre. Kein Spam, nur Updates zu Touren."
+  },
+  "validation": {
+    "emailRequired": "E-Mail ist erforderlich",
+    "emailInvalid": "Bitte gib eine gültige E-Mail-Adresse ein",
+    "tourDurationRequired": "Bitte wähle eine Tourdauer",
+    "interestTypesRequired": "Bitte wähle mindestens ein Interesse",
+    "fitnessLevelRequired": "Bitte wähle ein Fitnesslevel",
+    "travelTimelineRequired": "Bitte wähle, wann du reisen möchtest",
+    "emailDuplicate": "Diese E-Mail ist bereits auf der Warteliste",
+    "generalError": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "networkError": "Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es erneut."
+  },
+  "footer": {
+    "brandDescription": "Anfängerfreundliche Wander- und Radtouren in Kolumbiens Kaffeeregion.",
+    "quickLinks": {
+      "heading": "Schnelllinks",
+      "about": "Über uns",
+      "howItWorks": "Wie es funktioniert"
+    },
+    "contact": {
+      "heading": "Kontakt",
+      "description": "Fragen? Wir freuen uns von dir zu hören.",
+      "email": "info@senderobiketrails.com",
+      "instagram": "Folge uns auf Instagram"
+    },
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "thankYou": {
+    "heading": "Du bist auf der Liste!",
+    "message": "Danke, dass du dich zur Sendero Bike Trails Warteliste angemeldet hast. Wir melden uns, wenn Touren starten, mit exklusivem Frühzugang für Wartelistenmitglieder.",
+    "whatHappensNext": {
+      "heading": "Was passiert als Nächstes?",
+      "steps": {
+        "checkInbox": {
+          "title": "Postfach prüfen",
+          "description": "Du erhältst in Kürze eine Bestätigungsmail"
+        },
+        "stayTuned": {
+          "title": "Dran bleiben",
+          "description": "Wir halten dich über Tourdaten und Pakete auf dem Laufenden"
+        },
+        "beFirst": {
+          "title": "Gehöre zu den Ersten",
+          "description": "Wartelistenmitglieder erhalten vorrangigen Buchungszugang"
+        }
+      }
+    },
+    "share": {
+      "heading": "Teile das Abenteuer",
+      "description": "Kennst du jemanden, dem das gefallen würde? Erzähle es weiter!",
+      "buttons": {
+        "copyLink": "Link kopieren",
+        "copied": "Kopiert!",
+        "whatsapp": "WhatsApp",
+        "twitter": "Twitter",
+        "facebook": "Facebook"
+      },
+      "shareText": "Schau dir Sendero Bike Trails an - anfängerfreundliche Wander- und Radtouren in Kolumbiens Kaffeeregion!"
+    },
+    "backToHome": "Zurück zur Startseite"
+  },
+  "metadata": {
+    "title": "Sendero Bike Trails - Entdecke Kolumbiens Kaffeeregion",
+    "description": "Anfängerfreundliche Wander- und Radtouren in Pereira, Kolumbien. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse. Trage dich heute in unsere Warteliste ein!",
+    "keywords": "kolumbien touren, kaffeeregion touren, pereira fahrradtouren, e-bike touren, nachhaltiges reisen kolumbien, kaffeefarm touren"
+  }
+}
