@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Container } from '@/components/ui/Container';
+import { Link } from '@/lib/i18n/routing';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -32,6 +33,11 @@ export function Footer() {
                   <a href="#how-it-works" className="hover:text-white transition-colors">
                     {t('quickLinks.howItWorks')}
                   </a>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-white transition-colors">
+                    {t('quickLinks.contact')}
+                  </Link>
                 </li>
               </ul>
             </div>
