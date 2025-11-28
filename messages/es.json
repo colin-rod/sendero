@@ -258,38 +258,152 @@
     "whatsappMessage": "¡Hola! Me interesa saber más sobre los senderos de bicicleta de Sendero."
   },
   "faqPage": {
-    "title": "FAQ",
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Todo lo que necesita saber sobre los tours de Sendero",
+    "expandAll": "Expandir Todo",
+    "collapseAll": "Cerrar Todo",
+    "metadata": {
+      "title": "FAQ - Sendero Bike Trails",
+      "description": "Respuestas a preguntas comunes sobre nuestros tours de ciclismo para principiantes en la Región Cafetera de Colombia. Seguridad, clima, nivel físico y más."
+    },
     "sections": {
       "safety": {
-        "title": "Seguridad",
-        "description": "Contenido de marcador de posición para detalles de seguridad."
+        "title": "Seguridad y Salud",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] ¿Son seguras las tours para principiantes?",
+            "answer": "[TODO: Actualizar este contenido] Sí, todas nuestras tours están diseñadas específicamente para principiantes. Utilizamos bicicletas bien mantenidas, proporcionamos equipo de seguridad de alta calidad y nuestras rutas evitan tráfico pesado. Nuestros guías experimentados están capacitados en primeros auxilios y llevan equipo de seguridad en todo momento."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Qué equipo de seguridad se proporciona?",
+            "answer": "[TODO: Actualizar este contenido] Proporcionamos cascos para todos los ciclistas, chalecos reflectantes para mejor visibilidad, y nuestros guías llevan botiquines de primeros auxilios completos. Todo el equipo cumple con los estándares internacionales de seguridad."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Sus guías están capacitados en primeros auxilios?",
+            "answer": "[TODO: Actualizar este contenido] Sí, todos nuestros guías están certificados en primeros auxilios en entornos naturales y RCP. Conocen las ubicaciones de las instalaciones médicas más cercanas a lo largo de todas las rutas."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Qué pasa si tengo una condición médica?",
+            "answer": "[TODO: Actualizar este contenido] Por favor infórmenos sobre cualquier condición médica al hacer la reserva. Nuestras tours son adecuadas para personas con salud moderada, pero recomendamos consultar con su médico antes de participar. A menudo podemos acomodar necesidades específicas con aviso previo."
+          }
+        ]
       },
       "weather": {
-        "title": "Clima",
-        "description": "Contenido de marcador de posición para orientación sobre el clima."
+        "title": "Clima y Mejor Época para Visitar",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] ¿Cómo es el clima en Pereira?",
+            "answer": "[TODO: Actualizar este contenido] Pereira tiene un clima tropical templado con temperaturas que oscilan entre 18-28°C durante todo el año. La Región Cafetera disfruta de un clima agradable gracias a su altitud."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Cuál es la mejor época para visitar?",
+            "answer": "[TODO: Actualizar este contenido] La región es hermosa todo el año, pero las temporadas secas (diciembre-marzo y julio-agosto) ofrecen el clima más constante para ciclismo."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Qué pasa si llueve durante el tour?",
+            "answer": "[TODO: Actualizar este contenido] La lluvia ligera es común en la Región Cafetera y en realidad enriquece la experiencia. Proporcionamos equipo para lluvia y ajustamos las rutas si es necesario. Los tours solo se cancelan en condiciones climáticas severas."
+          }
+        ]
       },
       "fitness": {
-        "title": "Condición física y niveles de dificultad",
-        "description": "Contenido de marcador de posición para información de condición física y dificultad."
+        "title": "Condición Física y Niveles de Dificultad",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] ¿Qué tan en forma debo estar?",
+            "answer": "[TODO: Actualizar este contenido] Nuestros tours para principiantes requieren condición física básica - si puede caminar cómodamente durante 2-3 horas, puede hacer nuestros tours. Las bicicletas eléctricas hacen el ciclismo accesible incluso si no es un ciclista experimentado."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Cuál es la diferencia entre dificultad principiante y moderada?",
+            "answer": "[TODO: Actualizar este contenido] Los tours para principiantes tienen terreno plano a suave con descansos frecuentes, cubriendo 15-25km. Los tours moderados incluyen algunas colinas y cubren 25-40km con buena condición física recomendada."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Puedo usar una bicicleta eléctrica si no tengo confianza?",
+            "answer": "[TODO: Actualizar este contenido] ¡Absolutamente! Las bicicletas eléctricas están disponibles en todos nuestros tours y son perfectas para quienes quieren disfrutar del paisaje sin preocuparse por el nivel físico o las colinas."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Cuáles son las distancias promedio por día?",
+            "answer": "[TODO: Actualizar este contenido] Tours de un día: 15-30km, Tours de fin de semana: 20-40km por día, Tours de una semana: 25-50km por día con días de descanso incluidos."
+          }
+        ]
       },
       "transport": {
-        "title": "Transporte y aeropuerto",
-        "description": "Contenido de marcador de posición para información de transporte y aeropuerto."
+        "title": "Transporte y Aeropuerto",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] ¿Cómo llego a Pereira?",
+            "answer": "[TODO: Actualizar este contenido] Pereira tiene un aeropuerto internacional (Aeropuerto Matecaña - PEI) con conexiones a través de Bogotá o Medellín. El aeropuerto está a 15 minutos del centro de la ciudad."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Ofrecen recogida en el aeropuerto?",
+            "answer": "[TODO: Actualizar este contenido] Sí, podemos organizar traslados al aeropuerto por un costo adicional. Contáctenos al reservar para coordinar los detalles del traslado."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿El transporte entre ubicaciones del tour está incluido?",
+            "answer": "[TODO: Actualizar este contenido] Todo el transporte durante el tour está incluido - proporcionamos vehículos de apoyo y traslados entre segmentos de ciclismo."
+          }
+        ]
       },
       "gear": {
-        "title": "Equipo necesario",
-        "description": "Contenido de marcador de posición para recomendaciones de equipo."
+        "title": "Equipo y Qué Llevar",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] ¿Qué equipo se proporciona?",
+            "answer": "[TODO: Actualizar este contenido] Proporcionamos: bicicletas (estándar o eléctrica), cascos, botellas de agua, kits de reparación y vehículo de apoyo. Solo necesita traer ropa apropiada."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Qué debo empacar para el tour?",
+            "answer": "[TODO: Actualizar este contenido] Ropa deportiva cómoda, shorts de ciclismo (acolchados recomendados), protector solar, gafas de sol, chaqueta ligera para lluvia, zapatos cómodos y una mochila pequeña. Lista de empaque detallada enviada al reservar."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Necesito zapatos especiales para ciclismo?",
+            "answer": "[TODO: Actualizar este contenido] No, zapatos deportivos o de senderismo cómodos funcionan perfectamente. Nuestras bicicletas tienen pedales de plataforma adecuados para zapatos normales."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Qué hay sobre las tallas de bicicletas?",
+            "answer": "[TODO: Actualizar este contenido] Tenemos bicicletas en todos los tamaños desde pequeño hasta extra grande. Preguntaremos su altura al reservar para asegurar el ajuste correcto."
+          }
+        ]
       },
       "insurance": {
-        "title": "Seguro",
-        "description": "Contenido de marcador de posición para orientación de seguros."
+        "title": "Seguro y Requisitos de Viaje",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] ¿Necesito seguro de viaje?",
+            "answer": "[TODO: Actualizar este contenido] Sí, recomendamos enfáticamente un seguro de viaje que cubra actividades de ciclismo, emergencias médicas y cancelación de viaje."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Qué debe cubrir mi seguro?",
+            "answer": "[TODO: Actualizar este contenido] Su seguro debe cubrir: gastos médicos, evacuación de emergencia, actividades de ciclismo, cancelación de viaje y pertenencias personales."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Necesito visa para visitar Colombia?",
+            "answer": "[TODO: Actualizar este contenido] Muchas nacionalidades pueden visitar Colombia sin visa hasta por 90 días. Consulte con su embajada colombiana local los requisitos específicos según su nacionalidad."
+          }
+        ]
       },
       "payments": {
-        "title": "Pagos y cambios de reserva",
-        "description": "Contenido de marcador de posición para pagos y cambios de reserva."
+        "title": "Pagos y Cambios de Reserva",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] ¿Cómo reservo un tour?",
+            "answer": "[TODO: Actualizar este contenido] Únase a nuestra lista de espera usando el formulario en nuestra página de inicio. Le contactaremos cuando los tours estén disponibles con instrucciones de reserva y detalles de pago."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Qué métodos de pago aceptan?",
+            "answer": "[TODO: Actualizar este contenido] Aceptamos tarjetas de crédito, transferencias bancarias y PayPal. Los detalles completos de pago se proporcionarán cuando lancemos los tours."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Cuál es su política de cancelación?",
+            "answer": "[TODO: Actualizar este contenido] Los detalles de la política de cancelación se proporcionarán cuando lancemos los tours. Buscamos ofrecer términos flexibles de cancelación con reembolsos completos o parciales según el período de aviso."
+          },
+          {
+            "question": "[PLACEHOLDER] ¿Puedo cambiar las fechas de mi tour?",
+            "answer": "[TODO: Actualizar este contenido] Sí, entendemos que los planes cambian. Los cambios de fecha son posibles sujetos a disponibilidad y los términos de nuestra política de cancelación."
+          }
+        ]
       }
     },
-    "sectionsCount": "{{count}} secciones"
+    "sectionsCount": "{{count}} secciones con {{questionCount}} preguntas"
   },
   "metadata": {
     "title": "Sendero Bike Trails - Descubre la Región Cafetera de Colombia",

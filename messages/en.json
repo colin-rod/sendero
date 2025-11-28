@@ -258,38 +258,152 @@
     "whatsappMessage": "Hello! I'm interested in learning more about Sendero bike trails."
   },
   "faqPage": {
-    "title": "FAQ",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about Sendero bike tours",
+    "expandAll": "Expand All",
+    "collapseAll": "Collapse All",
+    "metadata": {
+      "title": "FAQ - Sendero Bike Trails",
+      "description": "Answers to common questions about our beginner-friendly bike tours in Colombia's Coffee Region. Safety, weather, fitness levels, and more."
+    },
     "sections": {
       "safety": {
-        "title": "Safety",
-        "description": "Placeholder content for safety details."
+        "title": "Safety & Health",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Are the tours safe for beginners?",
+            "answer": "[TODO: Update this content] Yes, all our tours are specifically designed with beginners in mind. We use well-maintained bikes, provide high-quality safety equipment, and our routes avoid heavy traffic. Our experienced guides are trained in first aid and carry safety equipment at all times."
+          },
+          {
+            "question": "[PLACEHOLDER] What safety equipment is provided?",
+            "answer": "[TODO: Update this content] We provide helmets for all riders, reflective vests for better visibility, and our guides carry comprehensive first aid kits. All equipment meets international safety standards."
+          },
+          {
+            "question": "[PLACEHOLDER] Are your guides trained in first aid?",
+            "answer": "[TODO: Update this content] Yes, all our guides are certified in wilderness first aid and CPR. They know the locations of the nearest medical facilities along all routes."
+          },
+          {
+            "question": "[PLACEHOLDER] What if I have a medical condition?",
+            "answer": "[TODO: Update this content] Please inform us of any medical conditions when booking. Our tours are suitable for people with moderate health, but we recommend consulting your doctor before participating. We can often accommodate specific needs with advance notice."
+          }
+        ]
       },
       "weather": {
-        "title": "Weather",
-        "description": "Placeholder content for weather guidance."
+        "title": "Weather & Best Time to Visit",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] What's the weather like in Pereira?",
+            "answer": "[TODO: Update this content] Pereira has a mild tropical climate with temperatures ranging from 18-28°C (64-82°F) year-round. The Coffee Region enjoys pleasant weather thanks to its altitude."
+          },
+          {
+            "question": "[PLACEHOLDER] When is the best time to visit?",
+            "answer": "[TODO: Update this content] The region is beautiful year-round, but the dry seasons (December-March and July-August) offer the most consistent weather for cycling."
+          },
+          {
+            "question": "[PLACEHOLDER] What happens if it rains during the tour?",
+            "answer": "[TODO: Update this content] Light rain is common in the Coffee Region and actually adds to the experience. We provide rain gear and adjust routes if needed. Tours are only cancelled in severe weather conditions."
+          }
+        ]
       },
       "fitness": {
-        "title": "Fitness & difficulty levels",
-        "description": "Placeholder content for fitness and difficulty information."
+        "title": "Fitness & Difficulty Levels",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] How fit do I need to be?",
+            "answer": "[TODO: Update this content] Our beginner tours require basic fitness - if you can walk for 2-3 hours comfortably, you can do our tours. E-bikes make cycling accessible even if you're not an experienced cyclist."
+          },
+          {
+            "question": "[PLACEHOLDER] What's the difference between beginner and moderate difficulty?",
+            "answer": "[TODO: Update this content] Beginner tours have flat to gentle terrain with frequent breaks, covering 15-25km. Moderate tours include some hills and cover 25-40km with good fitness recommended."
+          },
+          {
+            "question": "[PLACEHOLDER] Can I use an e-bike if I'm not confident?",
+            "answer": "[TODO: Update this content] Absolutely! E-bikes are available on all our tours and are perfect for those who want to enjoy the scenery without worrying about fitness level or hills."
+          },
+          {
+            "question": "[PLACEHOLDER] What are the average distances per day?",
+            "answer": "[TODO: Update this content] Day tours: 15-30km, Weekend tours: 20-40km per day, Week-long tours: 25-50km per day with rest days included."
+          }
+        ]
       },
       "transport": {
-        "title": "Transport & airport",
-        "description": "Placeholder content for transport and airport info."
+        "title": "Transport & Airport",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] How do I get to Pereira?",
+            "answer": "[TODO: Update this content] Pereira has an international airport (Matecaña Airport - PEI) with connections through Bogotá or Medellín. The airport is 15 minutes from the city center."
+          },
+          {
+            "question": "[PLACEHOLDER] Do you offer airport pickup?",
+            "answer": "[TODO: Update this content] Yes, we can arrange airport transfers for an additional fee. Contact us when booking to arrange pickup details."
+          },
+          {
+            "question": "[PLACEHOLDER] Is transportation included between tour locations?",
+            "answer": "[TODO: Update this content] All transportation during the tour is included - we provide support vehicles and transfers between cycling segments."
+          }
+        ]
       },
       "gear": {
-        "title": "Gear needed",
-        "description": "Placeholder content for gear recommendations."
+        "title": "Gear & What to Bring",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] What equipment is provided?",
+            "answer": "[TODO: Update this content] We provide: bikes (standard or e-bike), helmets, water bottles, repair kits, and support vehicle. You just bring yourself and appropriate clothing."
+          },
+          {
+            "question": "[PLACEHOLDER] What should I pack for the tour?",
+            "answer": "[TODO: Update this content] Comfortable athletic clothing, cycling shorts (padded recommended), sunscreen, sunglasses, light rain jacket, comfortable shoes, and a small daypack. Detailed packing list sent upon booking."
+          },
+          {
+            "question": "[PLACEHOLDER] Do I need special cycling shoes?",
+            "answer": "[TODO: Update this content] No, comfortable athletic or hiking shoes work perfectly. Our bikes have platform pedals suitable for regular shoes."
+          },
+          {
+            "question": "[PLACEHOLDER] What about bike sizes?",
+            "answer": "[TODO: Update this content] We have bikes in all sizes from small to extra-large. We'll ask for your height when booking to ensure the right fit."
+          }
+        ]
       },
       "insurance": {
-        "title": "Insurance",
-        "description": "Placeholder content for insurance guidance."
+        "title": "Insurance & Travel Requirements",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Do I need travel insurance?",
+            "answer": "[TODO: Update this content] Yes, we strongly recommend travel insurance that covers cycling activities, medical emergencies, and trip cancellation."
+          },
+          {
+            "question": "[PLACEHOLDER] What should my insurance cover?",
+            "answer": "[TODO: Update this content] Your insurance should cover: medical expenses, emergency evacuation, cycling activities, trip cancellation, and personal belongings."
+          },
+          {
+            "question": "[PLACEHOLDER] Do I need a visa to visit Colombia?",
+            "answer": "[TODO: Update this content] Many nationalities can visit Colombia visa-free for up to 90 days. Check with your local Colombian embassy for specific requirements based on your nationality."
+          }
+        ]
       },
       "payments": {
-        "title": "Payments & booking changes",
-        "description": "Placeholder content for payments and booking changes."
+        "title": "Payments & Booking Changes",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] How do I book a tour?",
+            "answer": "[TODO: Update this content] Join our waitlist using the form on our homepage. We'll contact you when tours are available with booking instructions and payment details."
+          },
+          {
+            "question": "[PLACEHOLDER] What payment methods do you accept?",
+            "answer": "[TODO: Update this content] We accept credit cards, bank transfers, and PayPal. Full payment details will be provided when tours launch."
+          },
+          {
+            "question": "[PLACEHOLDER] What's your cancellation policy?",
+            "answer": "[TODO: Update this content] Cancellation policy details will be provided when tours launch. We aim to offer flexible cancellation terms with full or partial refunds depending on notice period."
+          },
+          {
+            "question": "[PLACEHOLDER] Can I change my tour dates?",
+            "answer": "[TODO: Update this content] Yes, we understand plans change. Date changes are possible subject to availability and our cancellation policy terms."
+          }
+        ]
       }
     },
-    "sectionsCount": "{{count}} sections"
+    "sectionsCount": "{{count}} sections with {{questionCount}} questions"
   },
   "metadata": {
     "title": "Sendero Bike Trails - Discover Colombia's Coffee Region",
