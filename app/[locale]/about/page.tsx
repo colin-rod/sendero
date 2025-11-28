@@ -17,6 +17,39 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+// Helper function to highlight placeholder text
+function highlightPlaceholders(text: string) {
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+
+  // Match [PLACEHOLDER] or [TODO: ...]
+  const regex = /(\[PLACEHOLDER\]|\[TODO:.*?\])/g;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Add text before the match
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+
+    // Add highlighted placeholder
+    parts.push(
+      <span key={match.index} className="bg-amber-100 px-1 font-mono text-amber-900">
+        {match[0]}
+      </span>
+    );
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+}
+
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
 
@@ -28,9 +61,11 @@ export default function AboutPage() {
         <Container size="lg">
           {/* Page Header */}
           <div className="mb-12 text-center">
-            <h1 className="text-h1 mb-4 text-foreground">{t('heading')}</h1>
+            <h1 className="text-h1 mb-4 text-foreground">
+              {highlightPlaceholders(t('heading'))}
+            </h1>
             <p className="text-body mx-auto max-w-2xl text-muted-foreground">
-              {t('subtitle')}
+              {highlightPlaceholders(t('subtitle'))}
             </p>
           </div>
 
@@ -40,10 +75,10 @@ export default function AboutPage() {
               {/* Text Content */}
               <div className="flex flex-col justify-center">
                 <h2 className="text-h2 mb-4 text-foreground">
-                  {t('sections.philosophy.heading')}
+                  {highlightPlaceholders(t('sections.philosophy.heading'))}
                 </h2>
                 <p className="text-body text-muted-foreground leading-relaxed">
-                  {t('sections.philosophy.content')}
+                  {highlightPlaceholders(t('sections.philosophy.content'))}
                 </p>
               </div>
 
@@ -75,10 +110,10 @@ export default function AboutPage() {
               {/* Text Content - Right on desktop */}
               <div className="flex flex-col justify-center lg:order-2">
                 <h2 className="text-h2 mb-4 text-foreground">
-                  {t('sections.region.heading')}
+                  {highlightPlaceholders(t('sections.region.heading'))}
                 </h2>
                 <p className="text-body text-muted-foreground leading-relaxed">
-                  {t('sections.region.content')}
+                  {highlightPlaceholders(t('sections.region.content'))}
                 </p>
               </div>
             </div>
@@ -90,10 +125,10 @@ export default function AboutPage() {
               {/* Text Content */}
               <div className="flex flex-col justify-center">
                 <h2 className="text-h2 mb-4 text-foreground">
-                  {t('sections.partners.heading')}
+                  {highlightPlaceholders(t('sections.partners.heading'))}
                 </h2>
                 <p className="text-body text-muted-foreground leading-relaxed">
-                  {t('sections.partners.content')}
+                  {highlightPlaceholders(t('sections.partners.content'))}
                 </p>
               </div>
 
@@ -113,10 +148,10 @@ export default function AboutPage() {
           <section className="mb-12">
             <div className="rounded-lg border border-border bg-white p-8 text-center shadow-md md:p-12">
               <h2 className="text-h2 mb-4 text-foreground">
-                {t('sections.cta.heading')}
+                {highlightPlaceholders(t('sections.cta.heading'))}
               </h2>
               <p className="text-body mx-auto mb-6 max-w-2xl text-muted-foreground">
-                {t('sections.cta.content')}
+                {highlightPlaceholders(t('sections.cta.content'))}
               </p>
               <Link href="/tours">
                 <Button variant="primary" size="lg">
