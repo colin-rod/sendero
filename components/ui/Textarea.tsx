@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface TextareaProps extends React.TextareaHTMLAttributes<React.ComponentRef<'textarea'>> {
   label?: string;
   error?: string;
 }
 
-export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+export const Textarea = React.forwardRef<React.ComponentRef<'textarea'>, TextareaProps>(
   ({ label, error, className = '', id, ...props }, ref) => {
     const textareaId = id || `textarea-${label?.toLowerCase().replace(/\s+/g, '-')}`;
 

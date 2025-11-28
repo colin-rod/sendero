@@ -90,7 +90,7 @@ export function FAQAccordion({ sections }: FAQAccordionProps) {
         const questions = t.raw(`sections.${sectionKey}.questions`) as Array<{ question: string; answer: string }>;
         if (!Array.isArray(questions)) return null;
 
-        const filtered = questions.filter((qa, index) => {
+        const filtered = questions.filter((qa) => {
           const questionMatch = qa.question.toLowerCase().includes(query);
           const answerMatch = qa.answer.toLowerCase().includes(query);
           return questionMatch || answerMatch;
