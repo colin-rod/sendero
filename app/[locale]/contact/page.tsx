@@ -67,7 +67,7 @@ export default function ContactPage() {
                         {t('contactInfo.whatsapp.label')}
                       </p>
                       <a
-                        href={`https://wa.me/4915901637965?text=${encodeURIComponent(t('whatsappMessage'))}`}
+                        href={`https://wa.me/4917631470193?text=${encodeURIComponent(t('whatsappMessage'))}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-body text-primary-600 hover:text-primary-700 transition-colors hover:underline"
