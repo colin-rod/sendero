@@ -262,6 +262,14 @@
     "subtitle": "Todo lo que necesita saber sobre los tours de Sendero",
     "expandAll": "Expandir Todo",
     "collapseAll": "Cerrar Todo",
+    "search": {
+      "placeholder": "Buscar preguntas...",
+      "ariaLabel": "Buscar preguntas frecuentes",
+      "clearAriaLabel": "Limpiar búsqueda",
+      "results": "{{count}} pregunta(s) encontrada(s)",
+      "noResults": "No se encontraron preguntas",
+      "tryDifferent": "Intente buscar con otras palabras clave"
+    },
     "metadata": {
       "title": "FAQ - Sendero Bike Trails",
       "description": "Respuestas a preguntas comunes sobre nuestros tours de ciclismo para principiantes en la Región Cafetera de Colombia. Seguridad, clima, nivel físico y más."

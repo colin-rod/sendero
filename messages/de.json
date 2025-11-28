@@ -262,6 +262,14 @@
     "subtitle": "Alles, was Sie über Sendero-Radtouren wissen müssen",
     "expandAll": "Alle erweitern",
     "collapseAll": "Alle schließen",
+    "search": {
+      "placeholder": "FAQs durchsuchen...",
+      "ariaLabel": "Häufig gestellte Fragen durchsuchen",
+      "clearAriaLabel": "Suche löschen",
+      "results": "{{count}} Frage(n) gefunden",
+      "noResults": "Keine Fragen gefunden",
+      "tryDifferent": "Versuchen Sie es mit anderen Suchbegriffen"
+    },
     "metadata": {
       "title": "FAQ - Sendero Bike Trails",
       "description": "Antworten auf häufige Fragen zu unseren einsteigerfreundlichen Radtouren in Kolumbiens Kaffeeregion. Sicherheit, Wetter, Fitnesslevel und mehr."

@@ -262,6 +262,14 @@
     "subtitle": "Everything you need to know about Sendero bike tours",
     "expandAll": "Expand All",
     "collapseAll": "Collapse All",
+    "search": {
+      "placeholder": "Search FAQs...",
+      "ariaLabel": "Search frequently asked questions",
+      "clearAriaLabel": "Clear search",
+      "results": "{{count}} question(s) found",
+      "noResults": "No questions found",
+      "tryDifferent": "Try searching with different keywords"
+    },
     "metadata": {
       "title": "FAQ - Sendero Bike Trails",
       "description": "Answers to common questions about our beginner-friendly bike tours in Colombia's Coffee Region. Safety, weather, fitness levels, and more."
