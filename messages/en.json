@@ -152,6 +152,7 @@
     "invalidSubject": "Invalid subject selected"
   },
   "footer": {
+    "brandName": "Sendero Bike Trails",
     "brandDescription": "Beginner-friendly hike & bike tours in Colombia's Coffee Region.",
     "quickLinks": {
       "heading": "Quick Links",
