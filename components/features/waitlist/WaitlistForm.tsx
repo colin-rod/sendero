@@ -64,6 +64,7 @@ export function WaitlistForm() {
       validationErrors.forEach((error: ValidationError) => {
         // Map error messages to translated strings
         const errorKey = error.field;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const translatedMessage = tValidation(error.message as any) || error.message;
         errorMap[errorKey] = translatedMessage;
       });

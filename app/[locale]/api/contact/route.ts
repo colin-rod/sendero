@@ -84,7 +84,7 @@ export async function POST(
         console.error('Email sending error:', emailError);
       }
     } else {
-      console.log('Resend not configured - email notification skipped');
+      console.warn('Resend not configured - email notification skipped');
     }
 
     // Success response

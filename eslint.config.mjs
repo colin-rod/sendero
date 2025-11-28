@@ -103,6 +103,8 @@ export default [
         page: 'readonly',
         browser: 'readonly',
         context: 'readonly',
+        // DOM globals for tests
+        HTMLTextAreaElement: 'readonly',
       },
     },
     rules: {
