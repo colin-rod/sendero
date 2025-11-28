@@ -26,7 +26,7 @@ jest.mock('@/lib/supabase/client', () => ({
 }));
 
 // Import after mocks
-const { POST, GET } = require('@/app/api/waitlist/route');
+const { POST, GET } = require('@/app/[locale]/api/waitlist/route');
 const { supabase } = require('@/lib/supabase/client');
 
 // Mock console.error to avoid cluttering test output

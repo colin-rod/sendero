@@ -1,0 +1,421 @@
+{
+  "header": {
+    "skipToContent": "Skip to content",
+    "logoAlt": "Sendero logo",
+    "brandName": "Sendero Bike Trails",
+    "ariaLabel": "Sendero Bike Trails home",
+    "nav": {
+      "about": "About",
+      "howItWorks": "How It Works"
+    },
+    "mobileMenu": {
+      "toggle": "Toggle navigation menu",
+      "ariaLabel": "Mobile navigation"
+    }
+  },
+  "hero": {
+    "title": "Discover Colombia's Coffee Region",
+    "subtitle": "One Pedal at a Time",
+    "description": "Beginner-friendly, sustainable hike & bike tours through Pereira's stunning landscapes. E-bikes, women-only groups, and authentic coffee farm experiences.",
+    "features": {
+      "eBikes": "E-Bikes Available",
+      "ecoConscious": "Eco-Conscious Tours",
+      "coffeeFarm": "Coffee Farm Visits"
+    },
+    "emailCapture": {
+      "buttonLearnMore": "LEARN MORE",
+      "buttonSubmit": "SUBMIT",
+      "placeholder": "Enter your email",
+      "helperText": "No spam, just updates when we launch",
+      "successMessage": "✓ Thanks! We'll keep you updated when we launch."
+    }
+  },
+  "howItWorks": {
+    "heading": "How It Works",
+    "description": "Join the waitlist today and be the first to know when tours open up. Simple, easy, and no commitment required.",
+    "steps": {
+      "signUp": {
+        "title": "Sign Up",
+        "description": "Fill out the quick form below with your email and tour preferences."
+      },
+      "stayTuned": {
+        "title": "Stay Tuned",
+        "description": "We'll keep you updated as we finalize tour dates and packages."
+      },
+      "bookAdventure": {
+        "title": "Book Your Adventure",
+        "description": "Be among the first to book when tours officially launch."
+      }
+    }
+  },
+  "perfectFor": {
+    "heading": "Perfect For",
+    "description": "Our tours are designed for everyone, from complete beginners to moderate cyclists looking for an authentic Colombian experience.",
+    "personas": {
+      "beginnerCyclists": {
+        "title": "Beginner Cyclists",
+        "description": "Never biked long distances? No problem. Our e-bikes and gentle routes make it easy for anyone to enjoy."
+      },
+      "ecoTravelers": {
+        "title": "Eco-Conscious Travelers",
+        "description": "Sustainable tourism that respects local communities and the environment."
+      },
+      "coffeeLovers": {
+        "title": "Coffee Lovers",
+        "description": "Experience authentic coffee farm visits and learn from local farmers."
+      },
+      "womenGroups": {
+        "title": "Women-Only Groups",
+        "description": "Safe, supportive group tours designed specifically for women travelers."
+      },
+      "natureEnthusiasts": {
+        "title": "Nature Enthusiasts",
+        "description": "Explore stunning landscapes, cloud forests, and mountain trails."
+      },
+      "weekendAdventurers": {
+        "title": "Weekend Adventurers",
+        "description": "Short trips perfect for those with limited time but big wanderlust."
+      }
+    }
+  },
+  "waitlist": {
+    "heading": "Join the Waitlist",
+    "description": "Be the first to know when tours open up. No spam, just adventure."
+  },
+  "form": {
+    "labels": {
+      "email": "Email address *",
+      "tourDuration": "Preferred tour duration *",
+      "interestTypes": "What interests you? (select all that apply) *",
+      "fitnessLevel": "Fitness level *",
+      "travelTimeline": "When are you planning to travel? *"
+    },
+    "placeholders": {
+      "email": "you@example.com"
+    },
+    "tourDuration": {
+      "oneDay": {
+        "label": "1 Day",
+        "description": "Perfect for a quick adventure"
+      },
+      "weekend": {
+        "label": "Weekend (2-3 days)",
+        "description": "Explore more at a relaxed pace"
+      },
+      "oneWeek": {
+        "label": "1 Week",
+        "description": "Full immersion experience"
+      }
+    },
+    "interests": {
+      "hiking": "Hiking",
+      "biking": "Biking",
+      "eBike": "E-Bike (electric bike)",
+      "womenOnly": "Women-only tours",
+      "coffeeFarm": "Coffee farm experiences"
+    },
+    "fitnessLevel": {
+      "beginner": {
+        "label": "Beginner",
+        "description": "New to cycling or hiking"
+      },
+      "moderate": {
+        "label": "Moderate",
+        "description": "Some experience, comfortable with physical activity"
+      }
+    },
+    "travelTimeline": {
+      "next3Months": "Next 3 months",
+      "next6Months": "Next 6 months",
+      "later": "Just exploring for now"
+    },
+    "buttons": {
+      "submit": "Join the Waitlist",
+      "submitting": "Joining..."
+    },
+    "helperText": "We respect your privacy. No spam, just updates about tours."
+  },
+  "validation": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "tourDurationRequired": "Please select a tour duration",
+    "interestTypesRequired": "Please select at least one interest",
+    "fitnessLevelRequired": "Please select a fitness level",
+    "travelTimelineRequired": "Please select when you're planning to travel",
+    "emailDuplicate": "This email is already on the waitlist",
+    "generalError": "Something went wrong. Please try again.",
+    "networkError": "Network error. Please check your connection and try again.",
+    "nameRequired": "Name is required",
+    "nameTooShort": "Name must be at least 2 characters",
+    "messageRequired": "Message is required",
+    "messageTooShort": "Message must be at least 10 characters",
+    "invalidSubject": "Invalid subject selected"
+  },
+  "footer": {
+    "brandDescription": "Beginner-friendly hike & bike tours in Colombia's Coffee Region.",
+    "quickLinks": {
+      "heading": "Quick Links",
+      "about": "About",
+      "howItWorks": "How It Works",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "contact": {
+      "heading": "Contact",
+      "description": "Questions? We'd love to hear from you.",
+      "email": "info@senderobiketrails.com",
+      "instagram": "Follow us on Instagram"
+    },
+    "copyright": "All rights reserved."
+  },
+  "thankYou": {
+    "heading": "You're on the List!",
+    "message": "Thank you for joining the Sendero Bike Trails waitlist. We'll be in touch when tours open up with exclusive early access for waitlist members.",
+    "whatHappensNext": {
+      "heading": "What happens next?",
+      "steps": {
+        "checkInbox": {
+          "title": "Check your inbox",
+          "description": "You'll receive a confirmation email shortly"
+        },
+        "stayTuned": {
+          "title": "Stay tuned",
+          "description": "We'll keep you updated on tour dates and packages"
+        },
+        "beFirst": {
+          "title": "Be among the first",
+          "description": "Waitlist members get priority booking access"
+        }
+      }
+    },
+    "share": {
+      "heading": "Share the Adventure",
+      "description": "Know someone who'd love this? Spread the word!",
+      "buttons": {
+        "copyLink": "Copy Link",
+        "copied": "Copied!",
+        "whatsapp": "WhatsApp",
+        "twitter": "Twitter",
+        "facebook": "Facebook"
+      },
+      "shareText": "Check out Sendero Bike Trails - beginner-friendly hike & bike tours in Colombia's Coffee Region!"
+    },
+    "backToHome": "Back to Home"
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "Get in Touch",
+    "description": "Have questions about our tours? We're here to help!",
+    "contactInfo": {
+      "heading": "Contact Information",
+      "email": {
+        "label": "Email",
+        "value": "info@senderobiketrails.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "cta": "Send us a message"
+      },
+      "instagram": {
+        "label": "Instagram",
+        "handle": "@sendero_bike_trails"
+      },
+      "responseTime": "We typically respond within 24 hours"
+    },
+    "form": {
+      "heading": "Send us a Message",
+      "labels": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject (optional)",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "email": "your@email.com",
+        "subject": "Select a topic...",
+        "message": "Tell us how we can help..."
+      },
+      "subjects": {
+        "general": "General Inquiry",
+        "tour": "Tour Question",
+        "custom": "Custom Tour Request",
+        "feedback": "Feedback"
+      },
+      "buttons": {
+        "submit": "Send Message",
+        "submitting": "Sending..."
+      },
+      "success": {
+        "title": "Message Sent!",
+        "message": "Thank you for contacting us. We'll get back to you within 24 hours."
+      }
+    },
+    "faqLink": {
+      "text": "Looking for quick answers?",
+      "linkText": "Check our FAQ"
+    },
+    "whatsappMessage": "Hello! I'm interested in learning more about Sendero bike trails."
+  },
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about Sendero bike tours",
+    "expandAll": "Expand All",
+    "collapseAll": "Collapse All",
+    "search": {
+      "placeholder": "Search FAQs...",
+      "ariaLabel": "Search frequently asked questions",
+      "clearAriaLabel": "Clear search",
+      "results": "{{count}} question(s) found",
+      "noResults": "No questions found",
+      "tryDifferent": "Try searching with different keywords"
+    },
+    "metadata": {
+      "title": "FAQ - Sendero Bike Trails",
+      "description": "Answers to common questions about our beginner-friendly bike tours in Colombia's Coffee Region. Safety, weather, fitness levels, and more."
+    },
+    "sections": {
+      "safety": {
+        "title": "Safety & Health",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Are the tours safe for beginners?",
+            "answer": "[TODO: Update this content] Yes, all our tours are specifically designed with beginners in mind. We use well-maintained bikes, provide high-quality safety equipment, and our routes avoid heavy traffic. Our experienced guides are trained in first aid and carry safety equipment at all times."
+          },
+          {
+            "question": "[PLACEHOLDER] What safety equipment is provided?",
+            "answer": "[TODO: Update this content] We provide helmets for all riders, reflective vests for better visibility, and our guides carry comprehensive first aid kits. All equipment meets international safety standards."
+          },
+          {
+            "question": "[PLACEHOLDER] Are your guides trained in first aid?",
+            "answer": "[TODO: Update this content] Yes, all our guides are certified in wilderness first aid and CPR. They know the locations of the nearest medical facilities along all routes."
+          },
+          {
+            "question": "[PLACEHOLDER] What if I have a medical condition?",
+            "answer": "[TODO: Update this content] Please inform us of any medical conditions when booking. Our tours are suitable for people with moderate health, but we recommend consulting your doctor before participating. We can often accommodate specific needs with advance notice."
+          }
+        ]
+      },
+      "weather": {
+        "title": "Weather & Best Time to Visit",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] What's the weather like in Pereira?",
+            "answer": "[TODO: Update this content] Pereira has a mild tropical climate with temperatures ranging from 18-28°C (64-82°F) year-round. The Coffee Region enjoys pleasant weather thanks to its altitude."
+          },
+          {
+            "question": "[PLACEHOLDER] When is the best time to visit?",
+            "answer": "[TODO: Update this content] The region is beautiful year-round, but the dry seasons (December-March and July-August) offer the most consistent weather for cycling."
+          },
+          {
+            "question": "[PLACEHOLDER] What happens if it rains during the tour?",
+            "answer": "[TODO: Update this content] Light rain is common in the Coffee Region and actually adds to the experience. We provide rain gear and adjust routes if needed. Tours are only cancelled in severe weather conditions."
+          }
+        ]
+      },
+      "fitness": {
+        "title": "Fitness & Difficulty Levels",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] How fit do I need to be?",
+            "answer": "[TODO: Update this content] Our beginner tours require basic fitness - if you can walk for 2-3 hours comfortably, you can do our tours. E-bikes make cycling accessible even if you're not an experienced cyclist."
+          },
+          {
+            "question": "[PLACEHOLDER] What's the difference between beginner and moderate difficulty?",
+            "answer": "[TODO: Update this content] Beginner tours have flat to gentle terrain with frequent breaks, covering 15-25km. Moderate tours include some hills and cover 25-40km with good fitness recommended."
+          },
+          {
+            "question": "[PLACEHOLDER] Can I use an e-bike if I'm not confident?",
+            "answer": "[TODO: Update this content] Absolutely! E-bikes are available on all our tours and are perfect for those who want to enjoy the scenery without worrying about fitness level or hills."
+          },
+          {
+            "question": "[PLACEHOLDER] What are the average distances per day?",
+            "answer": "[TODO: Update this content] Day tours: 15-30km, Weekend tours: 20-40km per day, Week-long tours: 25-50km per day with rest days included."
+          }
+        ]
+      },
+      "transport": {
+        "title": "Transport & Airport",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] How do I get to Pereira?",
+            "answer": "[TODO: Update this content] Pereira has an international airport (Matecaña Airport - PEI) with connections through Bogotá or Medellín. The airport is 15 minutes from the city center."
+          },
+          {
+            "question": "[PLACEHOLDER] Do you offer airport pickup?",
+            "answer": "[TODO: Update this content] Yes, we can arrange airport transfers for an additional fee. Contact us when booking to arrange pickup details."
+          },
+          {
+            "question": "[PLACEHOLDER] Is transportation included between tour locations?",
+            "answer": "[TODO: Update this content] All transportation during the tour is included - we provide support vehicles and transfers between cycling segments."
+          }
+        ]
+      },
+      "gear": {
+        "title": "Gear & What to Bring",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] What equipment is provided?",
+            "answer": "[TODO: Update this content] We provide: bikes (standard or e-bike), helmets, water bottles, repair kits, and support vehicle. You just bring yourself and appropriate clothing."
+          },
+          {
+            "question": "[PLACEHOLDER] What should I pack for the tour?",
+            "answer": "[TODO: Update this content] Comfortable athletic clothing, cycling shorts (padded recommended), sunscreen, sunglasses, light rain jacket, comfortable shoes, and a small daypack. Detailed packing list sent upon booking."
+          },
+          {
+            "question": "[PLACEHOLDER] Do I need special cycling shoes?",
+            "answer": "[TODO: Update this content] No, comfortable athletic or hiking shoes work perfectly. Our bikes have platform pedals suitable for regular shoes."
+          },
+          {
+            "question": "[PLACEHOLDER] What about bike sizes?",
+            "answer": "[TODO: Update this content] We have bikes in all sizes from small to extra-large. We'll ask for your height when booking to ensure the right fit."
+          }
+        ]
+      },
+      "insurance": {
+        "title": "Insurance & Travel Requirements",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Do I need travel insurance?",
+            "answer": "[TODO: Update this content] Yes, we strongly recommend travel insurance that covers cycling activities, medical emergencies, and trip cancellation."
+          },
+          {
+            "question": "[PLACEHOLDER] What should my insurance cover?",
+            "answer": "[TODO: Update this content] Your insurance should cover: medical expenses, emergency evacuation, cycling activities, trip cancellation, and personal belongings."
+          },
+          {
+            "question": "[PLACEHOLDER] Do I need a visa to visit Colombia?",
+            "answer": "[TODO: Update this content] Many nationalities can visit Colombia visa-free for up to 90 days. Check with your local Colombian embassy for specific requirements based on your nationality."
+          }
+        ]
+      },
+      "payments": {
+        "title": "Payments & Booking Changes",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] How do I book a tour?",
+            "answer": "[TODO: Update this content] Join our waitlist using the form on our homepage. We'll contact you when tours are available with booking instructions and payment details."
+          },
+          {
+            "question": "[PLACEHOLDER] What payment methods do you accept?",
+            "answer": "[TODO: Update this content] We accept credit cards, bank transfers, and PayPal. Full payment details will be provided when tours launch."
+          },
+          {
+            "question": "[PLACEHOLDER] What's your cancellation policy?",
+            "answer": "[TODO: Update this content] Cancellation policy details will be provided when tours launch. We aim to offer flexible cancellation terms with full or partial refunds depending on notice period."
+          },
+          {
+            "question": "[PLACEHOLDER] Can I change my tour dates?",
+            "answer": "[TODO: Update this content] Yes, we understand plans change. Date changes are possible subject to availability and our cancellation policy terms."
+          }
+        ]
+      }
+    },
+    "sectionsCount": "{{count}} sections with {{questionCount}} questions"
+  },
+  "metadata": {
+    "title": "Sendero Bike Trails - Discover Colombia's Coffee Region",
+    "description": "Beginner-friendly hike & bike tours in Pereira, Colombia. E-bikes, women-only groups, and authentic coffee farm experiences. Join our waitlist today!",
+    "keywords": "colombia tours, coffee region tours, pereira bike tours, e-bike tours, sustainable travel colombia, coffee farm tours"
+  }
+}

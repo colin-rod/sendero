@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from '@/lib/i18n/routing';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { RadioGroup } from '@/components/ui/RadioGroup';
@@ -16,7 +17,11 @@ import type {
 } from '@/lib/types/database';
 
 export function WaitlistForm() {
+  const t = useTranslations('form');
+  const tValidation = useTranslations('validation');
+  const locale = useLocale();
   const router = useRouter();
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [generalError, setGeneralError] = useState<string>('');
@@ -57,7 +62,10 @@ export function WaitlistForm() {
     if (validationErrors.length > 0) {
       const errorMap: Record<string, string> = {};
       validationErrors.forEach((error: ValidationError) => {
-        errorMap[error.field] = error.message;
+        // Map error messages to translated strings
+        const errorKey = error.field;
+        const translatedMessage = tValidation(error.message as any) || error.message;
+        errorMap[errorKey] = translatedMessage;
       });
       setErrors(errorMap);
       return;
@@ -67,7 +75,7 @@ export function WaitlistForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/waitlist', {
+      const response = await fetch(`/${locale}/api/waitlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,9 +87,9 @@ export function WaitlistForm() {
 
       if (!response.ok) {
         if (response.status === 409) {
-          setErrors({ email: 'This email is already on the waitlist' });
+          setErrors({ email: tValidation('emailDuplicate') });
         } else {
-          setGeneralError(data.error || 'Something went wrong. Please try again.');
+          setGeneralError(data.error || tValidation('generalError'));
         }
         return;
       }
@@ -90,7 +98,7 @@ export function WaitlistForm() {
       router.push('/thank-you');
     } catch (error) {
       console.error('Form submission error:', error);
-      setGeneralError('Network error. Please check your connection and try again.');
+      setGeneralError(tValidation('networkError'));
     } finally {
       setIsSubmitting(false);
     }
@@ -101,9 +109,9 @@ export function WaitlistForm() {
       <div className="space-y-6">
         {/* Email */}
         <Input
-          label="Email address *"
+          label={t('labels.email')}
           type="email"
-          placeholder="you@example.com"
+          placeholder={t('placeholders.email')}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           error={errors.email}
@@ -112,45 +120,57 @@ export function WaitlistForm() {
         {/* Tour Duration */}
         <RadioGroup
           name="tourDuration"
-          label="Preferred tour duration *"
+          label={t('labels.tourDuration')}
           value={tourDuration}
           onChange={(value) => setTourDuration(value as TourDuration)}
           error={errors.tourDuration}
           options={[
-            { value: 'one_day', label: '1 Day', description: 'Perfect for a quick adventure' },
-            { value: 'weekend', label: 'Weekend (2-3 days)', description: 'Explore more at a relaxed pace' },
-            { value: 'one_week', label: '1 Week', description: 'Full immersion experience' },
+            {
+              value: 'one_day',
+              label: t('tourDuration.oneDay.label'),
+              description: t('tourDuration.oneDay.description')
+            },
+            {
+              value: 'weekend',
+              label: t('tourDuration.weekend.label'),
+              description: t('tourDuration.weekend.description')
+            },
+            {
+              value: 'one_week',
+              label: t('tourDuration.oneWeek.label'),
+              description: t('tourDuration.oneWeek.description')
+            },
           ]}
         />
 
         {/* Interest Types */}
         <div>
           <label className="label mb-3 block text-body">
-            What interests you? (select all that apply) *
+            {t('labels.interestTypes')}
           </label>
           <div className="space-y-2">
             <Checkbox
-              label="Hiking"
+              label={t('interests.hiking')}
               checked={interestTypes.includes('hike')}
               onChange={(e) => handleInterestChange('hike', e.target.checked)}
             />
             <Checkbox
-              label="Biking"
+              label={t('interests.biking')}
               checked={interestTypes.includes('bike')}
               onChange={(e) => handleInterestChange('bike', e.target.checked)}
             />
             <Checkbox
-              label="E-Bike (electric bike)"
+              label={t('interests.eBike')}
               checked={interestTypes.includes('e_bike')}
               onChange={(e) => handleInterestChange('e_bike', e.target.checked)}
             />
             <Checkbox
-              label="Women-only tours"
+              label={t('interests.womenOnly')}
               checked={interestTypes.includes('women_only')}
               onChange={(e) => handleInterestChange('women_only', e.target.checked)}
             />
             <Checkbox
-              label="Coffee farm experiences"
+              label={t('interests.coffeeFarm')}
               checked={interestTypes.includes('coffee_farm')}
               onChange={(e) => handleInterestChange('coffee_farm', e.target.checked)}
             />
@@ -163,27 +183,35 @@ export function WaitlistForm() {
         {/* Fitness Level */}
         <RadioGroup
           name="fitnessLevel"
-          label="Fitness level *"
+          label={t('labels.fitnessLevel')}
           value={fitnessLevel}
           onChange={(value) => setFitnessLevel(value as FitnessLevel)}
           error={errors.fitnessLevel}
           options={[
-            { value: 'beginner', label: 'Beginner', description: 'New to cycling or hiking' },
-            { value: 'moderate', label: 'Moderate', description: 'Some experience, comfortable with physical activity' },
+            {
+              value: 'beginner',
+              label: t('fitnessLevel.beginner.label'),
+              description: t('fitnessLevel.beginner.description')
+            },
+            {
+              value: 'moderate',
+              label: t('fitnessLevel.moderate.label'),
+              description: t('fitnessLevel.moderate.description')
+            },
           ]}
         />
 
         {/* Travel Timeline */}
         <RadioGroup
           name="travelTimeline"
-          label="When are you planning to travel? *"
+          label={t('labels.travelTimeline')}
           value={travelTimeline}
           onChange={(value) => setTravelTimeline(value as TravelTimeline)}
           error={errors.travelTimeline}
           options={[
-            { value: 'next_3_months', label: 'Next 3 months' },
-            { value: 'next_6_months', label: 'Next 6 months' },
-            { value: 'later', label: 'Just exploring for now' },
+            { value: 'next_3_months', label: t('travelTimeline.next3Months') },
+            { value: 'next_6_months', label: t('travelTimeline.next6Months') },
+            { value: 'later', label: t('travelTimeline.later') },
           ]}
         />
 
@@ -202,11 +230,11 @@ export function WaitlistForm() {
           className="w-full"
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Joining...' : 'Join the Waitlist'}
+          {isSubmitting ? t('buttons.submitting') : t('buttons.submit')}
         </Button>
 
         <p className="text-center text-body text-muted-foreground">
-          We respect your privacy. No spam, just updates about tours.
+          {t('helperText')}
         </p>
       </div>
     </form>

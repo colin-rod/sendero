@@ -1,0 +1,421 @@
+{
+  "header": {
+    "skipToContent": "Zum Inhalt springen",
+    "logoAlt": "Sendero Logo",
+    "brandName": "Sendero Bike Trails",
+    "ariaLabel": "Sendero Bike Trails Startseite",
+    "nav": {
+      "about": "Über uns",
+      "howItWorks": "Wie es funktioniert"
+    },
+    "mobileMenu": {
+      "toggle": "Navigationsmenü umschalten",
+      "ariaLabel": "Mobile Navigation"
+    }
+  },
+  "hero": {
+    "title": "Entdecke Kolumbiens Kaffeeregion",
+    "subtitle": "Ein Pedaltritt nach dem anderen",
+    "description": "Anfängerfreundliche, nachhaltige Wander- und Radtouren durch die atemberaubenden Landschaften Pereiras. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse.",
+    "features": {
+      "eBikes": "E-Bikes verfügbar",
+      "ecoConscious": "Umweltbewusste Touren",
+      "coffeeFarm": "Kaffeefarmen-Besuche"
+    },
+    "emailCapture": {
+      "buttonLearnMore": "MEHR ERFAHREN",
+      "buttonSubmit": "ABSENDEN",
+      "placeholder": "E-Mail-Adresse eingeben",
+      "helperText": "Kein Spam, nur Updates zum Start",
+      "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
+    }
+  },
+  "howItWorks": {
+    "heading": "Wie es funktioniert",
+    "description": "Trage dich heute in die Warteliste ein und erfahre als Erste/r, wenn die Touren starten. Einfach, unkompliziert und ohne Verpflichtung.",
+    "steps": {
+      "signUp": {
+        "title": "Anmelden",
+        "description": "Fülle das kurze Formular mit deiner E-Mail und Tourpräferenzen aus."
+      },
+      "stayTuned": {
+        "title": "Dran bleiben",
+        "description": "Wir halten dich auf dem Laufenden, während wir Tourdaten und Pakete finalisieren."
+      },
+      "bookAdventure": {
+        "title": "Abenteuer buchen",
+        "description": "Gehöre zu den Ersten, die buchen können, wenn die Touren offiziell starten."
+      }
+    }
+  },
+  "perfectFor": {
+    "heading": "Perfekt für",
+    "description": "Unsere Touren sind für alle konzipiert, von absoluten Anfängern bis zu moderaten Radfahrern, die ein authentisches kolumbianisches Erlebnis suchen.",
+    "personas": {
+      "beginnerCyclists": {
+        "title": "Anfänger-Radfahrer",
+        "description": "Noch nie lange Strecken geradelt? Kein Problem. Unsere E-Bikes und sanften Routen machen es jedem leicht."
+      },
+      "ecoTravelers": {
+        "title": "Umweltbewusste Reisende",
+        "description": "Nachhaltiger Tourismus, der lokale Gemeinschaften und die Umwelt respektiert."
+      },
+      "coffeeLovers": {
+        "title": "Kaffeeliebhaber",
+        "description": "Erlebe authentische Kaffeefarmenbesuche und lerne von lokalen Farmern."
+      },
+      "womenGroups": {
+        "title": "Reine Frauengruppen",
+        "description": "Sichere, unterstützende Gruppentouren speziell für Reisende Frauen."
+      },
+      "natureEnthusiasts": {
+        "title": "Naturliebhaber",
+        "description": "Erkunde atemberaubende Landschaften, Nebelwälder und Bergpfade."
+      },
+      "weekendAdventurers": {
+        "title": "Wochenendabenteurer",
+        "description": "Kurze Trips perfekt für alle mit wenig Zeit aber großem Fernweh."
+      }
+    }
+  },
+  "waitlist": {
+    "heading": "Zur Warteliste",
+    "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer."
+  },
+  "form": {
+    "labels": {
+      "email": "E-Mail-Adresse *",
+      "tourDuration": "Bevorzugte Tourdauer *",
+      "interestTypes": "Woran bist du interessiert? (alle zutreffenden auswählen) *",
+      "fitnessLevel": "Fitnesslevel *",
+      "travelTimeline": "Wann planst du zu reisen? *"
+    },
+    "placeholders": {
+      "email": "deine@email.de"
+    },
+    "tourDuration": {
+      "oneDay": {
+        "label": "1 Tag",
+        "description": "Perfekt für ein schnelles Abenteuer"
+      },
+      "weekend": {
+        "label": "Wochenende (2-3 Tage)",
+        "description": "Entspannt mehr erkunden"
+      },
+      "oneWeek": {
+        "label": "1 Woche",
+        "description": "Vollständiges Eintaucherlebnis"
+      }
+    },
+    "interests": {
+      "hiking": "Wandern",
+      "biking": "Radfahren",
+      "eBike": "E-Bike (Elektrofahrrad)",
+      "womenOnly": "Reine Frauentouren",
+      "coffeeFarm": "Kaffeefarm-Erlebnisse"
+    },
+    "fitnessLevel": {
+      "beginner": {
+        "label": "Anfänger",
+        "description": "Neu beim Radfahren oder Wandern"
+      },
+      "moderate": {
+        "label": "Moderat",
+        "description": "Etwas Erfahrung, wohl bei körperlicher Aktivität"
+      }
+    },
+    "travelTimeline": {
+      "next3Months": "Nächste 3 Monate",
+      "next6Months": "Nächste 6 Monate",
+      "later": "Schaue mich nur um"
+    },
+    "buttons": {
+      "submit": "Zur Warteliste",
+      "submitting": "Wird eingetragen..."
+    },
+    "helperText": "Wir respektieren deine Privatsphäre. Kein Spam, nur Updates zu Touren."
+  },
+  "validation": {
+    "emailRequired": "E-Mail ist erforderlich",
+    "emailInvalid": "Bitte gib eine gültige E-Mail-Adresse ein",
+    "tourDurationRequired": "Bitte wähle eine Tourdauer",
+    "interestTypesRequired": "Bitte wähle mindestens ein Interesse",
+    "fitnessLevelRequired": "Bitte wähle ein Fitnesslevel",
+    "travelTimelineRequired": "Bitte wähle, wann du reisen möchtest",
+    "emailDuplicate": "Diese E-Mail ist bereits auf der Warteliste",
+    "generalError": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "networkError": "Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es erneut.",
+    "nameRequired": "Name ist erforderlich",
+    "nameTooShort": "Name muss mindestens 2 Zeichen lang sein",
+    "messageRequired": "Nachricht ist erforderlich",
+    "messageTooShort": "Nachricht muss mindestens 10 Zeichen lang sein",
+    "invalidSubject": "Ungültiges Betreff ausgewählt"
+  },
+  "footer": {
+    "brandDescription": "Anfängerfreundliche Wander- und Radtouren in Kolumbiens Kaffeeregion.",
+    "quickLinks": {
+      "heading": "Schnelllinks",
+      "about": "Über uns",
+      "howItWorks": "Wie es funktioniert",
+      "faq": "FAQ",
+      "contact": "Kontakt"
+    },
+    "contact": {
+      "heading": "Kontakt",
+      "description": "Fragen? Wir freuen uns von dir zu hören.",
+      "email": "info@senderobiketrails.com",
+      "instagram": "Folge uns auf Instagram"
+    },
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "thankYou": {
+    "heading": "Du bist auf der Liste!",
+    "message": "Danke, dass du dich zur Sendero Bike Trails Warteliste angemeldet hast. Wir melden uns, wenn Touren starten, mit exklusivem Frühzugang für Wartelistenmitglieder.",
+    "whatHappensNext": {
+      "heading": "Was passiert als Nächstes?",
+      "steps": {
+        "checkInbox": {
+          "title": "Postfach prüfen",
+          "description": "Du erhältst in Kürze eine Bestätigungsmail"
+        },
+        "stayTuned": {
+          "title": "Dran bleiben",
+          "description": "Wir halten dich über Tourdaten und Pakete auf dem Laufenden"
+        },
+        "beFirst": {
+          "title": "Gehöre zu den Ersten",
+          "description": "Wartelistenmitglieder erhalten vorrangigen Buchungszugang"
+        }
+      }
+    },
+    "share": {
+      "heading": "Teile das Abenteuer",
+      "description": "Kennst du jemanden, dem das gefallen würde? Erzähle es weiter!",
+      "buttons": {
+        "copyLink": "Link kopieren",
+        "copied": "Kopiert!",
+        "whatsapp": "WhatsApp",
+        "twitter": "Twitter",
+        "facebook": "Facebook"
+      },
+      "shareText": "Schau dir Sendero Bike Trails an - anfängerfreundliche Wander- und Radtouren in Kolumbiens Kaffeeregion!"
+    },
+    "backToHome": "Zurück zur Startseite"
+  },
+  "contactPage": {
+    "title": "Kontakt",
+    "subtitle": "Kontaktiere uns",
+    "description": "Hast du Fragen zu unseren Touren? Wir helfen dir gerne weiter!",
+    "contactInfo": {
+      "heading": "Kontaktinformationen",
+      "email": {
+        "label": "E-Mail",
+        "value": "info@senderobiketrails.com"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "cta": "Schreib uns eine Nachricht"
+      },
+      "instagram": {
+        "label": "Instagram",
+        "handle": "@sendero_bike_trails"
+      },
+      "responseTime": "Wir antworten in der Regel innerhalb von 24 Stunden"
+    },
+    "form": {
+      "heading": "Schreib uns eine Nachricht",
+      "labels": {
+        "name": "Name",
+        "email": "E-Mail",
+        "subject": "Betreff (optional)",
+        "message": "Nachricht"
+      },
+      "placeholders": {
+        "name": "Dein Name",
+        "email": "deine@email.de",
+        "subject": "Wähle ein Thema...",
+        "message": "Sag uns, wie wir dir helfen können..."
+      },
+      "subjects": {
+        "general": "Allgemeine Anfrage",
+        "tour": "Tourfrage",
+        "custom": "Individuelle Touranfrage",
+        "feedback": "Feedback"
+      },
+      "buttons": {
+        "submit": "Nachricht senden",
+        "submitting": "Wird gesendet..."
+      },
+      "success": {
+        "title": "Nachricht gesendet!",
+        "message": "Vielen Dank für deine Nachricht. Wir melden uns innerhalb von 24 Stunden bei dir."
+      }
+    },
+    "faqLink": {
+      "text": "Suchst du schnelle Antworten?",
+      "linkText": "Schau dir unsere FAQ an"
+    },
+    "whatsappMessage": "Hallo! Ich interessiere mich für Sendero Radtouren."
+  },
+  "faqPage": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Alles, was Sie über Sendero-Radtouren wissen müssen",
+    "expandAll": "Alle erweitern",
+    "collapseAll": "Alle schließen",
+    "search": {
+      "placeholder": "FAQs durchsuchen...",
+      "ariaLabel": "Häufig gestellte Fragen durchsuchen",
+      "clearAriaLabel": "Suche löschen",
+      "results": "{{count}} Frage(n) gefunden",
+      "noResults": "Keine Fragen gefunden",
+      "tryDifferent": "Versuchen Sie es mit anderen Suchbegriffen"
+    },
+    "metadata": {
+      "title": "FAQ - Sendero Bike Trails",
+      "description": "Antworten auf häufige Fragen zu unseren einsteigerfreundlichen Radtouren in Kolumbiens Kaffeeregion. Sicherheit, Wetter, Fitnesslevel und mehr."
+    },
+    "sections": {
+      "safety": {
+        "title": "Sicherheit & Gesundheit",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Sind die Touren sicher für Anfänger?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Ja, alle unsere Touren sind speziell für Anfänger konzipiert. Wir verwenden gut gewartete Fahrräder, stellen hochwertige Sicherheitsausrüstung bereit und unsere Routen vermeiden starken Verkehr. Unsere erfahrenen Guides sind in Erster Hilfe geschult und führen jederzeit Sicherheitsausrüstung mit sich."
+          },
+          {
+            "question": "[PLACEHOLDER] Welche Sicherheitsausrüstung wird bereitgestellt?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Wir stellen Helme für alle Fahrer, Reflektorwesten für bessere Sichtbarkeit zur Verfügung und unsere Guides führen umfassende Erste-Hilfe-Sets mit sich. Alle Ausrüstung entspricht internationalen Sicherheitsstandards."
+          },
+          {
+            "question": "[PLACEHOLDER] Sind Ihre Guides in Erster Hilfe geschult?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Ja, alle unsere Guides sind in Wildnis-Erster-Hilfe und HLW zertifiziert. Sie kennen die Standorte der nächstgelegenen medizinischen Einrichtungen entlang aller Routen."
+          },
+          {
+            "question": "[PLACEHOLDER] Was ist, wenn ich eine medizinische Vorerkrankung habe?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Bitte informieren Sie uns bei der Buchung über alle medizinischen Vorerkrankungen. Unsere Touren sind für Personen mit moderater Gesundheit geeignet, aber wir empfehlen, vor der Teilnahme Ihren Arzt zu konsultieren. Mit rechtzeitiger Ankündigung können wir oft auf spezifische Bedürfnisse eingehen."
+          }
+        ]
+      },
+      "weather": {
+        "title": "Wetter & Beste Reisezeit",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Wie ist das Wetter in Pereira?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Pereira hat ein mildes tropisches Klima mit Temperaturen zwischen 18-28°C das ganze Jahr über. Die Kaffeeregion genießt dank ihrer Höhenlage angenehmes Wetter."
+          },
+          {
+            "question": "[PLACEHOLDER] Wann ist die beste Reisezeit?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Die Region ist das ganze Jahr über schön, aber die Trockenzeiten (Dezember-März und Juli-August) bieten das beständigste Wetter zum Radfahren."
+          },
+          {
+            "question": "[PLACEHOLDER] Was passiert, wenn es während der Tour regnet?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Leichter Regen ist in der Kaffeeregion üblich und bereichert tatsächlich das Erlebnis. Wir stellen Regenausrüstung bereit und passen Routen bei Bedarf an. Touren werden nur bei extremen Wetterbedingungen abgesagt."
+          }
+        ]
+      },
+      "fitness": {
+        "title": "Fitness & Schwierigkeitsgrade",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Wie fit muss ich sein?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Unsere Anfängertouren erfordern grundlegende Fitness - wenn Sie 2-3 Stunden bequem laufen können, können Sie unsere Touren machen. E-Bikes machen das Radfahren auch für unerfahrene Radfahrer zugänglich."
+          },
+          {
+            "question": "[PLACEHOLDER] Was ist der Unterschied zwischen Anfänger und mittlerer Schwierigkeit?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Anfängertouren haben flaches bis sanftes Gelände mit häufigen Pausen und decken 15-25km ab. Mittelschwere Touren beinhalten einige Hügel und decken 25-40km ab, gute Fitness empfohlen."
+          },
+          {
+            "question": "[PLACEHOLDER] Kann ich ein E-Bike verwenden, wenn ich unsicher bin?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Absolut! E-Bikes sind bei allen unseren Touren verfügbar und perfekt für diejenigen, die die Landschaft genießen möchten, ohne sich um Fitnesslevel oder Hügel zu sorgen."
+          },
+          {
+            "question": "[PLACEHOLDER] Wie sind die durchschnittlichen Distanzen pro Tag?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Tagestouren: 15-30km, Wochenendtouren: 20-40km pro Tag, Wochentouren: 25-50km pro Tag mit Ruhetagen."
+          }
+        ]
+      },
+      "transport": {
+        "title": "Transport & Flughafen",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Wie komme ich nach Pereira?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Pereira hat einen internationalen Flughafen (Matecaña Airport - PEI) mit Verbindungen über Bogotá oder Medellín. Der Flughafen ist 15 Minuten vom Stadtzentrum entfernt."
+          },
+          {
+            "question": "[PLACEHOLDER] Bieten Sie Flughafentransfers an?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Ja, wir können Flughafentransfers gegen Aufpreis arrangieren. Kontaktieren Sie uns bei der Buchung, um Transfer-Details zu vereinbaren."
+          },
+          {
+            "question": "[PLACEHOLDER] Ist der Transport zwischen Tourorten inbegriffen?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Alle Transporte während der Tour sind inbegriffen - wir stellen Begleitfahrzeuge und Transfers zwischen Radsegmenten bereit."
+          }
+        ]
+      },
+      "gear": {
+        "title": "Ausrüstung & Was Sie mitbringen sollten",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Welche Ausrüstung wird bereitgestellt?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Wir stellen bereit: Fahrräder (Standard oder E-Bike), Helme, Wasserflaschen, Reparatursets und Begleitfahrzeug. Sie bringen nur sich selbst und passende Kleidung mit."
+          },
+          {
+            "question": "[PLACEHOLDER] Was sollte ich für die Tour einpacken?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Bequeme Sportkleidung, Radhosen (gepolstert empfohlen), Sonnenschutz, Sonnenbrille, leichte Regenjacke, bequeme Schuhe und ein kleiner Tagesrucksack. Detaillierte Packliste wird nach der Buchung gesendet."
+          },
+          {
+            "question": "[PLACEHOLDER] Brauche ich spezielle Radschuhe?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Nein, bequeme Sport- oder Wanderschuhe funktionieren perfekt. Unsere Fahrräder haben Plattformpedale, die für normale Schuhe geeignet sind."
+          },
+          {
+            "question": "[PLACEHOLDER] Was ist mit Fahrradgrößen?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Wir haben Fahrräder in allen Größen von klein bis extra-groß. Wir fragen bei der Buchung nach Ihrer Größe, um die richtige Passform zu gewährleisten."
+          }
+        ]
+      },
+      "insurance": {
+        "title": "Versicherung & Reiseanforderungen",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Benötige ich eine Reiseversicherung?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Ja, wir empfehlen dringend eine Reiseversicherung, die Radaktivitäten, medizinische Notfälle und Reiserücktritt abdeckt."
+          },
+          {
+            "question": "[PLACEHOLDER] Was sollte meine Versicherung abdecken?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Ihre Versicherung sollte abdecken: medizinische Kosten, Notfallevakuierung, Radaktivitäten, Reiserücktritt und persönliche Gegenstände."
+          },
+          {
+            "question": "[PLACEHOLDER] Brauche ich ein Visum für Kolumbien?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Viele Nationalitäten können Kolumbien visumfrei für bis zu 90 Tage besuchen. Prüfen Sie bei Ihrer örtlichen kolumbianischen Botschaft die spezifischen Anforderungen basierend auf Ihrer Nationalität."
+          }
+        ]
+      },
+      "payments": {
+        "title": "Zahlungen & Buchungsänderungen",
+        "questions": [
+          {
+            "question": "[PLACEHOLDER] Wie buche ich eine Tour?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Treten Sie unserer Warteliste über das Formular auf unserer Homepage bei. Wir kontaktieren Sie, wenn Touren verfügbar sind, mit Buchungsanweisungen und Zahlungsdetails."
+          },
+          {
+            "question": "[PLACEHOLDER] Welche Zahlungsmethoden akzeptieren Sie?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Wir akzeptieren Kreditkarten, Banküberweisungen und PayPal. Vollständige Zahlungsdetails werden beim Start der Touren bereitgestellt."
+          },
+          {
+            "question": "[PLACEHOLDER] Was ist Ihre Stornierungsrichtlinie?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Details zur Stornierungsrichtlinie werden beim Start der Touren bereitgestellt. Wir streben flexible Stornierungsbedingungen mit vollständiger oder teilweiser Rückerstattung je nach Kündigungsfrist an."
+          },
+          {
+            "question": "[PLACEHOLDER] Kann ich meine Tourdaten ändern?",
+            "answer": "[TODO: Diesen Inhalt aktualisieren] Ja, wir verstehen, dass sich Pläne ändern. Datumsänderungen sind nach Verfügbarkeit und unseren Stornierungsbedingungen möglich."
+          }
+        ]
+      }
+    },
+    "sectionsCount": "{{count}} Abschnitte mit {{questionCount}} Fragen"
+  },
+  "metadata": {
+    "title": "Sendero Bike Trails - Entdecke Kolumbiens Kaffeeregion",
+    "description": "Anfängerfreundliche Wander- und Radtouren in Pereira, Kolumbien. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse. Trage dich heute in unsere Warteliste ein!",
+    "keywords": "kolumbien touren, kaffeeregion touren, pereira fahrradtouren, e-bike touren, nachhaltiges reisen kolumbien, kaffeefarm touren"
+  }
+}

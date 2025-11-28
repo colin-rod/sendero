@@ -1,10 +1,16 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { isValidEmail } from '@/lib/utils/validation'
 import { Button } from '@/components/ui/Button'
 
 export default function HeroEmailCapture() {
+  const t = useTranslations('hero.emailCapture')
+  const tValidation = useTranslations('validation')
+  const locale = useLocale()
+
   const [isExpanded, setIsExpanded] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
@@ -27,7 +33,7 @@ export default function HeroEmailCapture() {
 
     // Validate email
     if (!isValidEmail(email)) {
-      setError('Please enter a valid email address')
+      setError(tValidation('emailInvalid'))
       return
     }
 
@@ -35,7 +41,7 @@ export default function HeroEmailCapture() {
 
     try {
       // Submit with sensible defaults for required fields
-      const response = await fetch('/api/waitlist', {
+      const response = await fetch(`/${locale}/api/waitlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,11 +59,11 @@ export default function HeroEmailCapture() {
 
       if (!response.ok) {
         if (response.status === 409) {
-          setError('This email is already on our waitlist!')
+          setError(tValidation('emailDuplicate'))
         } else if (response.status === 400) {
-          setError(data.error || 'Invalid email address')
+          setError(data.error || tValidation('emailInvalid'))
         } else {
-          setError('Something went wrong. Please try again.')
+          setError(tValidation('generalError'))
         }
         setIsSubmitting(false)
         return
@@ -74,7 +80,7 @@ export default function HeroEmailCapture() {
         setIsExpanded(false)
       }, 5000)
     } catch {
-      setError('Network error. Please check your connection and try again.')
+      setError(tValidation('networkError'))
       setIsSubmitting(false)
     }
   }
@@ -94,7 +100,7 @@ export default function HeroEmailCapture() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Enter your email"
+          placeholder={t('placeholder')}
           className={`
             input
             transition-all duration-300 ease-in-out
@@ -106,7 +112,7 @@ export default function HeroEmailCapture() {
             ${isExpanded ? 'w-full opacity-100 scale-100' : 'w-0 opacity-0 scale-0'}
           `}
           disabled={isSubmitting}
-          aria-label="Email address"
+          aria-label={t('placeholder')}
         />
 
         {/* Button - Changes text based on state */}
@@ -126,14 +132,14 @@ export default function HeroEmailCapture() {
             ${isExpanded ? 'flex-shrink-0' : 'w-full'}
           `}
         >
-          {isExpanded ? 'SUBMIT' : 'LEARN MORE'}
+          {isExpanded ? t('buttonSubmit') : t('buttonLearnMore')}
         </Button>
       </div>
 
       {/* Helper Text - Shows when expanded */}
       {isExpanded && !showSuccess && (
         <p className="text-white/90 text-sm text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-          No spam, just updates when we launch
+          {t('helperText')}
         </p>
       )}
 
@@ -147,7 +153,7 @@ export default function HeroEmailCapture() {
       {/* Success Toast */}
       {showSuccess && (
         <div className="bg-green-500 text-white text-sm px-6 py-3 rounded-lg shadow-xl animate-fade-in">
-          ✓ Thanks! We'll keep you updated when we launch.
+          {t('successMessage')}
         </div>
       )}
     </div>
