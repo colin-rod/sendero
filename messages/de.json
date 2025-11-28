@@ -414,6 +414,37 @@
     },
     "sectionsCount": "{{count}} Abschnitte mit {{questionCount}} Fragen"
   },
+  "aboutPage": {
+    "title": "Über Sendero Bike Trails",
+    "description": "Erfahre mehr über unsere Mission, nachhaltige und anfängerfreundliche Fahrradtouren in Kolumbiens Kaffeeregion anzubieten.",
+    "heading": "[PLACEHOLDER] Über Uns",
+    "subtitle": "[TODO: Inhalt hinzufügen] Entdecke die Geschichte hinter Sendero und unser Engagement für nachhaltigen Tourismus in Kolumbiens wunderschöner Kaffeeregion.",
+    "sections": {
+      "philosophy": {
+        "heading": "[PLACEHOLDER] Markenphilosophie & Geschichte",
+        "content": "[TODO: Inhalt hinzufügen] Wir glauben, dass Abenteuer für alle zugänglich sein sollte, unabhängig von Fitnesslevel oder Fahrraderfahrung. Sendero entstand aus einer Leidenschaft für Kolumbiens atemberaubende Kaffeeregion und dem Wunsch, ihre Schönheit auf nachhaltige und verantwortungsvolle Weise mit der Welt zu teilen. Unsere Reise begann mit einer einfachen Idee: Fahrradtouren anfängerfreundlich, umweltbewusst und eng mit lokalen Gemeinschaften verbunden zu gestalten.",
+        "imageAlt": "Sendero-Team auf Bergpfad mit Blick auf Kaffeeplantagen"
+      },
+      "region": {
+        "heading": "[PLACEHOLDER] Warum die Anden & Kaffeeregion",
+        "content": "[TODO: Inhalt hinzufügen] Die Kaffeeregion (Eje Cafetero) ist eines der verborgenen Juwelen Kolumbiens. Eingebettet in die Anden bieten Pereira und seine Umgebung atemberaubende Landschaften, das ganze Jahr über perfektes Radfahrwetter und ein reiches kulturelles Erbe. Die mit Kaffeeplantagen bedeckten sanften Hügel, Nebelwälder und traditionellen Fincas schaffen eine ideale Kulisse für unvergessliche Fahrradabenteuer. Diese UNESCO-Welterberegion vereint natürliche Schönheit mit authentischen lokalen Erlebnissen.",
+        "imageAlt": "Malerische Kaffeeplantagen in den Anden nahe Pereira"
+      },
+      "partners": {
+        "heading": "[PLACEHOLDER] Wie wir mit lokalen Fincas arbeiten",
+        "content": "[TODO: Inhalt hinzufügen] Unsere Partnerschaften mit lokalen Kaffeefarmen (Fincas) sind das Herzstück unserer Arbeit. Wir arbeiten direkt mit familiengeführten Farmen zusammen, um authentische Erlebnisse zu schaffen, die den lokalen Gemeinschaften zugutekommen. Wenn du mit Sendero reist, besuchst du nicht nur – du unterstützt nachhaltige Landwirtschaft, Fair-Trade-Praktiken und die Bewahrung traditioneller Kaffeekultur. Unsere Finca-Partner heißen dich in ihren Häusern willkommen, teilen ihre Geschichten und bieten dir praktische Erfahrungen, die du sonst nirgendwo findest.",
+        "imageAlt": "Lokale Kaffeefarm-Familie begrüßt Besucher auf ihrer Finca"
+      },
+      "cta": {
+        "heading": "[PLACEHOLDER] Bereit zum Erkunden?",
+        "content": "[TODO: Inhalt hinzufügen] Begleite uns auf ein unvergessliches Abenteuer durch Kolumbiens Kaffeeregion. Von anfängerfreundlichen Tagesausflügen bis hin zu intensiven einwöchigen Erlebnissen – wir haben Touren für jeden Reisenden.",
+        "buttonText": "Entdecke unsere Touren"
+      }
+    },
+    "placeholderNote": {
+      "text": "Inhalte, die mit [PLACEHOLDER] und [TODO:] markiert sind, sind vorläufig und werden mit finalen Informationen aktualisiert."
+    }
+  },
   "metadata": {
     "title": "Sendero Bike Trails - Entdecke Kolumbiens Kaffeeregion",
     "description": "Anfängerfreundliche Wander- und Radtouren in Pereira, Kolumbien. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse. Trage dich heute in unsere Warteliste ein!",
