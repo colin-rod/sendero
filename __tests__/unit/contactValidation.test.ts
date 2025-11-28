@@ -120,7 +120,7 @@ describe('Contact Form Validation', () => {
     });
 
     it('should return error for invalid subject', () => {
-      const invalidForm = { ...validForm, subject: 'invalid' };
+      const invalidForm = { ...validForm, subject: 'invalid' as any };
       const errors = validateContactForm(invalidForm);
 
       expect(errors).toContainEqual({
@@ -130,7 +130,7 @@ describe('Contact Form Validation', () => {
     });
 
     it('should accept empty subject (optional field)', () => {
-      const form = { ...validForm, subject: '' };
+      const form = { ...validForm, subject: null };
       const errors = validateContactForm(form);
 
       const subjectErrors = errors.filter((e) => e.field === 'subject');
@@ -179,7 +179,7 @@ describe('Contact Form Validation', () => {
       const invalidForm = {
         name: 'A',
         email: 'invalid',
-        subject: 'bad',
+        subject: 'bad' as any,
         message: 'x',
       };
 
@@ -195,7 +195,7 @@ describe('Contact Form Validation', () => {
       const emptyForm = {
         name: '',
         email: '',
-        subject: '',
+        subject: null,
         message: '',
       };
 

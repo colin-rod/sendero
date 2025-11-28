@@ -35,7 +35,7 @@ describe('Contact Email Utilities', () => {
     it('should handle missing subject gracefully', () => {
       const dataWithoutSubject = {
         ...validFormData,
-        subject: '',
+        subject: null,
       };
 
       const email = generateContactEmail(dataWithoutSubject);

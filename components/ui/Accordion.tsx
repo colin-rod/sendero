@@ -56,6 +56,9 @@ export interface AccordionProps {
 
   /** Callback when value changes */
   onValueChange?: (value: string | string[]) => void;
+
+  /** Whether items can be collapsed (only used with type="single") */
+  collapsible?: boolean;
 }
 
 export function Accordion({
@@ -65,6 +68,7 @@ export function Accordion({
   className = '',
   value,
   onValueChange,
+  collapsible = false,
 }: AccordionProps) {
   // Initialize open items based on type and defaultValue
   const getInitialValue = (): string[] => {
@@ -91,7 +95,12 @@ export function Accordion({
 
     if (type === 'single') {
       // Single mode: only one item open at a time
-      newOpenItems = openItems.includes(itemValue) ? [] : [itemValue];
+      // If collapsible is true, allow closing the open item
+      if (openItems.includes(itemValue) && collapsible) {
+        newOpenItems = [];
+      } else {
+        newOpenItems = [itemValue];
+      }
     } else {
       // Multiple mode: toggle the item
       if (openItems.includes(itemValue)) {
