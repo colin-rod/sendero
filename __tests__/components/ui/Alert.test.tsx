@@ -137,7 +137,7 @@ describe('Alert', () => {
     });
 
     it('applies smaller text when title is present', () => {
-      const { container } = render(<Alert title="Title">Content</Alert>);
+      render(<Alert title="Title">Content</Alert>);
       const content = screen.getByText('Content');
       expect(content).toHaveClass('text-sm');
     });

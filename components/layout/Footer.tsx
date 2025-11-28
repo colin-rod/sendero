@@ -25,12 +25,12 @@ export function Footer() {
               <h4 className="mb-3 text-h4 text-white">{t('quickLinks.heading')}</h4>
               <ul className="space-y-2 text-body text-gray-300">
                 <li>
-                  <a href="#about" className="hover:text-white transition-colors">
+                  <Link href="/about" className="hover:text-white transition-colors">
                     {t('quickLinks.about')}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#how-it-works" className="hover:text-white transition-colors">
+                  <a href="/#how-it-works" className="hover:text-white transition-colors">
                     {t('quickLinks.howItWorks')}
                   </a>
                 </li>

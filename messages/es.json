@@ -152,6 +152,7 @@
     "invalidSubject": "Asunto inválido seleccionado"
   },
   "footer": {
+    "brandName": "Sendero Bike Trails",
     "brandDescription": "Tours de senderismo y ciclismo para principiantes en la Región Cafetera de Colombia.",
     "quickLinks": {
       "heading": "Enlaces Rápidos",
@@ -412,6 +413,37 @@
       }
     },
     "sectionsCount": "{{count}} secciones con {{questionCount}} preguntas"
+  },
+  "aboutPage": {
+    "title": "Acerca de Sendero Bike Trails",
+    "description": "Conoce nuestra misión de ofrecer tours de bicicleta sostenibles y para principiantes en la Región Cafetera de Colombia.",
+    "heading": "[PLACEHOLDER] Sobre Nosotros",
+    "subtitle": "[TODO: Agregar contenido] Descubre la historia detrás de Sendero y nuestro compromiso con el turismo sostenible en la hermosa Región Cafetera de Colombia.",
+    "sections": {
+      "philosophy": {
+        "heading": "[PLACEHOLDER] Filosofía de Marca e Historia",
+        "content": "[TODO: Agregar contenido] Creemos que la aventura debe ser accesible para todos, sin importar el nivel de condición física o experiencia ciclista. Sendero nació de una pasión por la impresionante Región Cafetera de Colombia y el deseo de compartir su belleza con el mundo de manera sostenible y responsable. Nuestro viaje comenzó con una idea simple: hacer que los tours en bicicleta sean accesibles para principiantes, conscientes del medio ambiente y profundamente conectados con las comunidades locales.",
+        "imageAlt": "Equipo de Sendero en sendero montañoso con vista a plantaciones de café"
+      },
+      "region": {
+        "heading": "[PLACEHOLDER] Por qué los Andes y la Región Cafetera",
+        "content": "[TODO: Agregar contenido] La Región Cafetera (Eje Cafetero) es una de las joyas escondidas de Colombia. Ubicada en las montañas de los Andes, Pereira y sus alrededores ofrecen paisajes impresionantes, clima perfecto para ciclismo durante todo el año y un rico patrimonio cultural. Las colinas onduladas cubiertas de plantaciones de café, bosques nubosos y fincas tradicionales crean el telón de fondo ideal para aventuras ciclistas inolvidables. Esta región Patrimonio de la Humanidad de la UNESCO combina belleza natural con experiencias locales auténticas.",
+        "imageAlt": "Plantaciones de café pintorescas en las montañas de los Andes cerca de Pereira"
+      },
+      "partners": {
+        "heading": "[PLACEHOLDER] Cómo trabajamos con fincas locales",
+        "content": "[TODO: Agregar contenido] Nuestras asociaciones con fincas cafeteras locales son el corazón de lo que hacemos. Colaboramos directamente con fincas familiares para crear experiencias auténticas que benefician a las comunidades locales. Cuando viajas con Sendero, no solo visitas: estás apoyando la agricultura sostenible, las prácticas de comercio justo y la preservación de la cultura cafetera tradicional. Nuestros socios de fincas te reciben en sus hogares, comparten sus historias y te brindan experiencias prácticas que no encontrarás en ningún otro lugar.",
+        "imageAlt": "Familia de finca cafetera local dando la bienvenida a visitantes a su finca"
+      },
+      "cta": {
+        "heading": "[PLACEHOLDER] ¿Listo para Explorar?",
+        "content": "[TODO: Agregar contenido] Únete a nosotros para una aventura inolvidable a través de la Región Cafetera de Colombia. Desde excursiones de un día para principiantes hasta experiencias inmersivas de una semana, tenemos tours diseñados para cada viajero.",
+        "buttonText": "Descubre Nuestros Tours"
+      }
+    },
+    "placeholderNote": {
+      "text": "El contenido marcado con [PLACEHOLDER] y [TODO:] es temporal y será actualizado con información final."
+    }
   },
   "metadata": {
     "title": "Sendero Bike Trails - Descubre la Región Cafetera de Colombia",

@@ -73,7 +73,7 @@ export async function POST(
         });
 
         await resend.emails.send({
-          from: 'Sendero Contact Form <onboarding@resend.dev>',
+          from: 'Sendero Contact Form <contact@senderobiketrails.com>',
           to: 'info@senderobiketrails.com',
           subject: emailContent.subject,
           text: emailContent.text,
@@ -84,7 +84,7 @@ export async function POST(
         console.error('Email sending error:', emailError);
       }
     } else {
-      console.log('Resend not configured - email notification skipped');
+      console.warn('Resend not configured - email notification skipped');
     }
 
     // Success response

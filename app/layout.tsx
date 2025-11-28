@@ -1,4 +1,5 @@
 import { Work_Sans } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 const workSans = Work_Sans({
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html className={workSans.variable}>
       <body className="font-sans antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
