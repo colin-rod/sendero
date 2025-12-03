@@ -39,7 +39,7 @@ export function Header() {
 
       <header className="sticky top-0 z-50 w-full bg-[rgba(27,27,27,1.0)]">
         <Container>
-          <div className="flex h-16 max-w-[1200px] mx-auto p-8 gap-6 items-center justify-between flex-wrap">
+          <div className="flex h-16 max-w-[1200px] mx-auto gap-6 items-center justify-between flex-wrap">
             {/* Logo */}
             <Link
               href="/"
