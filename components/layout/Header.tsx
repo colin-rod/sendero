@@ -47,14 +47,14 @@ export function Header() {
               aria-label={t('ariaLabel')}
             >
               <Image
-                src="/logo.svg"
+                src="/Color=Gravel.png"
                 alt={t('logoAlt')}
                 width={40}
                 height={40}
                 className="h-10 w-10"
                 priority
               />
-              <span className="text-h3 text-primary-600">{t('brandName')}</span>
+              <span className="text-label text-primary-600">{t('brandName')}</span>
             </Link>
 
             {/* Desktop Navigation */}

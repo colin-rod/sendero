@@ -58,6 +58,7 @@ export const typography = {
   letterSpacing: {
     tighter: '-0.05em',
     tight: '-0.025em',
+    tight2: '-0.02em', // -2% for Label (navbar titles)
     normal: '0',
     wide: '0.025em',
     wider: '0.05em',
@@ -96,8 +97,11 @@ export const typography = {
  * LABEL
  * - Size: text-xs (12px)
  * - Weight: font-semibold (600)
- * - Usage: Form labels, metadata, small UI text
- * - Tailwind: text-xs font-semibold
+ * - Line Height: leading-none (100%)
+ * - Letter Spacing: tracking-tight2 (-2%)
+ * - Text Transform: uppercase
+ * - Usage: Navbar titles, form labels, metadata, small UI text
+ * - Tailwind: text-xs font-semibold leading-none tracking-tight2 uppercase
  *
  * HIERARCHY
  * - Maintain consistent hierarchy: H1 > H2 > H3
