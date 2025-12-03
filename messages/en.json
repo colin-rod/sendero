@@ -153,19 +153,33 @@
   },
   "footer": {
     "brandName": "Sendero Bike Trails",
-    "brandDescription": "Beginner-friendly hike & bike tours in Colombia's Coffee Region.",
-    "quickLinks": {
-      "heading": "Quick Links",
-      "about": "About",
-      "howItWorks": "How It Works",
-      "faq": "FAQ",
-      "contact": "Contact"
+    "trails": {
+      "heading": "Trails",
+      "places": "Places",
+      "landscapes": "Landscapes",
+      "experiences": "Experiences",
+      "localCollaboration": "Local Collaboration",
+      "testimonials": "Testimonials",
+      "bookYourTrails": "Book your Trails"
+    },
+    "about": {
+      "heading": "About",
+      "ourStory": "Our Story",
+      "experiences": "Experiences",
+      "faqs": "FAQs"
     },
     "contact": {
       "heading": "Contact",
-      "description": "Questions? We'd love to hear from you.",
-      "email": "info@senderobiketrails.com",
-      "instagram": "Follow us on Instagram"
+      "getInTouch": "Get in touch"
+    },
+    "social": {
+      "followUs": "Follow us",
+      "twitter": "Follow us on X",
+      "instagram": "Follow us on Instagram",
+      "youtube": "Subscribe on YouTube",
+      "linkedin": "Connect on LinkedIn",
+      "strava": "Follow us on Strava",
+      "komoot": "Follow us on Komoot"
     },
     "copyright": "All rights reserved."
   },

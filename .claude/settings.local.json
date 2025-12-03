@@ -27,7 +27,9 @@
       "Bash(git rm:*)",
       "Bash(find:*)",
       "Bash(curl:*)",
-      "Bash(claude mcp add:*)"
+      "Bash(claude mcp add:*)",
+      "Bash(tree:*)",
+      "Bash(identify:*)"
     ],
     "deny": [],
     "ask": []

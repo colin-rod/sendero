@@ -45,6 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         es: '/es',
       },
     },
+    icons: {
+      icon: '/icon.svg',
+      shortcut: '/icon.svg',
+      apple: '/icon.svg',
+    },
   };
 }
 

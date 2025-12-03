@@ -37,9 +37,9 @@ export function Header() {
         {t('skipToContent')}
       </a>
 
-      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full bg-[rgba(27,27,27,1.0)]">
         <Container>
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-16 max-w-[1200px] mx-auto gap-6 items-center justify-between flex-wrap">
             {/* Logo */}
             <Link
               href="/"
@@ -54,20 +54,20 @@ export function Header() {
                 className="h-10 w-10"
                 priority
               />
-              <span className="text-label text-primary-600">{t('brandName')}</span>
+              <span className="text-label text-white">{t('brandName')}</span>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden items-center space-x-6 md:flex" aria-label="Main navigation">
               <Link
                 href="/about"
-                className="text-body text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
+                className="text-label text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
               >
                 {t('nav.about')}
               </Link>
               <Link
                 href="/#how-it-works"
-                className="text-body text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
+                className="text-label text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
               >
                 {t('nav.howItWorks')}
               </Link>
@@ -77,7 +77,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 md:hidden"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 md:hidden"
               onClick={toggleMobileMenu}
               aria-expanded={mobileMenuOpen}
               aria-label={t('mobileMenu.toggle')}
@@ -93,21 +93,21 @@ export function Header() {
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
             <div
-              className="animate-slide-in-down md:hidden"
+              className="animate-slide-in-down md:hidden bg-[rgba(27,27,27,0.95)]"
               role="dialog"
               aria-label={t('mobileMenu.ariaLabel')}
             >
               <nav className="space-y-1 pb-4 pt-2">
                 <Link
                   href="/about"
-                  className="block rounded-md px-3 py-2 text-body text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                  className="block rounded-md px-3 py-2 text-label text-gray-300 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   onClick={closeMobileMenu}
                 >
                   {t('nav.about')}
                 </Link>
                 <Link
                   href="/#how-it-works"
-                  className="block rounded-md px-3 py-2 text-body text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                  className="block rounded-md px-3 py-2 text-label text-gray-300 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   onClick={closeMobileMenu}
                 >
                   {t('nav.howItWorks')}
