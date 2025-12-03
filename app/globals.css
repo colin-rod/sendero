@@ -45,7 +45,7 @@
   }
 
   .text-label {
-    @apply text-xs font-semibold;
+    @apply text-xs font-semibold leading-none tracking-tight2 uppercase;
   }
 
   .text-h4 {
