@@ -26,7 +26,7 @@ export default function HomePage() {
           {/* Content */}
           <div className="relative z-10 flex h-full items-center">
             <Container>
-              <div className="max-w-3xl">
+              <div className="mx-auto max-w-3xl text-center">
                 <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                   {tHero('title')}
                   <span className="block text-primary-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
@@ -36,7 +36,7 @@ export default function HomePage() {
                 <p className="mb-8 text-body text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   {tHero('description')}
                 </p>
-                <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex flex-wrap gap-4 mb-8 justify-center">
                   <div className="flex items-center space-x-2">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
                       <Bike className="h-5 w-5 text-white" />

@@ -153,19 +153,33 @@
   },
   "footer": {
     "brandName": "Sendero Bike Trails",
-    "brandDescription": "Tours de senderismo y ciclismo para principiantes en la Región Cafetera de Colombia.",
-    "quickLinks": {
-      "heading": "Enlaces Rápidos",
-      "about": "Acerca de",
-      "howItWorks": "Cómo Funciona",
-      "faq": "FAQ",
-      "contact": "Contacto"
+    "trails": {
+      "heading": "Senderos",
+      "places": "Lugares",
+      "landscapes": "Paisajes",
+      "experiences": "Experiencias",
+      "localCollaboration": "Colaboración Local",
+      "testimonials": "Testimonios",
+      "bookYourTrails": "Reserva tu Sendero"
+    },
+    "about": {
+      "heading": "Acerca de",
+      "ourStory": "Nuestra Historia",
+      "experiences": "Experiencias",
+      "faqs": "Preguntas Frecuentes"
     },
     "contact": {
       "heading": "Contacto",
-      "description": "¿Preguntas? Nos encantaría saber de ti.",
-      "email": "info@senderobiketrails.com",
-      "instagram": "Síguenos en Instagram"
+      "getInTouch": "Contáctanos"
+    },
+    "social": {
+      "followUs": "Síguenos",
+      "twitter": "Síguenos en X",
+      "instagram": "Síguenos en Instagram",
+      "youtube": "Suscríbete en YouTube",
+      "linkedin": "Conéctate en LinkedIn",
+      "strava": "Síguenos en Strava",
+      "komoot": "Síguenos en Komoot"
     },
     "copyright": "Todos los derechos reservados."
   },

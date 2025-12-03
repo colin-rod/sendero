@@ -153,19 +153,33 @@
   },
   "footer": {
     "brandName": "Sendero Bike Trails",
-    "brandDescription": "Anfängerfreundliche Wander- und Radtouren in Kolumbiens Kaffeeregion.",
-    "quickLinks": {
-      "heading": "Schnelllinks",
-      "about": "Über uns",
-      "howItWorks": "Wie es funktioniert",
-      "faq": "FAQ",
-      "contact": "Kontakt"
+    "trails": {
+      "heading": "Routen",
+      "places": "Orte",
+      "landscapes": "Landschaften",
+      "experiences": "Erlebnisse",
+      "localCollaboration": "Lokale Zusammenarbeit",
+      "testimonials": "Erfahrungsberichte",
+      "bookYourTrails": "Buche deine Route"
+    },
+    "about": {
+      "heading": "Über uns",
+      "ourStory": "Unsere Geschichte",
+      "experiences": "Erlebnisse",
+      "faqs": "Häufig gestellte Fragen"
     },
     "contact": {
       "heading": "Kontakt",
-      "description": "Fragen? Wir freuen uns von dir zu hören.",
-      "email": "info@senderobiketrails.com",
-      "instagram": "Folge uns auf Instagram"
+      "getInTouch": "Kontaktiere uns"
+    },
+    "social": {
+      "followUs": "Folge uns",
+      "twitter": "Folge uns auf X",
+      "instagram": "Folge uns auf Instagram",
+      "youtube": "Abonniere uns auf YouTube",
+      "linkedin": "Vernetze dich auf LinkedIn",
+      "strava": "Folge uns auf Strava",
+      "komoot": "Folge uns auf Komoot"
     },
     "copyright": "Alle Rechte vorbehalten."
   },
