@@ -42,26 +42,17 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 h-9 px-3 py-2 rounded-md border border-white/20 bg-white/10 text-sm font-medium text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        className="flex items-center justify-center w-9 h-9 rounded-md border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
         <Image
           src="/Globe.png"
           alt="Language"
-          width={16}
-          height={16}
-          className="w-4 h-4"
+          width={20}
+          height={20}
+          className="w-5 h-5"
         />
-        <span className="text-label">{localeLabels[locale] ?? locale.toUpperCase()}</span>
-        <svg
-          className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
       </button>
 
       {/* Dropdown Menu */}
