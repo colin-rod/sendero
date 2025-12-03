@@ -47,11 +47,6 @@ const config: Config = {
         '4.5': '1.125rem', // 18px - Custom addition
       },
 
-      // Letter spacing
-      letterSpacing: {
-        tight2: '-0.02em', // -2% for Label (navbar titles)
-      },
-
       // Box shadows from design tokens
       boxShadow: {
         ...shadows,

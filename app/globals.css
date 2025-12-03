@@ -45,7 +45,8 @@
   }
 
   .text-label {
-    @apply text-xs font-semibold leading-none tracking-tight2 uppercase;
+    @apply text-xs font-semibold leading-none uppercase;
+    letter-spacing: -0.02em;
   }
 
   .text-h4 {
