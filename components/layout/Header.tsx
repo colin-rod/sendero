@@ -61,13 +61,13 @@ export function Header() {
             <nav className="hidden items-center space-x-6 md:flex" aria-label="Main navigation">
               <Link
                 href="/about"
-                className="text-body text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
+                className="text-label text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
               >
                 {t('nav.about')}
               </Link>
               <Link
                 href="/#how-it-works"
-                className="text-body text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
+                className="text-label text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded"
               >
                 {t('nav.howItWorks')}
               </Link>
@@ -100,14 +100,14 @@ export function Header() {
               <nav className="space-y-1 pb-4 pt-2">
                 <Link
                   href="/about"
-                  className="block rounded-md px-3 py-2 text-body text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                  className="block rounded-md px-3 py-2 text-label text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   onClick={closeMobileMenu}
                 >
                   {t('nav.about')}
                 </Link>
                 <Link
                   href="/#how-it-works"
-                  className="block rounded-md px-3 py-2 text-body text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                  className="block rounded-md px-3 py-2 text-label text-muted-foreground hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   onClick={closeMobileMenu}
                 >
                   {t('nav.howItWorks')}
