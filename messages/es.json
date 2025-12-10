@@ -6,7 +6,8 @@
     "ariaLabel": "Inicio de Sendero Bike Trails",
     "nav": {
       "about": "Acerca de",
-      "howItWorks": "Cómo Funciona"
+      "howItWorks": "Cómo Funciona",
+      "trails": "Senderos"
     },
     "mobileMenu": {
       "toggle": "Alternar menú de navegación",
@@ -468,7 +469,103 @@
     "keywords": "tours colombia, tours región cafetera, tours bicicleta pereira, tours e-bike, viajes sostenibles colombia, tours fincas cafeteras"
   },
   "trails": {
-    "title": "Nuestros Senderos",
-    "description": "Explora nuestras aventuras en bicicleta"
+    "master": {
+      "title": "Nuestros Senderos",
+      "subtitle": "Explora aventuras ciclísticas para principiantes a través de la Región Cafetera de Colombia",
+      "description": "Elige entre nuestras rutas cuidadosamente seleccionadas, cada una diseñada para mostrar la belleza natural y riqueza cultural de Pereira y las montañas circundantes.",
+      "cta": "Ver Detalles del Sendero"
+    },
+    "senderoDelTigre": {
+      "name": "El Sendero del Tigre",
+      "subtitle": "Un viaje guiado a través de bosques de bambú y arroyos de montaña",
+      "story": {
+        "paragraph1": "Sigue las huellas del esquivo tigre, a través de pastos altos, bosques de bambú y el aroma de los bosques montañosos.",
+        "paragraph2": "Un recorrido tranquilo e inmersivo diseñado para reconectarte con la naturaleza, perfecto para ciclistas de todos los niveles que buscan una auténtica aventura colombiana."
+      },
+      "stats": {
+        "distance": "Distancia",
+        "duration": "Duración",
+        "difficulty": "Dificultad",
+        "elevation": "Elevación",
+        "elevationGain": "Ascenso",
+        "elevationLoss": "Descenso"
+      },
+      "difficulty": {
+        "easy": "Fácil",
+        "moderate": "Moderado",
+        "challenging": "Desafiante"
+      },
+      "experiences": {
+        "heading": "Experiencias en el Camino",
+        "stream": {
+          "title": "Cruce del Arroyo El Tigre",
+          "description": "Cruza aguas cristalinas de montaña donde la vida silvestre viene a beber. Este tranquilo cruce de arroyo es un punto destacado del sendero, ofreciendo una pausa refrescante en tu viaje.",
+          "location": "km {km}"
+        },
+        "bamboo": {
+          "title": "Sendero del Bosque de Bambú",
+          "description": "Recorre altos bosques de bambú con luz moteada filtrándose a través del dosel. El suave susurro del bambú crea una atmósfera serena perfecta para los amantes de la naturaleza."
+        },
+        "farm": {
+          "title": "Almuerzo en Finca Ecológica",
+          "description": "Almuerzo colombiano tradicional en una finca familiar sostenible. Disfruta ingredientes frescos y orgánicos y aprende sobre prácticas agrícolas locales rodeado de plantas de café."
+        },
+        "vista": {
+          "title": "Mirador de Montaña",
+          "description": "Vistas panorámicas de plantaciones de café y picos lejanos. Este mirador escénico ofrece la oportunidad perfecta para fotos y la oportunidad de apreciar el paisaje de la Región Cafetera."
+        }
+      },
+      "waypoints": {
+        "heading": "Puntos de Referencia",
+        "start": "Punto de Inicio - Plaza del pueblo en Pereira",
+        "startDescription": "Encuentra a tu guía y recibe el equipo",
+        "stream": "Arroyo El Tigre",
+        "streamDescription": "Cruce de río tranquilo con vistas a la montaña",
+        "bambooRidge": "Cresta de Bambú",
+        "bambooRidgeDescription": "Sección de bosque de bambú denso con sombra fresca",
+        "farm": "Finca Ecológica",
+        "farmDescription": "Parada para almorzar en finca familiar sostenible",
+        "viastaPoint": "Punto Vista",
+        "vistaPointDescription": "Mirador panorámico de los valles de la Región Cafetera",
+        "end": "Punto Final",
+        "endDescription": "Regreso al punto de inicio en Pereira"
+      },
+      "elevation": {
+        "heading": "Perfil de Elevación",
+        "highest": "Punto más alto",
+        "lowest": "Punto más bajo",
+        "description": "Terreno principalmente suave con una subida gradual hacia la mitad. Los cambios de elevación son manejables para principiantes, sin descensos pronunciados o secciones técnicas.",
+        "meters": "m"
+      },
+      "gallery": {
+        "heading": "Galería",
+        "imageAlt": "El Sendero del Tigre - {description}"
+      },
+      "testimonials": {
+        "heading": "Lo Que Dicen los Ciclistas",
+        "testimonial1": {
+          "quote": "Uno de los recorridos más tranquilos de mi vida. Me sentí guiada, segura y profundamente conectada con el bosque. La sección de bambú fue absolutamente mágica.",
+          "author": "Anna Schmidt",
+          "country": "Alemania"
+        },
+        "testimonial2": {
+          "quote": "La introducción perfecta al ciclismo en Colombia. Paisajes hermosos, experiencias auténticas y nuestro guía era increíblemente conocedor de la ecología local.",
+          "author": "James Miller",
+          "country": "EE.UU."
+        },
+        "testimonial3": {
+          "quote": "Los bosques de bambú fueron mágicos. Nuestro guía conocía cada planta y ave en el camino. El almuerzo en la finca fue un punto destacado: ingredientes frescos y cálida hospitalidad.",
+          "author": "Sofia Martinez",
+          "country": "España"
+        }
+      },
+      "booking": {
+        "heading": "Reserva Este Sendero Guiado",
+        "button": "Reserva tu Lugar",
+        "subtext": "Grupos pequeños · Guías locales experimentados · Todo el equipo incluido",
+        "placeholder": "Las reservas abren pronto - Únete a nuestra lista de espera para ser notificado"
+      },
+      "backToAll": "Explorar Todos los Senderos"
+    }
   }
 }

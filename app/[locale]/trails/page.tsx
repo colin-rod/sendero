@@ -1,18 +1,162 @@
+import { getTranslations } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
+import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
+import { Link } from '@/lib/i18n/routing';
+import { getAllTrailSummaries } from '@/lib/data/trails';
+import Image from 'next/image';
 
-export default function TrailsPage() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'trails.master' });
+
+  return {
+    title: t('title'),
+    description: t('subtitle'),
+  };
+}
+
+export default async function TrailsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'trails.master' });
+  const tDifficulty = await getTranslations({
+    locale,
+    namespace: 'trails.senderoDelTigre.difficulty',
+  });
+
+  const trails = getAllTrailSummaries();
+
+  const getDifficultyColor = (level: string) => {
+    switch (level) {
+      case 'Easy':
+        return 'bg-green-100 text-green-800';
+      case 'Moderate':
+        return 'bg-amber-100 text-amber-800';
+      case 'Challenging':
+        return 'bg-red-100 text-red-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const getDifficultyLabel = (level: string) => {
+    switch (level) {
+      case 'Easy':
+        return tDifficulty('easy');
+      case 'Moderate':
+        return tDifficulty('moderate');
+      case 'Challenging':
+        return tDifficulty('challenging');
+      default:
+        return level;
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       <main id="main-content" className="flex-1">
-        <Container className="py-20 md:py-32">
-          {/* Blank content area - will be filled later */}
-          <div className="min-h-[400px]">
-            {/* Placeholder for trails content */}
-          </div>
-        </Container>
+        {/* Hero Section */}
+        <section className="py-20 md:py-32 bg-gradient-to-b from-background to-accent-400/10">
+          <Container>
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-h1 mb-6">{t('title')}</h1>
+              <p className="text-h3 text-muted-foreground mb-8">{t('subtitle')}</p>
+              <p className="text-body text-muted-foreground">{t('description')}</p>
+            </div>
+          </Container>
+        </section>
+
+        {/* Master SVG Illustration Placeholder */}
+        <section className="py-20 md:py-32 bg-accent-400/5">
+          <Container>
+            <div className="max-w-5xl mx-auto">
+              <div className="aspect-[16/9] bg-background border-2 border-gray-200 rounded-lg flex items-center justify-center">
+                <div className="text-center p-8">
+                  <p className="text-h3 text-muted-foreground mb-2">
+                    All Routes Map
+                  </p>
+                  <p className="text-body text-muted-foreground">
+                    Interactive master map showing all three trails coming soon
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* Trail Cards */}
+        <section className="py-20 md:py-32">
+          <Container>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+              {trails.map((trail) => (
+                <Link
+                  key={trail.id}
+                  href={`/trails/${trail.slug}`}
+                  className="block transition-transform hover:-translate-y-1"
+                >
+                  <Card className="overflow-hidden h-full">
+                    {/* Trail Image */}
+                    <div className="relative h-48 w-full">
+                      <Image
+                        src={trail.thumbnail}
+                        alt={trail.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+
+                    {/* Trail Info */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <h3 className="text-h3">{trail.name}</h3>
+                        <Badge
+                          className={getDifficultyColor(trail.difficulty)}
+                        >
+                          {getDifficultyLabel(trail.difficulty)}
+                        </Badge>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <p className="text-label text-muted-foreground">
+                            Distance
+                          </p>
+                          <p className="text-body font-semibold">
+                            {trail.distance} km
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-label text-muted-foreground">
+                            Duration
+                          </p>
+                          <p className="text-body font-semibold">
+                            {trail.duration}
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="text-label text-primary-500 hover:text-primary-600">
+                        {t('cta')} →
+                      </p>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
       </main>
       <Footer />
     </div>
