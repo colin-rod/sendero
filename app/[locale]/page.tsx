@@ -7,7 +7,6 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { NumberBadge } from '@/components/ui/Badge';
 import HeroVideo from '@/components/HeroVideo';
-import HeroEmailCapture from '@/components/HeroEmailCapture';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
@@ -33,46 +32,15 @@ export default function HomePage() {
                 <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                   {tHero('title')}
                 </h1>
-                <p className="mb-8 text-xl md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
+                <p className="mb-12 text-xl md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
                   {tHero('subtitle')}
                 </p>
-                <p className="mb-8 text-body text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                  {tHero('description')}
-                </p>
-                <div className="flex flex-wrap gap-4 mb-8 justify-center">
-                  <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
-                      <Bike className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      {tHero('features.eBikes')}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
-                      <Leaf className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      {tHero('features.ecoConscious')}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
-                      <Coffee className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      {tHero('features.coffeeFarm')}
-                    </span>
-                  </div>
-                </div>
                 {/* Explore Trails Button */}
-                <Link href="/trails" className="inline-block mb-4">
+                <Link href="/trails" className="inline-block">
                   <Button variant="outline" size="lg" className="!text-white !border-white hover:!bg-white/10">
                     {tHero('exploreTrails')}
                   </Button>
                 </Link>
-                {/* Hero Email Capture */}
-                <HeroEmailCapture />
               </div>
             </Container>
           </div>
