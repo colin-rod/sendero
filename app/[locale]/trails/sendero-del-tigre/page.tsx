@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Link } from '@/lib/i18n/routing';
 import { senderoDelTigre } from '@/lib/data/trails';
 import { TrailHero } from '@/components/features/trails/TrailHero';
 import { TrailStory } from '@/components/features/trails/TrailStory';
@@ -12,7 +11,7 @@ import { ElevationChart } from '@/components/features/trails/ElevationChart';
 import { TrailGallery } from '@/components/features/trails/TrailGallery';
 import { TestimonialBand } from '@/components/features/trails/TestimonialBand';
 import { TrailBookingCTA } from '@/components/features/trails/TrailBookingCTA';
-import { Container } from '@/components/ui/Container';
+import { BackToTrails } from '@/components/features/trails/BackToTrails';
 
 export async function generateMetadata({
   params,
@@ -133,16 +132,7 @@ export default async function SenderoDelTigrePage({
         />
 
         {/* 10. Back to All Trails Link */}
-        <section className="py-8 bg-background border-t border-gray-200">
-          <Container>
-            <Link
-              href="/trails"
-              className="text-label text-primary-500 hover:text-primary-600 inline-flex items-center gap-2"
-            >
-              ← {t('backToAll')}
-            </Link>
-          </Container>
-        </section>
+        <BackToTrails text={t('backToAll')} />
       </main>
       <Footer />
     </div>
