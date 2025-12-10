@@ -14,8 +14,8 @@
     }
   },
   "hero": {
-    "title": "Entdecke Kolumbiens Kaffeeregion",
-    "subtitle": "Ein Pedaltritt nach dem anderen",
+    "title": "Raderlebnisse in den kolumbianischen Anden",
+    "subtitle": "Wir verbinden dich auf dem Rad mit den Bergen und gestalten einzigartige Augenblicke für all deine Sinne.",
     "description": "Anfängerfreundliche, nachhaltige Wander- und Radtouren durch die atemberaubenden Landschaften Pereiras. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse.",
     "features": {
       "eBikes": "E-Bikes verfügbar",
@@ -28,7 +28,8 @@
       "placeholder": "E-Mail-Adresse eingeben",
       "helperText": "Kein Spam, nur Updates zum Start",
       "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
-    }
+    },
+    "exploreTrails": "TRAILS ENTDECKEN"
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
@@ -80,7 +81,9 @@
   },
   "waitlist": {
     "heading": "Zur Warteliste",
-    "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer."
+    "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer.",
+    "becomeAPioneer": "Werde ein:e Pionier:in",
+    "stayInformed": "Bleib auf dem Laufenden und melde dich an, um mehr über unsere kommenden Reisen im Jahr 2026 zu erfahren."
   },
   "form": {
     "labels": {
@@ -463,5 +466,9 @@
     "title": "Sendero Bike Trails - Entdecke Kolumbiens Kaffeeregion",
     "description": "Anfängerfreundliche Wander- und Radtouren in Pereira, Kolumbien. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse. Trage dich heute in unsere Warteliste ein!",
     "keywords": "kolumbien touren, kaffeeregion touren, pereira fahrradtouren, e-bike touren, nachhaltiges reisen kolumbien, kaffeefarm touren"
+  },
+  "trails": {
+    "title": "Unsere Trails",
+    "description": "Entdecke unsere Radabenteuer"
   }
 }

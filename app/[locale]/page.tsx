@@ -1,11 +1,14 @@
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
+import { Button } from '@/components/ui/Button';
 import { NumberBadge } from '@/components/ui/Badge';
-import { WaitlistForm } from '@/components/features/waitlist/WaitlistForm';
 import HeroVideo from '@/components/HeroVideo';
 import HeroEmailCapture from '@/components/HeroEmailCapture';
+import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
@@ -62,6 +65,12 @@ export default function HomePage() {
                     </span>
                   </div>
                 </div>
+                {/* Explore Trails Button */}
+                <Link href="/trails" className="inline-block mb-4">
+                  <Button variant="outline" size="lg" className="!text-white !border-white hover:!bg-white/10">
+                    {tHero('exploreTrails')}
+                  </Button>
+                </Link>
                 {/* Hero Email Capture */}
                 <HeroEmailCapture />
               </div>
@@ -186,19 +195,33 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* Waitlist Form Section */}
-        <section className="py-20 md:py-32">
-          <Container>
-            <div className="mx-auto max-w-2xl">
-              <div className="mb-12 text-center">
-                <h2 className="mb-4 text-h2 text-foreground">
-                  {tWaitlist('heading')}
-                </h2>
-                <p className="text-body text-muted-foreground">
-                  {tWaitlist('description')}
-                </p>
-              </div>
-              <WaitlistForm />
+        {/* Simplified Waitlist Section - Bottom of Page */}
+        <section className="relative py-20 md:py-32">
+          {/* Background image */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/hero-poster.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/70" />
+
+          {/* Content */}
+          <Container className="relative z-10 text-center">
+            <h2 className="text-h2 text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              {tWaitlist('becomeAPioneer')}
+            </h2>
+            <p className="text-body text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              {tWaitlist('stayInformed')}
+            </p>
+
+            {/* Simplified email form */}
+            <div className="max-w-md mx-auto">
+              <BottomEmailCapture />
             </div>
           </Container>
         </section>

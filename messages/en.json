@@ -14,8 +14,8 @@
     }
   },
   "hero": {
-    "title": "Discover Colombia's Coffee Region",
-    "subtitle": "One Pedal at a Time",
+    "title": "Cycling Adventures in the Colombian Andes",
+    "subtitle": "We connect you on two wheels with the mountains and create unique moments for all your senses.",
     "description": "Beginner-friendly, sustainable hike & bike tours through Pereira's stunning landscapes. E-bikes, women-only groups, and authentic coffee farm experiences.",
     "features": {
       "eBikes": "E-Bikes Available",
@@ -28,7 +28,8 @@
       "placeholder": "Enter your email",
       "helperText": "No spam, just updates when we launch",
       "successMessage": "✓ Thanks! We'll keep you updated when we launch."
-    }
+    },
+    "exploreTrails": "EXPLORE TRAILS"
   },
   "howItWorks": {
     "heading": "How It Works",
@@ -80,7 +81,9 @@
   },
   "waitlist": {
     "heading": "Join the Waitlist",
-    "description": "Be the first to know when tours open up. No spam, just adventure."
+    "description": "Be the first to know when tours open up. No spam, just adventure.",
+    "becomeAPioneer": "Become a Pioneer",
+    "stayInformed": "Stay up to date and sign up to learn more about our upcoming trips in 2026."
   },
   "form": {
     "labels": {
@@ -463,5 +466,9 @@
     "title": "Sendero Bike Trails - Discover Colombia's Coffee Region",
     "description": "Beginner-friendly hike & bike tours in Pereira, Colombia. E-bikes, women-only groups, and authentic coffee farm experiences. Join our waitlist today!",
     "keywords": "colombia tours, coffee region tours, pereira bike tours, e-bike tours, sustainable travel colombia, coffee farm tours"
+  },
+  "trails": {
+    "title": "Our Trails",
+    "description": "Explore our cycling adventures"
   }
 }

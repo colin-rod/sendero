@@ -14,8 +14,8 @@
     }
   },
   "hero": {
-    "title": "Descubre la Región Cafetera de Colombia",
-    "subtitle": "Un Pedaleo a la Vez",
+    "title": "Aventuras en Bicicleta en los Andes Colombianos",
+    "subtitle": "Te conectamos en bicicleta con las montañas y creamos momentos únicos para todos tus sentidos.",
     "description": "Tours de senderismo y ciclismo para principiantes, sostenibles a través de los impresionantes paisajes de Pereira. Bicicletas eléctricas, grupos solo para mujeres y experiencias auténticas en fincas cafeteras.",
     "features": {
       "eBikes": "Bicicletas Eléctricas Disponibles",
@@ -28,7 +28,8 @@
       "placeholder": "Ingresa tu correo",
       "helperText": "Sin spam, solo actualizaciones cuando lancemos",
       "successMessage": "✓ ¡Gracias! Te mantendremos informado cuando lancemos."
-    }
+    },
+    "exploreTrails": "EXPLORAR SENDEROS"
   },
   "howItWorks": {
     "heading": "Cómo Funciona",
@@ -80,7 +81,9 @@
   },
   "waitlist": {
     "heading": "Únete a la Lista de Espera",
-    "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura."
+    "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura.",
+    "becomeAPioneer": "Conviértete en Pionero/a",
+    "stayInformed": "Mantente informado/a y regístrate para conocer más sobre nuestros próximos viajes en 2026."
   },
   "form": {
     "labels": {
@@ -463,5 +466,9 @@
     "title": "Sendero Bike Trails - Descubre la Región Cafetera de Colombia",
     "description": "Tours de senderismo y ciclismo para principiantes en Pereira, Colombia. Bicicletas eléctricas, grupos solo para mujeres y experiencias auténticas en fincas cafeteras. ¡Únete a nuestra lista de espera hoy!",
     "keywords": "tours colombia, tours región cafetera, tours bicicleta pereira, tours e-bike, viajes sostenibles colombia, tours fincas cafeteras"
+  },
+  "trails": {
+    "title": "Nuestros Senderos",
+    "description": "Explora nuestras aventuras en bicicleta"
   }
 }
