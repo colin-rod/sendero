@@ -473,7 +473,11 @@
       "title": "Unsere Trails",
       "subtitle": "Entdecke anfängerfreundliche Radsport-Abenteuer durch Kolumbiens Kaffeeregion",
       "description": "Wähle aus unseren sorgfältig kuratierten Routen, die jeweils die natürliche Schönheit und kulturelle Vielfalt von Pereira und den umliegenden Bergen zeigen.",
-      "cta": "Trail-Details ansehen"
+      "cta": "Trail-Details ansehen",
+      "stats": {
+        "distance": "Entfernung",
+        "duration": "Dauer"
+      }
     },
     "senderoDelTigre": {
       "name": "El Sendero del Tigre",

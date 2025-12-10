@@ -45,8 +45,15 @@ export default async function SenderoDelTigrePage({
   const trail = senderoDelTigre;
 
   // Map translation keys to experience data
+  const experienceKeyMap: Record<string, string> = {
+    'stream-crossing': 'stream',
+    'bamboo-forest': 'bamboo',
+    'farm-lunch': 'farm',
+    'mountain-vista': 'vista',
+  };
+
   const translatedExperiences = trail.experiences.map((exp) => {
-    const expKey = exp.id.replace(/-/g, '');
+    const expKey = experienceKeyMap[exp.id] || exp.id;
     return {
       ...exp,
       title: t(`experiences.${expKey}.title`),

@@ -473,7 +473,11 @@
       "title": "Nuestros Senderos",
       "subtitle": "Explora aventuras ciclísticas para principiantes a través de la Región Cafetera de Colombia",
       "description": "Elige entre nuestras rutas cuidadosamente seleccionadas, cada una diseñada para mostrar la belleza natural y riqueza cultural de Pereira y las montañas circundantes.",
-      "cta": "Ver Detalles del Sendero"
+      "cta": "Ver Detalles del Sendero",
+      "stats": {
+        "distance": "Distancia",
+        "duration": "Duración"
+      }
     },
     "senderoDelTigre": {
       "name": "El Sendero del Tigre",

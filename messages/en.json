@@ -473,7 +473,11 @@
       "title": "Our Trails",
       "subtitle": "Explore beginner-friendly cycling adventures through Colombia's Coffee Region",
       "description": "Choose from our carefully curated routes, each designed to showcase the natural beauty and cultural richness of Pereira and the surrounding mountains.",
-      "cta": "View Trail Details"
+      "cta": "View Trail Details",
+      "stats": {
+        "distance": "Distance",
+        "duration": "Duration"
+      }
     },
     "senderoDelTigre": {
       "name": "El Sendero del Tigre",

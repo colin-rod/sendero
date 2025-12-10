@@ -2,11 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
-import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
-import { Link } from '@/lib/i18n/routing';
 import { getAllTrailSummaries } from '@/lib/data/trails';
-import Image from 'next/image';
+import { TrailCard } from '@/components/features/trails/TrailCard';
 
 export async function generateMetadata({
   params,
@@ -100,59 +97,21 @@ export default async function TrailsPage({
           <Container>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
               {trails.map((trail) => (
-                <Link
+                <TrailCard
                   key={trail.id}
-                  href={`/trails/${trail.slug}`}
-                  className="block transition-transform hover:-translate-y-1"
-                >
-                  <Card className="overflow-hidden h-full">
-                    {/* Trail Image */}
-                    <div className="relative h-48 w-full">
-                      <Image
-                        src={trail.thumbnail}
-                        alt={trail.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-
-                    {/* Trail Info */}
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <h3 className="text-h3">{trail.name}</h3>
-                        <Badge
-                          className={getDifficultyColor(trail.difficulty)}
-                        >
-                          {getDifficultyLabel(trail.difficulty)}
-                        </Badge>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div>
-                          <p className="text-label text-muted-foreground">
-                            Distance
-                          </p>
-                          <p className="text-body font-semibold">
-                            {trail.distance} km
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-label text-muted-foreground">
-                            Duration
-                          </p>
-                          <p className="text-body font-semibold">
-                            {trail.duration}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="text-label text-primary-500 hover:text-primary-600">
-                        {t('cta')} →
-                      </p>
-                    </div>
-                  </Card>
-                </Link>
+                  id={trail.id}
+                  slug={trail.slug}
+                  name={trail.name}
+                  thumbnail={trail.thumbnail}
+                  difficulty={trail.difficulty}
+                  difficultyLabel={getDifficultyLabel(trail.difficulty)}
+                  difficultyColor={getDifficultyColor(trail.difficulty)}
+                  distance={trail.distance}
+                  duration={trail.duration}
+                  distanceLabel={t('stats.distance')}
+                  durationLabel={t('stats.duration')}
+                  ctaText={t('cta')}
+                />
               ))}
             </div>
           </Container>
