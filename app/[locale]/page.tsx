@@ -32,10 +32,10 @@ export default function HomePage() {
               <div className="mx-auto max-w-3xl text-center">
                 <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                   {tHero('title')}
-                  <span className="block text-primary-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                    {tHero('subtitle')}
-                  </span>
                 </h1>
+                <p className="mb-8 text-xl md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
+                  {tHero('subtitle')}
+                </p>
                 <p className="mb-8 text-body text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   {tHero('description')}
                 </p>
