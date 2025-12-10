@@ -11,7 +11,7 @@ export default function HeroVideo() {
     // Fallback to static image if video fails to load
     return (
       <Image
-        src="/hero-poster.jpg"
+        src="/hero-poster.png"
         alt="Coffee Region landscape"
         fill
         className="object-cover"
@@ -24,7 +24,7 @@ export default function HeroVideo() {
     <>
       {/* Poster image - fades out when video is ready */}
       <Image
-        src="/hero-poster.jpg"
+        src="/hero-poster.png"
         alt="Coffee Region landscape"
         fill
         className={`object-cover transition-opacity duration-1000 ${
@@ -40,14 +40,14 @@ export default function HeroVideo() {
         muted
         playsInline
         preload="auto"
-        poster="/hero-poster.jpg"
+        poster="/hero-poster.png"
         onCanPlay={() => setIsVideoReady(true)}
         onError={() => setHasError(true)}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <source src="/hero-optimized.mp4" type="video/mp4" />
+        <source src="/flying-over-the-andean-mountans_optimized.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </>
