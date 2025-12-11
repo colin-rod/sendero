@@ -9,7 +9,7 @@ interface TrailGalleryProps {
 
 export function TrailGallery({ heading, images, trailName }: TrailGalleryProps) {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 bg-muted/50">
       <Container>
         <h2 className="text-h2 text-center mb-12">{heading}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

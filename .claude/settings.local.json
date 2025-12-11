@@ -31,7 +31,8 @@
       "Bash(tree:*)",
       "Bash(identify:*)",
       "Bash(ls:*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

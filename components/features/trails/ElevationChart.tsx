@@ -23,7 +23,7 @@ export function ElevationChart({
 
         {/* Placeholder for elevation chart */}
         <div className="mb-8">
-          <div className="aspect-[3/1] bg-accent-400/20 border border-gray-200 rounded-lg flex items-center justify-center">
+          <div className="aspect-[3/1] bg-white border border-border rounded-lg flex items-center justify-center shadow-sm">
             <p className="text-body text-muted-foreground">
               Elevation chart visualization coming soon
             </p>

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import type { TrailStats } from '@/lib/types/trails';
+import { getDifficultyBadgeProps } from '@/lib/utils/difficulty';
 
 interface TrailHeroProps {
   name: string;
@@ -29,19 +30,6 @@ export function TrailHero({
   elevationGainLabel,
   elevationLossLabel,
 }: TrailHeroProps) {
-  const getDifficultyColor = (level: string) => {
-    switch (level) {
-      case 'Easy':
-        return 'bg-green-100 text-green-800';
-      case 'Moderate':
-        return 'bg-amber-100 text-amber-800';
-      case 'Challenging':
-        return 'bg-red-100 text-red-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-
   return (
     <section className="relative w-full">
       {/* Hero Image */}
@@ -60,8 +48,8 @@ export function TrailHero({
         <div className="absolute inset-0 flex items-end">
           <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8 pb-12">
             <div className="flex items-center gap-3 mb-4">
-              <h1 className="text-h1 text-white">{name}</h1>
-              <Badge className={getDifficultyColor(difficulty)}>
+              <h1 className="text-3xl md:text-5xl font-bold text-white">{name}</h1>
+              <Badge variant={getDifficultyBadgeProps(difficulty).variant}>
                 {difficultyLabel}
               </Badge>
             </div>

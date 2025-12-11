@@ -12,7 +12,7 @@ interface TrailCardProps {
   thumbnail: string;
   difficulty: string;
   difficultyLabel: string;
-  difficultyColor: string;
+  difficultyBadgeProps: { variant: 'success' | 'warning' | 'error' | 'default' };
   distance: number;
   duration: string;
   distanceLabel: string;
@@ -25,9 +25,8 @@ export function TrailCard({
   slug,
   name,
   thumbnail,
-  difficulty,
   difficultyLabel,
-  difficultyColor,
+  difficultyBadgeProps,
   distance,
   duration,
   distanceLabel,
@@ -56,7 +55,7 @@ export function TrailCard({
         <div className="p-6">
           <div className="flex items-center gap-2 mb-3">
             <h3 className="text-h3">{name}</h3>
-            <Badge className={difficultyColor}>{difficultyLabel}</Badge>
+            <Badge variant={difficultyBadgeProps.variant}>{difficultyLabel}</Badge>
           </div>
 
           <div className="grid grid-cols-2 gap-4 mb-4">

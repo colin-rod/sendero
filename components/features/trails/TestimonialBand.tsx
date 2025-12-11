@@ -13,7 +13,7 @@ export function TestimonialBand({ heading, testimonials }: TestimonialBandProps)
   if (!testimonial) return null;
 
   return (
-    <section className="py-20 md:py-32 bg-accent-400/20">
+    <section className="py-20 md:py-32">
       <Container size="md">
         <h2 className="text-h2 text-center mb-12">{heading}</h2>
         <div className="max-w-3xl mx-auto text-center">

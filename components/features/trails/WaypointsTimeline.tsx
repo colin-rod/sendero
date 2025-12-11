@@ -8,7 +8,7 @@ interface WaypointsTimelineProps {
 
 export function WaypointsTimeline({ heading, waypoints }: WaypointsTimelineProps) {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 bg-muted/50">
       <Container size="md">
         <h2 className="text-h2 text-center mb-12">{heading}</h2>
         <div className="max-w-2xl mx-auto">
@@ -20,7 +20,7 @@ export function WaypointsTimeline({ heading, waypoints }: WaypointsTimelineProps
                     {waypoint.type === 'start' ? 'A' : waypoint.type === 'end' ? 'B' : index}
                   </span>
                 </span>
-                <h3 className="text-h4 mb-1">{waypoint.name}</h3>
+                <h3 className="text-h3 mb-1">{waypoint.name}</h3>
                 <p className="text-label text-muted-foreground mb-2">
                   {waypoint.distance} km
                 </p>
