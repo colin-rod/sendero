@@ -32,7 +32,10 @@
       "Bash(identify:*)",
       "Bash(ls:*)",
       "Bash(git fetch:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(claude mcp call:*)",
+      "Bash(wc:*)"
     ],
     "deny": [],
     "ask": []

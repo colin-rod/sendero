@@ -158,23 +158,20 @@
   "footer": {
     "brandName": "Sendero Bike Trails",
     "trails": {
-      "heading": "Senderos",
-      "places": "Lugares",
-      "landscapes": "Paisajes",
+      "heading": "Rutas",
+      "overview": "Descripción general",
       "experiences": "Experiencias",
-      "localCollaboration": "Colaboración Local",
-      "testimonials": "Testimonios",
-      "bookYourTrails": "Reserva tu Sendero"
+      "designYourTrails": "Diseña tus rutas"
     },
     "about": {
       "heading": "Acerca de",
-      "ourStory": "Nuestra Historia",
-      "experiences": "Experiencias",
+      "aLifeInBetween": "Una vida intermedia",
       "faqs": "Preguntas Frecuentes"
     },
     "contact": {
       "heading": "Contacto",
-      "getInTouch": "Contáctanos"
+      "phone": "+49 17631470193",
+      "email": "info@senderobiketrails.com"
     },
     "social": {
       "followUs": "Síguenos",

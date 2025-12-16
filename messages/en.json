@@ -159,22 +159,19 @@
     "brandName": "Sendero Bike Trails",
     "trails": {
       "heading": "Trails",
-      "places": "Places",
-      "landscapes": "Landscapes",
+      "overview": "Overview",
       "experiences": "Experiences",
-      "localCollaboration": "Local Collaboration",
-      "testimonials": "Testimonials",
-      "bookYourTrails": "Book your Trails"
+      "designYourTrails": "Design Your Trails"
     },
     "about": {
       "heading": "About",
-      "ourStory": "Our Story",
-      "experiences": "Experiences",
+      "aLifeInBetween": "A Life in Between",
       "faqs": "FAQs"
     },
     "contact": {
       "heading": "Contact",
-      "getInTouch": "Get in touch"
+      "phone": "+49 17631470193",
+      "email": "info@senderobiketrails.com"
     },
     "social": {
       "followUs": "Follow us",
