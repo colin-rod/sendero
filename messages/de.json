@@ -572,5 +572,17 @@
     "comingSoon": "Unsere Routen kommen bald",
     "description": "Wir stellen die besten anfängerfreundlichen Wander- und Radtouren in Kolumbiens Kaffeeregion zusammen. Treten Sie unserer Warteliste bei, um als Erster zu erfahren, wann wir starten!",
     "backToHome": "Zurück zur Startseite"
+  },
+  "auth": {
+    "title": "Website-Zugang",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort eingeben",
+    "loginButton": "Zur Website",
+    "loggingIn": "Anmeldung läuft...",
+    "helpText": "Geben Sie das Passwort ein, um auf die Website zuzugreifen",
+    "errors": {
+      "invalidPassword": "Ungültiges Passwort. Bitte versuchen Sie es erneut.",
+      "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+    }
   }
 }

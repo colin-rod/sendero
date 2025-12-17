@@ -572,5 +572,17 @@
     "comingSoon": "Our Trails Are Coming Soon",
     "description": "We're curating the best beginner-friendly hike & bike tours in Colombia's Coffee Region. Join our waitlist to be the first to know when we launch!",
     "backToHome": "Back to Home"
+  },
+  "auth": {
+    "title": "Site Access",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter password",
+    "loginButton": "Access Site",
+    "loggingIn": "Logging in...",
+    "helpText": "Enter the password to access the site",
+    "errors": {
+      "invalidPassword": "Invalid password. Please try again.",
+      "networkError": "Network error. Please check your connection and try again."
+    }
   }
 }

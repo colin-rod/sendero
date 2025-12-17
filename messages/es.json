@@ -572,5 +572,17 @@
     "comingSoon": "Nuestras Rutas Próximamente",
     "description": "Estamos seleccionando los mejores tours de senderismo y ciclismo para principiantes en la Región Cafetera de Colombia. ¡Únete a nuestra lista de espera para ser el primero en saber cuándo lancemos!",
     "backToHome": "Volver al Inicio"
+  },
+  "auth": {
+    "title": "Acceso al Sitio",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Ingrese la contraseña",
+    "loginButton": "Acceder al Sitio",
+    "loggingIn": "Iniciando sesión...",
+    "helpText": "Ingrese la contraseña para acceder al sitio",
+    "errors": {
+      "invalidPassword": "Contraseña inválida. Por favor, intente de nuevo.",
+      "networkError": "Error de red. Por favor, verifique su conexión e intente de nuevo."
+    }
   }
 }
