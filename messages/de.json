@@ -30,7 +30,8 @@
       "helperText": "Kein Spam, nur Updates zum Start",
       "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
     },
-    "exploreTrails": "TRAILS ENTDECKEN"
+    "exploreTrails": "TRAILS ENTDECKEN",
+    "discoverTrails": "ENTDECKEN"
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
@@ -567,6 +568,9 @@
         "placeholder": "Buchung öffnet bald - Trage dich in unsere Warteliste ein, um benachrichtigt zu werden"
       },
       "backToAll": "Alle Sendero Trails erkunden"
-    }
+    },
+    "comingSoon": "Unsere Routen kommen bald",
+    "description": "Wir stellen die besten anfängerfreundlichen Wander- und Radtouren in Kolumbiens Kaffeeregion zusammen. Treten Sie unserer Warteliste bei, um als Erster zu erfahren, wann wir starten!",
+    "backToHome": "Zurück zur Startseite"
   }
 }

@@ -30,7 +30,8 @@
       "helperText": "Sin spam, solo actualizaciones cuando lancemos",
       "successMessage": "✓ ¡Gracias! Te mantendremos informado cuando lancemos."
     },
-    "exploreTrails": "EXPLORAR SENDEROS"
+    "exploreTrails": "EXPLORAR SENDEROS",
+    "discoverTrails": "DESCUBRIR"
   },
   "howItWorks": {
     "heading": "Cómo Funciona",
@@ -567,6 +568,9 @@
         "placeholder": "Las reservas abren pronto - Únete a nuestra lista de espera para ser notificado"
       },
       "backToAll": "Explorar Todos los Senderos"
-    }
+    },
+    "comingSoon": "Nuestras Rutas Próximamente",
+    "description": "Estamos seleccionando los mejores tours de senderismo y ciclismo para principiantes en la Región Cafetera de Colombia. ¡Únete a nuestra lista de espera para ser el primero en saber cuándo lancemos!",
+    "backToHome": "Volver al Inicio"
   }
 }

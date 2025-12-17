@@ -35,10 +35,10 @@ export default function HomePage() {
                 <p className="mb-12 text-xl md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
                   {tHero('subtitle')}
                 </p>
-                {/* Explore Trails Button */}
+                {/* Discover Trails Button */}
                 <Link href="/trails" className="inline-block">
-                  <Button variant="outline" size="lg" className="!text-white !border-white hover:!bg-white/10">
-                    {tHero('exploreTrails')}
+                  <Button variant="honey-solid" size="lg" className="rounded-[30px] px-6 py-3 uppercase font-semibold tracking-wide">
+                    {tHero('discoverTrails')}
                   </Button>
                 </Link>
               </div>

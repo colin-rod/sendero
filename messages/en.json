@@ -30,7 +30,8 @@
       "helperText": "No spam, just updates when we launch",
       "successMessage": "✓ Thanks! We'll keep you updated when we launch."
     },
-    "exploreTrails": "EXPLORE TRAILS"
+    "exploreTrails": "EXPLORE TRAILS",
+    "discoverTrails": "DISCOVER"
   },
   "howItWorks": {
     "heading": "How It Works",
@@ -567,6 +568,9 @@
         "placeholder": "Booking opens soon - Join our waitlist to be notified"
       },
       "backToAll": "Explore All Sendero Trails"
-    }
+    },
+    "comingSoon": "Our Trails Are Coming Soon",
+    "description": "We're curating the best beginner-friendly hike & bike tours in Colombia's Coffee Region. Join our waitlist to be the first to know when we launch!",
+    "backToHome": "Back to Home"
   }
 }
