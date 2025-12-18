@@ -12,8 +12,8 @@ export function isPublicRoute(pathname: string): boolean {
 
 // Check if the route is the login page
 export function isLoginRoute(pathname: string): boolean {
-  // Matches /en/login, /de/login, /es/login
-  return /^\/(en|de|es)\/login\/?$/.test(pathname);
+  // Matches /login
+  return pathname === '/login' || pathname === '/login/';
 }
 
 // Extract locale from pathname
@@ -23,10 +23,10 @@ export function extractLocaleFromPath(pathname: string): string | null {
 }
 
 // Build login URL with return parameter
-export function buildLoginUrl(locale: string, returnUrl?: string): string {
-  const loginPath = `/${locale}/login`;
+export function buildLoginUrl(returnUrl?: string): string {
+  const loginPath = '/login';
 
-  if (returnUrl && returnUrl !== `/${locale}/login`) {
+  if (returnUrl && returnUrl !== '/login') {
     const encodedReturnUrl = encodeURIComponent(returnUrl);
     return `${loginPath}?return=${encodedReturnUrl}`;
   }

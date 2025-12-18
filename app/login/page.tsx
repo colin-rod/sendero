@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Container } from '@/components/ui/Container';
@@ -14,7 +13,6 @@ export default function LoginPage() {
 
   const router = useRouter();
   const searchParams = useSearchParams();
-  const t = useTranslations('auth');
 
   const returnUrl = searchParams.get('return') || '/';
 
@@ -24,9 +22,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      // Use absolute URL to ensure correct routing
-      const apiUrl = `${window.location.origin}/api/auth/login`;
-      const response = await fetch(apiUrl, {
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password, returnUrl }),
@@ -35,15 +31,14 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        // Redirect to return URL or home
         router.push(data.returnUrl || '/');
-        router.refresh(); // Force route refresh
+        router.refresh();
       } else {
-        setError(t('errors.invalidPassword'));
+        setError('Invalid password. Please try again.');
       }
     } catch (err) {
       console.error('Login error:', err);
-      setError(t('errors.networkError'));
+      setError('Network error. Please check your connection and try again.');
     } finally {
       setLoading(false);
     }
@@ -52,15 +47,15 @@ export default function LoginPage() {
   return (
     <Container className="py-16">
       <div className="max-w-md mx-auto">
-        <h1 className="text-h1 mb-8 text-center">{t('title')}</h1>
+        <h1 className="text-h1 mb-8 text-center">Site Access</h1>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <Input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            label={t('passwordLabel')}
-            placeholder={t('passwordPlaceholder')}
+            label="Password"
+            placeholder="Enter password"
             error={error}
             autoFocus
             required
@@ -72,12 +67,12 @@ export default function LoginPage() {
             className="w-full"
             disabled={loading || !password}
           >
-            {loading ? t('loggingIn') : t('loginButton')}
+            {loading ? 'Logging in...' : 'Access Site'}
           </Button>
         </form>
 
         <p className="text-sm text-muted-foreground mt-6 text-center">
-          {t('helpText')}
+          Enter the password to access the site
         </p>
       </div>
     </Container>

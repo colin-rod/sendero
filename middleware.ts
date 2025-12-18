@@ -5,7 +5,6 @@ import { getSession } from './lib/auth/session';
 import {
   isPublicRoute,
   isLoginRoute,
-  extractLocaleFromPath,
   buildLoginUrl,
 } from './lib/auth/utils';
 
@@ -35,11 +34,8 @@ export default async function middleware(request: NextRequest) {
   const session = await getSession(request);
 
   if (!session.isAuthenticated) {
-    // Extract locale from current path or use default
-    const locale = extractLocaleFromPath(pathname) || 'en';
-
     // Build login URL with return parameter
-    const loginUrl = buildLoginUrl(locale, pathname);
+    const loginUrl = buildLoginUrl(pathname);
 
     return NextResponse.redirect(new URL(loginUrl, request.url));
   }
