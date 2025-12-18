@@ -6,7 +6,8 @@
     "ariaLabel": "Sendero Bike Trails Startseite",
     "nav": {
       "about": "Über uns",
-      "howItWorks": "Wie es funktioniert"
+      "howItWorks": "Wie es funktioniert",
+      "trails": "Trails"
     },
     "mobileMenu": {
       "toggle": "Navigationsmenü umschalten",
@@ -14,8 +15,8 @@
     }
   },
   "hero": {
-    "title": "Entdecke Kolumbiens Kaffeeregion",
-    "subtitle": "Ein Pedaltritt nach dem anderen",
+    "title": "Raderlebnisse in den kolumbianischen Anden",
+    "subtitle": "Wir verbinden dich auf dem Rad mit den Bergen und gestalten einzigartige Augenblicke für all deine Sinne.",
     "description": "Anfängerfreundliche, nachhaltige Wander- und Radtouren durch die atemberaubenden Landschaften Pereiras. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse.",
     "features": {
       "eBikes": "E-Bikes verfügbar",
@@ -28,7 +29,9 @@
       "placeholder": "E-Mail-Adresse eingeben",
       "helperText": "Kein Spam, nur Updates zum Start",
       "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
-    }
+    },
+    "exploreTrails": "TRAILS ENTDECKEN",
+    "discoverTrails": "ENTDECKEN"
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
@@ -80,7 +83,9 @@
   },
   "waitlist": {
     "heading": "Zur Warteliste",
-    "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer."
+    "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer.",
+    "becomeAPioneer": "Werde ein:e Pionier:in",
+    "stayInformed": "Bleib auf dem Laufenden und melde dich an, um mehr über unsere kommenden Reisen im Jahr 2026 zu erfahren."
   },
   "form": {
     "labels": {
@@ -155,22 +160,19 @@
     "brandName": "Sendero Bike Trails",
     "trails": {
       "heading": "Routen",
-      "places": "Orte",
-      "landscapes": "Landschaften",
+      "overview": "Überblick",
       "experiences": "Erlebnisse",
-      "localCollaboration": "Lokale Zusammenarbeit",
-      "testimonials": "Erfahrungsberichte",
-      "bookYourTrails": "Buche deine Route"
+      "designYourTrails": "Gestalte deine Trails"
     },
     "about": {
       "heading": "Über uns",
-      "ourStory": "Unsere Geschichte",
-      "experiences": "Erlebnisse",
+      "aLifeInBetween": "Ein Leben dazwischen",
       "faqs": "Häufig gestellte Fragen"
     },
     "contact": {
       "heading": "Kontakt",
-      "getInTouch": "Kontaktiere uns"
+      "phone": "+49 17631470193",
+      "email": "info@senderobiketrails.com"
     },
     "social": {
       "followUs": "Folge uns",
@@ -463,5 +465,124 @@
     "title": "Sendero Bike Trails - Entdecke Kolumbiens Kaffeeregion",
     "description": "Anfängerfreundliche Wander- und Radtouren in Pereira, Kolumbien. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse. Trage dich heute in unsere Warteliste ein!",
     "keywords": "kolumbien touren, kaffeeregion touren, pereira fahrradtouren, e-bike touren, nachhaltiges reisen kolumbien, kaffeefarm touren"
+  },
+  "trails": {
+    "master": {
+      "title": "Unsere Trails",
+      "subtitle": "Entdecke anfängerfreundliche Radsport-Abenteuer durch Kolumbiens Kaffeeregion",
+      "description": "Wähle aus unseren sorgfältig kuratierten Routen, die jeweils die natürliche Schönheit und kulturelle Vielfalt von Pereira und den umliegenden Bergen zeigen.",
+      "cta": "Trail-Details ansehen",
+      "stats": {
+        "distance": "Entfernung",
+        "duration": "Dauer"
+      }
+    },
+    "senderoDelTigre": {
+      "name": "El Sendero del Tigre",
+      "subtitle": "Eine geführte Reise durch Bambuswälder und Bergbäche",
+      "story": {
+        "paragraph1": "Folge den Fußstapfen des scheuen Tigre, durch hohe Gräser, Bambushaine und den Duft der Bergwälder.",
+        "paragraph2": "Eine ruhige, immersive Fahrt, die dich mit der Natur verbindet – perfekt für Fahrer aller Levels, die ein authentisches kolumbianisches Abenteuer suchen."
+      },
+      "stats": {
+        "distance": "Entfernung",
+        "duration": "Dauer",
+        "difficulty": "Schwierigkeit",
+        "elevation": "Höhe",
+        "elevationGain": "Aufstieg",
+        "elevationLoss": "Abstieg"
+      },
+      "difficulty": {
+        "easy": "Leicht",
+        "moderate": "Mittel",
+        "challenging": "Anspruchsvoll"
+      },
+      "experiences": {
+        "heading": "Erlebnisse entlang des Weges",
+        "stream": {
+          "title": "El Tigre Bach-Überquerung",
+          "description": "Wade durch kristallklares Bergwasser, wo Wildtiere zum Trinken kommen. Diese friedliche Bachüberquerung ist ein Höhepunkt des Trails und bietet eine erfrischende Pause.",
+          "location": "km {km}"
+        },
+        "bamboo": {
+          "title": "Bambuswald-Trail",
+          "description": "Fahre durch hohe Bambushaine mit geflecktem Sonnenlicht, das durch das Blätterdach fällt. Das sanfte Rascheln des Bambus schafft eine ruhige Atmosphäre für Naturliebhaber."
+        },
+        "farm": {
+          "title": "Ökologische Farm Mittagessen",
+          "description": "Traditionelles kolumbianisches Mittagessen auf einer nachhaltigen Familienfarm. Genieße frische, biologische Zutaten und lerne lokale Anbaumethoden kennen, umgeben von Kaffeepflanzen."
+        },
+        "vista": {
+          "title": "Berg-Aussichtspunkt",
+          "description": "Panoramablick auf Kaffeeplantagen und ferne Gipfel. Dieser malerische Aussichtspunkt bietet die perfekte Fotogelegenheit und die Chance, die Kaffeeregion-Landschaft zu schätzen."
+        }
+      },
+      "waypoints": {
+        "heading": "Wegpunkte",
+        "start": "Startpunkt - Stadtplatz in Pereira",
+        "startDescription": "Treffen mit deinem Guide und Ausrüstungsübergabe",
+        "stream": "El Tigre Bach",
+        "streamDescription": "Friedliche Flussüberquerung mit Bergblick",
+        "bambooRidge": "Bambus-Höhenzug",
+        "bambooRidgeDescription": "Dichter Bambuswaldabschnitt mit kühlem Schatten",
+        "farm": "Ökologische Farm",
+        "farmDescription": "Mittagspause auf nachhaltiger Familienfarm",
+        "viastaPoint": "Aussichtspunkt",
+        "vistaPointDescription": "Panoramablick über die Täler der Kaffeeregion",
+        "end": "Endpunkt",
+        "endDescription": "Rückkehr zum Ausgangspunkt in Pereira"
+      },
+      "elevation": {
+        "heading": "Höhenprofil",
+        "highest": "Höchster Punkt",
+        "lowest": "Tiefster Punkt",
+        "description": "Überwiegend sanft hügeliges Gelände mit einem allmählichen Anstieg zur Hälfte. Die Höhenänderungen sind für Anfänger gut zu bewältigen, ohne steile Abfahrten oder technische Abschnitte.",
+        "meters": "m"
+      },
+      "gallery": {
+        "heading": "Galerie",
+        "imageAlt": "El Sendero del Tigre - {description}"
+      },
+      "testimonials": {
+        "heading": "Was Fahrer sagen",
+        "testimonial1": {
+          "quote": "Eine der friedlichsten Fahrten meines Lebens. Ich fühlte mich geführt, sicher und tief mit dem Wald verbunden. Der Bambusabschnitt war absolut magisch.",
+          "author": "Anna Schmidt",
+          "country": "Deutschland"
+        },
+        "testimonial2": {
+          "quote": "Die perfekte Einführung ins Radfahren in Kolumbien. Wunderschöne Landschaft, authentische Erlebnisse und unser Guide war unglaublich kenntnisreich über die lokale Ökologie.",
+          "author": "James Miller",
+          "country": "USA"
+        },
+        "testimonial3": {
+          "quote": "Die Bambuswälder waren magisch. Unser Guide kannte jede Pflanze und jeden Vogel entlang des Weges. Das Mittagessen auf der Farm war ein Höhepunkt – frische Zutaten und warme Gastfreundschaft.",
+          "author": "Sofia Martinez",
+          "country": "Spanien"
+        }
+      },
+      "booking": {
+        "heading": "Buche diesen geführten Trail",
+        "button": "Reserviere deinen Platz",
+        "subtext": "Kleine Gruppen · Erfahrene lokale Guides · Gesamte Ausrüstung inklusive",
+        "placeholder": "Buchung öffnet bald - Trage dich in unsere Warteliste ein, um benachrichtigt zu werden"
+      },
+      "backToAll": "Alle Sendero Trails erkunden"
+    },
+    "comingSoon": "Unsere Routen kommen bald",
+    "description": "Wir stellen die besten anfängerfreundlichen Wander- und Radtouren in Kolumbiens Kaffeeregion zusammen. Treten Sie unserer Warteliste bei, um als Erster zu erfahren, wann wir starten!",
+    "backToHome": "Zurück zur Startseite"
+  },
+  "auth": {
+    "title": "Website-Zugang",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort eingeben",
+    "loginButton": "Zur Website",
+    "loggingIn": "Anmeldung läuft...",
+    "helpText": "Geben Sie das Passwort ein, um auf die Website zuzugreifen",
+    "errors": {
+      "invalidPassword": "Ungültiges Passwort. Bitte versuchen Sie es erneut.",
+      "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+    }
   }
 }

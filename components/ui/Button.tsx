@@ -18,7 +18,7 @@ import { SpinnerButton } from './Spinner';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Button variant using semantic color tokens */
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'honey-solid' | 'honey-light' | 'honey-outline';
 
   /** Button size */
   size?: 'sm' | 'md' | 'lg';
@@ -62,6 +62,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-transparent hover:bg-muted active:bg-muted/80 focus-visible:ring-primary-500',
       danger:
         'bg-error-500 text-white hover:bg-error-600 active:bg-error-700 focus-visible:ring-error-500',
+      'honey-solid':
+        'bg-honey-500 text-white hover:bg-honey-600 active:bg-honey-700 shadow-md disabled:bg-honey-300 disabled:text-honey-100 focus-visible:ring-honey-500',
+      'honey-light':
+        'bg-accent-400 text-honey-700 hover:bg-accent-500 active:bg-accent-600 shadow-sm disabled:bg-accent-200 disabled:text-accent-400 focus-visible:ring-accent-500',
+      'honey-outline':
+        'bg-transparent text-honey-600 border-2 border-honey-500 hover:bg-honey-50 active:bg-honey-100 disabled:border-honey-300 disabled:text-honey-300 focus-visible:ring-honey-500',
     };
 
     // Size classes

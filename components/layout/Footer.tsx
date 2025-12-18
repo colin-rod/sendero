@@ -89,19 +89,14 @@ export function Footer() {
           </div>
 
           {/* Navigation Columns */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Trails Column */}
             <div>
               <h4 className="mb-4 text-label text-white">{t('trails.heading')}</h4>
               <ul className="space-y-2 text-body text-gray-300">
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    {t('trails.places')}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    {t('trails.landscapes')}
+                    {t('trails.overview')}
                   </Link>
                 </li>
                 <li>
@@ -111,17 +106,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    {t('trails.localCollaboration')}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    {t('trails.testimonials')}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    {t('trails.bookYourTrails')}
+                    {t('trails.designYourTrails')}
                   </Link>
                 </li>
               </ul>
@@ -133,12 +118,7 @@ export function Footer() {
               <ul className="space-y-2 text-body text-gray-300">
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    {t('about.ourStory')}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    {t('about.experiences')}
+                    {t('about.aLifeInBetween')}
                   </Link>
                 </li>
                 <li>
@@ -152,15 +132,25 @@ export function Footer() {
             {/* Contact Column */}
             <div>
               <h4 className="mb-4 text-label text-white">{t('contact.heading')}</h4>
-              <p className="text-body text-gray-300">
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  {t('contact.getInTouch')}
-                </Link>
-              </p>
+              <ul className="space-y-2 text-body text-gray-300">
+                <li>
+                  <a
+                    href={`tel:${t('contact.phone')}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {t('contact.phone')}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${t('contact.email')}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {t('contact.email')}
+                  </a>
+                </li>
+              </ul>
             </div>
-
-            {/* Empty column for 4-column grid on desktop */}
-            <div className="hidden lg:block" aria-hidden="true"></div>
           </div>
 
           {/* Copyright */}

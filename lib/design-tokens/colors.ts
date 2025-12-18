@@ -39,6 +39,21 @@ export const colors = {
     950: '#a87c16',
   },
 
+  // Honey Yellow (Rich Golden - Adventure, Warmth, Buttons)
+  honey: {
+    50: '#fdf8ec',
+    100: '#faedc9',
+    200: '#f5da8f',
+    300: '#efc055',
+    400: '#eaad2f',
+    500: '#c4963f', // Main Honey Yellow from Figma
+    600: '#a97935',
+    700: '#8c5e2d',
+    800: '#734c2a',
+    900: '#613f28',
+    950: '#372016',
+  },
+
   // Neutral Colors - Updated from Figma
   background: '#f1f1f1', // Background from Figma
   foreground: '#1b1b1b', // Gravel Black from Figma
@@ -109,6 +124,10 @@ export const colors = {
  * ACCENT (Light Cream - #fff0bb)
  * - Use for: Secondary buttons, soft backgrounds, warm accents
  * - Variants: 400 (default), 500 (hover)
+ *
+ * HONEY (Honey Yellow - #c4963f)
+ * - Use for: Special CTA buttons, hero buttons, discover/explore actions
+ * - Variants: 500 (default), 600 (hover), 700 (active), 50-100 (light backgrounds)
  *
  * GRAVEL BLACK (#1b1b1b)
  * - Use for: Primary text, headings, dark backgrounds

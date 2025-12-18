@@ -6,7 +6,8 @@
     "ariaLabel": "Sendero Bike Trails home",
     "nav": {
       "about": "About",
-      "howItWorks": "How It Works"
+      "howItWorks": "How It Works",
+      "trails": "Trails"
     },
     "mobileMenu": {
       "toggle": "Toggle navigation menu",
@@ -14,8 +15,8 @@
     }
   },
   "hero": {
-    "title": "Discover Colombia's Coffee Region",
-    "subtitle": "One Pedal at a Time",
+    "title": "Cycling Adventures in the Colombian Andes",
+    "subtitle": "We connect you on two wheels with the mountains and create unique moments for all your senses.",
     "description": "Beginner-friendly, sustainable hike & bike tours through Pereira's stunning landscapes. E-bikes, women-only groups, and authentic coffee farm experiences.",
     "features": {
       "eBikes": "E-Bikes Available",
@@ -28,7 +29,9 @@
       "placeholder": "Enter your email",
       "helperText": "No spam, just updates when we launch",
       "successMessage": "✓ Thanks! We'll keep you updated when we launch."
-    }
+    },
+    "exploreTrails": "EXPLORE TRAILS",
+    "discoverTrails": "DISCOVER"
   },
   "howItWorks": {
     "heading": "How It Works",
@@ -80,7 +83,9 @@
   },
   "waitlist": {
     "heading": "Join the Waitlist",
-    "description": "Be the first to know when tours open up. No spam, just adventure."
+    "description": "Be the first to know when tours open up. No spam, just adventure.",
+    "becomeAPioneer": "Become a Pioneer",
+    "stayInformed": "Stay up to date and sign up to learn more about our upcoming trips in 2026."
   },
   "form": {
     "labels": {
@@ -155,22 +160,19 @@
     "brandName": "Sendero Bike Trails",
     "trails": {
       "heading": "Trails",
-      "places": "Places",
-      "landscapes": "Landscapes",
+      "overview": "Overview",
       "experiences": "Experiences",
-      "localCollaboration": "Local Collaboration",
-      "testimonials": "Testimonials",
-      "bookYourTrails": "Book your Trails"
+      "designYourTrails": "Design Your Trails"
     },
     "about": {
       "heading": "About",
-      "ourStory": "Our Story",
-      "experiences": "Experiences",
+      "aLifeInBetween": "A Life in Between",
       "faqs": "FAQs"
     },
     "contact": {
       "heading": "Contact",
-      "getInTouch": "Get in touch"
+      "phone": "+49 17631470193",
+      "email": "info@senderobiketrails.com"
     },
     "social": {
       "followUs": "Follow us",
@@ -463,5 +465,124 @@
     "title": "Sendero Bike Trails - Discover Colombia's Coffee Region",
     "description": "Beginner-friendly hike & bike tours in Pereira, Colombia. E-bikes, women-only groups, and authentic coffee farm experiences. Join our waitlist today!",
     "keywords": "colombia tours, coffee region tours, pereira bike tours, e-bike tours, sustainable travel colombia, coffee farm tours"
+  },
+  "trails": {
+    "master": {
+      "title": "Our Trails",
+      "subtitle": "Explore beginner-friendly cycling adventures through Colombia's Coffee Region",
+      "description": "Choose from our carefully curated routes, each designed to showcase the natural beauty and cultural richness of Pereira and the surrounding mountains.",
+      "cta": "View Trail Details",
+      "stats": {
+        "distance": "Distance",
+        "duration": "Duration"
+      }
+    },
+    "senderoDelTigre": {
+      "name": "El Sendero del Tigre",
+      "subtitle": "A guided journey through bamboo forests and mountain streams",
+      "story": {
+        "paragraph1": "Follow the footsteps of the elusive tigre, through tall grasses, bamboo groves, and the scent of mountain forests.",
+        "paragraph2": "A calm, immersive ride designed to reconnect you with nature, perfect for riders of all levels seeking an authentic Colombian adventure."
+      },
+      "stats": {
+        "distance": "Distance",
+        "duration": "Duration",
+        "difficulty": "Difficulty",
+        "elevation": "Elevation",
+        "elevationGain": "Gain",
+        "elevationLoss": "Loss"
+      },
+      "difficulty": {
+        "easy": "Easy",
+        "moderate": "Moderate",
+        "challenging": "Challenging"
+      },
+      "experiences": {
+        "heading": "Experiences Along the Way",
+        "stream": {
+          "title": "El Tigre Stream Crossing",
+          "description": "Wade through crystal-clear mountain waters where wildlife comes to drink. This peaceful stream crossing is a highlight of the trail, offering a refreshing pause in your journey.",
+          "location": "km {km}"
+        },
+        "bamboo": {
+          "title": "Bamboo Forest Trail",
+          "description": "Ride through towering bamboo groves with dappled sunlight filtering through the canopy. The gentle rustling of bamboo creates a serene atmosphere perfect for nature lovers."
+        },
+        "farm": {
+          "title": "Ecological Farm Lunch",
+          "description": "Traditional Colombian lunch at a sustainable family farm. Enjoy fresh, organic ingredients and learn about local farming practices while surrounded by coffee plants."
+        },
+        "vista": {
+          "title": "Mountain Vista Point",
+          "description": "Panoramic views of coffee plantations and distant peaks. This scenic overlook provides the perfect photo opportunity and a chance to appreciate the Coffee Region landscape."
+        }
+      },
+      "waypoints": {
+        "heading": "Waypoints",
+        "start": "Start Point - Town square in Pereira",
+        "startDescription": "Meet your guide and receive equipment",
+        "stream": "El Tigre Stream",
+        "streamDescription": "Peaceful river crossing with mountain views",
+        "bambooRidge": "Bamboo Ridge",
+        "bambooRidgeDescription": "Dense bamboo forest section with cool shade",
+        "farm": "Ecological Farm",
+        "farmDescription": "Lunch stop at sustainable family farm",
+        "viastaPoint": "Vista Point",
+        "vistaPointDescription": "Panoramic overlook of Coffee Region valleys",
+        "end": "End Point",
+        "endDescription": "Return to starting point in Pereira"
+      },
+      "elevation": {
+        "heading": "Elevation Profile",
+        "highest": "Highest point",
+        "lowest": "Lowest point",
+        "description": "Mostly gentle rolling terrain with one gradual climb around the midpoint. The elevation changes are manageable for beginners, with no steep descents or technical sections.",
+        "meters": "m"
+      },
+      "gallery": {
+        "heading": "Gallery",
+        "imageAlt": "El Sendero del Tigre - {description}"
+      },
+      "testimonials": {
+        "heading": "What Riders Say",
+        "testimonial1": {
+          "quote": "One of the most peaceful rides of my life. I felt guided, safe, and deeply connected to the forest. The bamboo section was absolutely magical.",
+          "author": "Anna Schmidt",
+          "country": "Germany"
+        },
+        "testimonial2": {
+          "quote": "The perfect introduction to cycling in Colombia. Beautiful scenery, authentic experiences, and our guide was incredibly knowledgeable about the local ecology.",
+          "author": "James Miller",
+          "country": "USA"
+        },
+        "testimonial3": {
+          "quote": "The bamboo forests were magical. Our guide knew every plant and bird along the way. Lunch at the farm was a highlight – fresh ingredients and warm hospitality.",
+          "author": "Sofia Martinez",
+          "country": "Spain"
+        }
+      },
+      "booking": {
+        "heading": "Book This Guided Trail",
+        "button": "Reserve Your Spot",
+        "subtext": "Small groups · Experienced local guides · All equipment included",
+        "placeholder": "Booking opens soon - Join our waitlist to be notified"
+      },
+      "backToAll": "Explore All Sendero Trails"
+    },
+    "comingSoon": "Our Trails Are Coming Soon",
+    "description": "We're curating the best beginner-friendly hike & bike tours in Colombia's Coffee Region. Join our waitlist to be the first to know when we launch!",
+    "backToHome": "Back to Home"
+  },
+  "auth": {
+    "title": "Site Access",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter password",
+    "loginButton": "Access Site",
+    "loggingIn": "Logging in...",
+    "helpText": "Enter the password to access the site",
+    "errors": {
+      "invalidPassword": "Invalid password. Please try again.",
+      "networkError": "Network error. Please check your connection and try again."
+    }
   }
 }

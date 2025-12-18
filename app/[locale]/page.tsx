@@ -1,11 +1,13 @@
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
+import { Button } from '@/components/ui/Button';
 import { NumberBadge } from '@/components/ui/Badge';
-import { WaitlistForm } from '@/components/features/waitlist/WaitlistForm';
 import HeroVideo from '@/components/HeroVideo';
-import HeroEmailCapture from '@/components/HeroEmailCapture';
+import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
@@ -29,41 +31,16 @@ export default function HomePage() {
               <div className="mx-auto max-w-3xl text-center">
                 <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                   {tHero('title')}
-                  <span className="block text-primary-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                    {tHero('subtitle')}
-                  </span>
                 </h1>
-                <p className="mb-8 text-body text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                  {tHero('description')}
+                <p className="mb-12 text-xl md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
+                  {tHero('subtitle')}
                 </p>
-                <div className="flex flex-wrap gap-4 mb-8 justify-center">
-                  <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
-                      <Bike className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      {tHero('features.eBikes')}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
-                      <Leaf className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      {tHero('features.ecoConscious')}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm">
-                      <Coffee className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="text-body text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      {tHero('features.coffeeFarm')}
-                    </span>
-                  </div>
-                </div>
-                {/* Hero Email Capture */}
-                <HeroEmailCapture />
+                {/* Discover Trails Button */}
+                <Link href="/trails" className="inline-block">
+                  <Button variant="honey-solid" size="lg" className="rounded-[30px] px-6 py-3 uppercase font-semibold tracking-wide">
+                    {tHero('discoverTrails')}
+                  </Button>
+                </Link>
               </div>
             </Container>
           </div>
@@ -186,19 +163,33 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* Waitlist Form Section */}
-        <section className="py-20 md:py-32">
-          <Container>
-            <div className="mx-auto max-w-2xl">
-              <div className="mb-12 text-center">
-                <h2 className="mb-4 text-h2 text-foreground">
-                  {tWaitlist('heading')}
-                </h2>
-                <p className="text-body text-muted-foreground">
-                  {tWaitlist('description')}
-                </p>
-              </div>
-              <WaitlistForm />
+        {/* Simplified Waitlist Section - Bottom of Page */}
+        <section className="relative py-20 md:py-32">
+          {/* Background image */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/hero-poster.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/70" />
+
+          {/* Content */}
+          <Container className="relative z-10 text-center">
+            <h2 className="text-h2 text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              {tWaitlist('becomeAPioneer')}
+            </h2>
+            <p className="text-body text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              {tWaitlist('stayInformed')}
+            </p>
+
+            {/* Simplified email form */}
+            <div className="max-w-md mx-auto">
+              <BottomEmailCapture />
             </div>
           </Container>
         </section>
