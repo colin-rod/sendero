@@ -5,6 +5,9 @@ import {
   verifyPassword,
 } from '@/lib/auth/session';
 
+// Use Node.js runtime for API routes (not Edge)
+export const runtime = 'nodejs';
+
 interface LoginRequest {
   password: string;
   returnUrl?: string;
@@ -24,7 +27,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Verify password using constant-time comparison
-    const isValid = verifyPassword(password);
+    const isValid = await verifyPassword(password);
 
     if (!isValid) {
       // Log failed attempt for monitoring

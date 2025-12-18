@@ -1,6 +1,9 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
+// Force dynamic rendering for login page
+export const dynamic = 'force-dynamic';
+
 export default function LoginLayout({
   children,
 }: {

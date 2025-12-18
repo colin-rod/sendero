@@ -1,7 +1,6 @@
 import { getIronSession, IronSession, SessionOptions } from 'iron-session';
 import { cookies } from 'next/headers';
 import { NextRequest } from 'next/server';
-import { timingSafeEqual } from 'crypto';
 
 // Session data type
 export interface SessionData {
@@ -62,7 +61,8 @@ export function destroySession(session: IronSession<SessionData>): void {
 }
 
 // Verify password using constant-time comparison to prevent timing attacks
-export function verifyPassword(inputPassword: string): boolean {
+// Edge Runtime compatible version using Web Crypto API
+export async function verifyPassword(inputPassword: string): Promise<boolean> {
   const storedPassword = process.env.SITE_PASSWORD;
 
   if (!storedPassword) {
@@ -71,12 +71,41 @@ export function verifyPassword(inputPassword: string): boolean {
   }
 
   try {
+    // Use Web Crypto API (available in Edge Runtime) for constant-time comparison
+    const encoder = new TextEncoder();
+
     // Ensure both strings are the same length to prevent timing attacks
     const maxLength = Math.max(inputPassword.length, storedPassword.length);
-    const inputBuffer = Buffer.from(inputPassword.padEnd(maxLength, '\0'));
-    const storedBuffer = Buffer.from(storedPassword.padEnd(maxLength, '\0'));
+    const input = inputPassword.padEnd(maxLength, '\0');
+    const stored = storedPassword.padEnd(maxLength, '\0');
 
-    return timingSafeEqual(inputBuffer, storedBuffer);
+    // Create HMAC keys from the strings
+    const key = await crypto.subtle.importKey(
+      'raw',
+      encoder.encode('sendero-password-comparison-key'),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign']
+    );
+
+    // Sign both strings
+    const inputSignature = await crypto.subtle.sign('HMAC', key, encoder.encode(input));
+    const storedSignature = await crypto.subtle.sign('HMAC', key, encoder.encode(stored));
+
+    // Compare signatures (constant-time comparison)
+    const inputArray = new Uint8Array(inputSignature);
+    const storedArray = new Uint8Array(storedSignature);
+
+    if (inputArray.length !== storedArray.length) {
+      return false;
+    }
+
+    let result = 0;
+    for (let i = 0; i < inputArray.length; i++) {
+      result |= inputArray[i] ^ storedArray[i];
+    }
+
+    return result === 0;
   } catch (error) {
     console.error('Password verification error:', error);
     return false;
