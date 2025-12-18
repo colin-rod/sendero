@@ -22,7 +22,7 @@ export default async function middleware(request: NextRequest) {
 
   // 1. Allow public routes (static assets, API)
   if (isPublicRoute(pathname)) {
-    return intlMiddleware(request);
+    return NextResponse.next();
   }
 
   // 2. Allow login page (serve directly, no locale processing)
