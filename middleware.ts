@@ -25,9 +25,9 @@ export default async function middleware(request: NextRequest) {
     return intlMiddleware(request);
   }
 
-  // 2. Allow login page (but run through intl middleware for locale)
+  // 2. Allow login page (serve directly, no locale processing)
   if (isLoginRoute(pathname)) {
-    return intlMiddleware(request);
+    return NextResponse.next();
   }
 
   // 3. Check authentication
