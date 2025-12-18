@@ -7,7 +7,13 @@ export function isPublicRoute(pathname: string): boolean {
     '/favicon',   // Favicon
   ];
 
-  return publicPatterns.some(pattern => pathname.startsWith(pattern));
+  if (publicPatterns.some(pattern => pathname.startsWith(pattern))) {
+    return true;
+  }
+
+  // Treat direct asset/file requests as public (e.g. /hero.jpg, /fonts/font.woff2)
+  const hasFileExtension = /\.[A-Za-z0-9]+$/.test(pathname);
+  return hasFileExtension;
 }
 
 // Check if the route is the login page
