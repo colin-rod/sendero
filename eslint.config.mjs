@@ -56,6 +56,11 @@ export default [
         HTMLInputElement: 'readonly',
         HTMLSelectElement: 'readonly',
         HTMLSpanElement: 'readonly',
+        IntersectionObserver: 'readonly',
+        Response: 'readonly',
+        TextEncoder: 'readonly',
+        crypto: 'readonly',
+        URL: 'readonly',
       },
     },
     plugins: {

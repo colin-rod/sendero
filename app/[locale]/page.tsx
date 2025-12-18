@@ -10,7 +10,7 @@ import HeroVideo from '@/components/HeroVideo';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
-import { Bike, Leaf, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
+import { Bike, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
