@@ -39,7 +39,7 @@ export default function HomePage() {
                 </p>
                 {/* Discover Trails Button */}
                 <Link href="/trails" className="inline-block">
-                  <Button variant="honey-solid" size="lg" className="rounded-[30px] px-6 py-3 uppercase font-semibold tracking-wide">
+                  <Button variant="hero-cta" size="lg">
                     {tHero('discoverTrails')}
                   </Button>
                 </Link>
