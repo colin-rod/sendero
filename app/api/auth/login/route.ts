@@ -56,6 +56,18 @@ export async function POST(request: NextRequest) {
   }
 }
 
+// Handle OPTIONS for CORS preflight
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
+}
+
 // Disallow other HTTP methods
 export async function GET() {
   return NextResponse.json(
