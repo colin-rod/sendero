@@ -24,7 +24,9 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/auth/login', {
+      // Use absolute URL to ensure correct routing
+      const apiUrl = `${window.location.origin}/api/auth/login`;
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password, returnUrl }),
