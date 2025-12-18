@@ -69,7 +69,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'honey-outline':
         'bg-transparent text-honey-600 border-2 border-honey-500 hover:bg-honey-50 active:bg-honey-100 disabled:border-honey-300 disabled:text-honey-300 focus-visible:ring-honey-500',
       'hero-cta':
-        'bg-honey-500 text-white hover:bg-honey-600 active:bg-honey-700 shadow-md disabled:bg-honey-300 disabled:text-honey-100 focus-visible:ring-honey-500 rounded-[30px] uppercase font-semibold tracking-wide',
+        'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 shadow-md disabled:bg-primary-300 disabled:text-primary-100 focus-visible:ring-primary-500 rounded-xl uppercase font-semibold tracking-wide',
     };
 
     // Size classes
