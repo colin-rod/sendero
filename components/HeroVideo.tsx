@@ -1,32 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroVideo() {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    // Only enable parallax on desktop (screen width > 768px)
-    const isDesktop = window.innerWidth > 768;
-
-    if (!isDesktop) return;
-
-    const handleScroll = () => {
-      // Only apply parallax for the first screen height
-      if (window.scrollY < window.innerHeight) {
-        setScrollY(window.scrollY);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Parallax effect: video moves at 0.5x speed (half the scroll speed)
-  const parallaxOffset = scrollY * 0.5;
 
   if (hasError) {
     // Fallback to static image if video fails to load
@@ -37,7 +16,6 @@ export default function HeroVideo() {
         fill
         className="object-cover"
         priority
-        style={{ transform: `translateY(${parallaxOffset}px)` }}
       />
     );
   }
@@ -53,7 +31,6 @@ export default function HeroVideo() {
           isVideoReady ? 'opacity-0' : 'opacity-100'
         }`}
         priority
-        style={{ transform: `translateY(${parallaxOffset}px)` }}
       />
 
       {/* Video element - fades in when ready to play */}
@@ -69,7 +46,6 @@ export default function HeroVideo() {
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-100' : 'opacity-0'
         }`}
-        style={{ transform: `translateY(${parallaxOffset}px)`, willChange: 'transform' }}
       >
         <source src="/flying-over-the-andean-mountans_optimized.mp4" type="video/mp4" />
         Your browser does not support the video tag.
