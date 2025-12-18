@@ -5,6 +5,10 @@
     border-color: rgb(226 232 240);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: rgb(241 241 241); /* #f1f1f1 - Background from Figma */
     color: rgb(27 27 27); /* #1b1b1b - Gravel Black from Figma */

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Container } from '@/components/ui/Container';
@@ -13,11 +13,26 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
  *
  * Main site header with navigation, mobile menu, language switcher, and skip-to-content link.
  * Includes accessibility improvements and responsive behavior.
+ * Features transparent background over hero video that becomes solid on scroll.
  */
 
 export function Header() {
   const t = useTranslations('header');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Switch to solid background after scrolling 50px
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -37,7 +52,9 @@ export function Header() {
         {t('skipToContent')}
       </a>
 
-      <header className="sticky top-0 z-50 w-full bg-[rgba(27,27,27,1.0)]">
+      <header className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
+        isScrolled ? 'bg-[rgba(27,27,27,1.0)]' : 'bg-[rgba(27,27,27,0.3)] backdrop-blur-sm'
+      }`}>
         <Container>
           <div className="flex h-16 max-w-[1200px] mx-auto gap-6 items-center justify-between flex-wrap">
             {/* Logo */}
