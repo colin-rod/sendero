@@ -60,6 +60,21 @@ describe('Button', () => {
       const button = screen.getByRole('button');
       expect(button).toHaveClass('bg-error-500', 'text-white');
     });
+
+    it('should render hero-cta variant', () => {
+      render(<Button variant="hero-cta">Hero CTA</Button>);
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass(
+        'bg-honey-500',
+        'bg-[#c4963f]',
+        'text-accent-50',
+        'text-[#fffaf3]',
+        'rounded-full',
+        'uppercase',
+        'font-semibold',
+        'tracking-wide'
+      );
+    });
   });
 
   describe('Sizes', () => {

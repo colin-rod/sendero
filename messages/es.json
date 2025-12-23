@@ -584,5 +584,8 @@
       "invalidPassword": "Contraseña inválida. Por favor, intente de nuevo.",
       "networkError": "Error de red. Por favor, verifique su conexión e intente de nuevo."
     }
+  },
+  "accessibility": {
+    "scrollIndicator": "Desplázate hacia abajo para explorar"
   }
 }

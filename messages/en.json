@@ -584,5 +584,8 @@
       "invalidPassword": "Invalid password. Please try again.",
       "networkError": "Network error. Please check your connection and try again."
     }
+  },
+  "accessibility": {
+    "scrollIndicator": "Scroll down to explore"
   }
 }

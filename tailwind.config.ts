@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         primary: colors.primary,
         accent: colors.accent,
+        honey: colors.honey,
         background: colors.background,
         foreground: colors.foreground,
         muted: colors.muted,

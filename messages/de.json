@@ -584,5 +584,8 @@
       "invalidPassword": "Ungültiges Passwort. Bitte versuchen Sie es erneut.",
       "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
     }
+  },
+  "accessibility": {
+    "scrollIndicator": "Scrollen Sie nach unten, um zu erkunden"
   }
 }
