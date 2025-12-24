@@ -592,5 +592,20 @@
     "eyebrow": "¡Simplemente Escapar!",
     "heading": "Profundo en el Alma Cafetera",
     "description": "Los Andes colombianos son un espacio natural único con paisajes impresionantes, pueblos coloridos y una gran diversidad culinaria y cultural. Nuestros senderos en bicicleta te permiten experimentar auténticamente la belleza de la región y su diversidad cultural y natural."
+  },
+  "trailsSection": {
+    "eyebrow": "Descubre Tu Aventura",
+    "heading": "A través de los Senderos",
+    "description": "Elige entre nuestra colección curada de tours guiados en bicicleta y a pie por la Región Cafetera de Colombia",
+    "comingSoon": "Próximamente",
+    "tigre": {
+      "tagline": "Una ruta que sigue las huellas de este tímido y fantasmal animal"
+    },
+    "cafe": {
+      "tagline": "Una travesía hacia la serenidad y el pasado, lejos de lo cotidiano"
+    },
+    "paramo": {
+      "tagline": "Un camino donde el pasado, presente y futuro se entrelazan"
+    }
   }
 }
