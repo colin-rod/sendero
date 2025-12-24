@@ -48,9 +48,10 @@ export function CarouselSection({
 
   // Keyboard navigation
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') goToPrevious();
-      if (e.key === 'ArrowRight') goToNext();
+    const handleKeyDown = (e: Event) => {
+      const keyboardEvent = e as KeyboardEvent;
+      if (keyboardEvent.key === 'ArrowLeft') goToPrevious();
+      if (keyboardEvent.key === 'ArrowRight') goToNext();
     };
 
     window.addEventListener('keydown', handleKeyDown);
