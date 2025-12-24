@@ -587,5 +587,10 @@
   },
   "accessibility": {
     "scrollIndicator": "Scrollen Sie nach unten, um zu erkunden"
+  },
+  "carousel": {
+    "eyebrow": "Einfach mal weg!",
+    "heading": "Tief in die Kaffeeanbauseele",
+    "description": "Die Kolumbianischen Anden sind ein einzigartiger Naturraum mit atemberaubenden Landschaften, bunten Dörfern und großer kulinarischer Vielfalt. Unsere Radtrails lassen Dich die Schönheit der Region und ihre kulturelle wie natürliche Diversität authentisch erleben."
   }
 }

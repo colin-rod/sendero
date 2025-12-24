@@ -10,10 +10,12 @@ import HeroVideo from '@/components/HeroVideo';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
+import { CarouselSection } from '@/components/features/carousel/CarouselSection';
 import { Bike, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
+  const tCarousel = useTranslations('carousel');
   const tHowItWorks = useTranslations('howItWorks');
   const tPerfectFor = useTranslations('perfectFor');
   const tWaitlist = useTranslations('waitlist');
@@ -50,6 +52,22 @@ export default function HomePage() {
           {/* Scroll Indicator */}
           <ScrollIndicator />
         </section>
+
+        {/* Carousel Section - Eyebrow + Heading + Description + Images */}
+        <ScrollReveal>
+          <section className="py-20 md:py-32 bg-white">
+            <CarouselSection
+              eyebrow={tCarousel('eyebrow')}
+              heading={tCarousel('heading')}
+              description={tCarousel('description')}
+              images={[
+                '/carousel/placeholder-1.jpg',
+                '/carousel/placeholder-2.jpg',
+                '/carousel/placeholder-3.jpg',
+              ]}
+            />
+          </section>
+        </ScrollReveal>
 
         {/* How It Works Section */}
         <ScrollReveal>

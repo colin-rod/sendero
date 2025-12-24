@@ -587,5 +587,10 @@
   },
   "accessibility": {
     "scrollIndicator": "Scroll down to explore"
+  },
+  "carousel": {
+    "eyebrow": "Simply Away!",
+    "heading": "Deep Into the Colombian Coffee Soul",
+    "description": "The Colombian Andes are a unique natural landscape with breathtaking landscapes, colorful villages, and great culinary and cultural diversity that can be authentically experienced. Our bike trails let you experience the beauty of the region and its cultural and natural diversity authentically."
   }
 }
