@@ -83,4 +83,6 @@ export interface TrailSummary {
   distance: number; // km
   duration: string;
   thumbnail: string; // Image path for card
+  comingSoon?: boolean; // Optional flag for placeholder trails
+  priority?: number; // Optional priority for sorting
 }

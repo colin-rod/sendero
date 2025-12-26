@@ -31,7 +31,7 @@
       "successMessage": "✓ Thanks! We'll keep you updated when we launch."
     },
     "exploreTrails": "EXPLORE TRAILS",
-    "discoverTrails": "DISCOVER"
+    "discoverTrails": "DISCOVER TRAILS"
   },
   "howItWorks": {
     "heading": "How It Works",
@@ -587,5 +587,25 @@
   },
   "accessibility": {
     "scrollIndicator": "Scroll down to explore"
+  },
+  "carousel": {
+    "eyebrow": "Simply Away!",
+    "heading": "Deep Into the Colombian Coffee Soul",
+    "description": "The Colombian Andes are a unique natural landscape with breathtaking landscapes, colorful villages, and great culinary and cultural diversity that can be authentically experienced. Our bike trails let you experience the beauty of the region and its cultural and natural diversity authentically."
+  },
+  "trailsSection": {
+    "eyebrow": "Discover Your Adventure",
+    "heading": "Through the Trails",
+    "description": "Choose from our curated collection of guided bike and hike tours through Colombia's Coffee Region",
+    "comingSoon": "Coming Soon",
+    "tigre": {
+      "tagline": "A route that follows the tracks of this shy, ghostly animal"
+    },
+    "cafe": {
+      "tagline": "A journey deep into relaxation and the past, far away from everyday life"
+    },
+    "paramo": {
+      "tagline": "A path of the past, present, and future intertwined"
+    }
   }
 }

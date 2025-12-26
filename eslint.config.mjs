@@ -58,6 +58,7 @@ export default [
         HTMLSpanElement: 'readonly',
         IntersectionObserver: 'readonly',
         Response: 'readonly',
+        KeyboardEvent: 'readonly',
         TextEncoder: 'readonly',
         crypto: 'readonly',
         URL: 'readonly',

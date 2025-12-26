@@ -31,7 +31,7 @@
       "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
     },
     "exploreTrails": "TRAILS ENTDECKEN",
-    "discoverTrails": "ENTDECKEN"
+    "discoverTrails": "TRAILS ENTDECKEN"
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
@@ -587,5 +587,25 @@
   },
   "accessibility": {
     "scrollIndicator": "Scrollen Sie nach unten, um zu erkunden"
+  },
+  "carousel": {
+    "eyebrow": "Einfach mal weg!",
+    "heading": "Tief in die Kaffeeanbauseele",
+    "description": "Die Kolumbianischen Anden sind ein einzigartiger Naturraum mit atemberaubenden Landschaften, bunten Dörfern und großer kulinarischer Vielfalt. Unsere Radtrails lassen Dich die Schönheit der Region und ihre kulturelle wie natürliche Diversität authentisch erleben."
+  },
+  "trailsSection": {
+    "eyebrow": "Entdecke Dein Abenteuer",
+    "heading": "Durch die Trails",
+    "description": "Wähle aus unserer kuratierten Sammlung geführter Rad- und Wandertouren durch die Kaffeeregion Kolumbiens",
+    "comingSoon": "Demnächst",
+    "tigre": {
+      "tagline": "Eine Route, die den Spuren dieses scheuen, geisterhaften Tieres folgt"
+    },
+    "cafe": {
+      "tagline": "Eine Fahrt hin zur Gelassenheit und Vergangenheit, weit weg von der Vergänglichkeit"
+    },
+    "paramo": {
+      "tagline": "Ein Pfad der Vergangenheit, Gegenwart und Zukunft verbindet"
+    }
   }
 }

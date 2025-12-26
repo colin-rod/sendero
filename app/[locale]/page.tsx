@@ -10,13 +10,36 @@ import HeroVideo from '@/components/HeroVideo';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
+import { CarouselSection } from '@/components/features/carousel/CarouselSection';
+import { TrailCard } from '@/components/features/trails/TrailCard';
+import { getAllTrailSummaries } from '@/lib/data/trails';
+import { getDifficultyBadgeProps } from '@/lib/utils/difficulty';
 import { Bike, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
+  const tCarousel = useTranslations('carousel');
+  const tTrails = useTranslations('trailsSection');
+  const tDifficulty = useTranslations('trails.senderoDelTigre.difficulty');
+  const tTrailsCommon = useTranslations('trails.master.stats');
   const tHowItWorks = useTranslations('howItWorks');
   const tPerfectFor = useTranslations('perfectFor');
   const tWaitlist = useTranslations('waitlist');
+
+  const trails = getAllTrailSummaries();
+
+  const getDifficultyLabel = (level: string) => {
+    switch (level) {
+      case 'Easy':
+        return tDifficulty('easy');
+      case 'Moderate':
+        return tDifficulty('moderate');
+      case 'Challenging':
+        return tDifficulty('challenging');
+      default:
+        return level;
+    }
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -50,6 +73,61 @@ export default function HomePage() {
           {/* Scroll Indicator */}
           <ScrollIndicator />
         </section>
+
+        {/* Carousel Section - Eyebrow + Heading + Description + Images */}
+        <ScrollReveal>
+          <section className="py-20 md:py-32 bg-white">
+            <CarouselSection
+              eyebrow={tCarousel('eyebrow')}
+              heading={tCarousel('heading')}
+              description={tCarousel('description')}
+              images={[
+                '/carousel/placeholder-1.jpg',
+                '/carousel/placeholder-2.jpg',
+                '/carousel/placeholder-3.jpg',
+              ]}
+            />
+          </section>
+        </ScrollReveal>
+
+        {/* Through the Trails Section */}
+        <ScrollReveal>
+          <section className="py-20 md:py-32 bg-background">
+            <Container>
+              <div className="text-center mb-12">
+                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wide mb-2">
+                  {tTrails('eyebrow')}
+                </p>
+                <h2 className="text-h2 mb-4">{tTrails('heading')}</h2>
+                <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+                  {tTrails('description')}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {trails.map((trail) => (
+                  <TrailCard
+                    key={trail.id}
+                    id={trail.id}
+                    slug={trail.slug}
+                    name={trail.name}
+                    thumbnail={trail.thumbnail}
+                    difficulty={trail.difficulty}
+                    difficultyLabel={getDifficultyLabel(trail.difficulty)}
+                    difficultyBadgeProps={getDifficultyBadgeProps(trail.difficulty)}
+                    distance={trail.distance}
+                    duration={trail.duration}
+                    distanceLabel={tTrailsCommon('distance')}
+                    durationLabel={tTrailsCommon('duration')}
+                    ctaText={tTrails('heading')}
+                    comingSoon={trail.comingSoon}
+                    comingSoonLabel={tTrails('comingSoon')}
+                  />
+                ))}
+              </div>
+            </Container>
+          </section>
+        </ScrollReveal>
 
         {/* How It Works Section */}
         <ScrollReveal>
