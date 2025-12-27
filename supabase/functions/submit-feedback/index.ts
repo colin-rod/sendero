@@ -3,16 +3,35 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 // Environment variables (configured in Supabase Dashboard)
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-const LINEAR_API_KEY = Deno.env.get('LINEAR_API_KEY')!;
-const LINEAR_PROJECT_ID = Deno.env.get('LINEAR_PROJECT_ID')!;
+const LINEAR_API_KEY = Deno.env.get('LINEAR_API_KEY');
+const LINEAR_PROJECT_ID = Deno.env.get('LINEAR_PROJECT_ID');
 
 // Linear label IDs for each category (configured in Supabase Dashboard)
 const LINEAR_LABELS = {
-  'bug-report': Deno.env.get('LINEAR_LABEL_BUG')!,
-  'feature-request': Deno.env.get('LINEAR_LABEL_FEATURE')!,
-  'general': Deno.env.get('LINEAR_LABEL_GENERAL')!,
-  'ux-issue': Deno.env.get('LINEAR_LABEL_UX')!,
+  'bug-report': Deno.env.get('LINEAR_LABEL_BUG'),
+  'feature-request': Deno.env.get('LINEAR_LABEL_FEATURE'),
+  'general': Deno.env.get('LINEAR_LABEL_GENERAL'),
+  'ux-issue': Deno.env.get('LINEAR_LABEL_UX'),
 };
+
+// Validate required environment variables on startup
+function validateEnvVars() {
+  const missing: string[] = [];
+
+  if (!LINEAR_API_KEY) missing.push('LINEAR_API_KEY');
+  if (!LINEAR_PROJECT_ID) missing.push('LINEAR_PROJECT_ID');
+  if (!LINEAR_LABELS['bug-report']) missing.push('LINEAR_LABEL_BUG');
+  if (!LINEAR_LABELS['feature-request']) missing.push('LINEAR_LABEL_FEATURE');
+  if (!LINEAR_LABELS['general']) missing.push('LINEAR_LABEL_GENERAL');
+  if (!LINEAR_LABELS['ux-issue']) missing.push('LINEAR_LABEL_UX');
+
+  if (missing.length > 0) {
+    console.error('❌ Missing required environment variables:', missing.join(', '));
+    console.error('Please configure these in Supabase Dashboard → Edge Functions → Environment Variables');
+  }
+
+  return missing.length === 0;
+}
 
 interface FeedbackPayload {
   email?: string;
@@ -37,6 +56,17 @@ Deno.serve(async (req) => {
   }
 
   try {
+    // Validate environment variables
+    if (!validateEnvVars()) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Server configuration error. Please contact support.'
+        }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     // Parse request body
     const payload: FeedbackPayload = await req.json();
 
