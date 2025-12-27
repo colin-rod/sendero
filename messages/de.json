@@ -607,5 +607,54 @@
     "paramo": {
       "tagline": "Ein Pfad der Vergangenheit, Gegenwart und Zukunft verbindet"
     }
+  },
+  "feedback": {
+    "button": {
+      "title": "Feedback senden",
+      "ariaLabel": "Feedback-Formular öffnen"
+    },
+    "title": "Feedback senden",
+    "fields": {
+      "email": {
+        "label": "E-Mail (optional)",
+        "placeholder": "ihre@email.de"
+      },
+      "category": {
+        "label": "Welche Art von Feedback?"
+      },
+      "message": {
+        "label": "Nachricht",
+        "placeholder": "Sagen Sie uns, was Sie denken..."
+      },
+      "screenshot": {
+        "label": "Screenshot (optional)",
+        "placeholder": "Klicken Sie zum Hochladen oder fügen Sie ein Bild ein",
+        "hint": "Sie können auch einen Screenshot mit Strg+V einfügen (Cmd+V auf Mac)"
+      }
+    },
+    "categories": {
+      "bug-report": "Fehlerbericht",
+      "feature-request": "Funktionswunsch",
+      "general": "Allgemeines Feedback",
+      "ux-issue": "UX-Problem"
+    },
+    "actions": {
+      "cancel": "Abbrechen",
+      "submit": "Feedback senden",
+      "submitting": "Wird gesendet..."
+    },
+    "success": {
+      "title": "Vielen Dank für Ihr Feedback!",
+      "message": "Wir haben Ihre Nachricht erhalten und werden sie bald überprüfen."
+    },
+    "errors": {
+      "categoryRequired": "Bitte wählen Sie eine Kategorie",
+      "messageRequired": "Bitte geben Sie eine Nachricht ein",
+      "messageTooShort": "Die Nachricht muss mindestens 10 Zeichen lang sein",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "screenshotTooLarge": "Screenshot muss kleiner als 5 MB sein",
+      "submitFailed": "Feedback konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+    }
   }
 }
