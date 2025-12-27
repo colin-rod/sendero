@@ -5,6 +5,7 @@ const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const LINEAR_API_KEY = Deno.env.get('LINEAR_API_KEY');
 const LINEAR_TEAM_ID = Deno.env.get('LINEAR_FEEDBACK_TEAM_ID');
+const LINEAR_PROJECT_ID = Deno.env.get('LINEAR_PROJECT_ID');
 
 // Linear label IDs for each category (configured in Supabase Dashboard)
 const LINEAR_LABELS = {
@@ -20,6 +21,7 @@ function validateEnvVars() {
 
   if (!LINEAR_API_KEY) missing.push('LINEAR_API_KEY');
   if (!LINEAR_TEAM_ID) missing.push('LINEAR_FEEDBACK_TEAM_ID');
+  if (!LINEAR_PROJECT_ID) missing.push('LINEAR_PROJECT_ID');
   if (!LINEAR_LABELS['bug-report']) missing.push('LINEAR_BUG_REPORT_LABEL_ID');
   if (!LINEAR_LABELS['feature-request']) missing.push('LINEAR_FEATURE_REQUEST_LABEL_ID');
   if (!LINEAR_LABELS['general']) missing.push('LINEAR_GENERAL_LABEL_ID');
@@ -229,6 +231,7 @@ async function createLinearIssue(params: {
       title,
       description,
       teamId: LINEAR_TEAM_ID,
+      projectId: LINEAR_PROJECT_ID,
       labelIds: [LINEAR_LABELS[category]],
     },
   };
@@ -236,6 +239,7 @@ async function createLinearIssue(params: {
   // Log request details for debugging
   console.log('=== Linear API Request ===');
   console.log('Team ID:', LINEAR_TEAM_ID);
+  console.log('Project ID:', LINEAR_PROJECT_ID);
   console.log('Title:', title);
   console.log('Label IDs:', [LINEAR_LABELS[category]]);
   console.log('GraphQL Variables:', JSON.stringify(variables, null, 2));
