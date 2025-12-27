@@ -8,10 +8,10 @@ const LINEAR_PROJECT_ID = Deno.env.get('LINEAR_PROJECT_ID');
 
 // Linear label IDs for each category (configured in Supabase Dashboard)
 const LINEAR_LABELS = {
-  'bug-report': Deno.env.get('LINEAR_LABEL_BUG'),
-  'feature-request': Deno.env.get('LINEAR_LABEL_FEATURE'),
-  'general': Deno.env.get('LINEAR_LABEL_GENERAL'),
-  'ux-issue': Deno.env.get('LINEAR_LABEL_UX'),
+  'bug-report': Deno.env.get('LINEAR_BUG_REPORT_LABEL_ID'),
+  'feature-request': Deno.env.get('LINEAR_FEATURE_REQUEST_LABEL_ID'),
+  'general': Deno.env.get('LINEAR_GENERAL_LABEL_ID'),
+  'ux-issue': Deno.env.get('LINEAR_UX_ISSUE_LABEL_ID'),
 };
 
 // Validate required environment variables on startup
@@ -20,10 +20,10 @@ function validateEnvVars() {
 
   if (!LINEAR_API_KEY) missing.push('LINEAR_API_KEY');
   if (!LINEAR_PROJECT_ID) missing.push('LINEAR_PROJECT_ID');
-  if (!LINEAR_LABELS['bug-report']) missing.push('LINEAR_LABEL_BUG');
-  if (!LINEAR_LABELS['feature-request']) missing.push('LINEAR_LABEL_FEATURE');
-  if (!LINEAR_LABELS['general']) missing.push('LINEAR_LABEL_GENERAL');
-  if (!LINEAR_LABELS['ux-issue']) missing.push('LINEAR_LABEL_UX');
+  if (!LINEAR_LABELS['bug-report']) missing.push('LINEAR_BUG_REPORT_LABEL_ID');
+  if (!LINEAR_LABELS['feature-request']) missing.push('LINEAR_FEATURE_REQUEST_LABEL_ID');
+  if (!LINEAR_LABELS['general']) missing.push('LINEAR_GENERAL_LABEL_ID');
+  if (!LINEAR_LABELS['ux-issue']) missing.push('LINEAR_UX_ISSUE_LABEL_ID');
 
   if (missing.length > 0) {
     console.error('❌ Missing required environment variables:', missing.join(', '));

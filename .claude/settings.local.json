@@ -35,7 +35,8 @@
       "Bash(grep:*)",
       "Bash(claude mcp list:*)",
       "Bash(claude mcp call:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(supabase functions deploy:*)"
     ],
     "deny": [],
     "ask": []
