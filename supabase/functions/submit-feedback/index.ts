@@ -4,7 +4,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const LINEAR_API_KEY = Deno.env.get('LINEAR_API_KEY');
-const LINEAR_PROJECT_ID = Deno.env.get('LINEAR_PROJECT_ID');
+const LINEAR_TEAM_ID = Deno.env.get('LINEAR_FEEDBACK_TEAM_ID');
 
 // Linear label IDs for each category (configured in Supabase Dashboard)
 const LINEAR_LABELS = {
@@ -19,7 +19,7 @@ function validateEnvVars() {
   const missing: string[] = [];
 
   if (!LINEAR_API_KEY) missing.push('LINEAR_API_KEY');
-  if (!LINEAR_PROJECT_ID) missing.push('LINEAR_PROJECT_ID');
+  if (!LINEAR_TEAM_ID) missing.push('LINEAR_FEEDBACK_TEAM_ID');
   if (!LINEAR_LABELS['bug-report']) missing.push('LINEAR_BUG_REPORT_LABEL_ID');
   if (!LINEAR_LABELS['feature-request']) missing.push('LINEAR_FEATURE_REQUEST_LABEL_ID');
   if (!LINEAR_LABELS['general']) missing.push('LINEAR_GENERAL_LABEL_ID');
@@ -228,10 +228,17 @@ async function createLinearIssue(params: {
     input: {
       title,
       description,
-      teamId: LINEAR_PROJECT_ID,
+      teamId: LINEAR_TEAM_ID,
       labelIds: [LINEAR_LABELS[category]],
     },
   };
+
+  // Log request details for debugging
+  console.log('=== Linear API Request ===');
+  console.log('Team ID:', LINEAR_TEAM_ID);
+  console.log('Title:', title);
+  console.log('Label IDs:', [LINEAR_LABELS[category]]);
+  console.log('GraphQL Variables:', JSON.stringify(variables, null, 2));
 
   // Call Linear GraphQL API
   const response = await fetch('https://api.linear.app/graphql', {
@@ -245,10 +252,25 @@ async function createLinearIssue(params: {
 
   const result = await response.json();
 
-  if (!result.data?.issueCreate?.success) {
-    console.error('Linear API error:', result.errors || result);
-    throw new Error('Failed to create Linear issue: ' + JSON.stringify(result.errors || result));
+  // Log full response for debugging
+  console.log('=== Linear API Response ===');
+  console.log('Status:', response.status);
+  console.log('Response:', JSON.stringify(result, null, 2));
+
+  // Check for GraphQL errors
+  if (result.errors) {
+    console.error('Linear GraphQL errors:', JSON.stringify(result.errors, null, 2));
+    throw new Error(`Linear GraphQL error: ${JSON.stringify(result.errors)}`);
   }
 
-  return result.data.issueCreate.issue.identifier;
+  // Check for successful issue creation
+  if (!result.data?.issueCreate?.success) {
+    console.error('Linear issue creation failed:', JSON.stringify(result, null, 2));
+    throw new Error(`Failed to create Linear issue: ${JSON.stringify(result)}`);
+  }
+
+  const issueIdentifier = result.data.issueCreate.issue.identifier;
+  console.log('✅ Linear issue created:', issueIdentifier);
+
+  return issueIdentifier;
 }
