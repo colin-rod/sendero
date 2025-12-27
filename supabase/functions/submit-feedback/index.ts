@@ -167,10 +167,10 @@ async function createLinearIssue(params: {
 
   // Build issue title
   const categoryLabels = {
-    'bug-report': '🐛 Bug Report',
-    'feature-request': '✨ Feature Request',
-    'general': '💬 General Feedback',
-    'ux-issue': '🎨 UX Issue',
+    'bug-report': 'Bug Report',
+    'feature-request': 'Feature Request',
+    'general': 'General Feedback',
+    'ux-issue': 'UX Issue',
   };
 
   // Truncate message for title (first line, max 60 chars)
@@ -189,7 +189,7 @@ async function createLinearIssue(params: {
     route = url;
   }
 
-  const title = `[Sendero] ${categoryLabels[category]} - ${truncatedMessage}`;
+  const title = `${categoryLabels[category]}: ${truncatedMessage}`;
 
   // Build issue description
   let description = `## Message\n${message}\n\n`;

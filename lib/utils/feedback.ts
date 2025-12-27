@@ -99,11 +99,9 @@ export function validateFeedback(data: Partial<FeedbackFormData>): {
     errors.category = 'Please select a category';
   }
 
-  // Message is required and must have minimum length
+  // Message is required
   if (!data.message || !data.message.trim()) {
     errors.message = 'Please enter a message';
-  } else if (data.message.trim().length < 10) {
-    errors.message = 'Message must be at least 10 characters';
   }
 
   // Email format validation (only if provided)

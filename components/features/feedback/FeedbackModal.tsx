@@ -30,6 +30,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
   const [category, setCategory] = useState<FeedbackCategory | ''>('');
   const [message, setMessage] = useState('');
   const [screenshot, setScreenshot] = useState<File | null>(null);
+  const [screenshotPreview, setScreenshotPreview] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -41,6 +42,9 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
     const file = e.target.files?.[0];
     if (file) {
       setScreenshot(file);
+      // Create preview URL
+      const previewUrl = URL.createObjectURL(file);
+      setScreenshotPreview(previewUrl);
       setErrors((prev) => ({ ...prev, screenshot: '' }));
     }
   };
@@ -55,6 +59,9 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
         const file = item.getAsFile();
         if (file) {
           setScreenshot(file);
+          // Create preview URL
+          const previewUrl = URL.createObjectURL(file);
+          setScreenshotPreview(previewUrl);
           setErrors((prev) => ({ ...prev, screenshot: '' }));
         }
       }
@@ -63,7 +70,12 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
 
   // Remove screenshot
   const removeScreenshot = () => {
+    // Revoke preview URL to avoid memory leaks
+    if (screenshotPreview) {
+      URL.revokeObjectURL(screenshotPreview);
+    }
     setScreenshot(null);
+    setScreenshotPreview(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -113,12 +125,17 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
   // Handle dialog close
   const handleClose = () => {
     onOpenChange(false);
+    // Cleanup preview URL
+    if (screenshotPreview) {
+      URL.revokeObjectURL(screenshotPreview);
+    }
     // Reset form after animation
     setTimeout(() => {
       setEmail('');
       setCategory('');
       setMessage('');
       setScreenshot(null);
+      setScreenshotPreview(null);
       setErrors({});
       setSubmitted(false);
       if (fileInputRef.current) {
@@ -160,23 +177,13 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
         <form onSubmit={handleSubmit} onPaste={handlePaste}>
           <DialogContent>
             <div className="space-y-4">
-              {/* Email (Optional) */}
-              <Input
-                type="email"
-                label={t('fields.email.label')}
-                placeholder={t('fields.email.placeholder')}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                error={errors.email}
-              />
-
               {/* Category Selection */}
               <div>
                 <label className="label mb-3 block text-label">
                   {t('fields.category.label')} <span className="text-error-500">*</span>
                 </label>
                 <div className="grid grid-cols-2 gap-2">
-                  {(['bug-report', 'feature-request', 'general', 'ux-issue'] as const).map((cat) => {
+                  {(['general', 'feature-request', 'bug-report', 'ux-issue'] as const).map((cat) => {
                     const Icon = CATEGORY_ICONS[cat];
                     const isSelected = category === cat;
                     return (
@@ -219,18 +226,31 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
               <div>
                 <label className="label mb-2 block text-label">{t('fields.screenshot.label')}</label>
                 {screenshot ? (
-                  <div className="flex items-center gap-2 rounded-md border border-border bg-muted p-3">
-                    <Upload className="h-5 w-5 text-muted-foreground" />
-                    <span className="flex-1 truncate text-sm text-foreground">
-                      {screenshot.name}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={removeScreenshot}
-                      className="rounded p-1 text-muted-foreground hover:bg-gray-200"
-                    >
-                      <X className="h-4 w-4" />
-                    </button>
+                  <div className="space-y-2">
+                    {/* Preview */}
+                    {screenshotPreview && (
+                      <div className="relative overflow-hidden rounded-md border border-border">
+                        <img
+                          src={screenshotPreview}
+                          alt="Screenshot preview"
+                          className="max-h-48 w-full object-contain bg-muted"
+                        />
+                      </div>
+                    )}
+                    {/* File info */}
+                    <div className="flex items-center gap-2 rounded-md border border-border bg-muted p-3">
+                      <Upload className="h-5 w-5 text-muted-foreground" />
+                      <span className="flex-1 truncate text-sm text-foreground">
+                        {screenshot.name}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={removeScreenshot}
+                        className="rounded p-1 text-muted-foreground hover:bg-gray-200"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <div>
@@ -258,6 +278,16 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
                   <p className="mt-1 text-label text-error-500">{errors.screenshot}</p>
                 )}
               </div>
+
+              {/* Email (Optional) */}
+              <Input
+                type="email"
+                label={t('fields.email.label')}
+                placeholder={t('fields.email.placeholder')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                error={errors.email}
+              />
 
               {/* General Error */}
               {errors.general && (
