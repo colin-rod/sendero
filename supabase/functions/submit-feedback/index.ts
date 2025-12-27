@@ -147,15 +147,27 @@ async function createLinearIssue(params: {
     ? firstLine.substring(0, 60) + '...'
     : firstLine;
 
+  // Extract route from URL for better context
+  let route = '/';
+  try {
+    const urlObj = new URL(url);
+    route = urlObj.pathname;
+  } catch {
+    // If URL parsing fails, use full URL
+    route = url;
+  }
+
   const title = `[Sendero] ${categoryLabels[category]} - ${truncatedMessage}`;
 
   // Build issue description
   let description = `## Message\n${message}\n\n`;
-  description += `## Submission Details\n`;
-  description += `- **URL**: ${url}\n`;
-  description += `- **Platform**: ${platform}\n`;
-  description += `- **Language**: ${locale}\n`;
+  description += `## Page Context\n`;
+  description += `- **Route**: \`${route}\`\n`;
+  description += `- **Full URL**: ${url}\n`;
+  description += `- **Language**: ${locale}\n\n`;
+  description += `## Additional Details\n`;
   description += `- **Category**: ${categoryLabels[category]}\n`;
+  description += `- **Platform**: ${platform}\n`;
 
   if (email) {
     description += `- **Email**: ${email}\n`;
