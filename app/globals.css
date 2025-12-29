@@ -48,6 +48,24 @@
     @apply text-base font-normal leading-4;
   }
 
+  /* Feedback Modal Category Buttons */
+  .feedback-category-button {
+    @apply flex items-center gap-2 rounded-md border-2 px-4 py-3 text-left transition-colors;
+    @apply bg-white;
+    border-color: #e2e8f0; /* border color */
+    color: #494949; /* gray-700 */
+  }
+
+  .feedback-category-button:hover:not([data-selected="true"]) {
+    border-color: #9ca3af; /* gray-400 */
+  }
+
+  .feedback-category-button[data-selected="true"] {
+    border-color: #e2b71f; /* primary-500 - golden yellow */
+    background-color: #fffbeb; /* primary-50 - light golden */
+    color: #a87c16; /* primary-700 - dark golden */
+  }
+
   .text-label {
     @apply text-xs font-semibold leading-none uppercase;
     letter-spacing: -0.02em;
