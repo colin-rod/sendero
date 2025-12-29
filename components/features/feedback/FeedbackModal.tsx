@@ -199,12 +199,8 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
                         key={cat}
                         type="button"
                         onClick={handleClick}
-                        className={[
-                          'flex items-center gap-2 rounded-md border-2 px-4 py-3 text-left transition-colors',
-                          isSelected
-                            ? 'border-primary-500 bg-primary-50 text-primary-700'
-                            : 'border-border bg-white text-gray-700 hover:border-gray-400'
-                        ].join(' ')}
+                        className="feedback-category-button"
+                        data-selected={isSelected}
                       >
                         <Icon className="h-5 w-5" />
                         <span className="text-sm font-medium">{t(`categories.${cat}`)}</span>
