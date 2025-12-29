@@ -18,6 +18,7 @@ export default [
       '*.config.js',
       '*.config.ts',
       '*.config.mjs',
+      'supabase/functions/**', // Edge Functions use Deno runtime
     ],
   },
   {
@@ -62,6 +63,10 @@ export default [
         TextEncoder: 'readonly',
         crypto: 'readonly',
         URL: 'readonly',
+        File: 'readonly',
+        FileReader: 'readonly',
+        atob: 'readonly',
+        btoa: 'readonly',
       },
     },
     plugins: {

@@ -607,5 +607,54 @@
     "paramo": {
       "tagline": "Un camino donde el pasado, presente y futuro se entrelazan"
     }
+  },
+  "feedback": {
+    "button": {
+      "title": "Enviar comentarios",
+      "ariaLabel": "Abrir formulario de comentarios"
+    },
+    "title": "Enviar comentarios",
+    "fields": {
+      "email": {
+        "label": "Correo electrónico (opcional)",
+        "placeholder": "tu@correo.com"
+      },
+      "category": {
+        "label": "¿Qué tipo de comentario?"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntanos qué piensas..."
+      },
+      "screenshot": {
+        "label": "Captura de pantalla (opcional)",
+        "placeholder": "Haz clic para subir o pega una imagen",
+        "hint": "También puedes pegar una captura de pantalla con Ctrl+V (Cmd+V en Mac)"
+      }
+    },
+    "categories": {
+      "bug-report": "Reporte de error",
+      "feature-request": "Solicitud de función",
+      "general": "Comentario general",
+      "ux-issue": "Problema de UX"
+    },
+    "actions": {
+      "cancel": "Cancelar",
+      "submit": "Enviar comentarios",
+      "submitting": "Enviando..."
+    },
+    "success": {
+      "title": "¡Gracias por tus comentarios!",
+      "message": "Hemos recibido tu mensaje y lo revisaremos pronto."
+    },
+    "errors": {
+      "categoryRequired": "Por favor selecciona una categoría",
+      "messageRequired": "Por favor ingresa un mensaje",
+      "messageTooShort": "El mensaje debe tener al menos 10 caracteres",
+      "emailInvalid": "Por favor ingresa una dirección de correo válida",
+      "screenshotTooLarge": "La captura de pantalla debe ser menor a 5MB",
+      "submitFailed": "No se pudo enviar los comentarios. Por favor intenta de nuevo.",
+      "networkError": "Error de red. Por favor verifica tu conexión e intenta de nuevo."
+    }
   }
 }

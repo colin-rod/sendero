@@ -607,5 +607,54 @@
     "paramo": {
       "tagline": "A path of the past, present, and future intertwined"
     }
+  },
+  "feedback": {
+    "button": {
+      "title": "Send Feedback",
+      "ariaLabel": "Open feedback form"
+    },
+    "title": "Send Feedback",
+    "fields": {
+      "email": {
+        "label": "Email (optional)",
+        "placeholder": "your@email.com"
+      },
+      "category": {
+        "label": "What type of feedback?"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us what's on your mind..."
+      },
+      "screenshot": {
+        "label": "Screenshot (optional)",
+        "placeholder": "Click to upload or paste an image",
+        "hint": "You can also paste a screenshot with Ctrl+V (Cmd+V on Mac)"
+      }
+    },
+    "categories": {
+      "bug-report": "Bug Report",
+      "feature-request": "Feature Request",
+      "general": "General Feedback",
+      "ux-issue": "UX Issue"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "submit": "Send Feedback",
+      "submitting": "Sending..."
+    },
+    "success": {
+      "title": "Thanks for your feedback!",
+      "message": "We've received your message and will review it soon."
+    },
+    "errors": {
+      "categoryRequired": "Please select a category",
+      "messageRequired": "Please enter a message",
+      "messageTooShort": "Message must be at least 10 characters",
+      "emailInvalid": "Please enter a valid email address",
+      "screenshotTooLarge": "Screenshot must be less than 5MB",
+      "submitFailed": "Failed to submit feedback. Please try again.",
+      "networkError": "Network error. Please check your connection and try again."
+    }
   }
 }
