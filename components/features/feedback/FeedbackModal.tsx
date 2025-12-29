@@ -186,19 +186,25 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
                   {(['general', 'feature-request', 'bug-report', 'ux-issue'] as const).map((cat) => {
                     const Icon = CATEGORY_ICONS[cat];
                     const isSelected = category === cat;
+
+                    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setCategory(cat);
+                      setErrors((prev) => ({ ...prev, category: '' }));
+                    };
+
                     return (
                       <button
                         key={cat}
                         type="button"
-                        onClick={() => {
-                          setCategory(cat);
-                          setErrors((prev) => ({ ...prev, category: '' }));
-                        }}
-                        className={`flex items-center gap-2 rounded-md border-2 px-4 py-3 text-left transition-colors ${
+                        onClick={handleClick}
+                        className={[
+                          'flex items-center gap-2 rounded-md border-2 px-4 py-3 text-left transition-colors',
                           isSelected
                             ? 'border-primary-500 bg-primary-50 text-primary-700'
                             : 'border-border bg-white text-gray-700 hover:border-gray-400'
-                        }`}
+                        ].join(' ')}
                       >
                         <Icon className="h-5 w-5" />
                         <span className="text-sm font-medium">{t(`categories.${cat}`)}</span>
