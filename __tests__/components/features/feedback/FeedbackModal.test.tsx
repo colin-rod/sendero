@@ -16,10 +16,10 @@ import React from 'react';
  * - Edge cases and memory management
  */
 
-import { render, screen, waitFor, within } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { FeedbackModal } from '@/components/features/feedback/FeedbackModal';
-import { submitFeedback, validateFeedback } from '@/lib/utils/feedback';
+import { submitFeedback } from '@/lib/utils/feedback';
 
 // Mock next-intl
 jest.mock('next-intl', () => ({
@@ -136,7 +136,6 @@ describe('FeedbackModal', () => {
 
     it('should render success state after successful submission', async () => {
       mockSubmitFeedback.mockResolvedValue({ success: true, issueId: 'SEN-123' });
-      mockValidateFeedback.mockReturnValue({ valid: true, errors: {} });
 
       const user = userEvent.setup();
       render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
@@ -199,7 +198,7 @@ describe('FeedbackModal', () => {
 
     it('should clear category error when category is selected', async () => {
       const user = userEvent.setup();
-render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
+      render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       // Submit without category to trigger error
       const submitButton = screen.getByRole('button', { name: /send feedback/i });
@@ -242,7 +241,7 @@ await user.click(screen.getByText('General Feedback'));
 
     it('should show error when category not selected', async () => {
       const user = userEvent.setup();
-      const { container } = render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
+      render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       const submitButton = screen.getByRole('button', { name: /send feedback/i });
       await user.click(submitButton);
@@ -359,7 +358,7 @@ mockSubmitFeedback.mockResolvedValue({ success: true });
 
     it('should clear screenshot when remove button is clicked', async () => {
       const user = userEvent.setup();
-      const { container } = render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
+      render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       const file = new File(['screenshot'], 'screenshot.png', { type: 'image/png' });
       const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
@@ -481,6 +480,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
         ],
       };
 
+      // eslint-disable-next-line no-undef
       const pasteEvent = new Event('paste', { bubbles: true }) as any;
       pasteEvent.clipboardData = clipboardData;
 
@@ -506,6 +506,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
         ],
       };
 
+      // eslint-disable-next-line no-undef
       const pasteEvent = new Event('paste', { bubbles: true }) as any;
       pasteEvent.clipboardData = clipboardData;
 
@@ -531,6 +532,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
         ],
       };
 
+      // eslint-disable-next-line no-undef
       const pasteEvent = new Event('paste', { bubbles: true }) as any;
       pasteEvent.clipboardData = clipboardData;
 
@@ -550,6 +552,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
       const clipboardData1 = {
         items: [{ type: 'image/png', getAsFile: () => file1 }],
       };
+      // eslint-disable-next-line no-undef
       const pasteEvent1 = new Event('paste', { bubbles: true }) as any;
       pasteEvent1.clipboardData = clipboardData1;
       form?.dispatchEvent(pasteEvent1);
@@ -562,6 +565,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
       const clipboardData2 = {
         items: [{ type: 'image/png', getAsFile: () => file2 }],
       };
+      // eslint-disable-next-line no-undef
       const pasteEvent2 = new Event('paste', { bubbles: true }) as any;
       pasteEvent2.clipboardData = clipboardData2;
       form?.dispatchEvent(pasteEvent2);
@@ -959,9 +963,6 @@ mockSubmitFeedback.mockResolvedValue({
     it('should mark required fields with asterisk', () => {
       render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
-      const categoryLabel = screen.getByText('What type of feedback?');
-      const messageLabel = screen.getByText('Message');
-
       // Check for asterisk in the document
       const asterisks = document.querySelectorAll('.text-error-500');
       expect(asterisks.length).toBeGreaterThan(0);
@@ -988,6 +989,7 @@ mockSubmitFeedback.mockResolvedValue({
       const { container } = render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       const form = container.querySelector('form');
+      // eslint-disable-next-line no-undef
       const pasteEvent = new Event('paste', { bubbles: true }) as any;
       pasteEvent.clipboardData = null;
 
@@ -1019,7 +1021,7 @@ mockSubmitFeedback.mockResolvedValue({
       jest.useFakeTimers();
       const user = userEvent.setup({ delay: null });
 
-      const { rerender } = render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
+      render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       const file = new File(['screenshot'], 'screenshot.png', { type: 'image/png' });
       const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
