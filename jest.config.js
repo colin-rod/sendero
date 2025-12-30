@@ -16,11 +16,6 @@ const customJestConfig = {
     '**/__tests__/**/*.test.[jt]s?(x)',
   ],
   testTimeout: 10000, // 10 second timeout for tests
-  // Exclude problematic test file that has infinite loop issues
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/__tests__/components/features/faq/FAQAccordion.test.tsx',
-  ],
   collectCoverageFrom: [
     'app/**/*.{js,jsx,ts,tsx}',
     'components/**/*.{js,jsx,ts,tsx}',
