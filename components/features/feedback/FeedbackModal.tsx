@@ -41,6 +41,11 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
   const handleScreenshotChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      // Clean up previous preview URL if it exists
+      if (screenshotPreview) {
+        URL.revokeObjectURL(screenshotPreview);
+      }
+
       setScreenshot(file);
       // Create preview URL
       const previewUrl = URL.createObjectURL(file);
@@ -58,6 +63,11 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
       if (item.type.startsWith('image/')) {
         const file = item.getAsFile();
         if (file) {
+          // Clean up previous preview URL if it exists
+          if (screenshotPreview) {
+            URL.revokeObjectURL(screenshotPreview);
+          }
+
           setScreenshot(file);
           // Create preview URL
           const previewUrl = URL.createObjectURL(file);
@@ -84,7 +94,6 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrors({});
 
     const formData: Partial<FeedbackFormData> = {
       email: email.trim() || undefined,
@@ -99,6 +108,9 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
       setErrors(validation.errors);
       return;
     }
+
+    // Clear errors if validation passed
+    setErrors({});
 
     setIsSubmitting(true);
 
@@ -174,7 +186,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
           </div>
         </DialogContent>
       ) : (
-        <form onSubmit={handleSubmit} onPaste={handlePaste}>
+        <form onSubmit={handleSubmit} onPaste={handlePaste} noValidate>
           <DialogContent>
             <div className="space-y-4">
               {/* Category Selection */}
@@ -214,15 +226,18 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
               </div>
 
               {/* Message */}
-              <Textarea
-                label={t('fields.message.label')}
-                placeholder={t('fields.message.placeholder')}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                error={errors.message}
-                rows={5}
-                required
-              />
+              <div>
+                <label className="label mb-2 block text-label">
+                  {t('fields.message.label')} <span className="text-error-500">*</span>
+                </label>
+                <Textarea
+                  placeholder={t('fields.message.placeholder')}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  error={errors.message}
+                  rows={5}
+                />
+              </div>
 
               {/* Screenshot Upload */}
               <div>

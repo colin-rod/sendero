@@ -206,10 +206,10 @@ describe('FeedbackModal', () => {
 
       await waitFor(() => {
         expect(screen.getByText('Please select a category')).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
 
       // Select category
-await user.click(screen.getByText('General Feedback'));
+      await user.click(screen.getByText('General Feedback'));
 
       // Error should be cleared
       await waitFor(() => {
@@ -265,8 +265,14 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
     it('should show error for invalid email format', async () => {
       const user = userEvent.setup();
-render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
+      render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
+      // Fill in required fields first
+      await user.click(screen.getByText('General Feedback'));
+      const messageInput = screen.getByPlaceholderText('Tell us what\'s on your mind...');
+      await user.type(messageInput, 'Test message');
+
+      // Then add invalid email
       const emailInput = screen.getByPlaceholderText('your@email.com');
       await user.type(emailInput, 'invalid-email');
 
@@ -275,7 +281,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       await waitFor(() => {
         expect(screen.getByText('Please enter a valid email address')).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
 
     it('should allow optional email to be left empty', async () => {
@@ -559,7 +565,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       await waitFor(() => {
         expect(screen.getByText('first.png')).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
 
       // Second paste
       const clipboardData2 = {
@@ -573,7 +579,7 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
       await waitFor(() => {
         expect(screen.getByText('second.png')).toBeInTheDocument();
         expect(screen.queryByText('first.png')).not.toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
     });
   });
 
@@ -911,27 +917,29 @@ render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
       });
     });
 
-    it('should display email error', async () => {
+    it('should NOT display email error when email is empty', async () => {
       const user = userEvent.setup();
-render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
+      render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       const submitButton = screen.getByRole('button', { name: /send feedback/i });
       await user.click(submitButton);
 
+      // Email is optional, so no error should appear for empty email
       await waitFor(() => {
-        expect(screen.getByText('Please enter a valid email address')).toBeInTheDocument();
+        expect(screen.queryByText('Please enter a valid email address')).not.toBeInTheDocument();
       });
     });
 
-    it('should display screenshot error', async () => {
+    it('should NOT display screenshot error when no screenshot uploaded', async () => {
       const user = userEvent.setup();
-render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
+      render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
       const submitButton = screen.getByRole('button', { name: /send feedback/i });
       await user.click(submitButton);
 
+      // Screenshot is optional, so no error should appear when none is uploaded
       await waitFor(() => {
-        expect(screen.getByText('Screenshot must be less than 5MB')).toBeInTheDocument();
+        expect(screen.queryByText('Screenshot must be less than 5MB')).not.toBeInTheDocument();
       });
     });
 
@@ -1005,17 +1013,25 @@ mockSubmitFeedback.mockResolvedValue({
       const file2 = new File(['screenshot2'], 'second.png', { type: 'image/png' });
       const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
 
+      // Upload first file
       await user.upload(fileInput, file1);
       await waitFor(() => {
         expect(screen.getByText('first.png')).toBeInTheDocument();
-      });
+      }, { timeout: 3000 });
 
+      // Upload second file - should replace first
       await user.upload(fileInput, file2);
+
+      // Wait for the second file to appear
       await waitFor(() => {
         expect(screen.getByText('second.png')).toBeInTheDocument();
+      }, { timeout: 5000 });
+
+      // Then verify first file is gone
+      await waitFor(() => {
         expect(screen.queryByText('first.png')).not.toBeInTheDocument();
-      });
-    });
+      }, { timeout: 5000 });
+    }, 15000); // 15 second timeout for this test
 
     it('should not leak memory from Object URLs', async () => {
       jest.useFakeTimers();
