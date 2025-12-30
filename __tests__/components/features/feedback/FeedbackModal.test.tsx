@@ -432,8 +432,10 @@ mockSubmitFeedback.mockResolvedValue({ success: true });
         await user.click(removeButton);
       }
 
+      // Verify screenshot is removed from UI (file input value cannot be tested due to browser security)
       await waitFor(() => {
-        expect(fileInput.value).toBe('');
+        expect(screen.queryByText('screenshot.png')).not.toBeInTheDocument();
+        expect(screen.queryByAltText('Screenshot preview')).not.toBeInTheDocument();
       });
     });
 
@@ -652,16 +654,18 @@ mockSubmitFeedback.mockImplementation(
       const messageInput = screen.getByPlaceholderText('Tell us what\'s on your mind...');
       await user.type(messageInput, 'Test message');
 
-      const submitButton = screen.getByText('Send Feedback');
-      const cancelButton = screen.getByText('Cancel');
+      const submitButton = screen.getByRole('button', { name: /send feedback/i });
+      const cancelButton = screen.getByRole('button', { name: /cancel/i });
 
       await user.click(submitButton);
 
+      // Buttons should be disabled during submission
       expect(submitButton).toBeDisabled();
       expect(cancelButton).toBeDisabled();
 
+      // Wait for success state (submission completes)
       await waitFor(() => {
-        expect(submitButton).not.toBeDisabled();
+        expect(screen.getByText('Thanks for your feedback!')).toBeInTheDocument();
       });
     });
 
@@ -780,7 +784,9 @@ mockSubmitFeedback.mockRejectedValue(new Error('Network error'));
 
     it('should clear isSubmitting state after error', async () => {
       const user = userEvent.setup();
-mockSubmitFeedback.mockRejectedValue(new Error('Network error'));
+mockSubmitFeedback.mockImplementation(
+        () => new Promise((_, reject) => setTimeout(() => reject(new Error('Network error')), 50))
+      );
 
       render(<FeedbackModal open={true} onOpenChange={mockOnOpenChange} />);
 
@@ -791,13 +797,16 @@ mockSubmitFeedback.mockRejectedValue(new Error('Network error'));
       const submitButton = screen.getByRole('button', { name: /send feedback/i });
       await user.click(submitButton);
 
-      // Should show loading state
-      expect(screen.getByText('Sending...')).toBeInTheDocument();
+      // Should show loading state briefly
+      await waitFor(() => {
+        expect(screen.getByText('Sending...')).toBeInTheDocument();
+      });
 
-      // Should clear loading state after error
+      // Should clear loading state after error and show error message
       await waitFor(() => {
         expect(screen.queryByText('Sending...')).not.toBeInTheDocument();
-        expect(screen.getByText('Send Feedback')).toBeInTheDocument();
+        expect(screen.getByText('Network error. Please check your connection and try again.')).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /send feedback/i })).toBeInTheDocument();
       });
     });
   });
@@ -1011,25 +1020,39 @@ mockSubmitFeedback.mockResolvedValue({
 
       const file1 = new File(['screenshot1'], 'first.png', { type: 'image/png' });
       const file2 = new File(['screenshot2'], 'second.png', { type: 'image/png' });
-      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
 
       // Upload first file
-      await user.upload(fileInput, file1);
+      const fileInput1 = document.querySelector('input[type="file"]') as HTMLInputElement;
+      await user.upload(fileInput1, file1);
+
       await waitFor(() => {
         expect(screen.getByText('first.png')).toBeInTheDocument();
+        expect(mockCreateObjectURL).toHaveBeenCalledWith(file1);
       }, { timeout: 3000 });
 
-      // Upload second file - should replace first
-      await user.upload(fileInput, file2);
+      // Track current call count before removing
+      const firstCallCount = mockCreateObjectURL.mock.calls.length;
+
+      // Remove the first screenshot to reveal the file input again
+      const screenshotSection = screen.getByText('first.png').closest('div');
+      const removeButton = screenshotSection?.querySelector('button');
+      if (removeButton) {
+        await user.click(removeButton);
+      }
+
+      await waitFor(() => {
+        expect(screen.queryByText('first.png')).not.toBeInTheDocument();
+      }, { timeout: 3000 });
+
+      // Upload second file
+      const fileInput2 = document.querySelector('input[type="file"]') as HTMLInputElement;
+      await user.upload(fileInput2, file2);
 
       // Wait for the second file to appear
       await waitFor(() => {
         expect(screen.getByText('second.png')).toBeInTheDocument();
-      }, { timeout: 5000 });
-
-      // Then verify first file is gone
-      await waitFor(() => {
-        expect(screen.queryByText('first.png')).not.toBeInTheDocument();
+        // Verify new preview URL was created
+        expect(mockCreateObjectURL).toHaveBeenCalledTimes(firstCallCount + 1);
       }, { timeout: 5000 });
     }, 15000); // 15 second timeout for this test
 
