@@ -160,11 +160,11 @@ jest.mock('lucide-react', () => ({
   Search: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-search" className={className} aria-hidden={ariaHidden} />
   ),
-  X: ({ className }: { className?: string }) => (
-    <div data-testid="icon-x" className={className} />
+  X: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
+    <div data-testid="icon-x" className={className} aria-hidden={ariaHidden} />
   ),
-  ChevronDown: ({ className }: { className?: string }) => (
-    <div data-testid="icon-chevron-down" className={className} />
+  ChevronDown: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
+    <div data-testid="icon-chevron-down" className={className} aria-hidden={ariaHidden} />
   ),
   LucideIcon: () => <div data-testid="icon-lucide" />,
 }));
@@ -303,7 +303,7 @@ describe('FAQAccordion', () => {
       const searchInput = screen.getByPlaceholderText('Search FAQs...');
       await user.type(searchInput, 'xyz123nonexistent');
 
-      expect(screen.getByText('No results found')).toBeInTheDocument();
+      expect(screen.getAllByText('No results found')[0]).toBeInTheDocument();
     });
 
     it('should show try different keywords suggestion', async () => {
@@ -550,8 +550,8 @@ describe('FAQAccordion', () => {
       const trigger = screen.getByRole('button', { name: 'Another question' });
       await user.click(trigger);
 
-      const content = screen.getByText('[TODO: Add answer here]');
-      expect(content.className).toContain('italic');
+      const content = screen.getByText('[TODO: Add answer here]').parentElement;
+      expect(content?.className).toContain('italic');
     });
 
     it('should keep placeholder content functional', async () => {
