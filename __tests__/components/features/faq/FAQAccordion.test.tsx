@@ -138,28 +138,28 @@ jest.mock('next-intl', () => ({
 
 // Mock lucide-react icons
 jest.mock('lucide-react', () => ({
-  Shield: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  Shield: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-shield" className={className} aria-hidden={ariaHidden} />
   ),
-  Cloud: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  Cloud: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-cloud" className={className} aria-hidden={ariaHidden} />
   ),
-  Activity: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  Activity: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-activity" className={className} aria-hidden={ariaHidden} />
   ),
-  Plane: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  Plane: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-plane" className={className} aria-hidden={ariaHidden} />
   ),
-  Backpack: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  Backpack: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-backpack" className={className} aria-hidden={ariaHidden} />
   ),
-  FileText: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  FileText: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-filetext" className={className} aria-hidden={ariaHidden} />
   ),
-  CreditCard: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  CreditCard: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-creditcard" className={className} aria-hidden={ariaHidden} />
   ),
-  Search: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: string }) => (
+  Search: ({ className, 'aria-hidden': ariaHidden }: { className?: string; 'aria-hidden'?: boolean | "true" | "false" }) => (
     <div data-testid="icon-search" className={className} aria-hidden={ariaHidden} />
   ),
   X: ({ className }: { className?: string }) => (
