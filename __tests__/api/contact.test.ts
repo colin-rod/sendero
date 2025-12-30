@@ -521,7 +521,7 @@ describe('POST /api/contact', () => {
         json: async () => {
           throw new Error('Invalid JSON');
         },
-      } as NextRequest;
+      } as unknown as NextRequest;
 
       const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
