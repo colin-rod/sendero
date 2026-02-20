@@ -144,7 +144,7 @@ export default function HomePage() {
               <h2 className="text-h2 text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="mb-8 inline-flex items-center justify-center rounded-full border border-white/55 bg-black/35 px-6 py-3 text-h3 leading-none text-[#F2F2F7] shadow-[0_8px_24px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                 {tWaitlist('nextDate')}
               </p>
 
