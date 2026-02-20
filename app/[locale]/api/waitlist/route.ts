@@ -49,22 +49,24 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(errorResponse, { status: 500 });
     }
 
-    // Fire-and-forget confirmation email — failure does not block signup
+    // Send confirmation email — awaited so Vercel doesn't shut down before it completes
     const resend = new Resend(process.env.RESEND_API_KEY);
-    resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL ?? 'noreply@senderobiketrails.com',
-      to: formData.email.toLowerCase().trim(),
-      subject: "You're on the Sendero waitlist!",
-      html: `
-        <h2>Welcome to Sendero Bike Trails!</h2>
-        <p>Thanks for joining the waitlist. We'll reach out as soon as our first tours are ready to book.</p>
-        <p>Stay tuned — something special is coming.</p>
-        <br/>
-        <p>The Sendero Team</p>
-      `,
-    }).catch((err: unknown) => {
+    try {
+      await resend.emails.send({
+        from: process.env.RESEND_FROM_EMAIL ?? 'noreply@senderobiketrails.com',
+        to: formData.email.toLowerCase().trim(),
+        subject: "You're on the Sendero waitlist!",
+        html: `
+          <h2>Welcome to Sendero Bike Trails!</h2>
+          <p>Thanks for joining the waitlist. We'll reach out as soon as our first tours are ready to book.</p>
+          <p>Stay tuned — something special is coming.</p>
+          <br/>
+          <p>The Sendero Team</p>
+        `,
+      });
+    } catch (err) {
       console.error('Resend email failed (non-blocking):', err);
-    });
+    }
 
     const successResponse: ApiSuccessResponse = {
       success: true,
