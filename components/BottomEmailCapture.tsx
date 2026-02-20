@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 import { isValidEmail } from '@/lib/utils/validation'
@@ -8,19 +8,35 @@ import { Button } from '@/components/ui/Button'
 
 export default function BottomEmailCapture() {
   const t = useTranslations('hero.emailCapture')
+  const tWaitlist = useTranslations('waitlist')
   const tValidation = useTranslations('validation')
   const locale = useLocale()
 
+  const [isExpanded, setIsExpanded] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (isExpanded && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [isExpanded])
+
+  const handleJoinClick = () => {
+    if (!isExpanded) {
+      setIsExpanded(true)
+      return
+    }
+    handleSubmit()
+  }
 
   const handleSubmit = async () => {
     setError('')
     setShowSuccess(false)
 
-    // Validate email
     if (!isValidEmail(email)) {
       setError(tValidation('emailInvalid'))
       return
@@ -29,7 +45,6 @@ export default function BottomEmailCapture() {
     setIsSubmitting(true)
 
     try {
-      // Submit with sensible defaults for required fields
       const response = await fetch(`/${locale}/api/waitlist`, {
         method: 'POST',
         headers: {
@@ -58,12 +73,11 @@ export default function BottomEmailCapture() {
         return
       }
 
-      // Success - show toast notification
       setShowSuccess(true)
       setEmail('')
+      setIsExpanded(false)
       setIsSubmitting(false)
 
-      // Hide success message after 5 seconds
       setTimeout(() => {
         setShowSuccess(false)
       }, 5000)
@@ -81,9 +95,18 @@ export default function BottomEmailCapture() {
 
   return (
     <div className="flex flex-col items-center gap-3 w-full">
-      <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-lg">
-        {/* Email Input - Always visible */}
+      {/* Email input — revealed when expanded */}
+      <div
+        style={{
+          maxHeight: isExpanded ? '80px' : '0px',
+          opacity: isExpanded ? 1 : 0,
+          overflow: 'hidden',
+          transition: 'max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease',
+          width: '100%',
+        }}
+      >
         <input
+          ref={inputRef}
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -92,6 +115,7 @@ export default function BottomEmailCapture() {
           className="
             input
             w-full
+            mb-3
             bg-white/95 backdrop-blur-sm
             border-2 border-white
             focus:border-primary-500 focus:ring-2 focus:ring-primary-500
@@ -100,34 +124,30 @@ export default function BottomEmailCapture() {
           "
           disabled={isSubmitting}
           aria-label={t('placeholder')}
+          tabIndex={isExpanded ? 0 : -1}
         />
-
-        {/* Submit Button */}
-        <Button
-          onClick={handleSubmit}
-          disabled={isSubmitting}
-          loading={isSubmitting}
-          variant="primary"
-          size="lg"
-          className="
-            whitespace-nowrap
-            shadow-xl
-            text-white font-semibold
-            bg-primary-500 hover:bg-primary-600 active:bg-primary-700
-            border-2 border-primary-400
-            w-full sm:w-auto
-          "
-        >
-          {t('buttonSubmit')}
-        </Button>
       </div>
 
-      {/* Helper Text */}
-      {!showSuccess && !error && (
-        <p className="text-white/90 text-sm text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-          {t('helperText')}
-        </p>
-      )}
+      {/* CTA / Submit button */}
+      <Button
+        onClick={handleJoinClick}
+        disabled={isSubmitting}
+        loading={isSubmitting}
+        size="lg"
+        className="
+          whitespace-nowrap
+          shadow-xl
+          font-semibold tracking-widest
+          bg-foreground hover:bg-gray-800 active:bg-gray-900
+          text-white
+          border-0
+          rounded-full
+          px-10
+          transition-all duration-300
+        "
+      >
+        {isExpanded ? t('buttonSubmit') : tWaitlist('joinButton')}
+      </Button>
 
       {/* Error Message */}
       {error && (

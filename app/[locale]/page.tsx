@@ -145,7 +145,7 @@ export default function HomePage() {
                 {tWaitlist('becomeAPioneer')}
               </h2>
               <p className="text-body text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                {tWaitlist('stayInformed')}
+                {tWaitlist('nextDate')}
               </p>
 
               {/* Simplified email form */}
