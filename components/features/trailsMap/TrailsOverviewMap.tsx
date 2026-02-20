@@ -24,7 +24,8 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
     // Dynamically import leaflet to ensure it only runs client-side
     const initMap = async () => {
       const L = (await import('leaflet')).default;
-      const GpxPlugin = require('leaflet-gpx');
+      // leaflet-gpx is a side-effect-only library: it attaches L.GPX to the Leaflet global
+      await import('leaflet-gpx');
 
       // Fix default marker icon paths broken by webpack
       delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -59,7 +60,8 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
       if (trails.length === 0) return;
 
       trails.forEach((trail) => {
-        const gpx = new GpxPlugin(trail.gpxPath, {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const gpx = new (L as any).GPX(trail.gpxPath, {
           async: true,
           polyline_options: {
             color: trail.color,
