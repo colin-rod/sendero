@@ -24,6 +24,7 @@ export default function HomePage() {
   const tTrailsCommon = useTranslations('trails.master.stats');
   const tHowItWorks = useTranslations('howItWorks');
   const tPerfectFor = useTranslations('perfectFor');
+  const tHeroIntro = useTranslations('heroIntro');
   const tWaitlist = useTranslations('waitlist');
 
   const trails = getAllTrailSummaries();
@@ -73,6 +74,22 @@ export default function HomePage() {
           {/* Scroll Indicator */}
           <ScrollIndicator />
         </section>
+
+        {/* Hero Intro Section */}
+        <ScrollReveal>
+          <section className="bg-foreground py-20 md:py-32">
+            <Container>
+              <div className="mx-auto max-w-3xl text-center">
+                <h2 className="mb-6 text-h2 text-white">
+                  {tHero('title')}
+                </h2>
+                <p className="text-body text-white/80 max-w-2xl mx-auto">
+                  {tHeroIntro('subtitle')}
+                </p>
+              </div>
+            </Container>
+          </section>
+        </ScrollReveal>
 
         {/* Carousel Section - Eyebrow + Heading + Description + Images */}
         <ScrollReveal>
