@@ -18,8 +18,8 @@ function FlipCard({ title, imageSrc, imageAlt }: Omit<TourGridCardData, 'id'>) {
     <div className="flip-card h-80 cursor-pointer rounded-lg shadow-sm">
       <div className="flip-card-inner rounded-lg">
         {/* Front */}
-        <div className="flip-card-front flex flex-col overflow-hidden rounded-lg bg-white">
-          <div className="relative flex-1">
+        <div className="flip-card-front overflow-hidden rounded-lg bg-white">
+          <div className="relative h-[calc(100%-56px)]">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -28,13 +28,16 @@ function FlipCard({ title, imageSrc, imageAlt }: Omit<TourGridCardData, 'id'>) {
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
-          <div className="flex items-center justify-center px-4 py-4">
+          <div className="flex h-14 items-center justify-center bg-white px-4">
             <p className="text-center text-base font-normal text-gray-800">{title}</p>
           </div>
         </div>
 
         {/* Back */}
-        <div className="flip-card-back flex items-center justify-center rounded-lg bg-primary-500 px-6">
+        <div
+          className="flip-card-back flex items-center justify-center rounded-lg px-6"
+          style={{ backgroundColor: '#e2b71f' }}
+        >
           <p className="text-center text-xl font-semibold text-white">{title}</p>
         </div>
       </div>
