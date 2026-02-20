@@ -52,23 +52,18 @@ export default function HomePage() {
           <HeroVideo />
 
           {/* Content */}
-          <div className="relative z-10 flex h-full items-center">
-            <Container>
-              <div className="mx-auto max-w-3xl text-center">
-                <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                  {tHero('title')}
-                </h1>
-                <p className="mb-12 text-xl md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
-                  {tHero('subtitle')}
-                </p>
-                {/* Discover Trails Button */}
-                <Link href="/trails" className="inline-block">
-                  <Button variant="hero-cta" size="lg">
-                    {tHero('discoverTrails')}
-                  </Button>
-                </Link>
-              </div>
-            </Container>
+          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
+            <Image
+              src="/logo@2x.png"
+              alt="Sendero"
+              width={96}
+              height={96}
+              className="mb-8"
+              priority
+            />
+            <h1 className="text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-3xl">
+              {tHero('title')}
+            </h1>
           </div>
 
           {/* Scroll Indicator */}
@@ -77,17 +72,15 @@ export default function HomePage() {
 
         {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="bg-foreground py-20 md:py-32">
-            <Container>
-              <div className="mx-auto max-w-3xl text-center">
-                <h2 className="mb-6 text-h2 text-white">
-                  {tHero('title')}
-                </h2>
-                <p className="text-body text-white/80 max-w-2xl mx-auto">
-                  {tHeroIntro('subtitle')}
-                </p>
-              </div>
-            </Container>
+          <section className="flex h-[454px] flex-col items-center justify-center gap-[34px] self-stretch bg-[#232323] px-16 pb-[58px] pt-16">
+            <div className="text-center">
+              <h2 className="mb-6 text-h2 text-white">
+                {tHero('title')}
+              </h2>
+              <p className="text-body text-white/80 max-w-2xl mx-auto">
+                {tHeroIntro('subtitle')}
+              </p>
+            </div>
           </section>
         </ScrollReveal>
 
