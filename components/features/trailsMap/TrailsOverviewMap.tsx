@@ -44,10 +44,14 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
 
       mapRef.current = map;
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        maxZoom: 18,
-      }).addTo(map);
+      L.tileLayer(
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+        {
+          attribution:
+            'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
+          maxZoom: 18,
+        }
+      ).addTo(map);
 
       // Track all bounds to auto-fit after loading
       const allBounds: L.LatLngBounds[] = [];
@@ -61,7 +65,7 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
           async: true,
           polyline_options: {
             color: trail.color,
-            weight: 4,
+            weight: 5,
             opacity: 0.85,
             lineCap: 'round',
             lineJoin: 'round',
@@ -107,8 +111,8 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
   return (
     <div
       ref={mapContainerRef}
-      className="w-full rounded-lg overflow-hidden shadow-md"
-      style={{ height: '500px' }}
+      className="w-full overflow-hidden"
+      style={{ height: '350px' }}
       aria-label="Interactive trail map showing all Sendero bike routes"
     />
   );

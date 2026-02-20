@@ -15,7 +15,6 @@ export default function HomePage() {
   const tHeroIntro = useTranslations('heroIntro');
   const tWaitlist = useTranslations('waitlist');
   const tTourGrid = useTranslations('tourGrid');
-  const tTrailsMap = useTranslations('trailsMap');
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -125,25 +124,20 @@ export default function HomePage() {
           </section>
         </ScrollReveal>
 
-        {/* Trails Map Section */}
-        <ScrollReveal delay={100}>
-          <TrailsMapSection
-            heading={tTrailsMap('heading')}
-            subtitle={tTrailsMap('subtitle')}
-            legendLabel={tTrailsMap('legendLabel')}
-            trails={[
-              { name: tTourGrid('cards.tigre'), gpxPath: '/gpx/sendero-del-tigre.gpx' },
-              { name: tTourGrid('cards.cafe'), gpxPath: '/gpx/sendero-del-cafe.gpx' },
-              { name: tTourGrid('cards.agua'), gpxPath: '/gpx/sendero-del-agua.gpx' },
-              { name: tTourGrid('cards.cacao'), gpxPath: '/gpx/sendero-del-cacao.gpx' },
-              { name: tTourGrid('cards.volcan'), gpxPath: '/gpx/sendero-del-volcan.gpx' },
-              { name: tTourGrid('cards.paramo'), gpxPath: '/gpx/sendero-del-paramo.gpx' },
-              { name: tTourGrid('cards.guadua'), gpxPath: '/gpx/sendero-de-la-guadua.gpx' },
-              { name: tTourGrid('cards.oro'), gpxPath: '/gpx/sendero-del-oro.gpx' },
-              { name: tTourGrid('cards.luminoso'), gpxPath: '/gpx/sendero-luminoso.gpx' },
-            ]}
-          />
-        </ScrollReveal>
+        {/* Trails Map Section - full-bleed, no wrapper */}
+        <TrailsMapSection
+          trails={[
+            { name: 'Sendero del Tigre', gpxPath: '/gpx/sendero-del-tigre.gpx' },
+            { name: 'Sendero del Café', gpxPath: '/gpx/sendero-del-cafe.gpx' },
+            { name: 'Sendero del Agua', gpxPath: '/gpx/sendero-del-agua.gpx' },
+            { name: 'Sendero del Cacao', gpxPath: '/gpx/sendero-del-cacao.gpx' },
+            { name: 'Sendero del Volcán', gpxPath: '/gpx/sendero-del-volcan.gpx' },
+            { name: 'Sendero del Páramo', gpxPath: '/gpx/sendero-del-paramo.gpx' },
+            { name: 'Sendero de la Guadua', gpxPath: '/gpx/sendero-de-la-guadua.gpx' },
+            { name: 'Sendero del Oro', gpxPath: '/gpx/sendero-del-oro.gpx' },
+            { name: 'Sendero Luminoso', gpxPath: '/gpx/sendero-luminoso.gpx' },
+          ]}
+        />
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
