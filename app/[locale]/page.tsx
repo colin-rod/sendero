@@ -11,6 +11,7 @@ import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { CarouselSection } from '@/components/features/carousel/CarouselSection';
+import { TourGrid } from '@/components/features/tourGrid/TourGrid';
 import { TrailCard } from '@/components/features/trails/TrailCard';
 import { getAllTrailSummaries } from '@/lib/data/trails';
 import { getDifficultyBadgeProps } from '@/lib/utils/difficulty';
@@ -26,6 +27,7 @@ export default function HomePage() {
   const tPerfectFor = useTranslations('perfectFor');
   const tHeroIntro = useTranslations('heroIntro');
   const tWaitlist = useTranslations('waitlist');
+  const tTourGrid = useTranslations('tourGrid');
 
   const trails = getAllTrailSummaries();
 
@@ -81,6 +83,72 @@ export default function HomePage() {
                 {tHeroIntro('subtitle')}
               </p>
             </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Tour Grid Section */}
+        <ScrollReveal>
+          <section className="bg-white py-16 md:py-24">
+            <Container>
+              <TourGrid
+                cards={[
+                  {
+                    id: 'tigre',
+                    title: tTourGrid('cards.tigre'),
+                    imageSrc: '/tours/sendero-tigre.png',
+                    imageAlt: tTourGrid('cards.tigre'),
+                  },
+                  {
+                    id: 'cafe',
+                    title: tTourGrid('cards.cafe'),
+                    imageSrc: '/tours/sendero_cafe.jpg',
+                    imageAlt: tTourGrid('cards.cafe'),
+                  },
+                  {
+                    id: 'agua',
+                    title: tTourGrid('cards.agua'),
+                    imageSrc: '/tours/sendero_agua.jpg',
+                    imageAlt: tTourGrid('cards.agua'),
+                  },
+                  {
+                    id: 'cacao',
+                    title: tTourGrid('cards.cacao'),
+                    imageSrc: '/tours/sendero_cacao.jpg',
+                    imageAlt: tTourGrid('cards.cacao'),
+                  },
+                  {
+                    id: 'volcan',
+                    title: tTourGrid('cards.volcan'),
+                    imageSrc: '/tours/sendero_volcan.jpeg',
+                    imageAlt: tTourGrid('cards.volcan'),
+                  },
+                  {
+                    id: 'paramo',
+                    title: tTourGrid('cards.paramo'),
+                    imageSrc: '/tours/sendero_paramo.jpg',
+                    imageAlt: tTourGrid('cards.paramo'),
+                  },
+                  {
+                    id: 'guadua',
+                    title: tTourGrid('cards.guadua'),
+                    imageSrc: '/tours/sendero_guadua.webp',
+                    imageAlt: tTourGrid('cards.guadua'),
+                  },
+                  {
+                    id: 'oro',
+                    title: tTourGrid('cards.oro'),
+                    imageSrc: '/tours/sendero_oro.png',
+                    imageAlt: tTourGrid('cards.oro'),
+                  },
+                  {
+                    id: 'luminoso',
+                    title: tTourGrid('cards.luminoso'),
+                    imageSrc: '/tours/sendero_luminoso.jpg',
+                    imageAlt: tTourGrid('cards.luminoso'),
+                  },
+                ]}
+              />
+            </Container>
           </section>
         </ScrollReveal>
 

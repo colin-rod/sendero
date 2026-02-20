@@ -659,5 +659,18 @@
       "submitFailed": "No se pudo enviar los comentarios. Por favor intenta de nuevo.",
       "networkError": "Error de red. Por favor verifica tu conexión e intenta de nuevo."
     }
+  },
+  "tourGrid": {
+    "cards": {
+      "tigre": "Sendero del Tigre",
+      "cafe": "Sendero del Café",
+      "agua": "Sendero del Agua",
+      "cacao": "Sendero del Cacao",
+      "volcan": "Sendero del Volcán",
+      "paramo": "Sendero del Páramo",
+      "guadua": "Sendero de la Guadua",
+      "oro": "Sendero del Oro",
+      "luminoso": "Sendero Luminoso"
+    }
   }
 }

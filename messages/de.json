@@ -659,5 +659,18 @@
       "submitFailed": "Feedback konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
       "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
     }
+  },
+  "tourGrid": {
+    "cards": {
+      "tigre": "Sendero del Tigre",
+      "cafe": "Sendero del Café",
+      "agua": "Sendero del Agua",
+      "cacao": "Sendero del Cacao",
+      "volcan": "Sendero del Volcán",
+      "paramo": "Sendero del Páramo",
+      "guadua": "Sendero de la Guadua",
+      "oro": "Sendero del Oro",
+      "luminoso": "Sendero Luminoso"
+    }
   }
 }
