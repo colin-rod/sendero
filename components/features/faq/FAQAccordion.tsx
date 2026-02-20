@@ -84,16 +84,32 @@ export function FAQAccordion({ sections }: FAQAccordionProps) {
       }));
     }
 
-    const query = searchQuery.toLowerCase();
+    // Normalize query by trimming and lowercasing, keep special characters for exact matches
+    const query = searchQuery.trim().toLowerCase();
+
+    // Also create a version without special characters for fuzzy matching
+    const normalizedQuery = query.replace(/[^\w\s]/g, '');
+
     return sections
       .map((sectionKey) => {
         const questions = t.raw(`sections.${sectionKey}.questions`) as Array<{ question: string; answer: string }>;
         if (!Array.isArray(questions)) return null;
 
         const filtered = questions.filter((qa) => {
-          const questionMatch = qa.question.toLowerCase().includes(query);
-          const answerMatch = qa.answer.toLowerCase().includes(query);
-          return questionMatch || answerMatch;
+          const questionLower = qa.question.toLowerCase();
+          const answerLower = qa.answer.toLowerCase();
+
+          // Try exact match first
+          const exactMatch = questionLower.includes(query) || answerLower.includes(query);
+
+          // If no exact match and query has special characters, try normalized match
+          if (!exactMatch && normalizedQuery !== query) {
+            const normalizedQuestion = questionLower.replace(/[^\w\s]/g, '');
+            const normalizedAnswer = answerLower.replace(/[^\w\s]/g, '');
+            return normalizedQuestion.includes(normalizedQuery) || normalizedAnswer.includes(normalizedQuery);
+          }
+
+          return exactMatch;
         });
 
         return filtered.length > 0 ? { sectionKey, questions: filtered } : null;

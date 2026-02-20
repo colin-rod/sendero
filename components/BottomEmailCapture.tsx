@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 import { isValidEmail } from '@/lib/utils/validation'
@@ -8,19 +8,49 @@ import { Button } from '@/components/ui/Button'
 
 export default function BottomEmailCapture() {
   const t = useTranslations('hero.emailCapture')
+  const tWaitlist = useTranslations('waitlist')
   const tValidation = useTranslations('validation')
   const locale = useLocale()
 
+  const [isExpanded, setIsExpanded] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const successTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    if (isExpanded && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [isExpanded])
+
+  useEffect(() => {
+    return () => {
+      if (successTimerRef.current) {
+        clearTimeout(successTimerRef.current)
+      }
+    }
+  }, [])
+
+  const handleJoinClick = () => {
+    if (!isExpanded) {
+      setShowSuccess(false)
+      setIsExpanded(true)
+      return
+    }
+    handleSubmit()
+  }
 
   const handleSubmit = async () => {
     setError('')
     setShowSuccess(false)
+    if (successTimerRef.current) {
+      clearTimeout(successTimerRef.current)
+      successTimerRef.current = null
+    }
 
-    // Validate email
     if (!isValidEmail(email)) {
       setError(tValidation('emailInvalid'))
       return
@@ -29,7 +59,6 @@ export default function BottomEmailCapture() {
     setIsSubmitting(true)
 
     try {
-      // Submit with sensible defaults for required fields
       const response = await fetch(`/${locale}/api/waitlist`, {
         method: 'POST',
         headers: {
@@ -58,13 +87,12 @@ export default function BottomEmailCapture() {
         return
       }
 
-      // Success - show toast notification
       setShowSuccess(true)
       setEmail('')
+      setIsExpanded(false)
       setIsSubmitting(false)
 
-      // Hide success message after 5 seconds
-      setTimeout(() => {
+      successTimerRef.current = setTimeout(() => {
         setShowSuccess(false)
       }, 5000)
     } catch {
@@ -80,65 +108,76 @@ export default function BottomEmailCapture() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-3 w-full">
-      <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-lg">
-        {/* Email Input - Always visible */}
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder={t('placeholder')}
-          className="
-            input
-            w-full
-            bg-white/95 backdrop-blur-sm
-            border-2 border-white
-            focus:border-primary-500 focus:ring-2 focus:ring-primary-500
-            text-foreground placeholder:text-gray-500
-            shadow-lg
-          "
-          disabled={isSubmitting}
-          aria-label={t('placeholder')}
-        />
-
-        {/* Submit Button */}
-        <Button
-          onClick={handleSubmit}
-          disabled={isSubmitting}
-          loading={isSubmitting}
-          variant="primary"
-          size="lg"
-          className="
-            whitespace-nowrap
-            shadow-xl
-            text-white font-semibold
-            bg-primary-500 hover:bg-primary-600 active:bg-primary-700
-            border-2 border-primary-400
-            w-full sm:w-auto
-          "
+    <div className="w-full max-w-xl">
+      <div
+        data-testid="bottom-email-capture-row"
+        className="flex w-full items-center justify-center gap-3"
+      >
+        {/* Email input — revealed inline when expanded */}
+        <div
+          className={`min-w-0 overflow-hidden transition-all duration-300 ease-in-out ${
+            isExpanded ? 'w-full opacity-100' : 'w-0 opacity-0'
+          }`}
         >
-          {t('buttonSubmit')}
-        </Button>
-      </div>
+          <input
+            ref={inputRef}
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onKeyPress={handleKeyPress}
+            placeholder={t('placeholder')}
+            className="
+              input
+              w-full
+              bg-white/96
+              border-2 border-white/90
+              focus:border-honey-500 focus:ring-2 focus:ring-honey-400
+              text-foreground placeholder:text-gray-600
+              shadow-xl
+            "
+            disabled={isSubmitting}
+            aria-label={t('placeholder')}
+            tabIndex={isExpanded ? 0 : -1}
+          />
+        </div>
 
-      {/* Helper Text */}
-      {!showSuccess && !error && (
-        <p className="text-white/90 text-sm text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-          {t('helperText')}
-        </p>
-      )}
+        {showSuccess ? (
+          <div
+            data-testid="bottom-email-confirmation"
+            role="status"
+            aria-live="polite"
+            className="inline-flex items-center whitespace-nowrap rounded-full border border-green-200/90 bg-green-500/95 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-xl"
+          >
+            {t('buttonSent')}
+          </div>
+        ) : (
+          <Button
+            onClick={handleJoinClick}
+            disabled={isSubmitting}
+            loading={isSubmitting}
+            variant="hero-cta"
+            size="lg"
+            className="whitespace-nowrap border border-white/70 px-10 shadow-[0_12px_28px_rgba(0,0,0,0.45)] ring-1 ring-black/15 transition-all duration-300"
+          >
+            {isExpanded ? t('buttonSubmit') : tWaitlist('joinButton')}
+          </Button>
+        )}
+      </div>
 
       {/* Error Message */}
       {error && (
-        <p className="text-error-500 text-sm bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
+        <p className="mt-3 rounded-lg bg-white/95 px-4 py-2 text-sm text-error-500 shadow-lg backdrop-blur-sm">
           {error}
         </p>
       )}
 
-      {/* Success Toast */}
+      {/* Success Notification */}
       {showSuccess && (
-        <div className="bg-green-500 text-white text-sm px-6 py-3 rounded-lg shadow-xl animate-fade-in">
+        <div
+          role="status"
+          aria-live="polite"
+          className="mt-3 rounded-lg bg-green-500/95 px-6 py-3 text-sm text-white shadow-xl animate-fade-in"
+        >
           {t('successMessage')}
         </div>
       )}

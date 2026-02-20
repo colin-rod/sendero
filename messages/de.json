@@ -26,12 +26,16 @@
     "emailCapture": {
       "buttonLearnMore": "MEHR ERFAHREN",
       "buttonSubmit": "ABSENDEN",
+      "buttonSent": "VERSENDET",
       "placeholder": "E-Mail-Adresse eingeben",
       "helperText": "Kein Spam, nur Updates zum Start",
       "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
     },
     "exploreTrails": "TRAILS ENTDECKEN",
     "discoverTrails": "TRAILS ENTDECKEN"
+  },
+  "heroIntro": {
+    "subtitle": "Begib Dich auf beeindruckende Radtouren – fein kuratiert, um die Menschen, Kultur und Natur der kolumbianischen Kaffeeregion in ihrer ganzen Vielfalt zu entdecken."
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
@@ -84,8 +88,9 @@
   "waitlist": {
     "heading": "Zur Warteliste",
     "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer.",
-    "becomeAPioneer": "Werde ein:e Pionier:in",
-    "stayInformed": "Bleib auf dem Laufenden und melde dich an, um mehr über unsere kommenden Reisen im Jahr 2026 zu erfahren."
+    "becomeAPioneer": "Werde Pionier:in",
+    "nextDate": "Nächsten Termin: 28.11 – 04.12. 2026",
+    "joinButton": "TEILNEHMEN"
   },
   "form": {
     "labels": {
@@ -656,5 +661,23 @@
       "submitFailed": "Feedback konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
       "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut."
     }
+  },
+  "tourGrid": {
+    "cards": {
+      "tigre": "Sendero del Tigre",
+      "cafe": "Sendero del Café",
+      "agua": "Sendero del Agua",
+      "cacao": "Sendero del Cacao",
+      "volcan": "Sendero del Volcán",
+      "paramo": "Sendero del Páramo",
+      "guadua": "Sendero de la Guadua",
+      "oro": "Sendero del Oro",
+      "luminoso": "Sendero Luminoso"
+    }
+  },
+  "trailsMap": {
+    "heading": "Unser Streckennetz",
+    "subtitle": "9 handverlesene Routen durch Kolumbiens Kaffeeregion – jede eine einzigartige Reise.",
+    "legendLabel": "Routen"
   }
 }

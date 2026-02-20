@@ -26,12 +26,16 @@
     "emailCapture": {
       "buttonLearnMore": "LEARN MORE",
       "buttonSubmit": "SUBMIT",
+      "buttonSent": "SENT",
       "placeholder": "Enter your email",
       "helperText": "No spam, just updates when we launch",
       "successMessage": "✓ Thanks! We'll keep you updated when we launch."
     },
     "exploreTrails": "EXPLORE TRAILS",
     "discoverTrails": "DISCOVER TRAILS"
+  },
+  "heroIntro": {
+    "subtitle": "Embark on remarkable cycling tours — expertly curated to discover the people, culture, and nature of Colombia's Coffee Region in all its diversity."
   },
   "howItWorks": {
     "heading": "How It Works",
@@ -85,7 +89,8 @@
     "heading": "Join the Waitlist",
     "description": "Be the first to know when tours open up. No spam, just adventure.",
     "becomeAPioneer": "Become a Pioneer",
-    "stayInformed": "Stay up to date and sign up to learn more about our upcoming trips in 2026."
+    "nextDate": "Next Date: Nov 28 – Dec 4, 2026",
+    "joinButton": "JOIN"
   },
   "form": {
     "labels": {
@@ -656,5 +661,23 @@
       "submitFailed": "Failed to submit feedback. Please try again.",
       "networkError": "Network error. Please check your connection and try again."
     }
+  },
+  "tourGrid": {
+    "cards": {
+      "tigre": "Sendero del Tigre",
+      "cafe": "Sendero del Café",
+      "agua": "Sendero del Agua",
+      "cacao": "Sendero del Cacao",
+      "volcan": "Sendero del Volcán",
+      "paramo": "Sendero del Páramo",
+      "guadua": "Sendero de la Guadua",
+      "oro": "Sendero del Oro",
+      "luminoso": "Sendero Luminoso"
+    }
+  },
+  "trailsMap": {
+    "heading": "Our Trail Network",
+    "subtitle": "9 handcrafted routes through Colombia's Coffee Region, each one a unique journey.",
+    "legendLabel": "Trail routes"
   }
 }

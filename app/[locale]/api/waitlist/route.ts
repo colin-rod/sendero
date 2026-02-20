@@ -1,18 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase/client';
+import { Resend } from 'resend';
 import { validateWaitlistForm } from '@/lib/utils/validation';
-import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse, WaitlistSignupInsert } from '@/lib/types/database';
+import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse } from '@/lib/types/database';
 
 /**
  * POST /api/waitlist
- * Handles waitlist signup submissions
+ * Handles waitlist signup submissions — writes to Google Sheets via Apps Script
  */
 export async function POST(request: NextRequest) {
   try {
-    // Parse request body
     const body = await request.json();
 
-    // Validate the request body
     const validationErrors = validateWaitlistForm(body);
     if (validationErrors.length > 0) {
       const errorResponse: ApiErrorResponse = {
@@ -22,39 +20,28 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(errorResponse, { status: 400 });
     }
 
-    // Type-safe after validation
     const formData = body as WaitlistFormData;
 
-    // Prepare data for Supabase insert
-    const insertData: WaitlistSignupInsert = {
-      email: formData.email.toLowerCase().trim(),
-      tour_duration: formData.tourDuration,
-      interest_types: formData.interestTypes,
-      fitness_level: formData.fitnessLevel,
-      travel_timeline: formData.travelTimeline,
-    };
+    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    if (!webhookUrl) {
+      console.error('GOOGLE_SHEETS_WEBHOOK_URL is not configured');
+      const errorResponse: ApiErrorResponse = {
+        success: false,
+        error: 'Server configuration error. Please try again later.',
+      };
+      return NextResponse.json(errorResponse, { status: 500 });
+    }
 
-    // Insert into Supabase
-    // Note: We don't select the ID because RLS policy blocks selects for anon users
-    const { error } = await supabase
-      .from('waitlist_signups')
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .insert(insertData as any);
+    const sheetsResponse = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: formData.email.toLowerCase().trim(),
+      }),
+    });
 
-    // Handle errors
-    if (error) {
-      console.error('Supabase error:', error);
-
-      // Check for unique constraint violation (duplicate email)
-      if (error.code === '23505') {
-        const errorResponse: ApiErrorResponse = {
-          success: false,
-          error: 'This email is already on the waitlist',
-        };
-        return NextResponse.json(errorResponse, { status: 409 });
-      }
-
-      // Generic error response
+    if (!sheetsResponse.ok) {
+      console.error('Google Sheets error:', sheetsResponse.status);
       const errorResponse: ApiErrorResponse = {
         success: false,
         error: 'Failed to save your information. Please try again.',
@@ -62,7 +49,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(errorResponse, { status: 500 });
     }
 
-    // Success response
+    // Send confirmation email — awaited so Vercel doesn't shut down before it completes
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    try {
+      await resend.emails.send({
+        from: process.env.RESEND_FROM_EMAIL ?? 'noreply@senderobiketrails.com',
+        to: formData.email.toLowerCase().trim(),
+        subject: "You're on the Sendero waitlist!",
+        html: `
+          <h2>Welcome to Sendero Bike Trails!</h2>
+          <p>Thanks for joining the waitlist. We'll reach out as soon as our first tours are ready to book.</p>
+          <p>Stay tuned — something special is coming.</p>
+          <br/>
+          <p>The Sendero Team</p>
+        `,
+      });
+    } catch (err) {
+      console.error('Resend email failed (non-blocking):', err);
+    }
+
     const successResponse: ApiSuccessResponse = {
       success: true,
       data: {

@@ -7,6 +7,15 @@
 import { NextRequest } from 'next/server';
 import type { WaitlistFormData } from '@/lib/types/database';
 
+// Mock resend BEFORE importing the route (prevents TextEncoder error from postal-mime)
+jest.mock('resend', () => ({
+  Resend: jest.fn().mockImplementation(() => ({
+    emails: {
+      send: jest.fn().mockResolvedValue({ id: 'mock-email-id' }),
+    },
+  })),
+}));
+
 // Mock Next.js server components
 jest.mock('next/server', () => ({
   NextRequest: jest.fn(),
@@ -18,16 +27,11 @@ jest.mock('next/server', () => ({
   },
 }));
 
-// Mock the Supabase client
-jest.mock('@/lib/supabase/client', () => ({
-  supabase: {
-    from: jest.fn(),
-  },
-}));
+// Mock global fetch for Google Sheets webhook
+global.fetch = jest.fn();
 
 // Import after mocks
 const { POST, GET } = require('@/app/[locale]/api/waitlist/route');
-const { supabase } = require('@/lib/supabase/client');
 
 // Mock console.error to avoid cluttering test output
 const mockConsoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -49,20 +53,26 @@ describe('POST /api/waitlist', () => {
     } as NextRequest;
   };
 
-  // Mock Supabase response
-  const mockSupabaseInsert = (error: unknown = null) => {
-    const insertMock = jest.fn().mockResolvedValue({ error });
-    (supabase.from as jest.Mock).mockReturnValue({
-      insert: insertMock,
+  // Helper to mock a successful Google Sheets fetch response
+  const mockSheetSuccess = () => {
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      status: 200,
     });
-    return insertMock;
+  };
+
+  // Helper to mock a failed Google Sheets fetch response
+  const mockSheetFailure = (status = 500) => {
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: false,
+      status,
+    });
   };
 
   beforeEach(() => {
-    // Clear all mocks but keep the mock implementations
     jest.clearAllMocks();
-    // Reset the supabase.from mock to ensure fresh state
-    (supabase.from as jest.Mock).mockClear();
+    process.env.GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/test-webhook';
+    process.env.RESEND_API_KEY = 'test-resend-key';
   });
 
   afterAll(() => {
@@ -71,7 +81,7 @@ describe('POST /api/waitlist', () => {
 
   describe('Successful submissions', () => {
     it('should accept valid form data and return 201', async () => {
-      const insertMock = mockSupabaseInsert();
+      mockSheetSuccess();
       const request = createRequest(validFormData);
 
       const response = await POST(request);
@@ -84,17 +94,10 @@ describe('POST /api/waitlist', () => {
           message: 'Successfully added to waitlist',
         },
       });
-      expect(insertMock).toHaveBeenCalledWith({
-        email: 'test@example.com',
-        tour_duration: 'weekend',
-        interest_types: ['hike', 'bike'],
-        fitness_level: 'beginner',
-        travel_timeline: 'next_3_months',
-      });
     });
 
-    it('should normalize email to lowercase', async () => {
-      const insertMock = mockSupabaseInsert();
+    it('should normalize email to lowercase and call webhook', async () => {
+      mockSheetSuccess();
       const request = createRequest({
         ...validFormData,
         email: 'TEST@EXAMPLE.COM',
@@ -105,9 +108,11 @@ describe('POST /api/waitlist', () => {
 
       expect(response.status).toBe(201);
       expect(data.success).toBe(true);
-      expect(insertMock).toHaveBeenCalledWith(
+      expect(global.fetch).toHaveBeenCalledWith(
+        process.env.GOOGLE_SHEETS_WEBHOOK_URL,
         expect.objectContaining({
-          email: 'test@example.com',
+          method: 'POST',
+          body: JSON.stringify({ email: 'test@example.com' }),
         })
       );
     });
@@ -120,7 +125,7 @@ describe('POST /api/waitlist', () => {
       ];
 
       for (const duration of durations) {
-        const insertMock = mockSupabaseInsert();
+        mockSheetSuccess();
         const request = createRequest({
           ...validFormData,
           tourDuration: duration,
@@ -128,16 +133,11 @@ describe('POST /api/waitlist', () => {
 
         const response = await POST(request);
         expect(response.status).toBe(201);
-        expect(insertMock).toHaveBeenCalledWith(
-          expect.objectContaining({
-            tour_duration: duration,
-          })
-        );
       }
     });
 
     it('should handle all interest type combinations', async () => {
-      const insertMock = mockSupabaseInsert();
+      mockSheetSuccess();
       const request = createRequest({
         ...validFormData,
         interestTypes: ['hike', 'bike', 'e_bike', 'women_only', 'coffee_farm'],
@@ -145,15 +145,10 @@ describe('POST /api/waitlist', () => {
 
       const response = await POST(request);
       expect(response.status).toBe(201);
-      expect(insertMock).toHaveBeenCalledWith(
-        expect.objectContaining({
-          interest_types: ['hike', 'bike', 'e_bike', 'women_only', 'coffee_farm'],
-        })
-      );
     });
 
     it('should handle single interest type', async () => {
-      const insertMock = mockSupabaseInsert();
+      mockSheetSuccess();
       const request = createRequest({
         ...validFormData,
         interestTypes: ['hike'],
@@ -161,18 +156,13 @@ describe('POST /api/waitlist', () => {
 
       const response = await POST(request);
       expect(response.status).toBe(201);
-      expect(insertMock).toHaveBeenCalledWith(
-        expect.objectContaining({
-          interest_types: ['hike'],
-        })
-      );
     });
 
     it('should handle all fitness levels', async () => {
       const levels: Array<WaitlistFormData['fitnessLevel']> = ['beginner', 'moderate'];
 
       for (const level of levels) {
-        const insertMock = mockSupabaseInsert();
+        mockSheetSuccess();
         const request = createRequest({
           ...validFormData,
           fitnessLevel: level,
@@ -180,11 +170,6 @@ describe('POST /api/waitlist', () => {
 
         const response = await POST(request);
         expect(response.status).toBe(201);
-        expect(insertMock).toHaveBeenCalledWith(
-          expect.objectContaining({
-            fitness_level: level,
-          })
-        );
       }
     });
 
@@ -196,7 +181,7 @@ describe('POST /api/waitlist', () => {
       ];
 
       for (const timeline of timelines) {
-        const insertMock = mockSupabaseInsert();
+        mockSheetSuccess();
         const request = createRequest({
           ...validFormData,
           travelTimeline: timeline,
@@ -204,11 +189,6 @@ describe('POST /api/waitlist', () => {
 
         const response = await POST(request);
         expect(response.status).toBe(201);
-        expect(insertMock).toHaveBeenCalledWith(
-          expect.objectContaining({
-            travel_timeline: timeline,
-          })
-        );
       }
     });
   });
@@ -368,29 +348,25 @@ describe('POST /api/waitlist', () => {
     });
   });
 
-  describe('Database errors', () => {
-    it('should handle duplicate email with 409', async () => {
-      mockSupabaseInsert({
-        code: '23505', // PostgreSQL unique constraint violation
-        message: 'duplicate key value violates unique constraint',
-      });
-
+  describe('Server configuration errors', () => {
+    it('should return 500 when GOOGLE_SHEETS_WEBHOOK_URL is not configured', async () => {
+      delete process.env.GOOGLE_SHEETS_WEBHOOK_URL;
       const request = createRequest(validFormData);
+
       const response = await POST(request);
       const data = await response.json();
 
-      expect(response.status).toBe(409);
+      expect(response.status).toBe(500);
       expect(data.success).toBe(false);
-      expect(data.error).toBe('This email is already on the waitlist');
+      expect(data.error).toContain('Server configuration error');
     });
+  });
 
-    it('should handle generic database errors with 500', async () => {
-      mockSupabaseInsert({
-        code: 'PGRST000',
-        message: 'Database connection failed',
-      });
-
+  describe('Webhook errors', () => {
+    it('should handle Google Sheets webhook failure with 500', async () => {
+      mockSheetFailure();
       const request = createRequest(validFormData);
+
       const response = await POST(request);
       const data = await response.json();
 
@@ -399,17 +375,13 @@ describe('POST /api/waitlist', () => {
       expect(data.error).toBe('Failed to save your information. Please try again.');
     });
 
-    it('should log database errors to console', async () => {
-      const dbError = {
-        code: 'PGRST000',
-        message: 'Database connection failed',
-      };
-      mockSupabaseInsert(dbError);
-
+    it('should log webhook errors to console', async () => {
+      mockSheetFailure(503);
       const request = createRequest(validFormData);
+
       await POST(request);
 
-      expect(mockConsoleError).toHaveBeenCalledWith('Supabase error:', dbError);
+      expect(mockConsoleError).toHaveBeenCalledWith('Google Sheets error:', 503);
     });
   });
 
@@ -429,13 +401,10 @@ describe('POST /api/waitlist', () => {
       expect(data.error).toBe('An unexpected error occurred. Please try again.');
     });
 
-    it('should handle unexpected errors with 500', async () => {
-      const insertMock = jest.fn().mockRejectedValue(new Error('Network error'));
-      (supabase.from as jest.Mock).mockReturnValue({
-        insert: insertMock,
-      });
-
+    it('should handle unexpected fetch errors with 500', async () => {
+      (global.fetch as jest.Mock).mockRejectedValueOnce(new Error('Network error'));
       const request = createRequest(validFormData);
+
       const response = await POST(request);
       const data = await response.json();
 
@@ -455,25 +424,6 @@ describe('POST /api/waitlist', () => {
       await POST(request);
 
       expect(mockConsoleError).toHaveBeenCalledWith('API route error:', error);
-    });
-  });
-
-  describe('Data transformation', () => {
-    it('should convert camelCase form fields to snake_case database fields', async () => {
-      const insertMock = mockSupabaseInsert();
-      const request = createRequest(validFormData);
-
-      await POST(request);
-
-      const insertData = insertMock.mock.calls[0][0];
-      expect(insertData).toHaveProperty('tour_duration');
-      expect(insertData).toHaveProperty('interest_types');
-      expect(insertData).toHaveProperty('fitness_level');
-      expect(insertData).toHaveProperty('travel_timeline');
-      expect(insertData).not.toHaveProperty('tourDuration');
-      expect(insertData).not.toHaveProperty('interestTypes');
-      expect(insertData).not.toHaveProperty('fitnessLevel');
-      expect(insertData).not.toHaveProperty('travelTimeline');
     });
   });
 });

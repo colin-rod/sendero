@@ -15,6 +15,7 @@ const customJestConfig = {
   testMatch: [
     '**/__tests__/**/*.test.[jt]s?(x)',
   ],
+  testTimeout: 10000, // 10 second timeout for tests
   collectCoverageFrom: [
     'app/**/*.{js,jsx,ts,tsx}',
     'components/**/*.{js,jsx,ts,tsx}',

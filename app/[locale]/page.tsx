@@ -1,45 +1,20 @@
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
-import { NumberBadge } from '@/components/ui/Badge';
 import HeroVideo from '@/components/HeroVideo';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
-import { CarouselSection } from '@/components/features/carousel/CarouselSection';
-import { TrailCard } from '@/components/features/trails/TrailCard';
-import { getAllTrailSummaries } from '@/lib/data/trails';
-import { getDifficultyBadgeProps } from '@/lib/utils/difficulty';
-import { Bike, Coffee, Globe, Users, Mountain, Backpack } from 'lucide-react';
+import { TourGrid } from '@/components/features/tourGrid/TourGrid';
+import { TrailsMapSection } from '@/components/features/trailsMap/TrailsMapSection';
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
-  const tCarousel = useTranslations('carousel');
-  const tTrails = useTranslations('trailsSection');
-  const tDifficulty = useTranslations('trails.senderoDelTigre.difficulty');
-  const tTrailsCommon = useTranslations('trails.master.stats');
-  const tHowItWorks = useTranslations('howItWorks');
-  const tPerfectFor = useTranslations('perfectFor');
+  const tHeroIntro = useTranslations('heroIntro');
   const tWaitlist = useTranslations('waitlist');
-
-  const trails = getAllTrailSummaries();
-
-  const getDifficultyLabel = (level: string) => {
-    switch (level) {
-      case 'Easy':
-        return tDifficulty('easy');
-      case 'Moderate':
-        return tDifficulty('moderate');
-      case 'Challenging':
-        return tDifficulty('challenging');
-      default:
-        return level;
-    }
-  };
+  const tTourGrid = useTranslations('tourGrid');
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -51,204 +26,118 @@ export default function HomePage() {
           <HeroVideo />
 
           {/* Content */}
-          <div className="relative z-10 flex h-full items-center">
-            <Container>
-              <div className="mx-auto max-w-3xl text-center">
-                <h1 className="mb-6 text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                  {tHero('title')}
-                </h1>
-                <p className="mb-12 text-xl md:text-2xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] max-w-4xl mx-auto">
-                  {tHero('subtitle')}
-                </p>
-                {/* Discover Trails Button */}
-                <Link href="/trails" className="inline-block">
-                  <Button variant="hero-cta" size="lg">
-                    {tHero('discoverTrails')}
-                  </Button>
-                </Link>
-              </div>
-            </Container>
+          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
+            <Image
+              src="/logo@2x.png"
+              alt="Sendero"
+              width={96}
+              height={96}
+              className="mb-8"
+              priority
+            />
+            <h1 className="text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-3xl">
+              {tHero('title')}
+            </h1>
           </div>
 
           {/* Scroll Indicator */}
           <ScrollIndicator />
         </section>
 
-        {/* Carousel Section - Eyebrow + Heading + Description + Images */}
+        {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="py-20 md:py-32 bg-white">
-            <CarouselSection
-              eyebrow={tCarousel('eyebrow')}
-              heading={tCarousel('heading')}
-              description={tCarousel('description')}
-              images={[
-                '/carousel/placeholder-1.jpg',
-                '/carousel/placeholder-2.jpg',
-                '/carousel/placeholder-3.jpg',
-              ]}
-            />
+          <section className="flex h-[454px] flex-col items-center justify-center gap-[34px] self-stretch bg-[#232323] px-16 pb-[58px] pt-16">
+            <div className="text-center max-w-4xl">
+              <p
+                className="text-[32px] leading-[40px] font-medium text-center font-['Helvetica Neue']"
+                style={{ color: 'var(--Text-Text-White, #FFF)' }}
+              >
+                {tHeroIntro('subtitle')}
+              </p>
+            </div>
           </section>
         </ScrollReveal>
 
-        {/* Through the Trails Section */}
+        {/* Tour Grid Section */}
         <ScrollReveal>
-          <section className="py-20 md:py-32 bg-background">
+          <section className="bg-white py-16 md:py-24">
             <Container>
-              <div className="text-center mb-12">
-                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wide mb-2">
-                  {tTrails('eyebrow')}
-                </p>
-                <h2 className="text-h2 mb-4">{tTrails('heading')}</h2>
-                <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-                  {tTrails('description')}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {trails.map((trail) => (
-                  <TrailCard
-                    key={trail.id}
-                    id={trail.id}
-                    slug={trail.slug}
-                    name={trail.name}
-                    thumbnail={trail.thumbnail}
-                    difficulty={trail.difficulty}
-                    difficultyLabel={getDifficultyLabel(trail.difficulty)}
-                    difficultyBadgeProps={getDifficultyBadgeProps(trail.difficulty)}
-                    distance={trail.distance}
-                    duration={trail.duration}
-                    distanceLabel={tTrailsCommon('distance')}
-                    durationLabel={tTrailsCommon('duration')}
-                    ctaText={tTrails('heading')}
-                    comingSoon={trail.comingSoon}
-                    comingSoonLabel={tTrails('comingSoon')}
-                  />
-                ))}
-              </div>
+              <TourGrid
+                cards={[
+                  {
+                    id: 'tigre',
+                    title: tTourGrid('cards.tigre'),
+                    imageSrc: '/tours/sendero-tigre.png',
+                    imageAlt: tTourGrid('cards.tigre'),
+                  },
+                  {
+                    id: 'cafe',
+                    title: tTourGrid('cards.cafe'),
+                    imageSrc: '/tours/sendero_cafe.jpg',
+                    imageAlt: tTourGrid('cards.cafe'),
+                  },
+                  {
+                    id: 'agua',
+                    title: tTourGrid('cards.agua'),
+                    imageSrc: '/tours/sendero_agua.jpg',
+                    imageAlt: tTourGrid('cards.agua'),
+                  },
+                  {
+                    id: 'cacao',
+                    title: tTourGrid('cards.cacao'),
+                    imageSrc: '/tours/sendero_cacao.jpg',
+                    imageAlt: tTourGrid('cards.cacao'),
+                  },
+                  {
+                    id: 'volcan',
+                    title: tTourGrid('cards.volcan'),
+                    imageSrc: '/tours/sendero_volcan.jpeg',
+                    imageAlt: tTourGrid('cards.volcan'),
+                  },
+                  {
+                    id: 'paramo',
+                    title: tTourGrid('cards.paramo'),
+                    imageSrc: '/tours/sendero_paramo.jpg',
+                    imageAlt: tTourGrid('cards.paramo'),
+                  },
+                  {
+                    id: 'guadua',
+                    title: tTourGrid('cards.guadua'),
+                    imageSrc: '/tours/sendero_guadua.webp',
+                    imageAlt: tTourGrid('cards.guadua'),
+                  },
+                  {
+                    id: 'oro',
+                    title: tTourGrid('cards.oro'),
+                    imageSrc: '/tours/sendero_oro.png',
+                    imageAlt: tTourGrid('cards.oro'),
+                  },
+                  {
+                    id: 'luminoso',
+                    title: tTourGrid('cards.luminoso'),
+                    imageSrc: '/tours/sendero_luminoso.jpg',
+                    imageAlt: tTourGrid('cards.luminoso'),
+                  },
+                ]}
+              />
             </Container>
           </section>
         </ScrollReveal>
 
-        {/* How It Works Section */}
-        <ScrollReveal>
-          <section id="how-it-works" className="py-20 md:py-32">
-            <Container>
-              <div className="mb-16 text-center">
-                <h2 className="mb-4 text-h2 text-foreground">
-                  {tHowItWorks('heading')}
-                </h2>
-                <p className="mx-auto max-w-2xl text-body text-muted-foreground">
-                  {tHowItWorks('description')}
-                </p>
-              </div>
-              <div className="grid gap-8 md:grid-cols-3">
-                <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
-                  <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
-                    1
-                  </NumberBadge>
-                  <h3 className="mb-2 text-h3 text-foreground">{tHowItWorks('steps.signUp.title')}</h3>
-                  <p className="text-body text-muted-foreground">
-                    {tHowItWorks('steps.signUp.description')}
-                  </p>
-                </div>
-                <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
-                  <NumberBadge variant="accent" size="xl" className="mb-4 shadow-md">
-                    2
-                  </NumberBadge>
-                  <h3 className="mb-2 text-h3 text-foreground">{tHowItWorks('steps.stayTuned.title')}</h3>
-                  <p className="text-body text-muted-foreground">
-                    {tHowItWorks('steps.stayTuned.description')}
-                  </p>
-                </div>
-                <div className="flex flex-col items-center rounded-lg border border-border bg-white p-8 text-center shadow-sm transition-shadow hover:shadow-md">
-                  <NumberBadge variant="primary" size="xl" className="mb-4 shadow-md">
-                    3
-                  </NumberBadge>
-                  <h3 className="mb-2 text-h3 text-foreground">{tHowItWorks('steps.bookAdventure.title')}</h3>
-                  <p className="text-body text-muted-foreground">
-                    {tHowItWorks('steps.bookAdventure.description')}
-                  </p>
-                </div>
-              </div>
-            </Container>
-          </section>
-        </ScrollReveal>
-
-        {/* Who It's For Section */}
-        <ScrollReveal delay={100}>
-          <section id="about" className="bg-muted/50 py-20 md:py-32">
-            <Container>
-              <div className="mb-16 text-center">
-                <h2 className="mb-4 text-h2 text-foreground">
-                  {tPerfectFor('heading')}
-                </h2>
-                <p className="mx-auto max-w-2xl text-body text-muted-foreground">
-                  {tPerfectFor('description')}
-                </p>
-              </div>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <div className="rounded-lg bg-white p-6 shadow-sm">
-                  <div className="mb-4">
-                    <Bike className="h-10 w-10 text-primary-600" />
-                  </div>
-                  <h3 className="mb-2 text-h3">{tPerfectFor('personas.beginnerCyclists.title')}</h3>
-                  <p className="text-body text-muted-foreground">
-                    {tPerfectFor('personas.beginnerCyclists.description')}
-                  </p>
-                </div>
-                <div className="rounded-lg bg-white p-6 shadow-sm">
-                  <div className="mb-4">
-                    <Globe className="h-10 w-10 text-primary-600" />
-                  </div>
-                  <h3 className="mb-2 text-h3">
-                    {tPerfectFor('personas.ecoTravelers.title')}
-                  </h3>
-                  <p className="text-body text-muted-foreground">
-                    {tPerfectFor('personas.ecoTravelers.description')}
-                  </p>
-                </div>
-                <div className="rounded-lg bg-white p-6 shadow-sm">
-                  <div className="mb-4">
-                    <Coffee className="h-10 w-10 text-accent-600" />
-                  </div>
-                  <h3 className="mb-2 text-h3">{tPerfectFor('personas.coffeeLovers.title')}</h3>
-                  <p className="text-body text-muted-foreground">
-                    {tPerfectFor('personas.coffeeLovers.description')}
-                  </p>
-                </div>
-                <div className="rounded-lg bg-white p-6 shadow-sm">
-                  <div className="mb-4">
-                    <Users className="h-10 w-10 text-primary-600" />
-                  </div>
-                  <h3 className="mb-2 text-h3">{tPerfectFor('personas.womenGroups.title')}</h3>
-                  <p className="text-body text-muted-foreground">
-                    {tPerfectFor('personas.womenGroups.description')}
-                  </p>
-                </div>
-                <div className="rounded-lg bg-white p-6 shadow-sm">
-                  <div className="mb-4">
-                    <Mountain className="h-10 w-10 text-primary-600" />
-                  </div>
-                  <h3 className="mb-2 text-h3">{tPerfectFor('personas.natureEnthusiasts.title')}</h3>
-                  <p className="text-body text-muted-foreground">
-                    {tPerfectFor('personas.natureEnthusiasts.description')}
-                  </p>
-                </div>
-                <div className="rounded-lg bg-white p-6 shadow-sm">
-                  <div className="mb-4">
-                    <Backpack className="h-10 w-10 text-primary-600" />
-                  </div>
-                  <h3 className="mb-2 text-h3">
-                    {tPerfectFor('personas.weekendAdventurers.title')}
-                  </h3>
-                  <p className="text-body text-muted-foreground">
-                    {tPerfectFor('personas.weekendAdventurers.description')}
-                  </p>
-                </div>
-              </div>
-            </Container>
-          </section>
-        </ScrollReveal>
+        {/* Trails Map Section - full-bleed, no wrapper */}
+        <TrailsMapSection
+          trails={[
+            { name: 'Sendero del Tigre', gpxPath: '/gpx/sendero-del-tigre.gpx' },
+            { name: 'Sendero del Café', gpxPath: '/gpx/sendero-del-cafe.gpx' },
+            { name: 'Sendero del Agua', gpxPath: '/gpx/sendero-del-agua.gpx' },
+            { name: 'Sendero del Cacao', gpxPath: '/gpx/sendero-del-cacao.gpx' },
+            { name: 'Sendero del Volcán', gpxPath: '/gpx/sendero-del-volcan.gpx' },
+            { name: 'Sendero del Páramo', gpxPath: '/gpx/sendero-del-paramo.gpx' },
+            { name: 'Sendero de la Guadua', gpxPath: '/gpx/sendero-de-la-guadua.gpx' },
+            { name: 'Sendero del Oro', gpxPath: '/gpx/sendero-del-oro.gpx' },
+            { name: 'Sendero Luminoso', gpxPath: '/gpx/sendero-luminoso.gpx' },
+          ]}
+        />
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
@@ -271,8 +160,8 @@ export default function HomePage() {
               <h2 className="text-h2 text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="text-body text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                {tWaitlist('stayInformed')}
+              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                {tWaitlist('nextDate')}
               </p>
 
               {/* Simplified email form */}
