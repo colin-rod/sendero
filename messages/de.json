@@ -674,5 +674,10 @@
       "oro": "Sendero del Oro",
       "luminoso": "Sendero Luminoso"
     }
+  },
+  "trailsMap": {
+    "heading": "Unser Streckennetz",
+    "subtitle": "9 handverlesene Routen durch Kolumbiens Kaffeeregion – jede eine einzigartige Reise.",
+    "legendLabel": "Routen"
   }
 }

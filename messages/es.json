@@ -674,5 +674,10 @@
       "oro": "Sendero del Oro",
       "luminoso": "Sendero Luminoso"
     }
+  },
+  "trailsMap": {
+    "heading": "Nuestra Red de Rutas",
+    "subtitle": "9 rutas artesanales por la Región Cafetera de Colombia, cada una un viaje único.",
+    "legendLabel": "Rutas"
   }
 }

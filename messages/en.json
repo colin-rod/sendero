@@ -674,5 +674,10 @@
       "oro": "Sendero del Oro",
       "luminoso": "Sendero Luminoso"
     }
+  },
+  "trailsMap": {
+    "heading": "Our Trail Network",
+    "subtitle": "9 handcrafted routes through Colombia's Coffee Region, each one a unique journey.",
+    "legendLabel": "Trail routes"
   }
 }

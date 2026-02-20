@@ -8,12 +8,14 @@ import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
+import { TrailsMapSection } from '@/components/features/trailsMap/TrailsMapSection';
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
   const tHeroIntro = useTranslations('heroIntro');
   const tWaitlist = useTranslations('waitlist');
   const tTourGrid = useTranslations('tourGrid');
+  const tTrailsMap = useTranslations('trailsMap');
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -121,6 +123,26 @@ export default function HomePage() {
               />
             </Container>
           </section>
+        </ScrollReveal>
+
+        {/* Trails Map Section */}
+        <ScrollReveal delay={100}>
+          <TrailsMapSection
+            heading={tTrailsMap('heading')}
+            subtitle={tTrailsMap('subtitle')}
+            legendLabel={tTrailsMap('legendLabel')}
+            trails={[
+              { name: tTourGrid('cards.tigre'), gpxPath: '/gpx/sendero-del-tigre.gpx' },
+              { name: tTourGrid('cards.cafe'), gpxPath: '/gpx/sendero-del-cafe.gpx' },
+              { name: tTourGrid('cards.agua'), gpxPath: '/gpx/sendero-del-agua.gpx' },
+              { name: tTourGrid('cards.cacao'), gpxPath: '/gpx/sendero-del-cacao.gpx' },
+              { name: tTourGrid('cards.volcan'), gpxPath: '/gpx/sendero-del-volcan.gpx' },
+              { name: tTourGrid('cards.paramo'), gpxPath: '/gpx/sendero-del-paramo.gpx' },
+              { name: tTourGrid('cards.guadua'), gpxPath: '/gpx/sendero-de-la-guadua.gpx' },
+              { name: tTourGrid('cards.oro'), gpxPath: '/gpx/sendero-del-oro.gpx' },
+              { name: tTourGrid('cards.luminoso'), gpxPath: '/gpx/sendero-luminoso.gpx' },
+            ]}
+          />
         </ScrollReveal>
 
         {/* Simplified Waitlist Section - Bottom of Page */}
