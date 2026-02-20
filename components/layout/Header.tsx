@@ -26,7 +26,7 @@ export function Header() {
         {t('skipToContent')}
       </a>
 
-      <header className="sticky top-0 z-50 w-full bg-transparent">
+      <header className="absolute top-0 left-0 z-50 w-full bg-transparent">
         <Container>
           <div className="flex h-16 max-w-[1200px] mx-auto gap-6 items-center justify-between flex-wrap">
             {/* Logo */}
