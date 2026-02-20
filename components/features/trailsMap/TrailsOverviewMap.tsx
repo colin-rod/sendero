@@ -70,11 +70,12 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
             lineCap: 'round',
             lineJoin: 'round',
           },
+          display_wpt: false,
           marker_options: {
-            startIconUrl: '',
-            endIconUrl: '',
-            shadowUrl: '',
-            wptIconUrls: { '': '' },
+            startIconUrl: null,
+            endIconUrl: null,
+            shadowUrl: null,
+            wptIconUrls: { '': null },
           },
         });
 
