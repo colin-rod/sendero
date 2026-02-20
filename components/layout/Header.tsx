@@ -43,7 +43,7 @@ export function Header() {
                 className="h-10 w-10"
                 priority
               />
-              <span className="text-label text-white">{t('brandName')}</span>
+              <span className="text-label text-foreground">{t('brandName')}</span>
             </Link>
 
             {/* Language Switcher */}

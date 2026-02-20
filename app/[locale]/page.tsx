@@ -73,11 +73,11 @@ export default function HomePage() {
         {/* Hero Intro Section */}
         <ScrollReveal>
           <section className="flex h-[454px] flex-col items-center justify-center gap-[34px] self-stretch bg-[#232323] px-16 pb-[58px] pt-16">
-            <div className="text-center">
-              <h2 className="mb-6 text-h2 text-white">
-                {tHero('title')}
-              </h2>
-              <p className="text-body text-white/80 max-w-2xl mx-auto">
+            <div className="text-center max-w-4xl">
+              <p
+                className="text-[32px] leading-[40px] font-medium text-center font-['Helvetica Neue']"
+                style={{ color: 'var(--Text-Text-White, #FFF)' }}
+              >
                 {tHeroIntro('subtitle')}
               </p>
             </div>
