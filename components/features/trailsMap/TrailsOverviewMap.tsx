@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import type { Map, LatLngBounds } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 export interface TrailConfig {
@@ -15,7 +16,7 @@ interface TrailsOverviewMapProps {
 
 export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<L.Map | null>(null);
+  const mapRef = useRef<Map | null>(null);
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
@@ -23,11 +24,9 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
     // Dynamically import leaflet to ensure it only runs client-side
     const initMap = async () => {
       const L = (await import('leaflet')).default;
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const GpxPlugin = require('leaflet-gpx');
 
       // Fix default marker icon paths broken by webpack
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       delete (L.Icon.Default.prototype as any)._getIconUrl;
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: '/leaflet/marker-icon-2x.png',
@@ -54,13 +53,12 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
       ).addTo(map);
 
       // Track all bounds to auto-fit after loading
-      const allBounds: L.LatLngBounds[] = [];
+      const allBounds: LatLngBounds[] = [];
       let loadedCount = 0;
 
       if (trails.length === 0) return;
 
       trails.forEach((trail) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const gpx = new GpxPlugin(trail.gpxPath, {
           async: true,
           polyline_options: {
@@ -78,7 +76,7 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
           },
         });
 
-        gpx.on('loaded', (e: { target: { getBounds: () => L.LatLngBounds } }) => {
+        gpx.on('loaded', (e: { target: { getBounds: () => LatLngBounds } }) => {
           const bounds = e.target.getBounds();
           if (bounds.isValid()) {
             allBounds.push(bounds);
