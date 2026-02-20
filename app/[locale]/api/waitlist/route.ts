@@ -37,10 +37,6 @@ export async function POST(request: NextRequest) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: formData.email.toLowerCase().trim(),
-        tourDuration: formData.tourDuration,
-        interestTypes: formData.interestTypes,
-        fitnessLevel: formData.fitnessLevel,
-        travelTimeline: formData.travelTimeline,
       }),
     });
 
