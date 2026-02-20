@@ -26,6 +26,7 @@
     "emailCapture": {
       "buttonLearnMore": "LEARN MORE",
       "buttonSubmit": "SUBMIT",
+      "buttonSent": "SENT",
       "placeholder": "Enter your email",
       "helperText": "No spam, just updates when we launch",
       "successMessage": "✓ Thanks! We'll keep you updated when we launch."

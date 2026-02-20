@@ -26,6 +26,7 @@
     "emailCapture": {
       "buttonLearnMore": "MÁS INFORMACIÓN",
       "buttonSubmit": "ENVIAR",
+      "buttonSent": "ENVIADO",
       "placeholder": "Ingresa tu correo",
       "helperText": "Sin spam, solo actualizaciones cuando lancemos",
       "successMessage": "✓ ¡Gracias! Te mantendremos informado cuando lancemos."

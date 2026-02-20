@@ -26,6 +26,7 @@
     "emailCapture": {
       "buttonLearnMore": "MEHR ERFAHREN",
       "buttonSubmit": "ABSENDEN",
+      "buttonSent": "VERSENDET",
       "placeholder": "E-Mail-Adresse eingeben",
       "helperText": "Kein Spam, nur Updates zum Start",
       "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
