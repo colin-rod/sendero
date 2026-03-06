@@ -162,33 +162,18 @@
     "invalidSubject": "Ungültiges Betreff ausgewählt"
   },
   "footer": {
-    "brandName": "Sendero Bike Trails",
-    "trails": {
-      "heading": "Routen",
-      "overview": "Überblick",
-      "experiences": "Erlebnisse",
-      "designYourTrails": "Gestalte deine Trails"
-    },
-    "about": {
-      "heading": "Über uns",
-      "aLifeInBetween": "Ein Leben dazwischen",
-      "faqs": "Häufig gestellte Fragen"
-    },
-    "contact": {
-      "heading": "Kontakt",
-      "phone": "+49 17631470193",
-      "email": "info@senderobiketrails.com"
-    },
+    "brandName": "sendero bike trails",
+    "tagline": "Achtsam auf zwei Rädern reisen. Eine Kultur zum Eintauchen.",
     "social": {
       "followUs": "Folge uns",
-      "twitter": "Folge uns auf X",
       "instagram": "Folge uns auf Instagram",
-      "youtube": "Abonniere uns auf YouTube",
-      "linkedin": "Vernetze dich auf LinkedIn",
-      "strava": "Folge uns auf Strava",
       "komoot": "Folge uns auf Komoot"
     },
-    "copyright": "Alle Rechte vorbehalten."
+    "legal": {
+      "heading": "Rechtliches",
+      "imprint": "Imprint",
+      "privacy": "Datenschutz"
+    }
   },
   "thankYou": {
     "heading": "Du bist auf der Liste!",

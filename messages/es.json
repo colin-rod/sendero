@@ -162,33 +162,18 @@
     "invalidSubject": "Asunto inválido seleccionado"
   },
   "footer": {
-    "brandName": "Sendero Bike Trails",
-    "trails": {
-      "heading": "Rutas",
-      "overview": "Descripción general",
-      "experiences": "Experiencias",
-      "designYourTrails": "Diseña tus rutas"
-    },
-    "about": {
-      "heading": "Acerca de",
-      "aLifeInBetween": "Una vida intermedia",
-      "faqs": "Preguntas Frecuentes"
-    },
-    "contact": {
-      "heading": "Contacto",
-      "phone": "+49 17631470193",
-      "email": "info@senderobiketrails.com"
-    },
+    "brandName": "sendero bike trails",
+    "tagline": "Viaja con conciencia sobre dos ruedas. Una cultura para sumergirse.",
     "social": {
       "followUs": "Síguenos",
-      "twitter": "Síguenos en X",
       "instagram": "Síguenos en Instagram",
-      "youtube": "Suscríbete en YouTube",
-      "linkedin": "Conéctate en LinkedIn",
-      "strava": "Síguenos en Strava",
       "komoot": "Síguenos en Komoot"
     },
-    "copyright": "Todos los derechos reservados."
+    "legal": {
+      "heading": "Legal",
+      "imprint": "Aviso legal",
+      "privacy": "Privacidad"
+    }
   },
   "thankYou": {
     "heading": "¡Estás en la Lista!",
