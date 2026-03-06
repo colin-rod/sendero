@@ -32,6 +32,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-work-sans)', 'sans-serif'],
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
+        aboreto: ['var(--font-aboreto)', 'serif'],
       },
 
       // Custom typography sizes from Figma (November 2024)

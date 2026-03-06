@@ -18,7 +18,7 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header logoVariant="white" />
+      <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
         <section className="relative h-screen">

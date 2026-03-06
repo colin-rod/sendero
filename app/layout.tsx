@@ -1,4 +1,4 @@
-import { Work_Sans } from 'next/font/google';
+import { Work_Sans, Aboreto } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
@@ -9,13 +9,20 @@ const workSans = Work_Sans({
   display: 'swap',
 });
 
+const aboreto = Aboreto({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-aboreto',
+  display: 'swap',
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html className={workSans.variable}>
+    <html className={`${workSans.variable} ${aboreto.variable}`}>
       <body className="font-sans antialiased">
         {children}
         <Analytics />

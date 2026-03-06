@@ -54,7 +54,7 @@ export function TourGrid({ heading, subheading, cards }: TourGridProps) {
         <h2 className="font-['Helvetica_Neue'] text-[32px] font-bold leading-[145%] tracking-[0] text-[#1D1D1F] align-middle">
           {heading}
         </h2>
-        <p className="font-['Helvetica_Neue'] text-[32px] font-bold leading-[145%] tracking-[0] text-[#1D1D1F] align-middle">
+        <p className="font-['Helvetica_Neue'] text-[32px] font-normal leading-[145%] tracking-[0] text-[#1D1D1F] align-middle">
           {subheading}
         </p>
       </div>
