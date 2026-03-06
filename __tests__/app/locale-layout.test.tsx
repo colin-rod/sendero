@@ -57,11 +57,11 @@ describe('LocaleLayout', () => {
     expect(mockGetMessages).toHaveBeenCalledWith({ locale: 'de' });
     expect(mockNotFound).not.toHaveBeenCalled();
 
-    const bodyElement = (element as React.ReactElement).props.children as React.ReactElement;
-    const providerElement = bodyElement.props.children as React.ReactElement;
+    const bodyElement = (element as React.ReactElement<{ children: React.ReactElement }>).props.children;
+    const providerElement = (bodyElement as React.ReactElement<{ children: React.ReactElement }>).props.children;
 
-    expect(providerElement.props.locale).toBe('de');
-    expect(providerElement.props.messages).toEqual({
+    expect((providerElement as React.ReactElement<{ locale: string; messages: unknown }>).props.locale).toBe('de');
+    expect((providerElement as React.ReactElement<{ locale: string; messages: unknown }>).props.messages).toEqual({
       header: {
         skipToContent: 'Zum Inhalt springen',
       },
