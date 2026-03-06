@@ -57,14 +57,14 @@ function FlipCard({ id, title, imageSrc, description, distance, difficulty }: To
 
         {/* Back */}
         <div
-          className="flip-card-back flex flex-col justify-end items-center px-6 pb-9 gap-8"
+          className="flip-card-back flex flex-col justify-center items-center px-6 gap-8"
           style={{ backgroundColor: '#FFFFFF' }}
         >
           {/* Thread symbol illustration */}
           <img
             src={elementSrc}
             alt=""
-            className="w-[135px] h-[143px] object-contain"
+            className="w-[180px] h-[190px] object-contain"
             aria-hidden="true"
           />
 

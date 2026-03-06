@@ -12,12 +12,12 @@ export function Footer() {
   return (
     <footer className="text-white" style={{ backgroundColor: '#1B1B1B' }}>
       <div className="mx-auto max-w-[1200px] px-16 py-16">
-        <div className="flex flex-wrap items-start justify-between gap-[120px]">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-8">
 
           {/* Column 1: Brand */}
-          <div className="flex w-[300px] flex-col gap-4">
+          <div className="flex max-w-[300px] flex-col gap-4">
             <Image
-              src="/Logo White.svg"
+              src="/Logo Dark.svg"
               alt={t('brandName')}
               width={48}
               height={48}
@@ -30,7 +30,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Social */}
-          <div className="flex w-[300px] flex-col gap-[23px]">
+          <div className="flex flex-col gap-[23px]">
             <span className="text-base font-bold text-white">{t('social.followUs')}</span>
             <div className="flex items-center gap-[25px]">
               <a
@@ -51,7 +51,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Legal */}
-          <div className="flex w-[300px] flex-col gap-3">
+          <div className="flex flex-col gap-3">
             <span className="text-base font-bold text-white">{t('legal.heading')}</span>
             <Link href="#" className="text-base font-bold text-white">
               {t('legal.imprint')}

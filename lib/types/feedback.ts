@@ -25,4 +25,5 @@ export interface FeedbackPayload {
 export interface FeedbackResponse {
   success: boolean;
   error?: string;
+  issueId?: string;
 }
