@@ -11,7 +11,7 @@ jest.mock('next-intl', () => ({
   useTranslations: () => (key: string) => {
     const translations: Record<string, string> = {
       brandName: 'sendero bike trails',
-      tagline: 'Mindful travel on two wheels. A culture to immerse yourself in.',
+      tagline: 'Mindful travel on two wheels.\nA culture to immerse yourself in.',
       'social.followUs': 'Follow us',
       'social.instagram': 'Follow us on Instagram',
       'social.komoot': 'Follow us on Komoot',

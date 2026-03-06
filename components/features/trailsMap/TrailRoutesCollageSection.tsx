@@ -129,7 +129,7 @@ export function TrailRoutesCollageSection() {
           return (
             <p
               key={`${route.id}-label`}
-              className="absolute pointer-events-none text-[#ECECEC] font-['Helvetica_Neue'] text-[clamp(14px,1.5vw,38px)] leading-[1.05] tracking-[0.04em] font-semibold"
+              className="absolute pointer-events-none text-[#ECECEC] font-['Helvetica_Neue'] text-[clamp(12px,1.05vw,24px)] leading-[1.06] tracking-[0.035em] font-semibold"
               style={{
                 left: `${placement.labelX}%`,
                 top: `${placement.labelY}%`,

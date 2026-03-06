@@ -33,4 +33,13 @@ describe('TrailRoutesCollageSection', () => {
     const overlays = within(desktop).getAllByTestId(/^trail-route-overlay-/);
     expect(overlays).toHaveLength(9);
   });
+
+  it('uses a reduced desktop title size for collage labels', () => {
+    render(<TrailRoutesCollageSection />);
+
+    const desktop = screen.getByTestId('trail-routes-collage-desktop');
+    const aguaLabel = within(desktop).getByText(/SENDERO\s+DEL AGUA/);
+
+    expect(aguaLabel).toHaveClass('text-[clamp(12px,1.05vw,24px)]');
+  });
 });

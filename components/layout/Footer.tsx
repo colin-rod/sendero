@@ -25,7 +25,7 @@ export function Footer() {
             />
             <div className="text-base font-bold leading-6 text-white">
               <p>{t('brandName')}</p>
-              <p className="mt-4">{t('tagline')}</p>
+              <p className="mt-4 whitespace-pre-line">{t('tagline')}</p>
             </div>
           </div>
 
