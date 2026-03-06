@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 interface TourGridCardData {
   id: string;
   title: string;
@@ -15,29 +13,34 @@ interface TourGridProps {
   cards: TourGridCardData[];
 }
 
-function FlipCard({ title, imageSrc, imageAlt }: Omit<TourGridCardData, 'id'>) {
+function FlipCard({ title, imageSrc }: Omit<TourGridCardData, 'id'>) {
+  const backgroundStyle = {
+    background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
+
   return (
-    <div className="flip-card h-80 cursor-pointer rounded-lg shadow-sm">
-      <div className="flip-card-inner rounded-lg">
+    <div className="flip-card h-[476px] min-w-[300px] w-[330px] cursor-pointer">
+      <div className="flip-card-inner">
         {/* Front */}
-        <div className="flip-card-front overflow-hidden rounded-lg bg-white">
-          <div className="relative h-[calc(100%-56px)]">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-          </div>
-          <div className="flex h-14 items-center justify-center bg-white px-4">
-            <p className="text-center text-base font-normal text-gray-800">{title}</p>
+        <div
+          className="flip-card-front flex flex-col justify-end items-center"
+          style={backgroundStyle}
+        >
+          <div className="flex flex-col items-center px-6 pb-9">
+            <p
+              className="text-center font-['Helvetica_Neue'] text-[28px] leading-[32px] tracking-[0.12em]"
+              style={{ fontWeight: 200, color: '#F2F2F2' }}
+            >
+              {title}
+            </p>
           </div>
         </div>
 
         {/* Back */}
         <div
-          className="flip-card-back flex items-center justify-center rounded-lg px-6"
+          className="flip-card-back flex items-center justify-center px-6"
           style={{ backgroundColor: '#e2b71f' }}
         >
           <p className="text-center text-xl font-semibold text-white">{title}</p>
@@ -59,7 +62,7 @@ export function TourGrid({ heading, subheading, cards }: TourGridProps) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-wrap gap-10 justify-center">
         {cards.map((card) => (
           <FlipCard
             key={card.id}
