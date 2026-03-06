@@ -46,8 +46,6 @@ export default async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/',
-    '/(de|en|es)/:path*',
-    '/((?!_next|icon.svg).*)', // Catch-all excluding static files
+    '/((?!_next|_vercel|.*\\..*).*)',
   ],
 };
