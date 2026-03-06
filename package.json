@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
+    "generate:trail-collage": "node --experimental-strip-types scripts/generate-trail-collage-data.mjs",
     "test": "jest --silent",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --silent",
