@@ -9,7 +9,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
 import { TrailsMapSection } from '@/components/features/trailsMap/TrailsMapSection';
-import { TrailRoutesCollageSection } from '@/components/features/trailsMap/TrailRoutesCollageSection';
+import { NewsletterHeroSection } from '@/components/features/trailsMap/NewsletterHeroSection';
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
@@ -155,7 +155,7 @@ export default function HomePage() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <TrailRoutesCollageSection />
+          <NewsletterHeroSection />
         </ScrollReveal>
 
         {/* Trails Map Section - full-bleed, no wrapper */}
