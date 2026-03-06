@@ -31,4 +31,26 @@ describe('TourGrid', () => {
     ).toBeInTheDocument();
     expect(screen.getByText('Paths that connect lives.')).toBeInTheDocument();
   });
+
+  it('applies design-system surface styles to tour cards', () => {
+    const { container } = render(
+      <TourGrid
+        cards={cards}
+        heading="More than bike trails."
+        subheading="Paths that connect lives."
+      />
+    );
+
+    const card = container.querySelector('.flip-card');
+    const cardBack = container.querySelector('.flip-card-back');
+
+    expect(card).toHaveClass(
+      'bg-white',
+      'rounded-component-card',
+      'shadow-elevation-raised',
+      'p-2',
+      'box-border'
+    );
+    expect(cardBack).toHaveClass('bg-white');
+  });
 });

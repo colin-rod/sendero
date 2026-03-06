@@ -38,11 +38,11 @@ function FlipCard({ id, title, imageSrc, description, distance, difficulty }: To
   const elementSrc = ELEMENT_SVG[id] ?? '/svg/trails/elements/element-tierra.svg';
 
   return (
-    <div className="flip-card h-[476px] min-w-[300px] w-[330px] cursor-pointer">
-      <div className="flip-card-inner">
+    <div className="flip-card h-[476px] min-w-[300px] w-[330px] box-border cursor-pointer rounded-component-card bg-white p-2 shadow-elevation-raised">
+      <div className="flip-card-inner overflow-hidden rounded-[inherit]">
         {/* Front */}
         <div
-          className="flip-card-front flex flex-col justify-end items-center"
+          className="flip-card-front flex flex-col justify-end items-center rounded-[inherit]"
           style={backgroundStyle}
         >
           <div className="flex flex-col items-center px-6 pb-9">
@@ -56,10 +56,7 @@ function FlipCard({ id, title, imageSrc, description, distance, difficulty }: To
         </div>
 
         {/* Back */}
-        <div
-          className="flip-card-back flex flex-col justify-end items-center px-6 pb-9 gap-8"
-          style={{ backgroundColor: '#FFFFFF' }}
-        >
+        <div className="flip-card-back flex flex-col justify-end items-center gap-8 rounded-[inherit] bg-white px-6 pb-9">
           {/* Thread symbol illustration */}
           <img
             src={elementSrc}

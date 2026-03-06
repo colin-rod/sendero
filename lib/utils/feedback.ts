@@ -1,66 +1,44 @@
-import { supabase } from '@/lib/supabase/client';
 import type { FeedbackFormData, FeedbackResponse } from '@/lib/types/feedback';
 
 /**
- * Submits feedback to Supabase Edge Function
- *
- * Handles screenshot conversion to base64 and platform detection.
- * The Edge Function will upload the screenshot to Storage and create a Linear issue.
+ * Submits feedback to Google Sheets via the feedback API route.
+ * Screenshots are converted to base64 and uploaded to Google Drive by the Apps Script webhook.
  *
  * @param data - The feedback form data
  * @param locale - Current language (en/de/es)
- * @returns Promise with success status and optional issue ID
+ * @returns Promise with success status
  */
 export async function submitFeedback(
   data: FeedbackFormData,
   locale: string
 ): Promise<FeedbackResponse> {
   try {
-    // Get platform info
-    const platform = navigator.userAgent;
-    const url = window.location.href;
-
-    // Convert screenshot to base64 if provided
-    let screenshotBase64: string | undefined;
-    if (data.screenshot) {
-      screenshotBase64 = await fileToBase64(data.screenshot);
-    }
-
-    // Prepare payload
     const payload = {
       email: data.email?.trim() || undefined,
       category: data.category,
       message: data.message.trim(),
-      screenshot: screenshotBase64,
-      platform,
-      url,
+      screenshot: data.screenshot ? await fileToBase64(data.screenshot) : undefined,
+      platform: navigator.userAgent,
+      url: window.location.href,
       locale,
+      timestamp: new Date().toISOString(),
     };
 
-    // Call Edge Function
-    const { data: result, error } = await supabase.functions.invoke('submit-feedback', {
-      body: payload,
+    const response = await fetch(`/${locale}/api/feedback`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
     });
 
-    if (error) {
-      console.error('Edge function error:', error);
+    if (!response.ok) {
+      const result = await response.json().catch(() => ({}));
       return {
         success: false,
-        error: 'Failed to submit feedback. Please try again.',
+        error: result.error || 'Failed to submit feedback. Please try again.',
       };
     }
 
-    if (!result.success) {
-      return {
-        success: false,
-        error: result.error || 'Failed to submit feedback',
-      };
-    }
-
-    return {
-      success: true,
-      issueId: result.issueId,
-    };
+    return { success: true };
   } catch (error) {
     console.error('Submit feedback error:', error);
     return {
