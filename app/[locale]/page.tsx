@@ -18,7 +18,7 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header logoVariant="white" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
         <section className="relative h-screen">
@@ -28,7 +28,7 @@ export default function HomePage() {
           {/* Content */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
             <Image
-              src="/logo@2x.png"
+              src="/Logo White.svg"
               alt="Sendero"
               width={96}
               height={96}
@@ -63,6 +63,8 @@ export default function HomePage() {
           <section className="bg-white py-16 md:py-24">
             <Container>
               <TourGrid
+                heading={tTourGrid('heading')}
+                subheading={tTourGrid('subheading')}
                 cards={[
                   {
                     id: 'tigre',

@@ -35,7 +35,7 @@
     "discoverTrails": "DISCOVER TRAILS"
   },
   "heroIntro": {
-    "subtitle": "Embark on remarkable cycling tours — expertly curated to discover the people, culture, and nature of Colombia's Coffee Region in all its diversity."
+    "subtitle": "Embark on impressive cycling tours, carefully curated to discover the people and nature of Colombia's Coffee Cultural Landscape in all its diversity."
   },
   "howItWorks": {
     "heading": "How It Works",
@@ -663,6 +663,8 @@
     }
   },
   "tourGrid": {
+    "heading": "More than bike trails.",
+    "subheading": "Paths that connect lives.",
     "cards": {
       "tigre": "Sendero del Tigre",
       "cafe": "Sendero del Café",

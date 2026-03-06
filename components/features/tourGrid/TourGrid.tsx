@@ -10,6 +10,8 @@ interface TourGridCardData {
 }
 
 interface TourGridProps {
+  heading: string;
+  subheading: string;
   cards: TourGridCardData[];
 }
 
@@ -45,17 +47,28 @@ function FlipCard({ title, imageSrc, imageAlt }: Omit<TourGridCardData, 'id'>) {
   );
 }
 
-export function TourGrid({ cards }: TourGridProps) {
+export function TourGrid({ heading, subheading, cards }: TourGridProps) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {cards.map((card) => (
-        <FlipCard
-          key={card.id}
-          title={card.title}
-          imageSrc={card.imageSrc}
-          imageAlt={card.imageAlt}
-        />
-      ))}
+    <div className="space-y-10">
+      <div className="text-center">
+        <h2 className="font-['Helvetica_Neue'] text-[32px] font-bold leading-[145%] tracking-[0] text-[#1D1D1F] align-middle">
+          {heading}
+        </h2>
+        <p className="font-['Helvetica_Neue'] text-[32px] font-bold leading-[145%] tracking-[0] text-[#1D1D1F] align-middle">
+          {subheading}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map((card) => (
+          <FlipCard
+            key={card.id}
+            title={card.title}
+            imageSrc={card.imageSrc}
+            imageAlt={card.imageAlt}
+          />
+        ))}
+      </div>
     </div>
   );
 }

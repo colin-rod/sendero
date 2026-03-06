@@ -59,7 +59,7 @@ export function Footer() {
             {/* Logo */}
             <div className="flex items-center gap-3">
               <Image
-                src="/Color=Gravel.png"
+                src="/Logo White.svg"
                 alt={t('brandName')}
                 width={40}
                 height={40}

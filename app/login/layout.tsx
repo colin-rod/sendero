@@ -21,7 +21,7 @@ export default function LoginLayout({
               aria-label="Sendero - Home"
             >
               <Image
-                src="/Color=Gravel.png"
+                src="/Logo White.svg"
                 alt="Sendero Logo"
                 width={40}
                 height={40}

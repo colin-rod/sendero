@@ -40,7 +40,7 @@ export default function ThankYouPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header logoVariant="dark" />
       <main className="flex-1">
         <section className="py-20 md:py-32">
           <Container>
