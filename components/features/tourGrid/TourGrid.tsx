@@ -47,8 +47,8 @@ function FlipCard({ id, title, imageSrc, description, distance, difficulty }: To
         >
           <div className="flex flex-col items-center px-6 pb-9">
             <p
-              className="text-center font-['Helvetica_Neue'] text-[28px] leading-[32px] tracking-[0.12em]"
-              style={{ fontWeight: 200, color: '#F2F2F2' }}
+              className="text-center font-sans text-h3 font-medium leading-[32px] tracking-[0.12em]"
+              style={{ color: '#F2F2F2' }}
             >
               {title}
             </p>

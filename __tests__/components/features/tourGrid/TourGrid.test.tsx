@@ -31,4 +31,22 @@ describe('TourGrid', () => {
     ).toBeInTheDocument();
     expect(screen.getByText('Paths that connect lives.')).toBeInTheDocument();
   });
+
+  it('applies design-system typography classes to the front card title', () => {
+    render(
+      <TourGrid
+        cards={cards}
+        heading="More than bike trails."
+        subheading="Paths that connect lives."
+      />
+    );
+
+    const titleCandidates = screen.getAllByText('Sendero del Tigre');
+    const frontTitle = titleCandidates.find((node) =>
+      node.classList.contains('text-h3')
+    );
+
+    expect(frontTitle).toBeDefined();
+    expect(frontTitle).toHaveClass('font-sans', 'text-h3', 'font-medium');
+  });
 });

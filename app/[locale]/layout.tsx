@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { Analytics } from '@vercel/analytics/react';
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
@@ -62,14 +62,20 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
+  const validatedLocale = locale as Locale;
+
+  // Bind the request locale explicitly so message resolution does not
+  // depend on middleware/header locale negotiation.
+  setRequestLocale(validatedLocale);
+
   // Providing all messages to the client
   // side is the easiest way to get started
-  const messages = await getMessages();
+  const messages = await getMessages({ locale: validatedLocale });
 
   return (
-    <html lang={locale}>
+    <html lang={validatedLocale}>
       <body>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={validatedLocale} messages={messages}>
           {children}
           <FloatingFeedbackButton />
           <Analytics />

@@ -20,7 +20,8 @@ export default function LanguageSwitcher() {
   };
 
   const switchLocale = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
+    const cleanPath = pathname.replace(new RegExp(`^/(${locales.join('|')})`), '') || '/';
+    router.replace(cleanPath, { locale: newLocale });
     setIsOpen(false);
   };
 
