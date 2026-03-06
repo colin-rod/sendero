@@ -60,7 +60,7 @@ export default function HomePage() {
 
         {/* Tour Grid Section */}
         <ScrollReveal>
-          <section className="bg-white py-16 md:py-24">
+          <section className="bg-gray-100 py-16 md:py-24">
             <Container>
               <TourGrid
                 heading={tTourGrid('heading')}
