@@ -1,10 +1,25 @@
 'use client';
 
+const ELEMENT_SVG: Record<string, string> = {
+  tigre:    '/svg/trails/elements/element-tierra.svg',
+  cafe:     '/svg/trails/elements/element-cafe.svg',
+  agua:     '/svg/trails/elements/element-agua.svg',
+  cacao:    '/svg/trails/elements/element-cacao.svg',
+  volcan:   '/svg/trails/elements/element-volcan.svg',
+  paramo:   '/svg/trails/elements/element-paramo.svg',
+  guadua:   '/svg/trails/elements/element-guadua.svg',
+  oro:      '/svg/trails/elements/element-oro.svg',
+  luminoso: '/svg/trails/elements/element-luminoso.svg',
+};
+
 interface TourGridCardData {
   id: string;
   title: string;
   imageSrc: string;
   imageAlt: string;
+  description?: string;
+  distance?: string;
+  difficulty?: string;
 }
 
 interface TourGridProps {
@@ -13,12 +28,14 @@ interface TourGridProps {
   cards: TourGridCardData[];
 }
 
-function FlipCard({ title, imageSrc }: Omit<TourGridCardData, 'id'>) {
+function FlipCard({ id, title, imageSrc, description, distance, difficulty }: TourGridCardData) {
   const backgroundStyle = {
     background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
+
+  const elementSrc = ELEMENT_SVG[id] ?? '/svg/trails/elements/element-tierra.svg';
 
   return (
     <div className="flip-card h-[476px] min-w-[300px] w-[330px] cursor-pointer">
@@ -40,10 +57,33 @@ function FlipCard({ title, imageSrc }: Omit<TourGridCardData, 'id'>) {
 
         {/* Back */}
         <div
-          className="flip-card-back flex items-center justify-center px-6"
-          style={{ backgroundColor: '#e2b71f' }}
+          className="flip-card-back flex flex-col justify-end items-center px-6 pb-9 gap-8"
+          style={{ backgroundColor: '#FFFFFF' }}
         >
-          <p className="text-center text-xl font-semibold text-white">{title}</p>
+          {/* Thread symbol illustration */}
+          <img
+            src={elementSrc}
+            alt=""
+            className="w-[135px] h-[143px] object-contain"
+            aria-hidden="true"
+          />
+
+          {/* Text content */}
+          <div className="flex flex-col items-center gap-3 w-full">
+            <p className="text-center font-['Helvetica_Neue'] text-[20px] font-semibold text-[#1D1D1F]">
+              {title}
+            </p>
+            {description && (
+              <p className="text-center text-sm text-[#616161] leading-snug">
+                {description}
+              </p>
+            )}
+            {(distance || difficulty) && (
+              <p className="text-center text-sm text-[#616161]">
+                {[distance, difficulty].filter(Boolean).join(' | ')}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -66,9 +106,13 @@ export function TourGrid({ heading, subheading, cards }: TourGridProps) {
         {cards.map((card) => (
           <FlipCard
             key={card.id}
+            id={card.id}
             title={card.title}
             imageSrc={card.imageSrc}
             imageAlt={card.imageAlt}
+            description={card.description}
+            distance={card.distance}
+            difficulty={card.difficulty}
           />
         ))}
       </div>

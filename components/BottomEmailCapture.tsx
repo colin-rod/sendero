@@ -156,8 +156,7 @@ export default function BottomEmailCapture() {
             disabled={isSubmitting}
             loading={isSubmitting}
             variant="hero-cta"
-            size="lg"
-            className="whitespace-nowrap border border-white/70 px-10 shadow-[0_12px_28px_rgba(0,0,0,0.45)] ring-1 ring-black/15 transition-all duration-300"
+            className="whitespace-nowrap transition-all duration-300"
           >
             {isExpanded ? t('buttonSubmit') : tWaitlist('joinButton')}
           </Button>

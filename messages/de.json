@@ -90,6 +90,7 @@
     "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer.",
     "becomeAPioneer": "Werde Pionier:in",
     "nextDate": "Nächsten Termin: 28.11 – 04.12. 2026",
+    "ctaPrompt": "kommst du mit?",
     "joinButton": "TEILNEHMEN"
   },
   "form": {
@@ -651,15 +652,60 @@
     "heading": "Mehr als Radwege.",
     "subheading": "Pfade, die Leben verbinden.",
     "cards": {
-      "tigre": "Sendero del Tigre",
-      "cafe": "Sendero del Café",
-      "agua": "Sendero del Agua",
-      "cacao": "Sendero del Cacao",
-      "volcan": "Sendero del Volcán",
-      "paramo": "Sendero del Páramo",
-      "guadua": "Sendero de la Guadua",
-      "oro": "Sendero del Oro",
-      "luminoso": "Sendero Luminoso"
+      "tigre": {
+        "name": "Sendero del Tigre",
+        "description": "Malerische und zugängliche Landschleifen. Mittagessen auf einem ökologischen Bauernhof.",
+        "distance": "20 km",
+        "difficulty": "Leicht"
+      },
+      "cafe": {
+        "name": "Sendero del Café",
+        "description": "Hügelige Kaffeelandschaften. Privates Specialty-Coffee-Erlebnis am Ursprungsort.",
+        "distance": "27 km",
+        "difficulty": "Mittel"
+      },
+      "agua": {
+        "name": "Sendero del Agua",
+        "description": "Gebirgsflüsse und Andenwälder. Besuch eines ländlichen Innovationslabors.",
+        "distance": "30 km",
+        "difficulty": "Mittel"
+      },
+      "cacao": {
+        "name": "Sendero del Cacao",
+        "description": "Warme Talstraßen. Kakao-Erlebnis und handwerkliche Schokoladenverkostung.",
+        "distance": "37 km",
+        "difficulty": "Mittel"
+      },
+      "volcan": {
+        "name": "Sendero del Volcán",
+        "description": "Vulkanisches Gelände und steile Anstiege. Fahrt durch Wachspalmen-Wälder.",
+        "distance": "45 km",
+        "difficulty": "Schwer"
+      },
+      "paramo": {
+        "name": "Sendero del Páramo",
+        "description": "Kompakter Hochgebirgsaufstieg. Dünne Luft, rohe Schönheit, weitläufige Stille.",
+        "distance": "32 km",
+        "difficulty": "Schwer"
+      },
+      "guadua": {
+        "name": "Sendero de la Guadua",
+        "description": "Bambuswälder zur goldenen Stunde. Fahrt in die Klänge des Abends.",
+        "distance": "20 km",
+        "difficulty": "Leicht"
+      },
+      "oro": {
+        "name": "Sendero del Oro",
+        "description": "Farbenfrohe Pueblos und goldene Routen. Durch lebendiges Kulturerbe radeln.",
+        "distance": "38 km",
+        "difficulty": "Mittel"
+      },
+      "luminoso": {
+        "name": "Sendero Luminoso",
+        "description": "Sanftes Landterrain. Langsames Radfahren und nächtliches Eintauchen.",
+        "distance": "32 km",
+        "difficulty": "Leicht"
+      }
     }
   },
   "trailsMap": {

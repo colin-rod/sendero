@@ -6,24 +6,32 @@
  */
 
 export const typography = {
-  // Font Families
+  // Font Families — Updated to Helvetica Neue (system font, from Figma)
   fontFamily: {
-    sans: ['var(--font-work-sans)', 'system-ui', 'sans-serif'],
+    sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
     mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
   },
 
-  // Font Sizes (Tailwind standard scale from Figma)
+  // Font Sizes — Updated from Figma Desktop/Mobile/Tablet tokens (2025)
   fontSize: {
-    // Heading styles from Figma
-    h1: '3rem', // 48px - text-5xl
-    h2: '2.25rem', // 36px - text-4xl
-    h3: '1.5rem', // 24px - text-2xl
+    // Display (new) — Desktop: 64px, Mobile/Tablet: 48px
+    display: '4rem', // 64px desktop base
 
-    // Body and utility sizes from Figma
-    base: '1rem', // 16px - text-base
+    // Heading styles from Figma
+    h1: '3rem', // 48px desktop (40px on mobile — use responsive Tailwind)
+    h2: '2rem', // 32px — updated from 36px per Figma
+    h3: '1.75rem', // 28px desktop (24px on mobile — use responsive Tailwind)
+
+    // Body sizes from Figma
+    base: '1rem', // 16px - Body Standard
+    bodyEm: '1rem', // 16px - Body Emphasised (same size, bold weight)
+    bodySmall: '0.625rem', // 10px - Body Small
+
+    // UI sizes from Figma
+    buttonLabel: '1rem', // 16px - Button Label
     label: '0.75rem', // 12px - text-xs
 
-    // Additional Tailwind sizes (for flexibility)
+    // Additional sizes (for flexibility)
     lg: '1.125rem', // 18px
     sm: '0.875rem', // 14px
     xs: '0.75rem', // 12px
@@ -67,46 +75,51 @@ export const typography = {
 } as const;
 
 /**
- * Typography usage guidelines (from Figma, November 2024):
+ * Typography usage guidelines (from Figma Desktop/Mobile/Tablet tokens, 2025):
+ *
+ * DISPLAY (new)
+ * - Size: 64px desktop / 48px mobile (text-display / md:text-display)
+ * - Weight: font-bold (700)
+ * - Usage: Hero super-headings, splash screens
  *
  * HEADER 1
- * - Size: text-5xl (48px)
+ * - Size: 48px desktop / 40px mobile (text-h1 / md:text-5xl)
  * - Weight: font-bold (700)
  * - Usage: Main page headings, hero titles
- * - Tailwind: text-5xl font-bold
  *
  * HEADER 2
- * - Size: text-4xl (36px)
+ * - Size: 32px (text-h2) — updated from 36px
  * - Weight: font-bold (700)
  * - Usage: Section headings, major content divisions
- * - Tailwind: text-4xl font-bold
  *
  * HEADER 3
- * - Size: text-2xl (24px)
+ * - Size: 28px desktop / 24px mobile (text-h3 / md:text-h3)
  * - Weight: font-medium (500)
  * - Usage: Sub-section headings, card titles
- * - Tailwind: text-2xl font-medium
  *
- * BODY
- * - Size: text-base (16px)
- * - Weight: font-normal (400)
- * - Line Height: leading-4 (16px)
+ * BODY STANDARD
+ * - Size: text-base (16px), font-normal (400)
  * - Usage: Primary body text, paragraphs
- * - Tailwind: text-base font-normal leading-4
+ *
+ * BODY EMPHASISED
+ * - Size: text-base (16px), font-bold (700)
+ * - Usage: Callouts, highlighted body copy
+ *
+ * BODY SMALL
+ * - Size: 10px (text-body-small), font-normal (400)
+ * - Usage: Fine print, footnotes, captions
+ *
+ * BUTTON LABEL
+ * - Size: 16px (text-base), font-medium (500)
+ * - Usage: All button text
  *
  * LABEL
- * - Size: text-xs (12px)
- * - Weight: font-semibold (600)
- * - Line Height: leading-none (100%)
- * - Letter Spacing: tracking-tight2 (-2%)
- * - Text Transform: uppercase
- * - Usage: Navbar titles, form labels, metadata, small UI text
- * - Tailwind: text-xs font-semibold leading-none tracking-tight2 uppercase
+ * - Size: text-xs (12px), font-semibold (600), uppercase, tracking-tight2
+ * - Usage: Navbar titles, form labels, metadata
  *
- * HIERARCHY
- * - Maintain consistent hierarchy: H1 > H2 > H3
- * - Use semantic HTML tags (h1, h2, h3) for accessibility
- * - Apply styles via Tailwind utilities or custom classes
+ * FONT FAMILY
+ * - Helvetica Neue (system font — no Google Fonts import needed)
+ * - Falls back to: Helvetica, Arial, sans-serif
  */
 
 export type TypographyToken = typeof typography;
