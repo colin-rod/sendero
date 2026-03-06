@@ -16,7 +16,7 @@ type HeaderProps = {
   logoVariant?: 'dark' | 'white';
 };
 
-export function Header({ logoVariant = 'white' }: HeaderProps) {
+export function Header({ logoVariant = 'dark' }: HeaderProps) {
   const t = useTranslations('header');
   const isWhiteLogo = logoVariant === 'white';
   const logoSrc = isWhiteLogo ? '/Logo White.svg' : '/Logo Dark.svg';
@@ -33,7 +33,7 @@ export function Header({ logoVariant = 'white' }: HeaderProps) {
       </a>
 
       <header className="absolute top-0 left-0 z-50 w-full bg-transparent">
-        <div className="flex h-[85px] max-w-[1200px] mx-auto px-8 gap-6 items-center justify-between">
+        <div className="flex h-[85px] w-full px-8 gap-6 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"

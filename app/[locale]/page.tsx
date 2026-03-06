@@ -28,7 +28,7 @@ export default function HomePage() {
           {/* Content */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
             <Image
-              src="/Logo White.svg"
+              src="/Logo Dark.svg"
               alt="Sendero"
               width={96}
               height={96}
