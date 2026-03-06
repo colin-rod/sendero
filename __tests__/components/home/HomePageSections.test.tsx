@@ -41,26 +41,18 @@ jest.mock('@/components/features/trailsMap/NewsletterHeroSection', () => ({
   NewsletterHeroSection: () => <div data-testid="newsletter-hero" />,
 }));
 
-jest.mock('@/components/features/trailsMap/TrailsMapSection', () => ({
-  TrailsMapSection: () => <div data-testid="trails-map" />,
-}));
-
 describe('HomePage section flow', () => {
-  it('renders newsletter hero between the tour grid and trails map', () => {
+  it('renders newsletter hero after the tour grid', () => {
     render(<HomePage />);
 
     const tourGrid = screen.getByTestId('tour-grid');
     const newsletterHero = screen.getByTestId('newsletter-hero');
-    const trailsMap = screen.getByTestId('trails-map');
     const DOCUMENT_POSITION_FOLLOWING = 4;
 
     expect(
       tourGrid.compareDocumentPosition(newsletterHero) & DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
-    expect(
-      newsletterHero.compareDocumentPosition(trailsMap) & DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy();
 
-    expect(screen.queryByTestId('trail-routes-collage-section')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('trails-map')).not.toBeInTheDocument();
   });
 });

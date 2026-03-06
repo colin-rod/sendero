@@ -8,7 +8,6 @@ import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
-import { TrailsMapSection } from '@/components/features/trailsMap/TrailsMapSection';
 import { NewsletterHeroSection } from '@/components/features/trailsMap/NewsletterHeroSection';
 
 export default function HomePage() {
@@ -157,21 +156,6 @@ export default function HomePage() {
         <ScrollReveal>
           <NewsletterHeroSection />
         </ScrollReveal>
-
-        {/* Trails Map Section - full-bleed, no wrapper */}
-        <TrailsMapSection
-          trails={[
-            { name: 'Sendero del Tigre', gpxPath: '/gpx/sendero-del-tigre.gpx' },
-            { name: 'Sendero del Café', gpxPath: '/gpx/sendero-del-cafe.gpx' },
-            { name: 'Sendero del Agua', gpxPath: '/gpx/sendero-del-agua.gpx' },
-            { name: 'Sendero del Cacao', gpxPath: '/gpx/sendero-del-cacao.gpx' },
-            { name: 'Sendero del Volcán', gpxPath: '/gpx/sendero-del-volcan.gpx' },
-            { name: 'Sendero del Páramo', gpxPath: '/gpx/sendero-del-paramo.gpx' },
-            { name: 'Sendero de la Guadua', gpxPath: '/gpx/sendero-de-la-guadua.gpx' },
-            { name: 'Sendero del Oro', gpxPath: '/gpx/sendero-del-oro.gpx' },
-            { name: 'Sendero Luminoso', gpxPath: '/gpx/sendero-luminoso.gpx' },
-          ]}
-        />
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
