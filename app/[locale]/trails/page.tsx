@@ -49,7 +49,7 @@ export default async function TrailsPage({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="py-20 md:py-32">

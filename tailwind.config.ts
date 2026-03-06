@@ -17,29 +17,37 @@ const config: Config = {
         primary: colors.primary,
         accent: colors.accent,
         honey: colors.honey,
+        riverGreen: colors.riverGreen,
+        goldYellow: colors.goldYellow,
+        white: colors.white,
         background: colors.background,
         foreground: colors.foreground,
         muted: colors.muted,
         border: colors.border,
-        gray: colors.gray, // Add gray scale from Figma
+        gray: colors.gray,
         error: colors.error,
         success: colors.success,
         warning: colors.warning,
         info: colors.info,
       },
 
-      // Font family
+      // Font family — Helvetica Neue system font (from Figma)
       fontFamily: {
-        sans: ['var(--font-work-sans)', 'sans-serif'],
+        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
+        aboreto: ['var(--font-aboreto)', 'serif'],
       },
 
-      // Custom typography sizes from Figma (November 2024)
+      // Custom typography sizes — Updated from Figma Desktop/Mobile/Tablet tokens (2025)
       fontSize: {
-        'h1': ['3rem', { fontWeight: '700' }], // 48px - text-5xl, bold
-        'h2': ['2.25rem', { fontWeight: '700' }], // 36px - text-4xl, bold
-        'h3': ['1.5rem', { fontWeight: '500' }], // 24px - text-2xl, medium
-        'body': ['1rem', { lineHeight: '1rem', fontWeight: '400' }], // 16px - text-base, normal, leading-4
+        'display': ['4rem', { fontWeight: '700' }], // 64px desktop - new
+        'h1': ['3rem', { fontWeight: '700' }], // 48px desktop (40px mobile)
+        'h2': ['2rem', { fontWeight: '700' }], // 32px - updated from 36px
+        'h3': ['1.75rem', { fontWeight: '500' }], // 28px desktop (24px mobile)
+        'body': ['1rem', { lineHeight: '1rem', fontWeight: '400' }], // 16px - Body Standard
+        'body-em': ['1rem', { fontWeight: '700' }], // 16px - Body Emphasised
+        'body-small': ['0.625rem', { fontWeight: '400' }], // 10px - Body Small
+        'button-label': ['1rem', { fontWeight: '500' }], // 16px - Button Label
         'label': ['0.75rem', { fontWeight: '600' }], // 12px - text-xs, semibold
       },
 

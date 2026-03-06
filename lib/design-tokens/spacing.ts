@@ -74,10 +74,21 @@ export const spacing = {
   },
 
   container: {
-    // Container horizontal padding
-    mobile: '1rem', // 16px (px-4)
-    tablet: '1.5rem', // 24px (px-6)
-    desktop: '2rem', // 32px (px-8)
+    // Container horizontal padding — updated desktop to match Figma padding-left-right
+    mobile: '1.5rem', // 24px (px-6)
+    tablet: '2.5rem', // 40px (px-10)
+    desktop: '4rem', // 64px (px-16)
+  },
+
+  // Figma responsive padding system (Desktop/Mobile/Tablet tokens, 2025)
+  padding: {
+    leftRight: { mobile: '1.5rem', tablet: '2.5rem', desktop: '4rem' }, // 24/40/64px
+    xl: { mobile: '3rem', tablet: '3.5rem', desktop: '4rem' }, // 48/56/64px
+    l: { mobile: '2rem', tablet: '2rem', desktop: '3rem' }, // 32/32/48px
+    ml: { mobile: '1.5rem', tablet: '1.5rem', desktop: '2rem' }, // 24/24/32px
+    m: { mobile: '1.5rem', tablet: '1.5rem', desktop: '1.5rem' }, // 24/24/24px
+    s: { mobile: '1rem', tablet: '1rem', desktop: '1rem' }, // 16/16/16px
+    xs: { mobile: '0.5rem', tablet: '0.5rem', desktop: '0.5rem' }, // 8/8/8px
   },
 
   formField: {

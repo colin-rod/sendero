@@ -35,7 +35,7 @@
     "discoverTrails": "TRAILS ENTDECKEN"
   },
   "heroIntro": {
-    "subtitle": "Begib Dich auf beeindruckende Radtouren – fein kuratiert, um die Menschen, Kultur und Natur der kolumbianischen Kaffeeregion in ihrer ganzen Vielfalt zu entdecken."
+    "subtitle": "Begib dich auf eindrucksvolle Radtouren, sorgfältig kuratiert, um die Menschen und die Natur der kolumbianischen Kaffeekulturlandschaft in ihrer ganzen Vielfalt zu entdecken."
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
@@ -90,6 +90,7 @@
     "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer.",
     "becomeAPioneer": "Werde Pionier:in",
     "nextDate": "Nächsten Termin: 28.11 – 04.12. 2026",
+    "ctaPrompt": "kommst du mit?",
     "joinButton": "TEILNEHMEN"
   },
   "form": {
@@ -162,33 +163,18 @@
     "invalidSubject": "Ungültiges Betreff ausgewählt"
   },
   "footer": {
-    "brandName": "Sendero Bike Trails",
-    "trails": {
-      "heading": "Routen",
-      "overview": "Überblick",
-      "experiences": "Erlebnisse",
-      "designYourTrails": "Gestalte deine Trails"
-    },
-    "about": {
-      "heading": "Über uns",
-      "aLifeInBetween": "Ein Leben dazwischen",
-      "faqs": "Häufig gestellte Fragen"
-    },
-    "contact": {
-      "heading": "Kontakt",
-      "phone": "+49 17631470193",
-      "email": "info@senderobiketrails.com"
-    },
+    "brandName": "sendero bike trails",
+    "tagline": "Achtsam auf zwei Rädern reisen. Eine Kultur zum Eintauchen.",
     "social": {
       "followUs": "Folge uns",
-      "twitter": "Folge uns auf X",
       "instagram": "Folge uns auf Instagram",
-      "youtube": "Abonniere uns auf YouTube",
-      "linkedin": "Vernetze dich auf LinkedIn",
-      "strava": "Folge uns auf Strava",
       "komoot": "Folge uns auf Komoot"
     },
-    "copyright": "Alle Rechte vorbehalten."
+    "legal": {
+      "heading": "Rechtliches",
+      "imprint": "Imprint",
+      "privacy": "Datenschutz"
+    }
   },
   "thankYou": {
     "heading": "Du bist auf der Liste!",
@@ -663,16 +649,63 @@
     }
   },
   "tourGrid": {
+    "heading": "Mehr als Radwege.",
+    "subheading": "Pfade, die Leben verbinden.",
     "cards": {
-      "tigre": "Sendero del Tigre",
-      "cafe": "Sendero del Café",
-      "agua": "Sendero del Agua",
-      "cacao": "Sendero del Cacao",
-      "volcan": "Sendero del Volcán",
-      "paramo": "Sendero del Páramo",
-      "guadua": "Sendero de la Guadua",
-      "oro": "Sendero del Oro",
-      "luminoso": "Sendero Luminoso"
+      "tigre": {
+        "name": "Sendero del Tigre",
+        "description": "Malerische und zugängliche Landschleifen. Mittagessen auf einem ökologischen Bauernhof.",
+        "distance": "20 km",
+        "difficulty": "Leicht"
+      },
+      "cafe": {
+        "name": "Sendero del Café",
+        "description": "Hügelige Kaffeelandschaften. Privates Specialty-Coffee-Erlebnis am Ursprungsort.",
+        "distance": "27 km",
+        "difficulty": "Mittel"
+      },
+      "agua": {
+        "name": "Sendero del Agua",
+        "description": "Gebirgsflüsse und Andenwälder. Besuch eines ländlichen Innovationslabors.",
+        "distance": "30 km",
+        "difficulty": "Mittel"
+      },
+      "cacao": {
+        "name": "Sendero del Cacao",
+        "description": "Warme Talstraßen. Kakao-Erlebnis und handwerkliche Schokoladenverkostung.",
+        "distance": "37 km",
+        "difficulty": "Mittel"
+      },
+      "volcan": {
+        "name": "Sendero del Volcán",
+        "description": "Vulkanisches Gelände und steile Anstiege. Fahrt durch Wachspalmen-Wälder.",
+        "distance": "45 km",
+        "difficulty": "Schwer"
+      },
+      "paramo": {
+        "name": "Sendero del Páramo",
+        "description": "Kompakter Hochgebirgsaufstieg. Dünne Luft, rohe Schönheit, weitläufige Stille.",
+        "distance": "32 km",
+        "difficulty": "Schwer"
+      },
+      "guadua": {
+        "name": "Sendero de la Guadua",
+        "description": "Bambuswälder zur goldenen Stunde. Fahrt in die Klänge des Abends.",
+        "distance": "20 km",
+        "difficulty": "Leicht"
+      },
+      "oro": {
+        "name": "Sendero del Oro",
+        "description": "Farbenfrohe Pueblos und goldene Routen. Durch lebendiges Kulturerbe radeln.",
+        "distance": "38 km",
+        "difficulty": "Mittel"
+      },
+      "luminoso": {
+        "name": "Sendero Luminoso",
+        "description": "Sanftes Landterrain. Langsames Radfahren und nächtliches Eintauchen.",
+        "distance": "32 km",
+        "difficulty": "Leicht"
+      }
     }
   },
   "trailsMap": {

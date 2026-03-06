@@ -54,13 +54,31 @@ export const colors = {
     950: '#372016',
   },
 
-  // Neutral Colors - Updated from Figma
-  background: '#f1f1f1', // Background from Figma
-  foreground: '#1b1b1b', // Gravel Black from Figma
+  // Brand Colors (from Figma Light Mode tokens)
+  riverGreen: {
+    50: '#e8f4f2',
+    100: '#c5e3df',
+    200: '#9ecfc9',
+    300: '#72bab2',
+    400: '#4da89f',
+    500: '#1e6a62', // River Green from Figma
+    600: '#1a5e57',
+    700: '#154f49',
+    800: '#10403b',
+    900: '#0b2f2b',
+  },
+
+  // goldYellow alias (canonical brand token from Figma)
+  goldYellow: '#fff0bb',
+
+  // Neutral Colors - Updated from Figma (Light Mode tokens, 2025)
+  background: '#f2f2f2', // BKG from Figma
+  foreground: '#232323', // Carbon Dark / Text Dark from Figma
+  white: '#ffffff',
 
   muted: {
-    DEFAULT: '#f1f1f1', // Background from Figma
-    foreground: '#616161', // Steel Gray from Figma
+    DEFAULT: '#f2f2f2', // BKG from Figma
+    foreground: '#a9a9a9', // Steel Gray from Figma
   },
 
   border: '#e2e8f0',
@@ -68,16 +86,16 @@ export const colors = {
   // Grays from Figma
   gray: {
     50: '#f9f9f9',
-    100: '#f1f1f1', // Background from Figma
+    100: '#f2f2f2', // BKG from Figma
     200: '#e5e5e5',
     300: '#d4d4d4',
-    400: '#a3a3a3',
+    400: '#a9a9a9', // Steel Gray from Figma
     500: '#737373',
-    600: '#616161', // Steel Gray from Figma
-    700: '#494949', // Medium gray
+    600: '#a9a9a9', // Steel Gray from Figma
+    700: '#494949',
     800: '#262626',
-    900: '#1b1b1b', // Gravel Black from Figma
-    950: '#0a0a0a',
+    900: '#232323', // Carbon Dark / Text Dark from Figma
+    950: '#1b1b1b', // Gravel Black from Figma
   },
 
   // Semantic Colors
@@ -129,13 +147,17 @@ export const colors = {
  * - Use for: Special CTA buttons, hero buttons, discover/explore actions
  * - Variants: 500 (default), 600 (hover), 700 (active), 50-100 (light backgrounds)
  *
- * GRAVEL BLACK (#1b1b1b)
+ * CARBON DARK (#232323) — was Gravel Black
  * - Use for: Primary text, headings, dark backgrounds
  * - Access via: foreground or gray.900
  *
- * STEEL GRAY (#616161)
- * - Use for: Secondary text, muted text, borders
+ * STEEL GRAY (#a9a9a9) — updated from #616161
+ * - Use for: Secondary text, muted text, placeholders
  * - Access via: muted.foreground or gray.600
+ *
+ * RIVER GREEN (#1e6a62) — new brand color
+ * - Use for: Eco/nature accents, secondary CTAs, icons, tags
+ * - Access via: riverGreen.500 (or 50-900 scale)
  *
  * BACKGROUND (#f1f1f1)
  * - Use for: Page backgrounds, card backgrounds

@@ -69,7 +69,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'honey-outline':
         'bg-transparent text-honey-600 border-2 border-honey-500 hover:bg-honey-50 active:bg-honey-100 disabled:border-honey-300 disabled:text-honey-300 focus-visible:ring-honey-500',
       'hero-cta':
-        'bg-honey-500 bg-[#c4963f] text-accent-50 text-[#fffaf3] hover:bg-honey-600 hover:bg-[#a97935] active:bg-honey-700 active:bg-[#8c5e2d] shadow-md disabled:bg-honey-300 disabled:text-honey-100 focus-visible:ring-honey-500 rounded-full uppercase font-semibold tracking-wide',
+        "bg-[#1E6A62] text-[#FFF0BB] hover:bg-[#264C43] active:bg-[#1CB042] focus-visible:ring-[#1E6A62] rounded-[20px] h-[42px] min-w-[140px] px-6 py-3 gap-2 uppercase font-medium text-[14px] leading-[18px] tracking-[0.06em] font-['Helvetica_Neue']",
     };
 
     // Size classes
@@ -79,7 +79,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: 'px-6 py-3 text-lg',
     };
 
-    const combinedClassName = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+    const resolvedSizeClasses = variant === 'hero-cta' ? '' : sizeClasses[size];
+    const combinedClassName = `${baseClasses} ${variantClasses[variant]} ${resolvedSizeClasses} ${className}`.trim();
 
     return (
       <button

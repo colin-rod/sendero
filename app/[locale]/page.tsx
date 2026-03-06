@@ -18,7 +18,7 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
         <section className="relative h-screen">
@@ -28,7 +28,7 @@ export default function HomePage() {
           {/* Content */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
             <Image
-              src="/logo@2x.png"
+              src="/Logo Dark.svg"
               alt="Sendero"
               width={96}
               height={96}
@@ -60,63 +60,92 @@ export default function HomePage() {
 
         {/* Tour Grid Section */}
         <ScrollReveal>
-          <section className="bg-white py-16 md:py-24">
+          <section className="bg-gray-100 py-16 md:py-24">
             <Container>
               <TourGrid
+                heading={tTourGrid('heading')}
+                subheading={tTourGrid('subheading')}
                 cards={[
                   {
                     id: 'tigre',
-                    title: tTourGrid('cards.tigre'),
+                    title: tTourGrid('cards.tigre.name'),
                     imageSrc: '/tours/sendero-tigre.png',
-                    imageAlt: tTourGrid('cards.tigre'),
+                    imageAlt: tTourGrid('cards.tigre.name'),
+                    description: tTourGrid('cards.tigre.description'),
+                    distance: tTourGrid('cards.tigre.distance'),
+                    difficulty: tTourGrid('cards.tigre.difficulty'),
                   },
                   {
                     id: 'cafe',
-                    title: tTourGrid('cards.cafe'),
+                    title: tTourGrid('cards.cafe.name'),
                     imageSrc: '/tours/sendero_cafe.jpg',
-                    imageAlt: tTourGrid('cards.cafe'),
+                    imageAlt: tTourGrid('cards.cafe.name'),
+                    description: tTourGrid('cards.cafe.description'),
+                    distance: tTourGrid('cards.cafe.distance'),
+                    difficulty: tTourGrid('cards.cafe.difficulty'),
                   },
                   {
                     id: 'agua',
-                    title: tTourGrid('cards.agua'),
+                    title: tTourGrid('cards.agua.name'),
                     imageSrc: '/tours/sendero_agua.jpg',
-                    imageAlt: tTourGrid('cards.agua'),
+                    imageAlt: tTourGrid('cards.agua.name'),
+                    description: tTourGrid('cards.agua.description'),
+                    distance: tTourGrid('cards.agua.distance'),
+                    difficulty: tTourGrid('cards.agua.difficulty'),
                   },
                   {
                     id: 'cacao',
-                    title: tTourGrid('cards.cacao'),
+                    title: tTourGrid('cards.cacao.name'),
                     imageSrc: '/tours/sendero_cacao.jpg',
-                    imageAlt: tTourGrid('cards.cacao'),
+                    imageAlt: tTourGrid('cards.cacao.name'),
+                    description: tTourGrid('cards.cacao.description'),
+                    distance: tTourGrid('cards.cacao.distance'),
+                    difficulty: tTourGrid('cards.cacao.difficulty'),
                   },
                   {
                     id: 'volcan',
-                    title: tTourGrid('cards.volcan'),
+                    title: tTourGrid('cards.volcan.name'),
                     imageSrc: '/tours/sendero_volcan.jpeg',
-                    imageAlt: tTourGrid('cards.volcan'),
+                    imageAlt: tTourGrid('cards.volcan.name'),
+                    description: tTourGrid('cards.volcan.description'),
+                    distance: tTourGrid('cards.volcan.distance'),
+                    difficulty: tTourGrid('cards.volcan.difficulty'),
                   },
                   {
                     id: 'paramo',
-                    title: tTourGrid('cards.paramo'),
+                    title: tTourGrid('cards.paramo.name'),
                     imageSrc: '/tours/sendero_paramo.jpg',
-                    imageAlt: tTourGrid('cards.paramo'),
+                    imageAlt: tTourGrid('cards.paramo.name'),
+                    description: tTourGrid('cards.paramo.description'),
+                    distance: tTourGrid('cards.paramo.distance'),
+                    difficulty: tTourGrid('cards.paramo.difficulty'),
                   },
                   {
                     id: 'guadua',
-                    title: tTourGrid('cards.guadua'),
+                    title: tTourGrid('cards.guadua.name'),
                     imageSrc: '/tours/sendero_guadua.webp',
-                    imageAlt: tTourGrid('cards.guadua'),
+                    imageAlt: tTourGrid('cards.guadua.name'),
+                    description: tTourGrid('cards.guadua.description'),
+                    distance: tTourGrid('cards.guadua.distance'),
+                    difficulty: tTourGrid('cards.guadua.difficulty'),
                   },
                   {
                     id: 'oro',
-                    title: tTourGrid('cards.oro'),
+                    title: tTourGrid('cards.oro.name'),
                     imageSrc: '/tours/sendero_oro.png',
-                    imageAlt: tTourGrid('cards.oro'),
+                    imageAlt: tTourGrid('cards.oro.name'),
+                    description: tTourGrid('cards.oro.description'),
+                    distance: tTourGrid('cards.oro.distance'),
+                    difficulty: tTourGrid('cards.oro.difficulty'),
                   },
                   {
                     id: 'luminoso',
-                    title: tTourGrid('cards.luminoso'),
+                    title: tTourGrid('cards.luminoso.name'),
                     imageSrc: '/tours/sendero_luminoso.jpg',
-                    imageAlt: tTourGrid('cards.luminoso'),
+                    imageAlt: tTourGrid('cards.luminoso.name'),
+                    description: tTourGrid('cards.luminoso.description'),
+                    distance: tTourGrid('cards.luminoso.distance'),
+                    difficulty: tTourGrid('cards.luminoso.difficulty'),
                   },
                 ]}
               />
@@ -162,6 +191,9 @@ export default function HomePage() {
               </h2>
               <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                 {tWaitlist('nextDate')}
+              </p>
+              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                {tWaitlist('ctaPrompt')}
               </p>
 
               {/* Simplified email form */}

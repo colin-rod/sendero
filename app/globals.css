@@ -10,8 +10,8 @@
   }
 
   body {
-    background-color: rgb(241 241 241); /* #f1f1f1 - Background from Figma */
-    color: rgb(27 27 27); /* #1b1b1b - Gravel Black from Figma */
+    background-color: rgb(242 242 242); /* #f2f2f2 - BKG from Figma */
+    color: rgb(35 35 35); /* #232323 - Carbon Dark / Text Dark from Figma */
     font-feature-settings: 'rlig' 1, 'calt' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -31,21 +31,39 @@
 }
 
 @layer components {
-  /* Typography from Figma Design System (November 2024) */
+  /* Typography from Figma Design System (updated 2025) */
+  .text-display {
+    font-size: 4rem; /* 64px desktop */
+    font-weight: 700;
+  }
+
   .text-h1 {
-    @apply text-5xl font-bold;
+    font-size: 3rem; /* 48px — scales to 40px on mobile via responsive utilities */
+    font-weight: 700;
   }
 
   .text-h2 {
-    @apply text-4xl font-bold;
+    font-size: 2rem; /* 32px — updated from 36px per Figma */
+    font-weight: 700;
   }
 
   .text-h3 {
-    @apply text-2xl font-medium;
+    font-size: 1.5rem; /* 24px mobile base — 28px on desktop via responsive utilities */
+    font-weight: 500;
   }
 
   .text-body {
     @apply text-base font-normal leading-4;
+  }
+
+  .text-body-em {
+    font-size: 1rem; /* 16px Body Emphasised */
+    font-weight: 700;
+  }
+
+  .text-body-small {
+    font-size: 0.625rem; /* 10px Body Small */
+    font-weight: 400;
   }
 
   /* Feedback Modal Category Buttons */
@@ -79,21 +97,21 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 80rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem; /* 24px mobile — Figma padding-left-right */
+    padding-right: 1.5rem;
   }
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2.5rem; /* 40px tablet */
+      padding-right: 2.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 4rem; /* 64px desktop */
+      padding-right: 4rem;
     }
   }
 
@@ -127,7 +145,7 @@
 
   .btn-primary {
     background-color: rgb(226 183 31); /* #e2b71f - Primary from Figma */
-    color: rgb(27 27 27); /* #1b1b1b - Gravel Black for contrast */
+    color: rgb(35 35 35); /* #232323 - Carbon Dark for contrast */
   }
 
   .btn-primary:hover {
@@ -135,8 +153,8 @@
   }
 
   .btn-secondary {
-    background-color: rgb(255 240 187); /* #fff0bb - Secondary from Figma */
-    color: rgb(27 27 27); /* #1b1b1b - Gravel Black */
+    background-color: rgb(255 240 187); /* #fff0bb - Gold Yellow from Figma */
+    color: rgb(35 35 35); /* #232323 - Carbon Dark */
   }
 
   .btn-secondary:hover {
@@ -170,7 +188,7 @@
   }
 
   .input::placeholder {
-    color: rgb(97 97 97); /* #616161 - Steel Gray from Figma */
+    color: rgb(169 169 169); /* #a9a9a9 - Steel Gray from Figma */
   }
 
   .input:focus-visible {
@@ -202,7 +220,7 @@
   }
 
   .textarea::placeholder {
-    color: rgb(97 97 97); /* #616161 - Steel Gray from Figma */
+    color: rgb(169 169 169); /* #a9a9a9 - Steel Gray from Figma */
   }
 
   .textarea:focus-visible {
@@ -264,7 +282,7 @@
     z-index: 999;
     padding: 1rem 1.5rem;
     background-color: rgb(226 183 31); /* #e2b71f - Primary */
-    color: rgb(27 27 27); /* #1b1b1b - Gravel Black */
+    color: rgb(35 35 35); /* #232323 - Carbon Dark */
     text-decoration: none;
     border-radius: 0.375rem;
   }
