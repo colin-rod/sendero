@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { supabase } from '@/lib/supabase/client';
 import { validateContactForm } from '@/lib/utils/contactValidation';
 import { generateContactEmail } from '@/lib/email/contactEmail';
-import type { ContactFormData, ApiSuccessResponse, ApiErrorResponse, ContactSubmissionInsert } from '@/lib/types/database';
+import type { ContactFormData, ApiSuccessResponse, ApiErrorResponse } from '@/lib/types/database';
 
 // Initialize Resend only if API key is available
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
@@ -35,34 +34,6 @@ export async function POST(
 
     // Type-safe after validation
     const formData = body as ContactFormData;
-
-    // Prepare data for Supabase insert
-    const insertData: ContactSubmissionInsert = {
-      email: formData.email.toLowerCase().trim(),
-      name: formData.name.trim(),
-      subject: formData.subject || null,
-      message: formData.message.trim(),
-      locale: locale,
-    };
-
-    // Insert into Supabase
-    // Note: We don't select the ID because RLS policy blocks selects for anon users
-    const { error } = await supabase
-      .from('contact_submissions')
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      .insert(insertData as any);
-
-    // Handle errors
-    if (error) {
-      console.error('Supabase error:', error);
-
-      // Generic error response
-      const errorResponse: ApiErrorResponse = {
-        success: false,
-        error: 'Failed to save your message. Please try again.',
-      };
-      return NextResponse.json(errorResponse, { status: 500 });
-    }
 
     // Send email notification via Resend (if configured)
     if (resend) {
