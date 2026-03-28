@@ -48,10 +48,10 @@ export default function HomePage() {
         <ScrollReveal>
           <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
-              <h2 className="text-5xl font-bold text-white font-['Work_Sans']">
+              <h2 className="text-5xl font-bold font-['Work_Sans'] text-[#e2b71f]">
                 {tHeroIntro('heading')}
               </h2>
-              <p className="text-5xl font-light text-white font-['Work_Sans']">
+              <p className="text-5xl font-light font-['Work_Sans'] text-[#9ecfc9]">
                 {tHeroIntro('subheading')}
               </p>
             </div>
@@ -77,8 +77,6 @@ export default function HomePage() {
           <section className="bg-gray-100 py-16 md:py-24">
             <Container>
               <TourGrid
-                heading={tTourGrid('heading')}
-                subheading={tTourGrid('subheading')}
                 cards={[
                   {
                     id: 'tigre',
