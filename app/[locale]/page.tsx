@@ -46,12 +46,26 @@ export default function HomePage() {
 
         {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="flex h-[454px] flex-col items-center justify-center gap-[34px] self-stretch bg-[#232323] px-16 pb-[58px] pt-16">
-            <div className="text-center max-w-4xl">
-              <p
-                className="text-[32px] leading-[40px] font-medium text-center font-['Helvetica Neue']"
-                style={{ color: 'var(--Text-Text-White, #FFF)' }}
-              >
+          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-16 py-20">
+            <div className="text-center max-w-4xl flex flex-col gap-2">
+              <h2 className="text-5xl font-bold text-white font-['Work_Sans']">
+                {tHeroIntro('heading')}
+              </h2>
+              <p className="text-5xl font-light text-white font-['Work_Sans']">
+                {tHeroIntro('subheading')}
+              </p>
+            </div>
+            <svg width="72" height="16" viewBox="0 0 72 16" fill="none" aria-hidden="true">
+              <path
+                d="M2 10 C10 2, 18 14, 26 10 C34 6, 42 2, 50 10 C58 14, 66 6, 70 10"
+                stroke="#e2b71f"
+                strokeWidth="2"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+            <div className="text-center max-w-2xl">
+              <p className="text-lg leading-relaxed font-normal text-center font-['Work_Sans'] text-white/90">
                 {tHeroIntro('subtitle')}
               </p>
             </div>
