@@ -153,7 +153,7 @@ export default function HomePage() {
                   {
                     id: 'luminoso',
                     title: tTourGrid('cards.luminoso.name'),
-                    imageSrc: '/tours/sendero_luminoso.jpg',
+                    imageSrc: '/tours/sendero_luminoso.png',
                     imageAlt: tTourGrid('cards.luminoso.name'),
                     description: tTourGrid('cards.luminoso.description'),
                     distance: tTourGrid('cards.luminoso.distance'),

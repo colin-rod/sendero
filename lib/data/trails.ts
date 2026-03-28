@@ -245,7 +245,7 @@ export const trailSummaries: TrailSummary[] = [
     difficulty: 'Easy',
     distance: 0,
     duration: '',
-    thumbnail: '/tours/sendero_luminoso.jpg',
+    thumbnail: '/tours/sendero_luminoso.png',
     comingSoon: true,
     priority: 9,
   },
