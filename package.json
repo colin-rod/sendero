@@ -27,6 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "@supabase/supabase-js": "^2.82.0",
+    "@swc/helpers": "0.5.20",
     "@types/leaflet": "^1.9.21",
     "@vercel/analytics": "^1.5.0",
     "iron-session": "^8.0.4",
