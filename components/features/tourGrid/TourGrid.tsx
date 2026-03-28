@@ -1,15 +1,27 @@
 'use client';
 
-const ELEMENT_SVG: Record<string, string> = {
-  tigre:    '/svg/trails/elements/element-tierra.svg',
-  cafe:     '/svg/trails/elements/element-cafe.svg',
-  agua:     '/svg/trails/elements/element-agua.svg',
-  cacao:    '/svg/trails/elements/element-cacao.svg',
-  volcan:   '/svg/trails/elements/element-volcan.svg',
-  paramo:   '/svg/trails/elements/element-paramo.svg',
-  guadua:   '/svg/trails/elements/element-guadua.svg',
-  oro:      '/svg/trails/elements/element-oro.svg',
-  luminoso: '/svg/trails/elements/element-luminoso.svg',
+const PATH_SVG: Record<string, string> = {
+  tigre:    '/svg/trails/elements/path-tigre.svg',
+  cafe:     '/svg/trails/elements/path-cafe.svg',
+  agua:     '/svg/trails/elements/path-agua.svg',
+  cacao:    '/svg/trails/elements/path-cacao.svg',
+  volcan:   '/svg/trails/elements/path-volcan.svg',
+  paramo:   '/svg/trails/elements/path-paramo.svg',
+  guadua:   '/svg/trails/elements/path-guadua.svg',
+  oro:      '/svg/trails/elements/path-oro.svg',
+  luminoso: '/svg/trails/elements/path-luminoso.svg',
+};
+
+const HOVER_TEXT: Record<string, string> = {
+  agua:     'Bergflüsse und Andenwälder.\nNah an uralten Geschichten.',
+  cacao:    'Warme Wege im Kakaotal.\nRadeln und Kakaohandwerk erleben.',
+  guadua:   'Bambuswälder zur goldenen Stunde.\nIn die Klänge des Abends eintauchen.',
+  paramo:   'Kompakter Hochgebirgsanstieg.\nDünne Luft, rohe Schönheit, weite Stille.',
+  volcan:   'Vulkanisches Gelände.\nFahren zwischen hohen Wachspalmen.',
+  tigre:    'Malerische Rundstrecken.\nBio-Hof Mittagessen.',
+  cafe:     'Kaffeelandschaften.\nSpezialitätenkaffee am Ursprung.',
+  oro:      'Farbenfrohe Pueblos.\nLebendiges Kulturerbe erfahren.',
+  luminoso: 'Sanftes Landgelände.\nRuhiges Radfahren bei Nacht.',
 };
 
 interface TourGridCardData {
@@ -28,62 +40,47 @@ interface TourGridProps {
   subheading?: string;
 }
 
-function FlipCard({ id, title, imageSrc, description, distance, difficulty }: TourGridCardData) {
+function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
   const backgroundStyle = {
     background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
 
-  const elementSrc = ELEMENT_SVG[id] ?? '/svg/trails/elements/element-tierra.svg';
+  const pathSrc = PATH_SVG[id] ?? '/svg/trails/elements/path-tigre.svg';
+  const hoverText = HOVER_TEXT[id] ?? '';
+  const [line1, line2] = hoverText.split('\n');
+
+  // Split "Sendero del Tigre" → prefix "SENDERO DEL" + name "TIGRE"
+  const delIndex = title.toLowerCase().indexOf(' del ');
+  const prefix = delIndex !== -1 ? title.slice(0, delIndex + 5).toUpperCase() : '';
+  const trailName = delIndex !== -1 ? title.slice(delIndex + 5).toUpperCase() : title.toUpperCase();
 
   return (
-    <div className="flip-card h-[476px] min-w-[300px] w-[330px] cursor-pointer">
-      <div className="flip-card-inner">
-        {/* Front */}
-        <div
-          className="flip-card-front flex flex-col justify-end items-center"
-          style={backgroundStyle}
-        >
-          <div className="flex flex-col items-center px-6 pb-9">
-            <p
-              className="text-center font-sans text-h3 font-medium leading-[32px] tracking-[0.12em]"
-              style={{ color: '#F2F2F2' }}
-            >
-              {title}
-            </p>
-          </div>
-        </div>
+    <div className="group relative aspect-square w-full overflow-hidden cursor-pointer">
+      {/* Photo background */}
+      <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
-        {/* Back */}
-        <div
-          className="flip-card-back flex flex-col justify-center items-center px-6 gap-8"
-          style={{ backgroundColor: '#FFFFFF' }}
-        >
-          {/* Thread symbol illustration */}
-          <img
-            src={elementSrc}
-            alt=""
-            className="w-[180px] h-[190px] object-contain"
-            aria-hidden="true"
-          />
+      {/* Default: title at bottom */}
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-9">
+        <p className="text-center font-sans text-h3 font-medium leading-[32px] tracking-[0.12em] text-[#F2F2F2]">
+          {prefix && <span className="font-medium">{prefix}</span>}
+          {prefix && ' '}
+          <span className="font-bold">{trailName}</span>
+        </p>
+      </div>
 
-          {/* Text content */}
-          <div className="flex flex-col items-center gap-3 w-full">
-            <p className="text-center font-['Helvetica_Neue'] text-[20px] font-semibold text-[#1D1D1F]">
-              {title}
-            </p>
-            {description && (
-              <p className="text-center text-sm text-[#616161] leading-snug">
-                {description}
-              </p>
-            )}
-            {(distance || difficulty) && (
-              <p className="text-center text-sm text-[#616161]">
-                {[distance, difficulty].filter(Boolean).join(' | ')}
-              </p>
-            )}
-          </div>
+      {/* Hover overlay */}
+      <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-6 px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <img
+          src={pathSrc}
+          alt=""
+          className="w-32 h-32 object-contain"
+          aria-hidden="true"
+        />
+        <div className="flex flex-col items-center gap-1 text-center">
+          {line1 && <p className="text-body text-gray-600">{line1}</p>}
+          {line2 && <p className="text-body text-gray-600">{line2}</p>}
         </div>
       </div>
     </div>
@@ -99,18 +96,9 @@ export function TourGrid({ cards, heading, subheading }: TourGridProps) {
           {subheading && <p className="text-body">{subheading}</p>}
         </div>
       )}
-      <div className="flex flex-wrap gap-10 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {cards.map((card) => (
-          <FlipCard
-            key={card.id}
-            id={card.id}
-            title={card.title}
-            imageSrc={card.imageSrc}
-            imageAlt={card.imageAlt}
-            description={card.description}
-            distance={card.distance}
-            difficulty={card.difficulty}
-          />
+          <TourCard key={card.id} {...card} />
         ))}
       </div>
     </div>

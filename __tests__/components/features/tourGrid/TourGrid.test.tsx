@@ -32,21 +32,20 @@ describe('TourGrid', () => {
     expect(screen.getByText('Paths that connect lives.')).toBeInTheDocument();
   });
 
-  it('applies design-system typography classes to the front card title', () => {
-    render(
-      <TourGrid
-        cards={cards}
-        heading="More than bike trails."
-        subheading="Paths that connect lives."
-      />
-    );
+  it('renders the trail name in the card title', () => {
+    render(<TourGrid cards={cards} />);
+    expect(screen.getByText('TIGRE')).toBeInTheDocument();
+  });
 
-    const titleCandidates = screen.getAllByText('Sendero del Tigre');
-    const frontTitle = titleCandidates.find((node) =>
-      node.classList.contains('text-h3')
-    );
+  it('renders the hover overlay text for a known card id', () => {
+    render(<TourGrid cards={cards} />);
+    expect(screen.getByText('Malerische Rundstrecken.')).toBeInTheDocument();
+    expect(screen.getByText('Bio-Hof Mittagessen.')).toBeInTheDocument();
+  });
 
-    expect(frontTitle).toBeDefined();
-    expect(frontTitle).toHaveClass('font-sans', 'text-h3', 'font-medium');
+  it('renders a 2-column grid container', () => {
+    const { container } = render(<TourGrid cards={cards} />);
+    const grid = container.querySelector('.grid');
+    expect(grid).toHaveClass('grid-cols-1', 'md:grid-cols-2', 'gap-10');
   });
 });
