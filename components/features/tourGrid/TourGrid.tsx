@@ -24,6 +24,8 @@ interface TourGridCardData {
 
 interface TourGridProps {
   cards: TourGridCardData[];
+  heading?: string;
+  subheading?: string;
 }
 
 function FlipCard({ id, title, imageSrc, description, distance, difficulty }: TourGridCardData) {
@@ -88,9 +90,15 @@ function FlipCard({ id, title, imageSrc, description, distance, difficulty }: To
   );
 }
 
-export function TourGrid({ cards }: TourGridProps) {
+export function TourGrid({ cards, heading, subheading }: TourGridProps) {
   return (
     <div className="space-y-10">
+      {(heading || subheading) && (
+        <div className="text-center space-y-2">
+          {heading && <h2 className="text-h2 font-bold">{heading}</h2>}
+          {subheading && <p className="text-body">{subheading}</p>}
+        </div>
+      )}
       <div className="flex flex-wrap gap-10 justify-center">
         {cards.map((card) => (
           <FlipCard
