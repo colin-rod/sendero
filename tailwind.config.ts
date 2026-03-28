@@ -18,6 +18,7 @@ const config: Config = {
         accent: colors.accent,
         honey: colors.honey,
         riverGreen: colors.riverGreen,
+        riverForest: colors.riverForest,
         goldYellow: colors.goldYellow,
         white: colors.white,
         background: colors.background,

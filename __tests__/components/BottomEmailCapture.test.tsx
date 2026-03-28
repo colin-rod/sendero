@@ -44,7 +44,7 @@ describe('BottomEmailCapture', () => {
     render(<BottomEmailCapture />);
 
     const joinButton = screen.getByRole('button', { name: 'JOIN' });
-    expect(joinButton).toHaveClass('bg-[#1E6A62]', 'text-[#FFF0BB]');
+    expect(joinButton).toHaveClass('bg-primary-500', 'text-accent-400');
   });
 
   it('keeps email input and submit action in the same row after expanding', async () => {
