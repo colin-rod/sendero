@@ -37,6 +37,7 @@ const config: Config = {
         sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
         aboreto: ['var(--font-aboreto)', 'serif'],
+        'work-sans': ['var(--font-work-sans)', 'sans-serif'],
       },
 
       // Custom typography sizes — Updated from Figma Desktop/Mobile/Tablet tokens (2025)

@@ -48,10 +48,10 @@ export default function HomePage() {
         <ScrollReveal>
           <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
-              <h2 className="text-5xl font-bold font-['Work_Sans'] text-[#ffffff]">
+              <h2 className="text-5xl font-bold font-work-sans text-[#ffffff]">
                 {tHeroIntro('heading')}
               </h2>
-              <p className="text-5xl font-light font-['Work_Sans'] text-[#ffffff]">
+              <p className="text-5xl font-light font-work-sans text-[#ffffff]">
                 {tHeroIntro('subheading')}
               </p>
             </div>
@@ -65,7 +65,7 @@ export default function HomePage() {
               />
             </svg>
             <div className="text-center max-w-2xl">
-              <p className="text-lg leading-relaxed font-normal text-center font-['Work_Sans'] text-white/90">
+              <p className="text-lg leading-relaxed font-normal text-center font-work-sans text-white/90">
                 {tHeroIntro('subtitle')}
               </p>
             </div>
