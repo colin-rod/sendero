@@ -79,9 +79,9 @@
   }
 
   .feedback-category-button[data-selected="true"] {
-    border-color: #e2b71f; /* primary-500 - golden yellow */
-    background-color: #fffbeb; /* primary-50 - light golden */
-    color: #a87c16; /* primary-700 - dark golden */
+    border-color: #1e6a62; /* primary-500 - river green */
+    background-color: #e8f4f2; /* primary-50 - light green */
+    color: #154f49; /* primary-700 - dark green */
   }
 
   .text-label {
@@ -135,7 +135,7 @@
   .btn:focus-visible {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(226 183 31); /* #e2b71f - Primary */
+    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(30 106 98); /* #1e6a62 - Primary */
   }
 
   .btn:disabled {
@@ -144,12 +144,12 @@
   }
 
   .btn-primary {
-    background-color: rgb(226 183 31); /* #e2b71f - Primary from Figma */
-    color: rgb(35 35 35); /* #232323 - Carbon Dark for contrast */
+    background-color: rgb(30 106 98); /* #1e6a62 - River Green Primary */
+    color: rgb(255 255 255); /* white - better contrast on dark green */
   }
 
   .btn-primary:hover {
-    background-color: rgb(202 154 27); /* #ca9a1b - Darker golden yellow */
+    background-color: rgb(26 94 87); /* #1a5e57 - Darker river green */
   }
 
   .btn-secondary {
@@ -194,7 +194,7 @@
   .input:focus-visible {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(226 183 31); /* #e2b71f - Primary */
+    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(30 106 98); /* #1e6a62 - Primary */
   }
 
   .input:disabled {
@@ -226,7 +226,7 @@
   .textarea:focus-visible {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(226 183 31); /* #e2b71f - Primary */
+    box-shadow: 0 0 0 2px rgb(255 255 255), 0 0 0 4px rgb(30 106 98); /* #1e6a62 - Primary */
   }
 
   .textarea:disabled {
@@ -281,8 +281,8 @@
     left: -9999px;
     z-index: 999;
     padding: 1rem 1.5rem;
-    background-color: rgb(226 183 31); /* #e2b71f - Primary */
-    color: rgb(35 35 35); /* #232323 - Carbon Dark */
+    background-color: rgb(30 106 98); /* #1e6a62 - Primary */
+    color: rgb(255 255 255); /* white */
     text-decoration: none;
     border-radius: 0.375rem;
   }

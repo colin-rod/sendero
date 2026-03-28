@@ -9,19 +9,18 @@
  */
 
 export const colors = {
-  // Primary Brand Colors (Golden Yellow - Warmth, Energy, Adventure)
+  // Primary Brand Colors (River Green - Nature, Eco, Adventure)
   primary: {
-    50: '#fffbeb',
-    100: '#fff0bb', // Secondary from Figma
-    200: '#fde68a',
-    300: '#fcd34d',
-    400: '#fbbf24',
-    500: '#e2b71f', // Main brand color from Figma
-    600: '#ca9a1b',
-    700: '#a87c16',
-    800: '#865f11',
-    900: '#6b4a0e',
-    950: '#422006',
+    50: '#e8f4f2',
+    100: '#c5e3df',
+    200: '#9ecfc9',
+    300: '#72bab2',
+    400: '#4da89f',
+    500: '#1e6a62', // River Green — main brand color
+    600: '#1a5e57',
+    700: '#154f49',
+    800: '#10403b',
+    900: '#0b2f2b',
   },
 
   // Secondary/Accent Colors (Light Cream - Soft, Warm accent)
@@ -67,6 +66,9 @@ export const colors = {
     800: '#10403b',
     900: '#0b2f2b',
   },
+
+  // River Forest (from Figma primary-river-forest token)
+  riverForest: '#264c43',
 
   // goldYellow alias (canonical brand token from Figma)
   goldYellow: '#fff0bb',
@@ -135,11 +137,11 @@ export const colors = {
 /**
  * Color usage guidelines:
  *
- * PRIMARY (Golden Yellow - #e2b71f)
+ * PRIMARY (River Green - #1e6a62)
  * - Use for: Primary buttons, brand elements, key CTAs, highlights
  * - Variants: 500 (default), 600 (hover), 100 (light backgrounds), 50 (subtle backgrounds)
  *
- * ACCENT (Light Cream - #fff0bb)
+ * ACCENT / SECONDARY (Golden Yellow - #fff0bb)
  * - Use for: Secondary buttons, soft backgrounds, warm accents
  * - Variants: 400 (default), 500 (hover)
  *
@@ -158,6 +160,10 @@ export const colors = {
  * RIVER GREEN (#1e6a62) — new brand color
  * - Use for: Eco/nature accents, secondary CTAs, icons, tags
  * - Access via: riverGreen.500 (or 50-900 scale)
+ *
+ * RIVER FOREST (#264c43) — darker forest brand color
+ * - Use for: Deeper eco/nature accents, hover states on river green elements
+ * - Access via: riverForest
  *
  * BACKGROUND (#f1f1f1)
  * - Use for: Page backgrounds, card backgrounds
