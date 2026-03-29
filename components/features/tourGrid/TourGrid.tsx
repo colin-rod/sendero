@@ -71,16 +71,16 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
       </div>
 
       {/* Hover overlay */}
-      <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-6 px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-8 px-6 py-[54px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <img
           src={pathSrc}
           alt=""
-          className="w-32 h-32 object-contain"
+          className="w-[45%] aspect-square object-contain"
           aria-hidden="true"
         />
         <div className="flex flex-col items-center gap-1 text-center">
-          {line1 && <p className="text-body text-gray-600">{line1}</p>}
-          {line2 && <p className="text-body text-gray-600">{line2}</p>}
+          {line1 && <p className="text-sm text-foreground">{line1}</p>}
+          {line2 && <p className="text-sm text-foreground">{line2}</p>}
         </div>
       </div>
     </div>
