@@ -26,9 +26,9 @@ export function TrailCard({
   thumbnail,
   comingSoon = false,
 }: TrailCardProps) {
-  const delIndex = name.toLowerCase().indexOf(' del ');
-  const prefix = delIndex !== -1 ? name.slice(0, delIndex + 5).toUpperCase() : null;
-  const trailName = delIndex !== -1 ? name.slice(delIndex + 5).toUpperCase() : name.toUpperCase();
+  const lastSpaceIndex = name.lastIndexOf(' ');
+  const prefix = lastSpaceIndex !== -1 ? name.slice(0, lastSpaceIndex).toUpperCase() : null;
+  const trailName = lastSpaceIndex !== -1 ? name.slice(lastSpaceIndex + 1).toUpperCase() : name.toUpperCase();
 
   const cardContent = (
     <div
