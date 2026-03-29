@@ -26,6 +26,10 @@ export function TrailCard({
   thumbnail,
   comingSoon = false,
 }: TrailCardProps) {
+  const delIndex = name.toLowerCase().indexOf(' del ');
+  const prefix = delIndex !== -1 ? name.slice(0, delIndex + 5).toUpperCase() : null;
+  const trailName = delIndex !== -1 ? name.slice(delIndex + 5).toUpperCase() : name.toUpperCase();
+
   const cardContent = (
     <div
       className="relative flex flex-col justify-end items-center w-full h-[476px] rounded-sm overflow-hidden bg-cover bg-center"
@@ -34,8 +38,10 @@ export function TrailCard({
       }}
     >
       <div className="flex flex-col items-center px-6 py-9 w-full">
-        <h3 className="font-aboreto text-[28px] leading-8 tracking-[0.12em] text-center text-[#F2F2F7] uppercase">
-          {name}
+        <h3 className="font-aboreto text-[28px] leading-8 tracking-[0.12em] text-center text-[#F2F2F7]">
+          {prefix && <span className="font-normal">{prefix}</span>}
+          {prefix && ' '}
+          <span className="font-bold">{trailName}</span>
         </h3>
       </div>
     </div>
