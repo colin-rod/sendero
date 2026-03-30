@@ -167,19 +167,16 @@ export default function HomePage() {
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
-          <section className="relative py-20 md:py-32">
+          <section className="relative py-40 md:py-56">
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image
-                src="/3284064ce8a2fa82bd062d005dfb0213d5959283.jpg"
+                src="/Hero Newsletter.png"
                 alt=""
                 fill
                 className="object-cover"
               />
             </div>
-
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/70" />
 
             {/* Content */}
             <Container className="relative z-10 text-center">

@@ -24,7 +24,7 @@ export default function QRPage() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-lg mx-auto gap-8">
         <Image
-          src="/Logo White.svg"
+          src="/Logo Dark.svg"
           alt="Sendero"
           width={80}
           height={80}
