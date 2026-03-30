@@ -35,7 +35,7 @@ export default function HomePage() {
               className="mb-8"
               priority
             />
-            <h1 className="text-h1 text-white max-w-3xl">
+            <h1 className="text-2xl md:text-h1 text-white max-w-3xl">
               {tHero('title')}
             </h1>
           </div>
