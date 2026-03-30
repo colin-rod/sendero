@@ -66,7 +66,7 @@ describe('Button', () => {
       const button = screen.getByRole('button');
       expect(button).toHaveClass(
         'bg-primary-500',
-        'hover:bg-primary-600',
+        'hover:bg-riverForest',
         'active:bg-primary-700',
         'text-accent-400',
         'rounded-[20px]',
