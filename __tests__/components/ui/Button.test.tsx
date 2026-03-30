@@ -65,10 +65,10 @@ describe('Button', () => {
       render(<Button variant="hero-cta">Hero CTA</Button>);
       const button = screen.getByRole('button');
       expect(button).toHaveClass(
-        'bg-primary-500',
-        'hover:bg-riverForest',
-        'active:bg-primary-700',
-        'text-accent-400',
+        'bg-[#1e6a62]',
+        'hover:bg-[#264c43]',
+        'active:bg-[#154f49]',
+        'text-[#fff0bb]',
         'rounded-[20px]',
         'uppercase',
         'font-medium',
