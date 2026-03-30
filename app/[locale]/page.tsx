@@ -8,7 +8,7 @@ import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
-import { NewsletterHeroSection } from '@/components/features/trailsMap/NewsletterHeroSection';
+
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
@@ -163,10 +163,6 @@ export default function HomePage() {
               />
             </Container>
           </section>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <NewsletterHeroSection />
         </ScrollReveal>
 
         {/* Simplified Waitlist Section - Bottom of Page */}
