@@ -90,9 +90,9 @@
   "waitlist": {
     "heading": "Únete a la Lista de Espera",
     "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura.",
-    "becomeAPioneer": "Conviértete en Pionero/a",
-    "nextDate": "Próxima Fecha: 28 nov – 4 dic, 2026",
-    "ctaPrompt": "¿vienes?",
+    "becomeAPioneer": "¿Te identificas con esto?",
+    "nextDate": "",
+    "ctaPrompt": "Únete. Te mantendremos al tanto.",
     "joinButton": "UNIRSE"
   },
   "form": {
@@ -714,5 +714,17 @@
     "heading": "Nuestra Red de Rutas",
     "subtitle": "9 rutas artesanales por la Región Cafetera de Colombia, cada una un viaje único.",
     "legendLabel": "Rutas"
+  },
+  "qr": {
+    "headline": "Descubre la Región Cafetera de Colombia",
+    "subheadline": "Únete a la lista de espera para tours guiados de bici y senderismo"
+  },
+  "impressum": {
+    "title": "Aviso Legal",
+    "metaTitle": "Aviso Legal — Sendero"
+  },
+  "datenschutz": {
+    "title": "Política de Privacidad",
+    "metaTitle": "Política de Privacidad — Sendero"
   }
 }

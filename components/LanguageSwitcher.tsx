@@ -43,17 +43,18 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-[47px] h-8 rounded-lg p-2 text-foreground transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        className="flex items-center gap-1.5 rounded-lg border-2 border-[#1B1B1B] px-2.5 py-1 text-sm font-medium text-foreground transition-colors hover:bg-[#1B1B1B]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
         <Image
           src="/globe.svg"
-          alt="Language"
-          width={20}
-          height={20}
-          className="w-5 h-5"
+          alt=""
+          width={16}
+          height={16}
+          className="w-4 h-4"
         />
+        <span>{localeLabels[locale]}</span>
       </button>
 
       {/* Dropdown Menu */}

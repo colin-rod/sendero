@@ -53,10 +53,10 @@ export function Footer() {
           {/* Column 3: Legal */}
           <div className="flex flex-col gap-3">
             <span className="text-base font-bold text-white">{t('legal.heading')}</span>
-            <Link href="#" className="text-base font-bold text-white">
+            <Link href="/impressum" className="text-base font-normal text-white">
               {t('legal.imprint')}
             </Link>
-            <Link href="#" className="text-base font-bold text-white">
+            <Link href="/datenschutz" className="text-base font-normal text-white">
               {t('legal.privacy')}
             </Link>
           </div>

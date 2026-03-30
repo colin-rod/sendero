@@ -90,9 +90,9 @@
   "waitlist": {
     "heading": "Join the Waitlist",
     "description": "Be the first to know when tours open up. No spam, just adventure.",
-    "becomeAPioneer": "Become a Pioneer",
-    "nextDate": "Next Date: Nov 28 – Dec 4, 2026",
-    "ctaPrompt": "Are You Coming?",
+    "becomeAPioneer": "Does this feel like you?",
+    "nextDate": "",
+    "ctaPrompt": "Join us. We'll keep you in the loop.",
     "joinButton": "JOIN"
   },
   "form": {
@@ -714,5 +714,17 @@
     "heading": "Our Trail Network",
     "subtitle": "9 handcrafted routes through Colombia's Coffee Region, each one a unique journey.",
     "legendLabel": "Trail routes"
+  },
+  "qr": {
+    "headline": "Discover Colombia's Coffee Region",
+    "subheadline": "Join the waitlist for guided bike & hike tours"
+  },
+  "impressum": {
+    "title": "Impressum",
+    "metaTitle": "Impressum — Sendero"
+  },
+  "datenschutz": {
+    "title": "Privacy Policy",
+    "metaTitle": "Privacy Policy — Sendero"
   }
 }
