@@ -1,11 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroVideo() {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    videoRef.current?.play().catch(() => {});
+  }, []);
 
   if (hasError) {
     // Fallback to static image if video fails to load
@@ -22,19 +27,20 @@ export default function HeroVideo() {
 
   return (
     <>
-      {/* Poster image - fades out when video is ready */}
+      {/* Poster image - always visible on mobile, fades out on md+ when video is ready */}
       <Image
         src="/hero-poster.png"
         alt="Coffee Region landscape"
         fill
         className={`object-cover transition-opacity duration-1000 ${
-          isVideoReady ? 'opacity-0' : 'opacity-100'
+          isVideoReady ? 'md:opacity-0' : 'opacity-100'
         }`}
         priority
       />
 
-      {/* Video element - fades in when ready to play */}
+      {/* Video element - hidden on mobile (19MB too heavy), visible on md+ */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
@@ -43,7 +49,7 @@ export default function HeroVideo() {
         poster="/hero-poster.png"
         onCanPlay={() => setIsVideoReady(true)}
         onError={() => setHasError(true)}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+        className={`hidden md:block absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-100' : 'opacity-0'
         }`}
       >

@@ -35,7 +35,7 @@ export default function HomePage() {
               className="mb-8"
               priority
             />
-            <h1 className="text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-3xl">
+            <h1 className="text-h1 text-white max-w-3xl">
               {tHero('title')}
             </h1>
           </div>
@@ -48,10 +48,10 @@ export default function HomePage() {
         <ScrollReveal>
           <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
-              <h2 className="text-h2 font-bold font-work-sans text-[#ffffff]">
+              <h2 className="text-xl md:text-h2 font-bold font-work-sans text-[#ffffff]">
                 {tHeroIntro('heading')}
               </h2>
-              <p className="text-h2 font-light font-work-sans text-[#ffffff]">
+              <p className="text-xl md:text-h2 font-light font-work-sans text-[#ffffff]">
                 {tHeroIntro('subheading')}
               </p>
             </div>
@@ -183,13 +183,13 @@ export default function HomePage() {
 
             {/* Content */}
             <Container className="relative z-10 text-center">
-              <h2 className="text-h2 text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <h2 className="text-h2 text-white mb-4">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] ">
                 {tWaitlist('nextDate')}
               </p>
-              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] ">
                 {tWaitlist('ctaPrompt')}
               </p>
 

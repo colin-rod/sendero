@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 const PATH_SVG: Record<string, string> = {
   tigre:    '/svg/trails/elements/path-tigre.svg',
   cafe:     '/svg/trails/elements/path-cafe.svg',
@@ -41,6 +43,7 @@ interface TourGridProps {
 }
 
 function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
+  const [isActive, setIsActive] = useState(false);
   const backgroundStyle = {
     background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
     backgroundSize: 'cover',
@@ -57,7 +60,10 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
   const trailName = delIndex !== -1 ? title.slice(delIndex + 5).toUpperCase() : title.toUpperCase();
 
   return (
-    <div className="group relative aspect-square w-full overflow-hidden cursor-pointer">
+    <div
+      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
+      onClick={() => setIsActive((prev) => !prev)}
+    >
       {/* Photo background */}
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
@@ -71,7 +77,7 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
       </div>
 
       {/* Hover overlay */}
-      <div className="absolute inset-0 bg-white flex flex-col items-center justify-center gap-8 px-6 py-[54px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className={`absolute inset-0 bg-white flex flex-col items-center justify-center gap-8 px-6 py-[54px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isActive ? 'opacity-100' : ''}`}>
         <img
           src={pathSrc}
           alt=""
