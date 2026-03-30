@@ -57,6 +57,7 @@ export default [
         HTMLInputElement: 'readonly',
         HTMLSelectElement: 'readonly',
         HTMLSpanElement: 'readonly',
+        HTMLVideoElement: 'readonly',
         IntersectionObserver: 'readonly',
         Response: 'readonly',
         KeyboardEvent: 'readonly',
