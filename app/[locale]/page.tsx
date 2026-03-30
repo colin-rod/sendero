@@ -171,7 +171,7 @@ export default function HomePage() {
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image
-                src="/Hero Newsletter.png"
+                src="/hero-newsletter.png"
                 alt=""
                 fill
                 className="object-cover"
