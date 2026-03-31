@@ -32,9 +32,9 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
         {t('skipToContent')}
       </a>
 
-      <header className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${scrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${scrolled ? 'bg-[#F2F2F2] shadow-sm' : 'bg-transparent'}`}>
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex pt-[34px] pb-5 gap-6 items-center justify-between">
+          <div className="flex py-[34px] gap-6 items-center justify-between">
             {/* Logo */}
             <Link
               href="/"

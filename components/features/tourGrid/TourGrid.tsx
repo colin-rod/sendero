@@ -14,18 +14,6 @@ const PATH_SVG: Record<string, string> = {
   luminoso: '/svg/trails/elements/path-luminoso.svg',
 };
 
-const HOVER_TEXT: Record<string, string> = {
-  agua:     'Bergflüsse und Andenwälder.\nNah an uralten Geschichten.',
-  cacao:    'Warme Wege im Kakaotal.\nRadeln und Kakaohandwerk erleben.',
-  guadua:   'Bambuswälder zur goldenen Stunde.\nIn die Klänge des Abends eintauchen.',
-  paramo:   'Kompakter Hochgebirgsanstieg.\nDünne Luft, rohe Schönheit, weite Stille.',
-  volcan:   'Vulkanisches Gelände.\nFahren zwischen hohen Wachspalmen.',
-  tigre:    'Malerische Rundstrecken.\nBio-Hof Mittagessen.',
-  cafe:     'Kaffeelandschaften.\nSpezialitätenkaffee am Ursprung.',
-  oro:      'Farbenfrohe Pueblos.\nLebendiges Kulturerbe erfahren.',
-  luminoso: 'Sanftes Landgelände.\nRuhiges Radfahren bei Nacht.',
-};
-
 interface TourGridCardData {
   id: string;
   title: string;
@@ -42,7 +30,7 @@ interface TourGridProps {
   subheading?: string;
 }
 
-function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
+function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardData) {
   const [isActive, setIsActive] = useState(false);
   const backgroundStyle = {
     background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
@@ -51,8 +39,11 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
   };
 
   const pathSrc = PATH_SVG[id] ?? '/svg/trails/elements/path-tigre.svg';
-  const hoverText = HOVER_TEXT[id] ?? '';
-  const [line1, line2] = hoverText.split('\n');
+  const dotIndex = description ? description.indexOf('. ') : -1;
+  const line1 = description
+    ? (dotIndex !== -1 ? description.slice(0, dotIndex + 1) : description)
+    : '';
+  const line2 = description && dotIndex !== -1 ? description.slice(dotIndex + 2) : '';
 
   // Split on last word: prefix is everything before, trailName is the last word
   const lastSpaceIndex = title.lastIndexOf(' ');

@@ -13,6 +13,7 @@ const cards = [
     title: 'Sendero del Tigre',
     imageSrc: '/tours/sendero-tigre.png',
     imageAlt: 'Sendero del Tigre',
+    description: 'Scenic and accessible rural loops. Organic Farm Lunch.',
   },
 ];
 
@@ -37,10 +38,10 @@ describe('TourGrid', () => {
     expect(screen.getByText('TIGRE')).toBeInTheDocument();
   });
 
-  it('renders the hover overlay text for a known card id', () => {
+  it('renders the hover overlay text from the description prop', () => {
     render(<TourGrid cards={cards} />);
-    expect(screen.getByText('Malerische Rundstrecken.')).toBeInTheDocument();
-    expect(screen.getByText('Bio-Hof Mittagessen.')).toBeInTheDocument();
+    expect(screen.getByText('Scenic and accessible rural loops.')).toBeInTheDocument();
+    expect(screen.getByText('Organic Farm Lunch.')).toBeInTheDocument();
   });
 
   it('renders a 2-column grid container', () => {
