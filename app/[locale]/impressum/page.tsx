@@ -26,7 +26,7 @@ export default function ImpressumPage() {
               <h1 className="text-h1 font-bold text-foreground">Impressum</h1>
 
               {/* Content */}
-              <div className="flex flex-col gap-6 text-base text-foreground leading-relaxed">
+              <div className="flex flex-col gap-6 text-body text-foreground leading-relaxed">
 
                 <p>Angaben gemäß § 5 TMG</p>
 

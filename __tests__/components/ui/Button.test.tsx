@@ -73,14 +73,14 @@ describe('Button', () => {
         'uppercase',
         'font-medium',
         'tracking-[0.06em]',
-        'text-[14px]',
-        'leading-[18px]',
+        'text-caption',
+        'leading-tight',
         'min-w-[140px]',
         'h-[42px]',
         'px-6',
         'py-3',
         'gap-2',
-        "font-['Helvetica_Neue']"
+        'font-sans'
       );
     });
   });

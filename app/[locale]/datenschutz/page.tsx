@@ -26,7 +26,7 @@ export default function DatenschutzPage() {
               <h1 className="text-h1 font-bold text-foreground">Datenschutzerklärung</h1>
 
               {/* Content */}
-              <div className="flex flex-col gap-6 text-base text-foreground leading-relaxed">
+              <div className="flex flex-col gap-6 text-body text-foreground leading-relaxed">
 
                 <div className="flex flex-col gap-2">
                   <p className="font-bold">Allgemeine Hinweise</p>

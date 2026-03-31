@@ -23,7 +23,7 @@ export function Footer() {
               height={48}
               className="h-12 w-12"
             />
-            <div className="text-base font-bold leading-6 text-white">
+            <div className="text-body-em leading-6 text-white">
               <p>{t('brandName')}</p>
               <p className="mt-4 whitespace-pre-line">{t('tagline')}</p>
             </div>
@@ -31,7 +31,7 @@ export function Footer() {
 
           {/* Column 2: Social */}
           <div className="flex flex-col gap-[23px]">
-            <span className="text-base font-bold text-white">{t('social.followUs')}</span>
+            <span className="text-body-em text-white">{t('social.followUs')}</span>
             <div className="flex items-center gap-[25px]">
               <a
                 href="https://www.instagram.com/sendero_bike_trails/"
@@ -52,11 +52,11 @@ export function Footer() {
 
           {/* Column 3: Legal */}
           <div className="flex flex-col gap-3">
-            <span className="text-base font-bold text-white">{t('legal.heading')}</span>
-            <Link href="/impressum" className="text-base font-normal text-white">
+            <span className="text-body-em text-white">{t('legal.heading')}</span>
+            <Link href="/impressum" className="text-body text-white">
               {t('legal.imprint')}
             </Link>
-            <Link href="/datenschutz" className="text-base font-normal text-white">
+            <Link href="/datenschutz" className="text-body text-white">
               {t('legal.privacy')}
             </Link>
           </div>

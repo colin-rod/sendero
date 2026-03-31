@@ -20,7 +20,6 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
   const t = useTranslations('header');
   const isWhiteLogo = logoVariant === 'white';
   const logoSrc = isWhiteLogo ? '/Logo White.svg' : '/Logo Dark.svg';
-  const brandTextColor = isWhiteLogo ? '#ffffff' : '#232323';
 
   return (
     <>
@@ -48,17 +47,7 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
               className="h-12 w-12 flex-none"
               priority
             />
-            <span
-              style={{
-                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                fontWeight: 500,
-                fontSize: '14px',
-                lineHeight: '17px',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                color: brandTextColor,
-              }}
-            >
+            <span className={`text-caption font-medium leading-tight tracking-[0.06em] uppercase ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}>
               Sendero<br />Bike Trails
             </span>
           </Link>

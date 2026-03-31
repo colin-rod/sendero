@@ -55,7 +55,7 @@ export default async function TrailsPage({
         <section className="py-20 md:py-32">
           <Container>
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-3xl md:text-5xl font-bold mb-6">{t('title')}</h1>
+              <h1 className="text-h1 mb-6">{t('title')}</h1>
               <p className="text-h3 text-muted-foreground mb-8">{t('subtitle')}</p>
               <p className="text-body text-muted-foreground">{t('description')}</p>
             </div>

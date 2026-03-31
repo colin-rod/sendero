@@ -69,7 +69,7 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
 
       {/* Default: title at bottom */}
       <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-9">
-        <p className="text-center font-sans text-h3 font-medium leading-[32px] tracking-[0.12em] text-[#F2F2F2]">
+        <p className="text-center text-h3 font-medium leading-8 tracking-[0.12em] text-[#F2F2F2]">
           {prefix && <span className="font-medium">{prefix}</span>}
           {prefix && ' '}
           <span className="font-bold">{trailName}</span>
@@ -85,8 +85,8 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
           aria-hidden="true"
         />
         <div className="flex flex-col items-center gap-1 text-center">
-          {line1 && <p className="text-sm text-foreground">{line1}</p>}
-          {line2 && <p className="text-sm text-foreground">{line2}</p>}
+          {line1 && <p className="text-caption text-foreground">{line1}</p>}
+          {line2 && <p className="text-caption text-foreground">{line2}</p>}
         </div>
       </div>
     </div>

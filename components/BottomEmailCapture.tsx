@@ -146,7 +146,7 @@ export default function BottomEmailCapture() {
             data-testid="bottom-email-confirmation"
             role="status"
             aria-live="polite"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-[20px] bg-success-500 h-[42px] min-w-[140px] px-6 text-accent-400 uppercase font-medium text-[14px] leading-[18px] tracking-[0.06em] font-['Helvetica_Neue'] shadow-xl"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-[20px] bg-success-500 h-[42px] min-w-[140px] px-6 text-accent-400 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans shadow-xl"
           >
             {t('buttonSent')}
           </div>
@@ -165,7 +165,7 @@ export default function BottomEmailCapture() {
 
       {/* Error Message */}
       {error && (
-        <p className="mt-3 rounded-lg bg-white/95 px-4 py-2 text-sm text-error-500 shadow-lg backdrop-blur-sm">
+        <p className="mt-3 rounded-lg bg-white/95 px-4 py-2 text-caption text-error-500 shadow-lg backdrop-blur-sm">
           {error}
         </p>
       )}
@@ -175,7 +175,7 @@ export default function BottomEmailCapture() {
         <div
           role="status"
           aria-live="polite"
-          className="mt-3 rounded-lg bg-green-500/95 px-6 py-3 text-sm text-white shadow-xl animate-fade-in"
+          className="mt-3 rounded-lg bg-green-500/95 px-6 py-3 text-caption text-white shadow-xl animate-fade-in"
         >
           {t('successMessage')}
         </div>

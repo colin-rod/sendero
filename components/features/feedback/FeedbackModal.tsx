@@ -181,8 +181,8 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
                 />
               </svg>
             </div>
-            <p className="text-2xl font-medium text-success-700">{t('success.title')}</p>
-            <p className="mt-2 text-base text-muted-foreground">{t('success.message')}</p>
+            <p className="text-h3 font-medium text-success-700">{t('success.title')}</p>
+            <p className="mt-2 text-body text-muted-foreground">{t('success.message')}</p>
           </div>
         </DialogContent>
       ) : (
@@ -215,7 +215,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
                         data-selected={isSelected}
                       >
                         <Icon className="h-5 w-5" />
-                        <span className="text-sm font-medium">{t(`categories.${cat}`)}</span>
+                        <span className="text-caption font-medium">{t(`categories.${cat}`)}</span>
                       </button>
                     );
                   })}
@@ -257,7 +257,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
                     {/* File info */}
                     <div className="flex items-center gap-2 rounded-md border border-border bg-muted p-3">
                       <Upload className="h-5 w-5 text-muted-foreground" />
-                      <span className="flex-1 truncate text-sm text-foreground">
+                      <span className="flex-1 truncate text-caption text-foreground">
                         {screenshot.name}
                       </span>
                       <button
@@ -284,7 +284,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
                       className="flex cursor-pointer items-center gap-2 rounded-md border-2 border-dashed border-border bg-muted px-4 py-3 text-muted-foreground transition-colors hover:border-gray-400 hover:bg-gray-100"
                     >
                       <Upload className="h-5 w-5" />
-                      <span className="text-sm">{t('fields.screenshot.placeholder')}</span>
+                      <span className="text-caption">{t('fields.screenshot.placeholder')}</span>
                     </label>
                     <p className="mt-1 text-xs text-muted-foreground">
                       {t('fields.screenshot.hint')}
@@ -308,7 +308,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
 
               {/* General Error */}
               {errors.general && (
-                <div className="rounded-md bg-error-50 p-3 text-sm text-error-700">
+                <div className="rounded-md bg-error-50 p-3 text-caption text-error-700">
                   {errors.general}
                 </div>
               )}

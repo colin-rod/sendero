@@ -128,7 +128,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                 {title}
               </h5>
             )}
-            <div className={title ? 'text-sm' : ''}>
+            <div className={title ? 'text-caption' : ''}>
               {children}
             </div>
           </div>

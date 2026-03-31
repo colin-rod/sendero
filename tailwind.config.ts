@@ -37,7 +37,6 @@ const config: Config = {
         sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
         aboreto: ['var(--font-aboreto)', 'serif'],
-        'work-sans': ['var(--font-work-sans)', 'sans-serif'],
       },
 
       // Custom typography sizes — Updated from Figma Desktop/Mobile/Tablet tokens (2025)
@@ -51,6 +50,7 @@ const config: Config = {
         'body-small': ['0.625rem', { fontWeight: '400' }], // 10px - Body Small
         'button-label': ['1rem', { fontWeight: '500' }], // 16px - Button Label
         'label': ['0.75rem', { fontWeight: '600' }], // 12px - text-xs, semibold
+        'caption': ['0.875rem', { fontWeight: '400', lineHeight: '1.25rem' }], // 14px - helper text, error messages, secondary labels
       },
 
       // Spacing
