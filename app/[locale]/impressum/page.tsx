@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
@@ -5,6 +6,8 @@ import { Link } from '@/lib/i18n/routing';
 import { FaArrowLeft } from 'react-icons/fa6';
 
 export default function ImpressumPage() {
+  const t = useTranslations('impressum');
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header logoVariant="dark" />
@@ -17,18 +20,18 @@ export default function ImpressumPage() {
               <Link
                 href="/"
                 className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-foreground text-foreground hover:bg-foreground hover:text-white transition-colors"
-                aria-label="Back to home"
+                aria-label={t('backAriaLabel')}
               >
                 <FaArrowLeft className="w-4 h-4" />
               </Link>
 
               {/* Title */}
-              <h1 className="text-h1 font-bold text-foreground">Impressum</h1>
+              <h1 className="text-h1 font-bold text-foreground">{t('title')}</h1>
 
               {/* Content */}
               <div className="flex flex-col gap-6 text-body text-foreground leading-relaxed">
 
-                <p>Angaben gemäß § 5 TMG</p>
+                <p>{t('legalInfo')}</p>
 
                 <div className="flex flex-col gap-1">
                   <p className="font-bold">sendero bike trails</p>
@@ -39,12 +42,12 @@ export default function ImpressumPage() {
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <p className="font-bold">Kontakt</p>
+                  <p className="font-bold">{t('contact')}</p>
                   <p>E-Mail: hello@senderobiketrails.com</p>
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <p className="font-bold">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</p>
+                  <p className="font-bold">{t('responsible')}</p>
                   <p>Julian Perez</p>
                   <p>Pettenkoferstrasse 6</p>
                   <p>10247 Berlin</p>
@@ -52,18 +55,18 @@ export default function ImpressumPage() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Haftung für Inhalte</p>
-                  <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+                  <p className="font-bold">{t('liabilityContentTitle')}</p>
+                  <p>{t('liabilityContentText')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Haftung für Links</p>
-                  <p>Unsere Website enthält ggf. Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr.</p>
+                  <p className="font-bold">{t('liabilityLinksTitle')}</p>
+                  <p>{t('liabilityLinksText')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Urheberrecht</p>
-                  <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
+                  <p className="font-bold">{t('copyrightTitle')}</p>
+                  <p>{t('copyrightText')}</p>
                 </div>
 
               </div>

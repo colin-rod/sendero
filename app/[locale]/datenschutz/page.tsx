@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
@@ -5,6 +6,8 @@ import { Link } from '@/lib/i18n/routing';
 import { FaArrowLeft } from 'react-icons/fa6';
 
 export default function DatenschutzPage() {
+  const t = useTranslations('datenschutz');
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header logoVariant="dark" />
@@ -17,24 +20,24 @@ export default function DatenschutzPage() {
               <Link
                 href="/"
                 className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-foreground text-foreground hover:bg-foreground hover:text-white transition-colors"
-                aria-label="Back to home"
+                aria-label={t('backAriaLabel')}
               >
                 <FaArrowLeft className="w-4 h-4" />
               </Link>
 
               {/* Title */}
-              <h1 className="text-h1 font-bold text-foreground">Datenschutzerklärung</h1>
+              <h1 className="text-h1 font-bold text-foreground">{t('title')}</h1>
 
               {/* Content */}
               <div className="flex flex-col gap-6 text-body text-foreground leading-relaxed">
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Allgemeine Hinweise</p>
-                  <p>Wir freuen uns über dein Interesse an sendero bike trails. Der Schutz deiner persönlichen Daten ist uns wichtig. Im Folgenden informieren wir dich darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte du hast.</p>
+                  <p className="font-bold">{t('generalTitle')}</p>
+                  <p>{t('generalText')}</p>
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <p className="font-bold">Verantwortlicher</p>
+                  <p className="font-bold">{t('controllerTitle')}</p>
                   <p>sendero bike trails</p>
                   <p>Julian Perez</p>
                   <p>Berlin, Deutschland</p>
@@ -42,46 +45,46 @@ export default function DatenschutzPage() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Erhebung und Speicherung personenbezogener Daten</p>
-                  <p>Wir erheben personenbezogene Daten nur, wenn du sie uns freiwillig mitteilst. Auf dieser Website betrifft das insbesondere deine E-Mail-Adresse, wenn du dich über das Formular einträgst.</p>
+                  <p className="font-bold">{t('collectionTitle')}</p>
+                  <p>{t('collectionText')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Zweck der Datenverarbeitung</p>
-                  <p>Wir verwenden deine Daten ausschließlich, um dir Informationen und Updates zu unseren Bike Tours zu senden sowie um dich im Zusammenhang mit deinem Interesse an unseren Angeboten zu kontaktieren.</p>
-                  <p>Die Verarbeitung erfolgt nur auf Grundlage deiner Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.</p>
+                  <p className="font-bold">{t('purposeTitle')}</p>
+                  <p>{t('purposeText1')}</p>
+                  <p>{t('purposeText2')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Speicherung der Daten</p>
-                  <p>Deine Daten werden in einer internen Liste (z. B. Excel) gespeichert und nicht an Dritte weitergegeben.</p>
-                  <p>Wir speichern deine Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder bis du deine Einwilligung widerrufst.</p>
+                  <p className="font-bold">{t('storageTitle')}</p>
+                  <p>{t('storageText1')}</p>
+                  <p>{t('storageText2')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Weitergabe von Daten</p>
-                  <p>Wir geben deine personenbezogenen Daten nicht an Dritte weiter und verkaufen sie nicht.</p>
+                  <p className="font-bold">{t('transferTitle')}</p>
+                  <p>{t('transferText')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Datensicherheit</p>
-                  <p>Wir treffen angemessene technische und organisatorische Maßnahmen, um deine Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.</p>
+                  <p className="font-bold">{t('securityTitle')}</p>
+                  <p>{t('securityText')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Deine Rechte</p>
-                  <p>Du hast jederzeit das Recht auf Auskunft über deine gespeicherten Daten, auf Berichtigung unrichtiger Daten, auf Löschung deiner Daten, auf Einschränkung der Verarbeitung sowie auf Widerruf deiner Einwilligung.</p>
-                  <p>Zur Ausübung deiner Rechte genügt eine E-Mail an: <strong>hello@senderobiketrails.com</strong></p>
+                  <p className="font-bold">{t('rightsTitle')}</p>
+                  <p>{t('rightsText1')}</p>
+                  <p>{t('rightsText2')} <strong>hello@senderobiketrails.com</strong></p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Cookies</p>
-                  <p>Diese Website verwendet keine Cookies oder Tracking-Technologien, die einer Einwilligung bedürfen.</p>
+                  <p className="font-bold">{t('cookiesTitle')}</p>
+                  <p>{t('cookiesText')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <p className="font-bold">Änderungen dieser Datenschutzerklärung</p>
-                  <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an rechtliche Anforderungen oder Änderungen unserer Leistungen anzupassen.</p>
+                  <p className="font-bold">{t('changesTitle')}</p>
+                  <p>{t('changesText')}</p>
                 </div>
 
               </div>

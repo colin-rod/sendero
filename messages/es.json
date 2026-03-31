@@ -721,10 +721,43 @@
   },
   "impressum": {
     "title": "Aviso Legal",
-    "metaTitle": "Aviso Legal — Sendero"
+    "metaTitle": "Aviso Legal — Sendero",
+    "backAriaLabel": "Volver al inicio",
+    "legalInfo": "Información según § 5 TMG",
+    "contact": "Contacto",
+    "responsible": "Responsable del contenido según § 18 párr. 2 MStV",
+    "liabilityContentTitle": "Responsabilidad por el contenido",
+    "liabilityContentText": "El contenido de nuestras páginas ha sido creado con el mayor cuidado. Sin embargo, no podemos garantizar la exactitud, integridad y actualidad del contenido.",
+    "liabilityLinksTitle": "Responsabilidad por enlaces",
+    "liabilityLinksText": "Nuestro sitio web puede contener enlaces a sitios web externos de terceros sobre cuyo contenido no tenemos influencia. No aceptamos ninguna responsabilidad por dicho contenido externo.",
+    "copyrightTitle": "Derechos de autor",
+    "copyrightText": "El contenido y las obras creadas por los operadores del sitio en estas páginas están sujetos a la ley de derechos de autor alemana."
   },
   "datenschutz": {
     "title": "Política de Privacidad",
-    "metaTitle": "Política de Privacidad — Sendero"
+    "metaTitle": "Política de Privacidad — Sendero",
+    "backAriaLabel": "Volver al inicio",
+    "generalTitle": "Notas generales",
+    "generalText": "Agradecemos tu interés en sendero bike trails. La protección de tus datos personales es importante para nosotros. A continuación te informamos sobre qué datos recopilamos, cómo los utilizamos y qué derechos tienes.",
+    "controllerTitle": "Responsable",
+    "collectionTitle": "Recopilación y almacenamiento de datos personales",
+    "collectionText": "Solo recopilamos datos personales cuando nos los proporcionas voluntariamente. En este sitio web, esto se refiere principalmente a tu dirección de correo electrónico cuando te registras mediante el formulario.",
+    "purposeTitle": "Finalidad del tratamiento de datos",
+    "purposeText1": "Utilizamos tus datos exclusivamente para enviarte información y actualizaciones sobre nuestros tours en bicicleta y para contactarte en relación con tu interés en nuestros servicios.",
+    "purposeText2": "El tratamiento se realiza únicamente con base en tu consentimiento conforme al Art. 6 párr. 1 lit. a RGPD.",
+    "storageTitle": "Almacenamiento de datos",
+    "storageText1": "Tus datos se almacenan en una lista interna y no se comparten con terceros.",
+    "storageText2": "Los conservamos solo durante el tiempo necesario para los fines indicados o hasta que retires tu consentimiento.",
+    "transferTitle": "Transferencia de datos",
+    "transferText": "No compartimos ni vendemos tus datos personales a terceros.",
+    "securityTitle": "Seguridad de los datos",
+    "securityText": "Tomamos las medidas técnicas y organizativas adecuadas para proteger tus datos contra pérdidas, uso indebido o acceso no autorizado.",
+    "rightsTitle": "Tus derechos",
+    "rightsText1": "Tienes derecho en cualquier momento a acceder a tus datos almacenados, a corregir datos inexactos, a eliminar tus datos, a limitar el tratamiento y a retirar tu consentimiento.",
+    "rightsText2": "Para ejercer tus derechos, basta con enviar un correo electrónico a:",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Este sitio web no utiliza cookies ni tecnologías de seguimiento que requieran consentimiento.",
+    "changesTitle": "Cambios en esta política de privacidad",
+    "changesText": "Nos reservamos el derecho de adaptar esta política de privacidad cuando sea necesario para cumplir con los requisitos legales o los cambios en nuestros servicios."
   }
 }

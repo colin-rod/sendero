@@ -721,10 +721,43 @@
   },
   "impressum": {
     "title": "Impressum",
-    "metaTitle": "Impressum — Sendero"
+    "metaTitle": "Impressum — Sendero",
+    "backAriaLabel": "Zurück zur Startseite",
+    "legalInfo": "Angaben gemäß § 5 TMG",
+    "contact": "Kontakt",
+    "responsible": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+    "liabilityContentTitle": "Haftung für Inhalte",
+    "liabilityContentText": "Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.",
+    "liabilityLinksTitle": "Haftung für Links",
+    "liabilityLinksText": "Unsere Website enthält ggf. Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr.",
+    "copyrightTitle": "Urheberrecht",
+    "copyrightText": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht."
   },
   "datenschutz": {
-    "title": "Datenschutz",
-    "metaTitle": "Datenschutz — Sendero"
+    "title": "Datenschutzerklärung",
+    "metaTitle": "Datenschutz — Sendero",
+    "backAriaLabel": "Zurück zur Startseite",
+    "generalTitle": "Allgemeine Hinweise",
+    "generalText": "Wir freuen uns über dein Interesse an sendero bike trails. Der Schutz deiner persönlichen Daten ist uns wichtig. Im Folgenden informieren wir dich darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte du hast.",
+    "controllerTitle": "Verantwortlicher",
+    "collectionTitle": "Erhebung und Speicherung personenbezogener Daten",
+    "collectionText": "Wir erheben personenbezogene Daten nur, wenn du sie uns freiwillig mitteilst. Auf dieser Website betrifft das insbesondere deine E-Mail-Adresse, wenn du dich über das Formular einträgst.",
+    "purposeTitle": "Zweck der Datenverarbeitung",
+    "purposeText1": "Wir verwenden deine Daten ausschließlich, um dir Informationen und Updates zu unseren Bike Tours zu senden sowie um dich im Zusammenhang mit deinem Interesse an unseren Angeboten zu kontaktieren.",
+    "purposeText2": "Die Verarbeitung erfolgt nur auf Grundlage deiner Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.",
+    "storageTitle": "Speicherung der Daten",
+    "storageText1": "Deine Daten werden in einer internen Liste gespeichert und nicht an Dritte weitergegeben.",
+    "storageText2": "Wir speichern deine Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder bis du deine Einwilligung widerrufst.",
+    "transferTitle": "Weitergabe von Daten",
+    "transferText": "Wir geben deine personenbezogenen Daten nicht an Dritte weiter und verkaufen sie nicht.",
+    "securityTitle": "Datensicherheit",
+    "securityText": "Wir treffen angemessene technische und organisatorische Maßnahmen, um deine Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.",
+    "rightsTitle": "Deine Rechte",
+    "rightsText1": "Du hast jederzeit das Recht auf Auskunft über deine gespeicherten Daten, auf Berichtigung unrichtiger Daten, auf Löschung deiner Daten, auf Einschränkung der Verarbeitung sowie auf Widerruf deiner Einwilligung.",
+    "rightsText2": "Zur Ausübung deiner Rechte genügt eine E-Mail an:",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "Diese Website verwendet keine Cookies oder Tracking-Technologien, die einer Einwilligung bedürfen.",
+    "changesTitle": "Änderungen dieser Datenschutzerklärung",
+    "changesText": "Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an rechtliche Anforderungen oder Änderungen unserer Leistungen anzupassen."
   }
 }
