@@ -73,7 +73,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
           <img
             src={pathSrc}
             alt=""
-            className="w-[45%] aspect-square object-contain"
+            className="w-[65%] aspect-square object-contain"
             aria-hidden="true"
           />
         </div>
