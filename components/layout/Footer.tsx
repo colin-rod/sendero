@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <footer className="text-white" style={{ backgroundColor: '#1B1B1B' }}>
-      <div className="mx-auto max-w-[1200px] px-16 py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-8">
 
           {/* Column 1: Brand */}

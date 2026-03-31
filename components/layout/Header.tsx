@@ -32,7 +32,8 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
       </a>
 
       <header className="absolute top-0 left-0 z-50 w-full bg-transparent">
-        <div className="flex h-[85px] w-full px-8 gap-6 items-center justify-between">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-[85px] gap-6 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
@@ -54,6 +55,7 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
 
           {/* Language Switcher */}
           <LanguageSwitcher />
+        </div>
         </div>
       </header>
     </>
