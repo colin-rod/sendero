@@ -50,7 +50,7 @@ describe('Footer', () => {
 
   it('renders as a responsive 3-column grid', () => {
     const { container } = render(<Footer />);
-    const layout = container.querySelector('footer > div > div');
+    const layout = container.querySelector('footer > div > div:last-child');
 
     expect(layout).toHaveClass('grid', 'grid-cols-1', 'lg:grid-cols-3');
     expect(layout).not.toHaveClass('flex');
