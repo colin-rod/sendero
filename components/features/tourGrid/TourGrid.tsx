@@ -68,16 +68,18 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
       </div>
 
       {/* Hover overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center justify-center gap-8 px-6 py-[54px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isActive ? 'opacity-100' : ''}`}>
-        <img
-          src={pathSrc}
-          alt=""
-          className="w-[45%] aspect-square object-contain"
-          aria-hidden="true"
-        />
-        <div className="flex flex-col items-center gap-1 text-center">
-          {line1 && <p className="text-body text-foreground">{line1}</p>}
-          {line2 && <p className="text-body text-foreground">{line2}</p>}
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 py-[54px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isActive ? 'opacity-100' : ''}`}>
+        <div className="flex-1 flex items-center justify-center">
+          <img
+            src={pathSrc}
+            alt=""
+            className="w-[45%] aspect-square object-contain"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="flex flex-col items-center gap-1 text-center pb-9">
+          {line1 && <p className="text-body font-bold text-foreground">{line1}</p>}
+          {line2 && <p className="text-body font-normal text-foreground">{line2}</p>}
         </div>
       </div>
     </div>
