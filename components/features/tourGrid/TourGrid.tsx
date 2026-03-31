@@ -54,10 +54,10 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
   const hoverText = HOVER_TEXT[id] ?? '';
   const [line1, line2] = hoverText.split('\n');
 
-  // Split "Sendero del Tigre" → prefix "SENDERO DEL" + name "TIGRE"
-  const delIndex = title.toLowerCase().indexOf(' del ');
-  const prefix = delIndex !== -1 ? title.slice(0, delIndex + 5).toUpperCase() : '';
-  const trailName = delIndex !== -1 ? title.slice(delIndex + 5).toUpperCase() : title.toUpperCase();
+  // Split on last word: prefix is everything before, trailName is the last word
+  const lastSpaceIndex = title.lastIndexOf(' ');
+  const prefix = lastSpaceIndex !== -1 ? title.slice(0, lastSpaceIndex).toUpperCase() : '';
+  const trailName = lastSpaceIndex !== -1 ? title.slice(lastSpaceIndex + 1).toUpperCase() : title.toUpperCase();
 
   return (
     <div
@@ -69,8 +69,8 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
 
       {/* Default: title at bottom */}
       <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-9">
-        <p className="text-center text-h3 font-medium leading-8 tracking-[0.12em] text-[#F2F2F2]">
-          {prefix && <span className="font-medium">{prefix}</span>}
+        <p className="text-center text-h3 font-light leading-8 tracking-[0.12em] text-[#F2F2F2]">
+          {prefix && <span className="font-light">{prefix}</span>}
           {prefix && ' '}
           <span className="font-bold">{trailName}</span>
         </p>
