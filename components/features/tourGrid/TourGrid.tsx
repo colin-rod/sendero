@@ -85,8 +85,8 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
           aria-hidden="true"
         />
         <div className="flex flex-col items-center gap-1 text-center">
-          {line1 && <p className="text-caption text-foreground">{line1}</p>}
-          {line2 && <p className="text-caption text-foreground">{line2}</p>}
+          {line1 && <p className="text-body text-foreground">{line1}</p>}
+          {line2 && <p className="text-body text-foreground">{line2}</p>}
         </div>
       </div>
     </div>

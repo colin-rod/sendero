@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx jest:*)",
+      "Bash(find /Users/julianperez88/Documents/GitHub/sendero-1/app/[locale]/ -name \"*impressum*\" -o -name \"*datenschutz*\" -o -name \"*privacy*\" -o -name \"*legal*\")",
+      "Bash(ls /Users/julianperez88/Documents/GitHub/sendero-1/app/[locale]/)"
+    ],
+    "additionalDirectories": [
+      "/Users/julianperez88/Documents/GitHub/sendero-1/public"
+    ]
+  }
+}
