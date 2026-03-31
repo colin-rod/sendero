@@ -12,51 +12,55 @@ export function Footer() {
   return (
     <footer className="text-white" style={{ backgroundColor: '#1B1B1B' }}>
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+
+        {/* Logo row */}
+        <div className="mb-8">
+          <Image
+            src="/Logo Dark.svg"
+            alt={t('brandName')}
+            width={48}
+            height={48}
+            className="h-12 w-12"
+          />
+        </div>
+
+        {/* 3-column grid */}
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-8">
 
-          {/* Column 1: Brand */}
+          {/* Column 1: Brand name + tagline */}
           <div className="flex max-w-[300px] flex-col gap-4">
-            <Image
-              src="/Logo Dark.svg"
-              alt={t('brandName')}
-              width={48}
-              height={48}
-              className="h-12 w-12"
-            />
-            <div className="text-body-em leading-6 text-white">
+            <div className="text-body leading-6 text-white">
               <p>{t('brandName')}</p>
               <p className="mt-4 whitespace-pre-line">{t('tagline')}</p>
             </div>
           </div>
 
-          {/* Column 2: Social */}
-          <div className="flex flex-col gap-[23px]">
-            <span className="text-body-em text-white">{t('social.followUs')}</span>
-            <div className="flex items-center gap-[25px]">
-              <a
-                href="https://www.instagram.com/sendero_bike_trails/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t('social.instagram')}
-              >
-                <FaInstagram className="h-6 w-6 text-white" aria-hidden="true" />
-              </a>
-              <a
-                href="#"
-                aria-label={t('social.komoot')}
-              >
-                <SiKomoot className="h-6 w-6 text-white" aria-hidden="true" />
-              </a>
-            </div>
+          {/* Column 2: Social icons */}
+          <div className="flex items-center gap-[25px]">
+            <a
+              href="https://www.instagram.com/sendero_bike_trails/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('social.instagram')}
+              className="text-white transition-colors hover:text-[#fff0bb]"
+            >
+              <FaInstagram className="h-6 w-6" aria-hidden="true" />
+            </a>
+            <a
+              href="#"
+              aria-label={t('social.komoot')}
+              className="text-white transition-colors hover:text-[#fff0bb]"
+            >
+              <SiKomoot className="h-6 w-6" aria-hidden="true" />
+            </a>
           </div>
 
-          {/* Column 3: Legal */}
+          {/* Column 3: Legal links */}
           <div className="flex flex-col gap-3">
-            <span className="text-body-em text-white">{t('legal.heading')}</span>
-            <Link href="/impressum" className="text-body text-white">
+            <Link href="/impressum" className="text-body text-white transition-colors hover:text-[#fff0bb]">
               {t('legal.imprint')}
             </Link>
-            <Link href="/datenschutz" className="text-body text-white">
+            <Link href="/datenschutz" className="text-body text-white transition-colors hover:text-[#fff0bb]">
               {t('legal.privacy')}
             </Link>
           </div>

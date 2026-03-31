@@ -61,7 +61,7 @@ function TourCard({ id, title, imageSrc, imageAlt }: TourGridCardData) {
 
   return (
     <div
-      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
+      className="group relative aspect-square w-full overflow-hidden cursor-circled-dot"
       onClick={() => setIsActive((prev) => !prev)}
     >
       {/* Photo background */}

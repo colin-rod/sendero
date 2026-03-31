@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import HeroVideo from '@/components/HeroVideo';
-import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
@@ -27,21 +26,10 @@ export default function HomePage() {
 
           {/* Content */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
-            <Image
-              src="/Logo Dark.svg"
-              alt="Sendero"
-              width={96}
-              height={96}
-              className="mb-8"
-              priority
-            />
             <h1 className="text-h1 text-white max-w-3xl">
               {tHero('title')}
             </h1>
           </div>
-
-          {/* Scroll Indicator */}
-          <ScrollIndicator />
         </section>
 
         {/* Hero Intro Section */}
