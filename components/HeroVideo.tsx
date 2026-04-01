@@ -27,32 +27,33 @@ export default function HeroVideo() {
 
   return (
     <>
-      {/* Poster image - always visible on mobile, fades out on md+ when video is ready */}
+      {/* Poster image - shown while video loads, fades out once video is ready */}
       <Image
         src="/hero-poster.png"
         alt="Coffee Region landscape"
         fill
         className={`object-cover transition-opacity duration-1000 ${
-          isVideoReady ? 'md:opacity-0' : 'opacity-100'
+          isVideoReady ? 'opacity-0' : 'opacity-100'
         }`}
         priority
       />
 
-      {/* Video element - hidden on mobile (19MB too heavy), visible on md+ */}
+      {/* Video element - mobile uses lightweight 796KB version, desktop uses full 1080p */}
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/hero-poster.png"
         onCanPlay={() => setIsVideoReady(true)}
         onError={() => setHasError(true)}
-        className={`hidden md:block absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-100' : 'opacity-0'
         }`}
       >
+        <source media="(max-width: 767px)" src="/flying-over-the-andean-mountans_mobile.mp4" type="video/mp4" />
         <source src="/flying-over-the-andean-mountans_optimized.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
