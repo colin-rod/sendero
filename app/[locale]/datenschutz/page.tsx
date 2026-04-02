@@ -1,9 +1,12 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import { Link } from '@/lib/i18n/routing';
 import { FaArrowLeft } from 'react-icons/fa6';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/Accordion';
 
 export default function DatenschutzPage() {
   const t = useTranslations('datenschutz');
@@ -29,65 +32,81 @@ export default function DatenschutzPage() {
               <h1 className="text-h1 font-bold text-foreground">{t('title')}</h1>
 
               {/* Content */}
-              <div className="flex flex-col gap-6 text-body text-foreground leading-relaxed">
+              <Accordion type="multiple" className="text-body text-foreground leading-relaxed">
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('generalTitle')}</p>
-                  <p>{t('generalText')}</p>
-                </div>
+                <AccordionItem value="general">
+                  <AccordionTrigger>{t('generalTitle')}</AccordionTrigger>
+                  <AccordionContent>{t('generalText')}</AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-1">
-                  <p className="font-bold">{t('controllerTitle')}</p>
-                  <p>sendero bike trails</p>
-                  <p>Julian Perez</p>
-                  <p>Berlin, Deutschland</p>
-                  <p>E-Mail: hello@senderobiketrails.com</p>
-                </div>
+                <AccordionItem value="controller">
+                  <AccordionTrigger>{t('controllerTitle')}</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="flex flex-col gap-1">
+                      <p>sendero bike trails</p>
+                      <p>Julian Perez</p>
+                      <p>Berlin, Deutschland</p>
+                      <p>E-Mail: hello@senderobiketrails.com</p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('collectionTitle')}</p>
-                  <p>{t('collectionText')}</p>
-                </div>
+                <AccordionItem value="collection">
+                  <AccordionTrigger>{t('collectionTitle')}</AccordionTrigger>
+                  <AccordionContent>{t('collectionText')}</AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('purposeTitle')}</p>
-                  <p>{t('purposeText1')}</p>
-                  <p>{t('purposeText2')}</p>
-                </div>
+                <AccordionItem value="purpose">
+                  <AccordionTrigger>{t('purposeTitle')}</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="flex flex-col gap-2">
+                      <p>{t('purposeText1')}</p>
+                      <p>{t('purposeText2')}</p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('storageTitle')}</p>
-                  <p>{t('storageText1')}</p>
-                  <p>{t('storageText2')}</p>
-                </div>
+                <AccordionItem value="storage">
+                  <AccordionTrigger>{t('storageTitle')}</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="flex flex-col gap-2">
+                      <p>{t('storageText1')}</p>
+                      <p>{t('storageText2')}</p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('transferTitle')}</p>
-                  <p>{t('transferText')}</p>
-                </div>
+                <AccordionItem value="transfer">
+                  <AccordionTrigger>{t('transferTitle')}</AccordionTrigger>
+                  <AccordionContent>{t('transferText')}</AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('securityTitle')}</p>
-                  <p>{t('securityText')}</p>
-                </div>
+                <AccordionItem value="security">
+                  <AccordionTrigger>{t('securityTitle')}</AccordionTrigger>
+                  <AccordionContent>{t('securityText')}</AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('rightsTitle')}</p>
-                  <p>{t('rightsText1')}</p>
-                  <p>{t('rightsText2')} <strong>hello@senderobiketrails.com</strong></p>
-                </div>
+                <AccordionItem value="rights">
+                  <AccordionTrigger>{t('rightsTitle')}</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="flex flex-col gap-2">
+                      <p>{t('rightsText1')}</p>
+                      <p>{t('rightsText2')} <strong>hello@senderobiketrails.com</strong></p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('cookiesTitle')}</p>
-                  <p>{t('cookiesText')}</p>
-                </div>
+                <AccordionItem value="cookies">
+                  <AccordionTrigger>{t('cookiesTitle')}</AccordionTrigger>
+                  <AccordionContent>{t('cookiesText')}</AccordionContent>
+                </AccordionItem>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-bold">{t('changesTitle')}</p>
-                  <p>{t('changesText')}</p>
-                </div>
+                <AccordionItem value="changes">
+                  <AccordionTrigger>{t('changesTitle')}</AccordionTrigger>
+                  <AccordionContent>{t('changesText')}</AccordionContent>
+                </AccordionItem>
 
-              </div>
+              </Accordion>
             </div>
           </Container>
         </section>
