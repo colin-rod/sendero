@@ -1,6 +1,11 @@
 // Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 
+// Polyfill fetch for jsdom test environment (used by TrailSVG to load inline SVGs)
+global.fetch = jest.fn(() =>
+  Promise.resolve({ text: () => Promise.resolve('') } as Response)
+);
+
 // Mock environment variables for tests
 process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://test.supabase.co';
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test-anon-key';
