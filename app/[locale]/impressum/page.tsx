@@ -2,8 +2,6 @@ import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
-import { Link } from '@/lib/i18n/routing';
-import { FaArrowLeft } from 'react-icons/fa6';
 
 export default function ImpressumPage() {
   const t = useTranslations('impressum');
@@ -15,15 +13,6 @@ export default function ImpressumPage() {
         <section className="py-16 md:py-24">
           <Container>
             <div className="max-w-2xl mx-auto flex flex-col gap-8">
-
-              {/* Back button */}
-              <Link
-                href="/"
-                className="flex items-center justify-center w-9 h-9 rounded-full border-2 border-foreground text-foreground hover:bg-foreground hover:text-white transition-colors"
-                aria-label={t('backAriaLabel')}
-              >
-                <FaArrowLeft className="w-4 h-4" />
-              </Link>
 
               {/* Title */}
               <h1 className="text-h1 font-bold text-foreground">{t('title')}</h1>

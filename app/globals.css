@@ -344,9 +344,21 @@
     white-space: normal;
   }
 
-  /* Custom circled-dot cursor for tour cards */
-  .cursor-circled-dot {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23232323' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%23232323'/%3E%3C/svg%3E") 12 12, pointer;
+  /* Trail SVG draw-on + pulse animation */
+  .trail-svg-wrapper path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    pathLength: 1;
+  }
+  .trail-svg-wrapper.trail-animate path {
+    animation: trail-draw 1.2s ease forwards, trail-pulse 1.5s ease 1.2s infinite alternate;
+  }
+  @keyframes trail-draw {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes trail-pulse {
+    from { opacity: 1; }
+    to   { opacity: 0.55; filter: drop-shadow(0 0 5px currentColor); }
   }
 
   /* Tour grid flip card */

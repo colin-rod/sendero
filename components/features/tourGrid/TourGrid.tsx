@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const PATH_SVG: Record<string, string> = {
   tigre:    '/svg/trails/elements/path-tigre.svg',
@@ -30,8 +30,40 @@ interface TourGridProps {
   subheading?: string;
 }
 
+function TrailSVG({ src, animate, animKey }: { src: string; animate: boolean; animKey: number }) {
+  const [svgContent, setSvgContent] = useState<string>('');
+  const fetchedRef = useRef<string>('');
+
+  useEffect(() => {
+    if (fetchedRef.current === src) return;
+    fetchedRef.current = src;
+    fetch(src)
+      .then((r) => r.text())
+      .then((text) => {
+        // Inject pathLength="1" onto every <path> so stroke-dashoffset 0→1 works
+        const patched = text.replace(/<path /g, '<path pathLength="1" ');
+        setSvgContent(patched);
+      })
+      .catch(() => {});
+  }, [src]);
+
+  if (!svgContent) return null;
+
+  return (
+    <div
+      key={animKey}
+      className={`trail-svg-wrapper w-full aspect-square${animate ? ' trail-animate' : ''}`}
+      dangerouslySetInnerHTML={{ __html: svgContent }}
+      aria-hidden="true"
+    />
+  );
+}
+
 function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardData) {
   const [isActive, setIsActive] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+
   const backgroundStyle = {
     background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
     backgroundSize: 'cover',
@@ -50,10 +82,20 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
   const prefix = lastSpaceIndex !== -1 ? title.slice(0, lastSpaceIndex).toUpperCase() : '';
   const trailName = lastSpaceIndex !== -1 ? title.slice(lastSpaceIndex + 1).toUpperCase() : title.toUpperCase();
 
+  const isVisible = isActive || isHovered;
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setAnimKey((k) => k + 1); // restart animation each hover
+  };
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
     <div
-      className="group relative aspect-square w-full overflow-hidden cursor-circled-dot"
+      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
       onClick={() => setIsActive((prev) => !prev)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Photo background */}
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
@@ -70,12 +112,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
       {/* Hover overlay */}
       <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 py-[54px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isActive ? 'opacity-100' : ''}`}>
         <div className="flex-1 flex items-center justify-center">
-          <img
-            src={pathSrc}
-            alt=""
-            className="w-full aspect-square object-contain"
-            aria-hidden="true"
-          />
+          <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>
         <div className="flex flex-col items-center gap-1 text-center pb-9">
           {line1 && <p className="text-body font-bold text-foreground">{line1}</p>}

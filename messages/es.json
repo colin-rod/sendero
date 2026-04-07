@@ -90,9 +90,9 @@
   "waitlist": {
     "heading": "Únete a la Lista de Espera",
     "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura.",
-    "becomeAPioneer": "¿Te identificas con esto?",
-    "nextDate": "",
-    "ctaPrompt": "Únete. Te mantendremos al tanto.",
+    "becomeAPioneer": "Buscamos participantes",
+    "nextDate": "Próximo viaje: 28.11–04.12.2026",
+    "ctaPrompt": "Únete. O mantente al tanto.",
     "joinButton": "UNIRSE"
   },
   "form": {

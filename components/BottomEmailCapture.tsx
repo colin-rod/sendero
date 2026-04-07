@@ -146,7 +146,7 @@ export default function BottomEmailCapture() {
             data-testid="bottom-email-confirmation"
             role="status"
             aria-live="polite"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-[20px] bg-success-500 h-[42px] min-w-[140px] px-6 text-accent-400 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans shadow-xl"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-[20px] bg-[#22c55e] h-[42px] min-w-[140px] px-6 text-[#fff0bb] uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans shadow-xl"
           >
             {t('buttonSent')}
           </div>

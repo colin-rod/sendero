@@ -159,7 +159,7 @@ export default function HomePage() {
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image
-                src="/hero-newsletter.png"
+                src="/cta-pioneer.png"
                 alt=""
                 fill
                 className="object-cover"
@@ -168,9 +168,12 @@ export default function HomePage() {
 
             {/* Content */}
             <Container className="relative z-10 text-center">
-              <h2 className="text-h2 text-white mb-4">
+              <h2 className="text-h2 text-white mb-3">
                 {tWaitlist('becomeAPioneer')}
               </h2>
+              <p className="mb-2 text-body text-[#F2F2F7] uppercase tracking-widest">
+                {tWaitlist('nextDate')}
+              </p>
               <p className="mb-8 text-h3 leading-none text-[#F2F2F7] uppercase tracking-widest">
                 {tWaitlist('ctaPrompt')}
               </p>
