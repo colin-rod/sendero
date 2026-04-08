@@ -45,7 +45,9 @@ export function Footer() {
                 <FaInstagram className="h-6 w-6" aria-hidden="true" />
               </a>
               <a
-                href="#"
+                href="https://www.komoot.com/collection/4055430/-sendero-bike-trails-collection"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={t('social.komoot')}
                 className="text-white transition-colors hover:text-[#fff0bb]"
               >

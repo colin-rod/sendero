@@ -164,17 +164,18 @@ export default function HomePage() {
                 fill
                 className="object-cover"
               />
+              <div className="absolute inset-0 bg-black/50" />
             </div>
 
             {/* Content */}
             <Container className="relative z-10 text-center">
-              <h2 className="text-h2 text-white mb-3">
+              <h2 className="text-h1 font-bold text-white mb-4">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="mb-2 text-body text-[#F2F2F7] uppercase tracking-widest">
-                {tWaitlist('nextDate')}
+              <p className="mb-1 text-body text-white">
+                {tWaitlist('nextDateLabel')} <strong>{tWaitlist('nextDateValue')}</strong>
               </p>
-              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] uppercase tracking-widest">
+              <p className="mb-8 text-body text-white">
                 {tWaitlist('ctaPrompt')}
               </p>
 

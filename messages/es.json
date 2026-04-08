@@ -92,6 +92,8 @@
     "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura.",
     "becomeAPioneer": "Buscamos participantes",
     "nextDate": "Próximo viaje: 28.11–04.12.2026",
+    "nextDateLabel": "Próximo viaje:",
+    "nextDateValue": "28.11.–04.12.2026",
     "ctaPrompt": "Únete. O mantente al tanto.",
     "joinButton": "UNIRSE"
   },
