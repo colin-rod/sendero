@@ -34,7 +34,7 @@ export default function HomePage() {
 
         {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-16 py-20">
+          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-4 sm:px-8 lg:px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
               <h2 className="text-h2 font-bold text-white">
                 {tHeroIntro('heading')}
