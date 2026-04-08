@@ -71,7 +71,7 @@ function LoginForm() {
           </Button>
         </form>
 
-        <p className="text-sm text-muted-foreground mt-6 text-center">
+        <p className="text-caption text-muted-foreground mt-6 text-center">
           Enter the password to access the site
         </p>
       </div>

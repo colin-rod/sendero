@@ -90,9 +90,11 @@
   "waitlist": {
     "heading": "Join the Waitlist",
     "description": "Be the first to know when tours open up. No spam, just adventure.",
-    "becomeAPioneer": "Become a Pioneer",
-    "nextDate": "Next Date: Nov 28 – Dec 4, 2026",
-    "ctaPrompt": "Are You Coming?",
+    "becomeAPioneer": "Looking for Pioneers",
+    "nextDate": "Next Trip: Nov 28 – Dec 4, 2026",
+    "nextDateLabel": "Next trip:",
+    "nextDateValue": "Nov 28 – Dec 4, 2026",
+    "ctaPrompt": "Ride with us. Or stay in the loop.",
     "joinButton": "JOIN"
   },
   "form": {
@@ -166,7 +168,7 @@
   },
   "footer": {
     "brandName": "sendero bike trails",
-    "tagline": "Mindful travel on two wheels.\nA culture to immerse yourself in.",
+    "tagline": "Mindful travel on two wheels.",
     "social": {
       "followUs": "Follow us",
       "instagram": "Follow us on Instagram",
@@ -714,5 +716,50 @@
     "heading": "Our Trail Network",
     "subtitle": "9 handcrafted routes through Colombia's Coffee Region, each one a unique journey.",
     "legendLabel": "Trail routes"
+  },
+  "qr": {
+    "headline": "Discover Colombia's Coffee Region",
+    "subheadline": "Join the waitlist for guided bike & hike tours"
+  },
+  "impressum": {
+    "title": "Legal Notice",
+    "metaTitle": "Legal Notice — Sendero",
+    "backAriaLabel": "Back to home",
+    "legalInfo": "Information according to § 5 TMG",
+    "contact": "Contact",
+    "responsible": "Responsible for content pursuant to § 18 Para. 2 MStV",
+    "liabilityContentTitle": "Liability for Content",
+    "liabilityContentText": "The contents of our pages have been created with the greatest care. However, we cannot guarantee the accuracy, completeness and timeliness of the content.",
+    "liabilityLinksTitle": "Liability for Links",
+    "liabilityLinksText": "Our website may contain links to external third-party websites over whose content we have no influence. We accept no liability for such external content.",
+    "copyrightTitle": "Copyright",
+    "copyrightText": "The content and works created by the site operators on these pages are subject to German copyright law."
+  },
+  "datenschutz": {
+    "title": "Privacy Policy",
+    "metaTitle": "Privacy Policy — Sendero",
+    "backAriaLabel": "Back to home",
+    "generalTitle": "General Notes",
+    "generalText": "We appreciate your interest in sendero bike trails. The protection of your personal data is important to us. Below we inform you about what data we collect, how we use it and what rights you have.",
+    "controllerTitle": "Controller",
+    "collectionTitle": "Collection and Storage of Personal Data",
+    "collectionText": "We only collect personal data when you provide it to us voluntarily. On this website, this particularly concerns your email address when you sign up via the form.",
+    "purposeTitle": "Purpose of Data Processing",
+    "purposeText1": "We use your data exclusively to send you information and updates about our Bike Tours and to contact you in connection with your interest in our services.",
+    "purposeText2": "Processing is only carried out on the basis of your consent pursuant to Art. 6 Para. 1 lit. a GDPR.",
+    "storageTitle": "Data Storage",
+    "storageText1": "Your data is stored in an internal list and not shared with third parties.",
+    "storageText2": "We store your data only as long as necessary for the stated purposes or until you withdraw your consent.",
+    "transferTitle": "Data Transfer",
+    "transferText": "We do not share or sell your personal data to third parties.",
+    "securityTitle": "Data Security",
+    "securityText": "We take appropriate technical and organizational measures to protect your data from loss, misuse or unauthorized access.",
+    "rightsTitle": "Your Rights",
+    "rightsText1": "You have the right at any time to access your stored data, to correct inaccurate data, to delete your data, to restrict processing and to withdraw your consent.",
+    "rightsText2": "To exercise your rights, simply send an email to:",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "This website does not use cookies or tracking technologies that require consent.",
+    "changesTitle": "Changes to this Privacy Policy",
+    "changesText": "We reserve the right to adapt this privacy policy as necessary to comply with legal requirements or changes to our services."
   }
 }

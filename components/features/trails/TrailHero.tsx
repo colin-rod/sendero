@@ -48,7 +48,7 @@ export function TrailHero({
         <div className="absolute inset-0 flex items-end">
           <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8 pb-12">
             <div className="flex items-center gap-3 mb-4">
-              <h1 className="text-3xl md:text-5xl font-bold text-white">{name}</h1>
+              <h1 className="text-h1 text-white">{name}</h1>
               <Badge variant={getDifficultyBadgeProps(difficulty).variant}>
                 {difficultyLabel}
               </Badge>

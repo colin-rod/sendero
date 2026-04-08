@@ -27,7 +27,7 @@ export default function LoginLayout({
                 height={40}
                 className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-primary-500">
+              <span className="text-h3 text-primary-500">
                 Sendero
               </span>
             </Link>
@@ -41,7 +41,7 @@ export default function LoginLayout({
       <footer className="bg-foreground text-background py-6">
         <div className="container mx-auto px-4">
           <div className="max-w-[1200px] mx-auto text-center">
-            <p className="text-sm">
+            <p className="text-caption">
               © {new Date().getFullYear()} Sendero. All rights reserved.
             </p>
           </div>

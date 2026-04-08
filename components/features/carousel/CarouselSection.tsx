@@ -64,7 +64,7 @@ export function CarouselSection({
       {/* Text Content */}
       <div className="text-center mb-12">
         {/* Eyebrow */}
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary-600 mb-4">
+        <p className="text-label text-primary-600 mb-4">
           {eyebrow}
         </p>
 

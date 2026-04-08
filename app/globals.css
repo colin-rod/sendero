@@ -38,8 +38,14 @@
   }
 
   .text-h1 {
-    font-size: 3rem; /* 48px — scales to 40px on mobile via responsive utilities */
+    font-size: 2.5rem; /* 40px mobile-first */
     font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    .text-h1 {
+      font-size: 3rem; /* 48px desktop */
+    }
   }
 
   .text-h2 {
@@ -48,8 +54,14 @@
   }
 
   .text-h3 {
-    font-size: 1.5rem; /* 24px mobile base — 28px on desktop via responsive utilities */
+    font-size: 1.5rem; /* 24px mobile-first */
     font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .text-h3 {
+      font-size: 1.75rem; /* 28px desktop */
+    }
   }
 
   .text-body {
@@ -64,6 +76,12 @@
   .text-body-small {
     font-size: 0.625rem; /* 10px Body Small */
     font-weight: 400;
+  }
+
+  .text-caption {
+    font-size: 0.875rem; /* 14px - helper text, error messages, secondary labels */
+    font-weight: 400;
+    line-height: 1.25rem;
   }
 
   /* Feedback Modal Category Buttons */
@@ -324,6 +342,24 @@
     overflow: visible;
     clip: auto;
     white-space: normal;
+  }
+
+  /* Trail SVG draw-on + pulse animation */
+  .trail-svg-wrapper path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    pathLength: 1;
+  }
+  .trail-svg-wrapper.trail-animate path {
+    animation: trail-draw 2.4s ease forwards, trail-stroke-pulse 2.5s ease-in-out 2.4s infinite;
+  }
+  @keyframes trail-draw {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes trail-stroke-pulse {
+    0%   { stroke-width: 5; }
+    50%  { stroke-width: 7.5; }
+    100% { stroke-width: 5; }
   }
 
   /* Tour grid flip card */

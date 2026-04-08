@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/lib/i18n/routing';
 import { locales } from '@/lib/i18n/config';
@@ -43,17 +42,28 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-[47px] h-8 rounded-lg p-2 text-foreground transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        className="flex items-center gap-1.5 rounded-lg border-2 border-[#1B1B1B] px-2.5 py-1 text-caption font-medium text-foreground transition-colors hover:bg-[#232323] hover:text-white hover:border-[#232323] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
-        <Image
-          src="/globe.svg"
-          alt="Language"
-          width={20}
-          height={20}
-          className="w-5 h-5"
-        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          className="w-4 h-4 flex-none"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+          <path d="M2 12h20" />
+        </svg>
+        <span>{localeLabels[locale]}</span>
       </button>
 
       {/* Dropdown Menu */}
@@ -64,7 +74,7 @@ export default function LanguageSwitcher() {
               <button
                 key={loc}
                 onClick={() => switchLocale(loc)}
-                className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
+                className={`block w-full text-left px-4 py-2 text-caption transition-colors ${
                   locale === loc
                     ? 'bg-primary-500/20 text-white font-semibold'
                     : 'text-gray-300 hover:bg-white/10 hover:text-white'

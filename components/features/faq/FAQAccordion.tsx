@@ -156,7 +156,7 @@ export function FAQAccordion({ sections }: FAQAccordionProps) {
           )}
         </div>
         {searchQuery && (
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 text-caption text-muted-foreground">
             {filteredSections.length > 0
               ? t('search.results', { count: filteredSections.reduce((sum, s) => sum + s.questions.length, 0) })
               : t('search.noResults')}
@@ -170,7 +170,7 @@ export function FAQAccordion({ sections }: FAQAccordionProps) {
           <button
             type="button"
             onClick={allExpanded ? handleCollapseAll : handleExpandAll}
-            className="text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded px-2 py-1"
+            className="text-caption font-medium text-primary-600 hover:text-primary-700 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded px-2 py-1"
           >
             {allExpanded ? t('collapseAll') : t('expandAll')}
           </button>
@@ -229,7 +229,7 @@ export function FAQAccordion({ sections }: FAQAccordionProps) {
         <div className="rounded-lg border border-border bg-muted/20 p-8 text-center">
           <Search className="mx-auto mb-3 h-12 w-12 text-muted-foreground" aria-hidden="true" />
           <p className="text-body font-medium text-foreground">{t('search.noResults')}</p>
-          <p className="mt-1 text-sm text-muted-foreground">{t('search.tryDifferent')}</p>
+          <p className="mt-1 text-caption text-muted-foreground">{t('search.tryDifferent')}</p>
         </div>
       )}
     </div>

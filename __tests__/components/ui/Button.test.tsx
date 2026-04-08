@@ -65,22 +65,22 @@ describe('Button', () => {
       render(<Button variant="hero-cta">Hero CTA</Button>);
       const button = screen.getByRole('button');
       expect(button).toHaveClass(
-        'bg-primary-500',
-        'hover:bg-primary-600',
-        'active:bg-primary-700',
-        'text-accent-400',
+        'bg-[#1e6a62]',
+        'hover:bg-[#264c43]',
+        'active:bg-[#154f49]',
+        'text-[#fff0bb]',
         'rounded-[20px]',
         'uppercase',
         'font-medium',
         'tracking-[0.06em]',
-        'text-[14px]',
-        'leading-[18px]',
+        'text-caption',
+        'leading-tight',
         'min-w-[140px]',
         'h-[42px]',
         'px-6',
         'py-3',
         'gap-2',
-        "font-['Helvetica_Neue']"
+        'font-sans'
       );
     });
   });

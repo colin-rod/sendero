@@ -1,15 +1,17 @@
 'use client';
 
-const ELEMENT_SVG: Record<string, string> = {
-  tigre:    '/svg/trails/elements/element-tierra.svg',
-  cafe:     '/svg/trails/elements/element-cafe.svg',
-  agua:     '/svg/trails/elements/element-agua.svg',
-  cacao:    '/svg/trails/elements/element-cacao.svg',
-  volcan:   '/svg/trails/elements/element-volcan.svg',
-  paramo:   '/svg/trails/elements/element-paramo.svg',
-  guadua:   '/svg/trails/elements/element-guadua.svg',
-  oro:      '/svg/trails/elements/element-oro.svg',
-  luminoso: '/svg/trails/elements/element-luminoso.svg',
+import { useState, useEffect, useRef } from 'react';
+
+const PATH_SVG: Record<string, string> = {
+  tigre:    '/svg/trails/elements/path-tigre.svg',
+  cafe:     '/svg/trails/elements/path-cafe.svg',
+  agua:     '/svg/trails/elements/path-agua.svg',
+  cacao:    '/svg/trails/elements/path-cacao.svg',
+  volcan:   '/svg/trails/elements/path-volcan.svg',
+  paramo:   '/svg/trails/elements/path-paramo.svg',
+  guadua:   '/svg/trails/elements/path-guadua.svg',
+  oro:      '/svg/trails/elements/path-oro.svg',
+  luminoso: '/svg/trails/elements/path-luminoso.svg',
 };
 
 interface TourGridCardData {
@@ -28,62 +30,93 @@ interface TourGridProps {
   subheading?: string;
 }
 
-function FlipCard({ id, title, imageSrc, description, distance, difficulty }: TourGridCardData) {
+function TrailSVG({ src, animate, animKey }: { src: string; animate: boolean; animKey: number }) {
+  const [svgContent, setSvgContent] = useState<string>('');
+  const fetchedRef = useRef<string>('');
+
+  useEffect(() => {
+    if (fetchedRef.current === src) return;
+    fetchedRef.current = src;
+    fetch(src)
+      .then((r) => r.text())
+      .then((text) => {
+        // Inject pathLength="1" onto every <path> so stroke-dashoffset 0→1 works
+        const patched = text.replace(/<path /g, '<path pathLength="1" ');
+        setSvgContent(patched);
+      })
+      .catch(() => {});
+  }, [src]);
+
+  if (!svgContent) return null;
+
+  return (
+    <div
+      key={animKey}
+      className={`trail-svg-wrapper w-full aspect-square${animate ? ' trail-animate' : ''}`}
+      dangerouslySetInnerHTML={{ __html: svgContent }}
+      aria-hidden="true"
+    />
+  );
+}
+
+function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardData) {
+  const [isActive, setIsActive] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+
   const backgroundStyle = {
     background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
 
-  const elementSrc = ELEMENT_SVG[id] ?? '/svg/trails/elements/element-tierra.svg';
+  const pathSrc = PATH_SVG[id] ?? '/svg/trails/elements/path-tigre.svg';
+  const dotIndex = description ? description.indexOf('. ') : -1;
+  const line1 = description
+    ? (dotIndex !== -1 ? description.slice(0, dotIndex + 1) : description)
+    : '';
+  const line2 = description && dotIndex !== -1 ? description.slice(dotIndex + 2) : '';
+
+  // Split on last word: prefix is everything before, trailName is the last word
+  const lastSpaceIndex = title.lastIndexOf(' ');
+  const prefix = lastSpaceIndex !== -1 ? title.slice(0, lastSpaceIndex).toUpperCase() : '';
+  const trailName = lastSpaceIndex !== -1 ? title.slice(lastSpaceIndex + 1).toUpperCase() : title.toUpperCase();
+
+  const isVisible = isActive || isHovered;
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setAnimKey((k) => k + 1); // restart animation each hover
+  };
+  const handleMouseLeave = () => setIsHovered(false);
 
   return (
-    <div className="flip-card h-[476px] min-w-[300px] w-[330px] cursor-pointer">
-      <div className="flip-card-inner">
-        {/* Front */}
-        <div
-          className="flip-card-front flex flex-col justify-end items-center"
-          style={backgroundStyle}
-        >
-          <div className="flex flex-col items-center px-6 pb-9">
-            <p
-              className="text-center font-sans text-h3 font-medium leading-[32px] tracking-[0.12em]"
-              style={{ color: '#F2F2F2' }}
-            >
-              {title}
-            </p>
-          </div>
+    <div
+      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
+      onClick={() => setIsActive((prev) => !prev)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Photo background */}
+      <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
+
+      {/* Default: title at bottom */}
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-9">
+        <p className="text-center text-h3 font-light leading-8 tracking-[0.12em] text-[#F2F2F2]">
+          {prefix && <span className="font-light">{prefix}</span>}
+          {prefix && ' '}
+          <span className="font-bold">{trailName}</span>
+        </p>
+      </div>
+
+      {/* Hover overlay */}
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 py-[54px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isActive ? 'opacity-100' : ''}`}>
+        <div className="flex-1 flex items-center justify-center">
+          <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>
-
-        {/* Back */}
-        <div
-          className="flip-card-back flex flex-col justify-center items-center px-6 gap-8"
-          style={{ backgroundColor: '#FFFFFF' }}
-        >
-          {/* Thread symbol illustration */}
-          <img
-            src={elementSrc}
-            alt=""
-            className="w-[180px] h-[190px] object-contain"
-            aria-hidden="true"
-          />
-
-          {/* Text content */}
-          <div className="flex flex-col items-center gap-3 w-full">
-            <p className="text-center font-['Helvetica_Neue'] text-[20px] font-semibold text-[#1D1D1F]">
-              {title}
-            </p>
-            {description && (
-              <p className="text-center text-sm text-[#616161] leading-snug">
-                {description}
-              </p>
-            )}
-            {(distance || difficulty) && (
-              <p className="text-center text-sm text-[#616161]">
-                {[distance, difficulty].filter(Boolean).join(' | ')}
-              </p>
-            )}
-          </div>
+        <div className="flex flex-col items-center gap-1 text-center pb-9">
+          {line1 && <p className="text-body font-bold text-foreground">{line1}</p>}
+          {line2 && <p className="text-body font-normal text-foreground">{line2}</p>}
         </div>
       </div>
     </div>
@@ -99,18 +132,9 @@ export function TourGrid({ cards, heading, subheading }: TourGridProps) {
           {subheading && <p className="text-body">{subheading}</p>}
         </div>
       )}
-      <div className="flex flex-wrap gap-10 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {cards.map((card) => (
-          <FlipCard
-            key={card.id}
-            id={card.id}
-            title={card.title}
-            imageSrc={card.imageSrc}
-            imageAlt={card.imageAlt}
-            description={card.description}
-            distance={card.distance}
-            difficulty={card.difficulty}
-          />
+          <TourCard key={card.id} {...card} />
         ))}
       </div>
     </div>

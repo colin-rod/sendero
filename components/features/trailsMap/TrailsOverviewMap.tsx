@@ -28,7 +28,7 @@ export function TrailsOverviewMap({ trails }: TrailsOverviewMapProps) {
       await import('leaflet-gpx');
 
       // Fix default marker icon paths broken by webpack
-      delete (L.Icon.Default.prototype as any)._getIconUrl;
+      delete (L.Icon.Default.prototype as unknown as Record<string, unknown>)._getIconUrl;
       L.Icon.Default.mergeOptions({
         iconRetinaUrl: '/leaflet/marker-icon-2x.png',
         iconUrl: '/leaflet/marker-icon.png',

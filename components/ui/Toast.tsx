@@ -230,7 +230,7 @@ const ToastItem: React.FC<ToastItemProps> = ({ toast, onDismiss }) => {
           {iconVariants[toast.variant]}
         </div>
 
-        <div className="flex-1 text-sm">
+        <div className="flex-1 text-caption">
           {toast.title && (
             <p className="font-semibold text-foreground">
               {toast.title}

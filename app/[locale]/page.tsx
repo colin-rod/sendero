@@ -4,11 +4,10 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import HeroVideo from '@/components/HeroVideo';
-import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
-import { NewsletterHeroSection } from '@/components/features/trailsMap/NewsletterHeroSection';
+
 
 export default function HomePage() {
   const tHero = useTranslations('hero');
@@ -27,31 +26,20 @@ export default function HomePage() {
 
           {/* Content */}
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
-            <Image
-              src="/Logo Dark.svg"
-              alt="Sendero"
-              width={96}
-              height={96}
-              className="mb-8"
-              priority
-            />
-            <h1 className="text-h1 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] max-w-3xl">
+            <h1 className="text-h1 text-white max-w-3xl">
               {tHero('title')}
             </h1>
           </div>
-
-          {/* Scroll Indicator */}
-          <ScrollIndicator />
         </section>
 
         {/* Hero Intro Section */}
         <ScrollReveal>
           <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
-              <h2 className="text-h2 font-bold font-work-sans text-[#ffffff]">
+              <h2 className="text-h2 font-bold text-white">
                 {tHeroIntro('heading')}
               </h2>
-              <p className="text-h2 font-light font-work-sans text-[#ffffff]">
+              <p className="text-h2 font-light text-white">
                 {tHeroIntro('subheading')}
               </p>
             </div>
@@ -65,7 +53,7 @@ export default function HomePage() {
               />
             </svg>
             <div className="text-center max-w-2xl">
-              <p className="text-lg leading-relaxed font-normal text-center font-work-sans text-white/90">
+              <p className="text-lg leading-relaxed font-normal text-center text-white/90">
                 {tHeroIntro('subtitle')}
               </p>
             </div>
@@ -165,35 +153,29 @@ export default function HomePage() {
           </section>
         </ScrollReveal>
 
-        <ScrollReveal>
-          <NewsletterHeroSection />
-        </ScrollReveal>
-
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
-          <section className="relative py-20 md:py-32">
+          <section className="relative py-40 md:py-56">
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image
-                src="/hero-poster.png"
+                src="/cta-pioneer.png"
                 alt=""
                 fill
                 className="object-cover"
               />
+              <div className="absolute inset-0 bg-black/50" />
             </div>
-
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/70" />
 
             {/* Content */}
             <Container className="relative z-10 text-center">
-              <h2 className="text-h2 text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <h2 className="text-h1 font-bold text-white mb-4">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
-                {tWaitlist('nextDate')}
+              <p className="mb-1 text-body text-white">
+                {tWaitlist('nextDateLabel')} <strong>{tWaitlist('nextDateValue')}</strong>
               </p>
-              <p className="mb-8 text-h3 leading-none text-[#F2F2F7] drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+              <p className="mb-8 text-body text-white">
                 {tWaitlist('ctaPrompt')}
               </p>
 

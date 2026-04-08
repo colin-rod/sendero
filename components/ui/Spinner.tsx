@@ -112,7 +112,7 @@ export const SpinnerFullPage: React.FC<SpinnerFullPageProps> = ({
     >
       <Spinner size={size} variant={variant} label={label} />
       {message && (
-        <p className="mt-4 text-sm text-muted-foreground">
+        <p className="mt-4 text-caption text-muted-foreground">
           {message}
         </p>
       )}

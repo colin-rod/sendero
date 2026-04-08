@@ -85,7 +85,7 @@ export default function FAQPage() {
           </div>
 
           {/* Helper Note for Placeholder Content */}
-          <div className="mt-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm">
+          <div className="mt-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-caption">
             <p className="text-amber-900">
               <strong>Note:</strong> Content marked with{' '}
               <span className="font-mono">[PLACEHOLDER]</span> and{' '}

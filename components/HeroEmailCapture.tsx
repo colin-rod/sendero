@@ -138,21 +138,21 @@ export default function HeroEmailCapture() {
 
       {/* Helper Text - Shows when expanded */}
       {isExpanded && !showSuccess && (
-        <p className="text-white/90 text-sm text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+        <p className="text-white/90 text-caption text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           {t('helperText')}
         </p>
       )}
 
       {/* Error Message */}
       {error && (
-        <p className="text-error-500 text-sm bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
+        <p className="text-error-500 text-caption bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
           {error}
         </p>
       )}
 
       {/* Success Toast */}
       {showSuccess && (
-        <div className="bg-green-500 text-white text-sm px-6 py-3 rounded-lg shadow-xl animate-fade-in">
+        <div className="bg-green-500 text-white text-caption px-6 py-3 rounded-lg shadow-xl animate-fade-in">
           {t('successMessage')}
         </div>
       )}

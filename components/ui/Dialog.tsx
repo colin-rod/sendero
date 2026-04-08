@@ -72,7 +72,7 @@ export function DialogHeader({ children }: { children: React.ReactNode }) {
 
 export function DialogTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="text-2xl font-medium text-foreground">
+    <h2 className="text-h3 font-medium text-foreground">
       {children}
     </h2>
   );
