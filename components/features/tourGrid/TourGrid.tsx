@@ -93,7 +93,11 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
   return (
     <div
       className="group relative aspect-square w-full overflow-hidden cursor-pointer"
-      onClick={() => { setIsActive((prev) => !prev); setAnimKey((k) => k + 1); }}
+      onClick={() => {
+        const opening = !isActive;
+        setIsActive(opening);
+        if (opening) setAnimKey((k) => k + 1);
+      }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
