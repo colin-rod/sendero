@@ -93,7 +93,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
   return (
     <div
       className="group relative aspect-square w-full overflow-hidden cursor-pointer"
-      onClick={() => setIsActive((prev) => !prev)}
+      onClick={() => { setIsActive((prev) => !prev); setAnimKey((k) => k + 1); }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -110,7 +110,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
       </div>
 
       {/* Hover overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 py-[54px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${isActive ? 'opacity-100' : ''}`}>
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 py-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
         <div className="flex-1 flex items-center justify-center">
           <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>
