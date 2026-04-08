@@ -362,6 +362,14 @@
     100% { stroke-width: 5; }
   }
 
+  /* Mobile (touch): show SVG path statically, no draw animation */
+  @media (pointer: coarse) {
+    .trail-svg-wrapper.trail-animate path {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+
   /* Tour grid flip card */
   .flip-card {
     perspective: 1200px;
