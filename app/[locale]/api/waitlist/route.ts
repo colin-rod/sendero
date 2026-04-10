@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     try {
       await resend.emails.send({
-        from: process.env.RESEND_FROM_EMAIL ?? 'noreply@senderobiketrails.com',
+        from: process.env.RESEND_FROM_EMAIL ?? 'julian@senderobiketrails.com',
         to: formData.email.toLowerCase().trim(),
         subject: "You're on the Sendero waitlist!",
         html: `

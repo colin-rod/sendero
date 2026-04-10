@@ -44,8 +44,8 @@ export async function POST(
         });
 
         await resend.emails.send({
-          from: 'Sendero Contact Form <contact@senderobiketrails.com>',
-          to: 'senderobiketrails@gmail.com',
+          from: 'Sendero Contact Form <julian@senderobiketrails.com>',
+          to: 'julian@senderobiketrails.com',
           subject: emailContent.subject,
           text: emailContent.text,
         });
