@@ -3,7 +3,10 @@
     "allow": [
       "Bash(npx jest:*)",
       "Bash(find /Users/julianperez88/Documents/GitHub/sendero-1/app/[locale]/ -name \"*impressum*\" -o -name \"*datenschutz*\" -o -name \"*privacy*\" -o -name \"*legal*\")",
-      "Bash(ls /Users/julianperez88/Documents/GitHub/sendero-1/app/[locale]/)"
+      "Bash(ls /Users/julianperez88/Documents/GitHub/sendero-1/app/[locale]/)",
+      "Read(//Users/julianperez88/Documents/GitHub/figma-cli/**)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ],
     "additionalDirectories": [
       "/Users/julianperez88/Documents/GitHub/sendero-1/public"

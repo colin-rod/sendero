@@ -633,8 +633,8 @@ npm run test:all            # Jest + Playwright
 
 ### Typography
 
-- **Font:** Work Sans (Google Fonts)
-- **Weights:** 400 (normal), 500 (medium), 600 (semibold), 700 (bold)
+- **Font:** Helvetica Neue
+- **Weights:** Regular, Medium, Bold, Condensed Black
 
 **Typography Specifications (from Figma, November 2024):**
 
