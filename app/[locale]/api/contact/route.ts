@@ -45,7 +45,7 @@ export async function POST(
 
         await resend.emails.send({
           from: 'Sendero Contact Form <contact@senderobiketrails.com>',
-          to: 'info@senderobiketrails.com',
+          to: 'senderobiketrails@gmail.com',
           subject: emailContent.subject,
           text: emailContent.text,
         });

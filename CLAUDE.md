@@ -1,8 +1,8 @@
 # Sendero - Project Documentation
 
-**Last Updated:** November 2024
+**Last Updated:** April 2026
 **Version:** 0.1.0 (Smoke Test)
-**Status:** 🚧 **Active Development** - Waitlist MVP
+**Status:** 🚧 **Active Development** - Waitlist MVP with Trails & Contact
 
 ---
 
@@ -12,15 +12,19 @@
 
 | Component              | Status      | Description                                    |
 | ---------------------- | ----------- | ---------------------------------------------- |
-| **Landing Page**       | ✅ Complete | Hero, features, waitlist form                  |
-| **Waitlist Form**      | ✅ Complete | Multi-step form with validation                |
-| **API Integration**    | ✅ Complete | Supabase integration for data storage          |
+| **Landing Page**       | ✅ Complete | Hero, features, waitlist form, tour grid       |
+| **Waitlist Form**      | ✅ Complete | Email capture with Google Sheets storage       |
+| **Contact Page**       | ✅ Complete | Contact form with Supabase + Resend email      |
+| **Trails Pages**       | ✅ Complete | Trail listing + detail page (Sendero del Tigre)|
+| **About Page**         | ✅ Complete | About page                                     |
+| **FAQ Page**           | ✅ Complete | FAQ with accordion                             |
 | **Thank You Page**     | ✅ Complete | Confirmation with share functionality          |
+| **Email (Resend)**     | ✅ Complete | Waitlist confirmation + contact notifications  |
+| **Feedback System**    | ✅ Complete | Floating feedback button → Google Sheets       |
+| **Password Protection**| ✅ Complete | Optional site-wide password gate (iron-session)|
 | **Internationalization** | ✅ Complete | Trilingual support (EN, DE, ES)              |
 | **CI/CD Pipeline**     | ✅ Complete | GitHub Actions, automated testing & deployment |
-| **Testing**            | ✅ Complete | Jest unit tests for validation logic           |
-| **Supabase Setup**     | 📋 Pending  | Database needs to be configured                |
-| **Production Deploy**  | 📋 Pending  | Ready for Vercel deployment                    |
+| **Testing**            | ✅ Complete | Jest unit + component tests, Playwright e2e    |
 
 ### Most-Used Commands
 
@@ -33,9 +37,12 @@ npm run lint                # Run ESLint
 npm run type-check          # TypeScript check
 
 # Testing
-npm test                    # Run all tests
+npm test                    # Run all Jest tests
 npm run test:watch          # Run tests in watch mode
 npm run test:coverage       # Run tests with coverage report
+npm run test:e2e            # Run Playwright e2e tests
+npm run test:e2e:ui         # Playwright with UI mode
+npm run test:all            # Run Jest + Playwright tests
 ```
 
 ### Key Files & Directories
@@ -45,8 +52,18 @@ npm run test:coverage       # Run tests with coverage report
   ├── [locale]/             # Locale-aware pages (en, de, es)
   │   ├── layout.tsx        # Locale layout with next-intl provider
   │   ├── page.tsx          # Landing page
+  │   ├── about/            # About page
+  │   ├── contact/          # Contact form page
+  │   ├── faq/              # FAQ page
   │   ├── thank-you/        # Thank you page
-  │   └── api/waitlist/     # Waitlist API endpoint
+  │   ├── trails/           # Trails listing + detail pages
+  │   │   └── sendero-del-tigre/  # Individual trail page
+  │   └── api/
+  │       ├── waitlist/     # Waitlist API → Google Sheets + Resend email
+  │       ├── contact/      # Contact API → Supabase + Resend email
+  │       └── feedback/     # Feedback API → Google Sheets
+  ├── api/auth/             # Auth routes (login/logout for password protection)
+  ├── login/                # Login page (password protection)
   ├── layout.tsx            # Root layout
   └── globals.css           # Global styles
 
@@ -56,26 +73,37 @@ npm run test:coverage       # Run tests with coverage report
   └── es.json               # Spanish translations
 
 📁 components/
-  ├── ui/                   # Reusable UI components
+  ├── ui/                   # Reusable UI components (Button, Input, Card, etc.)
   ├── layout/               # Header, Footer
   ├── LanguageSwitcher.tsx  # Language toggle (EN|DE|ES)
-  └── features/waitlist/    # WaitlistForm component
+  └── features/
+      ├── waitlist/         # WaitlistForm component
+      ├── contact/          # ContactForm component
+      ├── feedback/         # FeedbackModal, FloatingFeedbackButton
+      ├── trails/           # Trail components (TrailCard, TrailMap, etc.)
+      ├── trailsMap/        # Trails overview map (Leaflet)
+      ├── tourGrid/         # Tour grid display
+      ├── carousel/         # Image carousel
+      └── faq/              # FAQ accordion
 
 📁 lib/
+  ├── auth/                 # Password protection (iron-session)
+  ├── data/                 # Static data (trails.ts)
+  ├── design-tokens/        # Colors, typography, shadows, radius, animations
+  ├── email/                # Email templates (contactEmail.ts)
   ├── i18n/                 # Internationalization config
-  │   ├── config.ts         # Locale settings
-  │   ├── request.ts        # Request handler
-  │   └── routing.ts        # Navigation helpers
   ├── supabase/             # Supabase client
-  ├── types/                # TypeScript types
-  └── utils/                # Validation utilities
+  ├── types/                # TypeScript types (database, feedback, trails)
+  └── utils/                # Validation & utility functions
 
 📁 supabase/
-  └── migrations/           # SQL migrations
+  ├── migrations/           # SQL migrations (001-008)
+  └── functions/            # Edge functions (submit-feedback)
 
+📁 e2e/                     # Playwright e2e tests
+📁 __tests__/               # Jest unit & component tests
 📁 .github/workflows/       # CI/CD pipelines
-📁 __tests__/               # Jest tests
-middleware.ts               # Locale detection & routing
+middleware.ts               # Locale detection, routing & password protection
 ```
 
 ### Need Help?
@@ -97,11 +125,14 @@ middleware.ts               # Locale detection & routing
 
 **Key Features:**
 
-- ✅ Beautiful, responsive landing page
-- ✅ Waitlist signup form with preferences
-- ✅ Email capture with tour preferences (duration, interests, fitness level, travel timeline)
+- ✅ Beautiful, responsive landing page with tour grid
+- ✅ Waitlist signup form (email → Google Sheets + Resend confirmation email)
+- ✅ Contact form (→ Supabase + Resend notification email)
+- ✅ Trail pages with maps (Leaflet/GPX), elevation charts, galleries
+- ✅ Floating feedback widget (→ Google Sheets)
 - ✅ Thank you page with social sharing
-- ✅ Data stored in Supabase (PostgreSQL)
+- ✅ Optional password protection (iron-session)
+- ✅ About page, FAQ page
 - ✅ Deployed on Vercel with Analytics
 - ✅ Automated CI/CD pipeline
 
@@ -122,43 +153,71 @@ middleware.ts               # Locale detection & routing
 - ✅ Hero section with compelling headline
 - ✅ Feature highlights (e-bikes, eco-conscious, coffee farms)
 - ✅ "How It Works" 3-step process
-- ✅ "Perfect For" benefit cards (6 personas)
+- ✅ Tour grid display
 - ✅ Waitlist form integration
 - ✅ Responsive design (mobile-first)
-- ✅ Placeholder images from placehold.co
 
 #### Waitlist Form
 - ✅ Email input with validation
-- ✅ Tour duration selection (1 day / weekend / 1 week)
-- ✅ Interest types multi-select (hike, bike, e-bike, women-only, coffee farm)
-- ✅ Fitness level selection (beginner / moderate)
-- ✅ Travel timeline selection (3 months / 6 months / later)
-- ✅ Client-side validation
-- ✅ Server-side validation
-- ✅ Error handling (duplicate email, network errors)
-- ✅ Loading states
+- ✅ Client-side and server-side validation
+- ✅ Data stored via Google Sheets webhook (`GOOGLE_SHEETS_WEBHOOK_URL`)
+- ✅ Confirmation email sent via Resend (non-blocking)
+- ✅ Error handling and loading states
+
+#### Contact Page & Form
+- ✅ Contact form with name, email, subject, message
+- ✅ Data stored in Supabase (`contact_submissions` table)
+- ✅ Email notification sent to `info@senderobiketrails.com` via Resend
+- ✅ Client-side and server-side validation
+
+#### Trails Pages
+- ✅ Trail listing page (`/trails`)
+- ✅ Individual trail detail page (`/trails/sendero-del-tigre`)
+- ✅ Trail maps using Leaflet + leaflet-gpx
+- ✅ Elevation charts, waypoints timeline, galleries
+- ✅ Trail booking CTA, testimonial band, experiences grid
+- ✅ Trails overview map section on landing page
+
+#### About & FAQ Pages
+- ✅ About page (`/about`)
+- ✅ FAQ page with accordion component (`/faq`)
+
+#### Feedback System
+- ✅ Floating feedback button (site-wide)
+- ✅ Feedback modal with category + message
+- ✅ Data sent to Google Sheets via webhook
+- ✅ Supabase edge function for feedback (alternative path)
+
+#### Email (Resend)
+- ✅ **Waitlist confirmation** — HTML email sent to new signups from `RESEND_FROM_EMAIL` (fallback: `noreply@senderobiketrails.com`)
+- ✅ **Contact form notification** — plain text email sent to `info@senderobiketrails.com` from `Sendero Contact Form <contact@senderobiketrails.com>` (hardcoded)
+- ✅ Resend SDK v6.9.2 (`resend` npm package)
+- ✅ Configured via `RESEND_API_KEY` env var; `RESEND_FROM_EMAIL` used by waitlist route only
+- ✅ Non-blocking — email failures are logged but don't break form submissions
+
+#### Password Protection
+- ✅ Optional site-wide password gate using `iron-session`
+- ✅ Login page at `/login`
+- ✅ Auth routes (`/api/auth/login`, `/api/auth/logout`)
+- ✅ Controlled via `PASSWORD_PROTECTION_ENABLED` env var
+- ✅ Session-based with `SESSION_SECRET` env var
 
 #### API & Database
-- ✅ Supabase schema with RLS policies
-- ✅ API route for form submission (`POST /api/waitlist`)
-- ✅ Type-safe database operations
-- ✅ Duplicate email detection (409 status)
-- ✅ Comprehensive error handling
+- ✅ Supabase for contact submissions and feedback storage
+- ✅ Google Sheets webhook for waitlist signups and feedback
+- ✅ Supabase RLS policies (anonymous INSERT, block SELECT/UPDATE/DELETE)
+- ✅ 8 SQL migrations (001-008)
+- ✅ Supabase edge function for feedback with Linear integration
 
 #### Thank You Page
 - ✅ Confirmation message
 - ✅ "What happens next" section
-- ✅ Share functionality:
-  - Copy link to clipboard
-  - WhatsApp share
-  - Twitter/X share
-  - Facebook share
+- ✅ Share functionality (clipboard, WhatsApp, Twitter/X, Facebook)
 - ✅ Back to home button
 
 #### Internationalization (i18n)
 - ✅ Complete trilingual support (EN, DE, ES)
 - ✅ Path-based routing (`/en`, `/de`, `/es`)
-- ✅ 105+ strings translated in all languages
 - ✅ Language switcher in header (EN | DE | ES)
 - ✅ Automatic locale detection
 - ✅ SEO-optimized with hreflang tags
@@ -166,21 +225,12 @@ middleware.ts               # Locale detection & routing
 - ✅ Form validation messages in all languages
 
 #### DevOps & Testing
-- ✅ Jest testing framework
-- ✅ Unit tests for validation logic
+- ✅ Jest unit + component tests (34 test files)
+- ✅ Playwright e2e tests (`e2e/waitlist-flow.spec.ts`)
 - ✅ GitHub Actions CI pipeline
 - ✅ GitHub Actions deployment pipeline
 - ✅ Vercel Analytics integration
 - ✅ TypeScript type safety throughout
-
-### 📋 Pending Setup
-
-- 📋 Supabase project creation
-- 📋 Supabase environment variables configuration
-- 📋 Vercel project setup
-- 📋 GitHub repository initialization
-- 📋 Domain configuration (optional)
-- 📋 Custom logo and images
 
 ---
 
@@ -188,23 +238,30 @@ middleware.ts               # Locale detection & routing
 
 ### Frontend - ✅ Implemented
 
-- **Next.js 15+** (App Router) - React framework with SSR
+- **Next.js 16** (App Router) - React framework with SSR
 - **React 19+** - UI library
 - **TypeScript 5+** - Type safety
 - **Tailwind CSS 4+** - Utility-first styling
+- **next-intl 4.x** - Internationalization
+- **Leaflet + leaflet-gpx** - Interactive trail maps
+- **Lucide React + React Icons** - Icon libraries
 - **Vercel Analytics** - Web analytics
 
 ### Backend - ✅ Implemented
 
-- **Supabase (PostgreSQL 15+)** - Database and backend
-- **Row-Level Security (RLS)** - Data access control
-- **No authentication** - Public form submission only
+- **Supabase (PostgreSQL)** - Database (contact submissions, feedback)
+- **Google Sheets (Apps Script webhook)** - Waitlist signups + feedback storage
+- **Resend** - Transactional email (waitlist confirmation + contact notifications)
+- **iron-session** - Optional password protection
+- **Row-Level Security (RLS)** - Supabase data access control
+- **Supabase Edge Functions** - Feedback → Linear integration
 
 ### DevOps - ✅ Implemented
 
 - **Vercel** - Hosting and deployment
 - **GitHub Actions** - CI/CD pipeline
-- **Jest** - Unit testing
+- **Jest** - Unit + component testing
+- **Playwright** - End-to-end testing
 - **ESLint** - Code linting
 - **TypeScript** - Type checking
 
@@ -222,7 +279,7 @@ The application supports **three languages** with complete translations:
 
 ### Implementation Details
 
-**Library:** `next-intl` (v3.x)
+**Library:** `next-intl` (v4.x)
 - Purpose-built for Next.js App Router
 - Full TypeScript support
 - Path-based routing (`/en`, `/de`, `/es`)
@@ -327,11 +384,32 @@ const t = useTranslations('form');
 
 ---
 
-## 🗄️ Database Architecture
+## 🗄️ Database & Data Storage Architecture
 
-### Table: `waitlist_signups`
+### Data Storage Strategy
 
-**Fields:**
+The app uses a **hybrid storage approach**:
+
+- **Google Sheets** (via Apps Script webhook) — Waitlist signups and feedback
+- **Supabase (PostgreSQL)** — Contact form submissions and feedback (with RLS)
+
+### Google Sheets Integration
+
+Waitlist signups and feedback are sent to Google Sheets via `GOOGLE_SHEETS_WEBHOOK_URL`:
+- Waitlist route sends `{ email }` to the webhook
+- Feedback route sends `{ type: 'feedback', category, message }` to the webhook
+
+### Supabase Tables
+
+#### Table: `contact_submissions` (migration 007)
+
+- `email` - Text, required
+- `name` - Text, required
+- `subject` - Text, nullable
+- `message` - Text, required
+- `locale` - Text (en/de/es)
+
+#### Table: `waitlist_signups` (migration 001)
 
 - `id` - UUID, primary key, auto-generated
 - `created_at` - Timestamp, auto-generated
@@ -340,29 +418,21 @@ const t = useTranslations('form');
 - `interest_types` - Array: `hike`, `bike`, `e_bike`, `women_only`, `coffee_farm`
 - `fitness_level` - Enum: `beginner`, `moderate`
 - `travel_timeline` - Enum: `next_3_months`, `next_6_months`, `later`
-- `notes` - Text, nullable (for future use)
+- `notes` - Text, nullable
 
-**Indexes:**
+*Note: The waitlist API route currently writes to Google Sheets, not Supabase. This table/schema exists from the original implementation.*
 
-- Primary key on `id`
-- Unique index on `email`
-- Index on `created_at` (for sorting)
+#### Feedback Storage (migration 008)
+
+Used by the Supabase edge function (`supabase/functions/submit-feedback/`), which also integrates with Linear for issue tracking.
 
 **RLS Policies:**
 
-- ✅ **Allow anonymous INSERT** - Anyone can submit the form
+- ✅ **Allow anonymous INSERT** - Anyone can submit forms
 - ✅ **Block all SELECT** - Data only visible in Supabase dashboard
 - ✅ **Block UPDATE/DELETE** - Prevent data manipulation
 
-**Security:**
-
-- Email uniqueness enforced at database level
-- RLS prevents unauthorized data access
-- No sensitive data stored (just preferences)
-
-**Migration File:**
-
-See [supabase/migrations/001_create_waitlist_signups.sql](supabase/migrations/001_create_waitlist_signups.sql)
+**Migrations:** `supabase/migrations/001` through `008`
 
 ---
 
@@ -468,9 +538,24 @@ git push origin main
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `NEXT_PUBLIC_SITE_URL`
+- `RESEND_API_KEY`
+- `RESEND_FROM_EMAIL`
+- `GOOGLE_SHEETS_WEBHOOK_URL`
+- `PASSWORD_PROTECTION_ENABLED` (optional)
+- `SITE_PASSWORD` (optional, required if password protection enabled)
+- `SESSION_SECRET` (optional, required if password protection enabled)
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
 - `VERCEL_PROJECT_ID`
+
+**Linear Integration (Supabase Edge Function env vars — configured in Supabase Dashboard):**
+- `LINEAR_API_KEY`
+- `LINEAR_PROJECT_ID`
+- `LINEAR_FEEDBACK_TEAM_ID`
+- `LINEAR_BUG_REPORT_LABEL_ID`
+- `LINEAR_FEATURE_REQUEST_LABEL_ID`
+- `LINEAR_GENERAL_LABEL_ID`
+- `LINEAR_UX_ISSUE_LABEL_ID`
 
 ---
 
@@ -478,39 +563,37 @@ git push origin main
 
 ### Testing Stack
 
-- ✅ **Jest** - Test runner
-- ✅ **React Testing Library** - Component testing (ready for use)
+- ✅ **Jest** - Unit + component test runner
+- ✅ **React Testing Library** - Component testing
 - ✅ **@testing-library/jest-dom** - DOM matchers
-
-### Test Coverage
-
-**Current Coverage:**
-
-- ✅ Validation logic: 100% (all functions tested)
-
-**Coverage Thresholds:**
-
-- Statements: 70%
-- Branches: 70%
-- Functions: 70%
-- Lines: 70%
+- ✅ **Playwright** - End-to-end testing
 
 ### Running Tests
 
 ```bash
+# Jest tests
+npm test                    # Run all Jest tests
+npm run test:watch          # Watch mode
+npm run test:coverage       # Coverage report
+
+# Playwright e2e
+npm run test:e2e            # Run e2e tests
+npm run test:e2e:ui         # Playwright UI mode
+npm run test:e2e:headed     # Headed browser mode
+
 # All tests
-npm test
-
-# Watch mode
-npm run test:watch
-
-# Coverage report
-npm run test:coverage
+npm run test:all            # Jest + Playwright
 ```
 
-**Test Files:**
+**Test Files (34 Jest + 1 Playwright):**
 
-- [__tests__/unit/validation.test.ts](__tests__/unit/validation.test.ts) - Validation logic tests
+- `__tests__/unit/` — Validation, contact email, difficulty, feedback, trails, translations
+- `__tests__/api/` — Waitlist, contact, logout API route tests
+- `__tests__/components/ui/` — Button, Input, Card, Checkbox, Select, etc.
+- `__tests__/components/features/` — Carousel, ContactForm, FAQ, Feedback, TourGrid, TrailsMap
+- `__tests__/components/layout/` — Footer
+- `__tests__/components/home/` — HomePageSections
+- `e2e/waitlist-flow.spec.ts` — Playwright e2e test
 
 ---
 
@@ -594,7 +677,9 @@ The project uses a sophisticated design token architecture in `/lib/design-token
 - `typography.ts` - Typography scale, font families, weights, and line heights
 - `shadows.ts` - Shadow definitions
 - `radius.ts` - Border radius tokens
+- `spacing.ts` - Spacing scale
 - `animations.ts` - Animation presets
+- `index.ts` - Barrel export
 
 **Benefits:**
 
@@ -625,17 +710,22 @@ All tokens are imported into [tailwind.config.ts](tailwind.config.ts) and availa
 
 **UI Components:**
 
-- Button (primary, secondary, outline variants)
-- Input (with label and error states)
-- Select
-- Checkbox
-- RadioGroup
-- Container
+- Accordion, Alert, Badge, Button, Card, Checkbox
+- Container, Dialog, Input, RadioGroup, Select
+- Skeleton, Spinner, Textarea, Toast
 
 **Layout Components:**
 
 - Header (sticky navigation)
 - Footer (links and info)
+
+**Feature Components:**
+
+- WaitlistForm, ContactForm, FeedbackModal, FloatingFeedbackButton
+- TrailCard, TrailMap, TrailHero, TrailGallery, ElevationChart
+- TrailBookingCTA, TrailStory, WaypointsTimeline, BackToTrails, ExperiencesGrid
+- TrailsOverviewMap, TrailsMapSection
+- TourGrid, CarouselSection, FAQAccordion
 
 **Component Principles:**
 
@@ -682,19 +772,20 @@ cp .env.example .env.local
    - Click "New Project"
    - Choose a name, database password, and region
 
-2. **Run the migration:**
+2. **Run the migrations:**
    - Go to SQL Editor in Supabase dashboard
-   - Copy contents of `supabase/migrations/001_create_waitlist_signups.sql`
-   - Paste and run the SQL
+   - Run all migrations from `supabase/migrations/` (001 through 008) in order
 
 3. **Get your credentials:**
    - Go to Project Settings → API
    - Copy `Project URL` and `anon public` key
-   - Add to `.env.local`:
+   - Add to `.env.local` (see `.env.example` for full list):
      ```
      NEXT_PUBLIC_SUPABASE_URL=your-project-url
      NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
      NEXT_PUBLIC_SITE_URL=http://localhost:3000
+     RESEND_API_KEY=your-resend-api-key
+     GOOGLE_SHEETS_WEBHOOK_URL=your-apps-script-webhook-url
      ```
 
 ### Run Locally
@@ -711,7 +802,7 @@ npm run dev
 1. ✅ Landing page loads
 2. ✅ Fill out the waitlist form
 3. ✅ Submit and redirect to thank you page
-4. ✅ Check Supabase dashboard - new row in `waitlist_signups`
+4. ✅ Check Google Sheets for new waitlist row
 
 ---
 
@@ -726,13 +817,19 @@ npm run dev
 
 2. **Add environment variables in Vercel:**
    - Go to Project Settings → Environment Variables
-   - Add:
+   - Add all variables from `.env.example`:
      - `NEXT_PUBLIC_SUPABASE_URL`
      - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
      - `NEXT_PUBLIC_SITE_URL` (your production URL)
+     - `RESEND_API_KEY`
+     - `RESEND_FROM_EMAIL`
+     - `GOOGLE_SHEETS_WEBHOOK_URL`
+     - `PASSWORD_PROTECTION_ENABLED` (optional)
+     - `SITE_PASSWORD` (optional)
+     - `SESSION_SECRET` (optional)
 
 3. **Configure deployment branch:**
-   - Set production branch to `deployment`
+   - Set production branch to `main`
    - Enable automatic deployments
 
 4. **Add Vercel secrets to GitHub:**
@@ -767,6 +864,31 @@ git push origin deployment
 
 ---
 
+## 📧 Email & DNS Infrastructure
+
+### Domain & DNS
+- **Domain registrar:** Porkbun
+- **DNS:** Porkbun (powered by Cloudflare)
+- **Email forwarding:** Porkbun email forwarding (MX → `fwd1.porkbun.com`, `fwd2.porkbun.com`)
+- **Transactional email:** Resend (via Amazon SES, DKIM configured via `resend._domainkey` CNAME)
+
+### Email Addresses
+- **`julian@senderobiketrails.com`** — Primary business email, forwarded to Gmail via Porkbun
+- **`noreply@senderobiketrails.com`** — Default sender for waitlist confirmation emails (via Resend)
+- **`contact@senderobiketrails.com`** — Sender for contact form notification emails (via Resend)
+- **`info@senderobiketrails.com`** — Recipient for contact form notifications (hardcoded in contact API route)
+
+### DNS Records (Key Entries)
+- **A record:** `senderobiketrails.com` → Vercel
+- **CNAME:** `dev.senderobiketrails.com` / `www.senderobiketrails.com` → Vercel
+- **MX:** Porkbun forwarding (`fwd1.porkbun.com`, `fwd2.porkbun.com`)
+- **SPF:** `v=spf1 include:_spf.google.com include:spf.resend.com include:spf.porkbun.com ~all`
+- **DKIM:** `resend._domainkey` CNAME for Resend
+- **DMARC:** `v=DMARC1; p=none;`
+- **Resend sending subdomain:** `send.senderobiketrails.com` → Amazon SES
+
+---
+
 ## 📊 Monitoring & Analytics
 
 ### Vercel Analytics - ✅ Enabled
@@ -788,17 +910,22 @@ git push origin deployment
 
 ## 🔮 Future Enhancements
 
-### Phase 1 - Current (Smoke Test)
+### Phase 1 - Smoke Test ✅ Complete
 
-- ✅ Landing page
-- ✅ Waitlist form
+- ✅ Landing page with tour grid
+- ✅ Waitlist form (Google Sheets + Resend)
+- ✅ Contact form (Supabase + Resend)
 - ✅ Thank you page
-- ✅ Supabase integration
+- ✅ Trail pages with maps
+- ✅ About & FAQ pages
+- ✅ Feedback system
+- ✅ Password protection
 - ✅ CI/CD pipeline
 
 ### Phase 2 - Email Automation
 
-- 📋 Confirmation emails (Resend or SendGrid)
+- ✅ Waitlist confirmation emails (Resend)
+- ✅ Contact form notifications (Resend)
 - 📋 Welcome sequence
 - 📋 Updates to waitlist members
 
@@ -839,17 +966,20 @@ git push origin deployment
 
 ### Current Limitations
 
-- No authentication (by design - public waitlist)
-- No email confirmation (manual for now)
-- Placeholder images (need custom photos)
-- No logo (placeholder text only)
+- No user authentication (by design - public forms + optional password gate)
+- Waitlist data goes to Google Sheets only (not Supabase)
+- Only one trail detail page exists (Sendero del Tigre)
 
 ### Technical Notes
 
-- Using Next.js App Router (not Pages Router)
+- Using Next.js 16 App Router (not Pages Router)
 - Supabase RLS blocks all reads from API (secure)
 - Form validation happens both client-side and server-side
 - Environment variables must be prefixed with `NEXT_PUBLIC_` for browser access
+- Resend emails are non-blocking — failures don't break form submissions
+- Google Sheets webhook URL is required for waitlist and feedback routes
+- Password protection is opt-in via `PASSWORD_PROTECTION_ENABLED` env var
+- Trail maps use Leaflet with GPX file support
 
 ---
 
@@ -858,13 +988,13 @@ git push origin deployment
 For questions or issues:
 
 - **GitHub Issues:** Create an issue in the repository
-- **Email:** (Add your email here)
+- **Email:** julian@senderobiketrails.com
 
 ---
 
 **Version:** 0.1.0 (Smoke Test)
-**Last Updated:** November 2024
-**Status:** Ready for deployment
+**Last Updated:** April 2026
+**Status:** Active development
 
 ---
 
