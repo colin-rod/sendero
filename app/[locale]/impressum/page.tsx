@@ -32,7 +32,7 @@ export default function ImpressumPage() {
 
                 <div className="flex flex-col gap-1">
                   <p className="font-bold">{t('contact')}</p>
-                  <p>E-Mail: hello@senderobiketrails.com</p>
+                  <p>E-Mail: julian@senderobiketrails.com</p>
                 </div>
 
                 <div className="flex flex-col gap-1">

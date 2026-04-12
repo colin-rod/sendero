@@ -84,11 +84,15 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
 
   const isVisible = isActive || isHovered;
 
-  const handleMouseEnter = () => {
+  const handlePointerEnter = (e: React.PointerEvent) => {
+    if (e.pointerType === 'touch') return;
     setIsHovered(true);
     setAnimKey((k) => k + 1); // restart animation each hover
   };
-  const handleMouseLeave = () => setIsHovered(false);
+  const handlePointerLeave = (e: React.PointerEvent) => {
+    if (e.pointerType === 'touch') return;
+    setIsHovered(false);
+  };
 
   return (
     <div
@@ -103,8 +107,8 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
           if (opening) setAnimKey((k) => k + 1);
         }
       }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
     >
       {/* Photo background */}
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
@@ -119,7 +123,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
       </div>
 
       {/* Hover overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 py-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-[54px] pb-16 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
         <div className="flex-1 flex items-center justify-center">
           <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>

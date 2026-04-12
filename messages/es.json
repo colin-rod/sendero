@@ -15,7 +15,7 @@
     }
   },
   "hero": {
-    "title": "Aventuras en Bicicleta en los Andes Colombianos",
+    "title": "Travesías en bicicleta por los Andes Colombianos",
     "subtitle": "Te conectamos en bicicleta con las montañas y creamos momentos únicos para todos tus sentidos.",
     "description": "Tours de senderismo y ciclismo para principiantes, sostenibles a través de los impresionantes paisajes de Pereira. Bicicletas eléctricas, grupos solo para mujeres y experiencias auténticas en fincas cafeteras.",
     "features": {
@@ -91,9 +91,9 @@
     "heading": "Únete a la Lista de Espera",
     "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura.",
     "becomeAPioneer": "Buscamos participantes",
-    "nextDate": "Próximo viaje: 28.11–04.12.2026",
+    "nextDate": "Próximo viaje: 26.11–04.12.2026",
     "nextDateLabel": "Próximo viaje:",
-    "nextDateValue": "28.11.–04.12.2026",
+    "nextDateValue": "26.11.–04.12.2026",
     "ctaPrompt": "Únete. O mantente al tanto.",
     "joinButton": "UNIRSE"
   },
@@ -222,7 +222,7 @@
       "heading": "Información de Contacto",
       "email": {
         "label": "Correo Electrónico",
-        "value": "info@senderobiketrails.com"
+        "value": "julian@senderobiketrails.com"
       },
       "whatsapp": {
         "label": "WhatsApp",
@@ -658,7 +658,7 @@
     "cards": {
       "tigre": {
         "name": "Sendero del Tigre",
-        "description": "Bucles rurales escénicos y accesibles. Almuerzo en finca ecológica.",
+        "description": "Circuitos rurales por las veredas, siguiendo huellas. Almuerzo en finca agroecológica.",
         "distance": "20 km",
         "difficulty": "Fácil"
       },

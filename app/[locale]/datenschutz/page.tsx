@@ -30,7 +30,7 @@ export default function DatenschutzPage() {
                   <p>sendero bike trails</p>
                   <p>Julian Perez</p>
                   <p>Berlin, Deutschland</p>
-                  <p>E-Mail: hello@senderobiketrails.com</p>
+                  <p>E-Mail: julian@senderobiketrails.com</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -63,7 +63,7 @@ export default function DatenschutzPage() {
                 <div className="flex flex-col gap-2">
                   <p className="font-bold">{t('rightsTitle')}</p>
                   <p>{t('rightsText1')}</p>
-                  <p>{t('rightsText2')} <strong>hello@senderobiketrails.com</strong></p>
+                  <p>{t('rightsText2')} <strong>julian@senderobiketrails.com</strong></p>
                 </div>
 
                 <div className="flex flex-col gap-2">

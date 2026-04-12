@@ -106,8 +106,8 @@ describe('POST /api/contact', () => {
 
       expect(mockEmailSend).toHaveBeenCalledWith(
         expect.objectContaining({
-          from: 'Sendero Contact Form <contact@senderobiketrails.com>',
-          to: 'info@senderobiketrails.com',
+          from: 'Sendero Contact Form <julian@senderobiketrails.com>',
+          to: 'julian@senderobiketrails.com',
           subject: expect.stringContaining('New Contact Form Submission'),
           text: expect.stringContaining('John Doe'),
         })
