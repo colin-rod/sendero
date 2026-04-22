@@ -167,7 +167,8 @@
     "invalidSubject": "Invalid subject selected"
   },
   "footer": {
-    "brandName": "sendero bike trails - curated cycling journeys in the Colombian Andes",
+    "brandName": "sendero bike trails",
+    "subtitle": "Curated cycling journeys in the Colombian Andes",
     "tagline": "Let yourself go, deep into the mountains",
     "social": {
       "followUs": "Follow us",

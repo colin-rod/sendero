@@ -25,7 +25,8 @@ export function Footer() {
                 className="h-12 w-12"
               />
             </div>
-            <p className="text-body text-white">{t('brandName')}</p>
+            <p className="text-body font-bold text-white">{t('brandName')}</p>
+            <p className="text-body text-white">{t('subtitle')}</p>
             <p className="text-body text-white">{t('tagline')}</p>
           </div>
 

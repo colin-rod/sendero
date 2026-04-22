@@ -167,7 +167,8 @@
     "invalidSubject": "Ungültiges Betreff ausgewählt"
   },
   "footer": {
-    "brandName": "sendero bike trails - kuratierte Fahrradurlaub in den kolumbianischen Anden",
+    "brandName": "sendero bike trails",
+    "subtitle": "Kuratierte Fahrradreisen in den kolumbianischen Anden",
     "tagline": "Lass los. Tauche tief in die Berge ein",
     "social": {
       "followUs": "Folge uns",

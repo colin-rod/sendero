@@ -167,7 +167,8 @@
     "invalidSubject": "Asunto inválido seleccionado"
   },
   "footer": {
-    "brandName": "sendero bike trails - viajes memorables en bici por los Andes Colombianos",
+    "brandName": "sendero bike trails",
+    "subtitle": "Viajes memorables en bici por los Andes Colombianos",
     "tagline": "Déjate llevar a lo profundo de las montañas",
     "social": {
       "followUs": "Síguenos",
