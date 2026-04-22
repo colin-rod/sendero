@@ -4,7 +4,6 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { Analytics } from '@vercel/analytics/react';
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { FloatingFeedbackButton } from '@/components/features/feedback/FloatingFeedbackButton';
 
 type Props = {
   children: React.ReactNode;
@@ -77,7 +76,6 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body>
         <NextIntlClientProvider locale={validatedLocale} messages={messages}>
           {children}
-          <FloatingFeedbackButton />
           <Analytics />
         </NextIntlClientProvider>
       </body>
