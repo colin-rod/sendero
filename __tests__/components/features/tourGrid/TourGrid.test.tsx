@@ -11,7 +11,7 @@ const cards = [
   {
     id: 'tigre',
     title: 'Sendero del Tigre',
-    imageSrc: '/tours/sendero-tigre.png',
+    imageSrc: '/tours/sendero-tigre.webp',
     imageAlt: 'Sendero del Tigre',
     description: 'Scenic and accessible rural loops. Organic Farm Lunch.',
   },

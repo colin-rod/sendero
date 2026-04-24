@@ -69,7 +69,7 @@ export default function HomePage() {
                   {
                     id: 'tigre',
                     title: tTourGrid('cards.tigre.name'),
-                    imageSrc: '/tours/sendero-tigre.png',
+                    imageSrc: '/tours/sendero-tigre.webp',
                     imageAlt: tTourGrid('cards.tigre.name'),
                     description: tTourGrid('cards.tigre.description'),
                     distance: tTourGrid('cards.tigre.distance'),
@@ -78,7 +78,7 @@ export default function HomePage() {
                   {
                     id: 'cafe',
                     title: tTourGrid('cards.cafe.name'),
-                    imageSrc: '/tours/sendero_cafe.jpg',
+                    imageSrc: '/tours/sendero_cafe.webp',
                     imageAlt: tTourGrid('cards.cafe.name'),
                     description: tTourGrid('cards.cafe.description'),
                     distance: tTourGrid('cards.cafe.distance'),
@@ -87,7 +87,7 @@ export default function HomePage() {
                   {
                     id: 'agua',
                     title: tTourGrid('cards.agua.name'),
-                    imageSrc: '/tours/sendero_agua.jpg',
+                    imageSrc: '/tours/sendero_agua.webp',
                     imageAlt: tTourGrid('cards.agua.name'),
                     description: tTourGrid('cards.agua.description'),
                     distance: tTourGrid('cards.agua.distance'),
@@ -96,7 +96,7 @@ export default function HomePage() {
                   {
                     id: 'cacao',
                     title: tTourGrid('cards.cacao.name'),
-                    imageSrc: '/tours/sendero_cacao.jpg',
+                    imageSrc: '/tours/sendero_cacao.webp',
                     imageAlt: tTourGrid('cards.cacao.name'),
                     description: tTourGrid('cards.cacao.description'),
                     distance: tTourGrid('cards.cacao.distance'),
@@ -105,7 +105,7 @@ export default function HomePage() {
                   {
                     id: 'volcan',
                     title: tTourGrid('cards.volcan.name'),
-                    imageSrc: '/tours/sendero_volcan.jpeg',
+                    imageSrc: '/tours/sendero_volcan.webp',
                     imageAlt: tTourGrid('cards.volcan.name'),
                     description: tTourGrid('cards.volcan.description'),
                     distance: tTourGrid('cards.volcan.distance'),
@@ -114,7 +114,7 @@ export default function HomePage() {
                   {
                     id: 'paramo',
                     title: tTourGrid('cards.paramo.name'),
-                    imageSrc: '/tours/sendero_paramo.jpg',
+                    imageSrc: '/tours/sendero_paramo.webp',
                     imageAlt: tTourGrid('cards.paramo.name'),
                     description: tTourGrid('cards.paramo.description'),
                     distance: tTourGrid('cards.paramo.distance'),
@@ -132,7 +132,7 @@ export default function HomePage() {
                   {
                     id: 'oro',
                     title: tTourGrid('cards.oro.name'),
-                    imageSrc: '/tours/sendero_oro.png',
+                    imageSrc: '/tours/sendero_oro.webp',
                     imageAlt: tTourGrid('cards.oro.name'),
                     description: tTourGrid('cards.oro.description'),
                     distance: tTourGrid('cards.oro.distance'),
@@ -141,7 +141,7 @@ export default function HomePage() {
                   {
                     id: 'luminoso',
                     title: tTourGrid('cards.luminoso.name'),
-                    imageSrc: '/tours/sendero_luminoso.png',
+                    imageSrc: '/tours/sendero_luminoso.webp',
                     imageAlt: tTourGrid('cards.luminoso.name'),
                     description: tTourGrid('cards.luminoso.description'),
                     distance: tTourGrid('cards.luminoso.distance'),
