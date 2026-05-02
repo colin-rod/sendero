@@ -47,6 +47,6 @@ describe('TourGrid', () => {
   it('renders a 2-column grid container', () => {
     const { container } = render(<TourGrid cards={cards} />);
     const grid = container.querySelector('.grid');
-    expect(grid).toHaveClass('grid-cols-1', 'md:grid-cols-2', 'gap-10');
+    expect(grid).toHaveClass('grid-cols-1', 'md:grid-cols-2', 'gap-4', 'sm:gap-6', 'md:gap-10');
   });
 });

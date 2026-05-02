@@ -22,6 +22,8 @@ interface TourGridCardData {
   description?: string;
   distance?: string;
   difficulty?: string;
+  elevation?: string;
+  elevationGain?: string;
 }
 
 interface TourGridProps {
@@ -59,7 +61,7 @@ function TrailSVG({ src, animate, animKey }: { src: string; animate: boolean; an
   );
 }
 
-function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardData) {
+function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevation, elevationGain }: TourGridCardData) {
   const [isActive, setIsActive] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [animKey, setAnimKey] = useState(0);
@@ -123,13 +125,18 @@ function TourCard({ id, title, imageSrc, imageAlt, description }: TourGridCardDa
       </div>
 
       {/* Hover overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-[54px] pb-16 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-[54px] pb-10 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
         <div className="flex-1 flex items-center justify-center">
           <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>
-        <div className="flex flex-col items-center gap-1 text-center pb-9">
+        <div className="flex flex-col items-center gap-2 text-center pb-6 md:pb-9">
           {line1 && <p className="text-body font-bold text-foreground">{line1}</p>}
           {line2 && <p className="text-body font-normal text-foreground">{line2}</p>}
+          {(distance || elevation || elevationGain) && (
+            <p className="text-sm font-medium text-foreground mt-2">
+              {[distance, elevation, elevationGain].filter(Boolean).join(' · ')}
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -145,7 +152,7 @@ export function TourGrid({ cards, heading, subheading }: TourGridProps) {
           {subheading && <p className="text-body">{subheading}</p>}
         </div>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-10">
         {cards.map((card) => (
           <TourCard key={card.id} {...card} />
         ))}

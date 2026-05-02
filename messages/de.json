@@ -658,56 +658,74 @@
     "cards": {
       "tigre": {
         "name": "Sendero del Tigre",
-        "description": "Malerische und zugängliche Landschleifen. Mittagessen auf einem ökologischen Bauernhof.",
+        "description": "Malerische Rundstrecken. Bio-Hof Mittagessen.",
         "distance": "20 km",
+        "elevation": "1.400 m",
+        "elevationGain": "320 hm",
         "difficulty": "Leicht"
       },
       "cafe": {
         "name": "Sendero del Café",
-        "description": "Hügelige Kaffeelandschaften. Privates Specialty-Coffee-Erlebnis am Ursprungsort.",
+        "description": "Kaffeelandschaften. Spezialitätenkaffee am Ursprung.",
         "distance": "27 km",
+        "elevation": "1.600 m",
+        "elevationGain": "520 hm",
         "difficulty": "Mittel"
       },
       "agua": {
         "name": "Sendero del Agua",
-        "description": "Gebirgsflüsse und Andenwälder. Besuch eines ländlichen Innovationslabors.",
+        "description": "Bergflüsse & Andenwälder. Nah an uralten Geschichten.",
         "distance": "30 km",
+        "elevation": "1.800 m",
+        "elevationGain": "640 hm",
         "difficulty": "Mittel"
       },
       "cacao": {
         "name": "Sendero del Cacao",
-        "description": "Warme Talstraßen. Kakao-Erlebnis und handwerkliche Schokoladenverkostung.",
+        "description": "Warme Wege im Kakaotal. Radeln und Kakaohandwerk erleben.",
         "distance": "37 km",
+        "elevation": "900 m",
+        "elevationGain": "450 hm",
         "difficulty": "Mittel"
       },
       "volcan": {
         "name": "Sendero del Volcán",
-        "description": "Vulkanisches Gelände und steile Anstiege. Fahrt durch Wachspalmen-Wälder.",
+        "description": "Vulkanisches Gelände. Fahren zwischen hohen Wachspalmen.",
         "distance": "45 km",
+        "elevation": "2.600 m",
+        "elevationGain": "1.200 hm",
         "difficulty": "Schwer"
       },
       "paramo": {
         "name": "Sendero del Páramo",
-        "description": "Kompakter Hochgebirgsaufstieg. Dünne Luft, rohe Schönheit, weitläufige Stille.",
+        "description": "Kompakter Hochgebirgsanstieg. Dünne Luft, rohe Schönheit, weite Stille.",
         "distance": "32 km",
+        "elevation": "3.400 m",
+        "elevationGain": "1.800 hm",
         "difficulty": "Schwer"
       },
       "guadua": {
         "name": "Sendero de la Guadua",
-        "description": "Bambuswälder zur goldenen Stunde. Fahrt in die Klänge des Abends.",
+        "description": "Bambuswälder zur goldenen Stunde. In die Klänge des Abends eintauchen.",
         "distance": "20 km",
+        "elevation": "1.300 m",
+        "elevationGain": "240 hm",
         "difficulty": "Leicht"
       },
       "oro": {
         "name": "Sendero del Oro",
-        "description": "Farbenfrohe Pueblos und goldene Routen. Durch lebendiges Kulturerbe radeln.",
+        "description": "Farbenfrohe Pueblos. Lebendiges Kulturerbe erfahren.",
         "distance": "38 km",
+        "elevation": "1.550 m",
+        "elevationGain": "580 hm",
         "difficulty": "Mittel"
       },
       "luminoso": {
         "name": "Sendero Luminoso",
         "description": "Sanftes Landterrain. Langsames Radfahren und nächtliches Eintauchen.",
         "distance": "32 km",
+        "elevation": "1.200 m",
+        "elevationGain": "280 hm",
         "difficulty": "Leicht"
       }
     }

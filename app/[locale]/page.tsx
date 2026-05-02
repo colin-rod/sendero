@@ -74,6 +74,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.tigre.description'),
                     distance: tTourGrid('cards.tigre.distance'),
                     difficulty: tTourGrid('cards.tigre.difficulty'),
+                    elevation: tTourGrid('cards.tigre.elevation'),
+                    elevationGain: tTourGrid('cards.tigre.elevationGain'),
                   },
                   {
                     id: 'cafe',
@@ -83,6 +85,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.cafe.description'),
                     distance: tTourGrid('cards.cafe.distance'),
                     difficulty: tTourGrid('cards.cafe.difficulty'),
+                    elevation: tTourGrid('cards.cafe.elevation'),
+                    elevationGain: tTourGrid('cards.cafe.elevationGain'),
                   },
                   {
                     id: 'agua',
@@ -92,6 +96,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.agua.description'),
                     distance: tTourGrid('cards.agua.distance'),
                     difficulty: tTourGrid('cards.agua.difficulty'),
+                    elevation: tTourGrid('cards.agua.elevation'),
+                    elevationGain: tTourGrid('cards.agua.elevationGain'),
                   },
                   {
                     id: 'cacao',
@@ -101,6 +107,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.cacao.description'),
                     distance: tTourGrid('cards.cacao.distance'),
                     difficulty: tTourGrid('cards.cacao.difficulty'),
+                    elevation: tTourGrid('cards.cacao.elevation'),
+                    elevationGain: tTourGrid('cards.cacao.elevationGain'),
                   },
                   {
                     id: 'volcan',
@@ -110,6 +118,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.volcan.description'),
                     distance: tTourGrid('cards.volcan.distance'),
                     difficulty: tTourGrid('cards.volcan.difficulty'),
+                    elevation: tTourGrid('cards.volcan.elevation'),
+                    elevationGain: tTourGrid('cards.volcan.elevationGain'),
                   },
                   {
                     id: 'paramo',
@@ -119,6 +129,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.paramo.description'),
                     distance: tTourGrid('cards.paramo.distance'),
                     difficulty: tTourGrid('cards.paramo.difficulty'),
+                    elevation: tTourGrid('cards.paramo.elevation'),
+                    elevationGain: tTourGrid('cards.paramo.elevationGain'),
                   },
                   {
                     id: 'guadua',
@@ -128,6 +140,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.guadua.description'),
                     distance: tTourGrid('cards.guadua.distance'),
                     difficulty: tTourGrid('cards.guadua.difficulty'),
+                    elevation: tTourGrid('cards.guadua.elevation'),
+                    elevationGain: tTourGrid('cards.guadua.elevationGain'),
                   },
                   {
                     id: 'oro',
@@ -137,6 +151,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.oro.description'),
                     distance: tTourGrid('cards.oro.distance'),
                     difficulty: tTourGrid('cards.oro.difficulty'),
+                    elevation: tTourGrid('cards.oro.elevation'),
+                    elevationGain: tTourGrid('cards.oro.elevationGain'),
                   },
                   {
                     id: 'luminoso',
@@ -146,6 +162,8 @@ export default function HomePage() {
                     description: tTourGrid('cards.luminoso.description'),
                     distance: tTourGrid('cards.luminoso.distance'),
                     difficulty: tTourGrid('cards.luminoso.difficulty'),
+                    elevation: tTourGrid('cards.luminoso.elevation'),
+                    elevationGain: tTourGrid('cards.luminoso.elevationGain'),
                   },
                 ]}
               />
