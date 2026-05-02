@@ -19,6 +19,7 @@ export default [
       '*.config.ts',
       '*.config.mjs',
       'supabase/functions/**', // Edge Functions use Deno runtime
+      'scripts/**', // One-shot Node.js utility scripts
     ],
   },
   {
