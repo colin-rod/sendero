@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       locale: locale === 'en' ? 'en_US' : locale === 'de' ? 'de_DE' : 'es_ES',
       images: [{
-        url: `${process.env.NEXT_PUBLIC_SITE_URL}/og-logo.png`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/Logo_Dark.png`,
         width: 96,
         height: 96,
         alt: 'Sendero Bike Trails',
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary',
       title: t('title'),
       description: t('description'),
-      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/og-logo.png`],
+      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/Logo_Dark.png`],
     },
     robots: {
       index: true,

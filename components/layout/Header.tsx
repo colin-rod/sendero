@@ -13,7 +13,7 @@ type HeaderProps = {
 export function Header({ logoVariant = 'dark' }: HeaderProps) {
   const t = useTranslations('header');
   const isWhiteLogo = logoVariant === 'white';
-  const logoSrc = isWhiteLogo ? '/Logo White.svg' : '/Logo Dark.svg';
+  const logoSrc = isWhiteLogo ? '/Logo_Light.svg' : '/Logo_Dark.svg';
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

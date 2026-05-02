@@ -45,7 +45,7 @@ describe('Footer', () => {
     render(<Footer />);
 
     const logo = screen.getByAltText('sendero bike trails');
-    expect(logo).toHaveAttribute('src', '/Logo Dark.svg');
+    expect(logo).toHaveAttribute('src', '/Logo_Dark.svg');
   });
 
   it('renders as a responsive 3-column grid', () => {
