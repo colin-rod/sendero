@@ -98,7 +98,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
 
   return (
     <div
-      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
+      className="group relative aspect-[3/4] w-full overflow-hidden cursor-pointer"
       onClick={() => {
         // On desktop the user is always hovering when they click, so isHovered is true
         // and we skip — hover alone controls visibility. On mobile, isHovered is always
@@ -125,7 +125,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       </div>
 
       {/* Hover overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-[54px] pb-10 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-8 md:pt-[54px] pb-10 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
         <div className="flex-1 flex items-center justify-center">
           <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>
