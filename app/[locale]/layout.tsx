@@ -28,11 +28,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t('description'),
       type: 'website',
       locale: locale === 'en' ? 'en_US' : locale === 'de' ? 'de_DE' : 'es_ES',
+      images: [{
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/Logo_Dark.png`,
+        width: 96,
+        height: 96,
+        alt: 'Sendero Bike Trails',
+      }],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title: t('title'),
       description: t('description'),
+      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/Logo_Dark.png`],
     },
     robots: {
       index: true,

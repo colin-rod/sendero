@@ -11,7 +11,7 @@ const cards = [
   {
     id: 'tigre',
     title: 'Sendero del Tigre',
-    imageSrc: '/tours/sendero-tigre.png',
+    imageSrc: '/tours/sendero-tigre.webp',
     imageAlt: 'Sendero del Tigre',
     description: 'Scenic and accessible rural loops. Organic Farm Lunch.',
   },
@@ -34,19 +34,20 @@ describe('TourGrid', () => {
   });
 
   it('renders the trail name in the card title', () => {
-    render(<TourGrid cards={cards} />);
-    expect(screen.getByText('TIGRE')).toBeInTheDocument();
+    const { container } = render(<TourGrid cards={cards} />);
+    expect(container.textContent).toContain('Sendero del');
+    expect(container.textContent).toContain('Tigre');
   });
 
   it('renders the hover overlay text from the description prop', () => {
     render(<TourGrid cards={cards} />);
-    expect(screen.getByText('Scenic and accessible rural loops.')).toBeInTheDocument();
+    expect(screen.getByText('Scenic and accessible rural loops')).toBeInTheDocument();
     expect(screen.getByText('Organic Farm Lunch.')).toBeInTheDocument();
   });
 
   it('renders a 2-column grid container', () => {
     const { container } = render(<TourGrid cards={cards} />);
     const grid = container.querySelector('.grid');
-    expect(grid).toHaveClass('grid-cols-1', 'md:grid-cols-2', 'gap-10');
+    expect(grid).toHaveClass('grid-cols-1', 'md:grid-cols-2', 'gap-4', 'sm:gap-6', 'md:gap-10');
   });
 });
