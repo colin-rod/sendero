@@ -139,9 +139,11 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       </div>
 
       {/* Hover / tap overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-8 md:pt-[54px] pb-10 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-        <div className="flex-1 flex items-center justify-center">
-          <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-6 md:pt-[54px] pb-8 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+        <div className="flex-1 flex items-center justify-center min-h-0">
+          <div className="w-full max-w-[55%] md:max-w-[70%]">
+            <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
+          </div>
         </div>
         <div className="flex flex-col items-center gap-2 text-center">
           {line1 && <p className="text-xl font-bold text-foreground">{line1}</p>}
