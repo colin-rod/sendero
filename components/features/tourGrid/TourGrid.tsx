@@ -42,8 +42,11 @@ function TrailSVG({ src, animate, animKey }: { src: string; animate: boolean; an
     fetch(src)
       .then((r) => r.text())
       .then((text) => {
-        // Inject pathLength="1" onto every <path> so stroke-dashoffset 0→1 works
-        const patched = text.replace(/<path /g, '<path pathLength="1" ');
+        const patched = text
+          // Remove fixed dimensions so the SVG scales to its container via viewBox
+          .replace(/(<svg[^>]*)\s+width="[^"]*"\s+height="[^"]*"/, '$1 width="100%" height="100%"')
+          // Inject pathLength="1" onto every <path> so stroke-dashoffset 0→1 works
+          .replace(/<path /g, '<path pathLength="1" ');
         setSvgContent(patched);
       })
       .catch(() => {});
@@ -140,8 +143,13 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
 
       {/* Hover / tap overlay */}
       <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-6 md:pt-[54px] pb-8 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-        <div className="flex-1 flex items-center justify-center min-h-0">
-          <div className="w-full max-w-[55%] md:max-w-[70%]">
+        <div
+          className="flex-1 flex items-center justify-center min-h-0 cursor-default"
+          onClick={(e) => e.stopPropagation()}
+          onPointerEnter={(e) => e.stopPropagation()}
+          onPointerLeave={(e) => e.stopPropagation()}
+        >
+          <div className="w-full max-w-[55%] md:max-w-[70%] pointer-events-none">
             <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
           </div>
         </div>
