@@ -106,7 +106,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
 
   return (
     <div
-      className="group relative aspect-[3/4] w-full overflow-hidden cursor-pointer"
+      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
       onClick={() => {
         // On desktop the user is always hovering when they click, so isHovered is true
         // and we skip — hover alone controls visibility. On mobile, isHovered is always
@@ -123,9 +123,19 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       {/* Photo background */}
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
-      {/* Default: title at bottom — styled to match state 2 first line */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-6 md:pb-9">
-        <p className="text-xl font-bold text-center text-[#F2F2F2]">{title}</p>
+      {/* Default: title at bottom */}
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-9">
+        {(() => {
+          const lastSpace = title.lastIndexOf(' ');
+          const first = lastSpace !== -1 ? title.slice(0, lastSpace) : '';
+          const last  = lastSpace !== -1 ? title.slice(lastSpace + 1) : title;
+          return (
+            <p className="text-center text-h3 font-light leading-8 tracking-[0.12em] uppercase text-[#F2F2F2]">
+              {first && <>{first} </>}
+              <strong className="font-bold">{last}</strong>
+            </p>
+          );
+        })()}
       </div>
 
       {/* Hover / tap overlay */}
