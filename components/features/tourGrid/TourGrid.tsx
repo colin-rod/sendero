@@ -88,7 +88,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
   const pathSrc = PATH_SVG[id] ?? '/svg/trails/elements/path-tigre.svg';
   const dotIndex = description ? description.indexOf('. ') : -1;
   const line1 = description
-    ? (dotIndex !== -1 ? description.slice(0, dotIndex + 1) : description)
+    ? (dotIndex !== -1 ? description.slice(0, dotIndex) : description)
     : '';
   const line2 = description && dotIndex !== -1 ? description.slice(dotIndex + 2) : '';
 
@@ -143,9 +143,9 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
         <div className="flex-1 flex items-center justify-center">
           <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>
-        <div className="flex flex-col items-center gap-2 text-center pb-6 md:pb-9">
+        <div className="flex flex-col items-center gap-2 text-center">
           {line1 && <p className="text-xl font-bold text-foreground">{line1}</p>}
-          {line2 && <p className="text-base font-normal text-gray-500">{line2}</p>}
+          {line2 && <p className="text-base font-normal text-foreground">{line2}</p>}
           {(distance || elevation || elevationGain) && (
             <div className="flex items-center justify-center gap-x-1.5 text-sm mt-3 flex-wrap">
               {distance && <StatPill raw={distance} />}
