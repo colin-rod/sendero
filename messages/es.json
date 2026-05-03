@@ -660,72 +660,72 @@
         "name": "Sendero del Tigre",
         "description": "Circuitos rurales pintorescos. Almuerzo en finca orgánica.",
         "distance": "20 km",
-        "elevation": "1.400 m",
-        "elevationGain": "320 hm",
+        "elevation": "1.400 m s. n. m.",
+        "elevationGain": "320",
         "difficulty": "Fácil"
       },
       "cafe": {
         "name": "Sendero del Café",
         "description": "Paisajes cafeteros. Café de especialidad en origen.",
         "distance": "27 km",
-        "elevation": "1.600 m",
-        "elevationGain": "520 hm",
+        "elevation": "1.600 m s. n. m.",
+        "elevationGain": "520",
         "difficulty": "Moderado"
       },
       "agua": {
         "name": "Sendero del Agua",
         "description": "Ríos de montaña & bosques andinos. Cerca de historias antiguas.",
         "distance": "30 km",
-        "elevation": "1.800 m",
-        "elevationGain": "640 hm",
+        "elevation": "1.800 m s. n. m.",
+        "elevationGain": "640",
         "difficulty": "Moderado"
       },
       "cacao": {
         "name": "Sendero del Cacao",
         "description": "Cálidas rutas del valle del cacao. Ciclismo y artesanía de cacao.",
         "distance": "37 km",
-        "elevation": "900 m",
-        "elevationGain": "450 hm",
+        "elevation": "900 m s. n. m.",
+        "elevationGain": "450",
         "difficulty": "Moderado"
       },
       "volcan": {
         "name": "Sendero del Volcán",
         "description": "Terreno volcánico. Pedaleando entre altas palmas de cera.",
         "distance": "45 km",
-        "elevation": "2.600 m",
-        "elevationGain": "1.200 hm",
+        "elevation": "2.600 m s. n. m.",
+        "elevationGain": "1.200",
         "difficulty": "Difícil"
       },
       "paramo": {
         "name": "Sendero del Páramo",
         "description": "Ascenso compacto de alta montaña. Aire fino, belleza cruda, silencio vasto.",
         "distance": "32 km",
-        "elevation": "3.400 m",
-        "elevationGain": "1.800 hm",
+        "elevation": "3.400 m s. n. m.",
+        "elevationGain": "1.800",
         "difficulty": "Difícil"
       },
       "guadua": {
         "name": "Sendero de la Guadua",
         "description": "Bosques de bambú a la hora dorada. Sumergidos en los sonidos del atardecer.",
         "distance": "20 km",
-        "elevation": "1.300 m",
-        "elevationGain": "240 hm",
+        "elevation": "1.300 m s. n. m.",
+        "elevationGain": "240",
         "difficulty": "Fácil"
       },
       "oro": {
         "name": "Sendero del Oro",
         "description": "Coloridos pueblos. Patrimonio cultural vivo.",
         "distance": "38 km",
-        "elevation": "1.550 m",
-        "elevationGain": "580 hm",
+        "elevation": "1.550 m s. n. m.",
+        "elevationGain": "580",
         "difficulty": "Moderado"
       },
       "luminoso": {
         "name": "Sendero Luminoso",
         "description": "Terreno campestre suave. Ciclismo lento e inmersión nocturna.",
         "distance": "32 km",
-        "elevation": "1.200 m",
-        "elevationGain": "280 hm",
+        "elevation": "1.200 m s. n. m.",
+        "elevationGain": "280",
         "difficulty": "Fácil"
       }
     }

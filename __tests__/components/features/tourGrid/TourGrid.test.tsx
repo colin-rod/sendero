@@ -35,7 +35,7 @@ describe('TourGrid', () => {
 
   it('renders the trail name in the card title', () => {
     render(<TourGrid cards={cards} />);
-    expect(screen.getByText('TIGRE')).toBeInTheDocument();
+    expect(screen.getByText('Sendero del Tigre')).toBeInTheDocument();
   });
 
   it('renders the hover overlay text from the description prop', () => {

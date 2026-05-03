@@ -61,6 +61,19 @@ function TrailSVG({ src, animate, animKey }: { src: string; animate: boolean; an
   );
 }
 
+function StatPill({ raw, suffix }: { raw: string; suffix?: string }) {
+  const sp = raw.indexOf(' ');
+  const num = sp !== -1 ? raw.slice(0, sp) : raw;
+  const unit = sp !== -1 ? raw.slice(sp) : '';
+  return (
+    <>
+      <span className="font-bold">{num}</span>
+      <span className="font-light text-gray-500">{unit}</span>
+      {suffix && <span className="font-light text-gray-500"> {suffix}</span>}
+    </>
+  );
+}
+
 function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevation, elevationGain }: TourGridCardData) {
   const [isActive, setIsActive] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -79,17 +92,12 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
     : '';
   const line2 = description && dotIndex !== -1 ? description.slice(dotIndex + 2) : '';
 
-  // Split on last word: prefix is everything before, trailName is the last word
-  const lastSpaceIndex = title.lastIndexOf(' ');
-  const prefix = lastSpaceIndex !== -1 ? title.slice(0, lastSpaceIndex).toUpperCase() : '';
-  const trailName = lastSpaceIndex !== -1 ? title.slice(lastSpaceIndex + 1).toUpperCase() : title.toUpperCase();
-
   const isVisible = isActive || isHovered;
 
   const handlePointerEnter = (e: React.PointerEvent) => {
     if (e.pointerType === 'touch') return;
     setIsHovered(true);
-    setAnimKey((k) => k + 1); // restart animation each hover
+    setAnimKey((k) => k + 1);
   };
   const handlePointerLeave = (e: React.PointerEvent) => {
     if (e.pointerType === 'touch') return;
@@ -115,27 +123,27 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       {/* Photo background */}
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
-      {/* Default: title at bottom */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-9">
-        <p className="text-center text-h3 font-light leading-8 tracking-[0.12em] text-[#F2F2F2]">
-          {prefix && <span className="font-light">{prefix}</span>}
-          {prefix && ' '}
-          <span className="font-bold">{trailName}</span>
-        </p>
+      {/* Default: title at bottom — styled to match state 2 first line */}
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-6 md:pb-9">
+        <p className="text-xl font-bold text-center text-[#F2F2F2]">{title}</p>
       </div>
 
-      {/* Hover overlay */}
+      {/* Hover / tap overlay */}
       <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-8 md:pt-[54px] pb-10 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
         <div className="flex-1 flex items-center justify-center">
           <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
         </div>
         <div className="flex flex-col items-center gap-2 text-center pb-6 md:pb-9">
-          {line1 && <p className="text-body font-bold text-foreground">{line1}</p>}
-          {line2 && <p className="text-body font-normal text-foreground">{line2}</p>}
+          {line1 && <p className="text-xl font-bold text-foreground">{line1}</p>}
+          {line2 && <p className="text-base font-normal text-gray-500">{line2}</p>}
           {(distance || elevation || elevationGain) && (
-            <p className="text-sm font-medium text-foreground mt-2">
-              {[distance, elevation, elevationGain].filter(Boolean).join(' · ')}
-            </p>
+            <div className="flex items-center justify-center gap-x-1.5 text-sm mt-3 flex-wrap">
+              {distance && <StatPill raw={distance} />}
+              {distance && elevation && <span className="text-gray-400 mx-0.5">·</span>}
+              {elevation && <StatPill raw={elevation} />}
+              {elevation && elevationGain && <span className="text-gray-400 mx-0.5">·</span>}
+              {elevationGain && <StatPill raw={elevationGain} suffix="↗" />}
+            </div>
           )}
         </div>
       </div>
