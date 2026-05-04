@@ -157,7 +157,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
           {line1 && <p className="text-xl font-bold text-foreground">{line1}</p>}
           {line2 && <p className="text-base font-normal text-foreground">{line2}</p>}
           {(distance || elevation || elevationGain) && (
-            <div className="flex items-center justify-center gap-x-1.5 text-sm mt-3 flex-wrap">
+            <div className="flex items-center justify-center gap-x-1 text-sm mt-3 flex-wrap">
               {distance && <StatPill raw={distance} />}
               {distance && elevation && <span className="text-gray-400 mx-0.5">·</span>}
               {elevation && <StatPill raw={elevation} />}
