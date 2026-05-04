@@ -26,7 +26,7 @@ export function Footer() {
               />
             </div>
             <p className="text-body font-bold text-white">{t('brandName')}</p>
-            <p className="text-body text-white">{t('tagline')}</p>
+            <p className="text-body text-white whitespace-pre-line">{t('tagline')}</p>
           </div>
 
           {/* Column 2: Follow us → icons */}
