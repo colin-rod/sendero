@@ -127,7 +127,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
       {/* Default: title at bottom */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-9">
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-8 md:pb-[54px]">
         {(() => {
           const lastSpace = title.lastIndexOf(' ');
           const first = lastSpace !== -1 ? title.slice(0, lastSpace) : '';
@@ -157,7 +157,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
           {line1 && <p className="text-xl font-bold text-foreground">{line1}</p>}
           {line2 && <p className="text-base font-normal text-foreground">{line2}</p>}
           {(distance || elevation || elevationGain) && (
-            <div className="flex items-center justify-center gap-x-1.5 text-sm mt-3 flex-wrap">
+            <div className="flex items-center justify-center gap-x-1 text-sm mt-3 flex-wrap">
               {distance && <StatPill raw={distance} />}
               {distance && elevation && <span className="text-gray-400 mx-0.5">·</span>}
               {elevation && <StatPill raw={elevation} />}
