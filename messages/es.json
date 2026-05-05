@@ -35,9 +35,9 @@
     "discoverTrails": "DESCUBRIR SENDEROS"
   },
   "heroIntro": {
-    "heading": "Déjate llevar. Las montañas te esperan.",
-    "subheading": "7–9 días. Grupos pequeños. Senderos reales.",
-    "subtitle": "Embárcate en un viaje de varios días por el Paisaje Cultural Cafetero. Guiado, real e inconfundible."
+    "heading": "Déjate llevar. Colombia te espera.",
+    "subheading": "7–9 días. Grupos pequeños. Senderos ancestrales.",
+    "subtitle": "Embárcate en un viaje de varios días por los bosques nubosos, el paisaje cafetero y las montañas de Colombia. Guiado, curado, inconfundible."
   },
   "howItWorks": {
     "heading": "Cómo Funciona",
@@ -88,13 +88,13 @@
     }
   },
   "waitlist": {
-    "heading": "Únete a la Lista de Espera",
+    "heading": "¡Mantente al Día!",
     "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura.",
     "becomeAPioneer": "Buscamos participantes",
     "nextDate": "Próximo viaje: 26.11–04.12.2026",
     "nextDateLabel": "Próximo viaje:",
     "nextDateValue": "26.11.–04.12.2026",
-    "ctaPrompt": "Únete. O mantente al tanto.",
+    "ctaPrompt": "¡Mantente al Día!",
     "joinButton": "UNIRSE"
   },
   "form": {
@@ -658,7 +658,7 @@
     "cards": {
       "tigre": {
         "name": "Sendero del Tigre",
-        "description": "Circuitos rurales pintorescos. Almuerzo en finca orgánica.",
+        "description": "Panorama pintoresco. Eco-agricultura de cerca.",
         "distance": "20 km",
         "elevation": "1.400 m s. n. m.",
         "elevationGain": "320",
@@ -666,7 +666,7 @@
       },
       "cafe": {
         "name": "Sendero del Café",
-        "description": "Paisajes cafeteros. Café de especialidad en origen.",
+        "description": "Paisaje cafetero. En las raíces del café colombiano.",
         "distance": "27 km",
         "elevation": "1.600 m s. n. m.",
         "elevationGain": "520",
@@ -682,7 +682,7 @@
       },
       "cacao": {
         "name": "Sendero del Cacao",
-        "description": "Cálidas rutas del valle del cacao. Ciclismo y artesanía de cacao.",
+        "description": "Tierra fértil. Cacao y chocolate como nunca los has probado.",
         "distance": "37 km",
         "elevation": "900 m s. n. m.",
         "elevationGain": "450",
@@ -690,7 +690,7 @@
       },
       "volcan": {
         "name": "Sendero del Volcán",
-        "description": "Terreno volcánico. Pedaleando entre altas palmas de cera.",
+        "description": "Tierra volcánica. Palmas y montañas – los gigantes de Colombia.",
         "distance": "45 km",
         "elevation": "2.600 m s. n. m.",
         "elevationGain": "1.200",
@@ -698,7 +698,7 @@
       },
       "paramo": {
         "name": "Sendero del Páramo",
-        "description": "Ascenso compacto de alta montaña. Aire fino, belleza cruda, silencio vasto.",
+        "description": "El techo de los Andes. Páramo – un ecosistema único.",
         "distance": "32 km",
         "elevation": "3.400 m s. n. m.",
         "elevationGain": "1.800",
@@ -706,7 +706,7 @@
       },
       "guadua": {
         "name": "Sendero de la Guadua",
-        "description": "Bosques de bambú a la hora dorada. Sumergidos en los sonidos del atardecer.",
+        "description": "Bosques dorados de guadua. El sonido del atardecer.",
         "distance": "20 km",
         "elevation": "1.300 m s. n. m.",
         "elevationGain": "240",
@@ -714,7 +714,7 @@
       },
       "oro": {
         "name": "Sendero del Oro",
-        "description": "Coloridos pueblos. Patrimonio cultural vivo.",
+        "description": "Pueblos coloridos. Historia, cultura, vida cotidiana, gente.",
         "distance": "38 km",
         "elevation": "1.550 m s. n. m.",
         "elevationGain": "580",
@@ -722,7 +722,7 @@
       },
       "luminoso": {
         "name": "Sendero Luminoso",
-        "description": "Terreno campestre suave. Ciclismo lento e inmersión nocturna.",
+        "description": "Colinas suaves. Las luces de la noche.",
         "distance": "32 km",
         "elevation": "1.200 m s. n. m.",
         "elevationGain": "280",

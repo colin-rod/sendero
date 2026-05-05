@@ -67,15 +67,15 @@ export default function HomePage() {
               <TourGrid
                 cards={[
                   {
-                    id: 'tigre',
-                    title: tTourGrid('cards.tigre.name'),
-                    imageSrc: '/tours/sendero-tigre.webp',
-                    imageAlt: tTourGrid('cards.tigre.name'),
-                    description: tTourGrid('cards.tigre.description'),
-                    distance: tTourGrid('cards.tigre.distance'),
-                    difficulty: tTourGrid('cards.tigre.difficulty'),
-                    elevation: tTourGrid('cards.tigre.elevation'),
-                    elevationGain: tTourGrid('cards.tigre.elevationGain'),
+                    id: 'guadua',
+                    title: tTourGrid('cards.guadua.name'),
+                    imageSrc: '/tours/sendero_guadua.webp',
+                    imageAlt: tTourGrid('cards.guadua.name'),
+                    description: tTourGrid('cards.guadua.description'),
+                    distance: tTourGrid('cards.guadua.distance'),
+                    difficulty: tTourGrid('cards.guadua.difficulty'),
+                    elevation: tTourGrid('cards.guadua.elevation'),
+                    elevationGain: tTourGrid('cards.guadua.elevationGain'),
                   },
                   {
                     id: 'cafe',
@@ -100,17 +100,6 @@ export default function HomePage() {
                     elevationGain: tTourGrid('cards.agua.elevationGain'),
                   },
                   {
-                    id: 'cacao',
-                    title: tTourGrid('cards.cacao.name'),
-                    imageSrc: '/tours/sendero_cacao.webp',
-                    imageAlt: tTourGrid('cards.cacao.name'),
-                    description: tTourGrid('cards.cacao.description'),
-                    distance: tTourGrid('cards.cacao.distance'),
-                    difficulty: tTourGrid('cards.cacao.difficulty'),
-                    elevation: tTourGrid('cards.cacao.elevation'),
-                    elevationGain: tTourGrid('cards.cacao.elevationGain'),
-                  },
-                  {
                     id: 'volcan',
                     title: tTourGrid('cards.volcan.name'),
                     imageSrc: '/tours/sendero_volcan.webp',
@@ -120,6 +109,17 @@ export default function HomePage() {
                     difficulty: tTourGrid('cards.volcan.difficulty'),
                     elevation: tTourGrid('cards.volcan.elevation'),
                     elevationGain: tTourGrid('cards.volcan.elevationGain'),
+                  },
+                  {
+                    id: 'cacao',
+                    title: tTourGrid('cards.cacao.name'),
+                    imageSrc: '/tours/sendero_cacao.webp',
+                    imageAlt: tTourGrid('cards.cacao.name'),
+                    description: tTourGrid('cards.cacao.description'),
+                    distance: tTourGrid('cards.cacao.distance'),
+                    difficulty: tTourGrid('cards.cacao.difficulty'),
+                    elevation: tTourGrid('cards.cacao.elevation'),
+                    elevationGain: tTourGrid('cards.cacao.elevationGain'),
                   },
                   {
                     id: 'paramo',
@@ -133,15 +133,15 @@ export default function HomePage() {
                     elevationGain: tTourGrid('cards.paramo.elevationGain'),
                   },
                   {
-                    id: 'guadua',
-                    title: tTourGrid('cards.guadua.name'),
-                    imageSrc: '/tours/sendero_guadua.webp',
-                    imageAlt: tTourGrid('cards.guadua.name'),
-                    description: tTourGrid('cards.guadua.description'),
-                    distance: tTourGrid('cards.guadua.distance'),
-                    difficulty: tTourGrid('cards.guadua.difficulty'),
-                    elevation: tTourGrid('cards.guadua.elevation'),
-                    elevationGain: tTourGrid('cards.guadua.elevationGain'),
+                    id: 'tigre',
+                    title: tTourGrid('cards.tigre.name'),
+                    imageSrc: '/tours/sendero-tigre.webp',
+                    imageAlt: tTourGrid('cards.tigre.name'),
+                    description: tTourGrid('cards.tigre.description'),
+                    distance: tTourGrid('cards.tigre.distance'),
+                    difficulty: tTourGrid('cards.tigre.difficulty'),
+                    elevation: tTourGrid('cards.tigre.elevation'),
+                    elevationGain: tTourGrid('cards.tigre.elevationGain'),
                   },
                   {
                     id: 'oro',
@@ -191,10 +191,10 @@ export default function HomePage() {
                 {tWaitlist('becomeAPioneer')}
               </h2>
               <p className="mb-1 text-body text-white">
-                {tWaitlist('nextDateLabel')} <strong>{tWaitlist('nextDateValue')}</strong>
+                {tWaitlist('ctaPrompt')}
               </p>
               <p className="mb-8 text-body text-white">
-                {tWaitlist('ctaPrompt')}
+                {tWaitlist('nextDateLabel')} <strong>{tWaitlist('nextDateValue')}</strong>
               </p>
 
               {/* Simplified email form */}

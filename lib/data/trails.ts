@@ -201,7 +201,7 @@ export const trailSummaries: TrailSummary[] = [
     difficulty: 'Moderate',
     distance: 0,
     duration: '',
-    thumbnail: '/tours/sendero_volcan.webp',
+    thumbnail: '/tours/sendero-volcan-new.png',
     comingSoon: true,
     priority: 5,
   },
