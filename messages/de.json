@@ -35,9 +35,9 @@
     "discoverTrails": "TRAILS ENTDECKEN"
   },
   "heroIntro": {
-    "heading": "Lass los. Die Berge warten.",
-    "subheading": "7–9 Tage. Kleine Gruppe. Echte Pfade.",
-    "subtitle": "Begib dich auf eine mehrtägige Radreise durch die kolumbianische Kaffeekulturlandschaft, geführt, kuratiert, unverwechselbar."
+    "heading": "Lass los. Kolumbien wartet.",
+    "subheading": "7–9 Tage. Kleine Gruppen. Uralte Pfade.",
+    "subtitle": "Begib dich auf eine mehrtägige Radreise durch die kolumbianischen Nebelwälder, Kaffeekultur- und Berglandschaften. Geführt, kuratiert, unverwechselbar."
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
@@ -88,7 +88,7 @@
     }
   },
   "waitlist": {
-    "heading": "Zur Warteliste",
+    "heading": "Bleib auf dem Laufenden!",
     "description": "Erfahre als Erste/r, wenn die Touren starten. Kein Spam, nur Abenteuer.",
     "becomeAPioneer": "Werde Pionier:in",
     "nextDate": "Nächste Reise: 26.11.–04.12.2026",
@@ -658,7 +658,7 @@
     "cards": {
       "tigre": {
         "name": "Sendero del Tigre",
-        "description": "Malerische Rundstrecken. Bio-Hof Mittagessen.",
+        "description": "Malerisches Panorama. Öko-Agrikultur erleben.",
         "distance": "20 km",
         "elevation": "1.400 m ü. M.",
         "elevationGain": "320",
@@ -666,7 +666,7 @@
       },
       "cafe": {
         "name": "Sendero del Café",
-        "description": "Kaffeelandschaften. Spezialitätenkaffee am Ursprung.",
+        "description": "Kaffeelandschaft. An den Wurzeln von Kolumbiens Kaffee.",
         "distance": "27 km",
         "elevation": "1.600 m ü. M.",
         "elevationGain": "520",
@@ -682,7 +682,7 @@
       },
       "cacao": {
         "name": "Sendero del Cacao",
-        "description": "Warme Wege im Kakaotal. Radeln und Kakaohandwerk erleben.",
+        "description": "Fruchtbares Land. Kakao und Schokolade wie Du sie nie erlebt hast.",
         "distance": "37 km",
         "elevation": "900 m ü. M.",
         "elevationGain": "450",
@@ -690,7 +690,7 @@
       },
       "volcan": {
         "name": "Sendero del Volcán",
-        "description": "Vulkanisches Gelände. Fahren zwischen hohen Wachspalmen.",
+        "description": "Vulkanland. Palmen und Berge – die Riesen von Kolumbien.",
         "distance": "45 km",
         "elevation": "2.600 m ü. M.",
         "elevationGain": "1.200",
@@ -698,7 +698,7 @@
       },
       "paramo": {
         "name": "Sendero del Páramo",
-        "description": "Kompakter Hochgebirgsanstieg. Dünne Luft, rohe Schönheit, weite Stille.",
+        "description": "Dach der Anden. Páramo – eine einzigartige Moorlandschaft.",
         "distance": "32 km",
         "elevation": "3.400 m ü. M.",
         "elevationGain": "1.800",
@@ -706,7 +706,7 @@
       },
       "guadua": {
         "name": "Sendero de la Guadua",
-        "description": "Bambuswälder zur goldenen Stunde. In die Klänge des Abends eintauchen.",
+        "description": "Goldene Bambuswälder. Der Klang der Dämmerung.",
         "distance": "20 km",
         "elevation": "1.300 m ü. M.",
         "elevationGain": "240",
@@ -714,7 +714,7 @@
       },
       "oro": {
         "name": "Sendero del Oro",
-        "description": "Farbenfrohe Pueblos. Lebendiges Kulturerbe erfahren.",
+        "description": "Farbenfrohe Dörfer. Geschichte, Kultur, Alltag, Menschen.",
         "distance": "38 km",
         "elevation": "1.550 m ü. M.",
         "elevationGain": "580",
@@ -722,7 +722,7 @@
       },
       "luminoso": {
         "name": "Sendero Luminoso",
-        "description": "Sanftes Landterrain. Langsames Radfahren und nächtliches Eintauchen.",
+        "description": "Sanfte Hügel. Die Lichter der Nacht.",
         "distance": "32 km",
         "elevation": "1.200 m ü. M.",
         "elevationGain": "280",
