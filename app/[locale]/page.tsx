@@ -191,10 +191,10 @@ export default function HomePage() {
                 {tWaitlist('becomeAPioneer')}
               </h2>
               <p className="mb-1 text-body text-white">
-                {tWaitlist('nextDateLabel')} <strong>{tWaitlist('nextDateValue')}</strong>
+                {tWaitlist('ctaPrompt')}
               </p>
               <p className="mb-8 text-body text-white">
-                {tWaitlist('ctaPrompt')}
+                {tWaitlist('nextDateLabel')} <strong>{tWaitlist('nextDateValue')}</strong>
               </p>
 
               {/* Simplified email form */}
