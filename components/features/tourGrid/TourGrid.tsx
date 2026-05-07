@@ -2,6 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+const BACKGROUND_POSITION: Record<string, string> = {
+  cafe:  '50% 35%',
+  cacao: '50% 45%',
+  agua:  '50% 35%',
+};
+
 const PATH_SVG: Record<string, string> = {
   tigre:    '/svg/trails/elements/path-tigre.svg',
   cafe:     '/svg/trails/elements/path-cafe.svg',
@@ -85,7 +91,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
   const backgroundStyle = {
     background: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${imageSrc})`,
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundPosition: BACKGROUND_POSITION[id] ?? 'center',
   };
 
   const pathSrc = PATH_SVG[id] ?? '/svg/trails/elements/path-tigre.svg';
@@ -127,13 +133,13 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
       {/* Default: title at bottom */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-8 md:pb-[54px]">
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-14 md:pb-[88px]">
         {(() => {
           const lastSpace = title.lastIndexOf(' ');
           const first = lastSpace !== -1 ? title.slice(0, lastSpace) : '';
           const last  = lastSpace !== -1 ? title.slice(lastSpace + 1) : title;
           return (
-            <p className="text-center text-h3 font-light leading-8 tracking-[0.12em] uppercase text-[#F2F2F2]">
+            <p className="text-center text-h3 font-light leading-8 tracking-[0.12em] text-[#F2F2F2]">
               {first && <>{first} </>}
               <strong className="font-bold">{last}</strong>
             </p>
