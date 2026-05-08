@@ -133,7 +133,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
       {/* Default: title at bottom */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-[120px]">
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-[150px]">
         {(() => {
           const lastSpace = title.lastIndexOf(' ');
           const first = lastSpace !== -1 ? title.slice(0, lastSpace) : '';
