@@ -3,9 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 
 const BACKGROUND_POSITION: Record<string, string> = {
-  cafe:  '50% 35%',
-  cacao: '50% 45%',
-  agua:  '50% 35%',
+  cafe:  '35% 35%',
+  cacao: '35% 45%',
+  agua:  '35% 35%',
 };
 
 const PATH_SVG: Record<string, string> = {
