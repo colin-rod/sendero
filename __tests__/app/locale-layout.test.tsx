@@ -31,6 +31,21 @@ jest.mock('@/components/features/feedback/FloatingFeedbackButton', () => ({
   FloatingFeedbackButton: () => null,
 }));
 
+jest.mock('@/components/seo/JsonLd', () => ({
+  JsonLd: () => null,
+}));
+
+jest.mock('@/lib/seo/jsonLd', () => ({
+  organizationSchema: () => ({}),
+  localBusinessSchema: () => ({}),
+  websiteSchema: () => ({}),
+}));
+
+jest.mock('@/lib/seo/canonical', () => ({
+  buildAlternates: () => ({ canonical: '/', languages: {} }),
+  getSiteUrl: () => 'https://www.senderobiketrails.com',
+}));
+
 async function importLocaleLayout() {
   const module = await import('@/app/[locale]/layout');
   return module.default;
@@ -57,8 +72,12 @@ describe('LocaleLayout', () => {
     expect(mockGetMessages).toHaveBeenCalledWith({ locale: 'de' });
     expect(mockNotFound).not.toHaveBeenCalled();
 
-    const bodyElement = (element as React.ReactElement<{ children: React.ReactElement }>).props.children;
-    const providerElement = (bodyElement as React.ReactElement<{ children: React.ReactElement }>).props.children;
+    const bodyElement = (element as React.ReactElement<{ children: React.ReactElement | React.ReactElement[] }>).props.children;
+    const bodyChildren = (bodyElement as React.ReactElement<{ children: React.ReactNode }>).props.children;
+    const childArray = React.Children.toArray(bodyChildren) as React.ReactElement[];
+    const providerElement = childArray.find(
+      (child) => (child.props as { locale?: string }).locale !== undefined
+    ) as React.ReactElement<{ locale: string; messages: unknown }>;
 
     expect((providerElement as React.ReactElement<{ locale: string; messages: unknown }>).props.locale).toBe('de');
     expect((providerElement as React.ReactElement<{ locale: string; messages: unknown }>).props.messages).toEqual({

@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { submitFeedback, validateFeedback } from '@/lib/utils/feedback';
 import type { FeedbackCategory, FeedbackFormData } from '@/lib/types/feedback';
+import posthog from 'posthog-js';
 
 interface FeedbackModalProps {
   open: boolean;
@@ -118,6 +119,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
       const result = await submitFeedback(formData as FeedbackFormData, locale);
 
       if (result.success) {
+        posthog.capture('feedback_submitted', { category: category || 'unspecified', locale });
         setSubmitted(true);
         // Auto-close after 2 seconds
         setTimeout(() => {

@@ -1,9 +1,17 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
-import { Analytics } from '@vercel/analytics/react';
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
+import { PostHogProvider } from '@/components/PostHogProvider';
+import { PostHogPageView } from '@/components/PostHogPageView';
+import { JsonLd } from '@/components/seo/JsonLd';
+import {
+  organizationSchema,
+  localBusinessSchema,
+  websiteSchema,
+} from '@/lib/seo/jsonLd';
+import { buildAlternates, getSiteUrl } from '@/lib/seo/canonical';
 
 type Props = {
   children: React.ReactNode;
@@ -17,8 +25,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
+  const siteUrl = getSiteUrl();
+  const alternates = buildAlternates(locale, '');
 
   return {
+    metadataBase: new URL(siteUrl),
     title: t('title'),
     description: t('description'),
     keywords: t('keywords').split(', '),
@@ -27,9 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t('title'),
       description: t('description'),
       type: 'website',
+      url: alternates.canonical,
+      siteName: 'Sendero Bike Trails',
       locale: locale === 'en' ? 'en_US' : locale === 'de' ? 'de_DE' : 'es_ES',
       images: [{
-        url: `${process.env.NEXT_PUBLIC_SITE_URL}/Logo_Dark.png`,
+        url: '/Logo_Dark.png',
         width: 96,
         height: 96,
         alt: 'Sendero Bike Trails',
@@ -39,19 +52,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary',
       title: t('title'),
       description: t('description'),
-      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/Logo_Dark.png`],
+      images: ['/Logo_Dark.png'],
     },
     robots: {
       index: true,
       follow: true,
     },
-    alternates: {
-      languages: {
-        en: '/en',
-        de: '/de',
-        es: '/es',
-      },
-    },
+    alternates,
     icons: {
       icon: '/icon.svg',
       shortcut: '/icon.svg',
@@ -81,9 +88,18 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={validatedLocale}>
       <body>
+        <JsonLd
+          data={[
+            organizationSchema(),
+            localBusinessSchema(),
+            websiteSchema(validatedLocale),
+          ]}
+        />
         <NextIntlClientProvider locale={validatedLocale} messages={messages}>
-          {children}
-          <Analytics />
+          <PostHogProvider>
+            <PostHogPageView />
+            {children}
+          </PostHogProvider>
         </NextIntlClientProvider>
       </body>
     </html>

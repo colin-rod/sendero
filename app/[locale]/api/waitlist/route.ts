@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { validateWaitlistForm } from '@/lib/utils/validation';
+import { logEvent, emailDomain } from '@/lib/utils/log';
 import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse } from '@/lib/types/database';
 
 /**
@@ -8,11 +9,15 @@ import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse } from '@/l
  * Handles waitlist signup submissions — writes to Google Sheets via Apps Script
  */
 export async function POST(request: NextRequest) {
+  const request_id = crypto.randomUUID();
+  const event = 'waitlist_submit';
+
   try {
     const body = await request.json();
 
     const validationErrors = validateWaitlistForm(body);
     if (validationErrors.length > 0) {
+      logEvent({ event, request_id, status: 'fail', reason: 'validation' });
       const errorResponse: ApiErrorResponse = {
         success: false,
         error: validationErrors.map((e) => e.message).join(', '),
@@ -21,10 +26,11 @@ export async function POST(request: NextRequest) {
     }
 
     const formData = body as WaitlistFormData;
+    const domain = emailDomain(formData.email);
 
     const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
     if (!webhookUrl) {
-      console.error('GOOGLE_SHEETS_WEBHOOK_URL is not configured');
+      logEvent({ event, request_id, status: 'fail', reason: 'missing_webhook_url' });
       const errorResponse: ApiErrorResponse = {
         success: false,
         error: 'Server configuration error. Please try again later.',
@@ -41,7 +47,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (!sheetsResponse.ok) {
-      console.error('Google Sheets error:', sheetsResponse.status);
+      logEvent({ event, request_id, status: 'fail', reason: 'sheets_error', sheets_status: sheetsResponse.status, email_domain: domain });
       const errorResponse: ApiErrorResponse = {
         success: false,
         error: 'Failed to save your information. Please try again.',
@@ -65,8 +71,10 @@ export async function POST(request: NextRequest) {
         `,
       });
     } catch (err) {
-      console.error('Resend email failed (non-blocking):', err);
+      logEvent({ event: 'waitlist_email', request_id, status: 'fail', error: err instanceof Error ? err.message : String(err) });
     }
+
+    logEvent({ event, request_id, status: 'ok', email_domain: domain });
 
     const successResponse: ApiSuccessResponse = {
       success: true,
@@ -77,7 +85,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(successResponse, { status: 201 });
   } catch (error) {
-    console.error('API route error:', error);
+    logEvent({ event, request_id, status: 'fail', reason: 'unhandled', error: error instanceof Error ? error.message : String(error) });
 
     const errorResponse: ApiErrorResponse = {
       success: false,

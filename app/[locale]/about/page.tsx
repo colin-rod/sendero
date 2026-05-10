@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
@@ -6,14 +6,24 @@ import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Link } from '@/lib/i18n/routing';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbSchema } from '@/lib/seo/jsonLd';
+import { buildAlternates } from '@/lib/seo/canonical';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'aboutPage' });
+  const alternates = buildAlternates(locale, '/about');
 
   return {
     title: t('title'),
     description: t('description'),
+    alternates,
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: alternates.canonical,
+    },
   };
 }
 
@@ -51,10 +61,18 @@ function highlightPlaceholders(text: string) {
 }
 
 export default function AboutPage() {
+  const locale = useLocale();
   const t = useTranslations('aboutPage');
+  const tHeader = useTranslations('header');
+
+  const breadcrumbs = breadcrumbSchema(locale, [
+    { name: tHeader('brandName'), path: '' },
+    { name: t('title'), path: '/about' },
+  ]);
 
   return (
     <div className="flex min-h-screen flex-col bg-muted/40">
+      <JsonLd data={breadcrumbs} />
       <Header logoVariant="dark" />
 
       <main className="flex-1 py-12 md:py-16">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import posthog from 'posthog-js';
 
 const BACKGROUND_POSITION: Record<string, string> = {
   cafe:  '15% 35%',
@@ -115,7 +116,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
 
   return (
     <div
-      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
+      className="group relative aspect-square w-full overflow-hidden cursor-pointer transition-transform duration-150 active:scale-[0.99]"
       onClick={() => {
         // On desktop the user is always hovering when they click, so isHovered is true
         // and we skip — hover alone controls visibility. On mobile, isHovered is always
@@ -123,7 +124,10 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
         if (!isHovered) {
           const opening = !isActive;
           setIsActive(opening);
-          if (opening) setAnimKey((k) => k + 1);
+          if (opening) {
+            setAnimKey((k) => k + 1);
+            posthog.capture('tour_card_clicked', { tour_id: id, tour_name: title, source: 'landing_tour_grid' });
+          }
         }
       }}
       onPointerEnter={handlePointerEnter}
@@ -148,13 +152,8 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       </div>
 
       {/* Hover / tap overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-6 md:pt-[54px] pb-8 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-        <div
-          className="flex-1 flex items-center justify-center min-h-0 cursor-default"
-          onClick={(e) => e.stopPropagation()}
-          onPointerEnter={(e) => e.stopPropagation()}
-          onPointerLeave={(e) => e.stopPropagation()}
-        >
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-6 md:pt-[54px] pb-8 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'}`}>
+        <div className="flex-1 flex items-center justify-center min-h-0">
           <div className="w-full max-w-[55%] md:max-w-[70%] pointer-events-none">
             <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
           </div>

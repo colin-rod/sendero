@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { logEvent } from '@/lib/utils/log';
 
 export async function POST(request: NextRequest) {
+  const request_id = crypto.randomUUID();
+  const event = 'feedback_submit';
+
   const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
   if (!webhookUrl) {
-    console.error('GOOGLE_SHEETS_WEBHOOK_URL is not configured');
+    logEvent({ event, request_id, status: 'fail', reason: 'missing_webhook_url' });
     return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
   }
 
@@ -11,10 +15,12 @@ export async function POST(request: NextRequest) {
   try {
     payload = await request.json();
   } catch {
+    logEvent({ event, request_id, status: 'fail', reason: 'invalid_body' });
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
   if (!payload.category || !payload.message) {
+    logEvent({ event, request_id, status: 'fail', reason: 'missing_fields' });
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
@@ -25,9 +31,11 @@ export async function POST(request: NextRequest) {
   });
 
   if (!sheetsResponse.ok) {
-    console.error('Google Sheets webhook error:', sheetsResponse.status);
+    logEvent({ event, request_id, status: 'fail', reason: 'sheets_error', sheets_status: sheetsResponse.status });
     return NextResponse.json({ error: 'Failed to save feedback' }, { status: 500 });
   }
+
+  logEvent({ event, request_id, status: 'ok', category: String(payload.category) });
 
   return NextResponse.json({ success: true });
 }

@@ -1,5 +1,6 @@
 'use client';
 
+// NOTE: This page is intentionally not indexed (see app/[locale]/thank-you/layout.tsx).
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
@@ -9,13 +10,17 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Check, Link as LinkIcon, MessageCircle, Facebook } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
+import posthog from 'posthog-js';
+
+type ShareChannel = 'clipboard' | 'whatsapp' | 'twitter' | 'facebook';
+const trackShare = (channel: ShareChannel) => posthog.capture('share_clicked', { channel });
 
 export default function ThankYouPage() {
   const t = useTranslations('thankYou');
   const [copied, setCopied] = useState(false);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const shareText = encodeURIComponent(t('shareText'));
+  const shareText = encodeURIComponent(t('share.shareText'));
   const shareUrl = encodeURIComponent(siteUrl);
 
   // WhatsApp share link
@@ -31,6 +36,7 @@ export default function ThankYouPage() {
   const handleCopyLink = async () => {
     try {
       await navigator.clipboard.writeText(siteUrl);
+      trackShare('clipboard');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
@@ -70,25 +76,25 @@ export default function ThankYouPage() {
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
                       <strong className="text-foreground">
-                        {t('whatHappensNext.step1.title')}
+                        {t('whatHappensNext.steps.checkInbox.title')}
                       </strong>{' '}
-                      - {t('whatHappensNext.step1.description')}
+                      - {t('whatHappensNext.steps.checkInbox.description')}
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
-                      <strong className="text-foreground">{t('whatHappensNext.step2.title')}</strong> -
-                      {t('whatHappensNext.step2.description')}
+                      <strong className="text-foreground">{t('whatHappensNext.steps.stayTuned.title')}</strong> -
+                      {t('whatHappensNext.steps.stayTuned.description')}
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
                       <strong className="text-foreground">
-                        {t('whatHappensNext.step3.title')}
+                        {t('whatHappensNext.steps.beFirst.title')}
                       </strong>{' '}
-                      - {t('whatHappensNext.step3.description')}
+                      - {t('whatHappensNext.steps.beFirst.description')}
                     </span>
                   </li>
                 </ul>
@@ -128,6 +134,7 @@ export default function ThankYouPage() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackShare('whatsapp')}
                   >
                     <Button variant="secondary" className="flex items-center gap-2">
                       <MessageCircle className="h-4 w-4" />
@@ -140,6 +147,7 @@ export default function ThankYouPage() {
                     href={twitterUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackShare('twitter')}
                   >
                     <Button variant="outline" className="flex items-center gap-2">
                       <FaXTwitter className="h-4 w-4" />
@@ -152,6 +160,7 @@ export default function ThankYouPage() {
                     href={facebookUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackShare('facebook')}
                   >
                     <Button variant="outline" className="flex items-center gap-2">
                       <Facebook className="h-4 w-4" />

@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/Textarea';
 import { validateContactForm, type ValidationError } from '@/lib/utils/contactValidation';
 import type { ContactFormData, ContactSubject } from '@/lib/types/database';
 import { CheckCircle2 } from 'lucide-react';
+import posthog from 'posthog-js';
 
 export function ContactForm() {
   const t = useTranslations('contactPage.form');
@@ -77,6 +78,7 @@ export function ContactForm() {
       }
 
       // Success - show success message and clear form
+      posthog.capture('contact_submitted', { locale, has_subject: Boolean(subject) });
       setIsSuccess(true);
       setName('');
       setEmail('');

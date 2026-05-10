@@ -2,6 +2,13 @@ import { getTranslations } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { senderoDelTigre } from '@/lib/data/trails';
+import { JsonLd } from '@/components/seo/JsonLd';
+import {
+  breadcrumbSchema,
+  touristAttractionSchema,
+  touristTripSchema,
+} from '@/lib/seo/jsonLd';
+import { buildAlternates } from '@/lib/seo/canonical';
 import { TrailHero } from '@/components/features/trails/TrailHero';
 import { TrailStory } from '@/components/features/trails/TrailStory';
 import { TrailMap } from '@/components/features/trails/TrailMap';
@@ -23,10 +30,25 @@ export async function generateMetadata({
     locale,
     namespace: 'trails.senderoDelTigre',
   });
+  const alternates = buildAlternates(locale, '/trails/sendero-del-tigre');
+  const title = `${t('name')} - Sendero`;
 
   return {
-    title: `${t('name')} - Sendero`,
+    title,
     description: t('subtitle'),
+    alternates,
+    openGraph: {
+      title,
+      description: t('subtitle'),
+      url: alternates.canonical,
+      type: 'article',
+      images: [
+        {
+          url: senderoDelTigre.images.hero,
+          alt: t('name'),
+        },
+      ],
+    },
   };
 }
 
@@ -42,6 +64,28 @@ export default async function SenderoDelTigrePage({
   });
 
   const trail = senderoDelTigre;
+  const tHeader = await getTranslations({ locale, namespace: 'header' });
+  const tMaster = await getTranslations({ locale, namespace: 'trails.master' });
+
+  const trailPath = '/trails/sendero-del-tigre';
+  const trailName = t('name');
+  const trailDescription = t('subtitle');
+
+  const breadcrumbs = breadcrumbSchema(locale, [
+    { name: tHeader('brandName'), path: '' },
+    { name: tMaster('title'), path: '/trails' },
+    { name: trailName, path: trailPath },
+  ]);
+  const attraction = touristAttractionSchema(trail, locale, {
+    name: trailName,
+    description: trailDescription,
+    path: trailPath,
+  });
+  const trip = touristTripSchema(trail, locale, {
+    name: trailName,
+    description: trailDescription,
+    path: trailPath,
+  });
 
   // Map translation keys to experience data
   const experienceKeyMap: Record<string, string> = {
@@ -62,6 +106,7 @@ export default async function SenderoDelTigrePage({
 
   return (
     <div className="flex min-h-screen flex-col">
+      <JsonLd data={[breadcrumbs, attraction, trip]} />
       <Header />
       <main id="main-content">
         {/* 1. Hero Section */}

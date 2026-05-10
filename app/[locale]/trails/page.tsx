@@ -5,6 +5,9 @@ import { Container } from '@/components/ui/Container';
 import { getAllTrailSummaries } from '@/lib/data/trails';
 import { TrailCard } from '@/components/features/trails/TrailCard';
 import { getDifficultyBadgeProps } from '@/lib/utils/difficulty';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbSchema, trailItemListSchema } from '@/lib/seo/jsonLd';
+import { buildAlternates } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -13,10 +16,17 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'trails.master' });
+  const alternates = buildAlternates(locale, '/trails');
 
   return {
     title: t('title'),
     description: t('subtitle'),
+    alternates,
+    openGraph: {
+      title: t('title'),
+      description: t('subtitle'),
+      url: alternates.canonical,
+    },
   };
 }
 
@@ -33,6 +43,16 @@ export default async function TrailsPage({
   });
 
   const trails = getAllTrailSummaries();
+  const tHeader = await getTranslations({ locale, namespace: 'header' });
+
+  const breadcrumbs = breadcrumbSchema(locale, [
+    { name: tHeader('brandName'), path: '' },
+    { name: t('title'), path: '/trails' },
+  ]);
+  const itemList = trailItemListSchema(
+    locale,
+    trails.map((tr) => ({ slug: tr.slug, name: tr.name }))
+  );
 
   const getDifficultyLabel = (level: string) => {
     switch (level) {
@@ -49,6 +69,7 @@ export default async function TrailsPage({
 
   return (
     <div className="flex min-h-screen flex-col">
+      <JsonLd data={[breadcrumbs, itemList]} />
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section */}
