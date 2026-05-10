@@ -9,6 +9,10 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Check, Link as LinkIcon, MessageCircle, Facebook } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
+import posthog from 'posthog-js';
+
+type ShareChannel = 'clipboard' | 'whatsapp' | 'twitter' | 'facebook';
+const trackShare = (channel: ShareChannel) => posthog.capture('share_clicked', { channel });
 
 export default function ThankYouPage() {
   const t = useTranslations('thankYou');
@@ -31,6 +35,7 @@ export default function ThankYouPage() {
   const handleCopyLink = async () => {
     try {
       await navigator.clipboard.writeText(siteUrl);
+      trackShare('clipboard');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
@@ -128,6 +133,7 @@ export default function ThankYouPage() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackShare('whatsapp')}
                   >
                     <Button variant="secondary" className="flex items-center gap-2">
                       <MessageCircle className="h-4 w-4" />
@@ -140,6 +146,7 @@ export default function ThankYouPage() {
                     href={twitterUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackShare('twitter')}
                   >
                     <Button variant="outline" className="flex items-center gap-2">
                       <FaXTwitter className="h-4 w-4" />
@@ -152,6 +159,7 @@ export default function ThankYouPage() {
                     href={facebookUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackShare('facebook')}
                   >
                     <Button variant="outline" className="flex items-center gap-2">
                       <Facebook className="h-4 w-4" />

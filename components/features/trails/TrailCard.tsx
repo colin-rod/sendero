@@ -1,6 +1,7 @@
 'use client';
 
 import { Link } from '@/lib/i18n/routing';
+import posthog from 'posthog-js';
 
 interface TrailCardProps {
   id: string;
@@ -59,6 +60,7 @@ export function TrailCard({
     <Link
       key={id}
       href={`/trails/${slug}`}
+      onClick={() => posthog.capture('trail_card_clicked', { trail_slug: slug, source: 'trails_listing' })}
       className="group block rounded-sm transition-transform duration-150 active:scale-[0.98] md:hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
     >
       {cardContent}

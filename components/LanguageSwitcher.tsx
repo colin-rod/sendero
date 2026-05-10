@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/lib/i18n/routing';
 import { locales } from '@/lib/i18n/config';
+import posthog from 'posthog-js';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -19,6 +20,9 @@ export default function LanguageSwitcher() {
   };
 
   const switchLocale = (newLocale: string) => {
+    if (newLocale !== locale) {
+      posthog.capture('language_switched', { from: locale, to: newLocale });
+    }
     const cleanPath = pathname.replace(new RegExp(`^/(${locales.join('|')})`), '') || '/';
     router.replace(cleanPath, { locale: newLocale });
     setIsOpen(false);

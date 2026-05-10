@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 import { isValidEmail } from '@/lib/utils/validation'
 import { Button } from '@/components/ui/Button'
+import posthog from 'posthog-js'
 
 export default function BottomEmailCapture() {
   const t = useTranslations('hero.emailCapture')
@@ -86,6 +87,8 @@ export default function BottomEmailCapture() {
         setIsSubmitting(false)
         return
       }
+
+      posthog.capture('waitlist_submitted', { locale })
 
       setShowSuccess(true)
       setEmail('')
