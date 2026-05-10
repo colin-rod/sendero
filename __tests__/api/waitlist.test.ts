@@ -381,7 +381,14 @@ describe('POST /api/waitlist', () => {
 
       await POST(request);
 
-      expect(mockConsoleError).toHaveBeenCalledWith('Google Sheets error:', 503);
+      expect(mockConsoleError).toHaveBeenCalledTimes(1);
+      const logged = JSON.parse(mockConsoleError.mock.calls[0][0] as string);
+      expect(logged).toMatchObject({
+        event: 'waitlist_submit',
+        status: 'fail',
+        reason: 'sheets_error',
+        sheets_status: 503,
+      });
     });
   });
 
@@ -423,7 +430,14 @@ describe('POST /api/waitlist', () => {
 
       await POST(request);
 
-      expect(mockConsoleError).toHaveBeenCalledWith('API route error:', error);
+      expect(mockConsoleError).toHaveBeenCalledTimes(1);
+      const logged = JSON.parse(mockConsoleError.mock.calls[0][0] as string);
+      expect(logged).toMatchObject({
+        event: 'waitlist_submit',
+        status: 'fail',
+        reason: 'unhandled',
+        error: 'Unexpected error',
+      });
     });
   });
 });

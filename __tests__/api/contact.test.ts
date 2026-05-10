@@ -234,7 +234,19 @@ describe('POST /api/contact', () => {
       const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
-      expect(mockConsoleError).toHaveBeenCalledWith('Email sending error:', emailError);
+      const emailLogCall = mockConsoleError.mock.calls.find((call) => {
+        try {
+          return JSON.parse(call[0] as string).event === 'contact_email';
+        } catch {
+          return false;
+        }
+      });
+      expect(emailLogCall).toBeDefined();
+      expect(JSON.parse(emailLogCall![0] as string)).toMatchObject({
+        event: 'contact_email',
+        status: 'fail',
+        error: 'Email service error',
+      });
       expect(data.error).toBeUndefined();
     });
   });
