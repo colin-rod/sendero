@@ -33,7 +33,7 @@ beforeEach(() => {
 });
 
 const baseData: FeedbackFormData = {
-  category: 'bug',
+  category: 'bug-report',
   message: 'Something is broken',
 };
 
