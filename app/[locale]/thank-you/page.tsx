@@ -1,5 +1,6 @@
 'use client';
 
+// NOTE: This page is intentionally not indexed (see app/[locale]/thank-you/layout.tsx).
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
@@ -19,7 +20,7 @@ export default function ThankYouPage() {
   const [copied, setCopied] = useState(false);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const shareText = encodeURIComponent(t('shareText'));
+  const shareText = encodeURIComponent(t('share.shareText'));
   const shareUrl = encodeURIComponent(siteUrl);
 
   // WhatsApp share link
@@ -75,25 +76,25 @@ export default function ThankYouPage() {
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
                       <strong className="text-foreground">
-                        {t('whatHappensNext.step1.title')}
+                        {t('whatHappensNext.steps.checkInbox.title')}
                       </strong>{' '}
-                      - {t('whatHappensNext.step1.description')}
+                      - {t('whatHappensNext.steps.checkInbox.description')}
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
-                      <strong className="text-foreground">{t('whatHappensNext.step2.title')}</strong> -
-                      {t('whatHappensNext.step2.description')}
+                      <strong className="text-foreground">{t('whatHappensNext.steps.stayTuned.title')}</strong> -
+                      {t('whatHappensNext.steps.stayTuned.description')}
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-3 mt-1 text-primary-500">•</span>
                     <span>
                       <strong className="text-foreground">
-                        {t('whatHappensNext.step3.title')}
+                        {t('whatHappensNext.steps.beFirst.title')}
                       </strong>{' '}
-                      - {t('whatHappensNext.step3.description')}
+                      - {t('whatHappensNext.steps.beFirst.description')}
                     </span>
                   </li>
                 </ul>

@@ -4,6 +4,19 @@ import HomePage from '@/app/[locale]/page';
 
 jest.mock('next-intl', () => ({
   useTranslations: () => (key: string) => key,
+  useLocale: () => 'en',
+}));
+
+jest.mock('next-intl/server', () => ({
+  getTranslations: jest.fn(),
+}));
+
+jest.mock('@/lib/seo/jsonLd', () => ({
+  breadcrumbSchema: () => ({}),
+}));
+
+jest.mock('@/lib/seo/canonical', () => ({
+  buildAlternates: () => ({ canonical: '/', languages: {} }),
 }));
 
 jest.mock('next/image', () => ({
@@ -35,6 +48,10 @@ jest.mock('@/components/BottomEmailCapture', () => () => <div data-testid="botto
 
 jest.mock('@/components/features/tourGrid/TourGrid', () => ({
   TourGrid: () => <div data-testid="tour-grid" />,
+}));
+
+jest.mock('@/components/seo/JsonLd', () => ({
+  JsonLd: () => null,
 }));
 
 describe('HomePage section flow', () => {

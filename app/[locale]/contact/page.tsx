@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -6,22 +6,40 @@ import { Container } from '@/components/ui/Container';
 import { ContactForm } from '@/components/features/contact/ContactForm';
 import { Link } from '@/lib/i18n/routing';
 import { Mail, MessageCircle, Instagram, HelpCircle } from 'lucide-react';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbSchema } from '@/lib/seo/jsonLd';
+import { buildAlternates } from '@/lib/seo/canonical';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'contactPage' });
+  const alternates = buildAlternates(locale, '/contact');
 
   return {
     title: t('title'),
     description: t('description'),
+    alternates,
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: alternates.canonical,
+    },
   };
 }
 
 export default function ContactPage() {
+  const locale = useLocale();
   const t = useTranslations('contactPage');
+  const tHeader = useTranslations('header');
+
+  const breadcrumbs = breadcrumbSchema(locale, [
+    { name: tHeader('brandName'), path: '' },
+    { name: t('title'), path: '/contact' },
+  ]);
 
   return (
     <div className="flex min-h-screen flex-col bg-muted/40">
+      <JsonLd data={breadcrumbs} />
       <Header logoVariant="dark" />
 
       <main className="flex-1 py-12 md:py-16">

@@ -1,4 +1,6 @@
-import { useTranslations } from 'next-intl';
+import type { Metadata } from 'next';
+import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -7,16 +9,58 @@ import HeroVideo from '@/components/HeroVideo';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbSchema } from '@/lib/seo/jsonLd';
+import { buildAlternates } from '@/lib/seo/canonical';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'metadata' });
+  const alternates = buildAlternates(locale, '');
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates,
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: alternates.canonical,
+    },
+  };
+}
 
 export default function HomePage() {
+  const locale = useLocale();
   const tHero = useTranslations('hero');
   const tHeroIntro = useTranslations('heroIntro');
   const tWaitlist = useTranslations('waitlist');
   const tTourGrid = useTranslations('tourGrid');
+  const tHeader = useTranslations('header');
+  const tTrails = useTranslations('trails.master');
+
+  const breadcrumbs = breadcrumbSchema(locale, [
+    { name: tHeader('brandName'), path: '' },
+  ]);
+  // ItemList of all surfaced tours so AI/SEO crawlers can discover trail names.
+  const tourCardKeys = ['guadua', 'cafe', 'agua', 'volcan', 'cacao', 'paramo', 'tigre', 'oro', 'luminoso'];
+  const itemList = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: tTrails('title'),
+    itemListElement: tourCardKeys.map((key, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: tTourGrid(`cards.${key}.name`),
+    })),
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
+      <JsonLd data={[breadcrumbs, itemList]} />
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
