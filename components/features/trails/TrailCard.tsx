@@ -32,7 +32,7 @@ export function TrailCard({
 
   const cardContent = (
     <div
-      className="relative flex flex-col justify-end items-center w-full h-[476px] rounded-sm overflow-hidden bg-cover bg-center"
+      className="relative flex flex-col justify-end items-center w-full h-[476px] rounded-sm overflow-hidden bg-cover bg-center transition-[filter] duration-150 group-active:brightness-95"
       style={{
         backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${thumbnail})`,
       }}
@@ -59,7 +59,7 @@ export function TrailCard({
     <Link
       key={id}
       href={`/trails/${slug}`}
-      className="block transition-transform hover:-translate-y-1"
+      className="group block rounded-sm transition-transform duration-150 active:scale-[0.98] md:hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
     >
       {cardContent}
     </Link>

@@ -20,7 +20,7 @@ export default function HomePage() {
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
-        <section className="relative h-screen">
+        <section className="relative h-screen snap-hero">
           {/* Background Video */}
           <HeroVideo />
 
@@ -40,7 +40,15 @@ export default function HomePage() {
                 {tHeroIntro('heading')}
               </h2>
               <p className="text-h2 font-light text-white">
-                {tHeroIntro('subheading')}
+                {tHeroIntro('subheading')
+                  .split(/\.\s+/)
+                  .filter(Boolean)
+                  .map((sentence, i, arr) => (
+                    <span key={i} className="block sm:inline">
+                      {sentence}
+                      {i < arr.length - 1 ? '. ' : '.'}
+                    </span>
+                  ))}
               </p>
             </div>
             <svg width="72" height="16" viewBox="0 0 72 16" fill="none" aria-hidden="true">

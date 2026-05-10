@@ -13,12 +13,13 @@ export default function HeroVideo() {
   }, []);
 
   if (hasError) {
-    // Fallback to static image if video fails to load
     return (
       <Image
-        src="/hero-poster.png"
+        src="/hero-poster.jpg"
         alt="Coffee Region landscape"
         fill
+        sizes="100vw"
+        quality={75}
         className="object-cover"
         priority
       />
@@ -29,9 +30,11 @@ export default function HeroVideo() {
     <>
       {/* Poster image - shown while video loads, fades out once video is ready */}
       <Image
-        src="/hero-poster.png"
+        src="/hero-poster.jpg"
         alt="Coffee Region landscape"
         fill
+        sizes="100vw"
+        quality={75}
         className={`object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-0' : 'opacity-100'
         }`}
@@ -46,7 +49,7 @@ export default function HeroVideo() {
         muted
         playsInline
         preload="metadata"
-        poster="/hero-poster.png"
+        poster="/hero-poster.jpg"
         onCanPlay={() => setIsVideoReady(true)}
         onError={() => setHasError(true)}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${

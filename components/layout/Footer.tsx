@@ -26,7 +26,22 @@ export function Footer() {
               />
             </div>
             <p className="text-body font-bold text-white">{t('brandName')}</p>
-            <p className="text-body text-white whitespace-pre-line">{t('tagline')}</p>
+            <p className="text-body text-white">
+              {t('tagline')
+                .split(/\n|\.\s+/)
+                .filter(Boolean)
+                .map((sentence, i, arr) => {
+                  const trimmed = sentence.trim();
+                  const needsPeriod = !trimmed.endsWith('.');
+                  return (
+                    <span key={i} className="block sm:inline">
+                      {trimmed}
+                      {needsPeriod ? '.' : ''}
+                      {i < arr.length - 1 ? ' ' : ''}
+                    </span>
+                  );
+                })}
+            </p>
           </div>
 
           {/* Column 2: Follow us → icons */}

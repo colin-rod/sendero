@@ -115,7 +115,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
 
   return (
     <div
-      className="group relative aspect-square w-full overflow-hidden cursor-pointer"
+      className="group relative aspect-square w-full overflow-hidden cursor-pointer transition-transform duration-150 active:scale-[0.99]"
       onClick={() => {
         // On desktop the user is always hovering when they click, so isHovered is true
         // and we skip — hover alone controls visibility. On mobile, isHovered is always

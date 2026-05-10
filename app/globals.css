@@ -28,6 +28,17 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Mobile-only scroll-snap: anchor the hero so it doesn't leave a sliver mid-scroll */
+  @media (max-width: 767px) and (pointer: coarse) {
+    html {
+      scroll-snap-type: y proximity;
+    }
+    .snap-hero {
+      scroll-snap-align: start;
+      scroll-snap-stop: normal;
+    }
+  }
 }
 
 @layer components {
