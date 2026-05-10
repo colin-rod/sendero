@@ -66,7 +66,7 @@ describe('submitFeedback', () => {
 
     const [, options] = (global.fetch as jest.Mock).mock.calls[0];
     const body = JSON.parse(options.body);
-    expect(body.category).toBe('bug');
+    expect(body.category).toBe('bug-report');
     expect(body.message).toBe('Something is broken');
     expect(body.platform).toBe('TestAgent/1.0');
     expect(body.locale).toBe('en');
