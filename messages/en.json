@@ -781,7 +781,7 @@
     "changesText": "We reserve the right to adapt this privacy policy as necessary to comply with legal requirements or changes to our services."
   },
   "cookieBanner": {
-    "text": "We use cookies to analyze how visitors use our site and to improve your experience. This includes analytics tools (Vercel Analytics, PostHog). You can accept or decline non-essential cookies.",
+    "text": "We use cookies to understand how you use our site and make it better.",
     "accept": "Accept",
     "decline": "Decline",
     "learnMore": "Privacy Policy"

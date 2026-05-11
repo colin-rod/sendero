@@ -781,7 +781,7 @@
     "changesText": "Nos reservamos el derecho de adaptar esta política de privacidad cuando sea necesario para cumplir con los requisitos legales o los cambios en nuestros servicios."
   },
   "cookieBanner": {
-    "text": "Utilizamos cookies para analizar cómo los visitantes usan nuestro sitio y mejorar tu experiencia. Esto incluye herramientas de análisis como Vercel Analytics y PostHog. Puedes aceptar o rechazar las cookies no esenciales.",
+    "text": "Usamos cookies para entender cómo usas el sitio y seguir mejorándolo.",
     "accept": "Aceptar",
     "decline": "Rechazar",
     "learnMore": "Privacidad"

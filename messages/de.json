@@ -781,7 +781,7 @@
     "changesText": "Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an rechtliche Anforderungen oder Änderungen unserer Leistungen anzupassen."
   },
   "cookieBanner": {
-    "text": "Wir verwenden Cookies, um zu analysieren, wie Besucher unsere Website nutzen, und um Ihr Erlebnis zu verbessern. Dazu gehören Analyse-Tools wie Vercel Analytics und PostHog. Sie können nicht notwendige Cookies akzeptieren oder ablehnen.",
+    "text": "Wir nutzen Cookies, um zu verstehen, wie du unsere Seite verwendest – und sie für dich besser zu machen.",
     "accept": "Akzeptieren",
     "decline": "Ablehnen",
     "learnMore": "Datenschutz"
