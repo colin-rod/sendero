@@ -42,18 +42,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: alternates.canonical,
       siteName: 'Sendero Bike Trails',
       locale: locale === 'en' ? 'en_US' : locale === 'de' ? 'de_DE' : 'es_ES',
-      images: [{
-        url: '/Logo_Dark.png',
-        width: 96,
-        height: 96,
-        alt: 'Sendero Bike Trails',
-      }],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['/Logo_Dark.png'],
     },
     robots: {
       index: true,
