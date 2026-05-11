@@ -87,12 +87,17 @@ export default function HomePage() {
                 {tHeroIntro('subheading')
                   .split(/\.\s+/)
                   .filter(Boolean)
-                  .map((sentence, i, arr) => (
-                    <span key={i} className="block sm:inline">
-                      {sentence}
-                      {i < arr.length - 1 ? '. ' : '.'}
-                    </span>
-                  ))}
+                  .map((sentence, i, arr) => {
+                    const trimmed = sentence.trim();
+                    const needsPeriod = !trimmed.endsWith('.');
+                    return (
+                      <span key={i} className="block sm:inline">
+                        {trimmed}
+                        {needsPeriod ? '.' : ''}
+                        {i < arr.length - 1 ? ' ' : ''}
+                      </span>
+                    );
+                  })}
               </p>
             </div>
             <svg width="72" height="16" viewBox="0 0 72 16" fill="none" aria-hidden="true">
