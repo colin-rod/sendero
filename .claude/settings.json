@@ -6,7 +6,10 @@
       "Bash(ls /Users/julianperez88/Documents/GitHub/sendero-1/app/[locale]/)",
       "Read(//Users/julianperez88/Documents/GitHub/figma-cli/**)",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(git -C /Users/julianperez88/Documents/GitHub/sendero-1 add messages/en.json messages/es.json)",
+      "Bash(git -C /Users/julianperez88/Documents/GitHub/sendero-1 commit -m ' *)",
+      "Bash(git -C /Users/julianperez88/Documents/GitHub/sendero-1 push origin development)"
     ],
     "additionalDirectories": [
       "/Users/julianperez88/Documents/GitHub/sendero-1/public"
