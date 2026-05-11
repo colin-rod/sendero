@@ -776,8 +776,14 @@
     "rightsText1": "Du hast jederzeit das Recht auf Auskunft über deine gespeicherten Daten, auf Berichtigung unrichtiger Daten, auf Löschung deiner Daten, auf Einschränkung der Verarbeitung sowie auf Widerruf deiner Einwilligung.",
     "rightsText2": "Zur Ausübung deiner Rechte genügt eine E-Mail an:",
     "cookiesTitle": "Cookies",
-    "cookiesText": "Diese Website verwendet keine Cookies oder Tracking-Technologien, die einer Einwilligung bedürfen.",
+    "cookiesText": "Diese Website verwendet Analyse-Cookies (Vercel Analytics und PostHog), um zu verstehen, wie Besucher unsere Website nutzen, und um Ihr Erlebnis zu verbessern. Ihre Cookie-Einstellungen können Sie über das Banner verwalten, das bei Ihrem ersten Besuch angezeigt wird.",
     "changesTitle": "Änderungen dieser Datenschutzerklärung",
     "changesText": "Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an rechtliche Anforderungen oder Änderungen unserer Leistungen anzupassen."
+  },
+  "cookieBanner": {
+    "text": "Wir verwenden Cookies, um zu analysieren, wie Besucher unsere Website nutzen, und um Ihr Erlebnis zu verbessern. Dazu gehören Analyse-Tools wie Vercel Analytics und PostHog. Sie können nicht notwendige Cookies akzeptieren oder ablehnen.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "learnMore": "Datenschutz"
   }
 }
