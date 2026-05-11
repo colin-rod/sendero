@@ -39,7 +39,7 @@ export function TrailCard({
       }}
     >
       <div className="flex flex-col items-center px-6 py-9 w-full">
-        <h3 className="font-aboreto text-[28px] leading-8 tracking-[0.12em] text-center text-[#F2F2F7]">
+        <h3 className="font-aboreto text-[20px] md:text-[22px] lg:text-[28px] leading-7 lg:leading-8 tracking-[0.08em] lg:tracking-[0.12em] text-center text-[#F2F2F7]">
           {prefix && <span className="font-normal">{prefix}</span>}
           {prefix && ' '}
           <span className="font-bold">{trailName}</span>

@@ -168,7 +168,7 @@
   },
   "footer": {
     "brandName": "sendero bike trails",
-    "tagline": "Más que senderos.\nCaminos que conectan vidas.",
+    "tagline": "Caminos que conectan vidas.",
     "social": {
       "followUs": "Síguenos",
       "instagram": "Síguenos en Instagram",
@@ -776,8 +776,14 @@
     "rightsText1": "Tienes derecho en cualquier momento a acceder a tus datos almacenados, a corregir datos inexactos, a eliminar tus datos, a limitar el tratamiento y a retirar tu consentimiento.",
     "rightsText2": "Para ejercer tus derechos, basta con enviar un correo electrónico a:",
     "cookiesTitle": "Cookies",
-    "cookiesText": "Este sitio web no utiliza cookies ni tecnologías de seguimiento que requieran consentimiento.",
+    "cookiesText": "Este sitio web utiliza cookies de análisis (Vercel Analytics y PostHog) para entender cómo los visitantes usan nuestro sitio y mejorar tu experiencia. Puedes gestionar tus preferencias de cookies mediante el banner que aparece en tu primera visita.",
     "changesTitle": "Cambios en esta política de privacidad",
     "changesText": "Nos reservamos el derecho de adaptar esta política de privacidad cuando sea necesario para cumplir con los requisitos legales o los cambios en nuestros servicios."
+  },
+  "cookieBanner": {
+    "text": "Usamos cookies para entender cómo usas el sitio y seguir mejorándolo.",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "learnMore": "Privacidad"
   }
 }

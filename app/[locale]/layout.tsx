@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
+import { CookieBanner } from '@/components/features/cookie-consent/CookieBanner';
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { PostHogProvider } from '@/components/PostHogProvider';
@@ -100,6 +101,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <PostHogPageView />
             {children}
           </PostHogProvider>
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>

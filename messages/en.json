@@ -168,7 +168,7 @@
   },
   "footer": {
     "brandName": "sendero bike trails",
-    "tagline": "More than trails.\nPaths that connect lives.",
+    "tagline": "Paths that connect lives.",
     "social": {
       "followUs": "Follow us",
       "instagram": "Follow us on Instagram",
@@ -776,8 +776,14 @@
     "rightsText1": "You have the right at any time to access your stored data, to correct inaccurate data, to delete your data, to restrict processing and to withdraw your consent.",
     "rightsText2": "To exercise your rights, simply send an email to:",
     "cookiesTitle": "Cookies",
-    "cookiesText": "This website does not use cookies or tracking technologies that require consent.",
+    "cookiesText": "This website uses analytics cookies (Vercel Analytics and PostHog) to understand how visitors use our site and to improve your experience. You can manage your cookie preferences using the banner shown on your first visit.",
     "changesTitle": "Changes to this Privacy Policy",
     "changesText": "We reserve the right to adapt this privacy policy as necessary to comply with legal requirements or changes to our services."
+  },
+  "cookieBanner": {
+    "text": "We use cookies to understand how you use our site and make it better.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Privacy Policy"
   }
 }

@@ -46,6 +46,8 @@ export default [
         global: 'readonly',
         window: 'readonly',
         document: 'readonly',
+        localStorage: 'readonly',
+        sessionStorage: 'readonly',
         navigator: 'readonly',
         fetch: 'readonly',
         setTimeout: 'readonly',
