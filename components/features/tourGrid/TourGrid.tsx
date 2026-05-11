@@ -137,7 +137,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       <div className="absolute inset-0" style={backgroundStyle} role="img" aria-label={imageAlt} />
 
       {/* Default: title at bottom */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-[125px]">
+      <div className="absolute inset-0 flex flex-col justify-end items-center px-6 pb-[80px] lg:pb-[125px]">
         {(() => {
           const lastSpace = title.lastIndexOf(' ');
           const first = lastSpace !== -1 ? title.slice(0, lastSpace) : '';
@@ -152,14 +152,14 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
       </div>
 
       {/* Hover / tap overlay */}
-      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-6 md:pt-[54px] pb-8 md:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'}`}>
+      <div className={`absolute inset-0 bg-white flex flex-col items-center px-6 pt-6 lg:pt-[54px] pb-8 lg:pb-[54px] transition-opacity duration-300 ${isVisible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto'}`}>
         <div className="flex-1 flex items-center justify-center min-h-0">
-          <div className="w-full max-w-[55%] md:max-w-[70%] pointer-events-none">
+          <div className="w-full max-w-[55%] lg:max-w-[70%] pointer-events-none">
             <TrailSVG src={pathSrc} animate={isVisible} animKey={animKey} />
           </div>
         </div>
         <div className="flex flex-col items-center gap-2 text-center">
-          {line1 && <p className="text-xl font-bold text-foreground">{line1}</p>}
+          {line1 && <p className="text-base lg:text-xl font-bold text-foreground">{line1}</p>}
           {line2 && <p className="text-base font-normal text-foreground">{line2}</p>}
           {(distance || elevation || elevationGain) && (
             <div className="flex items-center justify-center gap-x-1 text-sm mt-3 flex-wrap">

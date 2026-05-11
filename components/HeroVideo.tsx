@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroVideo() {
@@ -8,9 +8,6 @@ export default function HeroVideo() {
   const [hasError, setHasError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    videoRef.current?.play().catch(() => {});
-  }, []);
 
   if (hasError) {
     return (
@@ -48,9 +45,12 @@ export default function HeroVideo() {
         loop
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
         poster="/hero-poster.jpg"
-        onCanPlay={() => setIsVideoReady(true)}
+        onCanPlay={() => {
+          setIsVideoReady(true);
+          videoRef.current?.play().catch(() => {});
+        }}
         onError={() => setHasError(true)}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-100' : 'opacity-0'

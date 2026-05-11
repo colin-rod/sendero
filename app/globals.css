@@ -29,12 +29,13 @@
     }
   }
 
-  /* Mobile-only scroll-snap: anchor the hero so it doesn't leave a sliver mid-scroll */
+  /* Mobile-only scroll-snap: anchor sections so each scroll lands on a defined position */
   @media (max-width: 767px) and (pointer: coarse) {
     html {
       scroll-snap-type: y proximity;
     }
-    .snap-hero {
+    .snap-hero,
+    .snap-section {
       scroll-snap-align: start;
       scroll-snap-stop: normal;
     }
@@ -69,7 +70,7 @@
     font-weight: 500;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .text-h3 {
       font-size: 1.75rem; /* 28px desktop */
     }

@@ -33,7 +33,8 @@ export function CookieBanner() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-[#1b1b1b] text-white px-4 py-4 shadow-lg"
+      className="fixed bottom-0 left-0 right-0 z-50 text-white px-4 py-4 shadow-lg backdrop-blur-sm"
+      style={{ backgroundColor: 'rgba(27, 27, 27, 0.8)', borderTop: '0.5px solid rgba(255,255,255,0.25)' }}
     >
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
         <p className="text-sm leading-relaxed flex-1 text-[#e5e5e5]">
