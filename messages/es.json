@@ -90,11 +90,11 @@
   "waitlist": {
     "heading": "¡Mantente al Día!",
     "description": "Sé el primero en saber cuándo abrimos los tours. Sin spam, solo aventura.",
-    "becomeAPioneer": "Buscamos participantes",
-    "nextDate": "Próximo viaje: 26.11–04.12.2026",
-    "nextDateLabel": "Próximo viaje:",
-    "nextDateValue": "26.11.–04.12.2026",
-    "ctaPrompt": "¡Mantente al Día!",
+    "becomeAPioneer": "Júntate y haz parte",
+    "nextDate": "",
+    "nextDateLabel": "",
+    "nextDateValue": "",
+    "ctaPrompt": "Regístrate y sé la primera persona en saber cuándo empieza la próxima travesía.",
     "joinButton": "UNIRSE"
   },
   "form": {
