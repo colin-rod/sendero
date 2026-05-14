@@ -90,11 +90,11 @@
   "waitlist": {
     "heading": "Stay in the Loop!",
     "description": "Be the first to know when tours open up. No spam, just adventure.",
-    "becomeAPioneer": "Looking for Pioneers",
-    "nextDate": "Next Trip: Nov 26 – Dec 4, 2026",
-    "nextDateLabel": "Next trip:",
-    "nextDateValue": "Nov 26 – Dec 4, 2026",
-    "ctaPrompt": "Stay in the Loop!",
+    "becomeAPioneer": "Be part of it",
+    "nextDate": "",
+    "nextDateLabel": "",
+    "nextDateValue": "",
+    "ctaPrompt": "Sign up and be the first to know when the next journey begins.",
     "joinButton": "JOIN"
   },
   "form": {
