@@ -11,8 +11,17 @@ export default function HeroVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (video.readyState >= 3) setIsVideoReady(true); // cached — onCanPlay won't re-fire in Chrome
-    video.play().catch(() => {});                      // no-op if already playing; silent fail in webviews
+
+    const onStateChange = () => {
+      if (video.readyState >= 3) {
+        setIsVideoReady(true);
+        video.play().catch(() => {});
+      }
+    };
+
+    onStateChange(); // immediate check — handles memory-cached case (e.g. language switch)
+    video.addEventListener('readystatechange', onStateChange);
+    return () => video.removeEventListener('readystatechange', onStateChange);
   }, []);
 
   if (hasError) {
