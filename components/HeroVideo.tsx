@@ -56,7 +56,6 @@ export default function HeroVideo() {
           setIsVideoReady(true);
           videoRef.current?.play().catch(() => {});
         }}
-        onPlaying={() => setIsVideoReady(true)}
         onError={() => setHasError(true)}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-100' : 'opacity-0'
