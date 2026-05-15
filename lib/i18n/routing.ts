@@ -10,7 +10,10 @@ export const routing = defineRouting({
   defaultLocale,
 
   // The locale prefix to use (always = /en/..., /de/...)
-  localePrefix: 'always'
+  localePrefix: 'always',
+
+  // Do not auto-detect browser language — always default to German
+  localeDetection: false
 });
 
 // Lightweight wrappers around Next.js' navigation APIs
