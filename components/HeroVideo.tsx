@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroVideo() {
@@ -8,6 +8,12 @@ export default function HeroVideo() {
   const [hasError, setHasError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.readyState >= 3) setIsVideoReady(true); // cached — onCanPlay won't re-fire in Chrome
+    video.play().catch(() => {});                      // no-op if already playing; silent fail in webviews
+  }, []);
 
   if (hasError) {
     return (
@@ -46,7 +52,6 @@ export default function HeroVideo() {
         muted
         playsInline
         preload="auto"
-        poster="/hero-poster.jpg"
         onCanPlay={() => {
           setIsVideoReady(true);
           videoRef.current?.play().catch(() => {});
