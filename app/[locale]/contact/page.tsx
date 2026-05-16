@@ -8,7 +8,7 @@ import { Link } from '@/lib/i18n/routing';
 import { Mail, MessageCircle, Instagram, HelpCircle } from 'lucide-react';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
-import { buildAlternates } from '@/lib/seo/canonical';
+import { buildAlternates, ogImages } from '@/lib/seo/canonical';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: t('title'),
       description: t('description'),
       url: alternates.canonical,
+      images: ogImages,
     },
   };
 }

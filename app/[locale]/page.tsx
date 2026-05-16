@@ -11,7 +11,7 @@ import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
-import { buildAlternates } from '@/lib/seo/canonical';
+import { buildAlternates, ogImages } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -29,6 +29,7 @@ export async function generateMetadata({
       title: t('title'),
       description: t('description'),
       url: alternates.canonical,
+      images: ogImages,
     },
   };
 }

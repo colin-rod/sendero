@@ -7,7 +7,7 @@ import { TrailCard } from '@/components/features/trails/TrailCard';
 import { getDifficultyBadgeProps } from '@/lib/utils/difficulty';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema, trailItemListSchema } from '@/lib/seo/jsonLd';
-import { buildAlternates } from '@/lib/seo/canonical';
+import { buildAlternates, ogImages } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -26,6 +26,7 @@ export async function generateMetadata({
       title: t('title'),
       description: t('subtitle'),
       url: alternates.canonical,
+      images: ogImages,
     },
   };
 }

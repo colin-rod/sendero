@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { ogImages } from '@/lib/seo/canonical';
 
 export async function generateMetadata({
   params,
@@ -16,6 +17,7 @@ export async function generateMetadata({
       title: t('metadata.title'),
       description: t('metadata.description'),
       type: 'website',
+      images: ogImages,
     },
   };
 }

@@ -2,6 +2,10 @@ import { locales, defaultLocale, type Locale } from '@/lib/i18n/config';
 
 const FALLBACK_SITE_URL = 'https://www.senderobiketrails.com';
 
+export const ogImages = [
+  { url: '/opengraph-image.png', width: 1200, height: 642, alt: 'Sendero Bike Trails' },
+];
+
 export function getSiteUrl(): string {
   const raw = process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL;
   return raw.replace(/\/$/, '');
