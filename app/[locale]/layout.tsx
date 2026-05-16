@@ -13,7 +13,7 @@ import {
   localBusinessSchema,
   websiteSchema,
 } from '@/lib/seo/jsonLd';
-import { buildAlternates, getSiteUrl } from '@/lib/seo/canonical';
+import { buildAlternates, getSiteUrl, ogImages } from '@/lib/seo/canonical';
 
 type Props = {
   children: React.ReactNode;
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: alternates.canonical,
       siteName: 'Sendero Bike Trails',
       locale: locale === 'en' ? 'en_US' : locale === 'de' ? 'de_DE' : 'es_ES',
-      images: [{ url: `${siteUrl}/opengraph-image.png`, width: 1200, height: 630, alt: 'Sendero Bike Trails' }],
+      images: ogImages,
     },
     twitter: {
       card: 'summary_large_image',

@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container';
 import { FAQAccordion } from '@/components/features/faq/FAQAccordion';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
-import { buildAlternates } from '@/lib/seo/canonical';
+import { buildAlternates, ogImages } from '@/lib/seo/canonical';
 
 const sectionKeys = [
   'safety',
@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: t('title'),
       description: t('subtitle'),
       url: alternates.canonical,
+      images: ogImages,
     },
   };
 }
