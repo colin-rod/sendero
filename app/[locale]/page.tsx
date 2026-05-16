@@ -65,7 +65,7 @@ export default function HomePage() {
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
-        <section className="relative h-screen snap-hero bg-black">
+        <section className="relative h-screen bg-black">
           {/* Background Video */}
           <HeroVideo />
 
@@ -79,7 +79,7 @@ export default function HomePage() {
 
         {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="snap-section flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-4 sm:px-8 lg:px-16 py-20">
+          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-4 sm:px-8 lg:px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
               <h2 className="text-h2 font-bold text-white">
                 {tHeroIntro('heading')}
@@ -120,7 +120,7 @@ export default function HomePage() {
 
         {/* Tour Grid Section */}
         <ScrollReveal>
-          <section className="snap-section bg-gray-100 py-16 md:py-24">
+          <section className="bg-gray-100 py-16 md:py-24">
             <Container>
               <TourGrid
                 cards={[
@@ -231,7 +231,7 @@ export default function HomePage() {
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
-          <section className="snap-section relative py-40 md:py-56">
+          <section className="relative py-40 md:py-56">
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image

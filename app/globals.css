@@ -29,17 +29,6 @@
     }
   }
 
-  /* Mobile-only scroll-snap: anchor sections so each scroll lands on a defined position */
-  @media (max-width: 767px) and (pointer: coarse) {
-    html {
-      scroll-snap-type: y proximity;
-    }
-    .snap-hero,
-    .snap-section {
-      scroll-snap-align: start;
-      scroll-snap-stop: normal;
-    }
-  }
 }
 
 @layer components {
