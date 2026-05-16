@@ -23,6 +23,7 @@ export default function LanguageSwitcher() {
     if (newLocale !== locale) {
       posthog.capture('language_switched', { from: locale, to: newLocale });
     }
+    sessionStorage.setItem('scrollAfterLocaleSwitch', window.scrollY.toString());
     const cleanPath = pathname.replace(new RegExp(`^/(${locales.join('|')})`), '') || '/';
     router.replace(cleanPath, { locale: newLocale });
     setIsOpen(false);

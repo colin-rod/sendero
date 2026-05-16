@@ -247,7 +247,7 @@ export default function HomePage() {
               <h2 className="text-h1 font-bold text-white mb-4">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="mb-8 text-body text-white">
+              <p className="mb-8 text-h2 font-light text-white">
                 {tWaitlist('ctaPrompt')}
               </p>
 

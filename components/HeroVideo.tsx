@@ -1,13 +1,44 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroVideo() {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [posterMounted, setPosterMounted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const onStateChange = () => {
+      if (video.readyState >= 3) {
+        setIsVideoReady(true);
+        video.play().catch(() => {});
+      }
+    };
+
+    onStateChange(); // immediate check — handles memory-cached case (e.g. language switch)
+    video.addEventListener('readystatechange', onStateChange);
+
+    // Resume play when the hero scrolls back into view after being scrolled away
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && video.paused) {
+          video.play().catch(() => {});
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(video);
+
+    return () => {
+      video.removeEventListener('readystatechange', onStateChange);
+      observer.disconnect();
+    };
+  }, []);
 
   if (hasError) {
     return (
@@ -25,20 +56,20 @@ export default function HeroVideo() {
 
   return (
     <>
-      {/* Poster image - shown while video loads, fades out once video is ready */}
-      <Image
-        src="/hero-poster.jpg"
-        alt="Coffee Region landscape"
-        fill
-        sizes="100vw"
-        quality={75}
-        className={`object-cover transition-opacity duration-1000 ${
-          isVideoReady ? 'opacity-0' : 'opacity-100'
-        }`}
-        priority
-      />
+      {posterMounted && (
+        <Image
+          src="/hero-poster.jpg"
+          alt="Coffee Region landscape"
+          fill
+          sizes="100vw"
+          quality={75}
+          className={`object-cover transition-opacity duration-1000 ${
+            isVideoReady ? 'opacity-0' : 'opacity-100'
+          }`}
+          priority
+        />
+      )}
 
-      {/* Video element - mobile uses lightweight 796KB version, desktop uses full 1080p */}
       <video
         ref={videoRef}
         autoPlay
@@ -46,12 +77,15 @@ export default function HeroVideo() {
         muted
         playsInline
         preload="auto"
-        poster="/hero-poster.jpg"
         onCanPlay={() => {
           setIsVideoReady(true);
           videoRef.current?.play().catch(() => {});
         }}
+        onPlaying={() => setIsVideoReady(true)}
         onError={() => setHasError(true)}
+        onTransitionEnd={() => {
+          if (isVideoReady) setPosterMounted(false);
+        }}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
           isVideoReady ? 'opacity-100' : 'opacity-0'
         }`}

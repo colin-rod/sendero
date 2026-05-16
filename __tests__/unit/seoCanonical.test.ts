@@ -68,9 +68,9 @@ describe('buildAlternates', () => {
     expect(result.languages['es']).toBe('https://example.com/es/about');
   });
 
-  it('includes x-default pointing to the default locale (en)', () => {
+  it('includes x-default pointing to the default locale (de)', () => {
     const result = buildAlternates('en', '/about');
-    expect(result.languages['x-default']).toBe('https://example.com/en/about');
+    expect(result.languages['x-default']).toBe('https://example.com/de/about');
   });
 
   it('works without a path argument', () => {
