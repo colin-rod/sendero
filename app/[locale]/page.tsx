@@ -65,7 +65,7 @@ export default function HomePage() {
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
-        <section className="relative h-screen snap-hero">
+        <section className="relative h-screen snap-hero bg-black">
           {/* Background Video */}
           <HeroVideo />
 
