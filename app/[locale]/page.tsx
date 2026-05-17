@@ -65,12 +65,12 @@ export default function HomePage() {
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
-        <section className="relative min-h-[100dvh] bg-black">
+        <section className="relative min-h-[100dvh] bg-black flex flex-col">
           {/* Background Video */}
           <HeroVideo />
 
           {/* Content */}
-          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
+          <div className="relative z-10 flex flex-1 flex-col items-center justify-center text-center px-4">
             <h1 className="text-h1 text-white max-w-3xl">
               {tHero('title')}
             </h1>
