@@ -27,6 +27,9 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+    html {
+      scroll-snap-type: none !important;
+    }
   }
 
 }
@@ -408,6 +411,12 @@
     html {
       scroll-snap-type: y proximity;
       scroll-padding-top: 60px;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-section {
+      scroll-snap-align: start;
     }
 
     .cta-section {
