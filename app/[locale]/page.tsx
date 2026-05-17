@@ -65,7 +65,7 @@ export default function HomePage() {
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
-        <section className="relative h-screen bg-black">
+        <section className="relative min-h-[100dvh] bg-black hero-section">
           {/* Background Video */}
           <HeroVideo />
 
@@ -231,7 +231,7 @@ export default function HomePage() {
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
-          <section className="relative py-40 md:py-56">
+          <section className="relative py-40 md:py-56 cta-section">
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image

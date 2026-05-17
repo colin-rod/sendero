@@ -402,4 +402,22 @@
     transform: rotateY(180deg);
     overflow: hidden;
   }
+
+  /* Mobile-only scroll snap */
+  @media (max-width: 768px) {
+    html {
+      scroll-snap-type: y proximity;
+      scroll-padding-top: 60px;
+    }
+
+    .hero-section {
+      scroll-snap-align: start;
+      min-height: 100dvh;
+    }
+
+    .cta-section {
+      scroll-snap-align: start;
+      min-height: 100dvh;
+    }
+  }
 }
