@@ -8,7 +8,7 @@ export default function HeroTitle({ title }: Props) {
   const parts = title.split('\n');
 
   return (
-    <h1 className="text-h1 text-white max-w-3xl">
+    <h1 className="text-h1 text-white max-w-3xl hero-title-animate">
       {parts.length > 1 ? (
         <>
           {parts[0]}
