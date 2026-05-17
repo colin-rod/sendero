@@ -244,7 +244,7 @@ export default function HomePage() {
             </div>
 
             {/* Content */}
-            <Container className="relative z-10 text-center">
+            <Container className="relative z-10 text-center flex flex-col items-center">
               <h2 className="text-h1 font-bold text-white mb-4">
                 {tWaitlist('becomeAPioneer')}
               </h2>

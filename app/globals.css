@@ -419,9 +419,6 @@
       scroll-snap-align: start;
     }
 
-    .cta-section {
-      scroll-snap-align: start;
-      min-height: 100dvh;
-    }
+
   }
 }
