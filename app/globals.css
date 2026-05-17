@@ -410,11 +410,6 @@
       scroll-padding-top: 60px;
     }
 
-    .hero-section {
-      scroll-snap-align: start;
-      min-height: 100dvh;
-    }
-
     .cta-section {
       scroll-snap-align: start;
       min-height: 100dvh;
