@@ -94,8 +94,8 @@
     "nextDate": "",
     "nextDateLabel": "",
     "nextDateValue": "",
-    "ctaPrompt": "Regístrate y sé la primera persona en saber cuándo empieza la próxima travesía.",
-    "joinButton": "UNIRSE"
+    "ctaPrompt": "Regístrate y entérate, cuándo comienza tu próxima travesía.",
+    "joinButton": "Regístrate"
   },
   "form": {
     "labels": {
