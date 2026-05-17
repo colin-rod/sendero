@@ -47,7 +47,7 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 rounded-lg border-2 border-[#1B1B1B] px-2.5 py-1 text-caption font-medium text-foreground transition-colors hover:bg-[#232323] hover:text-white hover:border-[#232323] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+        className="flex items-center gap-1.5 rounded-lg border-2 border-[#1B1B1B] px-2.5 py-1 text-caption font-medium text-foreground transition-colors hover:bg-[#232323] hover:text-white hover:border-[#232323] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 cursor-pointer"
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
@@ -79,7 +79,7 @@ export default function LanguageSwitcher() {
               <button
                 key={loc}
                 onClick={() => switchLocale(loc)}
-                className={`block w-full text-left px-4 py-2 text-caption transition-colors ${
+                className={`block w-full text-left px-4 py-2 text-caption transition-colors cursor-pointer ${
                   locale === loc
                     ? 'bg-primary-500/20 text-white font-semibold'
                     : 'text-gray-300 hover:bg-white/10 hover:text-white'
