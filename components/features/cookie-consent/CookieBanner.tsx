@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 const STORAGE_KEY = "cookie-consent";
 
@@ -12,18 +13,23 @@ export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem(STORAGE_KEY)) {
+    const consent = localStorage.getItem(STORAGE_KEY);
+    if (!consent) {
       setVisible(true);
+    } else if (consent === "declined") {
+      posthog.opt_out_capturing();
     }
   }, []);
 
   function handleAccept() {
     localStorage.setItem(STORAGE_KEY, "accepted");
+    posthog.opt_in_capturing();
     setVisible(false);
   }
 
   function handleDecline() {
     localStorage.setItem(STORAGE_KEY, "declined");
+    posthog.opt_out_capturing();
     setVisible(false);
   }
 
