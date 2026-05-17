@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import HeroVideo from '@/components/HeroVideo';
+import HeroTitle from '@/components/HeroTitle';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
@@ -71,9 +72,7 @@ export default function HomePage() {
 
           {/* Content */}
           <div className="relative z-10 flex flex-1 flex-col items-center justify-center text-center px-4">
-            <h1 className="text-h1 text-white max-w-3xl">
-              {tHero('title')}
-            </h1>
+            <HeroTitle title={tHero('title')} />
           </div>
         </section>
 
