@@ -12,6 +12,7 @@ export default function HeroTitle({ title }: Props) {
       {parts.length > 1 ? (
         <>
           {parts[0]}
+          <span className="md:hidden"> </span>
           <br className="hidden md:block" />
           {parts[1]}
         </>
