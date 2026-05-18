@@ -15,7 +15,7 @@
     }
   },
   "hero": {
-    "title": "Raderlebnisse in den kolumbianischen Anden",
+    "title": "Fahrradreisen durch\nKolumbiens Andenwälder",
     "subtitle": "Wir verbinden dich auf dem Rad mit den Bergen und gestalten einzigartige Augenblicke für all deine Sinne.",
     "description": "Anfängerfreundliche, nachhaltige Wander- und Radtouren durch die atemberaubenden Landschaften Pereiras. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse.",
     "features": {
@@ -94,7 +94,7 @@
     "nextDate": "",
     "nextDateLabel": "",
     "nextDateValue": "",
-    "ctaPrompt": "Trag dich ein und erfahre als Erste:r, wann die nächste Reise startet.",
+    "ctaPrompt": "Trag dich ein und erfahre, wann deine nächste Reise startet.",
     "joinButton": "TEILNEHMEN"
   },
   "form": {

@@ -3,6 +3,7 @@
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Link } from '@/lib/i18n/routing';
+import posthog from 'posthog-js';
 
 interface TrailBookingCTAProps {
   heading: string;
@@ -25,7 +26,10 @@ export function TrailBookingCTA({
           <p className="text-body text-foreground/80 mb-8">{subtext}</p>
 
           {/* Placeholder - Link to waitlist */}
-          <Link href="/#waitlist">
+          <Link
+            href="/#waitlist"
+            onClick={() => posthog.capture('trail_booking_cta_clicked', { source: 'trail_detail' })}
+          >
             <Button size="lg" variant="secondary">
               {buttonText}
             </Button>

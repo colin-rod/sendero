@@ -15,6 +15,7 @@ import type {
   FitnessLevel,
   TravelTimeline,
 } from '@/lib/types/database';
+import posthog from 'posthog-js';
 
 export function WaitlistForm() {
   const t = useTranslations('form');
@@ -96,6 +97,14 @@ export function WaitlistForm() {
       }
 
       // Success - redirect to thank you page
+      posthog.capture('waitlist_submitted', {
+        locale,
+        tour_duration: tourDuration,
+        fitness_level: fitnessLevel,
+        travel_timeline: travelTimeline,
+        interest_types: interestTypes,
+        source: 'waitlist_form',
+      });
       router.push('/thank-you');
     } catch (error) {
       console.error('Form submission error:', error);

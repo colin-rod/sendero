@@ -33,7 +33,7 @@ export function TrailCard({
 
   const cardContent = (
     <div
-      className="relative flex flex-col justify-end items-center w-full h-[476px] rounded-sm overflow-hidden bg-cover bg-center transition-[filter] duration-150 group-active:brightness-95"
+      className="relative flex flex-col justify-end items-center w-full h-[476px] rounded-sm overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: `linear-gradient(360deg, rgba(0, 0, 0, 0.6) 27.66%, rgba(0, 0, 0, 0) 100%), url(${thumbnail})`,
       }}
@@ -61,7 +61,7 @@ export function TrailCard({
       key={id}
       href={`/trails/${slug}`}
       onClick={() => posthog.capture('trail_card_clicked', { trail_slug: slug, source: 'trails_listing' })}
-      className="group block rounded-sm transition-transform duration-150 active:scale-[0.98] md:hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
+      className="group block rounded-sm md:transition-transform md:duration-150 md:hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2 touch-pan-y"
     >
       {cardContent}
     </Link>

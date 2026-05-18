@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import HeroVideo from '@/components/HeroVideo';
+import HeroTitle from '@/components/HeroTitle';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
@@ -65,21 +66,19 @@ export default function HomePage() {
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
-        <section className="relative h-screen snap-hero bg-black">
+        <section className="relative min-h-[100dvh] bg-black flex flex-col hero-section">
           {/* Background Video */}
           <HeroVideo />
 
           {/* Content */}
-          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
-            <h1 className="text-h1 text-white max-w-3xl">
-              {tHero('title')}
-            </h1>
+          <div className="relative z-10 flex flex-1 flex-col items-center justify-center text-center px-4">
+            <HeroTitle title={tHero('title')} />
           </div>
         </section>
 
         {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="snap-section flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-4 sm:px-8 lg:px-16 py-20">
+          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-4 sm:px-8 lg:px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
               <h2 className="text-h2 font-bold text-white">
                 {tHeroIntro('heading')}
@@ -120,7 +119,7 @@ export default function HomePage() {
 
         {/* Tour Grid Section */}
         <ScrollReveal>
-          <section className="snap-section bg-gray-100 py-16 md:py-24">
+          <section className="bg-gray-100 py-16 md:py-24">
             <Container>
               <TourGrid
                 cards={[
@@ -231,7 +230,7 @@ export default function HomePage() {
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
-          <section className="snap-section relative py-40 md:py-56">
+          <section className="relative py-40 md:py-56 cta-section">
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image
@@ -244,11 +243,11 @@ export default function HomePage() {
             </div>
 
             {/* Content */}
-            <Container className="relative z-10 text-center">
+            <Container className="relative z-10 text-center flex flex-col items-center">
               <h2 className="text-h1 font-bold text-white mb-4">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="mb-8 text-h2 font-light text-white">
+              <p className="mb-8 text-h3 font-light leading-8 tracking-wide text-[#F2F2F2]">
                 {tWaitlist('ctaPrompt')}
               </p>
 

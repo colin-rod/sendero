@@ -27,22 +27,31 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+    html {
+      scroll-snap-type: none !important;
+    }
   }
 
-  /* Mobile-only scroll-snap: anchor sections so each scroll lands on a defined position */
-  @media (max-width: 767px) and (pointer: coarse) {
-    html {
-      scroll-snap-type: y proximity;
-    }
-    .snap-hero,
-    .snap-section {
-      scroll-snap-align: start;
-      scroll-snap-stop: normal;
-    }
+}
+
+@keyframes heroBlurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
   }
 }
 
 @layer components {
+  .hero-title-animate {
+    animation: heroBlurIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.0s backwards;
+  }
+
   /* Typography from Figma Design System (updated 2025) */
   .text-display {
     font-size: 4rem; /* 64px desktop */
@@ -412,5 +421,21 @@
   .flip-card-back {
     transform: rotateY(180deg);
     overflow: hidden;
+  }
+
+  /* Mobile-only scroll snap */
+  @media (max-width: 768px) {
+    html {
+      scroll-snap-type: y proximity;
+      scroll-padding-top: 60px;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-section {
+      scroll-snap-align: start;
+    }
+
+
   }
 }
