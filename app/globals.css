@@ -37,19 +37,17 @@
 @keyframes heroBlurIn {
   from {
     opacity: 0;
-    filter: blur(10px);
-    transform: scale(1.05);
+    filter: blur(8px);
   }
   to {
     opacity: 1;
     filter: blur(0px);
-    transform: scale(1);
   }
 }
 
 @layer components {
   .hero-title-animate {
-    animation: heroBlurIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.0s backwards;
+    animation: heroBlurIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
   }
 
   /* Typography from Figma Design System (updated 2025) */
@@ -423,19 +421,10 @@
     overflow: hidden;
   }
 
-  /* Mobile-only scroll snap */
+  /* iOS momentum scrolling */
   @media (max-width: 768px) {
-    html {
-      scroll-snap-type: y proximity;
-      scroll-padding-top: 60px;
-      overflow-y: scroll;
+    body {
       -webkit-overflow-scrolling: touch;
     }
-
-    .hero-section {
-      scroll-snap-align: start;
-    }
-
-
   }
 }
