@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t('description'),
       type: 'website',
       url: alternates.canonical,
-      siteName: 'Sendero Bike Trails',
+      siteName: t('siteName'),
       locale: locale === 'en' ? 'en_US' : locale === 'de' ? 'de_DE' : 'es_ES',
       images: ogImages,
     },
@@ -57,9 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     alternates,
     icons: {
-      icon: '/icon.svg',
-      shortcut: '/icon.svg',
-      apple: '/icon.svg',
+      icon: '/Logo_Dark.svg',
+      shortcut: '/Logo_Dark.svg',
+      apple: '/Logo_Dark.svg',
     },
   };
 }
