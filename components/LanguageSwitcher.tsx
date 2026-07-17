@@ -47,7 +47,7 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 rounded-lg border-2 border-[#1B1B1B] px-2.5 py-1 text-caption font-medium text-foreground transition-colors hover:bg-[#232323] hover:text-white hover:border-[#232323] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 cursor-pointer"
+        className="flex items-center gap-1.5 rounded-lg border-2 border-gray-950 px-2.5 py-1 text-caption font-medium text-foreground transition-colors hover:bg-foreground hover:text-white hover:border-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 cursor-pointer"
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
@@ -73,7 +73,7 @@ export default function LanguageSwitcher() {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-32 rounded-md bg-[rgba(27,27,27,0.95)] border border-white/20 shadow-lg z-50">
+        <div className="absolute right-0 mt-2 w-32 rounded-md bg-gray-950/95 border border-white/20 shadow-lg z-50">
           <div className="py-1" role="menu" aria-orientation="vertical">
             {locales.map((loc) => (
               <button

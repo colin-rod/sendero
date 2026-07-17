@@ -1,8 +1,8 @@
 # Sendero Design System
 
-**Version:** 1.0.0
-**Last Updated:** November 2024
-**Status:** Production Ready
+**Version:** 2.0.0
+**Last Updated:** July 2026
+**Status:** Production Ready — living reference, kept in sync with Figma
 
 ---
 
@@ -75,79 +75,118 @@ Design tokens are the foundational design decisions that define your brand. All 
 ### Import Tokens
 
 ```tsx
-import { colors, typography, spacing, shadows, radius, animations } from '@/lib/design-tokens';
+import { colors, landscape, typography, spacing, shadows, radius, animations } from '@/lib/design-tokens';
 
 // Use in your components
 const primaryColor = colors.primary[500];
-const headingSize = typography.fontSize.h1.desktop;
+const headingSize = typography.fontSize.h1; // '3rem' (48px desktop) — responsive step-down lives in app/globals.css .text-h1
 const cardPadding = spacing.card.md;
+const trailMarkerColor = landscape.cacao.nuez;
 ```
 
 ### Token Files
 
-- **`colors.ts`** - Color palette with semantic naming
+- **`colors.ts`** - Color palette with semantic naming, plus the `landscape` data-viz palette
 - **`typography.ts`** - Font families, sizes, weights, line heights
 - **`spacing.ts`** - Spacing scale and semantic spacing values
 - **`shadows.ts`** - Elevation system and focus shadows
 - **`radius.ts`** - Border radius values
 - **`animations.ts`** - Duration, easing, and animation presets
 
+> ⚠️ **Critical wiring note:** Tailwind CSS v4 (via `@tailwindcss/postcss`) does **not** automatically load a JS/TS config file. `app/globals.css` must contain `@config "../tailwind.config.ts";` right after `@import "tailwindcss";` — without it, every custom color/shadow/radius/animation token in `tailwind.config.ts` (`primary`, `accent`, `secondary-oro`, `landscape`, `riverForest`, etc.) silently falls back to Tailwind's stock default palette, with no build error. This was found missing and fixed during the July 2026 token sync — if colors ever look wrong sitewide despite `colors.ts` looking correct, check this directive first.
+
 ---
 
 ## Color System
 
-### Primary Colors (Green)
+> ⚠️ **Note on similar names:** Figma defines `Brand.primary-selva` (`#1e6a62`) and `Landscape.verde.verde-selva` (`#006d62`) as two **different** colors, and likewise `Brand.primary-bosque` (`#264c43`) vs `Landscape.verde.verde-bosque` (`#154d44`). These are intentionally distinct tokens — do not conflate them.
 
-**Use for:** Primary actions, brand elements, key CTAs
+### Brand
 
-| Shade | Hex | Usage |
-|-------|-----|-------|
-| 50 | `#f0fdf4` | Subtle backgrounds |
-| 100 | `#dcfce7` | Light backgrounds, icon badges |
-| 500 | `#22c55e` | **Main brand color**, buttons, links |
-| 600 | `#16a34a` | Hover states |
-| 700 | `#15803d` | Active states |
+**Use for:** Primary actions, brand elements, key CTAs, hero/discover buttons
+
+| Code | Value | Figma name |
+|---|---|---|
+| `primary-500` / `riverGreen-500` | `#1e6a62` | `Brand.primary-selva` |
+| `riverForest` | `#264c43` | `Brand.primary-bosque` |
+| `secondary-oro-500` | `#d09e00` | `Brand.secondary-oro` |
+| `accent-400` / `goldYellow` | `#fff0bb` | `Brand.secondary-oro-crema` (= `Text.text-oro-crema`) |
+| `lava` | `#d84900` | `Brand.accent-lava` (same swatch as `landscape.naranjo.lava`) |
 
 ```tsx
 // Usage
 <button className="bg-primary-500 hover:bg-primary-600 text-white">
   Primary Button
 </button>
+
+<Button variant="secondary-oro-solid">Discover Tours</Button>
 ```
 
-### Accent Colors (Coffee/Yellow)
+Full tint/shade scales:
 
-**Use for:** Secondary actions, highlights, warm accents
+| Shade | `primary` / `riverGreen` | `secondary-oro` |
+|---|---|---|
+| 50 | `#e8f4f2` | `#fff1b7` |
+| 100 | `#c5e3df` | `#ffed91` |
+| 200 | `#9ecfc9` | `#ffe352` |
+| 300 | `#72bab2` | `#ffd012` |
+| 400 | `#4da89f` | `#e6b300` |
+| 500 | `#1e6a62` | `#d09e00` |
+| 600 | `#1a5e57` | `#aa7601` |
+| 700 | `#154f49` | `#855301` |
+| 800 | `#10403b` | `#673c03` |
+| 900 | `#0b2f2b` | `#512c05` |
+| 950 | — | `#190b01` |
 
-| Shade | Hex | Usage |
-|-------|-----|-------|
-| 50 | `#fefce8` | Subtle backgrounds |
-| 100 | `#fef9c3` | Light backgrounds |
-| 500 | `#eab308` | **Main accent color**, secondary buttons |
-| 600 | `#ca8a04` | Hover states |
+`secondary-oro`'s 50–950 ramp (aside from `500`, which is Figma's exact value) is derived — same HSL-shape as the prior ramp, recentered on the new base. The `accent` scale (400 = `#fff0bb`) has its own 50–950 ramp — see `lib/design-tokens/colors.ts`.
+
+### Text
+
+| Code | Value | Figma name |
+|---|---|---|
+| `foreground` / `gray-900` | `#232323` | `Text.text-carbon` |
+| `silver` | `#807e7c` | `Text.text-silver` |
+| `gray-400` / `gray-600` | `#a9a9a9` | `Text.text-steel` |
+| `white` | `#ffffff` | `Text.text-white` |
+| `accent-400` | `#fff0bb` | `Text.text-oro-crema` |
+
+### Neutrals
+
+| Code | Value | Figma name |
+|---|---|---|
+| `foreground` / `gray-900` | `#232323` | `Neutrals.carbon` |
+| `gray-950` | `#1b1b1b` | `Neutrals.gravel` |
+| `silver` | `#807e7c` | `Neutrals.silver` |
+| `gray-400` / `gray-600` | `#a9a9a9` | `Neutrals.steel` |
+| `background` / `gray-100` | `#f2f2f2` | `Neutrals.bkg` |
+| `white` | `#ffffff` | `Neutrals.white` |
+
+### Landscape
+
+A 35-color palette across 6 thematic families, for data-visualization-style accents (currently used for the trail marker colors on the trails overview map). Available via `landscape.{family}.{shade}` and as Tailwind utilities `bg-landscape-{family}-{shade}` / `text-landscape-{family}-{shade}`.
+
+| Family | Shades |
+|---|---|
+| `cacao` | sombra `#2a0e10` · tronco `#4a1a1c` · vaina `#6b2329` · pulpa `#8f3530` · nuez `#b85c42` · grano `#c9a876` |
+| `azul` | noche `#081b31` · paramo `#112f4c` · cielo `#244b71` · niebla `#3f719c` · neblina `#a2c5df` |
+| `lila` | sietecueros `#1a1530` · tallo `#2d2152` · flor `#4a3b7a` · petalo `#9784c7` · brote `#c9bee6` · rocio `#efeaf8` |
+| `verde` | selva `#006d62` · bosque `#154d44` · musgo `#586c33` · helecho `#86a050` · pasto `#c4da99` · hoja `#e8f3da` |
+| `naranjo` | lava `#d84900` · fuego `#fa7121` · cobre `#fea465` · arena `#fec693` · pergamino `#fdf1e2` · papel `#fef8f1` |
+| `cafe` | obsidiana `#1d180f` · roca `#3c3227` · arcilla `#725d40` · tierra `#cfb384` · sal `#f6f0e7` · blanco `#ffffff` |
 
 ```tsx
-// Usage
-<button className="bg-accent-500 hover:bg-accent-600 text-white">
-  Secondary Button
-</button>
+import { landscape } from '@/lib/design-tokens';
+
+const trailMarkerColor = landscape.cacao.nuez; // '#b85c42'
 ```
-
-### Neutral Colors
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `background` | `#ffffff` | Page background |
-| `foreground` | `#0a0a0a` | Primary text |
-| `muted` | `#f1f5f9` | Subtle backgrounds |
-| `muted-foreground` | `#64748b` | Secondary text |
-| `border` | `#e2e8f0` | Borders, dividers |
 
 ### Semantic Colors
 
+These remain non-Figma-sourced Tailwind-style scales — this Figma export didn't define semantic colors, so they're unchanged from the prior design system.
+
 #### Success (Green)
 - **50**: `#f0fdf4` - Backgrounds
-- **500**: `#22c55e` - Default (uses primary green)
+- **500**: `#22c55e` - Default
 - **700**: `#15803d` - Text
 
 #### Error (Red)
@@ -168,13 +207,15 @@ const cardPadding = spacing.card.md;
 ### Color Usage Guidelines
 
 ✅ **Do:**
-- Use primary green for main CTAs and brand elements
-- Use accent yellow sparingly for highlights
+- Use `primary` (river green) for main CTAs and brand elements
+- Use `secondary-oro` for special/hero CTA buttons (discover, explore actions)
+- Use `landscape` colors for map markers, trail categories, and other data-viz-style accents — not for UI chrome
 - Use semantic colors for their intended purpose
 - Ensure sufficient contrast (4.5:1 for text)
 
 ❌ **Don't:**
-- Mix primary and accent colors in the same button
+- Hardcode hex values in components — always reference a token class (`bg-primary-500`, not `bg-[#1e6a62]`). A hardcoded value looks correct today but silently stops tracking future token updates — this already happened once (the trail map's marker colors were still showing a pre-migration brand color until this pass).
+- Confuse `primary`/`riverForest` with `landscape.verde.selva`/`landscape.verde.bosque` — same root names, different colors, different purposes.
 - Use red for anything other than errors/destructive actions
 - Use low-contrast color combinations
 
@@ -184,50 +225,50 @@ const cardPadding = spacing.card.md;
 
 ### Font Family
 
-**Primary:** Inter (Variable font)
-- Loaded via Google Fonts with 'swap' strategy
-- Fallbacks: system-ui, sans-serif
+**Primary:** Helvetica Neue (system font)
+- No Google Fonts import needed — resolved from the OS font stack
+- Fallbacks: Helvetica, Arial, sans-serif
 
 **Monospace:** Menlo, Monaco, Courier New, monospace
 
 ### Type Scale
 
-#### Headings
+Values come from `lib/design-tokens/typography.ts` and the named classes in `app/globals.css` (`.text-display`, `.text-h1`, etc.). **`app/globals.css` is the single source of truth for these named styles and their responsive behavior — not `tailwind.config.ts`,** which intentionally does not redefine them (see the comment in `tailwind.config.ts` for why).
 
-| Element | Mobile | Tablet (768px+) | Desktop (1024px+) | Weight | Line Height |
-|---------|--------|----------------|-------------------|--------|-------------|
-| H1 | 36px (2.25rem) | 48px (3rem) | 60px (3.75rem) | 600 | tight (1) |
-| H2 | 30px (1.875rem) | 36px (2.25rem) | 48px (3rem) | 600 | tight (1) |
-| H3 | 24px (1.5rem) | 30px (1.875rem) | 30px (1.875rem) | 600 | 2.25rem |
-| H4 | 20px (1.25rem) | 24px (1.5rem) | 24px (1.5rem) | 600 | 2rem |
-| H5 | 18px (1.125rem) | 20px (1.25rem) | 20px (1.25rem) | 600 | 1.5 |
-| H6 | 16px (1rem) | 18px (1.125rem) | 18px (1.125rem) | 600 | 1.5 |
+| Style | Desktop | Tablet / Mobile | Weight | Figma name | Class |
+|---|---|---|---|---|---|
+| Display | 64px | 48px | 700 | Display | `.text-display` |
+| H1 | 48px | 40px | 700 | Headline 1 | `.text-h1` |
+| H2 | 32px | 32px | 700 | Headline 2 | `.text-h2` |
+| H3 | 28px | 24px | 500 | Headline 3 | `.text-h3` |
+| Body Standard | 16px | 16px | 400 | Body Standard | `.text-body` |
+| Body Emphasised | 16px | 16px | 700 | Body Emphasised | `.text-body-em` |
+| Body Small | 10px | 10px | 400 | Body Small | `.text-body-small` |
+| Button Label | 16px | 16px | 500 | Button Label | plain `text-base font-medium` |
+| Label *(legacy)* | 12px | — | 600 | *not in this Figma export* | `.text-label` |
+| Caption *(legacy)* | 14px | — | 400 | *not in this Figma export* | `.text-caption` |
+| H4 *(legacy, unused)* | 14px | — | 600 | *not in this Figma export* | `.text-h4` |
 
-#### Body Text
+Label/Caption/H4 predate the current Figma token export and aren't redefined by it — kept as-is rather than invented.
 
-| Size | Value | Usage |
-|------|-------|-------|
-| Lead | 20px (1.25rem) | Important paragraphs |
-| Base | 16px (1rem) | Default body text |
-| Small | 14px (0.875rem) | Secondary content |
-| Extra Small | 12px (0.75rem) | Captions, metadata |
+**Breakpoints:** `.text-h1` steps up at `768px`, `.text-h3` at `1024px`, `.container` at `640px`/`1024px` — a pre-existing inconsistency, intentionally left alone to avoid unrelated visual changes elsewhere. `.text-display` was added using `768px` to match `.text-h1`.
 
 ### Typography Usage
 
 ```tsx
-// Headings (automatically responsive via globals.css)
-<h1>Main Page Heading</h1>
-<h2>Section Heading</h2>
-<h3>Subsection Heading</h3>
+// Headings — use the named classes, not raw Tailwind sizes
+<h1 className="text-h1">Main Page Heading</h1>
+<h2 className="text-h2">Section Heading</h2>
+<h3 className="text-h3">Subsection Heading</h3>
 
 // Body text
-<p className="text-base">Default paragraph text</p>
-<p className="text-lg">Lead paragraph (larger)</p>
-<p className="text-sm text-muted-foreground">Secondary text</p>
+<p className="text-body">Default paragraph text</p>
+<p className="text-body-em">Emphasised paragraph text</p>
+<p className="text-body-small">Fine print, footnotes</p>
 
 // Labels and UI
-<label className="text-sm font-medium">Form Label</label>
-<span className="text-xs text-muted-foreground">Helper text</span>
+<label className="text-label">Form Label</label>
+<span className="text-caption">Helper text</span>
 ```
 
 ### Font Weights
@@ -235,9 +276,9 @@ const cardPadding = spacing.card.md;
 | Weight | Value | Usage |
 |--------|-------|-------|
 | Normal | 400 | Body text, paragraphs |
-| Medium | 500 | Labels, emphasized text |
-| Semibold | 600 | Headings, buttons |
-| Bold | 700 | Strong emphasis (rare) |
+| Medium | 500 | Header 3, button labels |
+| Semibold | 600 | Label |
+| Bold | 700 | Display, Header 1, Header 2, Body Emphasised |
 
 ---
 
@@ -280,13 +321,35 @@ spacing.section.mobile   // 80px
 spacing.section.desktop  // 128px
 
 // Container padding (responsive)
-spacing.container.mobile  // 16px
-spacing.container.tablet  // 24px
-spacing.container.desktop // 32px
+spacing.container.mobile  // 24px
+spacing.container.tablet  // 40px
+spacing.container.desktop // 64px
 
 // Form field spacing
 spacing.formField.default // 24px
 ```
+
+### Figma Padding Scale
+
+`spacing.padding.*` mirrors the Figma Spacing export's named padding steps, each with mobile/tablet/desktop values — confirmed to match the Figma tokens exactly, value-for-value, across all three breakpoints:
+
+| Token | Mobile | Tablet | Desktop |
+|---|---|---|---|
+| `padding.xs` | 8px | 8px | 8px |
+| `padding.s` | 16px | 16px | 16px |
+| `padding.m` | 24px | 24px | 24px |
+| `padding.ml` | 24px | 24px | 32px |
+| `padding.l` | 32px | 32px | 48px |
+| `padding.xl` | 48px | 56px | 64px |
+| `padding.leftRight` | 24px | 40px | 64px |
+
+```tsx
+import { spacing } from '@/lib/design-tokens';
+
+const desktopPadding = spacing.padding.l.desktop; // '3rem' (48px)
+```
+
+**Known gap:** this scale isn't currently wired into `tailwind.config.ts` — no Tailwind utility classes are generated from it today (only an unrelated `spacing['4.5']` custom value lives directly in the Tailwind config). Out of scope for this pass; use the values directly via JS/inline style, or via arbitrary Tailwind values, until it's wired up.
 
 ### Layout Containers
 

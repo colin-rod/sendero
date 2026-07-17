@@ -457,8 +457,9 @@
     }
   },
   "metadata": {
-    "title": "Kuratierte Fahrradreisen durch die kolumbianischen Andenwälder",
-    "description": "Lass los. Die Berge warten.",
+    "title": "Fahrraderlebnisse in Kolumbiens Andenwäldern",
+    "description": "Begib dich auf eine mehrtägige Mountainbike-Reise durch Berglandschaften, Kaffeekultur und tropische Trails. Geführt, kuratiert, unverwechselbar.",
+    "siteName": "sendero bike trails | 7–9 Tage ⋄ Kleine Gruppen ⋄ Uralte Pfade",
     "keywords": "kolumbien touren, kaffeeregion touren, pereira fahrradtouren, e-bike touren, nachhaltiges reisen kolumbien, kaffeefarm touren"
   },
   "trails": {
@@ -674,7 +675,7 @@
       },
       "agua": {
         "name": "Sendero del Agua",
-        "description": "Bergflüsse & Andenwälder. Nah an uralten Geschichten.",
+        "description": "Bergflüsse und Nebelwälder. Nah an uralten Geschichten.",
         "distance": "30 km",
         "elevation": "1.800 m ü. M.",
         "elevationGain": "640",

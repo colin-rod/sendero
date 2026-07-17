@@ -457,8 +457,9 @@
     }
   },
   "metadata": {
-    "title": "Viajes memorables en bici por los Andes Colombianos",
-    "description": "Déjate llevar a lo profundo de las montañas",
+    "title": "Experiencias en bicicleta por los Bosques Andinos Colombianos",
+    "description": "Emprende un viaje de varios días en bicicleta de montaña por paisajes de montaña, cultura cafetera y senderos tropicales. Guiado, curado, inconfundible.",
+    "siteName": "sendero bike trails | 7–9 Días ⋄ Grupos Pequeños ⋄ Senderos Antiguos",
     "keywords": "tours colombia, tours región cafetera, tours bicicleta pereira, tours e-bike, viajes sostenibles colombia, tours fincas cafeteras"
   },
   "trails": {
@@ -674,7 +675,7 @@
       },
       "agua": {
         "name": "Sendero del Agua",
-        "description": "Ríos de montaña & bosques andinos. Cerca de historias antiguas.",
+        "description": "Ríos de montaña y bosques nublados. Cerca de historias antiguas.",
         "distance": "30 km",
         "elevation": "1.800 m s. n. m.",
         "elevationGain": "640",

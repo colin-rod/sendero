@@ -601,71 +601,32 @@ npm run test:all            # Jest + Playwright
 
 **Design Theme:** Warm, adventurous, golden - inspired by Colombian sunshine and coffee culture
 
-### Colors
+### Colors & Typography
 
-**Primary (Golden Yellow):**
-- Warmth, energy, adventure
-- `#e2b71f` (primary-500) - Main brand color
-- `#ca9a1b` (primary-600) - Hover states
-- Full scale: 50-950 shades available
+Full token reference, Figma cross-references, and usage guidelines live in
+**[docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)** — treat that file as the
+single source of truth. This is a quick-glance summary only; don't let it
+drift into a second full copy again (that's exactly how it went stale the
+first time).
 
-**Accent (Light Cream):**
-- Soft, warm, approachable
-- `#fff0bb` (accent-400) - Secondary color
-- Complements the golden primary
+**Brand:** `primary-500`/`riverGreen-500` `#1e6a62` (Figma `primary-selva`) ·
+`riverForest` `#264c43` (Figma `primary-bosque`) · `secondary-oro-500`
+`#d09e00` (Figma `secondary-oro`) · `accent-400`/`goldYellow` `#fff0bb`
+(Figma `secondary-oro-crema`) · `lava` `#d84900` (Figma `accent-lava`)
 
-**Neutral Palette:**
-- Background: `#f1f1f1` (Light Gray)
-- Foreground: `#1b1b1b` (Gravel Black)
-- Muted: `#f1f1f1` with `#616161` text (Steel Gray)
-- Border: `#e2e8f0`
+**Neutrals:** `foreground` `#232323` (carbon) · `gray-950` `#1b1b1b`
+(gravel) · `silver` `#807e7c` · `gray-400`/`gray-600` `#a9a9a9` (steel) ·
+`background` `#f2f2f2` (bkg)
 
-**Gray Scale (from Figma):**
-- Comprehensive 50-950 scale
-- Gravel Black (`#1b1b1b`) to Light Gray (`#f1f1f1`)
-- Steel Gray (`#616161`) for muted text
+**Landscape palette:** 35 colors across 6 families
+(`landscape.cacao/azul/lila/verde/naranjo/cafe`) for map/data-viz accents —
+see the design tokens doc for the full swatch table.
 
-**Semantic Colors:**
-- Error: `#ef4444` (red-500)
-- Success: `#22c55e` (green-500)
-- Warning: `#f59e0b` (amber-500)
-- Info: `#3b82f6` (blue-500)
-
-### Typography
-
-- **Font:** Helvetica Neue
-- **Weights:** Regular, Medium, Bold, Condensed Black
-
-**Typography Specifications (from Figma, November 2024):**
-
-| Style | Size (px) | Tailwind Class | Weight | Line Height | Usage |
-|-------|-----------|----------------|--------|-------------|-------|
-| **H1** | 48px | `text-5xl` | 700 (bold) | Default | Main page headings, hero titles |
-| **H2** | 36px | `text-4xl` | 700 (bold) | Default | Section headings |
-| **H3** | 24px | `text-2xl` | 500 (medium) | Default | Sub-section headings |
-| **H4** | 14px | `text-sm` | 600 (semibold) | Default | Secondary headings, footer headings |
-| **Body** | 16px | `text-base` | 400 (normal) | `leading-4` (16px) | Primary body text |
-| **Label** | 12px | `text-xs` | 600 (semibold) | Default | Form labels, metadata |
-
-**Implementation:**
-
-```tsx
-// Using Tailwind utilities
-<h1 className="text-5xl font-bold">Header 1</h1>
-<h2 className="text-4xl font-bold">Header 2</h2>
-<h3 className="text-2xl font-medium">Header 3</h3>
-<h4 className="text-sm font-semibold">Header 4</h4>
-<p className="text-base font-normal leading-4">Body text</p>
-<label className="text-xs font-semibold">LABEL</label>
-
-// Using custom CSS classes (recommended)
-<h1 className="text-h1">Header 1</h1>
-<h2 className="text-h2">Header 2</h2>
-<h3 className="text-h3">Header 3</h3>
-<h4 className="text-h4">Header 4</h4>
-<p className="text-body">Body text</p>
-<label className="text-label">LABEL</label>
-```
+**Typography (Desktop / Tablet+Mobile):** Display 64/48 · H1 48/40 ·
+H2 32/32 · H3 28/24 · Body 16/16 · Body Small 10/10 · Button Label 16/16 —
+Helvetica Neue, weights 400/500/700. `app/globals.css`'s `.text-*` classes
+are the single source of truth for these named styles (not
+`tailwind.config.ts`, which deliberately doesn't redefine them).
 
 ### Design Tokens Architecture
 
@@ -703,7 +664,7 @@ All tokens are imported into [tailwind.config.ts](tailwind.config.ts) and availa
 <p className="text-gray-600">Supporting text</p>
 
 // Use semantic colors
-<span className="text-error">Error message</span>
+<span className="text-error-500">Error message</span>
 ```
 
 ### Components

@@ -9,12 +9,12 @@
  * import { colors, typography, spacing } from '@/lib/design-tokens';
  *
  * const primaryColor = colors.primary[500];
- * const headingSize = typography.fontSize.h1.desktop;
+ * const headingSize = typography.fontSize.h1; // '3rem' (48px desktop) — responsive step-down lives in app/globals.css .text-h1
  * const cardPadding = spacing.card.md;
  * ```
  */
 
-export { colors, type ColorToken } from './colors';
+export { colors, landscape, type ColorToken, type LandscapeToken } from './colors';
 export { typography, type TypographyToken } from './typography';
 export { spacing, type SpacingToken } from './spacing';
 export { shadows, type ShadowToken } from './shadows';
@@ -26,6 +26,7 @@ export { animations, type AnimationToken } from './animations';
  */
 export const designTokens = {
   colors: require('./colors').colors,
+  landscape: require('./colors').landscape,
   typography: require('./typography').typography,
   spacing: require('./spacing').spacing,
   shadows: require('./shadows').shadows,

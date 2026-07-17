@@ -39,11 +39,10 @@ export function CookieBanner() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 text-white px-4 py-4 shadow-lg backdrop-blur-sm"
-      style={{ backgroundColor: 'rgba(27, 27, 27, 0.8)', borderTop: '0.5px solid rgba(255,255,255,0.25)' }}
+      className="fixed bottom-0 left-0 right-0 z-50 text-white px-4 py-4 shadow-lg backdrop-blur-sm bg-gray-950/80 border-t-[0.5px] border-white/25"
     >
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
-        <p className="text-sm leading-relaxed flex-1 text-[#e5e5e5]">
+        <p className="text-sm leading-relaxed flex-1 text-gray-200">
           {t("text")}{" "}
           <Link
             href={`/${locale}/datenschutz`}
@@ -61,7 +60,7 @@ export function CookieBanner() {
           </button>
           <button
             onClick={handleAccept}
-            className="px-4 py-2 text-sm bg-white hover:bg-white/90 text-[#1b1b1b] font-semibold rounded transition-colors"
+            className="px-4 py-2 text-sm bg-white hover:bg-white/90 text-gray-950 font-semibold rounded transition-colors"
           >
             {t("accept")}
           </button>

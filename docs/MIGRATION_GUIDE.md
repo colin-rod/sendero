@@ -1,5 +1,7 @@
 # Migration Guide: Updating Existing Code to Use the Design System
 
+> ⚠️ **Superseded** — this document describes an earlier version of the design system. See [docs/DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for the current, accurate reference.
+
 This guide helps you migrate existing Sendero code to use the new design system components and tokens.
 
 ---
