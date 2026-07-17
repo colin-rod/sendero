@@ -143,7 +143,7 @@ function TourCard({ id, title, imageSrc, imageAlt, description, distance, elevat
           const first = lastSpace !== -1 ? title.slice(0, lastSpace) : '';
           const last  = lastSpace !== -1 ? title.slice(lastSpace + 1) : title;
           return (
-            <p className="text-center text-h3 font-light leading-8 tracking-wide text-[#F2F2F2]">
+            <p className="text-center text-h3 font-light leading-8 tracking-wide text-background">
               {first && <>{first} </>}
               <strong className="font-bold">{last}</strong>
             </p>

@@ -10,7 +10,7 @@ export function Footer() {
   const t = useTranslations('footer');
 
   return (
-    <footer className="text-white" style={{ backgroundColor: '#1B1B1B' }}>
+    <footer className="bg-gray-950 text-white">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-8">
 
@@ -55,7 +55,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t('social.instagram')}
-                className="text-white transition-colors hover:text-[#fff0bb]"
+                className="text-white transition-colors hover:text-accent-400"
               >
                 <FaInstagram className="h-6 w-6" aria-hidden="true" />
               </a>
@@ -64,7 +64,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t('social.komoot')}
-                className="text-white transition-colors hover:text-[#fff0bb]"
+                className="text-white transition-colors hover:text-accent-400"
               >
                 <SiKomoot className="h-6 w-6" aria-hidden="true" />
               </a>
@@ -76,10 +76,10 @@ export function Footer() {
             <div className="h-12 flex items-center">
               <span className="text-body-em text-white">{t('legal.heading')}</span>
             </div>
-            <Link href="/impressum" className="text-body text-white transition-colors hover:text-[#fff0bb]">
+            <Link href="/impressum" className="text-body text-white transition-colors hover:text-accent-400">
               {t('legal.imprint')}
             </Link>
-            <Link href="/datenschutz" className="text-body text-white transition-colors hover:text-[#fff0bb]">
+            <Link href="/datenschutz" className="text-body text-white transition-colors hover:text-accent-400">
               {t('legal.privacy')}
             </Link>
           </div>

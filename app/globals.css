@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 @layer base {
   * {
@@ -52,8 +53,14 @@
 
   /* Typography from Figma Design System (updated 2025) */
   .text-display {
-    font-size: 4rem; /* 64px desktop */
+    font-size: 3rem; /* 48px mobile/tablet-first — Figma Display: Tablet & Mobile 48px */
     font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    .text-display {
+      font-size: 4rem; /* 64px desktop */
+    }
   }
 
   .text-h1 {

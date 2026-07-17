@@ -1,5 +1,7 @@
 # 🎨 Sendero Design System - Implementation Summary
 
+> ⚠️ **Superseded** — this document describes an earlier version of the design system. See [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) for the current, accurate reference.
+
 **Status:** ✅ **COMPLETE AND PRODUCTION READY**
 **Version:** 1.0.0
 **Date:** November 2024

@@ -1,5 +1,7 @@
 # Design System Implementation Guide
 
+> ⚠️ **Superseded** — this document describes an earlier version of the design system. See [docs/DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for the current, accurate reference.
+
 **Quick Start Guide for Sendero Design System**
 
 ---

@@ -38,19 +38,21 @@ export const colors = {
     950: '#a87c16',
   },
 
-  // Honey Yellow (Rich Golden - Adventure, Warmth, Buttons)
-  honey: {
-    50: '#fdf8ec',
-    100: '#faedc9',
-    200: '#f5da8f',
-    300: '#efc055',
-    400: '#eaad2f',
-    500: '#c4963f', // Main Honey Yellow from Figma
-    600: '#a97935',
-    700: '#8c5e2d',
-    800: '#734c2a',
-    900: '#613f28',
-    950: '#372016',
+  // Secondary Oro (Rich Golden - Adventure, Warmth, Buttons)
+  // 500 = Figma Brand.secondary-oro. Other stops are a derived tint/shade
+  // ramp (HSL-offset-preserving from the prior "honey" ramp) around that base.
+  'secondary-oro': {
+    50: '#fff1b7',
+    100: '#ffed91',
+    200: '#ffe352',
+    300: '#ffd012',
+    400: '#e6b300',
+    500: '#d09e00', // secondary-oro from Figma
+    600: '#aa7601',
+    700: '#855301',
+    800: '#673c03',
+    900: '#512c05',
+    950: '#190b01',
   },
 
   // Brand Colors (from Figma Light Mode tokens)
@@ -72,6 +74,9 @@ export const colors = {
 
   // goldYellow alias (canonical brand token from Figma)
   goldYellow: '#fff0bb',
+
+  // Accent Lava (from Figma Brand.accent-lava) — same swatch as landscape.naranjo.lava below
+  lava: '#d84900',
 
   // Neutral Colors - Updated from Figma (Light Mode tokens, 2025)
   background: '#f2f2f2', // BKG from Figma
@@ -99,6 +104,9 @@ export const colors = {
     900: '#232323', // Carbon Dark / Text Dark from Figma
     950: '#1b1b1b', // Gravel Black from Figma
   },
+
+  // Silver (from Figma Neutrals.silver / Text.text-silver)
+  silver: '#807e7c',
 
   // Semantic Colors
   error: {
@@ -145,9 +153,18 @@ export const colors = {
  * - Use for: Secondary buttons, soft backgrounds, warm accents
  * - Variants: 400 (default), 500 (hover)
  *
- * HONEY (Honey Yellow - #c4963f)
+ * SECONDARY-ORO (#d09e00) — was HONEY (#c4963f)
  * - Use for: Special CTA buttons, hero buttons, discover/explore actions
  * - Variants: 500 (default), 600 (hover), 700 (active), 50-100 (light backgrounds)
+ * - Access via: colors['secondary-oro'][500] (bracket notation — key has a hyphen)
+ *
+ * LAVA (#d84900)
+ * - Use for: High-energy accents, warnings, fire/adventure motifs
+ * - Access via: lava (also available as landscape.naranjo.lava)
+ *
+ * SILVER (#807e7c)
+ * - Use for: Secondary neutral text/icons, distinct from steel gray
+ * - Access via: silver
  *
  * CARBON DARK (#232323) — was Gravel Black
  * - Use for: Primary text, headings, dark backgrounds
@@ -165,7 +182,7 @@ export const colors = {
  * - Use for: Deeper eco/nature accents, hover states on river green elements
  * - Access via: riverForest
  *
- * BACKGROUND (#f1f1f1)
+ * BACKGROUND (#f2f2f2)
  * - Use for: Page backgrounds, card backgrounds
  * - Access via: background or gray.100
  *
@@ -184,3 +201,71 @@ export const colors = {
  */
 
 export type ColorToken = typeof colors;
+
+/**
+ * Landscape Palette (from Figma "Landscape" token group)
+ *
+ * Six thematic sub-families (cacao / azul / lila / verde / naranjo / café)
+ * used for data-visualization-style accents — e.g. distinguishing trail
+ * routes/markers on the map. 35 colors total.
+ *
+ * NAMING COLLISION — read before using verde.* values:
+ * Figma defines two different colors with similar roots that must stay
+ * distinct (different keys, different hex values, do NOT merge):
+ *   - colors.primary[500] / colors.riverGreen[500] = Brand "primary-selva" = #1e6a62
+ *   - landscape.verde.selva                        = Landscape "verde-selva" = #006d62
+ *   - colors.riverForest                           = Brand "primary-bosque" = #264c43
+ *   - landscape.verde.bosque                       = Landscape "verde-bosque" = #154d44
+ */
+export const landscape = {
+  cacao: {
+    sombra: '#2a0e10',
+    tronco: '#4a1a1c',
+    vaina: '#6b2329',
+    pulpa: '#8f3530',
+    nuez: '#b85c42',
+    grano: '#c9a876',
+  },
+  azul: {
+    noche: '#081b31',
+    paramo: '#112f4c',
+    cielo: '#244b71',
+    niebla: '#3f719c',
+    neblina: '#a2c5df',
+  },
+  lila: {
+    sietecueros: '#1a1530',
+    tallo: '#2d2152',
+    flor: '#4a3b7a',
+    petalo: '#9784c7',
+    brote: '#c9bee6',
+    rocio: '#efeaf8',
+  },
+  verde: {
+    selva: '#006d62',
+    bosque: '#154d44',
+    musgo: '#586c33',
+    helecho: '#86a050',
+    pasto: '#c4da99',
+    hoja: '#e8f3da',
+  },
+  naranjo: {
+    lava: '#d84900', // same swatch as top-level colors.lava (Brand accent-lava alias)
+    fuego: '#fa7121',
+    cobre: '#fea465',
+    arena: '#fec693',
+    pergamino: '#fdf1e2',
+    papel: '#fef8f1',
+  },
+  cafe: {
+    // "cafe" not "café" — no accented characters in JS object keys
+    obsidiana: '#1d180f',
+    roca: '#3c3227',
+    arcilla: '#725d40',
+    tierra: '#cfb384',
+    sal: '#f6f0e7',
+    blanco: '#ffffff',
+  },
+} as const;
+
+export type LandscapeToken = typeof landscape;

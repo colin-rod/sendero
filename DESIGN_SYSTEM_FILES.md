@@ -1,5 +1,7 @@
 # Design System File Structure
 
+> ⚠️ **Superseded** — this document describes an earlier version of the design system. See [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) for the current, accurate reference.
+
 Complete list of all files created and modified for the Sendero Design System.
 
 ---

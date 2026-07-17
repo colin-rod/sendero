@@ -1,3 +1,6 @@
+// Superseded: hardcodes an OLD pre-migration Figma export snapshot
+// (primary #e2b71f, background #f1f1f1, etc.) and is not imported anywhere
+// in the app. Current tokens: lib/design-tokens/colors.ts. Reference: docs/DESIGN_SYSTEM.md.
 import React from 'react';
 
 export default function Colors() {

@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import { colors } from './lib/design-tokens/colors';
+import { colors, landscape } from './lib/design-tokens/colors';
 import { shadows } from './lib/design-tokens/shadows';
 import { radius } from './lib/design-tokens/radius';
 import { animations } from './lib/design-tokens/animations';
@@ -16,16 +16,19 @@ const config: Config = {
       colors: {
         primary: colors.primary,
         accent: colors.accent,
-        honey: colors.honey,
+        'secondary-oro': colors['secondary-oro'],
         riverGreen: colors.riverGreen,
         riverForest: colors.riverForest,
         goldYellow: colors.goldYellow,
+        silver: colors.silver,
+        lava: colors.lava,
         white: colors.white,
         background: colors.background,
         foreground: colors.foreground,
         muted: colors.muted,
         border: colors.border,
         gray: colors.gray,
+        landscape: landscape,
         error: colors.error,
         success: colors.success,
         warning: colors.warning,
@@ -39,19 +42,13 @@ const config: Config = {
         aboreto: ['var(--font-aboreto)', 'serif'],
       },
 
-      // Custom typography sizes — Updated from Figma Desktop/Mobile/Tablet tokens (2025)
-      fontSize: {
-        'display': ['4rem', { fontWeight: '700' }], // 64px desktop - new
-        'h1': ['3rem', { fontWeight: '700' }], // 48px desktop (40px mobile)
-        'h2': ['2rem', { fontWeight: '700' }], // 32px - updated from 36px
-        'h3': ['1.75rem', { fontWeight: '500' }], // 28px desktop (24px mobile)
-        'body': ['1rem', { lineHeight: '1rem', fontWeight: '400' }], // 16px - Body Standard
-        'body-em': ['1rem', { fontWeight: '700' }], // 16px - Body Emphasised
-        'body-small': ['0.625rem', { fontWeight: '400' }], // 10px - Body Small
-        'button-label': ['1rem', { fontWeight: '500' }], // 16px - Button Label
-        'label': ['0.75rem', { fontWeight: '600' }], // 12px - text-xs, semibold
-        'caption': ['0.875rem', { fontWeight: '400', lineHeight: '1.25rem' }], // 14px - helper text, error messages, secondary labels
-      },
+      // Note: named text-style utilities (display/h1/h2/h3/body/body-em/
+      // body-small/button-label/label/caption) are intentionally NOT defined
+      // here. They previously duplicated app/globals.css's `@layer components`
+      // classes with different (non-responsive) values, and Tailwind v4's
+      // layer order (utilities > components) meant this config always won
+      // ties — silently defeating globals.css's responsive .text-h1/.text-h3
+      // sizing. globals.css is now the single source of truth for these.
 
       // Spacing
       spacing: {

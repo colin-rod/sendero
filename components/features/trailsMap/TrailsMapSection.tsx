@@ -1,17 +1,18 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { landscape } from '@/lib/design-tokens';
 
 const TRAIL_COLORS = [
-  '#e2b71f', // golden yellow (primary-500)
-  '#c4963f', // honey yellow
-  '#2563eb', // blue
-  '#16a34a', // green
-  '#dc2626', // red
-  '#9333ea', // purple
-  '#ea580c', // orange
-  '#0891b2', // cyan
-  '#ca9a1b', // primary-600
+  landscape.cacao.nuez,     // #b85c42
+  landscape.azul.cielo,     // #244b71
+  landscape.lila.flor,      // #4a3b7a
+  landscape.verde.selva,    // #006d62 — Landscape verde-selva, NOT Brand primary-selva (#1e6a62)
+  landscape.naranjo.fuego,  // #fa7121
+  landscape.cafe.arcilla,   // #725d40
+  landscape.cacao.pulpa,    // #8f3530
+  landscape.azul.niebla,    // #3f719c
+  landscape.naranjo.cobre,  // #fea465
 ];
 
 export interface TrailEntry {

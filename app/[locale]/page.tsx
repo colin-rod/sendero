@@ -78,7 +78,7 @@ export default function HomePage() {
 
         {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-[#232323] px-4 sm:px-8 lg:px-16 py-20">
+          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-foreground px-4 sm:px-8 lg:px-16 py-20">
             <div className="text-center max-w-4xl flex flex-col gap-2">
               <h2 className="text-h2 font-bold text-white">
                 {tHeroIntro('heading')}
@@ -100,10 +100,10 @@ export default function HomePage() {
                   })}
               </p>
             </div>
-            <svg width="72" height="16" viewBox="0 0 72 16" fill="none" aria-hidden="true">
+            <svg width="72" height="16" viewBox="0 0 72 16" fill="none" aria-hidden="true" className="text-accent-400">
               <path
                 d="M2 10 C10 2, 18 14, 26 10 C34 6, 42 2, 50 10 C58 14, 66 6, 70 10"
-                stroke="#fff0bb"
+                stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
                 fill="none"
@@ -247,7 +247,7 @@ export default function HomePage() {
               <h2 className="text-h1 font-bold text-white mb-4">
                 {tWaitlist('becomeAPioneer')}
               </h2>
-              <p className="mb-8 text-h3 font-light leading-8 tracking-wide text-[#F2F2F2]">
+              <p className="mb-8 text-h3 font-light leading-8 tracking-wide text-background">
                 {tWaitlist('ctaPrompt')}
               </p>
 

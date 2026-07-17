@@ -31,7 +31,7 @@ export default function QRPage() {
           priority
         />
         <div className="flex flex-col gap-3">
-          <h1 className="text-h2 md:text-h1 font-bold text-white">
+          <h1 className="text-h2 md:text-5xl font-bold text-white">
             {t('headline')}
           </h1>
           <p className="text-lg text-white/80">

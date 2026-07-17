@@ -1,5 +1,7 @@
 # Sendero Design System Documentation
 
+> ⚠️ **Superseded** — this document describes an earlier version of the design system. See [docs/DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for the current, accurate reference.
+
 Welcome to the Sendero Design System documentation! This directory contains comprehensive guides for using and implementing the design system.
 
 ---
