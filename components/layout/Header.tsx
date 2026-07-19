@@ -10,6 +10,13 @@ type HeaderProps = {
   logoVariant?: 'dark' | 'white';
 };
 
+const NAV_ITEMS = [
+  { key: 'trails', href: '/trails' },
+  { key: 'about', href: '/about' },
+  { key: 'howItWorks', href: '/#how-it-works' },
+  { key: 'mtbReisen', href: '/mtb-reisen' },
+] as const;
+
 export function Header({ logoVariant = 'dark' }: HeaderProps) {
   const t = useTranslations('header');
   const isWhiteLogo = logoVariant === 'white';
@@ -53,6 +60,19 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
                 Sendero<br />Bike Trails
               </span>
             </Link>
+
+            {/* Nav */}
+            <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className={`text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
+                >
+                  {t(`nav.${item.key}`)}
+                </Link>
+              ))}
+            </nav>
 
             {/* Language Switcher */}
             <LanguageSwitcher />
