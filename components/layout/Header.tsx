@@ -12,8 +12,6 @@ type HeaderProps = {
 
 const NAV_ITEMS = [
   { key: 'trails', href: '/trails' },
-  { key: 'about', href: '/about' },
-  { key: 'howItWorks', href: '/#how-it-works' },
   { key: 'mtbReisen', href: '/mtb-reisen' },
 ] as const;
 

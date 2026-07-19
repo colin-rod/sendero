@@ -120,7 +120,12 @@ export default async function MtbReisenPage({
           dayCopy={dayCopy}
         />
 
-        <MtbReisenCTA heading={t('cta.heading')} buttonText={t('cta.button')} />
+        <MtbReisenCTA
+          heading={t('cta.heading')}
+          buttonText={t('cta.button')}
+          bookingEmail={trip.bookingEmail}
+          emailSubject={t('seo.title')}
+        />
       </main>
       <Footer />
     </div>
