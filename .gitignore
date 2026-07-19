@@ -40,3 +40,6 @@ next-env.d.ts
 
 # Claude Code
 .claude/settings.local.json
+
+# mtb-reisen is development-only; never track it on main
+/mtb-reisen/
