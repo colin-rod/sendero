@@ -19,7 +19,7 @@ const config: Config = {
         'secondary-oro': colors['secondary-oro'],
         riverGreen: colors.riverGreen,
         'river-forest': colors.riverForest,
-        goldYellow: colors.goldYellow,
+        'gold-yellow': colors.goldYellow,
         silver: colors.silver,
         lava: colors.lava,
         white: colors.white,
