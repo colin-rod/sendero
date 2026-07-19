@@ -132,9 +132,9 @@ export default function BottomEmailCapture() {
             className="
               input
               w-full
-              bg-white/96
-              border-2 border-white/90
-              focus:border-secondary-oro-500 focus:ring-2 focus:ring-secondary-oro-400
+              bg-white
+              border-2 border-accent-400
+              focus:border-accent-400 focus:ring-2 focus:ring-accent-400
               text-foreground placeholder:text-gray-600
               shadow-xl
             "

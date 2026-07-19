@@ -18,7 +18,7 @@ const config: Config = {
         accent: colors.accent,
         'secondary-oro': colors['secondary-oro'],
         riverGreen: colors.riverGreen,
-        riverForest: colors.riverForest,
+        'river-forest': colors.riverForest,
         goldYellow: colors.goldYellow,
         silver: colors.silver,
         lava: colors.lava,
