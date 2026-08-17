@@ -8,7 +8,9 @@
       "about": "Acerca de",
       "howItWorks": "Cómo Funciona",
       "trails": "Senderos",
-      "mtbReisen": "Viajes MTB"
+      "mtbReisen": "Vacaciones en MTB",
+      "mtbReisenNineDays": "9 Días",
+      "mtbReisenSevenDays": "7 Días"
     },
     "mobileMenu": {
       "toggle": "Alternar menú de navegación",
@@ -790,7 +792,7 @@
   },
   "mtbReisen": {
     "seo": {
-      "title": "Viajes MTB – 9 Días por la Región Cafetera",
+      "title": "Vacaciones en MTB – 9 Días por la Región Cafetera",
       "description": "Un viaje de 9 días en bicicleta de montaña por la Región Cafetera de Colombia — con familias locales, bosques de niebla y el Parque Nacional Los Nevados."
     },
     "hero": {
@@ -905,6 +907,127 @@
         {
           "title": "Sendero del Páramo",
           "description": "Para cerrar el viaje, nos espera una de sus rutas más impresionantes. Entre lagunas, plantas únicas en el mundo y amplios altiplanos, vivimos el paisaje singular del Parque Nacional Los Nevados.\n\nCelebramos la última noche juntos con una comida andina en Tacay.",
+          "meals": "Desayuno, cena"
+        },
+        {
+          "title": "Salida",
+          "description": "Después del último desayuno compartido, llega el momento de despedirse.\n\nEl check-out es a partir de las 11 a.m., y luego nuestro conductor te llevará al aeropuerto o a la terminal de buses.",
+          "meals": "Desayuno"
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Escríbenos cuando quieras y conversemos sobre tu viaje soñado",
+      "button": "Consultar"
+    }
+  },
+  "mtbReisen7": {
+    "seo": {
+      "title": "Vacaciones en MTB – 7 Días por la Región Cafetera",
+      "description": "Un viaje de 7 días en bicicleta de montaña por la Región Cafetera de Colombia — con familias locales, bosques de niebla y miradores volcánicos entre palmas de cera."
+    },
+    "hero": {
+      "title": "7 Días",
+      "subtitle": "The Full sendero experience"
+    },
+    "overviewBar": {
+      "overview": "Resumen",
+      "included": "Qué Incluye",
+      "itinerary": "Día a Día",
+      "dates": "Próximas Fechas"
+    },
+    "intro": {
+      "heading": "Los Andes en Bicicleta de Montaña",
+      "paragraph1": "Los encuentros con familias, comunidades y productores locales te permiten no solo visitar la región, sino formar parte de ella.",
+      "paragraph2": "La historia de la región nos acompaña en cada kilómetro — desde las huellas de la civilización precolombina Quimbaya hasta el Paisaje Cultural Cafetero declarado Patrimonio de la UNESCO.",
+      "priceLabel": "Precio",
+      "pricePrefix": "desde",
+      "nextDatesLabel": "Próximas Fechas",
+      "bookLabel": "Reservar",
+      "bookCta": "Envía tu solicitud a:"
+    },
+    "inclusions": {
+      "includedHeading": "Qué Incluye",
+      "notIncludedHeading": "No Incluye",
+      "categories": [
+        {
+          "title": "Alojamiento y Alimentación",
+          "items": [
+            "7 días / 6 noches en la Eco Farm El Tacay",
+            "Traslados al/desde el aeropuerto de Pereira",
+            "Desayuno diario",
+            "Bebidas, snacks y comidas seleccionadas durante los recorridos",
+            "Actividades culturales en El Tacay"
+          ]
+        },
+        {
+          "title": "Bicicleta y Movilidad",
+          "items": [
+            "Bicicleta de montaña",
+            "Casco",
+            "Acompañamiento guiado y traslados durante todo el viaje",
+            "Soporte técnico para la bicicleta en ruta"
+          ]
+        },
+        {
+          "title": "Experiencias y Cultura",
+          "items": [
+            "Degustaciones regionales",
+            "Tradiciones, rituales y vida cotidiana",
+            "Un acercamiento a la artesanía local y al saber tradicional — desde el café y el cacao hasta la cerámica y la orfebrería"
+          ]
+        },
+        {
+          "title": "Organización y Extras",
+          "items": [
+            "Planificación y organización de todo el viaje",
+            "Registro fotográfico y de video profesional",
+            "Un kit de bienvenida personal"
+          ]
+        }
+      ],
+      "notIncludedItems": [
+        "Vuelos hacia y desde Pereira",
+        "Seguro de viaje (obligatorio)",
+        "Entradas, p. ej. al Museo del Oro, otras fincas o actividades culturales fuera de El Tacay",
+        "Comidas y bebidas no incluidas en el itinerario (p. ej. en cafés o restaurantes)",
+        "Gastos personales",
+        "Planificación individual del viaje antes y después del recorrido"
+      ]
+    },
+    "itinerary": {
+      "heading": "Día a Día",
+      "dayLabel": "Día",
+      "mealsIncludedLabel": "Comidas incluidas:",
+      "days": [
+        {
+          "title": "Llegada",
+          "description": "Después de tu llegada al aeropuerto Matecaña o a la terminal de buses de Pereira, te llevamos a la Finca El Tacay. Allí tendrás tiempo para instalarte con calma, conocer al grupo y repasar juntos los detalles más importantes del viaje.\n\nEn la primera cena compartida, brindamos por la semana que comienza.",
+          "meals": "Cena"
+        },
+        {
+          "title": "Sendero del Tigre",
+          "description": "Para aclimatarnos, pedaleamos por caminos bordeados de guadua y a través de huertos frutales hasta la Finca Ganday. Allí descubrimos la diversidad de cultivos colombianos y disfrutamos de un caldo tradicional con ingredientes de la finca — según una receta que viene de las montañas y del Amazonas.\n\nDespués de una pausa refrescante regresamos pedaleando y cerramos el día con un pequeño postre.",
+          "meals": "Desayuno, cena"
+        },
+        {
+          "title": "Sendero del Café",
+          "description": "Después del desayuno comenzamos con un taller de café y arte junto a nuestros anfitriones.\n\nLuego seguimos por carreteras de poco tráfico a través del territorio cafetero declarado Patrimonio de la UNESCO, pasando por fincas, pequeños pueblos y casas de colores.\n\nHacemos una parada para almorzar en el camino y, ya avanzada la tarde, visitamos un mirador antes de regresar al anochecer.",
+          "meals": "Desayuno, cena"
+        },
+        {
+          "title": "Sendero del Agua",
+          "description": "Seguimos caminos sinuosos junto a ríos y a través de densos bosques de niebla alrededor de La Florida.\n\nEn el camino nos encontramos con puentes, cascadas y, con algo de suerte, fauna pequeña y grande. Al mediodía disfrutamos de una comida típica de montaña con una vista impresionante.\n\nUna ruta muy querida por la comunidad local, que muestra lo estrechamente conectados que están aquí la naturaleza y la vida cotidiana.",
+          "meals": "Desayuno, almuerzo"
+        },
+        {
+          "title": "Sendero del Volcán",
+          "description": "Entre palmas de cera, el árbol nacional de Colombia, y panorámicas de volcanes, vivimos una de las etapas más espectaculares del viaje.\n\nPor la tarde hacemos una parada en Salento — tiempo para pasear, curiosear en las tiendas pequeñas y dejarse llevar por el pueblo.",
+          "meals": "Desayuno, cena"
+        },
+        {
+          "title": "Sendero del Oro",
+          "description": "Hoy conectamos el movimiento con la historia.\n\nDespués de visitar el Museo del Oro en Armenia, recorremos tranquilas vías secundarias y antiguos caminos de conexión a través del territorio Quimbaya, descubriendo los orígenes de la cultura de la región.",
           "meals": "Desayuno, cena"
         },
         {

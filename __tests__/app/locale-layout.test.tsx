@@ -72,9 +72,8 @@ describe('LocaleLayout', () => {
     expect(mockGetMessages).toHaveBeenCalledWith({ locale: 'de' });
     expect(mockNotFound).not.toHaveBeenCalled();
 
-    const bodyElement = (element as React.ReactElement<{ children: React.ReactElement | React.ReactElement[] }>).props.children;
-    const bodyChildren = (bodyElement as React.ReactElement<{ children: React.ReactNode }>).props.children;
-    const childArray = React.Children.toArray(bodyChildren) as React.ReactElement[];
+    const fragmentChildren = (element as React.ReactElement<{ children: React.ReactNode }>).props.children;
+    const childArray = React.Children.toArray(fragmentChildren) as React.ReactElement[];
     const providerElement = childArray.find(
       (child) => (child.props as { locale?: string }).locale !== undefined
     ) as React.ReactElement<{ locale: string; messages: unknown }>;

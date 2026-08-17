@@ -57,9 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     alternates,
     icons: {
-      icon: '/Logo_Dark.svg',
-      shortcut: '/Logo_Dark.svg',
-      apple: '/Logo_Dark.svg',
+      icon: '/Favicon.svg',
+      shortcut: '/Favicon.svg',
+      apple: '/Favicon.svg',
     },
   };
 }
@@ -83,24 +83,22 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages({ locale: validatedLocale });
 
   return (
-    <html lang={validatedLocale}>
-      <body>
-        <ScrollRestorer />
-        <JsonLd
-          data={[
-            organizationSchema(),
-            localBusinessSchema(),
-            websiteSchema(validatedLocale),
-          ]}
-        />
-        <NextIntlClientProvider locale={validatedLocale} messages={messages}>
-          <PostHogProvider>
-            <PostHogPageView />
-            {children}
-          </PostHogProvider>
-          <CookieBanner />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <ScrollRestorer />
+      <JsonLd
+        data={[
+          organizationSchema(),
+          localBusinessSchema(),
+          websiteSchema(validatedLocale),
+        ]}
+      />
+      <NextIntlClientProvider locale={validatedLocale} messages={messages}>
+        <PostHogProvider>
+          <PostHogPageView />
+          {children}
+        </PostHogProvider>
+        <CookieBanner />
+      </NextIntlClientProvider>
+    </>
   );
 }

@@ -9,7 +9,11 @@
       "Bash(git stash:*)",
       "Bash(git -C /Users/julianperez88/Documents/GitHub/sendero-1 add messages/en.json messages/es.json)",
       "Bash(git -C /Users/julianperez88/Documents/GitHub/sendero-1 commit -m ' *)",
-      "Bash(git -C /Users/julianperez88/Documents/GitHub/sendero-1 push origin development)"
+      "Bash(git -C /Users/julianperez88/Documents/GitHub/sendero-1 push origin development)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(node /Users/julianperez88/Documents/GitHub/sendero-1/.verify-tmp2.mjs)",
+      "Bash(grep -v \"^A tree hydrated\\\\|^- \\\\|^It can also\\\\|^  \\\\.\\\\.\\\\.\\\\|^$\\\\|react.dev/link\\\\|^%s%s\")"
     ],
     "additionalDirectories": [
       "/Users/julianperez88/Documents/GitHub/sendero-1/public"

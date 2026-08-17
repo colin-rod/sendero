@@ -5,15 +5,11 @@ import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { MtbReisenNavDropdown } from '@/components/layout/MtbReisenNavDropdown';
 
 type HeaderProps = {
   logoVariant?: 'dark' | 'white';
 };
-
-const NAV_ITEMS = [
-  { key: 'trails', href: '/trails' },
-  { key: 'mtbReisen', href: '/mtb-reisen' },
-] as const;
 
 export function Header({ logoVariant = 'dark' }: HeaderProps) {
   const t = useTranslations('header');
@@ -61,15 +57,7 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
 
             {/* Nav */}
             <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className={`text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
-                >
-                  {t(`nav.${item.key}`)}
-                </Link>
-              ))}
+              <MtbReisenNavDropdown isWhiteLogo={isWhiteLogo} />
             </nav>
 
             {/* Language Switcher */}

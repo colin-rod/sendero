@@ -8,7 +8,9 @@
       "about": "Über uns",
       "howItWorks": "Wie es funktioniert",
       "trails": "Trails",
-      "mtbReisen": "MTB Reisen"
+      "mtbReisen": "Mountain Bike Urlaub",
+      "mtbReisenNineDays": "9 Tage",
+      "mtbReisenSevenDays": "7 Tage"
     },
     "mobileMenu": {
       "toggle": "Navigationsmenü umschalten",
@@ -790,7 +792,7 @@
   },
   "mtbReisen": {
     "seo": {
-      "title": "MTB Reisen – 9 Tage durch die Kaffeeregion",
+      "title": "Mountain Bike Urlaub – 9 Tage durch die Kaffeeregion",
       "description": "Eine 9-tägige Mountainbike-Reise durch die kolumbianische Kaffeeregion – mit lokalen Familien, Nebelwäldern und dem Nationalpark Los Nevados."
     },
     "hero": {
@@ -905,6 +907,127 @@
         {
           "title": "Sendero del Páramo",
           "description": "Zum Abschluss erwartet uns eine der eindrucksvollsten Routen der Reise. Vorbei an Lagunen, weltweit einzigartigen Pflanzen und weiten Hochebenen erleben wir die besondere Landschaft des Nationalparks Los Nevados.\n\nDen letzten Abend feiern wir gemeinsam mit einem andinischen Essen in Tacay.",
+          "meals": "Frühstück, Abendessen"
+        },
+        {
+          "title": "Abreise",
+          "description": "Nach dem letzten gemeinsamen Frühstück heißt es Abschied nehmen.\n\nAb 11 Uhr erfolgt der Check-out, anschließend begleitet dich unser Fahrer zum Flughafen oder Busterminal.",
+          "meals": "Frühstück"
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Melde dich gerne bei uns und wir besprechen deine Traumtour",
+      "button": "Anfragen"
+    }
+  },
+  "mtbReisen7": {
+    "seo": {
+      "title": "Mountain Bike Urlaub – 7 Tage durch die Kaffeeregion",
+      "description": "Eine 7-tägige Mountainbike-Reise durch die kolumbianische Kaffeeregion – mit lokalen Familien, Nebelwäldern und Vulkanpanoramen zwischen Wachspalmen."
+    },
+    "hero": {
+      "title": "7 Tage",
+      "subtitle": "The Full sendero experience"
+    },
+    "overviewBar": {
+      "overview": "Überblick",
+      "included": "Das ist inklusive",
+      "itinerary": "Tag für Tag",
+      "dates": "Nächste Termine"
+    },
+    "intro": {
+      "heading": "Die Anden auf dem Mountainbike",
+      "paragraph1": "Begegnungen mit Familien, Dorfgemeinschaften und lokalen Produzent:innen lassen dich die Region nicht nur besuchen, sondern Teil von ihr werden.",
+      "paragraph2": "Die Geschichte der Region begleitet uns auf jedem Kilometer — von den Spuren der präkolumbianischen Quimbaya-Zivilisation bis zur UNESCO-Kulturlandschaft des Kaffeeanbaus.",
+      "priceLabel": "Preis",
+      "pricePrefix": "ab",
+      "nextDatesLabel": "Nächste Termine",
+      "bookLabel": "Buchen",
+      "bookCta": "Sende eine Anfrage an:"
+    },
+    "inclusions": {
+      "includedHeading": "Das ist inklusive",
+      "notIncludedHeading": "Nicht inklusive",
+      "categories": [
+        {
+          "title": "Unterkunft & Verpflegung",
+          "items": [
+            "7 Tage / 6 Nächte auf der Eco Farm El Tacay",
+            "Flughafentransfers ab/bis Pereira",
+            "Tägliches Frühstück",
+            "Getränke, Snacks und ausgewählte Mahlzeiten während der Touren",
+            "Kulturaktivitäten auf El Tacay"
+          ]
+        },
+        {
+          "title": "Fahrrad & Mobilität",
+          "items": [
+            "Mountainbike",
+            "Fahrradhelm",
+            "Tourbegleitung und Transfers während der Reise",
+            "Technischer Bike-Support unterwegs"
+          ]
+        },
+        {
+          "title": "Erlebnisse & Kultur",
+          "items": [
+            "Regionale Verkostungen",
+            "Traditionen, Rituale & gelebter Alltag",
+            "Einblicke in lokales Handwerk und überliefertes Wissen — von Kaffee über Kakao bis zu Keramik und Goldschmiedekunst"
+          ]
+        },
+        {
+          "title": "Organisation & Extras",
+          "items": [
+            "Planung und Organisation der gesamten Reise",
+            "Professionelle Foto- und Videoaufnahmen",
+            "Persönliches Willkommenspaket"
+          ]
+        }
+      ],
+      "notIncludedItems": [
+        "Flüge nach und von Pereira",
+        "Reiseversicherung (verpflichtend)",
+        "Eintritte, z. B. Goldmuseum, andere Fincas oder Kulturaktivitäten außerhalb von El Tacay",
+        "Nicht aufgeführte Mahlzeiten und Getränke (z. B. in Cafés oder Restaurants)",
+        "Persönliche Ausgaben",
+        "Individuelle Reiseplanung vor und nach der Reise"
+      ]
+    },
+    "itinerary": {
+      "heading": "Tag für Tag",
+      "dayLabel": "Tag",
+      "mealsIncludedLabel": "Inklusive Mahlzeiten:",
+      "days": [
+        {
+          "title": "Ankommen",
+          "description": "Nach deiner Ankunft am Flughafen Matecaña oder am Busbahnhof von Pereira bringen wir dich zur Finca El Tacay. Dort bleibt Zeit, in Ruhe anzukommen, die Gruppe kennenzulernen und gemeinsam die wichtigsten Hinweise für die Reise durchzugehen.\n\nBeim ersten gemeinsamen Abendessen stoßen wir auf die kommende Woche an.",
+          "meals": "Abendessen"
+        },
+        {
+          "title": "Sendero del Tigre",
+          "description": "Zum Akklimatisieren fahren wir auf bambusgesäumten Wegen und durch Obstplantagen zur Finca Ganday. Dort entdecken wir die Vielfalt kolumbianischer Nutzpflanzen und genießen einen traditionellen Caldo mit Zutaten von der Finca – nach einem Rezept aus den Bergen und dem Amazonas.\n\nNach einer erfrischenden Pause rollen wir zurück und lassen den Tag bei einem kleinen Nachtisch ausklingen.",
+          "meals": "Frühstück, Abendessen"
+        },
+        {
+          "title": "Sendero del Café",
+          "description": "Nach dem Frühstück starten wir mit einem Kaffee- und Kunst-Workshop bei unseren Gastgebern.\n\nDanach geht es auf wenig befahrenen Landstraßen durch das UNESCO-Kaffeegebiet, vorbei an Plantagen, kleinen Pueblos und bunten Häusern.\n\nUnterwegs Mittagspause, am späten Nachmittag noch ein Ausblickspot, bevor wir abends zurückfahren.",
+          "meals": "Frühstück, Abendessen"
+        },
+        {
+          "title": "Sendero del Agua",
+          "description": "Wir folgen kurvigen Wegen entlang von Flüssen und durch dichte Nebelwälder rund um La Florida.\n\nUnterwegs begegnen uns Brücken, Wasserfälle und mit etwas Glück kleine und große Tiere. Zum Mittag genießen wir eine regionale Bergmahlzeit mit beeindruckender Aussicht.\n\nEine beliebte lokale Route, die zeigt, wie eng Natur und Alltag hier miteinander verbunden sind.",
+          "meals": "Frühstück, Mittagessen"
+        },
+        {
+          "title": "Sendero del Volcán",
+          "description": "Zwischen Wachspalmen, dem Nationalbaum Kolumbiens, und Vulkanpanoramen erleben wir eine der spektakulärsten Etappen der Reise.\n\nAm Nachmittag Halt in Salento — Zeit zum Bummeln, durch kleine Läden stöbern und den Ort auf sich wirken lassen.",
+          "meals": "Frühstück, Abendessen"
+        },
+        {
+          "title": "Sendero del Oro",
+          "description": "Heute verbinden wir Bewegung mit Geschichte.\n\nNach dem Besuch des Goldmuseums in Armenia fahren wir auf ruhigen Nebenstraßen und alten Verbindungswegen durch das Land der Quimbaya und entdecken die Ursprünge der Kultur in der Region.",
           "meals": "Frühstück, Abendessen"
         },
         {

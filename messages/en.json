@@ -8,7 +8,9 @@
       "about": "About",
       "howItWorks": "How It Works",
       "trails": "Trails",
-      "mtbReisen": "MTB Trips"
+      "mtbReisen": "Mountain Bike Holidays",
+      "mtbReisenNineDays": "9 Days",
+      "mtbReisenSevenDays": "7 Days"
     },
     "mobileMenu": {
       "toggle": "Toggle navigation menu",
@@ -790,7 +792,7 @@
   },
   "mtbReisen": {
     "seo": {
-      "title": "MTB Trips – 9 Days Through Colombia's Coffee Region",
+      "title": "Mountain Bike Holidays – 9 Days Through Colombia's Coffee Region",
       "description": "A 9-day mountain bike journey through Colombia's Coffee Region — with local families, cloud forests, and Los Nevados National Park."
     },
     "hero": {
@@ -905,6 +907,127 @@
         {
           "title": "Sendero del Páramo",
           "description": "To close out the trip, one of its most impressive routes awaits. Past lagoons, plants found nowhere else on Earth, and vast highlands, we experience the singular landscape of Los Nevados National Park.\n\nWe celebrate our last evening together with an Andean meal in Tacay.",
+          "meals": "Breakfast, Dinner"
+        },
+        {
+          "title": "Departure",
+          "description": "After one last breakfast together, it's time to say goodbye.\n\nCheck-out is from 11am, after which our driver will take you to the airport or bus terminal.",
+          "meals": "Breakfast"
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Reach out anytime and let's talk about your dream trip",
+      "button": "Inquire"
+    }
+  },
+  "mtbReisen7": {
+    "seo": {
+      "title": "Mountain Bike Holidays – 7 Days Through Colombia's Coffee Region",
+      "description": "A 7-day mountain bike journey through Colombia's Coffee Region — with local families, cloud forests, and volcano-view trails among the wax palms."
+    },
+    "hero": {
+      "title": "7 Days",
+      "subtitle": "The Full sendero experience"
+    },
+    "overviewBar": {
+      "overview": "Overview",
+      "included": "What's Included",
+      "itinerary": "Day by Day",
+      "dates": "Next Dates"
+    },
+    "intro": {
+      "heading": "The Andes by Mountain Bike",
+      "paragraph1": "Encounters with families, village communities, and local producers let you not just visit the region, but become part of it.",
+      "paragraph2": "The region's history travels with us on every kilometer — from traces of the pre-Columbian Quimbaya civilization to the UNESCO Coffee Cultural Landscape.",
+      "priceLabel": "Price",
+      "pricePrefix": "from",
+      "nextDatesLabel": "Next Dates",
+      "bookLabel": "Book",
+      "bookCta": "Send an inquiry to:"
+    },
+    "inclusions": {
+      "includedHeading": "What's Included",
+      "notIncludedHeading": "Not Included",
+      "categories": [
+        {
+          "title": "Accommodation & Meals",
+          "items": [
+            "7 days / 6 nights at Eco Farm El Tacay",
+            "Airport transfers to/from Pereira",
+            "Daily breakfast",
+            "Drinks, snacks, and selected meals during the tours",
+            "Cultural activities at El Tacay"
+          ]
+        },
+        {
+          "title": "Bike & Mobility",
+          "items": [
+            "Mountain bike",
+            "Bike helmet",
+            "Tour guiding and transfers throughout the trip",
+            "Technical bike support on the road"
+          ]
+        },
+        {
+          "title": "Experiences & Culture",
+          "items": [
+            "Regional tastings",
+            "Traditions, rituals & everyday life",
+            "Insights into local craft and traditional knowledge — from coffee and cacao to ceramics and goldsmithing"
+          ]
+        },
+        {
+          "title": "Organization & Extras",
+          "items": [
+            "Planning and organization of the entire trip",
+            "Professional photo and video coverage",
+            "A personal welcome package"
+          ]
+        }
+      ],
+      "notIncludedItems": [
+        "Flights to and from Pereira",
+        "Travel insurance (mandatory)",
+        "Entrance fees, e.g. the Gold Museum, other fincas, or cultural activities outside El Tacay",
+        "Meals and drinks not listed (e.g. at cafés or restaurants)",
+        "Personal expenses",
+        "Individual trip planning before and after the journey"
+      ]
+    },
+    "itinerary": {
+      "heading": "Day by Day",
+      "dayLabel": "Day",
+      "mealsIncludedLabel": "Meals included:",
+      "days": [
+        {
+          "title": "Arrival",
+          "description": "After you land at Matecaña Airport or arrive at Pereira's bus terminal, we'll bring you to Finca El Tacay. There's time to settle in, meet the group, and go over the key details for the week ahead together.\n\nAt our first shared dinner, we'll toast to the week ahead.",
+          "meals": "Dinner"
+        },
+        {
+          "title": "Sendero del Tigre",
+          "description": "To acclimatize, we ride along bamboo-lined paths and through fruit orchards to Finca Ganday. There we discover the diversity of Colombian crops and enjoy a traditional caldo made with ingredients from the farm — following a recipe from the mountains and the Amazon.\n\nAfter a refreshing break, we roll back and close out the day with a small dessert.",
+          "meals": "Breakfast, Dinner"
+        },
+        {
+          "title": "Sendero del Café",
+          "description": "After breakfast, we start with a coffee and art workshop with our hosts.\n\nFrom there, we ride quiet country roads through the UNESCO coffee-growing region, past plantations, small pueblos, and colorful houses.\n\nWe stop for lunch along the way, and take in a viewpoint in the late afternoon before riding back in the evening.",
+          "meals": "Breakfast, Dinner"
+        },
+        {
+          "title": "Sendero del Agua",
+          "description": "We follow winding paths along rivers and through dense cloud forests around La Florida.\n\nAlong the way we cross bridges and waterfalls, and with a bit of luck spot small and large wildlife. For lunch, we enjoy a regional mountain meal with an impressive view.\n\nA popular local route that shows just how closely nature and daily life are connected here.",
+          "meals": "Breakfast, Lunch"
+        },
+        {
+          "title": "Sendero del Volcán",
+          "description": "Amid wax palms, Colombia's national tree, and volcano panoramas, we experience one of the most spectacular legs of the trip.\n\nIn the afternoon we stop in Salento — time to stroll, browse small shops, and take in the town.",
+          "meals": "Breakfast, Dinner"
+        },
+        {
+          "title": "Sendero del Oro",
+          "description": "Today we connect movement with history.\n\nAfter visiting the Gold Museum in Armenia, we ride quiet backroads and old connecting paths through Quimbaya land and discover the origins of the region's culture.",
           "meals": "Breakfast, Dinner"
         },
         {

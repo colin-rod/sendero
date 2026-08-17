@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
 import { buildAlternates } from '@/lib/seo/canonical';
-import { mtbReisenNueveTage } from '@/lib/data/mtbReisen';
+import { mtbReisenSiebenTage } from '@/lib/data/mtbReisen';
 import { MtbReisenHero } from '@/components/features/mtb-reisen/MtbReisenHero';
 import { MtbReisenOverviewBar } from '@/components/features/mtb-reisen/MtbReisenOverviewBar';
 import { MtbReisenIntro } from '@/components/features/mtb-reisen/MtbReisenIntro';
@@ -13,15 +13,11 @@ import { MtbReisenInclusions } from '@/components/features/mtb-reisen/MtbReisenI
 import { MtbReisenItinerary } from '@/components/features/mtb-reisen/MtbReisenItinerary';
 import { MtbReisenCTA } from '@/components/features/mtb-reisen/MtbReisenCTA';
 
-const PAGE_PATH = '/mtb-reisen';
+const PAGE_PATH = '/mtb-reisen-7-tage';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'mtbReisen.seo' });
+  const t = await getTranslations({ locale, namespace: 'mtbReisen7.seo' });
   const alternates = buildAlternates(locale, PAGE_PATH);
 
   return {
@@ -33,31 +29,25 @@ export async function generateMetadata({
       description: t('description'),
       url: alternates.canonical,
       type: 'article',
-      images: [{ url: mtbReisenNueveTage.images.hero, alt: t('title') }],
+      images: [{ url: mtbReisenSiebenTage.images.hero, alt: t('title') }],
     },
   };
 }
 
-export default async function MtbReisenPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function MtbReisenSevenDaysPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'mtbReisen' });
+  const t = await getTranslations({ locale, namespace: 'mtbReisen7' });
   const tHeader = await getTranslations({ locale, namespace: 'header' });
 
-  const trip = mtbReisenNueveTage;
+  const trip = mtbReisenSiebenTage;
 
   const breadcrumbs = breadcrumbSchema(locale, [
     { name: tHeader('brandName'), path: '' },
-    { name: tHeader('nav.mtbReisenNineDays'), path: PAGE_PATH },
+    { name: tHeader('nav.mtbReisenSevenDays'), path: PAGE_PATH },
   ]);
 
   const priceFormatter = new Intl.NumberFormat(locale, {
-    style: 'currency',
-    currency: trip.currency,
-    maximumFractionDigits: 0,
+    style: 'currency', currency: trip.currency, maximumFractionDigits: 0,
   });
   const priceValue = `${t('intro.pricePrefix')} ${priceFormatter.format(trip.priceFrom)}`;
 
@@ -76,56 +66,19 @@ export default async function MtbReisenPage({
       <JsonLd data={breadcrumbs} />
       <Header logoVariant="white" />
       <main id="main-content">
-        <MtbReisenHero
-          title={t('hero.title')}
-          subtitle={t('hero.subtitle')}
-          heroImage={trip.images.hero}
-        />
-
-        <MtbReisenOverviewBar
-          overview={t('overviewBar.overview')}
-          included={t('overviewBar.included')}
-          itinerary={t('overviewBar.itinerary')}
-          dates={t('overviewBar.dates')}
-        />
-
+        <MtbReisenHero title={t('hero.title')} subtitle={t('hero.subtitle')} heroImage={trip.images.hero} />
+        <MtbReisenOverviewBar overview={t('overviewBar.overview')} included={t('overviewBar.included')} itinerary={t('overviewBar.itinerary')} dates={t('overviewBar.dates')} />
         <MtbReisenIntro
           backgroundImage={trip.images.introBackground}
-          heading={t('intro.heading')}
-          paragraph1={t('intro.paragraph1')}
-          paragraph2={t('intro.paragraph2')}
-          priceLabel={t('intro.priceLabel')}
-          priceValue={priceValue}
-          nextDatesLabel={t('intro.nextDatesLabel')}
-          nextDates={nextDates}
-          bookLabel={t('intro.bookLabel')}
-          bookCta={t('intro.bookCta')}
-          bookingEmail={trip.bookingEmail}
+          heading={t('intro.heading')} paragraph1={t('intro.paragraph1')} paragraph2={t('intro.paragraph2')}
+          priceLabel={t('intro.priceLabel')} priceValue={priceValue}
+          nextDatesLabel={t('intro.nextDatesLabel')} nextDates={nextDates}
+          bookLabel={t('intro.bookLabel')} bookCta={t('intro.bookCta')} bookingEmail={trip.bookingEmail}
         />
-
         <MtbReisenGallery images={trip.images.gallery} title={t('hero.title')} />
-
-        <MtbReisenInclusions
-          includedHeading={t('inclusions.includedHeading')}
-          notIncludedHeading={t('inclusions.notIncludedHeading')}
-          categories={categories}
-          notIncludedItems={notIncludedItems}
-        />
-
-        <MtbReisenItinerary
-          heading={t('itinerary.heading')}
-          dayLabel={t('itinerary.dayLabel')}
-          mealsIncludedLabel={t('itinerary.mealsIncludedLabel')}
-          days={trip.days}
-          dayCopy={dayCopy}
-        />
-
-        <MtbReisenCTA
-          heading={t('cta.heading')}
-          buttonText={t('cta.button')}
-          bookingEmail={trip.bookingEmail}
-          emailSubject={t('seo.title')}
-        />
+        <MtbReisenInclusions includedHeading={t('inclusions.includedHeading')} notIncludedHeading={t('inclusions.notIncludedHeading')} categories={categories} notIncludedItems={notIncludedItems} />
+        <MtbReisenItinerary heading={t('itinerary.heading')} dayLabel={t('itinerary.dayLabel')} mealsIncludedLabel={t('itinerary.mealsIncludedLabel')} days={trip.days} dayCopy={dayCopy} />
+        <MtbReisenCTA heading={t('cta.heading')} buttonText={t('cta.button')} bookingEmail={trip.bookingEmail} emailSubject={t('seo.title')} />
       </main>
       <Footer />
     </div>
