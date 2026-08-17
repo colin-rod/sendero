@@ -18,7 +18,7 @@ export function Footer() {
           <div className="flex max-w-[300px] flex-col gap-4">
             <div className="h-12 flex items-center">
               <Image
-                src="/Logo_Dark.svg"
+                src="/Logo_Light.svg"
                 alt={t('brandName')}
                 width={48}
                 height={48}

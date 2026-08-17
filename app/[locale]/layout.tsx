@@ -57,9 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     alternates,
     icons: {
-      icon: '/Logo_Dark.svg',
-      shortcut: '/Logo_Dark.svg',
-      apple: '/Logo_Dark.svg',
+      icon: '/Favicon.svg',
+      shortcut: '/Favicon.svg',
+      apple: '/Favicon.svg',
     },
   };
 }
