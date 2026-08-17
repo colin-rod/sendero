@@ -136,7 +136,6 @@ export default function BottomEmailCapture() {
               border-2 border-accent-400
               focus:border-accent-400 focus:ring-2 focus:ring-accent-400
               text-foreground placeholder:text-gray-600
-              shadow-xl
             "
             disabled={isSubmitting}
             aria-label={t('placeholder')}
