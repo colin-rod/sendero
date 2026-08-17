@@ -132,11 +132,10 @@ export default function BottomEmailCapture() {
             className="
               input
               w-full
-              bg-white/96
+              bg-white
               border-2 border-white/90
               focus:border-secondary-oro-500 focus:ring-2 focus:ring-secondary-oro-400
               text-foreground placeholder:text-gray-600
-              shadow-xl
             "
             disabled={isSubmitting}
             aria-label={t('placeholder')}
