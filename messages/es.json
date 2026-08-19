@@ -10,7 +10,8 @@
       "trails": "Senderos",
       "mtbReisen": "Vacaciones en MTB",
       "mtbReisenNineDays": "9 Días",
-      "mtbReisenSevenDays": "7 Días"
+      "mtbReisenSevenDays": "7 Días",
+      "buchen": "Reservar"
     },
     "mobileMenu": {
       "toggle": "Alternar menú de navegación",
@@ -167,7 +168,13 @@
     "nameTooShort": "El nombre debe tener al menos 2 caracteres",
     "messageRequired": "El mensaje es obligatorio",
     "messageTooShort": "El mensaje debe tener al menos 10 caracteres",
-    "invalidSubject": "Asunto inválido seleccionado"
+    "invalidSubject": "Asunto inválido seleccionado",
+    "countryRequired": "El país es obligatorio",
+    "travelersRequired": "El número de viajeros es obligatorio",
+    "travelersInvalid": "Ingresa un número válido de viajeros",
+    "tourDateRequired": "Selecciona una fecha",
+    "technicalLevelRequired": "Selecciona tu nivel técnico",
+    "phoneRequired": "El teléfono es obligatorio"
   },
   "footer": {
     "brandName": "sendero bike trails",
@@ -271,6 +278,89 @@
       "linkText": "Consulta nuestro FAQ"
     },
     "whatsappMessage": "¡Hola! Me interesa saber más sobre los senderos de bicicleta de Sendero."
+  },
+  "buchenPage": {
+    "title": "Reserva Tu Viaje",
+    "subtitle": "¿Listo para los senderos? Cuéntanos tus planes y te ayudamos a reservar tu aventura Sendero.",
+    "description": "Reserva tu viaje en bicicleta de montaña con Sendero en la Región Cafetera de Colombia — cuéntanos tus fechas de viaje, tamaño del grupo y nivel de manejo.",
+    "form": {
+      "heading": "Enviar Solicitud de Reserva",
+      "labels": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "country": "País",
+        "travelers": "Número de viajeros",
+        "date": "Fecha preferida",
+        "technicalLevel": "Nivel técnico / Condición física",
+        "message": "Cuéntanos sobre tu viaje"
+      },
+      "placeholders": {
+        "name": "Tu nombre",
+        "email": "tu@correo.com",
+        "country": "Tu país",
+        "travelers": "ej. 2",
+        "date": "Selecciona una fecha...",
+        "message": "¿Qué tienes en mente? Cuéntanos sobre el viaje que estás imaginando"
+      },
+      "dateOptions": {
+        "april": "Abril 2027",
+        "november": "Noviembre 2027"
+      },
+      "levels": [
+        {
+          "value": "basic",
+          "label": "Principiante",
+          "description": "No se necesita experiencia previa en mountain bike fuera de carretera. Caminos de bosque y grava fáciles, subidas suaves, ritmo relajado — aproximadamente 5–15 km y hasta 250 m de desnivel por día."
+        },
+        {
+          "value": "intermediate",
+          "label": "Intermedio",
+          "description": "Cómodo en singletrack fluido con pequeños obstáculos como raíces y piedras. Ritmo un poco más deportivo — aproximadamente 10–25 km y hasta 500 m de desnivel por día."
+        },
+        {
+          "value": "advanced",
+          "label": "Avanzado",
+          "description": "Seguro en singletrack técnico con obstáculos medianos y superficies sueltas, subidas y bajadas de hasta 20–40% de pendiente. Ritmo deportivo — aproximadamente 15–45 km y hasta 1.000 m de desnivel por día."
+        },
+        {
+          "value": "expert",
+          "label": "Experto",
+          "description": "Domina obstáculos grandes, terreno técnico empinado (hasta 30% de subida / 70% de bajada) y curvas cerradas. Ritmo muy deportivo — aproximadamente 25–75 km y hasta 1.500 m de desnivel por día."
+        }
+      ],
+      "buttons": {
+        "submit": "Enviar Solicitud",
+        "submitting": "Enviando..."
+      },
+      "success": {
+        "title": "¡Solicitud enviada!",
+        "message": "Gracias por tu interés. Te responderemos dentro de 24 horas para ayudarte a planear tu viaje."
+      }
+    },
+    "callback": {
+      "heading": "¿Prefieres que te llamemos?",
+      "subtitle": "Déjanos tus datos y te llamaremos para responder tus preguntas.",
+      "labels": {
+        "name": "Nombre",
+        "phone": "Teléfono",
+        "email": "Correo electrónico",
+        "message": "Mensaje (opcional)"
+      },
+      "placeholders": {
+        "name": "Tu nombre",
+        "phone": "Tu número de teléfono",
+        "email": "tu@correo.com",
+        "message": "Mejor horario para contactarte o algo más que debamos saber..."
+      },
+      "buttons": {
+        "submit": "Solicitar Llamada",
+        "submitting": "Enviando..."
+      },
+      "success": {
+        "title": "¡Solicitud enviada!",
+        "message": "¡Gracias! Te llamaremos lo antes posible."
+      }
+    }
   },
   "faqPage": {
     "title": "Preguntas Frecuentes",

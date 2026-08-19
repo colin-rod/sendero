@@ -100,7 +100,6 @@ export default async function MtbReisenPage({
           nextDates={nextDates}
           bookLabel={t('intro.bookLabel')}
           bookCta={t('intro.bookCta')}
-          bookingEmail={trip.bookingEmail}
         />
 
         <MtbReisenGallery images={trip.images.gallery} title={t('hero.title')} />
@@ -123,8 +122,6 @@ export default async function MtbReisenPage({
         <MtbReisenCTA
           heading={t('cta.heading')}
           buttonText={t('cta.button')}
-          bookingEmail={trip.bookingEmail}
-          emailSubject={t('seo.title')}
         />
       </main>
       <Footer />

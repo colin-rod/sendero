@@ -90,6 +90,28 @@ export interface ContactFormData {
   message: string;
 }
 
+// Booking form types
+export type TechnicalLevel = 'basic' | 'intermediate' | 'advanced' | 'expert';
+export type TourDate = '2027-04' | '2027-11';
+
+export interface BookingFormData {
+  name: string;
+  email: string;
+  country: string;
+  travelers: number;
+  tourDate: TourDate | '';
+  technicalLevel: TechnicalLevel | '';
+  message?: string;
+}
+
+// Callback (Rückruf) request form types
+export interface CallbackFormData {
+  name: string;
+  phone: string;
+  email: string;
+  message?: string;
+}
+
 // Supabase Database schema type
 export interface Database {
   public: {

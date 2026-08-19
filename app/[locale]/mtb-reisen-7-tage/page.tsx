@@ -73,12 +73,12 @@ export default async function MtbReisenSevenDaysPage({ params }: { params: Promi
           heading={t('intro.heading')} paragraph1={t('intro.paragraph1')} paragraph2={t('intro.paragraph2')}
           priceLabel={t('intro.priceLabel')} priceValue={priceValue}
           nextDatesLabel={t('intro.nextDatesLabel')} nextDates={nextDates}
-          bookLabel={t('intro.bookLabel')} bookCta={t('intro.bookCta')} bookingEmail={trip.bookingEmail}
+          bookLabel={t('intro.bookLabel')} bookCta={t('intro.bookCta')}
         />
         <MtbReisenGallery images={trip.images.gallery} title={t('hero.title')} />
         <MtbReisenInclusions includedHeading={t('inclusions.includedHeading')} notIncludedHeading={t('inclusions.notIncludedHeading')} categories={categories} notIncludedItems={notIncludedItems} />
         <MtbReisenItinerary heading={t('itinerary.heading')} dayLabel={t('itinerary.dayLabel')} mealsIncludedLabel={t('itinerary.mealsIncludedLabel')} days={trip.days} dayCopy={dayCopy} />
-        <MtbReisenCTA heading={t('cta.heading')} buttonText={t('cta.button')} bookingEmail={trip.bookingEmail} emailSubject={t('seo.title')} />
+        <MtbReisenCTA heading={t('cta.heading')} buttonText={t('cta.button')} />
       </main>
       <Footer />
     </div>

@@ -3,16 +3,15 @@
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+import { Link } from '@/lib/i18n/routing';
 import posthog from 'posthog-js';
 
 interface MtbReisenCTAProps {
   heading: string;
   buttonText: string;
-  bookingEmail: string;
-  emailSubject: string;
 }
 
-export function MtbReisenCTA({ heading, buttonText, bookingEmail, emailSubject }: MtbReisenCTAProps) {
+export function MtbReisenCTA({ heading, buttonText }: MtbReisenCTAProps) {
   return (
     <section className="relative bg-[#131313] py-24 md:py-32">
       <Image
@@ -26,14 +25,14 @@ export function MtbReisenCTA({ heading, buttonText, bookingEmail, emailSubject }
 
       <Container size="md" className="relative text-center flex flex-col items-center gap-8">
         <h2 className="text-h3 text-white font-light tracking-[0.06em] max-w-xl">{heading}</h2>
-        <a
-          href={`mailto:${bookingEmail}?subject=${encodeURIComponent(emailSubject)}`}
+        <Link
+          href="/buchen"
           onClick={() => posthog.capture('mtb_reisen_cta_clicked', { source: 'mtb_reisen_page' })}
         >
           <Button size="lg" variant="secondary">
             {buttonText}
           </Button>
-        </a>
+        </Link>
       </Container>
     </section>
   );

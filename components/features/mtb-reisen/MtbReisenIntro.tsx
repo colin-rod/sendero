@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
+import { Link } from '@/lib/i18n/routing';
 
 interface InfoCard {
   emoji: string;
@@ -19,7 +20,6 @@ interface MtbReisenIntroProps {
   nextDates: string[];
   bookLabel: string;
   bookCta: string;
-  bookingEmail: string;
 }
 
 export function MtbReisenIntro({
@@ -33,7 +33,6 @@ export function MtbReisenIntro({
   nextDates,
   bookLabel,
   bookCta,
-  bookingEmail,
 }: MtbReisenIntroProps) {
   const cards: InfoCard[] = [
     { emoji: '🗻', label: priceLabel, value: priceValue },
@@ -54,12 +53,9 @@ export function MtbReisenIntro({
       emoji: '💬',
       label: bookLabel,
       value: (
-        <>
-          <span className="block">{bookCta}</span>
-          <a href={`mailto:${bookingEmail}`} className="underline">
-            {bookingEmail}
-          </a>
-        </>
+        <Link href="/buchen" className="underline">
+          {bookCta}
+        </Link>
       ),
     },
   ];

@@ -10,7 +10,8 @@
       "trails": "Trails",
       "mtbReisen": "Mountain Bike Urlaub",
       "mtbReisenNineDays": "9 Tage",
-      "mtbReisenSevenDays": "7 Tage"
+      "mtbReisenSevenDays": "7 Tage",
+      "buchen": "Buchen"
     },
     "mobileMenu": {
       "toggle": "Navigationsmenü umschalten",
@@ -167,7 +168,13 @@
     "nameTooShort": "Name muss mindestens 2 Zeichen lang sein",
     "messageRequired": "Nachricht ist erforderlich",
     "messageTooShort": "Nachricht muss mindestens 10 Zeichen lang sein",
-    "invalidSubject": "Ungültiges Betreff ausgewählt"
+    "invalidSubject": "Ungültiges Betreff ausgewählt",
+    "countryRequired": "Land ist erforderlich",
+    "travelersRequired": "Anzahl der Reisenden ist erforderlich",
+    "travelersInvalid": "Bitte gib eine gültige Anzahl an Reisenden ein",
+    "tourDateRequired": "Bitte wähle ein Datum aus",
+    "technicalLevelRequired": "Bitte wähle dein Fahrniveau aus",
+    "phoneRequired": "Telefonnummer ist erforderlich"
   },
   "footer": {
     "brandName": "sendero bike trails",
@@ -271,6 +278,89 @@
       "linkText": "Schau dir unsere FAQ an"
     },
     "whatsappMessage": "Hallo! Ich interessiere mich für Sendero Radtouren."
+  },
+  "buchenPage": {
+    "title": "Reise Buchen",
+    "subtitle": "Bereit für die Trails? Erzähl uns von deinen Plänen und wir helfen dir, dein Sendero-Abenteuer zu buchen.",
+    "description": "Buche deine Sendero Mountainbike-Reise in Kolumbiens Kaffeeregion — teile uns deine Reisedaten, Gruppengröße und dein Fahrniveau mit.",
+    "form": {
+      "heading": "Buchungsanfrage senden",
+      "labels": {
+        "name": "Name",
+        "email": "E-Mail",
+        "country": "Land",
+        "travelers": "Anzahl der Reisenden",
+        "date": "Wunschtermin",
+        "technicalLevel": "Fahrtechnik / Kondition",
+        "message": "Erzähl uns von deiner Reise"
+      },
+      "placeholders": {
+        "name": "Dein Name",
+        "email": "deine@email.com",
+        "country": "Dein Land",
+        "travelers": "z. B. 2",
+        "date": "Termin auswählen...",
+        "message": "Was hast du im Kopf – erzähl uns von der Reise, die dir vorschwebt?"
+      },
+      "dateOptions": {
+        "april": "April 2027",
+        "november": "November 2027"
+      },
+      "levels": [
+        {
+          "value": "basic",
+          "label": "Einsteiger",
+          "description": "Keine Erfahrung im Mountainbiken abseits befestigter Wege nötig. Einfache Wald- und Schotterwege, sanfte Anstiege, entspanntes Tempo — etwa 5–15 km und bis zu 250 Höhenmeter pro Tag."
+        },
+        {
+          "value": "intermediate",
+          "label": "Fortgeschritten (leicht)",
+          "description": "Sicher auf flüssigem Singletrail mit kleinen Hindernissen wie Wurzeln und Steinen. Etwas sportlicheres Tempo — etwa 10–25 km und bis zu 500 Höhenmeter pro Tag."
+        },
+        {
+          "value": "advanced",
+          "label": "Fortgeschritten",
+          "description": "Souverän auf technischem Singletrail mit mittleren Hindernissen und losem Untergrund, Steigungen und Abfahrten bis etwa 20–40 % Gefälle. Sportliches Tempo — etwa 15–45 km und bis zu 1.000 Höhenmeter pro Tag."
+        },
+        {
+          "value": "expert",
+          "label": "Sehr fortgeschritten",
+          "description": "Meistert große Hindernisse, steiles technisches Gelände (bis etwa 30 % Anstieg / 70 % Abfahrt) und enge Spitzkehren. Sehr sportliches Tempo — etwa 25–75 km und bis zu 1.500 Höhenmeter pro Tag."
+        }
+      ],
+      "buttons": {
+        "submit": "Anfrage senden",
+        "submitting": "Wird gesendet..."
+      },
+      "success": {
+        "title": "Anfrage gesendet!",
+        "message": "Vielen Dank für dein Interesse. Wir melden uns innerhalb von 24 Stunden, um deine Reise zu planen."
+      }
+    },
+    "callback": {
+      "heading": "Lieber zurückgerufen werden?",
+      "subtitle": "Hinterlasse deine Daten und wir rufen dich an, um alle Fragen zu klären.",
+      "labels": {
+        "name": "Name",
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "message": "Nachricht (optional)"
+      },
+      "placeholders": {
+        "name": "Dein Name",
+        "phone": "Deine Telefonnummer",
+        "email": "deine@email.com",
+        "message": "Beste Erreichbarkeit oder was wir sonst wissen sollten..."
+      },
+      "buttons": {
+        "submit": "Rückruf anfordern",
+        "submitting": "Wird gesendet..."
+      },
+      "success": {
+        "title": "Anfrage gesendet!",
+        "message": "Danke! Wir rufen dich so schnell wie möglich zurück."
+      }
+    }
   },
   "faqPage": {
     "title": "Häufig gestellte Fragen",
