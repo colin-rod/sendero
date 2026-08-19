@@ -230,7 +230,7 @@ export default function HomePage() {
 
         {/* Simplified Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
-          <section className="relative h-[100svh] min-h-[100svh] flex flex-col items-center justify-center overflow-hidden cta-section">
+          <section id="waitlist" className="relative h-[100svh] min-h-[100svh] flex flex-col items-center justify-center overflow-hidden cta-section">
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image

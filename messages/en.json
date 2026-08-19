@@ -429,34 +429,31 @@
     "sectionsCount": "{{count}} sections with {{questionCount}} questions"
   },
   "aboutPage": {
-    "title": "About Sendero Bike Trails",
-    "description": "Learn about our mission to provide sustainable, beginner-friendly bike tours in Colombia's Coffee Region.",
-    "heading": "[PLACEHOLDER] About Us",
-    "subtitle": "[TODO: Add content] Discover the story behind Sendero and our commitment to sustainable tourism in Colombia's beautiful Coffee Region.",
+    "title": "About Julian — Sendero Bike Trails",
+    "description": "Meet Julian, the Colombian-born, Berlin-based designer behind Sendero — a journey through Colombia's UNESCO coffee cultural landscape, inspired by Berlin's cycling culture and rooted in the Andes.",
+    "heading": "Meet Julian",
+    "subtitle": "From Berlin's cycling streets to the coffee-covered slopes of the Colombian Andes — the story behind Sendero.",
     "sections": {
-      "philosophy": {
-        "heading": "[PLACEHOLDER] Brand Philosophy & Story",
-        "content": "[TODO: Add content] We believe that adventure should be accessible to everyone, regardless of fitness level or cycling experience. Sendero was born from a passion for Colombia's stunning Coffee Region and a desire to share its beauty with the world in a sustainable, responsible way. Our journey began with a simple idea: make bike touring beginner-friendly, eco-conscious, and deeply connected to local communities.",
-        "imageAlt": "Sendero team on mountain trail overlooking coffee plantations"
+      "berlin": {
+        "heading": "A Designer Shaped by Berlin",
+        "content": "Julian has moved between two worlds — Berlin and Colombia — long before Sendero existed. Living in Berlin as a designer, he was pulled into its cycling culture: a city where the bike isn't a hobby but a way of moving through life, slowly enough to actually notice it. That rhythm — deliberate, unhurried, deeply attentive to place — became the lens through which he started to see his own roots differently.",
+        "imageAlt": "Julian riding through Berlin's cycling culture"
       },
-      "region": {
-        "heading": "[PLACEHOLDER] Why the Andes & Coffee Region",
-        "content": "[TODO: Add content] The Coffee Region (Eje Cafetero) is one of Colombia's hidden gems. Nestled in the Andes mountains, Pereira and its surroundings offer breathtaking landscapes, perfect cycling weather year-round, and rich cultural heritage. The rolling hills covered in coffee plantations, cloud forests, and traditional fincas create an ideal backdrop for unforgettable bike adventures. This UNESCO World Heritage region combines natural beauty with authentic local experiences.",
-        "imageAlt": "Scenic coffee plantations in the Andes mountains near Pereira"
+      "andes": {
+        "heading": "Rooted in the Colombian Andes",
+        "content": "Born in Colombia, Julian's family ties run deep into the mountains of the Coffee Region — the fincas, the cloud forests, the towns built into the folds of the Andes. It's a landscape he grew up close to but had never experienced the way Berlin taught him to see a place: on two wheels, at the pace of the land itself.",
+        "imageAlt": "The Colombian Andes coffee region, Julian's family roots"
       },
-      "partners": {
-        "heading": "[PLACEHOLDER] How We Work with Local Fincas",
-        "content": "[TODO: Add content] Our partnerships with local coffee farms (fincas) are at the heart of what we do. We collaborate directly with family-owned farms to create authentic experiences that benefit local communities. When you tour with Sendero, you're not just visiting - you're supporting sustainable agriculture, fair trade practices, and the preservation of traditional coffee culture. Our finca partners welcome you into their homes, share their stories, and give you hands-on experiences you won't find anywhere else.",
-        "imageAlt": "Local coffee farm family welcoming visitors to their finca"
+      "journey": {
+        "heading": "A Journey Built From Both Worlds",
+        "content": "Sendero is what happens when those two influences meet: Berlin's cycling culture and Colombia's UNESCO-listed coffee cultural landscape. Each trip is curated to move slowly through the depth of the Andes mountains — past working fincas, through cloud forest, and into towns shaped by a century of coffee — the way Julian first learned to experience a place, one pedal at a time.",
+        "imageAlt": "Cycling through the UNESCO coffee cultural landscape"
       },
       "cta": {
-        "heading": "[PLACEHOLDER] Ready to Explore?",
-        "content": "[TODO: Add content] Join us for an unforgettable adventure through Colombia's Coffee Region. From beginner-friendly day trips to immersive week-long experiences, we have tours designed for every traveler.",
-        "buttonText": "Discover Our Tours"
+        "heading": "Come Experience It Yourself",
+        "content": "Join the waitlist to be the first to know when new trips open — and be part of the journey from the very beginning.",
+        "buttonText": "Join the Waitlist"
       }
-    },
-    "placeholderNote": {
-      "text": "Content marked with [PLACEHOLDER] and [TODO:] is temporary and will be updated with final information."
     }
   },
   "metadata": {

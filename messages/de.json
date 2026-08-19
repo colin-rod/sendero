@@ -429,34 +429,31 @@
     "sectionsCount": "{{count}} Abschnitte mit {{questionCount}} Fragen"
   },
   "aboutPage": {
-    "title": "Über Sendero Bike Trails",
-    "description": "Erfahre mehr über unsere Mission, nachhaltige und anfängerfreundliche Fahrradtouren in Kolumbiens Kaffeeregion anzubieten.",
-    "heading": "[PLACEHOLDER] Über Uns",
-    "subtitle": "[TODO: Inhalt hinzufügen] Entdecke die Geschichte hinter Sendero und unser Engagement für nachhaltigen Tourismus in Kolumbiens wunderschöner Kaffeeregion.",
+    "title": "Über Julian — Sendero Bike Trails",
+    "description": "Lerne Julian kennen, den in Kolumbien geborenen, in Berlin lebenden Designer hinter Sendero – eine Reise durch Kolumbiens UNESCO-Kaffeekulturlandschaft, inspiriert von Berlins Fahrradkultur und verwurzelt in den Anden.",
+    "heading": "Lerne Julian kennen",
+    "subtitle": "Von Berlins Fahrradstraßen bis zu den kaffeebedeckten Hängen der kolumbianischen Anden – die Geschichte hinter Sendero.",
     "sections": {
-      "philosophy": {
-        "heading": "[PLACEHOLDER] Markenphilosophie & Geschichte",
-        "content": "[TODO: Inhalt hinzufügen] Wir glauben, dass Abenteuer für alle zugänglich sein sollte, unabhängig von Fitnesslevel oder Fahrraderfahrung. Sendero entstand aus einer Leidenschaft für Kolumbiens atemberaubende Kaffeeregion und dem Wunsch, ihre Schönheit auf nachhaltige und verantwortungsvolle Weise mit der Welt zu teilen. Unsere Reise begann mit einer einfachen Idee: Fahrradtouren anfängerfreundlich, umweltbewusst und eng mit lokalen Gemeinschaften verbunden zu gestalten.",
-        "imageAlt": "Sendero-Team auf Bergpfad mit Blick auf Kaffeeplantagen"
+      "berlin": {
+        "heading": "Ein Designer, geprägt von Berlin",
+        "content": "Julian bewegt sich schon lange zwischen zwei Welten – Berlin und Kolumbien – lange bevor es Sendero gab. Als Designer in Berlin wurde er von der dortigen Fahrradkultur mitgerissen: einer Stadt, in der das Fahrrad kein Hobby ist, sondern eine Art, sich durchs Leben zu bewegen – langsam genug, um es wirklich wahrzunehmen. Dieser Rhythmus, bedacht, unaufgeregt und aufmerksam für den Ort, wurde zur Linse, durch die er begann, seine eigenen Wurzeln neu zu sehen.",
+        "imageAlt": "Julian unterwegs in Berlins Fahrradkultur"
       },
-      "region": {
-        "heading": "[PLACEHOLDER] Warum die Anden & Kaffeeregion",
-        "content": "[TODO: Inhalt hinzufügen] Die Kaffeeregion (Eje Cafetero) ist eines der verborgenen Juwelen Kolumbiens. Eingebettet in die Anden bieten Pereira und seine Umgebung atemberaubende Landschaften, das ganze Jahr über perfektes Radfahrwetter und ein reiches kulturelles Erbe. Die mit Kaffeeplantagen bedeckten sanften Hügel, Nebelwälder und traditionellen Fincas schaffen eine ideale Kulisse für unvergessliche Fahrradabenteuer. Diese UNESCO-Welterberegion vereint natürliche Schönheit mit authentischen lokalen Erlebnissen.",
-        "imageAlt": "Malerische Kaffeeplantagen in den Anden nahe Pereira"
+      "andes": {
+        "heading": "Verwurzelt in den kolumbianischen Anden",
+        "content": "Julian wurde in Kolumbien geboren, und die Wurzeln seiner Familie reichen tief in die Berge der Kaffeeregion – zu den Fincas, den Nebelwäldern, den Dörfern, die sich in die Falten der Anden schmiegen. Es ist eine Landschaft, die ihm von klein auf vertraut war, die er aber nie so erlebt hatte, wie Berlin ihn gelehrt hatte, einen Ort zu sehen: auf zwei Rädern, im Tempo der Landschaft selbst.",
+        "imageAlt": "Die kolumbianische Kaffeeregion in den Anden, Julians Familienwurzeln"
       },
-      "partners": {
-        "heading": "[PLACEHOLDER] Wie wir mit lokalen Fincas arbeiten",
-        "content": "[TODO: Inhalt hinzufügen] Unsere Partnerschaften mit lokalen Kaffeefarmen (Fincas) sind das Herzstück unserer Arbeit. Wir arbeiten direkt mit familiengeführten Farmen zusammen, um authentische Erlebnisse zu schaffen, die den lokalen Gemeinschaften zugutekommen. Wenn du mit Sendero reist, besuchst du nicht nur – du unterstützt nachhaltige Landwirtschaft, Fair-Trade-Praktiken und die Bewahrung traditioneller Kaffeekultur. Unsere Finca-Partner heißen dich in ihren Häusern willkommen, teilen ihre Geschichten und bieten dir praktische Erfahrungen, die du sonst nirgendwo findest.",
-        "imageAlt": "Lokale Kaffeefarm-Familie begrüßt Besucher auf ihrer Finca"
+      "journey": {
+        "heading": "Eine Reise aus zwei Welten",
+        "content": "Sendero entsteht dort, wo sich diese beiden Einflüsse treffen: Berlins Fahrradkultur und Kolumbiens UNESCO-Weltkulturerbe-Kaffeelandschaft. Jede Reise ist so gestaltet, dass sie sich langsam durch die Tiefe der Anden bewegt – vorbei an aktiven Fincas, durch Nebelwälder und in Dörfer, die von einem Jahrhundert Kaffeeanbau geprägt sind – genau so, wie Julian einen Ort zum ersten Mal kennenlernte: mit jedem Tritt in die Pedale.",
+        "imageAlt": "Radfahren durch die UNESCO-Kaffeekulturlandschaft"
       },
       "cta": {
-        "heading": "[PLACEHOLDER] Bereit zum Erkunden?",
-        "content": "[TODO: Inhalt hinzufügen] Begleite uns auf ein unvergessliches Abenteuer durch Kolumbiens Kaffeeregion. Von anfängerfreundlichen Tagesausflügen bis hin zu intensiven einwöchigen Erlebnissen – wir haben Touren für jeden Reisenden.",
-        "buttonText": "Entdecke unsere Touren"
+        "heading": "Erlebe es selbst",
+        "content": "Trag dich in die Warteliste ein, um als Erster zu erfahren, wenn neue Reisen starten – und sei von Anfang an dabei.",
+        "buttonText": "Zur Warteliste"
       }
-    },
-    "placeholderNote": {
-      "text": "Inhalte, die mit [PLACEHOLDER] und [TODO:] markiert sind, sind vorläufig und werden mit finalen Informationen aktualisiert."
     }
   },
   "metadata": {

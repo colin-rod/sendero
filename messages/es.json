@@ -429,34 +429,31 @@
     "sectionsCount": "{{count}} secciones con {{questionCount}} preguntas"
   },
   "aboutPage": {
-    "title": "Acerca de Sendero Bike Trails",
-    "description": "Conoce nuestra misión de ofrecer tours de bicicleta sostenibles y para principiantes en la Región Cafetera de Colombia.",
-    "heading": "[PLACEHOLDER] Sobre Nosotros",
-    "subtitle": "[TODO: Agregar contenido] Descubre la historia detrás de Sendero y nuestro compromiso con el turismo sostenible en la hermosa Región Cafetera de Colombia.",
+    "title": "Sobre Julian — Sendero Bike Trails",
+    "description": "Conoce a Julian, el diseñador nacido en Colombia y radicado en Berlín detrás de Sendero: un viaje por el paisaje cultural cafetero de Colombia, Patrimonio de la Humanidad por la UNESCO, inspirado en la cultura ciclista de Berlín y arraigado en los Andes.",
+    "heading": "Conoce a Julian",
+    "subtitle": "De las calles ciclistas de Berlín a las laderas cafeteras de los Andes colombianos: la historia detrás de Sendero.",
     "sections": {
-      "philosophy": {
-        "heading": "[PLACEHOLDER] Filosofía de Marca e Historia",
-        "content": "[TODO: Agregar contenido] Creemos que la aventura debe ser accesible para todos, sin importar el nivel de condición física o experiencia ciclista. Sendero nació de una pasión por la impresionante Región Cafetera de Colombia y el deseo de compartir su belleza con el mundo de manera sostenible y responsable. Nuestro viaje comenzó con una idea simple: hacer que los tours en bicicleta sean accesibles para principiantes, conscientes del medio ambiente y profundamente conectados con las comunidades locales.",
-        "imageAlt": "Equipo de Sendero en sendero montañoso con vista a plantaciones de café"
+      "berlin": {
+        "heading": "Un diseñador formado por Berlín",
+        "content": "Julian se ha movido entre dos mundos —Berlín y Colombia— desde mucho antes de que existiera Sendero. Viviendo en Berlín como diseñador, se dejó llevar por su cultura ciclista: una ciudad donde la bicicleta no es un pasatiempo, sino una forma de moverse por la vida, lo suficientemente despacio como para notarla de verdad. Ese ritmo —deliberado, sin prisa, profundamente atento al lugar— se convirtió en la mirada con la que empezó a ver sus propias raíces de otra manera.",
+        "imageAlt": "Julian recorriendo la cultura ciclista de Berlín"
       },
-      "region": {
-        "heading": "[PLACEHOLDER] Por qué los Andes y la Región Cafetera",
-        "content": "[TODO: Agregar contenido] La Región Cafetera (Eje Cafetero) es una de las joyas escondidas de Colombia. Ubicada en las montañas de los Andes, Pereira y sus alrededores ofrecen paisajes impresionantes, clima perfecto para ciclismo durante todo el año y un rico patrimonio cultural. Las colinas onduladas cubiertas de plantaciones de café, bosques nubosos y fincas tradicionales crean el telón de fondo ideal para aventuras ciclistas inolvidables. Esta región Patrimonio de la Humanidad de la UNESCO combina belleza natural con experiencias locales auténticas.",
-        "imageAlt": "Plantaciones de café pintorescas en las montañas de los Andes cerca de Pereira"
+      "andes": {
+        "heading": "Arraigado en los Andes colombianos",
+        "content": "Nacido en Colombia, las raíces familiares de Julian se hunden profundamente en las montañas de la Región Cafetera: las fincas, los bosques de niebla, los pueblos construidos entre los pliegues de los Andes. Es un paisaje que conoció de cerca desde niño, pero que nunca había vivido de la forma en que Berlín le enseñó a ver un lugar: sobre dos ruedas, al ritmo del propio territorio.",
+        "imageAlt": "Los Andes colombianos y la región cafetera, raíces familiares de Julian"
       },
-      "partners": {
-        "heading": "[PLACEHOLDER] Cómo trabajamos con fincas locales",
-        "content": "[TODO: Agregar contenido] Nuestras asociaciones con fincas cafeteras locales son el corazón de lo que hacemos. Colaboramos directamente con fincas familiares para crear experiencias auténticas que benefician a las comunidades locales. Cuando viajas con Sendero, no solo visitas: estás apoyando la agricultura sostenible, las prácticas de comercio justo y la preservación de la cultura cafetera tradicional. Nuestros socios de fincas te reciben en sus hogares, comparten sus historias y te brindan experiencias prácticas que no encontrarás en ningún otro lugar.",
-        "imageAlt": "Familia de finca cafetera local dando la bienvenida a visitantes a su finca"
+      "journey": {
+        "heading": "Un viaje construido desde dos mundos",
+        "content": "Sendero nace del encuentro de esas dos influencias: la cultura ciclista de Berlín y el paisaje cultural cafetero de Colombia, Patrimonio de la Humanidad por la UNESCO. Cada viaje está diseñado para recorrer con calma la profundidad de las montañas de los Andes —entre fincas activas, bosques de niebla y pueblos moldeados por un siglo de cultivo de café— tal como Julian aprendió a conocer un lugar por primera vez: pedalada a pedalada.",
+        "imageAlt": "Recorriendo en bicicleta el paisaje cultural cafetero declarado Patrimonio de la Humanidad por la UNESCO"
       },
       "cta": {
-        "heading": "[PLACEHOLDER] ¿Listo para Explorar?",
-        "content": "[TODO: Agregar contenido] Únete a nosotros para una aventura inolvidable a través de la Región Cafetera de Colombia. Desde excursiones de un día para principiantes hasta experiencias inmersivas de una semana, tenemos tours diseñados para cada viajero.",
-        "buttonText": "Descubre Nuestros Tours"
+        "heading": "Ven a vivirlo tú mismo",
+        "content": "Únete a la lista de espera para ser de los primeros en saber cuándo abren nuevos viajes, y forma parte de este recorrido desde el principio.",
+        "buttonText": "Unirme a la lista de espera"
       }
-    },
-    "placeholderNote": {
-      "text": "El contenido marcado con [PLACEHOLDER] y [TODO:] es temporal y será actualizado con información final."
     }
   },
   "metadata": {
