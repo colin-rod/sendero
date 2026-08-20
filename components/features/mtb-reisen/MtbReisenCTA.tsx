@@ -15,7 +15,7 @@ export function MtbReisenCTA({ heading, buttonText }: MtbReisenCTAProps) {
   return (
     <section className="relative bg-[#131313] py-24 md:py-32">
       <Image
-        src="/Hero Newsletter.svg"
+        src="/images/mtb-reisen/cta-alto-de-letras.jpg"
         alt=""
         fill
         className="object-cover opacity-70"
@@ -29,9 +29,7 @@ export function MtbReisenCTA({ heading, buttonText }: MtbReisenCTAProps) {
           href="/buchen"
           onClick={() => posthog.capture('mtb_reisen_cta_clicked', { source: 'mtb_reisen_page' })}
         >
-          <Button size="lg" variant="secondary">
-            {buttonText}
-          </Button>
+          <Button variant="hero-cta">{buttonText}</Button>
         </Link>
       </Container>
     </section>

@@ -294,6 +294,10 @@
         "technicalLevel": "Technical Level / Kondition",
         "message": "Tell us about your trip"
       },
+      "levelInfo": {
+        "technik": "Skill",
+        "kondition": "Fitness"
+      },
       "placeholders": {
         "name": "Your name",
         "email": "your@email.com",
@@ -310,22 +314,26 @@
         {
           "value": "basic",
           "label": "Basic",
-          "description": "No off-road mountain biking experience needed. Easy forest and gravel roads, gentle climbs, relaxed pace — roughly 5–15 km and up to 250 m elevation gain per day."
+          "technik": "No off-road mountain biking experience needed — easy forest and gravel roads with gentle climbs.",
+          "kondition": "Relaxed pace — roughly 5–15 km and up to 250 m elevation gain per day."
         },
         {
           "value": "intermediate",
           "label": "Intermediate",
-          "description": "Comfortable on flowing singletrack with small obstacles like roots and stones. A bit sportier pace — roughly 10–25 km and up to 500 m elevation gain per day."
+          "technik": "Comfortable on flowing singletrack with small obstacles like roots and stones.",
+          "kondition": "A bit sportier pace — roughly 10–25 km and up to 500 m elevation gain per day."
         },
         {
           "value": "advanced",
           "label": "Advanced",
-          "description": "Confident on technical singletrack with medium obstacles and loose surfaces, climbs and descents up to around 20–40% grade. Sporty pace — roughly 15–45 km and up to 1,000 m elevation gain per day."
+          "technik": "Confident on technical singletrack with medium obstacles, loose surfaces, and grades up to around 20–40%.",
+          "kondition": "Sporty pace — roughly 15–45 km and up to 1,000 m elevation gain per day."
         },
         {
           "value": "expert",
           "label": "Expert",
-          "description": "Handles large obstacles, steep technical terrain (up to around 30% climbs / 70% descents) and tight switchbacks. Very sporty pace — roughly 25–75 km and up to 1,500 m elevation gain per day."
+          "technik": "Handles large obstacles, steep technical terrain (up to around 30% climbs / 70% descents), and tight switchbacks.",
+          "kondition": "Very sporty pace — roughly 25–75 km and up to 1,500 m elevation gain per day."
         }
       ],
       "buttons": {
@@ -335,30 +343,6 @@
       "success": {
         "title": "Inquiry Sent!",
         "message": "Thank you for your interest. We'll get back to you within 24 hours to help plan your trip."
-      }
-    },
-    "callback": {
-      "heading": "Prefer a Call Back?",
-      "subtitle": "Leave your details and we'll call you to answer any questions.",
-      "labels": {
-        "name": "Name",
-        "phone": "Phone",
-        "email": "Email",
-        "message": "Message (optional)"
-      },
-      "placeholders": {
-        "name": "Your name",
-        "phone": "Your phone number",
-        "email": "your@email.com",
-        "message": "Best time to reach you, or anything else we should know..."
-      },
-      "buttons": {
-        "submit": "Request a Call Back",
-        "submitting": "Sending..."
-      },
-      "success": {
-        "title": "Request Sent!",
-        "message": "Thanks! We'll call you back as soon as possible."
       }
     }
   },

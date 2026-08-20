@@ -1,9 +1,4 @@
-import type {
-  BookingFormData,
-  CallbackFormData,
-  TechnicalLevel,
-  TourDate,
-} from '@/lib/types/database';
+import type { BookingFormData, TechnicalLevel, TourDate } from '@/lib/types/database';
 import { isValidEmail, type ValidationError } from './validation';
 
 // Re-export ValidationError for use in components
@@ -62,32 +57,6 @@ export function validateBookingForm(data: Partial<BookingFormData>): ValidationE
     errors.push({ field: 'technicalLevel', message: 'technicalLevelRequired' });
   } else if (!isValidTechnicalLevel(data.technicalLevel)) {
     errors.push({ field: 'technicalLevel', message: 'technicalLevelRequired' });
-  }
-
-  return errors;
-}
-
-/**
- * Validates the callback (Rückruf) request form data
- * Returns an array of validation errors (empty if valid)
- */
-export function validateCallbackForm(data: Partial<CallbackFormData>): ValidationError[] {
-  const errors: ValidationError[] = [];
-
-  if (!data.name) {
-    errors.push({ field: 'name', message: 'nameRequired' });
-  } else if (data.name.trim().length < 2) {
-    errors.push({ field: 'name', message: 'nameTooShort' });
-  }
-
-  if (!data.phone || !data.phone.trim()) {
-    errors.push({ field: 'phone', message: 'phoneRequired' });
-  }
-
-  if (!data.email) {
-    errors.push({ field: 'email', message: 'emailRequired' });
-  } else if (!isValidEmail(data.email)) {
-    errors.push({ field: 'email', message: 'emailInvalid' });
   }
 
   return errors;

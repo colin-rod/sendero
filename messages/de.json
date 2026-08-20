@@ -294,6 +294,10 @@
         "technicalLevel": "Fahrtechnik / Kondition",
         "message": "Erzähl uns von deiner Reise"
       },
+      "levelInfo": {
+        "technik": "Technik",
+        "kondition": "Kondition"
+      },
       "placeholders": {
         "name": "Dein Name",
         "email": "deine@email.com",
@@ -310,22 +314,26 @@
         {
           "value": "basic",
           "label": "Einsteiger",
-          "description": "Keine Erfahrung im Mountainbiken abseits befestigter Wege nötig. Einfache Wald- und Schotterwege, sanfte Anstiege, entspanntes Tempo — etwa 5–15 km und bis zu 250 Höhenmeter pro Tag."
+          "technik": "Keine Erfahrung im Mountainbiken abseits befestigter Wege nötig — einfache Wald- und Schotterwege mit sanften Anstiegen.",
+          "kondition": "Entspanntes Tempo — etwa 5–15 km und bis zu 250 Höhenmeter pro Tag."
         },
         {
           "value": "intermediate",
           "label": "Fortgeschritten (leicht)",
-          "description": "Sicher auf flüssigem Singletrail mit kleinen Hindernissen wie Wurzeln und Steinen. Etwas sportlicheres Tempo — etwa 10–25 km und bis zu 500 Höhenmeter pro Tag."
+          "technik": "Sicher auf flüssigem Singletrail mit kleinen Hindernissen wie Wurzeln und Steinen.",
+          "kondition": "Etwas sportlicheres Tempo — etwa 10–25 km und bis zu 500 Höhenmeter pro Tag."
         },
         {
           "value": "advanced",
           "label": "Fortgeschritten",
-          "description": "Souverän auf technischem Singletrail mit mittleren Hindernissen und losem Untergrund, Steigungen und Abfahrten bis etwa 20–40 % Gefälle. Sportliches Tempo — etwa 15–45 km und bis zu 1.000 Höhenmeter pro Tag."
+          "technik": "Souverän auf technischem Singletrail mit mittleren Hindernissen und losem Untergrund, Steigungen und Abfahrten bis etwa 20–40 % Gefälle.",
+          "kondition": "Sportliches Tempo — etwa 15–45 km und bis zu 1.000 Höhenmeter pro Tag."
         },
         {
           "value": "expert",
           "label": "Sehr fortgeschritten",
-          "description": "Meistert große Hindernisse, steiles technisches Gelände (bis etwa 30 % Anstieg / 70 % Abfahrt) und enge Spitzkehren. Sehr sportliches Tempo — etwa 25–75 km und bis zu 1.500 Höhenmeter pro Tag."
+          "technik": "Meistert große Hindernisse, steiles technisches Gelände (bis etwa 30 % Anstieg / 70 % Abfahrt) und enge Spitzkehren.",
+          "kondition": "Sehr sportliches Tempo — etwa 25–75 km und bis zu 1.500 Höhenmeter pro Tag."
         }
       ],
       "buttons": {
@@ -335,30 +343,6 @@
       "success": {
         "title": "Anfrage gesendet!",
         "message": "Vielen Dank für dein Interesse. Wir melden uns innerhalb von 24 Stunden, um deine Reise zu planen."
-      }
-    },
-    "callback": {
-      "heading": "Lieber zurückgerufen werden?",
-      "subtitle": "Hinterlasse deine Daten und wir rufen dich an, um alle Fragen zu klären.",
-      "labels": {
-        "name": "Name",
-        "phone": "Telefon",
-        "email": "E-Mail",
-        "message": "Nachricht (optional)"
-      },
-      "placeholders": {
-        "name": "Dein Name",
-        "phone": "Deine Telefonnummer",
-        "email": "deine@email.com",
-        "message": "Beste Erreichbarkeit oder was wir sonst wissen sollten..."
-      },
-      "buttons": {
-        "submit": "Rückruf anfordern",
-        "submitting": "Wird gesendet..."
-      },
-      "success": {
-        "title": "Anfrage gesendet!",
-        "message": "Danke! Wir rufen dich so schnell wie möglich zurück."
       }
     }
   },

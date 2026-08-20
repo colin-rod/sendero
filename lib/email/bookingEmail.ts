@@ -1,10 +1,6 @@
-import type { BookingFormData, CallbackFormData } from '@/lib/types/database';
+import type { BookingFormData } from '@/lib/types/database';
 
 interface BookingEmailData extends BookingFormData {
-  locale: string;
-}
-
-interface CallbackEmailData extends CallbackFormData {
   locale: string;
 }
 
@@ -32,31 +28,6 @@ Submitted: ${new Date().toLocaleString()}
 
   return {
     subject: 'New Booking Inquiry',
-    text: emailBody,
-  };
-}
-
-/**
- * Generates email content for callback (Rückruf) request submissions
- */
-export function generateCallbackEmail(data: CallbackEmailData) {
-  const emailBody = `
-New callback request from Sendero website:
-
-Name: ${data.name}
-Phone: ${data.phone}
-Email: ${data.email}
-Language: ${data.locale}
-
-Message:
-${data.message || 'None'}
-
----
-Submitted: ${new Date().toLocaleString()}
-`.trim();
-
-  return {
-    subject: 'New Callback Request',
     text: emailBody,
   };
 }

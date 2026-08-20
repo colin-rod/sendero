@@ -294,6 +294,10 @@
         "technicalLevel": "Nivel técnico / Condición física",
         "message": "Cuéntanos sobre tu viaje"
       },
+      "levelInfo": {
+        "technik": "Técnica",
+        "kondition": "Condición física"
+      },
       "placeholders": {
         "name": "Tu nombre",
         "email": "tu@correo.com",
@@ -310,22 +314,26 @@
         {
           "value": "basic",
           "label": "Principiante",
-          "description": "No se necesita experiencia previa en mountain bike fuera de carretera. Caminos de bosque y grava fáciles, subidas suaves, ritmo relajado — aproximadamente 5–15 km y hasta 250 m de desnivel por día."
+          "technik": "No se necesita experiencia previa en mountain bike fuera de carretera — caminos de bosque y grava fáciles con subidas suaves.",
+          "kondition": "Ritmo relajado — aproximadamente 5–15 km y hasta 250 m de desnivel por día."
         },
         {
           "value": "intermediate",
           "label": "Intermedio",
-          "description": "Cómodo en singletrack fluido con pequeños obstáculos como raíces y piedras. Ritmo un poco más deportivo — aproximadamente 10–25 km y hasta 500 m de desnivel por día."
+          "technik": "Cómodo en singletrack fluido con pequeños obstáculos como raíces y piedras.",
+          "kondition": "Ritmo un poco más deportivo — aproximadamente 10–25 km y hasta 500 m de desnivel por día."
         },
         {
           "value": "advanced",
           "label": "Avanzado",
-          "description": "Seguro en singletrack técnico con obstáculos medianos y superficies sueltas, subidas y bajadas de hasta 20–40% de pendiente. Ritmo deportivo — aproximadamente 15–45 km y hasta 1.000 m de desnivel por día."
+          "technik": "Seguro en singletrack técnico con obstáculos medianos y superficies sueltas, subidas y bajadas de hasta 20–40% de pendiente.",
+          "kondition": "Ritmo deportivo — aproximadamente 15–45 km y hasta 1.000 m de desnivel por día."
         },
         {
           "value": "expert",
           "label": "Experto",
-          "description": "Domina obstáculos grandes, terreno técnico empinado (hasta 30% de subida / 70% de bajada) y curvas cerradas. Ritmo muy deportivo — aproximadamente 25–75 km y hasta 1.500 m de desnivel por día."
+          "technik": "Domina obstáculos grandes, terreno técnico empinado (hasta 30% de subida / 70% de bajada) y curvas cerradas.",
+          "kondition": "Ritmo muy deportivo — aproximadamente 25–75 km y hasta 1.500 m de desnivel por día."
         }
       ],
       "buttons": {
@@ -335,30 +343,6 @@
       "success": {
         "title": "¡Solicitud enviada!",
         "message": "Gracias por tu interés. Te responderemos dentro de 24 horas para ayudarte a planear tu viaje."
-      }
-    },
-    "callback": {
-      "heading": "¿Prefieres que te llamemos?",
-      "subtitle": "Déjanos tus datos y te llamaremos para responder tus preguntas.",
-      "labels": {
-        "name": "Nombre",
-        "phone": "Teléfono",
-        "email": "Correo electrónico",
-        "message": "Mensaje (opcional)"
-      },
-      "placeholders": {
-        "name": "Tu nombre",
-        "phone": "Tu número de teléfono",
-        "email": "tu@correo.com",
-        "message": "Mejor horario para contactarte o algo más que debamos saber..."
-      },
-      "buttons": {
-        "submit": "Solicitar Llamada",
-        "submitting": "Enviando..."
-      },
-      "success": {
-        "title": "¡Solicitud enviada!",
-        "message": "¡Gracias! Te llamaremos lo antes posible."
       }
     }
   },

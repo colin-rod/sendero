@@ -6,9 +6,10 @@ import { Info } from 'lucide-react';
 interface InfoTooltipProps {
   label: string;
   children: React.ReactNode;
+  panelClassName?: string;
 }
 
-export function InfoTooltip({ label, children }: InfoTooltipProps) {
+export function InfoTooltip({ label, children, panelClassName = 'w-56' }: InfoTooltipProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -27,7 +28,7 @@ export function InfoTooltip({ label, children }: InfoTooltipProps) {
       {isOpen && (
         <span
           role="tooltip"
-          className="absolute left-1/2 z-10 mt-2 w-56 -translate-x-1/2 rounded-md border border-border bg-white p-3 text-label text-muted-foreground shadow-lg"
+          className={`absolute left-1/2 z-10 mt-2 -translate-x-1/2 rounded-md border border-border bg-white p-3 text-label text-muted-foreground shadow-lg ${panelClassName}`}
         >
           {children}
         </span>

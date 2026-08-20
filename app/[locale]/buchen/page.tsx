@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import { BuchenForm } from '@/components/features/buchen/BuchenForm';
-import { CallbackForm } from '@/components/features/buchen/CallbackForm';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
 import { buildAlternates, ogImages } from '@/lib/seo/canonical';
@@ -49,9 +48,8 @@ export default function BuchenPage() {
             <p className="text-body text-muted-foreground">{t('subtitle')}</p>
           </div>
 
-          <div className="mx-auto flex max-w-2xl flex-col gap-10">
+          <div className="mx-auto max-w-2xl">
             <BuchenForm />
-            <CallbackForm />
           </div>
         </Container>
       </main>

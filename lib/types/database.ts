@@ -104,14 +104,6 @@ export interface BookingFormData {
   message?: string;
 }
 
-// Callback (Rückruf) request form types
-export interface CallbackFormData {
-  name: string;
-  phone: string;
-  email: string;
-  message?: string;
-}
-
 // Supabase Database schema type
 export interface Database {
   public: {

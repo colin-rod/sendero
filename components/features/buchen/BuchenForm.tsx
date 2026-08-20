@@ -15,7 +15,8 @@ import posthog from 'posthog-js';
 interface LevelOption {
   value: TechnicalLevel;
   label: string;
-  description: string;
+  technik: string;
+  kondition: string;
 }
 
 export function BuchenForm() {
@@ -176,7 +177,26 @@ export function BuchenForm() {
 
         {/* Technical Level / Kondition */}
         <div className="w-full">
-          <label className="label mb-3 block text-label">{t('labels.technicalLevel')}</label>
+          <div className="mb-3 flex items-center gap-1.5">
+            <label className="label block text-label">{t('labels.technicalLevel')}</label>
+            <InfoTooltip label={t('labels.technicalLevel')} panelClassName="w-72">
+              <div className="space-y-3">
+                {levels.map((level) => (
+                  <div key={level.value}>
+                    <p className="font-semibold text-foreground">{level.label}</p>
+                    <p>
+                      <span className="font-medium">{t('levelInfo.technik')}:</span>{' '}
+                      {level.technik}
+                    </p>
+                    <p>
+                      <span className="font-medium">{t('levelInfo.kondition')}:</span>{' '}
+                      {level.kondition}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </InfoTooltip>
+          </div>
           <div className="space-y-2">
             {levels.map((level) => (
               <div key={level.value} className="flex items-start">
@@ -192,10 +212,9 @@ export function BuchenForm() {
                 />
                 <label
                   htmlFor={`technicalLevel-${level.value}`}
-                  className="ml-2 flex cursor-pointer items-center gap-1.5"
+                  className="ml-2 cursor-pointer text-label"
                 >
-                  <span className="text-label">{level.label}</span>
-                  <InfoTooltip label={level.label}>{level.description}</InfoTooltip>
+                  {level.label}
                 </label>
               </div>
             ))}
