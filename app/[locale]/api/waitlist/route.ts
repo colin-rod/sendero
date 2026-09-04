@@ -2,17 +2,22 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { validateWaitlistForm } from '@/lib/utils/validation';
 import { logEvent, emailDomain } from '@/lib/utils/log';
+import { generateWaitlistEmail } from '@/lib/email/waitlistEmail';
 import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse } from '@/lib/types/database';
 
 /**
  * POST /api/waitlist
  * Handles waitlist signup submissions — writes to Google Sheets via Apps Script
  */
-export async function POST(request: NextRequest) {
+export async function POST(
+  request: NextRequest,
+  { params }: { params: Promise<{ locale: string }> }
+) {
   const request_id = crypto.randomUUID();
   const event = 'waitlist_submit';
 
   try {
+    const { locale } = await params;
     const body = await request.json();
 
     const validationErrors = validateWaitlistForm(body);
@@ -58,17 +63,13 @@ export async function POST(request: NextRequest) {
     // Send confirmation email — awaited so Vercel doesn't shut down before it completes
     const resend = new Resend(process.env.RESEND_API_KEY);
     try {
+      const emailContent = generateWaitlistEmail(locale);
       await resend.emails.send({
         from: process.env.RESEND_FROM_EMAIL ?? 'julian@senderobiketrails.com',
         to: formData.email.toLowerCase().trim(),
-        subject: "You're on the Sendero waitlist!",
-        html: `
-          <h2>Welcome to Sendero Bike Trails!</h2>
-          <p>Thanks for joining the waitlist. We'll reach out as soon as our first tours are ready to book.</p>
-          <p>Stay tuned — something special is coming.</p>
-          <br/>
-          <p>The Sendero Team</p>
-        `,
+        subject: emailContent.subject,
+        html: emailContent.html,
+        text: emailContent.text,
       });
     } catch (err) {
       logEvent({ event: 'waitlist_email', request_id, status: 'fail', error: err instanceof Error ? err.message : String(err) });

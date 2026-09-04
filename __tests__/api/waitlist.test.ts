@@ -84,7 +84,7 @@ describe('POST /api/waitlist', () => {
       mockSheetSuccess();
       const request = createRequest(validFormData);
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(201);
@@ -103,7 +103,7 @@ describe('POST /api/waitlist', () => {
         email: 'TEST@EXAMPLE.COM',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(201);
@@ -131,7 +131,7 @@ describe('POST /api/waitlist', () => {
           tourDuration: duration,
         });
 
-        const response = await POST(request);
+        const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
         expect(response.status).toBe(201);
       }
     });
@@ -143,7 +143,7 @@ describe('POST /api/waitlist', () => {
         interestTypes: ['hike', 'bike', 'e_bike', 'women_only', 'coffee_farm'],
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       expect(response.status).toBe(201);
     });
 
@@ -154,7 +154,7 @@ describe('POST /api/waitlist', () => {
         interestTypes: ['hike'],
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       expect(response.status).toBe(201);
     });
 
@@ -168,7 +168,7 @@ describe('POST /api/waitlist', () => {
           fitnessLevel: level,
         });
 
-        const response = await POST(request);
+        const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
         expect(response.status).toBe(201);
       }
     });
@@ -187,7 +187,7 @@ describe('POST /api/waitlist', () => {
           travelTimeline: timeline,
         });
 
-        const response = await POST(request);
+        const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
         expect(response.status).toBe(201);
       }
     });
@@ -200,7 +200,7 @@ describe('POST /api/waitlist', () => {
         email: '',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -214,7 +214,7 @@ describe('POST /api/waitlist', () => {
         email: 'invalid-email',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -228,7 +228,7 @@ describe('POST /api/waitlist', () => {
         tourDuration: '',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -242,7 +242,7 @@ describe('POST /api/waitlist', () => {
         tourDuration: 'invalid',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -255,7 +255,7 @@ describe('POST /api/waitlist', () => {
         interestTypes: [],
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -269,7 +269,7 @@ describe('POST /api/waitlist', () => {
         interestTypes: ['invalid'],
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -282,7 +282,7 @@ describe('POST /api/waitlist', () => {
         fitnessLevel: '',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -296,7 +296,7 @@ describe('POST /api/waitlist', () => {
         fitnessLevel: 'invalid',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -309,7 +309,7 @@ describe('POST /api/waitlist', () => {
         travelTimeline: '',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -323,7 +323,7 @@ describe('POST /api/waitlist', () => {
         travelTimeline: 'invalid',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -339,7 +339,7 @@ describe('POST /api/waitlist', () => {
         travelTimeline: '',
       });
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(400);
@@ -353,7 +353,7 @@ describe('POST /api/waitlist', () => {
       delete process.env.GOOGLE_SHEETS_WEBHOOK_URL;
       const request = createRequest(validFormData);
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(500);
@@ -367,7 +367,7 @@ describe('POST /api/waitlist', () => {
       mockSheetFailure();
       const request = createRequest(validFormData);
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(500);
@@ -379,7 +379,7 @@ describe('POST /api/waitlist', () => {
       mockSheetFailure(503);
       const request = createRequest(validFormData);
 
-      await POST(request);
+      await POST(request, { params: Promise.resolve({ locale: 'en' }) });
 
       expect(mockConsoleError).toHaveBeenCalledTimes(1);
       const logged = JSON.parse(mockConsoleError.mock.calls[0][0] as string);
@@ -400,7 +400,7 @@ describe('POST /api/waitlist', () => {
         },
       } as unknown as NextRequest;
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(500);
@@ -412,7 +412,7 @@ describe('POST /api/waitlist', () => {
       (global.fetch as jest.Mock).mockRejectedValueOnce(new Error('Network error'));
       const request = createRequest(validFormData);
 
-      const response = await POST(request);
+      const response = await POST(request, { params: Promise.resolve({ locale: 'en' }) });
       const data = await response.json();
 
       expect(response.status).toBe(500);
@@ -428,7 +428,7 @@ describe('POST /api/waitlist', () => {
         },
       } as unknown as NextRequest;
 
-      await POST(request);
+      await POST(request, { params: Promise.resolve({ locale: 'en' }) });
 
       expect(mockConsoleError).toHaveBeenCalledTimes(1);
       const logged = JSON.parse(mockConsoleError.mock.calls[0][0] as string);
