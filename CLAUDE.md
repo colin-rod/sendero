@@ -609,8 +609,8 @@ single source of truth. This is a quick-glance summary only; don't let it
 drift into a second full copy again (that's exactly how it went stale the
 first time).
 
-**Brand:** `primary-500`/`riverGreen-500` `#1e6a62` (Figma `primary-selva`) ·
-`riverForest` `#264c43` (Figma `primary-bosque`) · `secondary-oro-500`
+**Brand:** `primary-500`/`riverGreen-500` `#006d62` (Figma `primary-selva`) ·
+`riverForest` `#154d44` (Figma `primary-bosque`) · `secondary-oro-500`
 `#d09e00` (Figma `secondary-oro`) · `accent-400`/`goldYellow` `#fff0bb`
 (Figma `secondary-oro-crema`) · `lava` `#d84900` (Figma `accent-lava`)
 

@@ -7,7 +7,7 @@ const TRAIL_COLORS = [
   landscape.cacao.nuez,     // #b85c42
   landscape.azul.cielo,     // #244b71
   landscape.lila.flor,      // #4a3b7a
-  landscape.verde.selva,    // #006d62 — Landscape verde-selva, NOT Brand primary-selva (#1e6a62)
+  landscape.verde.selva,    // #006d62 — Landscape verde-selva (same value as Brand primary-selva as of the April 2026 update, kept as a separate token)
   landscape.naranjo.fuego,  // #fa7121
   landscape.cafe.arcilla,   // #725d40
   landscape.cacao.pulpa,    // #8f3530
