@@ -99,7 +99,7 @@ const trailMarkerColor = landscape.cacao.nuez;
 
 ## Color System
 
-> ⚠️ **Note on similar names:** Figma defines `Brand.primary-selva` (`#1e6a62`) and `Landscape.verde.verde-selva` (`#006d62`) as two **different** colors, and likewise `Brand.primary-bosque` (`#264c43`) vs `Landscape.verde.verde-bosque` (`#154d44`). These are intentionally distinct tokens — do not conflate them.
+> ⚠️ **Note on similar names:** As of the April 2026 brand update, `Brand.primary-selva` and `Landscape.verde.verde-selva` share the same value (`#006d62`), and likewise `Brand.primary-bosque` and `Landscape.verde.verde-bosque` both resolve to `#154d44`. They were previously distinct colors and remain separate tokens with distinct semantic intent (brand vs. data-viz accent) — use the one that matches your context rather than treating either as an alias for the other.
 
 ### Brand
 
@@ -107,8 +107,8 @@ const trailMarkerColor = landscape.cacao.nuez;
 
 | Code | Value | Figma name |
 |---|---|---|
-| `primary-500` / `riverGreen-500` | `#1e6a62` | `Brand.primary-selva` |
-| `riverForest` | `#264c43` | `Brand.primary-bosque` |
+| `primary-500` / `riverGreen-500` | `#006d62` | `Brand.primary-selva` |
+| `riverForest` | `#154d44` | `Brand.primary-bosque` |
 | `secondary-oro-500` | `#d09e00` | `Brand.secondary-oro` |
 | `accent-400` / `goldYellow` | `#fff0bb` | `Brand.secondary-oro-crema` (= `Text.text-oro-crema`) |
 | `lava` | `#d84900` | `Brand.accent-lava` (same swatch as `landscape.naranjo.lava`) |
@@ -131,7 +131,7 @@ Full tint/shade scales:
 | 200 | `#9ecfc9` | `#ffe352` |
 | 300 | `#72bab2` | `#ffd012` |
 | 400 | `#4da89f` | `#e6b300` |
-| 500 | `#1e6a62` | `#d09e00` |
+| 500 | `#006d62` | `#d09e00` |
 | 600 | `#1a5e57` | `#aa7601` |
 | 700 | `#154f49` | `#855301` |
 | 800 | `#10403b` | `#673c03` |
@@ -214,7 +214,7 @@ These remain non-Figma-sourced Tailwind-style scales — this Figma export didn'
 - Ensure sufficient contrast (4.5:1 for text)
 
 ❌ **Don't:**
-- Hardcode hex values in components — always reference a token class (`bg-primary-500`, not `bg-[#1e6a62]`). A hardcoded value looks correct today but silently stops tracking future token updates — this already happened once (the trail map's marker colors were still showing a pre-migration brand color until this pass).
+- Hardcode hex values in components — always reference a token class (`bg-primary-500`, not `bg-[#006d62]`). A hardcoded value looks correct today but silently stops tracking future token updates — this already happened once (the trail map's marker colors were still showing a pre-migration brand color until this pass).
 - Confuse `primary`/`riverForest` with `landscape.verde.selva`/`landscape.verde.bosque` — same root names, different colors, different purposes.
 - Use red for anything other than errors/destructive actions
 - Use low-contrast color combinations

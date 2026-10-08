@@ -18,6 +18,7 @@ jest.mock('next-intl', () => ({
       'legal.heading': 'Legal',
       'legal.imprint': 'Imprint',
       'legal.privacy': 'Privacy Policy',
+      'legal.terms': 'Terms & Conditions',
     };
 
     return translations[key] ?? key;
@@ -41,11 +42,11 @@ jest.mock('@/lib/i18n/routing', () => ({
 }));
 
 describe('Footer', () => {
-  it('uses the dark logo asset', () => {
+  it('uses the light (white-stroke) logo asset for its dark background', () => {
     render(<Footer />);
 
     const logo = screen.getByAltText('sendero bike trails');
-    expect(logo).toHaveAttribute('src', '/Logo_Dark.svg');
+    expect(logo).toHaveAttribute('src', '/Logo_Light.svg');
   });
 
   it('renders as a responsive 3-column grid', () => {

@@ -16,7 +16,7 @@ export const colors = {
     200: '#9ecfc9',
     300: '#72bab2',
     400: '#4da89f',
-    500: '#1e6a62', // River Green — main brand color
+    500: '#006d62', // River Green — main brand color
     600: '#1a5e57',
     700: '#154f49',
     800: '#10403b',
@@ -62,7 +62,7 @@ export const colors = {
     200: '#9ecfc9',
     300: '#72bab2',
     400: '#4da89f',
-    500: '#1e6a62', // River Green from Figma
+    500: '#006d62', // River Green from Figma
     600: '#1a5e57',
     700: '#154f49',
     800: '#10403b',
@@ -70,7 +70,7 @@ export const colors = {
   },
 
   // River Forest (from Figma primary-river-forest token)
-  riverForest: '#264c43',
+  riverForest: '#154d44',
 
   // goldYellow alias (canonical brand token from Figma)
   goldYellow: '#fff0bb',
@@ -145,7 +145,7 @@ export const colors = {
 /**
  * Color usage guidelines:
  *
- * PRIMARY (River Green - #1e6a62)
+ * PRIMARY (River Green - #006d62)
  * - Use for: Primary buttons, brand elements, key CTAs, highlights
  * - Variants: 500 (default), 600 (hover), 100 (light backgrounds), 50 (subtle backgrounds)
  *
@@ -174,11 +174,11 @@ export const colors = {
  * - Use for: Secondary text, muted text, placeholders
  * - Access via: muted.foreground or gray.600
  *
- * RIVER GREEN (#1e6a62) — new brand color
+ * RIVER GREEN (#006d62) — new brand color
  * - Use for: Eco/nature accents, secondary CTAs, icons, tags
  * - Access via: riverGreen.500 (or 50-900 scale)
  *
- * RIVER FOREST (#264c43) — darker forest brand color
+ * RIVER FOREST (#154d44) — darker forest brand color
  * - Use for: Deeper eco/nature accents, hover states on river green elements
  * - Access via: riverForest
  *
@@ -209,13 +209,17 @@ export type ColorToken = typeof colors;
  * used for data-visualization-style accents — e.g. distinguishing trail
  * routes/markers on the map. 35 colors total.
  *
- * NAMING COLLISION — read before using verde.* values:
- * Figma defines two different colors with similar roots that must stay
- * distinct (different keys, different hex values, do NOT merge):
- *   - colors.primary[500] / colors.riverGreen[500] = Brand "primary-selva" = #1e6a62
+ * NAMING NOTE — read before using verde.* values:
+ * As of the April 2026 brand update, the Figma "Brand" primary tokens were
+ * realigned to match the "Landscape" verde tokens, so these now share the
+ * same hex values (previously they were intentionally distinct colors):
+ *   - colors.primary[500] / colors.riverGreen[500] = Brand "primary-selva" = #006d62
  *   - landscape.verde.selva                        = Landscape "verde-selva" = #006d62
- *   - colors.riverForest                           = Brand "primary-bosque" = #264c43
+ *   - colors.riverForest                           = Brand "primary-bosque" = #154d44
  *   - landscape.verde.bosque                       = Landscape "verde-bosque" = #154d44
+ * They remain separate keys (different semantic intent — brand vs. data-viz
+ * accent) even though the values now coincide; keep using the token that
+ * matches your context rather than treating one as an alias for the other.
  */
 export const landscape = {
   cacao: {

@@ -20,6 +20,7 @@ export { spacing, type SpacingToken } from './spacing';
 export { shadows, type ShadowToken } from './shadows';
 export { radius, type RadiusToken } from './radius';
 export { animations, type AnimationToken } from './animations';
+export { glyphs, type GlyphToken } from './glyphs';
 
 /**
  * Complete design token set
@@ -32,6 +33,7 @@ export const designTokens = {
   shadows: require('./shadows').shadows,
   radius: require('./radius').radius,
   animations: require('./animations').animations,
+  glyphs: require('./glyphs').glyphs,
 } as const;
 
 export type DesignTokens = typeof designTokens;
