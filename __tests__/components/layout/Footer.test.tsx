@@ -18,6 +18,7 @@ jest.mock('next-intl', () => ({
       'legal.heading': 'Legal',
       'legal.imprint': 'Imprint',
       'legal.privacy': 'Privacy Policy',
+      'legal.terms': 'Terms & Conditions',
     };
 
     return translations[key] ?? key;

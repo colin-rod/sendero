@@ -17,6 +17,7 @@ const STATIC_ROUTES: RouteEntry[] = [
   { path: '/trails', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/datenschutz', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/impressum', priority: 0.3, changeFrequency: 'yearly' },
+  { path: '/agb', priority: 0.3, changeFrequency: 'yearly' },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
