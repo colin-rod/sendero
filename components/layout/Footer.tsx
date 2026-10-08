@@ -82,6 +82,9 @@ export function Footer() {
             <Link href="/datenschutz" className="text-body text-white transition-colors hover:text-accent-400">
               {t('legal.privacy')}
             </Link>
+            <Link href="/agb" className="text-body text-white transition-colors hover:text-accent-400">
+              {t('legal.terms')}
+            </Link>
           </div>
 
         </div>
