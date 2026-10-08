@@ -42,7 +42,9 @@ export default function AgbPage() {
 
                 <div className="flex flex-col gap-2">
                   <p className="font-bold">{t('servicesTitle')}</p>
-                  <p>{t('servicesText')}</p>
+                  <p>{t('servicesText1')}</p>
+                  <p>{t('servicesText2')}</p>
+                  <p>{t('servicesText3')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -78,6 +80,7 @@ export default function AgbPage() {
                   </div>
                   <p>{t('withdrawalText2')}</p>
                   <p>{t('withdrawalText3')}</p>
+                  <p>{t('withdrawalText4')}</p>
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -125,17 +128,14 @@ export default function AgbPage() {
                   <p>{t('finalText1')}</p>
                   <p>{t('finalText2')}</p>
                   <p>{t('finalText3')}</p>
+                  <p>{t('finalText4')}</p>
+                  <p>{t('finalText5')}</p>
                 </div>
 
                 <div className="flex flex-col gap-1">
                   <p className="font-bold">{t('contactTitle')}</p>
-                  <p>sendero bike trails</p>
-                  <p>Julian Pérez</p>
-                  <p>Pettenkoferstrasse 6</p>
-                  <p>10247 Berlin</p>
-                  <p>julian@senderobiketrails.com</p>
-                  <p>+49 176 31470193</p>
-                  <p>senderobiketrails.com</p>
+                  <p>sendero bike trails · Julian Pérez · Pettenkoferstrasse 6, 10247 Berlin</p>
+                  <p>julian@senderobiketrails.com · +49 176 31470193 · senderobiketrails.com</p>
                 </div>
 
                 <p>{t('lastUpdated')}</p>
