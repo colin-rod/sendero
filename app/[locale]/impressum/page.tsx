@@ -10,7 +10,7 @@ export default function ImpressumPage() {
     <div className="flex min-h-screen flex-col">
       <Header logoVariant="dark" />
       <main id="main-content" className="flex-1">
-        <section className="py-16 md:py-24">
+        <section className="pt-32 pb-16 md:pt-24 md:pb-24">
           <Container>
             <div className="max-w-2xl mx-auto flex flex-col gap-8">
 
