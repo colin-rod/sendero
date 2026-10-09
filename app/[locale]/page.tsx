@@ -39,7 +39,7 @@ export default function HomePage() {
   const locale = useLocale();
   const tHero = useTranslations('hero');
   const tHeroIntro = useTranslations('heroIntro');
-  const tWaitlist = useTranslations('waitlist');
+  const tNextTrips = useTranslations('nextTrips');
   const tTourGrid = useTranslations('tourGrid');
   const tHeader = useTranslations('header');
   const tTrails = useTranslations('trails.master');
@@ -217,9 +217,9 @@ export default function HomePage() {
           </section>
         </ScrollReveal>
 
-        {/* Simplified Waitlist Section - Bottom of Page */}
+        {/* Next Trips + Waitlist Section - Bottom of Page */}
         <ScrollReveal delay={200}>
-          <section id="waitlist" className="relative h-[100svh] min-h-[100svh] flex flex-col items-center justify-center overflow-hidden cta-section">
+          <section id="waitlist" className="relative min-h-[100svh] py-20 flex flex-col items-center justify-center overflow-hidden cta-section">
             {/* Background image */}
             <div className="absolute inset-0 -z-10">
               <Image
@@ -228,21 +228,29 @@ export default function HomePage() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/50" />
+              <div className="absolute inset-0 bg-black/70" />
             </div>
 
             {/* Content */}
             <Container className="relative z-10 text-center flex flex-col items-center">
-              <h2 className="text-h1 font-bold text-white mb-4">
-                {tWaitlist('becomeAPioneer')}
+              <h2 className="text-h1 font-bold text-white mb-10">
+                {tNextTrips('heading')}
               </h2>
-              <p className="mb-8 text-h3 font-light leading-8 tracking-wide text-background">
-                {tWaitlist('ctaPrompt')}
-              </p>
+
+              <div className="mb-10 flex flex-col gap-1 text-h3 leading-8 tracking-wide text-white">
+                <p className="font-bold">{tNextTrips('pioneerTrip')}</p>
+                <p className="font-light">{tNextTrips('soldOut')}</p>
+              </div>
+
+              <div className="mb-10 max-w-5xl flex flex-col gap-3 text-h3 font-light leading-8 tracking-wide text-background">
+                <p className="font-bold text-white">{tNextTrips('continuesHeading')}</p>
+                <p>{tNextTrips('continuesText')}</p>
+                <p>{tNextTrips('prompt')}</p>
+              </div>
 
               {/* Simplified email form */}
               <div className="max-w-md mx-auto">
-                <BottomEmailCapture />
+                <BottomEmailCapture buttonLabel={tNextTrips('cta')} />
               </div>
             </Container>
           </section>
