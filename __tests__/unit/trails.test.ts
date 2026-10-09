@@ -24,7 +24,7 @@ describe('getAllTrailSummaries', () => {
   it('returns the full list of trail summaries', () => {
     const summaries = getAllTrailSummaries();
     expect(summaries).toBe(trailSummaries);
-    expect(summaries).toHaveLength(9);
+    expect(summaries).toHaveLength(8);
   });
 
   it('includes expected trails with correct slugs', () => {

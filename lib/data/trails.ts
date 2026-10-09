@@ -238,17 +238,6 @@ export const trailSummaries: TrailSummary[] = [
     comingSoon: true,
     priority: 8,
   },
-  {
-    id: 'sendero-luminoso',
-    slug: 'sendero-luminoso',
-    name: 'Sendero Luminoso',
-    difficulty: 'Easy',
-    distance: 0,
-    duration: '',
-    thumbnail: '/tours/sendero_luminoso.webp',
-    comingSoon: true,
-    priority: 9,
-  },
 ];
 
 /**

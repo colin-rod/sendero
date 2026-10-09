@@ -48,7 +48,7 @@ export default function HomePage() {
     { name: tHeader('brandName'), path: '' },
   ]);
   // ItemList of all surfaced tours so AI/SEO crawlers can discover trail names.
-  const tourCardKeys = ['guadua', 'cafe', 'agua', 'volcan', 'cacao', 'paramo', 'tigre', 'oro', 'luminoso'];
+  const tourCardKeys = ['guadua', 'cafe', 'agua', 'volcan', 'cacao', 'paramo', 'tigre', 'oro'];
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -210,17 +210,6 @@ export default function HomePage() {
                     difficulty: tTourGrid('cards.oro.difficulty'),
                     elevation: tTourGrid('cards.oro.elevation'),
                     elevationGain: tTourGrid('cards.oro.elevationGain'),
-                  },
-                  {
-                    id: 'luminoso',
-                    title: tTourGrid('cards.luminoso.name'),
-                    imageSrc: '/tours/sendero_luminoso.webp',
-                    imageAlt: tTourGrid('cards.luminoso.name'),
-                    description: tTourGrid('cards.luminoso.description'),
-                    distance: tTourGrid('cards.luminoso.distance'),
-                    difficulty: tTourGrid('cards.luminoso.difficulty'),
-                    elevation: tTourGrid('cards.luminoso.elevation'),
-                    elevationGain: tTourGrid('cards.luminoso.elevationGain'),
                   },
                 ]}
               />
