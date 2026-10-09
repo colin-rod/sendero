@@ -7,7 +7,12 @@ import { isValidEmail } from '@/lib/utils/validation'
 import { Button } from '@/components/ui/Button'
 import posthog from 'posthog-js'
 
-export default function BottomEmailCapture() {
+interface BottomEmailCaptureProps {
+  /** Label for the collapsed button; defaults to the waitlist join label */
+  buttonLabel?: string
+}
+
+export default function BottomEmailCapture({ buttonLabel }: BottomEmailCaptureProps = {}) {
   const t = useTranslations('hero.emailCapture')
   const tWaitlist = useTranslations('waitlist')
   const tValidation = useTranslations('validation')
@@ -148,7 +153,7 @@ export default function BottomEmailCapture() {
             data-testid="bottom-email-confirmation"
             role="status"
             aria-live="polite"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-[20px] bg-success-500 h-[42px] min-w-[140px] px-6 text-accent-400 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans shadow-xl"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-success-500 h-[42px] min-w-[140px] px-6 text-accent-400 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans shadow-xl"
           >
             {t('buttonSent')}
           </div>
@@ -158,9 +163,9 @@ export default function BottomEmailCapture() {
             disabled={isSubmitting}
             loading={isSubmitting}
             variant="hero-cta"
-            className="whitespace-nowrap transition-all duration-300"
+            className="whitespace-nowrap rounded-full! transition-all duration-300"
           >
-            {isExpanded ? t('buttonSubmit') : tWaitlist('joinButton')}
+            {isExpanded ? t('buttonSubmit') : (buttonLabel ?? tWaitlist('joinButton'))}
           </Button>
         )}
       </div>

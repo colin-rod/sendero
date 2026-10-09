@@ -97,6 +97,15 @@
     "ctaPrompt": "Trag dich ein und erfahre, wann deine nächste Reise startet.",
     "joinButton": "TEILNEHMEN"
   },
+  "nextTrips": {
+    "heading": "Die nächsten Reisen",
+    "pioneerTrip": "Pionierreise · 26.11.–04.12.2026",
+    "soldOut": "Ausgebucht.",
+    "continuesHeading": "Die Reise geht weiter.",
+    "continuesText": "Im März, April und Mai 2027 warten neue, spannende Trails auf Dich.",
+    "prompt": "Du möchtest dabei sein? Trag Dich jetzt ein und erfahre, sobald die nächsten Reisen buchbar sind.",
+    "cta": "Gerne teilnehmen"
+  },
   "form": {
     "labels": {
       "email": "E-Mail-Adresse *",

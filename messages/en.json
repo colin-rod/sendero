@@ -97,6 +97,15 @@
     "ctaPrompt": "Sign up and be the first to know when your next journey starts.",
     "joinButton": "Sign up"
   },
+  "nextTrips": {
+    "heading": "Upcoming Trips",
+    "pioneerTrip": "Pioneer Trip · 26\u00a0Nov\u00a0–\u00a04\u00a0Dec\u00a02026",
+    "soldOut": "Sold out.",
+    "continuesHeading": "The journey continues.",
+    "continuesText": "New and exciting trails await you in March, April and May 2027.",
+    "prompt": "Would you like to join us? Sign up to be the first to know when bookings open for upcoming trips.",
+    "cta": "Count me in"
+  },
   "form": {
     "labels": {
       "email": "Email address *",

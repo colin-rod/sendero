@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import HomePage from '@/app/[locale]/page';
 
 jest.mock('next-intl', () => ({
@@ -67,5 +67,15 @@ describe('HomePage section flow', () => {
     ).toBeTruthy();
 
     expect(screen.queryByTestId('newsletter-hero')).not.toBeInTheDocument();
+  });
+
+  it('renders the next trips announcement in the waitlist section', () => {
+    const { container } = render(<HomePage />);
+    const waitlist = container.querySelector('#waitlist') as HTMLElement;
+
+    expect(within(waitlist).getByRole('heading', { name: 'heading' })).toBeInTheDocument();
+    ['pioneerTrip', 'soldOut', 'continuesHeading', 'continuesText', 'prompt'].forEach((key) => {
+      expect(within(waitlist).getByText(key)).toBeInTheDocument();
+    });
   });
 });
