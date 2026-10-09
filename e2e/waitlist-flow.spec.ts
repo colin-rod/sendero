@@ -1,7 +1,7 @@
 /**
  * E2E Tests: Landing Page & Email Capture Flow
  *
- * Tests the current homepage journey: the inline "Sign up" email capture
+ * Tests the current homepage journey: the inline "Count me in" email capture
  * widget (BottomEmailCapture) and the standalone thank-you page.
  *
  * NOTE: The app is locale-prefixed (middleware always redirects `/` to
@@ -31,9 +31,10 @@ test.describe('Landing Page & Email Capture', () => {
     // Hero intro section
     await expect(page.getByText(/let go\. colombia is waiting\./i)).toBeVisible();
 
-    // Email capture CTA
-    await expect(page.getByText(/sign up and be the first to know/i)).toBeVisible();
-    await expect(page.getByRole('button', { name: /^sign up$/i })).toBeVisible();
+    // Next trips + email capture CTA
+    await expect(page.getByRole('heading', { name: /upcoming trips/i })).toBeVisible();
+    await expect(page.getByText(/would you like to join us/i)).toBeVisible();
+    await expect(page.getByRole('button', { name: /^count me in$/i })).toBeVisible();
   });
 
   test('should complete successful email signup', async ({ page }) => {
@@ -50,7 +51,7 @@ test.describe('Landing Page & Email Capture', () => {
     });
 
     // First click expands the inline email input
-    await page.getByRole('button', { name: /^sign up$/i }).click();
+    await page.getByRole('button', { name: /^count me in$/i }).click();
     await page.getByPlaceholder(/enter your email/i).fill('test@example.com');
 
     // Second click submits
@@ -63,14 +64,14 @@ test.describe('Landing Page & Email Capture', () => {
 
   test('should show validation error for empty/invalid email', async ({ page }) => {
     // Expand, then submit without typing anything
-    await page.getByRole('button', { name: /^sign up$/i }).click();
+    await page.getByRole('button', { name: /^count me in$/i }).click();
     await page.getByRole('button', { name: /^submit$/i }).click();
 
     await expect(page.getByText(/please enter a valid email address/i)).toBeVisible();
   });
 
   test('should show error for malformed email', async ({ page }) => {
-    await page.getByRole('button', { name: /^sign up$/i }).click();
+    await page.getByRole('button', { name: /^count me in$/i }).click();
     await page.getByPlaceholder(/enter your email/i).fill('invalid-email');
     await page.getByRole('button', { name: /^submit$/i }).click();
 
@@ -89,7 +90,7 @@ test.describe('Landing Page & Email Capture', () => {
       });
     });
 
-    await page.getByRole('button', { name: /^sign up$/i }).click();
+    await page.getByRole('button', { name: /^count me in$/i }).click();
     await page.getByPlaceholder(/enter your email/i).fill('existing@example.com');
     await page.getByRole('button', { name: /^submit$/i }).click();
 
@@ -109,7 +110,7 @@ test.describe('Landing Page & Email Capture', () => {
       });
     });
 
-    await page.getByRole('button', { name: /^sign up$/i }).click();
+    await page.getByRole('button', { name: /^count me in$/i }).click();
     await page.getByPlaceholder(/enter your email/i).fill('test@example.com');
     await page.getByRole('button', { name: /^submit$/i }).click();
 
@@ -126,7 +127,7 @@ test.describe('Landing Page & Email Capture', () => {
       });
     });
 
-    await page.getByRole('button', { name: /^sign up$/i }).click();
+    await page.getByRole('button', { name: /^count me in$/i }).click();
     await page.getByPlaceholder(/enter your email/i).fill('test@example.com');
     await page.getByRole('button', { name: /^submit$/i }).click();
 
@@ -175,14 +176,14 @@ test.describe('Responsive Design', () => {
     await page.setViewportSize({ width: 375, height: 667 }); // iPhone SE size
     await page.goto('/en');
 
-    await expect(page.getByRole('button', { name: /^sign up$/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^count me in$/i })).toBeVisible();
   });
 
   test('should be tablet responsive', async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 }); // iPad size
     await page.goto('/en');
 
-    await expect(page.getByRole('button', { name: /^sign up$/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^count me in$/i })).toBeVisible();
   });
 });
 

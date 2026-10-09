@@ -47,6 +47,16 @@ describe('BottomEmailCapture', () => {
     expect(joinButton).toHaveClass('bg-primary-500', 'text-accent-400');
   });
 
+  it('uses a custom collapsed button label and still switches to submit when expanded', async () => {
+    const user = userEvent.setup();
+    render(<BottomEmailCapture buttonLabel="Count me in" />);
+
+    expect(screen.queryByRole('button', { name: 'JOIN' })).not.toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Count me in' }));
+
+    expect(screen.getByRole('button', { name: 'SUBMIT' })).toBeInTheDocument();
+  });
+
   it('keeps email input and submit action in the same row after expanding', async () => {
     const user = userEvent.setup();
     render(<BottomEmailCapture />);

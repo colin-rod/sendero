@@ -97,6 +97,15 @@
     "ctaPrompt": "Regístrate y entérate, cuándo comienza tu próxima travesía.",
     "joinButton": "Regístrate"
   },
+  "nextTrips": {
+    "heading": "Próximos viajes",
+    "pioneerTrip": "Viaje pionero · 26.11.–04.12.2026",
+    "soldOut": "Plazas agotadas.",
+    "continuesHeading": "La aventura continúa.",
+    "continuesText": "En marzo, abril y mayo de 2027 te esperan nuevos y emocionantes senderos.",
+    "prompt": "¿Quieres acompañarnos? Inscríbete y entérate cuando se abran las reservas para los próximos viajes.",
+    "cta": "Quiero participar"
+  },
   "form": {
     "labels": {
       "email": "Correo electrónico *",
