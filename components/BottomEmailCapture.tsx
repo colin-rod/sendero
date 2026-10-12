@@ -137,9 +137,11 @@ export default function BottomEmailCapture({ buttonLabel }: BottomEmailCapturePr
             className="
               input
               w-full
+              h-[42px]
+              rounded-full
+              border-0
+              px-5
               bg-white
-              border-2 border-accent-400
-              focus:border-accent-400 focus:ring-2 focus:ring-accent-400
               text-foreground placeholder:text-gray-600
             "
             disabled={isSubmitting}
