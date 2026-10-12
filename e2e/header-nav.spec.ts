@@ -2,7 +2,7 @@
  * E2E Tests: Header across every page and locale
  *
  * Regression coverage for the outline-logo swap (Logo_Dark.svg /
- * Logo_Light.svg) and the "Mountain Bike Urlaub/Holidays/Vacaciones en MTB"
+ * Logo_Light.svg) and the "Reisen/Trips/Viajes"
  * nav rename — confirms the header, logo variant, language switcher, and
  * MTB trip dropdown all still render/behave correctly on every routed page,
  * in all three locales.
@@ -27,9 +27,9 @@ const routes: { path: string; logoVariant: 'dark' | 'white' }[] = [
 ];
 
 const mtbNavLabel: Record<(typeof locales)[number], string> = {
-  en: 'Mountain Bike Holidays',
-  de: 'Mountain Bike Urlaub',
-  es: 'Vacaciones en MTB',
+  en: 'Trips',
+  de: 'Reisen',
+  es: 'Viajes',
 };
 
 test.describe('Header renders on every page and locale', () => {

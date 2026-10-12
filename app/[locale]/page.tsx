@@ -9,6 +9,7 @@ import HeroVideo from '@/components/HeroVideo';
 import HeroTitle from '@/components/HeroTitle';
 import ScrollReveal from '@/components/ScrollReveal';
 import BottomEmailCapture from '@/components/BottomEmailCapture';
+import { RequestTripCta } from '@/components/RequestTripCta';
 import { TourGrid } from '@/components/features/tourGrid/TourGrid';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
@@ -244,13 +245,18 @@ export default function HomePage() {
 
               <div className="mb-10 max-w-5xl flex flex-col gap-3 text-h3 font-light leading-8 tracking-wide text-background">
                 <p className="font-bold text-white">{tNextTrips('continuesHeading')}</p>
-                <p>{tNextTrips('continuesText')}</p>
+                <p>{tNextTrips.rich('continuesText', { br: () => <span className="hidden md:block" /> })}</p>
                 <p>{tNextTrips('prompt')}</p>
               </div>
 
-              {/* Simplified email form */}
-              <div className="max-w-md mx-auto">
-                <BottomEmailCapture buttonLabel={tNextTrips('cta')} />
+              {/* CTAs: trip inquiry (primary) + waitlist email capture (secondary) */}
+              <div className="max-w-md mx-auto flex flex-col items-center gap-12">
+                <RequestTripCta label={tNextTrips('requestCta')} source="home_next_trips" />
+                <BottomEmailCapture
+                  buttonLabel={tNextTrips('waitlistCta')}
+                  buttonVariant="hero-cta-secondary"
+                  buttonClassName="w-[260px]"
+                />
               </div>
             </Container>
           </section>

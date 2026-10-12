@@ -8,10 +8,10 @@
       "about": "Acerca de",
       "howItWorks": "Cómo Funciona",
       "trails": "Senderos",
-      "mtbReisen": "Vacaciones en MTB",
+      "mtbReisen": "Viajes",
       "mtbReisenNineDays": "9 Días",
       "mtbReisenSevenDays": "7 Días",
-      "buchen": "Reservar"
+      "buchen": "Solicitar"
     },
     "mobileMenu": {
       "toggle": "Alternar menú de navegación",
@@ -104,11 +104,12 @@
   "nextTrips": {
     "heading": "Próximos viajes",
     "pioneerTrip": "Viaje pionero · 26.11.–04.12.2026",
-    "soldOut": "Plazas agotadas.",
+    "soldOut": "Plazas agotadas",
     "continuesHeading": "La aventura continúa.",
-    "continuesText": "En marzo, abril y mayo de 2027 te esperan nuevos y emocionantes senderos.",
-    "prompt": "¿Quieres acompañarnos? Inscríbete y entérate cuando se abran las reservas para los próximos viajes.",
-    "cta": "Quiero participar"
+    "continuesText": "En marzo, abril y mayo de 2027 te esperan nuevos y emocionantes senderos – <br></br>dos grupos por mes, pequeños y cercanos.",
+    "prompt": "¿Quieres acompañarnos?",
+    "requestCta": "Solicitar viaje",
+    "waitlistCta": "Mantenerme informado"
   },
   "form": {
     "labels": {
@@ -290,7 +291,7 @@
     "whatsappMessage": "¡Hola! Me interesa saber más sobre los senderos de bicicleta de Sendero."
   },
   "buchenPage": {
-    "title": "Reserva Tu Viaje",
+    "title": "Solicita tu viaje",
     "subtitle": "¿Listo para los senderos? Cuéntanos tus planes y te ayudamos a reservar tu aventura Sendero.",
     "description": "Reserva tu viaje en bicicleta de montaña con Sendero en la Región Cafetera de Colombia — cuéntanos tus fechas de viaje, tamaño del grupo y nivel de manejo.",
     "form": {
