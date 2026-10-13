@@ -41,7 +41,7 @@ export default function AnfragenPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <JsonLd data={breadcrumbs} />
-      <Header logoVariant="white" />
+      <Header />
 
       <main id="main-content" className="flex-1">
         <AnfragenHero title={t('hero.title')} subtitle={t('hero.subtitle')} />

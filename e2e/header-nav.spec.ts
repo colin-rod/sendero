@@ -1,8 +1,7 @@
 /**
  * E2E Tests: Header across every page and locale
  *
- * Regression coverage for the outline-logo swap (Logo_Dark.svg /
- * Logo_Light.svg) — confirms the header, logo, and language switcher all
+ * Regression coverage for the dark outline logo (Logo_Dark.svg) — confirms the header, logo, and language switcher all
  * still render correctly on every routed page, in all three locales.
  */
 
@@ -20,6 +19,8 @@ const routes = [
   '/faq',
   '/about',
   '/impressum',
+  '/agb',
+  '/anfragen',
 ];
 
 test.describe('Header renders on every page and locale', () => {
@@ -83,4 +84,18 @@ test.describe('Header scroll behavior', () => {
     await page.mouse.wheel(0, 400);
     await expect(header).toHaveClass(/bg-white/);
   });
+});
+
+test.describe('Header background on scroll', () => {
+  for (const route of ['', '/anfragen']) {
+    test(`de${route || '/'} is transparent at the top and white after scrolling`, async ({ page }) => {
+      await page.goto(`/de${route}`);
+
+      const header = page.locator('header');
+      await expect(header).toHaveClass(/bg-transparent/);
+
+      await page.evaluate(() => window.scrollTo(0, 400));
+      await expect(header).toHaveClass(/bg-white/);
+    });
+  }
 });
