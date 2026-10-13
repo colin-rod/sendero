@@ -16,7 +16,6 @@ export interface MtbReisenTrip {
   priceFrom: number;
   currency: string;
   nextDates: string[];
-  bookingEmail: string;
   images: MtbReisenImages;
   days: MtbReisenDay[];
 }

@@ -5,8 +5,7 @@ export const mtbReisenNueveTage: MtbReisenTrip = {
   slug: 'mtb-reisen',
   priceFrom: 3890,
   currency: 'EUR',
-  nextDates: ['2027-04', '2027-11'],
-  bookingEmail: 'julian@senderobiketrails.com',
+  nextDates: ['2027-03', '2027-04', '2027-05'],
   images: {
     hero: '/images/mtb-reisen/hero.jpg',
     introBackground: '/images/mtb-reisen/intro-bg.png',
@@ -34,8 +33,7 @@ export const mtbReisenSiebenTage: MtbReisenTrip = {
   slug: 'mtb-reisen-7-tage',
   priceFrom: 3290,
   currency: 'EUR',
-  nextDates: ['2027-04', '2027-11'],
-  bookingEmail: 'julian@senderobiketrails.com',
+  nextDates: ['2027-03', '2027-04', '2027-05'],
   images: {
     hero: '/images/mtb-reisen/hero.jpg',
     introBackground: '/images/mtb-reisen/intro-bg.png',
