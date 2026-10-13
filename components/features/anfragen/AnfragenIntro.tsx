@@ -26,9 +26,9 @@ export function AnfragenIntro({ eyebrow, title, paragraphs, photoAlt }: Anfragen
 
         <div className="min-w-0 max-w-[600px] flex-[999_1_420px]">
           <p className="text-caption font-semibold uppercase tracking-[0.16em] text-primary-500">{eyebrow}</p>
-          <h2 className="my-5 text-balance text-[clamp(32px,4vw,48px)] font-bold leading-[1.45] text-foreground">
+          <h1 className="my-5 text-balance text-[clamp(32px,4vw,48px)] font-bold leading-[1.45] text-foreground">
             {title}
-          </h2>
+          </h1>
           {paragraphs.map((paragraph) => (
             <p key={paragraph} className="mb-5 text-base leading-[26px] text-foreground">
               {paragraph}

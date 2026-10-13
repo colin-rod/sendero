@@ -2,7 +2,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { AnfragenHero } from '@/components/features/anfragen/AnfragenHero';
 import { AnfragenIntro } from '@/components/features/anfragen/AnfragenIntro';
 import { AnfragenForm } from '@/components/features/anfragen/AnfragenForm';
 import { AnfragenGallery } from '@/components/features/anfragen/AnfragenGallery';
@@ -41,11 +40,9 @@ export default function AnfragenPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <JsonLd data={breadcrumbs} />
-      <Header overlay />
+      <Header />
 
-      <main id="main-content" className="flex-1">
-        <AnfragenHero title={t('hero.title')} subtitle={t('hero.subtitle')} />
-
+      <main id="main-content" className="flex-1 pt-[116px]">
         <AnfragenIntro
           eyebrow={t('intro.eyebrow')}
           title={t('intro.title')}
