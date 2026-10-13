@@ -39,6 +39,16 @@ const nextConfig: NextConfig = {
         destination: '/anfragen',
         permanent: true,
       },
+      {
+        source: '/:locale(de|en|es)/mtb-reisen-7-tage',
+        destination: '/:locale/mtb-reisen',
+        permanent: true,
+      },
+      {
+        source: '/mtb-reisen-7-tage',
+        destination: '/mtb-reisen',
+        permanent: true,
+      },
     ];
   },
 

@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { MtbReisenNavDropdown } from '@/components/layout/MtbReisenNavDropdown';
 
 interface HeaderProps {
   /** Translucent bar while at the top of the page, for hero media. */
@@ -62,7 +61,12 @@ export function Header({ overlay = false }: HeaderProps) {
             <div className="flex items-center gap-8">
               {/* Nav */}
               <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
-                <MtbReisenNavDropdown />
+                <Link
+                  href="/mtb-reisen"
+                  className="text-caption font-medium tracking-[0.06em] uppercase text-foreground transition-opacity hover:opacity-70"
+                >
+                  {t('nav.mtbReisen')}
+                </Link>
                 <Link
                   href="/anfragen"
                   className="text-caption font-medium tracking-[0.06em] uppercase text-foreground transition-opacity hover:opacity-70"

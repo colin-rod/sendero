@@ -9,8 +9,6 @@
       "howItWorks": "Cómo Funciona",
       "trails": "Senderos",
       "mtbReisen": "Tu Viaje",
-      "mtbReisenNineDays": "9 Días",
-      "mtbReisenSevenDays": "7 Días",
       "buchen": "¡Vámonos!"
     },
     "mobileMenu": {
@@ -983,254 +981,290 @@
   },
   "mtbReisen": {
     "seo": {
-      "title": "Vacaciones en MTB – 9 Días por la Región Cafetera",
-      "description": "Un viaje de 9 días en bicicleta de montaña por la Región Cafetera de Colombia — con familias locales, bosques de niebla y el Parque Nacional Los Nevados."
+      "title": "Viaje en bicicleta de montaña por Colombia – 7 o 9 días en el Eje Cafetero",
+      "description": "Grupos pequeños, caminos ancestrales y una finca cafetera como hogar: un viaje en bicicleta de montaña por los Andes colombianos, con acompañamiento personal. Desde 3.290 €."
     },
     "hero": {
-      "title": "9 Días",
-      "subtitle": "The Full sendero experience"
+      "eyebrow": "Colombia en bicicleta de montaña · 7 o 9 días",
+      "title": "Entre café y nubes.",
+      "text": "Grupos pequeños, caminos ancestrales y una finca cafetera como hogar – en pleno corazón de los Andes colombianos.",
+      "primaryCta": "Solicitar viaje",
+      "secondaryCta": "Ver día a día"
     },
-    "overviewBar": {
+    "nav": {
+      "ariaLabel": "Secciones del viaje",
       "overview": "Resumen",
-      "included": "Qué Incluye",
-      "itinerary": "Día a Día",
-      "dates": "Próximas Fechas"
+      "itinerary": "Día a día",
+      "safety": "Seguridad",
+      "price": "Precio",
+      "faq": "Preguntas",
+      "cta": "Solicitar viaje"
     },
-    "intro": {
-      "heading": "Los Andes en Bicicleta de Montaña",
-      "paragraph1": "Los encuentros con familias, comunidades y productores locales te permiten no solo visitar la región, sino formar parte de ella.",
-      "paragraph2": "La historia de la región nos acompaña en cada kilómetro — desde las huellas de la civilización precolombina Quimbaya hasta el Paisaje Cultural Cafetero declarado Patrimonio de la UNESCO.",
-      "priceLabel": "Precio",
-      "pricePrefix": "desde",
-      "nextDatesLabel": "Próximas Fechas",
-      "bookLabel": "Reservar",
-      "bookCta": "Solicitar viaje"
+    "facts": {
+      "items": [
+        "Unos 20 km al día",
+        "110–145 km en total",
+        "Ø 700 m de desnivel",
+        "1.200–3.400 m s. n. m.",
+        "16–24 °C",
+        "4–7 viajeros",
+        "desde 3.290 €"
+      ]
     },
-    "inclusions": {
-      "includedHeading": "Qué Incluye",
-      "notIncludedHeading": "No Incluye",
-      "categories": [
-        {
-          "title": "Alojamiento y Alimentación",
-          "items": [
-            "9 días / 8 noches en la Eco Farm El Tacay",
-            "Traslados al/desde el aeropuerto de Pereira",
-            "Desayuno diario",
-            "Bebidas, snacks y comidas seleccionadas durante los recorridos",
-            "Actividades culturales en El Tacay"
-          ]
-        },
-        {
-          "title": "Bicicleta y Movilidad",
-          "items": [
-            "Bicicleta de montaña",
-            "Casco",
-            "Acompañamiento guiado y traslados durante todo el viaje",
-            "Soporte técnico para la bicicleta en ruta"
-          ]
-        },
-        {
-          "title": "Experiencias y Cultura",
-          "items": [
-            "Degustaciones regionales",
-            "Tradiciones, rituales y vida cotidiana",
-            "Un acercamiento a la artesanía local y al saber tradicional — desde el café y el cacao hasta la cerámica y la orfebrería"
-          ]
-        },
-        {
-          "title": "Organización y Extras",
-          "items": [
-            "Planificación y organización de todo el viaje",
-            "Registro fotográfico y de video profesional",
-            "Un kit de bienvenida personal"
-          ]
-        }
-      ],
-      "notIncludedItems": [
-        "Vuelos hacia y desde Pereira",
-        "Seguro de viaje (obligatorio)",
-        "Entradas, p. ej. al Museo del Oro, otras fincas o actividades culturales fuera de El Tacay",
-        "Comidas y bebidas no incluidas en el itinerario (p. ej. en cafés o restaurantes)",
-        "Gastos personales",
-        "Planificación individual del viaje antes y después del recorrido"
+    "landscapes": {
+      "heading": "Diversa como pocas regiones del mundo.",
+      "text": "En un solo viaje recorres varios pisos térmicos – desde valles cálidos con guadua y huertos frutales hasta el páramo a 3.400 metros. Cada día un paisaje distinto.",
+      "items": [
+        "Pintorescos paisajes cafeteros",
+        "Aromáticas plantaciones de cacao",
+        "Pueblos llenos de color",
+        "Imponentes paisajes volcánicos",
+        "Cascadas y nacimientos de agua",
+        "Catedrales de guadua",
+        "Páramos mágicos"
       ]
     },
     "itinerary": {
-      "heading": "Día a Día",
+      "heading": "Día a día",
+      "intro": "Unos 20 km al día, con tiempo para pausas, conversaciones y miradores. Cada noche de vuelta en la Casa Tacay.",
+      "toggleLabel": "Duración del viaje",
+      "nine": "9 días",
+      "seven": "7 días",
       "dayLabel": "Día",
-      "mealsIncludedLabel": "Comidas incluidas:",
-      "days": [
-        {
+      "nineOnly": "Solo 9 días",
+      "stats": "{km} km · {hm} m de desnivel",
+      "mealsLabel": "Incluye:",
+      "days": {
+        "arrival": {
           "title": "Llegada",
-          "description": "Después de tu llegada al aeropuerto Matecaña o a la terminal de buses de Pereira, te llevamos a la Finca El Tacay. Allí tendrás tiempo para instalarte con calma, conocer al grupo y repasar juntos los detalles más importantes del viaje.\n\nEn la primera cena compartida, brindamos por la semana que comienza.",
+          "text": "Tras tu llegada al aeropuerto Matecaña o a la terminal de buses de Pereira, te llevamos a la Casa Tacay. Hay tiempo para llegar con calma, conocer al grupo, ajustar las bicis y repasar lo más importante del viaje. En la primera cena juntos brindamos por los días que vienen.",
           "meals": "Cena"
         },
-        {
+        "tigre": {
           "title": "Sendero del Tigre",
-          "description": "Para aclimatarnos, pedaleamos por caminos bordeados de guadua y a través de huertos frutales hasta la Finca Ganday. Allí descubrimos la diversidad de cultivos colombianos y disfrutamos de un caldo tradicional con ingredientes de la finca — según una receta que viene de las montañas y del Amazonas.\n\nDespués de una pausa refrescante regresamos pedaleando y cerramos el día con un pequeño postre.",
-          "meals": "Desayuno, cena"
+          "text": "Para aclimatarnos, rodamos por caminos bordeados de guadua y entre huertos frutales hasta la Finca Ganday. Allí descubrimos la diversidad de los cultivos colombianos y disfrutamos un caldo tradicional con ingredientes de la finca – con una receta de la montaña y del Amazonas.",
+          "meals": "Desayuno, almuerzo, cena"
         },
-        {
+        "cafe": {
           "title": "Sendero del Café",
-          "description": "Después del desayuno comenzamos con un taller de café y arte junto a nuestros anfitriones.\n\nLuego seguimos por carreteras de poco tráfico a través del territorio cafetero declarado Patrimonio de la UNESCO, pasando por fincas, pequeños pueblos y casas de colores.\n\nHacemos una parada para almorzar en el camino y, ya avanzada la tarde, visitamos un mirador antes de regresar al anochecer.",
-          "meals": "Desayuno, cena"
+          "text": "Por carreteras rurales tranquilas recorremos el Paisaje Cultural Cafetero de la UNESCO – entre cafetales, pequeños pueblos y casas de colores. Incluye un taller de café y arte con nuestros anfitriones.",
+          "meals": "Desayuno, almuerzo, cena"
         },
-        {
+        "agua": {
           "title": "Sendero del Agua",
-          "description": "Seguimos caminos sinuosos junto a ríos y a través de densos bosques de niebla alrededor de La Florida.\n\nEn el camino nos encontramos con puentes, cascadas y, con algo de suerte, fauna pequeña y grande. Al mediodía disfrutamos de una comida típica de montaña con una vista impresionante.\n\nUna ruta muy querida por la comunidad local, que muestra lo estrechamente conectados que están aquí la naturaleza y la vida cotidiana.",
-          "meals": "Desayuno, almuerzo"
+          "text": "Seguimos caminos sinuosos junto a ríos y por densos bosques de niebla alrededor de La Florida. En el camino encontramos puentes, cascadas y, con algo de suerte, animales grandes y pequeños. Al mediodía, un almuerzo típico de montaña con vista.",
+          "meals": "Desayuno, almuerzo, cena"
         },
-        {
+        "cacao": {
           "title": "Sendero del Cacao",
-          "description": "Descubrimos el sabor original del cacao, como nunca antes lo habías probado.\n\nPor la tarde regresamos por caminos verdes y nos relajamos en un ritual nocturno con música en El Tacay.",
+          "text": "Conocemos el cacao como nunca lo has probado: desde el fruto en el árbol, pasando por la fermentación, hasta el chocolate terminado. Tuestas tus propios nibs y te llevas tu creación a casa. La noche termina con música en la Casa Tacay.",
           "meals": "Desayuno, cena"
         },
-        {
+        "volcan": {
           "title": "Sendero del Volcán",
-          "description": "Entre palmas de cera, el árbol nacional de Colombia, y panorámicas de volcanes, vivimos una de las etapas más espectaculares del viaje.\n\nPor la tarde hacemos una parada en Salento — tiempo para pasear, curiosear en las tiendas pequeñas y dejarse llevar por el pueblo.",
+          "text": "Entre palmas de cera, el árbol nacional de Colombia, y panorámicas de volcanes vivimos una de las rutas más espectaculares del viaje. En la tarde paramos en Salento – tiempo para pasear, curiosear y dejar que el pueblo te envuelva.",
           "meals": "Desayuno, cena"
         },
-        {
+        "oro": {
           "title": "Sendero del Oro",
-          "description": "Hoy conectamos el movimiento con la historia.\n\nDespués de visitar el Museo del Oro en Armenia, recorremos tranquilas vías secundarias y antiguos caminos de conexión a través del territorio Quimbaya, descubriendo los orígenes de la cultura de la región.",
+          "text": "Hoy unimos movimiento e historia. Después de visitar el Museo del Oro en Armenia, rodamos por caminos secundarios tranquilos y antiguos caminos de herradura por la tierra de los Quimbaya y descubrimos los orígenes de la cultura de la región.",
           "meals": "Desayuno, cena"
         },
-        {
+        "paramo": {
           "title": "Sendero del Páramo",
-          "description": "Para cerrar el viaje, nos espera una de sus rutas más impresionantes. Entre lagunas, plantas únicas en el mundo y amplios altiplanos, vivimos el paisaje singular del Parque Nacional Los Nevados.\n\nCelebramos la última noche juntos con una comida andina en Tacay.",
-          "meals": "Desayuno, cena"
+          "text": "Para cerrar nos espera una de las rutas más impresionantes del viaje: subimos hasta 3.400 metros, entre lagunas, altiplanos y plantas que solo existen aquí. La última noche la celebramos juntos con una cena andina en la Casa Tacay.",
+          "meals": "Desayuno, cena",
+          "note": "hasta 3.400 m"
+        },
+        "departure": {
+          "title": "Regreso",
+          "text": "Después del último desayuno juntos llega la hora de despedirse. El check-out es a las 11, luego nuestro conductor te lleva al aeropuerto o a la terminal.",
+          "meals": "Desayuno"
+        }
+      }
+    },
+    "fit": {
+      "heading": "¿Es este viaje para mí?",
+      "fitnessTitle": "Condición física",
+      "fitnessText": "Basta con que te guste moverte. Deberías poder estar unas horas cómodo sobre la bici – sin presión de rendimiento, pero con ganas de pequeños retos.",
+      "techniqueTitle": "Técnica",
+      "techniqueText": "No necesitas ser profesional del mountain bike. Si montas con seguridad y te sientes a gusto en gravilla, caminos de bosque y senderos destapados, tienes todo lo necesario.",
+      "yesHeading": "El viaje es para ti si …",
+      "yesItems": [
+        "buscas paisajes y encuentros tanto como kilómetros",
+        "te gusta viajar en grupo pequeño",
+        "prefieres un lugar fijo al que volver en vez de un hotel nuevo cada día"
+      ],
+      "noHeading": "Mejor no si …",
+      "noItems": [
+        "buscas marcas personales y largos descensos de trail",
+        "quieres dormir en un lugar distinto cada noche"
+      ],
+      "cta": "¿No sabes si es para ti? Pregúntame."
+    },
+    "safety": {
+      "heading": "Bien acompañado, bien equipado.",
+      "items": [
+        {
+          "title": "Tu bici",
+          "text": "Bicicletas de montaña de doble suspensión de alta calidad de [Marca], [recorrido], tallas [S–XL]. Puedes traer tus propios pedales y sillín."
         },
         {
-          "title": "Salida",
-          "description": "Después del último desayuno compartido, llega el momento de despedirse.\n\nEl check-out es a partir de las 11 a.m., y luego nuestro conductor te llevará al aeropuerto o a la terminal de buses.",
-          "meals": "Desayuno"
+          "title": "Yo voy contigo",
+          "text": "Acompaño personalmente cada viaje – del primer al último día."
+        },
+        {
+          "title": "Guía y mecánico",
+          "text": "Mi socio local es guía de bicicleta certificado y mecánico, y mantiene las bicis a punto cada día."
+        },
+        {
+          "title": "Vehículo de apoyo",
+          "text": "Acompaña cada ruta. ¿Necesitas una pausa? Te subes y listo. Nadie se queda atrás."
+        },
+        {
+          "title": "Preparados para emergencias",
+          "text": "Charla de seguridad el primer día, primeros auxilios, protocolo de emergencia y comunicación satelital."
         }
       ]
     },
-    "cta": {
-      "heading": "Escríbenos cuando quieras y conversemos sobre tu viaje soñado",
-      "button": "Consultar"
-    }
-  },
-  "mtbReisen7": {
-    "seo": {
-      "title": "Vacaciones en MTB – 7 Días por la Región Cafetera",
-      "description": "Un viaje de 7 días en bicicleta de montaña por la Región Cafetera de Colombia — con familias locales, bosques de niebla y miradores volcánicos entre palmas de cera."
+    "casa": {
+      "heading": "Un hogar para todo el viaje.",
+      "text": "Te alojas todo el tiempo en la Casa Tacay, una finca cafetera ecológica cerca de Pereira. Cada mañana salimos desde aquí y cada tarde volvemos – sin hacer maletas, sin cambiar de hotel.",
+      "features": [
+        "Habitaciones con baño privado",
+        "Wi-Fi",
+        "Lavandería incluida"
+      ],
+      "imageAlt": "Casa Tacay, finca cafetera ecológica cerca de Pereira"
     },
-    "hero": {
-      "title": "7 Días",
-      "subtitle": "The Full sendero experience"
-    },
-    "overviewBar": {
-      "overview": "Resumen",
-      "included": "Qué Incluye",
-      "itinerary": "Día a Día",
-      "dates": "Próximas Fechas"
-    },
-    "intro": {
-      "heading": "Los Andes en Bicicleta de Montaña",
-      "paragraph1": "Los encuentros con familias, comunidades y productores locales te permiten no solo visitar la región, sino formar parte de ella.",
-      "paragraph2": "La historia de la región nos acompaña en cada kilómetro — desde las huellas de la civilización precolombina Quimbaya hasta el Paisaje Cultural Cafetero declarado Patrimonio de la UNESCO.",
-      "priceLabel": "Precio",
-      "pricePrefix": "desde",
-      "nextDatesLabel": "Próximas Fechas",
-      "bookLabel": "Reservar",
-      "bookCta": "Solicitar viaje"
+    "pricing": {
+      "heading": "Claro y sin letra pequeña.",
+      "dates": "Marzo · abril · mayo 2027 – dos grupos por mes, de 4 a 7 viajeros.",
+      "perPerson": "por persona",
+      "variants": {
+        "nine": {
+          "title": "9 días",
+          "text": "7 días de bici, con taller de cacao y Museo del Oro"
+        },
+        "seven": {
+          "title": "7 días",
+          "text": "5 días de bici, de las laderas cafeteras al páramo"
+        }
+      },
+      "note": "Habitación individual + [X] € · 20 % de anticipo al reservar, el resto 30 días antes del viaje",
+      "trust": "Tu dinero está protegido – con certificado de garantía según la ley de viajes alemana.",
+      "cta": "Solicitar fecha",
+      "privateQuestion": "¿Viajas con amigos, familia o tu club?",
+      "privateLink": "Planeo su propio viaje – en sus fechas."
     },
     "inclusions": {
-      "includedHeading": "Qué Incluye",
-      "notIncludedHeading": "No Incluye",
-      "categories": [
+      "includedHeading": "Incluido",
+      "notIncludedHeading": "No incluido",
+      "includedItems": [
+        "Alojamiento en la Casa Tacay, habitaciones con baño privado",
+        "Desayuno diario, almuerzo y cena según programa, snacks y bebidas en las rutas",
+        "Bicicleta de montaña de doble suspensión, casco y equipo",
+        "Acompañamiento personal, guía certificado y mecánico, vehículo de apoyo",
+        "Traslado al aeropuerto de Pereira (ida y vuelta) y todos los recorridos locales",
+        "Talleres y degustaciones: café, cacao, artesanía – incl. Museo del Oro",
+        "Fotos y videos profesionales de tu viaje",
+        "Lavandería y Wi-Fi"
+      ],
+      "notIncludedItems": [
+        "Vuelos a Pereira",
+        "Seguro médico de viaje (obligatorio)",
+        "Suplemento de habitación individual",
+        "Comidas y bebidas fuera del programa",
+        "Extensión antes o después del viaje – con gusto te ayudo"
+      ]
+    },
+    "faq": {
+      "heading": "Preguntas frecuentes",
+      "groups": [
         {
-          "title": "Alojamiento y Alimentación",
-          "items": [
-            "7 días / 6 noches en la Eco Farm El Tacay",
-            "Traslados al/desde el aeropuerto de Pereira",
-            "Desayuno diario",
-            "Bebidas, snacks y comidas seleccionadas durante los recorridos",
-            "Actividades culturales en El Tacay"
+          "title": "Seguridad",
+          "questions": [
+            {
+              "question": "¿Qué tan segura es la región?",
+              "answer": "El Eje Cafetero alrededor de Pereira es una de las regiones más estables de Colombia. Nos movemos dentro de una red de socios, familias y guías que conozco personalmente."
+            },
+            {
+              "question": "¿Qué pasa en caso de emergencia?",
+              "answer": "El primer día hay una charla de seguridad. Nuestros guías están formados en primeros auxilios, seguimos un protocolo de emergencia y podemos organizar ayuda médica rápidamente."
+            },
+            {
+              "question": "¿Y si no puedo con una ruta?",
+              "answer": "No hay problema. Adaptamos la ruta a ti o te subes al vehículo de apoyo. Nadie se queda atrás."
+            }
           ]
         },
         {
-          "title": "Bicicleta y Movilidad",
-          "items": [
-            "Bicicleta de montaña",
-            "Casco",
-            "Acompañamiento guiado y traslados durante todo el viaje",
-            "Soporte técnico para la bicicleta en ruta"
+          "title": "Viaje y preparación",
+          "questions": [
+            {
+              "question": "¿Qué vacunas necesito?",
+              "answer": "Colombia está en el trópico. Para nuestra ruta se recomienda especialmente la vacuna contra la fiebre amarilla. Lo mejor es consultar con tu médico o un especialista en medicina del viajero 6–8 semanas antes."
+            },
+            {
+              "question": "¿Necesito visa?",
+              "answer": "Con pasaporte de la UE, no para estancias de hasta 90 días. Tu pasaporte debe tener al menos 6 meses de vigencia. Revisa los requisitos según tu nacionalidad."
+            },
+            {
+              "question": "¿Qué seguro necesito?",
+              "answer": "Un seguro médico de viaje es obligatorio y lo contratas tú – por ejemplo con HanseMerkur, SIGNAL IDUNA o BarmeniaGothaer (aprox. 18–25 €)."
+            }
           ]
         },
         {
-          "title": "Experiencias y Cultura",
-          "items": [
-            "Degustaciones regionales",
-            "Tradiciones, rituales y vida cotidiana",
-            "Un acercamiento a la artesanía local y al saber tradicional — desde el café y el cacao hasta la cerámica y la orfebrería"
+          "title": "En el destino",
+          "questions": [
+            {
+              "question": "¿Cómo es el clima?",
+              "answer": "Clima tropical de montaña: sol, niebla y lloviznas cortas se alternan. Normalmente 16–24 °C – en el páramo, a 3.400 m, puede hacer frío, así que trae una capa abrigada."
+            },
+            {
+              "question": "¿Hay Wi-Fi y electricidad?",
+              "answer": "Hay Wi-Fi en la Casa Tacay. Colombia usa 110 V con enchufes tipo A/B – puedes pedir adaptadores prestados en la finca. Para el camino recomiendo una eSIM."
+            },
+            {
+              "question": "¿Cómo funciona la lavandería?",
+              "answer": "El servicio de lavandería está incluido."
+            },
+            {
+              "question": "¿Cómo pago allá?",
+              "answer": "VISA se acepta casi en todas partes. Para compras pequeñas en el campo recomiendo llevar algo de efectivo en pesos (COP)."
+            }
           ]
         },
         {
-          "title": "Organización y Extras",
-          "items": [
-            "Planificación y organización de todo el viaje",
-            "Registro fotográfico y de video profesional",
-            "Un kit de bienvenida personal"
+          "title": "Reserva",
+          "questions": [
+            {
+              "question": "¿Puedo viajar solo?",
+              "answer": "Claro que sí. Hay habitación individual con suplemento."
+            },
+            {
+              "question": "¿Puedo traer mi propia bici?",
+              "answer": "Sí. Las bicis de doble suspensión de alta calidad están incluidas, pero si prefieres rodar en la tuya, lo hablamos cuando envíes tu solicitud."
+            },
+            {
+              "question": "¿Cómo funciona la reserva?",
+              "answer": "Me envías una solicitud sin compromiso y te respondo en 48 horas. Al reservar pagas un 20 % de anticipo y el resto 30 días antes del viaje – protegido con certificado de garantía."
+            },
+            {
+              "question": "¿Puedo extender mi viaje?",
+              "answer": "Sí. Con gusto te ayudo con alojamiento en Pereira y recomendaciones personales."
+            }
           ]
         }
       ],
-      "notIncludedItems": [
-        "Vuelos hacia y desde Pereira",
-        "Seguro de viaje (obligatorio)",
-        "Entradas, p. ej. al Museo del Oro, otras fincas o actividades culturales fuera de El Tacay",
-        "Comidas y bebidas no incluidas en el itinerario (p. ej. en cafés o restaurantes)",
-        "Gastos personales",
-        "Planificación individual del viaje antes y después del recorrido"
-      ]
-    },
-    "itinerary": {
-      "heading": "Día a Día",
-      "dayLabel": "Día",
-      "mealsIncludedLabel": "Comidas incluidas:",
-      "days": [
-        {
-          "title": "Llegada",
-          "description": "Después de tu llegada al aeropuerto Matecaña o a la terminal de buses de Pereira, te llevamos a la Finca El Tacay. Allí tendrás tiempo para instalarte con calma, conocer al grupo y repasar juntos los detalles más importantes del viaje.\n\nEn la primera cena compartida, brindamos por la semana que comienza.",
-          "meals": "Cena"
-        },
-        {
-          "title": "Sendero del Tigre",
-          "description": "Para aclimatarnos, pedaleamos por caminos bordeados de guadua y a través de huertos frutales hasta la Finca Ganday. Allí descubrimos la diversidad de cultivos colombianos y disfrutamos de un caldo tradicional con ingredientes de la finca — según una receta que viene de las montañas y del Amazonas.\n\nDespués de una pausa refrescante regresamos pedaleando y cerramos el día con un pequeño postre.",
-          "meals": "Desayuno, cena"
-        },
-        {
-          "title": "Sendero del Café",
-          "description": "Después del desayuno comenzamos con un taller de café y arte junto a nuestros anfitriones.\n\nLuego seguimos por carreteras de poco tráfico a través del territorio cafetero declarado Patrimonio de la UNESCO, pasando por fincas, pequeños pueblos y casas de colores.\n\nHacemos una parada para almorzar en el camino y, ya avanzada la tarde, visitamos un mirador antes de regresar al anochecer.",
-          "meals": "Desayuno, cena"
-        },
-        {
-          "title": "Sendero del Agua",
-          "description": "Seguimos caminos sinuosos junto a ríos y a través de densos bosques de niebla alrededor de La Florida.\n\nEn el camino nos encontramos con puentes, cascadas y, con algo de suerte, fauna pequeña y grande. Al mediodía disfrutamos de una comida típica de montaña con una vista impresionante.\n\nUna ruta muy querida por la comunidad local, que muestra lo estrechamente conectados que están aquí la naturaleza y la vida cotidiana.",
-          "meals": "Desayuno, almuerzo"
-        },
-        {
-          "title": "Sendero del Volcán",
-          "description": "Entre palmas de cera, el árbol nacional de Colombia, y panorámicas de volcanes, vivimos una de las etapas más espectaculares del viaje.\n\nPor la tarde hacemos una parada en Salento — tiempo para pasear, curiosear en las tiendas pequeñas y dejarse llevar por el pueblo.",
-          "meals": "Desayuno, cena"
-        },
-        {
-          "title": "Sendero del Oro",
-          "description": "Hoy conectamos el movimiento con la historia.\n\nDespués de visitar el Museo del Oro en Armenia, recorremos tranquilas vías secundarias y antiguos caminos de conexión a través del territorio Quimbaya, descubriendo los orígenes de la cultura de la región.",
-          "meals": "Desayuno, cena"
-        },
-        {
-          "title": "Salida",
-          "description": "Después del último desayuno compartido, llega el momento de despedirse.\n\nEl check-out es a partir de las 11 a.m., y luego nuestro conductor te llevará al aeropuerto o a la terminal de buses.",
-          "meals": "Desayuno"
-        }
-      ]
+      "ctaQuestion": "¿Tu pregunta no está aquí?",
+      "ctaLink": "Escríbeme."
     },
     "cta": {
-      "heading": "Escríbenos cuando quieras y conversemos sobre tu viaje soñado",
-      "button": "Consultar"
+      "heading": "Tu viaje empieza con un mensaje.",
+      "text": "Te respondo personalmente en 48 horas.",
+      "button": "Solicitar viaje"
     }
   }
 }

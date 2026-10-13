@@ -3,7 +3,7 @@
  *
  * Regression coverage for the dark outline logo (Logo_Dark.svg) and the
  * "Reisen/Trips/Viajes" nav rename — confirms the header, logo, language switcher, and
- * MTB trip dropdown all still render/behave correctly on every routed page,
+ * MTB trip link all still render/behave correctly on every routed page,
  * in all three locales.
  */
 
@@ -24,7 +24,6 @@ const routes = [
   '/agb',
   '/anfragen',
   '/mtb-reisen',
-  '/mtb-reisen-7-tage',
 ];
 
 const mtbNavLabel: Record<(typeof locales)[number], string> = {
@@ -65,9 +64,9 @@ test.describe('Header background on scroll', () => {
   }
 });
 
-test.describe('Header logo link and MTB nav dropdown', () => {
+test.describe('Header logo link and "Deine Reise" link', () => {
   for (const locale of locales) {
-    test(`logo links home and the MTB dropdown works (${locale})`, async ({ page }) => {
+    test(`logo links home and the trip link opens /mtb-reisen (${locale})`, async ({ page }) => {
       await page.setViewportSize({ width: 1280, height: 900 });
       await page.goto(`/${locale}/trails`);
 
@@ -79,16 +78,16 @@ test.describe('Header logo link and MTB nav dropdown', () => {
 
       await page.goto(`/${locale}/trails`);
 
-      const navButton = header.getByRole('button', { name: mtbNavLabel[locale] });
-      await expect(navButton).toBeVisible();
-      await navButton.click();
-
-      const menuItems = header.getByRole('menuitem');
-      await expect(menuItems).toHaveCount(2);
-      await expect(menuItems.nth(0)).toHaveAttribute('href', `/${locale}/mtb-reisen`);
-      await expect(menuItems.nth(1)).toHaveAttribute('href', `/${locale}/mtb-reisen-7-tage`);
+      const tripLink = header.getByRole('link', { name: mtbNavLabel[locale] });
+      await expect(tripLink).toBeVisible();
+      await expect(tripLink).toHaveAttribute('href', `/${locale}/mtb-reisen`);
     });
   }
+
+  test('the old 7-day URL redirects to /mtb-reisen', async ({ page }) => {
+    await page.goto('/de/mtb-reisen-7-tage');
+    await expect(page).toHaveURL(/\/de\/mtb-reisen$/);
+  });
 });
 
 test.describe('Header scroll behavior', () => {

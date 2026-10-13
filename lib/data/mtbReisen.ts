@@ -1,55 +1,70 @@
-import type { MtbReisenTrip } from '@/lib/types/mtbReisen';
+import type { MtbReisenDay, MtbReisenTrip, MtbReisenVariantKey } from '@/lib/types/mtbReisen';
 
-export const mtbReisenNueveTage: MtbReisenTrip = {
-  id: 'mtb-reise-9-tage',
+/*
+ * Image paths below are stand-ins taken from photos already in the project.
+ * Each TODO(image) names the motif the final photo should show.
+ */
+export const mtbReise: MtbReisenTrip = {
+  id: 'mtb-reise-kaffeeregion',
   slug: 'mtb-reisen',
-  priceFrom: 3890,
   currency: 'EUR',
-  nextDates: ['2027-03', '2027-04', '2027-05'],
+  variants: [
+    { key: 'nine', priceFrom: 3890 },
+    { key: 'seven', priceFrom: 3290 },
+  ],
   images: {
+    // TODO(image): Wide hero – riders on a ridge between coffee slopes and clouds (video optional)
     hero: '/images/mtb-reisen/hero.jpg',
-    introBackground: '/images/mtb-reisen/intro-bg.png',
-    gallery: [
+    landscapes: [
+      // TODO(image): Coffee cultural landscape – rows of coffee on steep green slopes
+      '/images/anfragen/gallery-gastgeber.jpg',
+      // TODO(image): Cacao plantation – ripe cacao pods on the tree
+      '/images/anfragen/gallery-finca.jpg',
+      // TODO(image): Colorful village – painted balconies in Salento or Filandia
       '/images/mtb-reisen/gallery-1.jpg',
-      '/images/mtb-reisen/gallery-2.jpg',
-      '/images/mtb-reisen/gallery-3.jpg',
+      // TODO(image): Volcano landscape – Nevado del Ruiz / Los Nevados panorama
+      '/images/anfragen/hero-poster.jpg',
+      // TODO(image): Waterfall or hot spring in the cloud forest
+      '/images/anfragen/gallery-nebelwald.jpg',
+      // TODO(image): Bamboo forest – guadua cathedral from below
+      '/images/mtb-reisen/cta-alto-de-letras.jpg',
+      // TODO(image): Páramo – frailejones and lagoon at 3,400 m
+      '/images/mtb-reisen/hero.jpg',
     ],
+    // TODO(image): Casa Tacay – the finca house and terrace above the coffee slopes
+    casaTacay: '/images/anfragen/gallery-finca.jpg',
+    // TODO(image): Final CTA – wide sunset over the Andes from the saddle
+    cta: '/images/mtb-reisen/cta-alto-de-letras.jpg',
   },
   days: [
-    { day: 1, distanceKm: 0, elevationGainM: 0 },
-    { day: 2, distanceKm: 15, elevationGainM: 130 },
-    { day: 3, distanceKm: 22, elevationGainM: 273 },
-    { day: 4, distanceKm: 32, elevationGainM: 750 },
-    { day: 5, distanceKm: 18, elevationGainM: 315 },
-    { day: 6, distanceKm: 23, elevationGainM: 658 },
-    { day: 7, distanceKm: 17, elevationGainM: 154 },
-    { day: 8, distanceKm: 18, elevationGainM: 485 },
-    { day: 9, distanceKm: 0, elevationGainM: 0 },
+    // TODO(image): Arrival – group at the Casa Tacay table at dusk
+    { key: 'arrival', distanceKm: 0, elevationGainM: 0, image: '/images/anfragen/gallery-finca.jpg' },
+    // TODO(image): Sendero del Tigre – bamboo-lined trail and fruit orchards
+    { key: 'tigre', distanceKm: 15, elevationGainM: 130, image: '/images/mtb-reisen/cta-alto-de-letras.jpg' },
+    // TODO(image): Sendero del Café – quiet country road through the UNESCO coffee landscape
+    { key: 'cafe', distanceKm: 22, elevationGainM: 273, image: '/images/anfragen/gallery-gastgeber.jpg' },
+    // TODO(image): Sendero del Agua – river crossing / bridge in the cloud forest near La Florida
+    { key: 'agua', distanceKm: 32, elevationGainM: 750, image: '/images/anfragen/gallery-nebelwald.jpg' },
+    // TODO(image): Sendero del Cacao – hands holding an opened cacao pod
+    { key: 'cacao', distanceKm: 18, elevationGainM: 315, nineDaysOnly: true, image: '/images/mtb-reisen/gallery-2.jpg' },
+    // TODO(image): Sendero del Volcán – wax palms with the volcano behind
+    { key: 'volcan', distanceKm: 23, elevationGainM: 658, image: '/images/anfragen/hero-poster.jpg' },
+    // TODO(image): Sendero del Oro – Quimbaya gold piece or old connecting road near Armenia
+    { key: 'oro', distanceKm: 17, elevationGainM: 154, nineDaysOnly: true, image: '/images/mtb-reisen/gallery-1.jpg' },
+    // TODO: confirm Páramo stats (18 km · 485 Hm) with the final route
+    // TODO(image): Sendero del Páramo – riders among frailejones at 3,400 m
+    { key: 'paramo', distanceKm: 18, elevationGainM: 485, image: '/images/mtb-reisen/hero.jpg' },
+    // TODO(image): Departure – last breakfast on the finca terrace
+    { key: 'departure', distanceKm: 0, elevationGainM: 0, image: '/images/anfragen/gallery-gruppe.jpg' },
   ],
 };
 
-export const mtbReisenSiebenTage: MtbReisenTrip = {
-  id: 'mtb-reise-7-tage',
-  slug: 'mtb-reisen-7-tage',
-  priceFrom: 3290,
-  currency: 'EUR',
-  nextDates: ['2027-03', '2027-04', '2027-05'],
-  images: {
-    hero: '/images/mtb-reisen/hero.jpg',
-    introBackground: '/images/mtb-reisen/intro-bg.png',
-    gallery: [
-      '/images/mtb-reisen/gallery-1.jpg',
-      '/images/mtb-reisen/gallery-2.jpg',
-      '/images/mtb-reisen/gallery-3.jpg',
-    ],
-  },
-  days: [
-    { day: 1, distanceKm: 0, elevationGainM: 0 },
-    { day: 2, distanceKm: 15, elevationGainM: 130 },
-    { day: 3, distanceKm: 22, elevationGainM: 273 },
-    { day: 4, distanceKm: 32, elevationGainM: 750 },
-    { day: 5, distanceKm: 23, elevationGainM: 658 },
-    { day: 6, distanceKm: 17, elevationGainM: 154 },
-    { day: 7, distanceKm: 0, elevationGainM: 0 },
-  ],
-};
+/** Days of the chosen variant, renumbered from 1. */
+export function daysForVariant<T extends Pick<MtbReisenDay, 'nineDaysOnly'>>(
+  days: T[],
+  variant: MtbReisenVariantKey
+): (T & { number: number })[] {
+  return days
+    .filter((day) => variant === 'nine' || !day.nineDaysOnly)
+    .map((day, index) => ({ ...day, number: index + 1 }));
+}

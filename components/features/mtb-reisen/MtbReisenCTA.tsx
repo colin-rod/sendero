@@ -8,14 +8,17 @@ import posthog from 'posthog-js';
 
 interface MtbReisenCTAProps {
   heading: string;
+  text: string;
   buttonText: string;
+  image: string;
 }
 
-export function MtbReisenCTA({ heading, buttonText }: MtbReisenCTAProps) {
+export function MtbReisenCTA({ heading, text, buttonText, image }: MtbReisenCTAProps) {
   return (
     <section className="relative bg-[#131313] py-24 md:py-32">
+      {/* TODO(image): see `images.cta` in lib/data/mtbReisen.ts */}
       <Image
-        src="/images/mtb-reisen/cta-alto-de-letras.jpg"
+        src={image}
         alt=""
         fill
         className="object-cover opacity-70"
@@ -25,6 +28,7 @@ export function MtbReisenCTA({ heading, buttonText }: MtbReisenCTAProps) {
 
       <Container size="md" className="relative text-center flex flex-col items-center gap-8">
         <h2 className="text-h3 text-white font-light tracking-[0.06em] max-w-xl">{heading}</h2>
+        <p className="text-base leading-[26px] text-white/90 max-w-xl">{text}</p>
         <Link
           href="/anfragen"
           onClick={() => posthog.capture('mtb_reisen_cta_clicked', { source: 'mtb_reisen_page' })}

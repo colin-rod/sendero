@@ -4,16 +4,36 @@ import { Footer } from '@/components/layout/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
 import { buildAlternates } from '@/lib/seo/canonical';
-import { mtbReisenNueveTage } from '@/lib/data/mtbReisen';
+import { mtbReise } from '@/lib/data/mtbReisen';
 import { MtbReisenHero } from '@/components/features/mtb-reisen/MtbReisenHero';
 import { MtbReisenOverviewBar } from '@/components/features/mtb-reisen/MtbReisenOverviewBar';
-import { MtbReisenIntro } from '@/components/features/mtb-reisen/MtbReisenIntro';
-import { MtbReisenGallery } from '@/components/features/mtb-reisen/MtbReisenGallery';
+import { MtbReisenFacts } from '@/components/features/mtb-reisen/MtbReisenFacts';
+import { MtbReisenLandscapes } from '@/components/features/mtb-reisen/MtbReisenLandscapes';
+import { MtbReisenItinerary, type ItineraryDay } from '@/components/features/mtb-reisen/MtbReisenItinerary';
+import { MtbReisenFit } from '@/components/features/mtb-reisen/MtbReisenFit';
+import { MtbReisenSafety } from '@/components/features/mtb-reisen/MtbReisenSafety';
+import { MtbReisenCasaTacay } from '@/components/features/mtb-reisen/MtbReisenCasaTacay';
+import { MtbReisenPricing } from '@/components/features/mtb-reisen/MtbReisenPricing';
 import { MtbReisenInclusions } from '@/components/features/mtb-reisen/MtbReisenInclusions';
-import { MtbReisenItinerary } from '@/components/features/mtb-reisen/MtbReisenItinerary';
+import { MtbReisenFaq } from '@/components/features/mtb-reisen/MtbReisenFaq';
 import { MtbReisenCTA } from '@/components/features/mtb-reisen/MtbReisenCTA';
 
 const PAGE_PATH = '/mtb-reisen';
+
+const SECTION_IDS = {
+  overview: 'ueberblick',
+  itinerary: 'tag-fuer-tag',
+  safety: 'sicherheit',
+  price: 'preis',
+  faq: 'faq',
+} as const;
+
+interface DayCopy {
+  title: string;
+  text: string;
+  meals: string;
+  note?: string;
+}
 
 export async function generateMetadata({
   params,
@@ -33,7 +53,7 @@ export async function generateMetadata({
       description: t('description'),
       url: alternates.canonical,
       type: 'article',
-      images: [{ url: mtbReisenNueveTage.images.hero, alt: t('title') }],
+      images: [{ url: mtbReise.images.hero, alt: t('title') }],
     },
   };
 }
@@ -47,11 +67,11 @@ export default async function MtbReisenPage({
   const t = await getTranslations({ locale, namespace: 'mtbReisen' });
   const tHeader = await getTranslations({ locale, namespace: 'header' });
 
-  const trip = mtbReisenNueveTage;
+  const trip = mtbReise;
 
   const breadcrumbs = breadcrumbSchema(locale, [
     { name: tHeader('brandName'), path: '' },
-    { name: tHeader('nav.mtbReisenNineDays'), path: PAGE_PATH },
+    { name: tHeader('nav.mtbReisen'), path: PAGE_PATH },
   ]);
 
   const priceFormatter = new Intl.NumberFormat(locale, {
@@ -59,17 +79,42 @@ export default async function MtbReisenPage({
     currency: trip.currency,
     maximumFractionDigits: 0,
   });
-  const priceValue = `${t('intro.pricePrefix')} ${priceFormatter.format(trip.priceFrom)}`;
 
-  const dateFormatter = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' });
-  const nextDates = trip.nextDates.map((iso) => {
-    const [year, month] = iso.split('-').map(Number);
-    return dateFormatter.format(new Date(year, month - 1, 1));
+  const dayCopy = t.raw('itinerary.days') as Record<string, DayCopy>;
+  const days: ItineraryDay[] = trip.days.map((day) => {
+    const copy = dayCopy[day.key];
+    const stats =
+      day.distanceKm > 0
+        ? [t('itinerary.stats', { km: day.distanceKm, hm: day.elevationGainM }), copy.note]
+            .filter(Boolean)
+            .join(' · ')
+        : undefined;
+
+    return {
+      key: day.key,
+      nineDaysOnly: day.nineDaysOnly,
+      image: day.image,
+      title: copy.title,
+      text: copy.text,
+      meals: copy.meals,
+      stats,
+    };
   });
 
-  const dayCopy = t.raw('itinerary.days') as { title: string; description: string; meals: string }[];
-  const categories = t.raw('inclusions.categories') as { title: string; items: string[] }[];
-  const notIncludedItems = t.raw('inclusions.notIncludedItems') as string[];
+  const navLinks = [
+    { label: t('nav.overview'), href: `#${SECTION_IDS.overview}` },
+    { label: t('nav.itinerary'), href: `#${SECTION_IDS.itinerary}` },
+    { label: t('nav.safety'), href: `#${SECTION_IDS.safety}` },
+    { label: t('nav.price'), href: `#${SECTION_IDS.price}` },
+    { label: t('nav.faq'), href: `#${SECTION_IDS.faq}` },
+  ];
+
+  const priceOptions = trip.variants.map((variant) => ({
+    key: variant.key,
+    title: t(`pricing.variants.${variant.key}.title`),
+    price: priceFormatter.format(variant.priceFrom),
+    text: t(`pricing.variants.${variant.key}.text`),
+  }));
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -77,51 +122,102 @@ export default async function MtbReisenPage({
       <Header />
       <main id="main-content">
         <MtbReisenHero
+          eyebrow={t('hero.eyebrow')}
           title={t('hero.title')}
-          subtitle={t('hero.subtitle')}
+          text={t('hero.text')}
+          primaryCta={t('hero.primaryCta')}
+          secondaryCta={t('hero.secondaryCta')}
+          secondaryHref={`#${SECTION_IDS.itinerary}`}
           heroImage={trip.images.hero}
         />
 
-        <MtbReisenOverviewBar
-          overview={t('overviewBar.overview')}
-          included={t('overviewBar.included')}
-          itinerary={t('overviewBar.itinerary')}
-          dates={t('overviewBar.dates')}
+        <MtbReisenOverviewBar ariaLabel={t('nav.ariaLabel')} links={navLinks} ctaLabel={t('nav.cta')} />
+
+        <MtbReisenFacts
+          id={SECTION_IDS.overview}
+          heading={t('nav.overview')}
+          facts={t.raw('facts.items') as string[]}
         />
 
-        <MtbReisenIntro
-          backgroundImage={trip.images.introBackground}
-          heading={t('intro.heading')}
-          paragraph1={t('intro.paragraph1')}
-          paragraph2={t('intro.paragraph2')}
-          priceLabel={t('intro.priceLabel')}
-          priceValue={priceValue}
-          nextDatesLabel={t('intro.nextDatesLabel')}
-          nextDates={nextDates}
-          bookLabel={t('intro.bookLabel')}
-          bookCta={t('intro.bookCta')}
+        <MtbReisenLandscapes
+          heading={t('landscapes.heading')}
+          text={t('landscapes.text')}
+          items={t.raw('landscapes.items') as string[]}
+          images={trip.images.landscapes}
         />
 
-        <MtbReisenGallery images={trip.images.gallery} title={t('hero.title')} />
+        <MtbReisenItinerary
+          id={SECTION_IDS.itinerary}
+          heading={t('itinerary.heading')}
+          intro={t('itinerary.intro')}
+          toggleLabel={t('itinerary.toggleLabel')}
+          variantLabels={{ nine: t('itinerary.nine'), seven: t('itinerary.seven') }}
+          dayLabel={t('itinerary.dayLabel')}
+          nineOnlyLabel={t('itinerary.nineOnly')}
+          mealsLabel={t('itinerary.mealsLabel')}
+          days={days}
+        />
+
+        <MtbReisenFit
+          heading={t('fit.heading')}
+          blocks={[
+            { title: t('fit.fitnessTitle'), text: t('fit.fitnessText') },
+            { title: t('fit.techniqueTitle'), text: t('fit.techniqueText') },
+          ]}
+          yesHeading={t('fit.yesHeading')}
+          yesItems={t.raw('fit.yesItems') as string[]}
+          noHeading={t('fit.noHeading')}
+          noItems={t.raw('fit.noItems') as string[]}
+          cta={t('fit.cta')}
+        />
+
+        <MtbReisenSafety
+          id={SECTION_IDS.safety}
+          heading={t('safety.heading')}
+          items={t.raw('safety.items') as { title: string; text: string }[]}
+        />
+
+        <MtbReisenCasaTacay
+          heading={t('casa.heading')}
+          text={t('casa.text')}
+          features={t.raw('casa.features') as string[]}
+          image={trip.images.casaTacay}
+          imageAlt={t('casa.imageAlt')}
+        />
+
+        <MtbReisenPricing
+          id={SECTION_IDS.price}
+          heading={t('pricing.heading')}
+          dates={t('pricing.dates')}
+          perPerson={t('pricing.perPerson')}
+          options={priceOptions}
+          note={t('pricing.note')}
+          trust={t('pricing.trust')}
+          cta={t('pricing.cta')}
+          privateQuestion={t('pricing.privateQuestion')}
+          privateLink={t('pricing.privateLink')}
+        />
 
         <MtbReisenInclusions
           includedHeading={t('inclusions.includedHeading')}
           notIncludedHeading={t('inclusions.notIncludedHeading')}
-          categories={categories}
-          notIncludedItems={notIncludedItems}
+          includedItems={t.raw('inclusions.includedItems') as string[]}
+          notIncludedItems={t.raw('inclusions.notIncludedItems') as string[]}
         />
 
-        <MtbReisenItinerary
-          heading={t('itinerary.heading')}
-          dayLabel={t('itinerary.dayLabel')}
-          mealsIncludedLabel={t('itinerary.mealsIncludedLabel')}
-          days={trip.days}
-          dayCopy={dayCopy}
+        <MtbReisenFaq
+          id={SECTION_IDS.faq}
+          heading={t('faq.heading')}
+          groups={t.raw('faq.groups') as { title: string; questions: { question: string; answer: string }[] }[]}
+          ctaQuestion={t('faq.ctaQuestion')}
+          ctaLink={t('faq.ctaLink')}
         />
 
         <MtbReisenCTA
           heading={t('cta.heading')}
+          text={t('cta.text')}
           buttonText={t('cta.button')}
+          image={trip.images.cta}
         />
       </main>
       <Footer />
