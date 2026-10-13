@@ -872,7 +872,7 @@
     },
     "intro": {
       "eyebrow": "Persönlich geplant",
-      "title": "Die Anden sind meine Heimat.",
+      "title": "Die Berge sind meine Heimat.",
       "paragraphs": [
         "Hier, zwischen Kaffeefincas und Nebelwäldern, nehme ich Dich mit in meine Welt auf zwei Rädern – auf Wege, die ich selbst kennen- und lieben gelernt habe.",
         "Jede Reise plane ich persönlich. Du erzählst mir, was Dir vorschwebt, und ich melde mich mit einem Vorschlag, der zu Dir passt."
@@ -904,9 +904,9 @@
         "level": "Unsicher? Lass es einfach offen – das finden wir zusammen heraus."
       },
       "months": {
-        "2027-03": "März",
-        "2027-04": "April",
-        "2027-05": "Mai",
+        "2027-03": "März 2027",
+        "2027-04": "April 2027",
+        "2027-05": "Mai 2027",
         "flexible": "Ich bin flexibel"
       },
       "travelers": {
