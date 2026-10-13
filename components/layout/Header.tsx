@@ -8,7 +8,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { MtbReisenNavDropdown } from '@/components/layout/MtbReisenNavDropdown';
 
 interface HeaderProps {
-  /** Faint translucent bar while at the top of the page, for hero media. */
+  /** Translucent bar while at the top of the page, for hero media. */
   overlay?: boolean;
 }
 
@@ -35,7 +35,7 @@ export function Header({ overlay = false }: HeaderProps) {
 
       <header
         className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${
-          scrolled ? 'bg-white shadow-sm' : overlay ? 'bg-background/15' : 'bg-transparent'
+          scrolled ? 'bg-white shadow-sm' : overlay ? 'bg-background/60' : 'bg-transparent'
         }`}
       >
         <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24">

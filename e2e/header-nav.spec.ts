@@ -66,12 +66,12 @@ test.describe('Header background on scroll', () => {
 });
 
 test.describe('Overlay header on /anfragen', () => {
-  test('is a faint translucent bar at the top and solid white after scrolling, dark logo throughout', async ({ page }) => {
+  test('is a translucent bar at the top and solid white after scrolling, dark logo throughout', async ({ page }) => {
     await page.goto('/de/anfragen');
 
     const header = page.locator('header');
     const logo = header.locator('img').first();
-    await expect(header).toHaveClass(/bg-background\/15/);
+    await expect(header).toHaveClass(/bg-background\/60/);
     await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
 
     await page.evaluate(() => window.scrollTo(0, 400));
