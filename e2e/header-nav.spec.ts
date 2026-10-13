@@ -27,9 +27,6 @@ const routes = [
   '/mtb-reisen-7-tage',
 ];
 
-// Pages whose header starts as a translucent bar with white text over dark hero media
-const overlayRoutes = ['/anfragen'];
-
 const mtbNavLabel: Record<(typeof locales)[number], string> = {
   en: 'Your Trip',
   de: 'Deine Reise',
@@ -39,15 +36,14 @@ const mtbNavLabel: Record<(typeof locales)[number], string> = {
 test.describe('Header renders on every page and locale', () => {
   for (const locale of locales) {
     for (const route of routes) {
-      const overlay = overlayRoutes.includes(route);
-      test(`${locale}${route || '/'} shows the header with the ${overlay ? 'light' : 'dark'} logo`, async ({ page }) => {
+      test(`${locale}${route || '/'} shows the header with the dark logo`, async ({ page }) => {
         await page.goto(`/${locale}${route}`);
 
         const header = page.locator('header');
         await expect(header).toBeVisible();
 
         const logo = header.locator('img').first();
-        await expect(logo).toHaveAttribute('src', overlay ? /Logo_Light\.svg/ : /Logo_Dark\.svg/);
+        await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
 
         await expect(header.getByLabel('Language selector')).toBeVisible();
       });
@@ -70,18 +66,17 @@ test.describe('Header background on scroll', () => {
 });
 
 test.describe('Overlay header on /anfragen', () => {
-  test('is translucent with white text at the top and solid white with dark text after scrolling', async ({ page }) => {
+  test('is a faint translucent bar at the top and solid white after scrolling, dark logo throughout', async ({ page }) => {
     await page.goto('/de/anfragen');
 
     const header = page.locator('header');
-    await expect(header).toHaveAttribute('data-tone', 'light');
-    await expect(header).toHaveClass(/bg-background\/30/);
-    await expect(header.locator('img').first()).toHaveAttribute('src', /Logo_Light\.svg/);
+    const logo = header.locator('img').first();
+    await expect(header).toHaveClass(/bg-background\/15/);
+    await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
 
     await page.evaluate(() => window.scrollTo(0, 400));
-    await expect(header).toHaveAttribute('data-tone', 'dark');
     await expect(header).toHaveClass(/bg-white/);
-    await expect(header.locator('img').first()).toHaveAttribute('src', /Logo_Dark\.svg/);
+    await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
   });
 });
 

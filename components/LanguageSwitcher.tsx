@@ -6,7 +6,7 @@ import { useRouter, usePathname } from '@/lib/i18n/routing';
 import { locales } from '@/lib/i18n/config';
 import posthog from 'posthog-js';
 
-export default function LanguageSwitcher({ light = false }: { light?: boolean }) {
+export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -47,11 +47,7 @@ export default function LanguageSwitcher({ light = false }: { light?: boolean })
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-caption font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 cursor-pointer ${
-          light
-            ? 'border-white text-white hover:bg-white hover:text-foreground'
-            : 'border-foreground text-foreground hover:bg-foreground hover:text-white'
-        }`}
+        className="flex items-center gap-1.5 rounded-lg border border-foreground px-2.5 py-1 text-caption font-medium text-foreground transition-colors hover:bg-foreground hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 cursor-pointer"
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
