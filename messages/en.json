@@ -7,7 +7,8 @@
     "nav": {
       "about": "About",
       "howItWorks": "How It Works",
-      "trails": "Trails"
+      "trails": "Trails",
+      "buchen": "Inquire"
     },
     "mobileMenu": {
       "toggle": "Toggle navigation menu",
@@ -100,11 +101,12 @@
   "nextTrips": {
     "heading": "Upcoming Trips",
     "pioneerTrip": "Pioneer Trip · 26\u00a0Nov\u00a0–\u00a04\u00a0Dec\u00a02026",
-    "soldOut": "Sold out.",
+    "soldOut": "Sold out",
     "continuesHeading": "The journey continues.",
-    "continuesText": "New and exciting trails await you in March, April and May 2027.",
-    "prompt": "Would you like to join us? Sign up to be the first to know when bookings open for upcoming trips.",
-    "cta": "Count me in"
+    "continuesText": "New and exciting trails await you in March, April and May 2027 – <br></br>two groups per month, small and personal.",
+    "prompt": "Would you like to join us?",
+    "requestCta": "Request a trip",
+    "waitlistCta": "Stay informed"
   },
   "form": {
     "labels": {
@@ -177,7 +179,7 @@
   },
   "footer": {
     "brandName": "sendero bike trails",
-    "tagline": "Paths that connect lives.",
+    "tagline": "Bike adventures in Colombia's Andean forests",
     "social": {
       "followUs": "Follow us",
       "instagram": "Follow us on Instagram",
@@ -860,5 +862,117 @@
     "accept": "Accept",
     "decline": "Decline",
     "learnMore": "Privacy Policy"
+  },
+  "anfragenPage": {
+    "title": "Request a Trip",
+    "description": "Tell me about yourself and the trip you have in mind – I'll personally plan your mountain bike trip through Colombia's Andes with you.",
+    "hero": {
+      "title": "Let's ride the Andes.",
+      "subtitle": "Tell me about yourself – we'll plan the rest together."
+    },
+    "intro": {
+      "eyebrow": "Personally planned",
+      "title": "The Andes are my home.",
+      "paragraphs": [
+        "Here, between coffee farms and cloud forests, I'll take you into my world on two wheels – along trails I've come to know and love myself.",
+        "I plan every trip personally. Tell me what you have in mind, and I'll get back to you with a proposal that fits you."
+      ],
+      "photoAlt": "Julian with his mountain bike"
+    },
+    "form": {
+      "heading": "What do you have in mind?",
+      "labels": {
+        "firstName": "First name",
+        "email": "Email",
+        "months": "When works for you?",
+        "travelers": "Who's coming?",
+        "level": "Which trails do you like best?",
+        "message": "Tell me about yourself and what you're hoping for"
+      },
+      "placeholders": {
+        "firstName": "What should I call you?",
+        "email": "your@email.com",
+        "message": "How do you like your coffee?\nWhat would you like to experience in Colombia – off the bike, too?"
+      },
+      "errors": {
+        "firstNameRequired": "Please enter your first name.",
+        "emailInvalid": "Please enter a valid email address."
+      },
+      "hints": {
+        "months": "Two groups start each month – one in the first week, one in the second.",
+        "travelers": "Traveling solo? Great – you'll quickly become part of the group.",
+        "level": "Not sure? Just leave it open – we'll figure it out together."
+      },
+      "months": {
+        "2027-03": "March",
+        "2027-04": "April",
+        "2027-05": "May",
+        "flexible": "I'm flexible"
+      },
+      "travelers": {
+        "1": "I'm traveling solo"
+      },
+      "levels": {
+        "beginner": {
+          "title": "Relaxed",
+          "text": "Wide paths, short climbs. Trails are still new to you."
+        },
+        "intermediate-light": {
+          "title": "Flowy",
+          "text": "Curves, roots, a bit of climbing. You ride regularly."
+        },
+        "intermediate": {
+          "title": "Technical",
+          "text": "Steep sections, rocks, long climbs. The more trail, the better."
+        }
+      },
+      "levelInfo": {
+        "trigger": "What do the levels mean?",
+        "title": "Which trails suit you?",
+        "close": "Close"
+      },
+      "mailingList": {
+        "label": "Let me know as soon as new trips can be booked.",
+        "note": "Unsubscribe anytime."
+      },
+      "buttons": {
+        "submit": "Send request",
+        "submitting": "Sending …"
+      },
+      "legal": {
+        "response": "I'll get back to you personally within 48 hours.",
+        "text": "I only use your details to reply to you.",
+        "privacy": "Privacy policy"
+      },
+      "submitError": "Something went wrong. Please try again or write to me directly at <mail>julian@senderobiketrails.com</mail>."
+    },
+    "success": {
+      "eyebrow": "Request received",
+      "title": "Thanks, {name}!",
+      "message": "I'm so glad you want to join. I'll get back to you personally within the next 48 hours – please also check your spam folder in case nothing arrives.",
+      "mailingList": "And I'll let you know as soon as new trips open for booking.",
+      "closing": "See you on the trail."
+    },
+    "gallery": {
+      "heading": "What to expect",
+      "items": [
+        {
+          "caption": "Trails through the cloud forest",
+          "alt": "Fog drifting through the mountain forest"
+        },
+        {
+          "caption": "Coffee straight from the finca",
+          "alt": "Coffee and breakfast on a finca terrace"
+        },
+        {
+          "caption": "Hosts you won't forget",
+          "alt": "Roadside fruit stand with two cyclists behind it"
+        },
+        {
+          "caption": "Small groups, big days",
+          "alt": "Small group with mountain bikes on a gravel road"
+        }
+      ]
+    }
   }
 }

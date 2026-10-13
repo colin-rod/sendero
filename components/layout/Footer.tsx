@@ -10,7 +10,7 @@ export function Footer() {
   const t = useTranslations('footer');
 
   return (
-    <footer className="bg-gray-950 text-white">
+    <footer className="bg-river-forest text-white">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-8">
 
@@ -26,22 +26,7 @@ export function Footer() {
               />
             </div>
             <p className="text-body font-bold text-white">{t('brandName')}</p>
-            <p className="text-body text-white">
-              {t('tagline')
-                .split(/\n|\.\s+/)
-                .filter(Boolean)
-                .map((sentence, i, arr) => {
-                  const trimmed = sentence.trim();
-                  const needsPeriod = !trimmed.endsWith('.');
-                  return (
-                    <span key={i} className="block sm:inline">
-                      {trimmed}
-                      {needsPeriod ? '.' : ''}
-                      {i < arr.length - 1 ? ' ' : ''}
-                    </span>
-                  );
-                })}
-            </p>
+            <p className="text-body leading-[26px] text-white">{t('tagline')}</p>
           </div>
 
           {/* Column 2: Follow us → icons */}

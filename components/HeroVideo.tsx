@@ -2,7 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function HeroVideo() {
+interface HeroVideoProps {
+  webmSrc?: string;
+  mp4Src?: string;
+}
+
+export default function HeroVideo({ webmSrc = '/hero.webm', mp4Src = '/hero.mp4' }: HeroVideoProps) {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -53,8 +58,8 @@ export default function HeroVideo() {
         isVideoReady ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <source src="/hero.webm" type="video/webm" />
-      <source src="/hero.mp4" type="video/mp4" />
+      <source src={webmSrc} type="video/webm" />
+      <source src={mp4Src} type="video/mp4" />
     </video>
   );
 }

@@ -90,6 +90,29 @@ export interface ContactFormData {
   message: string;
 }
 
+// Booking / trip request form types
+export const REQUEST_MONTHS = ['2027-03', '2027-04', '2027-05'] as const;
+export type RequestMonth = (typeof REQUEST_MONTHS)[number] | 'flexible';
+
+export const TRAVELER_OPTIONS = ['1', '2', '3', '4', '5', '6+'] as const;
+export type Travelers = (typeof TRAVELER_OPTIONS)[number];
+
+export const RIDING_LEVELS = ['beginner', 'intermediate-light', 'intermediate'] as const;
+export type RidingLevel = (typeof RIDING_LEVELS)[number];
+
+export interface BookingFormData {
+  firstName: string;
+  email: string;
+  months: RequestMonth[];
+  travelers: Travelers | null;
+  level: RidingLevel | null;
+  message?: string;
+  mailingList: boolean;
+  /** Honeypot — must be empty */
+  company?: string;
+  source?: string;
+}
+
 // Supabase Database schema type
 export interface Database {
   public: {

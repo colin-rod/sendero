@@ -3,6 +3,7 @@ import { Resend } from 'resend';
 import { validateWaitlistForm } from '@/lib/utils/validation';
 import { logEvent, emailDomain } from '@/lib/utils/log';
 import { generateWaitlistEmail } from '@/lib/email/waitlistEmail';
+import { addToMailingList } from '@/lib/mailingList';
 import type { WaitlistFormData, ApiSuccessResponse, ApiErrorResponse } from '@/lib/types/database';
 
 /**
@@ -33,8 +34,8 @@ export async function POST(
     const formData = body as WaitlistFormData;
     const domain = emailDomain(formData.email);
 
-    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
-    if (!webhookUrl) {
+    const mailingList = await addToMailingList(formData.email);
+    if (!mailingList.ok && mailingList.reason === 'missing_webhook_url') {
       logEvent({ event, request_id, status: 'fail', reason: 'missing_webhook_url' });
       const errorResponse: ApiErrorResponse = {
         success: false,
@@ -43,16 +44,8 @@ export async function POST(
       return NextResponse.json(errorResponse, { status: 500 });
     }
 
-    const sheetsResponse = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: formData.email.toLowerCase().trim(),
-      }),
-    });
-
-    if (!sheetsResponse.ok) {
-      logEvent({ event, request_id, status: 'fail', reason: 'sheets_error', sheets_status: sheetsResponse.status, email_domain: domain });
+    if (!mailingList.ok) {
+      logEvent({ event, request_id, status: 'fail', reason: 'sheets_error', sheets_status: mailingList.status, email_domain: domain });
       const errorResponse: ApiErrorResponse = {
         success: false,
         error: 'Failed to save your information. Please try again.',

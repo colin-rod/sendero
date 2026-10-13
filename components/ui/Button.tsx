@@ -18,7 +18,7 @@ import { SpinnerButton } from './Spinner';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Button variant using semantic color tokens */
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'hero-cta' | 'secondary-oro-solid' | 'secondary-oro-light' | 'secondary-oro-outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'hero-cta' | 'hero-cta-secondary' | 'secondary-oro-solid' | 'secondary-oro-light' | 'secondary-oro-outline';
 
   /** Button size */
   size?: 'sm' | 'md' | 'lg';
@@ -70,6 +70,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-transparent text-secondary-oro-600 border-2 border-secondary-oro-500 hover:bg-secondary-oro-50 active:bg-secondary-oro-100 disabled:border-secondary-oro-300 disabled:text-secondary-oro-300 focus-visible:ring-secondary-oro-500',
       'hero-cta':
         'bg-primary-500 text-accent-400 hover:bg-river-forest active:bg-primary-700 focus-visible:ring-primary-500 rounded-[20px] h-[42px] min-w-[140px] px-6 py-3 gap-2 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans',
+      'hero-cta-secondary':
+        'bg-background/30 text-white hover:bg-background/40 active:bg-background/50 focus-visible:ring-white rounded-[30px] h-[42px] min-w-[140px] px-6 py-3 gap-2 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans',
     };
 
     // Size classes
@@ -79,7 +81,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: 'px-6 py-3 text-lg',
     };
 
-    const resolvedSizeClasses = variant === 'hero-cta' ? '' : sizeClasses[size];
+    const resolvedSizeClasses =
+      variant === 'hero-cta' || variant === 'hero-cta-secondary' ? '' : sizeClasses[size];
     const combinedClassName = `${baseClasses} ${variantClasses[variant]} ${resolvedSizeClasses} ${className}`.trim();
 
     return (

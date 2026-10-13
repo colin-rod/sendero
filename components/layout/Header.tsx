@@ -6,18 +6,18 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-type HeaderProps = {
-  logoVariant?: 'dark' | 'white';
-};
+interface HeaderProps {
+  /** Translucent bar while at the top of the page, for hero media. */
+  overlay?: boolean;
+}
 
-export function Header({ logoVariant = 'dark' }: HeaderProps) {
+export function Header({ overlay = false }: HeaderProps) {
   const t = useTranslations('header');
-  const isWhiteLogo = logoVariant === 'white';
-  const logoSrc = isWhiteLogo ? '/Logo_Light.svg' : '/Logo_Dark.svg';
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -32,7 +32,11 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
         {t('skipToContent')}
       </a>
 
-      <header className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${scrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}>
+      <header
+        className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${
+          scrolled ? 'bg-white shadow-sm' : overlay ? 'bg-background/60' : 'bg-transparent'
+        }`}
+      >
         <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24">
           <div className="flex py-[34px] gap-6 items-center justify-between">
             {/* Logo */}
@@ -42,20 +46,32 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
               aria-label={t('ariaLabel')}
             >
               <Image
-                src={logoSrc}
+                src="/Logo_Dark.svg"
                 alt={t('logoAlt')}
                 width={48}
                 height={48}
                 className="h-12 w-12 flex-none"
                 priority
               />
-              <span className={`text-caption font-medium leading-tight tracking-[0.06em] uppercase ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}>
+              <span className="text-caption font-medium leading-tight tracking-[0.06em] uppercase text-foreground">
                 Sendero<br />Bike Trails
               </span>
             </Link>
 
-            {/* Language Switcher */}
-            <LanguageSwitcher />
+            <div className="flex items-center gap-8">
+              {/* Nav */}
+              <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
+                <Link
+                  href="/anfragen"
+                  className="text-caption font-medium tracking-[0.06em] uppercase text-foreground transition-opacity hover:opacity-70"
+                >
+                  {t('nav.buchen')}
+                </Link>
+              </nav>
+
+              {/* Language Switcher */}
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>

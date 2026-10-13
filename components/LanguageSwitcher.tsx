@@ -51,6 +51,7 @@ export default function LanguageSwitcher() {
         aria-label="Language selector"
         aria-expanded={isOpen}
       >
+        <span>{localeLabels[locale]}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -68,7 +69,6 @@ export default function LanguageSwitcher() {
           <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
           <path d="M2 12h20" />
         </svg>
-        <span>{localeLabels[locale]}</span>
       </button>
 
       {/* Dropdown Menu */}

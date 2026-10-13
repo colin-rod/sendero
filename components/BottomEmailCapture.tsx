@@ -10,9 +10,17 @@ import posthog from 'posthog-js'
 interface BottomEmailCaptureProps {
   /** Label for the collapsed button; defaults to the waitlist join label */
   buttonLabel?: string
+  /** Visual style of the collapsed button */
+  buttonVariant?: 'hero-cta' | 'hero-cta-secondary'
+  /** Extra classes for the button (e.g. a fixed width) */
+  buttonClassName?: string
 }
 
-export default function BottomEmailCapture({ buttonLabel }: BottomEmailCaptureProps = {}) {
+export default function BottomEmailCapture({
+  buttonLabel,
+  buttonVariant = 'hero-cta',
+  buttonClassName = '',
+}: BottomEmailCaptureProps = {}) {
   const t = useTranslations('hero.emailCapture')
   const tWaitlist = useTranslations('waitlist')
   const tValidation = useTranslations('validation')
@@ -119,7 +127,9 @@ export default function BottomEmailCapture({ buttonLabel }: BottomEmailCapturePr
     <div className="w-full max-w-xl">
       <div
         data-testid="bottom-email-capture-row"
-        className="flex w-full items-center justify-center gap-3"
+        className={`flex w-full items-center justify-center transition-all duration-300 ${
+          isExpanded ? 'gap-3' : 'gap-0'
+        }`}
       >
         {/* Email input — revealed inline when expanded */}
         <div
@@ -137,9 +147,11 @@ export default function BottomEmailCapture({ buttonLabel }: BottomEmailCapturePr
             className="
               input
               w-full
+              h-[42px]
+              rounded-full
+              border-0
+              px-5
               bg-white
-              border-2 border-accent-400
-              focus:border-accent-400 focus:ring-2 focus:ring-accent-400
               text-foreground placeholder:text-gray-600
             "
             disabled={isSubmitting}
@@ -162,8 +174,8 @@ export default function BottomEmailCapture({ buttonLabel }: BottomEmailCapturePr
             onClick={handleJoinClick}
             disabled={isSubmitting}
             loading={isSubmitting}
-            variant="hero-cta"
-            className="whitespace-nowrap rounded-full! transition-all duration-300"
+            variant={buttonVariant}
+            className={`whitespace-nowrap rounded-full! transition-all duration-300 ${buttonClassName}`}
           >
             {isExpanded ? t('buttonSubmit') : (buttonLabel ?? tWaitlist('joinButton'))}
           </Button>

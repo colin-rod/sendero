@@ -3,7 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import HomePage from '@/app/[locale]/page';
 
 jest.mock('next-intl', () => ({
-  useTranslations: () => (key: string) => key,
+  useTranslations: () => Object.assign((key: string) => key, { rich: (key: string) => key }),
   useLocale: () => 'en',
 }));
 
@@ -22,6 +22,12 @@ jest.mock('@/lib/seo/canonical', () => ({
 jest.mock('next/image', () => ({
   __esModule: true,
   default: (props: any) => <img {...props} />,
+}));
+
+jest.mock('@/lib/i18n/routing', () => ({
+  Link: ({ href, children }: { href: string; children: React.ReactNode }) => (
+    <a href={href}>{children}</a>
+  ),
 }));
 
 jest.mock('@/components/layout/Header', () => ({
@@ -77,5 +83,13 @@ describe('HomePage section flow', () => {
     ['pioneerTrip', 'soldOut', 'continuesHeading', 'continuesText', 'prompt'].forEach((key) => {
       expect(within(waitlist).getByText(key)).toBeInTheDocument();
     });
+  });
+
+  it('links the request-trip CTA to the booking form', () => {
+    const { container } = render(<HomePage />);
+    const waitlist = container.querySelector('#waitlist') as HTMLElement;
+
+    expect(within(waitlist).getByRole('link', { name: 'requestCta' })).toHaveAttribute('href', '/anfragen');
+    expect(within(waitlist).getByTestId('bottom-email')).toBeInTheDocument();
   });
 });
