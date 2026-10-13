@@ -10,12 +10,11 @@ interface AnfragenGalleryProps {
   items: GalleryItem[];
 }
 
-// TODO: replace placeholders with dedicated 3:4 images (trail, finca, hosts, group)
 const IMAGE_SRCS = [
-  '/images/mtb-reisen/hero.jpg',
-  '/images/mtb-reisen/gallery-2.jpg',
-  '/images/mtb-reisen/cta-alto-de-letras.jpg',
-  '/images/mtb-reisen/gallery-1.jpg',
+  '/images/anfragen/gallery-nebelwald.jpg',
+  '/images/anfragen/gallery-finca.jpg',
+  '/images/anfragen/gallery-gastgeber.jpg',
+  '/images/anfragen/gallery-gruppe.jpg',
 ];
 
 export function AnfragenGallery({ heading, items }: AnfragenGalleryProps) {
