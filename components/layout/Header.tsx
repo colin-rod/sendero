@@ -7,12 +7,19 @@ import { Link } from '@/lib/i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { MtbReisenNavDropdown } from '@/components/layout/MtbReisenNavDropdown';
 
-export function Header() {
+interface HeaderProps {
+  /** Translucent bar with white text while at the top of the page, for dark hero media. */
+  overlay?: boolean;
+}
+
+export function Header({ overlay = false }: HeaderProps) {
   const t = useTranslations('header');
   const [scrolled, setScrolled] = useState(false);
+  const light = overlay && !scrolled;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -27,7 +34,12 @@ export function Header() {
         {t('skipToContent')}
       </a>
 
-      <header className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${scrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}>
+      <header
+        data-tone={light ? 'light' : 'dark'}
+        className={`fixed top-0 left-0 z-50 w-full transition-colors duration-300 ${
+          scrolled ? 'bg-white shadow-sm' : light ? 'bg-background/30' : 'bg-transparent'
+        }`}
+      >
         <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24">
           <div className="flex py-[34px] gap-6 items-center justify-between">
             {/* Logo */}
@@ -37,14 +49,14 @@ export function Header() {
               aria-label={t('ariaLabel')}
             >
               <Image
-                src="/Logo_Dark.svg"
+                src={light ? '/Logo_Light.svg' : '/Logo_Dark.svg'}
                 alt={t('logoAlt')}
                 width={48}
                 height={48}
                 className="h-12 w-12 flex-none"
                 priority
               />
-              <span className="text-caption font-medium leading-tight tracking-[0.06em] uppercase text-foreground">
+              <span className={`text-caption font-medium leading-tight tracking-[0.06em] uppercase transition-colors duration-300 ${light ? 'text-white' : 'text-foreground'}`}>
                 Sendero<br />Bike Trails
               </span>
             </Link>
@@ -52,17 +64,17 @@ export function Header() {
             <div className="flex items-center gap-8">
               {/* Nav */}
               <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
-                <MtbReisenNavDropdown />
+                <MtbReisenNavDropdown light={light} />
                 <Link
                   href="/anfragen"
-                  className="text-caption font-medium tracking-[0.06em] uppercase text-foreground transition-opacity hover:opacity-70"
+                  className={`text-caption font-medium tracking-[0.06em] uppercase transition-[color,opacity] duration-300 hover:opacity-70 ${light ? 'text-white' : 'text-foreground'}`}
                 >
                   {t('nav.buchen')}
                 </Link>
               </nav>
 
               {/* Language Switcher */}
-              <LanguageSwitcher />
+              <LanguageSwitcher light={light} />
             </div>
           </div>
         </div>

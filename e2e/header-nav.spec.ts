@@ -27,6 +27,9 @@ const routes = [
   '/mtb-reisen-7-tage',
 ];
 
+// Pages whose header starts as a translucent bar with white text over dark hero media
+const overlayRoutes = ['/anfragen'];
+
 const mtbNavLabel: Record<(typeof locales)[number], string> = {
   en: 'Your Trip',
   de: 'Deine Reise',
@@ -36,14 +39,15 @@ const mtbNavLabel: Record<(typeof locales)[number], string> = {
 test.describe('Header renders on every page and locale', () => {
   for (const locale of locales) {
     for (const route of routes) {
-      test(`${locale}${route || '/'} shows the header with the dark logo`, async ({ page }) => {
+      const overlay = overlayRoutes.includes(route);
+      test(`${locale}${route || '/'} shows the header with the ${overlay ? 'light' : 'dark'} logo`, async ({ page }) => {
         await page.goto(`/${locale}${route}`);
 
         const header = page.locator('header');
         await expect(header).toBeVisible();
 
         const logo = header.locator('img').first();
-        await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
+        await expect(logo).toHaveAttribute('src', overlay ? /Logo_Light\.svg/ : /Logo_Dark\.svg/);
 
         await expect(header.getByLabel('Language selector')).toBeVisible();
       });
@@ -52,7 +56,7 @@ test.describe('Header renders on every page and locale', () => {
 });
 
 test.describe('Header background on scroll', () => {
-  for (const route of ['', '/mtb-reisen', '/anfragen']) {
+  for (const route of ['', '/mtb-reisen']) {
     test(`de${route || '/'} is transparent at the top and white after scrolling`, async ({ page }) => {
       await page.goto(`/de${route}`);
 
@@ -63,6 +67,22 @@ test.describe('Header background on scroll', () => {
       await expect(header).toHaveClass(/bg-white/);
     });
   }
+});
+
+test.describe('Overlay header on /anfragen', () => {
+  test('is translucent with white text at the top and solid white with dark text after scrolling', async ({ page }) => {
+    await page.goto('/de/anfragen');
+
+    const header = page.locator('header');
+    await expect(header).toHaveAttribute('data-tone', 'light');
+    await expect(header).toHaveClass(/bg-background\/30/);
+    await expect(header.locator('img').first()).toHaveAttribute('src', /Logo_Light\.svg/);
+
+    await page.evaluate(() => window.scrollTo(0, 400));
+    await expect(header).toHaveAttribute('data-tone', 'dark');
+    await expect(header).toHaveClass(/bg-white/);
+    await expect(header.locator('img').first()).toHaveAttribute('src', /Logo_Dark\.svg/);
+  });
 });
 
 test.describe('Header logo link and MTB nav dropdown', () => {
