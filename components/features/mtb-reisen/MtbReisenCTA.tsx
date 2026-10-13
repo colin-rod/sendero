@@ -26,7 +26,7 @@ export function MtbReisenCTA({ heading, buttonText }: MtbReisenCTAProps) {
       <Container size="md" className="relative text-center flex flex-col items-center gap-8">
         <h2 className="text-h3 text-white font-light tracking-[0.06em] max-w-xl">{heading}</h2>
         <Link
-          href="/buchen"
+          href="/anfragen"
           onClick={() => posthog.capture('mtb_reisen_cta_clicked', { source: 'mtb_reisen_page' })}
         >
           <Button variant="hero-cta">{buttonText}</Button>

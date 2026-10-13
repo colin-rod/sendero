@@ -17,7 +17,7 @@ jest.mock('@/lib/i18n/routing', () => ({
   }: {
     href: string;
     children: React.ReactNode;
-    onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+    onClick?: React.MouseEventHandler;
   }) => (
     <a href={href} onClick={onClick}>
       {children}
@@ -29,7 +29,7 @@ describe('RequestTripCta', () => {
   it('links to the booking form with the primary hero style', () => {
     render(<RequestTripCta label="Request a trip" source="home_next_trips" />);
 
-    expect(screen.getByRole('link')).toHaveAttribute('href', '/buchen');
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/anfragen');
     expect(screen.getByRole('button', { name: 'Request a trip' })).toHaveClass(
       'bg-primary-500',
       'text-accent-400',

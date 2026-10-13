@@ -53,7 +53,7 @@ export function MtbReisenIntro({
       emoji: '💬',
       label: bookLabel,
       value: (
-        <Link href="/buchen" className="underline">
+        <Link href="/anfragen" className="underline">
           {bookCta}
         </Link>
       ),

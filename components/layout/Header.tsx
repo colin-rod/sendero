@@ -59,7 +59,7 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
             <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
               <MtbReisenNavDropdown isWhiteLogo={isWhiteLogo} />
               <Link
-                href="/buchen"
+                href="/anfragen"
                 className={`text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
               >
                 {t('nav.buchen')}

@@ -8,7 +8,7 @@
       "about": "Acerca de",
       "howItWorks": "Cómo Funciona",
       "trails": "Senderos",
-      "mtbReisen": "Viajes",
+      "mtbReisen": "Descubre tu Viaje",
       "mtbReisenNineDays": "9 Días",
       "mtbReisenSevenDays": "7 Días",
       "buchen": "Solicitar"
@@ -290,71 +290,116 @@
     },
     "whatsappMessage": "¡Hola! Me interesa saber más sobre los senderos de bicicleta de Sendero."
   },
-  "buchenPage": {
+  "anfragenPage": {
     "title": "Solicita tu viaje",
-    "subtitle": "¿Listo para los senderos? Cuéntanos tus planes y te ayudamos a reservar tu aventura Sendero.",
-    "description": "Reserva tu viaje en bicicleta de montaña con Sendero en la Región Cafetera de Colombia — cuéntanos tus fechas de viaje, tamaño del grupo y nivel de manejo.",
+    "description": "Cuéntame de ti y del viaje que tienes en mente – planeo contigo, de forma personal, tu viaje en bicicleta de montaña por los Andes colombianos.",
+    "hero": {
+      "title": "Vamos a rodar por los Andes.",
+      "subtitle": "Cuéntame de ti – el resto lo planeamos juntos."
+    },
+    "intro": {
+      "eyebrow": "Planeado personalmente",
+      "title": "Los Andes son mi hogar.",
+      "paragraphs": [
+        "Aquí, entre fincas cafeteras y bosques de niebla, te llevo a mi mundo sobre dos ruedas – por caminos que yo mismo aprendí a conocer y a querer.",
+        "Planeo cada viaje personalmente. Cuéntame qué tienes en mente y te respondo con una propuesta hecha a tu medida."
+      ],
+      "photoAlt": "Julian con su bicicleta de montaña"
+    },
     "form": {
-      "heading": "Enviar Solicitud de Reserva",
+      "heading": "¿Qué tienes en mente?",
       "labels": {
-        "name": "Nombre",
+        "firstName": "Nombre",
         "email": "Correo electrónico",
-        "country": "País",
-        "travelers": "Número de viajeros",
-        "date": "Fecha preferida",
-        "technicalLevel": "Nivel técnico / Condición física",
-        "message": "Cuéntanos sobre tu viaje"
-      },
-      "levelInfo": {
-        "technik": "Técnica",
-        "kondition": "Condición física"
+        "months": "¿Cuándo te queda bien?",
+        "travelers": "¿Quién viene?",
+        "level": "¿Qué caminos prefieres?",
+        "message": "Cuéntame de ti y de lo que quieres vivir"
       },
       "placeholders": {
-        "name": "Tu nombre",
+        "firstName": "¿Cómo te llamo?",
         "email": "tu@correo.com",
-        "country": "Tu país",
-        "travelers": "ej. 2",
-        "date": "Selecciona una fecha...",
-        "message": "¿Qué tienes en mente? Cuéntanos sobre el viaje que estás imaginando"
+        "message": "¿Cómo te gusta tomar el café?\n¿Qué quieres vivir en Colombia – también fuera de la bici?"
       },
-      "dateOptions": {
-        "april": "Abril 2027",
-        "november": "Noviembre 2027"
+      "errors": {
+        "firstNameRequired": "Por favor escribe tu nombre.",
+        "emailInvalid": "Por favor escribe un correo electrónico válido."
       },
-      "levels": [
-        {
-          "value": "basic",
-          "label": "Principiante",
-          "technik": "No se necesita experiencia previa en mountain bike fuera de carretera — caminos de bosque y grava fáciles con subidas suaves.",
-          "kondition": "Ritmo relajado — aproximadamente 5–15 km y hasta 250 m de desnivel por día."
+      "hints": {
+        "months": "Cada mes salen dos grupos – uno en la primera semana y otro en la segunda.",
+        "travelers": "¿Viajas solo? Con mucho gusto – pronto serás parte del grupo.",
+        "level": "¿No estás seguro? Déjalo abierto – lo descubrimos juntos."
+      },
+      "months": {
+        "2027-03": "Marzo",
+        "2027-04": "Abril",
+        "2027-05": "Mayo",
+        "flexible": "Soy flexible"
+      },
+      "travelers": {
+        "1": "Viajo solo"
+      },
+      "levels": {
+        "beginner": {
+          "title": "Tranquilo",
+          "text": "Caminos anchos, subidas cortas. Los senderos aún son nuevos para ti."
         },
-        {
-          "value": "intermediate",
-          "label": "Intermedio",
-          "technik": "Cómodo en singletrack fluido con pequeños obstáculos como raíces y piedras.",
-          "kondition": "Ritmo un poco más deportivo — aproximadamente 10–25 km y hasta 500 m de desnivel por día."
+        "intermediate-light": {
+          "title": "Fluido",
+          "text": "Curvas, raíces, algo de desnivel. Montas con regularidad."
         },
-        {
-          "value": "advanced",
-          "label": "Avanzado",
-          "technik": "Seguro en singletrack técnico con obstáculos medianos y superficies sueltas, subidas y bajadas de hasta 20–40% de pendiente.",
-          "kondition": "Ritmo deportivo — aproximadamente 15–45 km y hasta 1.000 m de desnivel por día."
-        },
-        {
-          "value": "expert",
-          "label": "Experto",
-          "technik": "Domina obstáculos grandes, terreno técnico empinado (hasta 30% de subida / 70% de bajada) y curvas cerradas.",
-          "kondition": "Ritmo muy deportivo — aproximadamente 25–75 km y hasta 1.500 m de desnivel por día."
+        "intermediate": {
+          "title": "Técnico",
+          "text": "Tramos empinados, piedras, subidas largas. Entre más sendero, mejor."
         }
-      ],
-      "buttons": {
-        "submit": "Enviar Solicitud",
-        "submitting": "Enviando..."
       },
-      "success": {
-        "title": "¡Solicitud enviada!",
-        "message": "Gracias por tu interés. Te responderemos dentro de 24 horas para ayudarte a planear tu viaje."
-      }
+      "levelInfo": {
+        "trigger": "¿Qué significan los niveles?",
+        "title": "¿Qué caminos van contigo?",
+        "close": "Cerrar"
+      },
+      "mailingList": {
+        "label": "Avísame en cuanto se puedan reservar nuevos viajes.",
+        "note": "Puedes darte de baja cuando quieras."
+      },
+      "buttons": {
+        "submit": "Enviar solicitud",
+        "submitting": "Enviando …"
+      },
+      "legal": {
+        "response": "Te respondo personalmente en menos de 48 horas.",
+        "text": "Solo uso tus datos para responderte.",
+        "privacy": "Privacidad"
+      },
+      "submitError": "Algo salió mal. Inténtalo de nuevo o escríbeme directamente a <mail>julian@senderobiketrails.com</mail>."
+    },
+    "success": {
+      "eyebrow": "Solicitud recibida",
+      "title": "¡Gracias, {name}!",
+      "message": "Me alegra mucho que quieras venir. En las próximas 48 horas te escribo personalmente – revisa también tu carpeta de spam por si no te llega nada.",
+      "mailingList": "Y te aviso apenas haya nuevos viajes disponibles para reservar.",
+      "closing": "Nos vemos en el sendero."
+    },
+    "gallery": {
+      "heading": "Lo que te espera",
+      "items": [
+        {
+          "caption": "Senderos por el bosque de niebla",
+          "alt": "Niebla entre el bosque de montaña"
+        },
+        {
+          "caption": "Café directo de la finca",
+          "alt": "Café y desayuno en la terraza de una finca"
+        },
+        {
+          "caption": "Anfitriones que no olvidarás",
+          "alt": "Puesto de frutas al borde de la carretera con dos ciclistas atrás"
+        },
+        {
+          "caption": "Grupos pequeños, días grandes",
+          "alt": "Grupo pequeño con bicicletas de montaña en un camino destapado"
+        }
+      ]
     }
   },
   "faqPage": {

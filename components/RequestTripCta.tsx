@@ -13,7 +13,7 @@ interface RequestTripCtaProps {
 export function RequestTripCta({ label, source }: RequestTripCtaProps) {
   return (
     <Link
-      href="/buchen"
+      href="/anfragen"
       onClick={() => posthog.capture('request_trip_cta_clicked', { source })}
     >
       <Button variant="hero-cta" className="w-[260px] rounded-[30px]!">

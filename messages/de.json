@@ -8,7 +8,7 @@
       "about": "Über uns",
       "howItWorks": "Wie es funktioniert",
       "trails": "Trails",
-      "mtbReisen": "Reisen",
+      "mtbReisen": "Entdecke deine Reise",
       "mtbReisenNineDays": "9 Tage",
       "mtbReisenSevenDays": "7 Tage",
       "buchen": "Anfragen"
@@ -290,71 +290,116 @@
     },
     "whatsappMessage": "Hallo! Ich interessiere mich für Sendero Radtouren."
   },
-  "buchenPage": {
+  "anfragenPage": {
     "title": "Reise anfragen",
-    "subtitle": "Bereit für die Trails? Erzähl uns von deinen Plänen und wir helfen dir, dein Sendero-Abenteuer zu buchen.",
-    "description": "Buche deine Sendero Mountainbike-Reise in Kolumbiens Kaffeeregion — teile uns deine Reisedaten, Gruppengröße und dein Fahrniveau mit.",
+    "description": "Erzähl mir von Dir und Deiner Wunschreise – ich plane Deine Mountainbike-Reise durch die Anden Kolumbiens persönlich mit Dir.",
+    "hero": {
+      "title": "Lass uns in den Anden fahren.",
+      "subtitle": "Erzähl mir von Dir – den Rest planen wir gemeinsam."
+    },
+    "intro": {
+      "eyebrow": "Persönlich geplant",
+      "title": "Die Anden sind meine Heimat.",
+      "paragraphs": [
+        "Hier, zwischen Kaffeefincas und Nebelwäldern, nehme ich Dich mit in meine Welt auf zwei Rädern – auf Wege, die ich selbst kennen- und lieben gelernt habe.",
+        "Jede Reise plane ich persönlich. Du erzählst mir, was Dir vorschwebt, und ich melde mich mit einem Vorschlag, der zu Dir passt."
+      ],
+      "photoAlt": "Julian mit seinem Mountainbike"
+    },
     "form": {
-      "heading": "Buchungsanfrage senden",
+      "heading": "Was schwebt Dir vor?",
       "labels": {
-        "name": "Name",
+        "firstName": "Vorname",
         "email": "E-Mail",
-        "country": "Land",
-        "travelers": "Anzahl der Reisenden",
-        "date": "Wunschtermin",
-        "technicalLevel": "Fahrtechnik / Kondition",
-        "message": "Erzähl uns von deiner Reise"
-      },
-      "levelInfo": {
-        "technik": "Technik",
-        "kondition": "Kondition"
+        "months": "Wann passt es Dir?",
+        "travelers": "Wer kommt mit?",
+        "level": "Welche Wege fährst Du am liebsten?",
+        "message": "Erzähl mir von Dir und Deinen Wünschen"
       },
       "placeholders": {
-        "name": "Dein Name",
-        "email": "deine@email.com",
-        "country": "Dein Land",
-        "travelers": "z. B. 2",
-        "date": "Termin auswählen...",
-        "message": "Was hast du im Kopf – erzähl uns von der Reise, die dir vorschwebt?"
+        "firstName": "Wie darf ich Dich nennen?",
+        "email": "deine@email.de",
+        "message": "Wie trinkst Du gerne Deinen Kaffee?\nWas möchtest Du in Kolumbien erleben – auch abseits vom Fahrradfahren?"
       },
-      "dateOptions": {
-        "april": "April 2027",
-        "november": "November 2027"
+      "errors": {
+        "firstNameRequired": "Bitte gib Deinen Vornamen an.",
+        "emailInvalid": "Bitte gib eine gültige E-Mail-Adresse an."
       },
-      "levels": [
-        {
-          "value": "basic",
-          "label": "Einsteiger",
-          "technik": "Keine Erfahrung im Mountainbiken abseits befestigter Wege nötig — einfache Wald- und Schotterwege mit sanften Anstiegen.",
-          "kondition": "Entspanntes Tempo — etwa 5–15 km und bis zu 250 Höhenmeter pro Tag."
+      "hints": {
+        "months": "Pro Monat starten zwei Gruppen – in der ersten und in der zweiten Woche.",
+        "travelers": "Allein unterwegs? Sehr gern – Du wirst schnell Teil der Gruppe.",
+        "level": "Unsicher? Lass es einfach offen – das finden wir zusammen heraus."
+      },
+      "months": {
+        "2027-03": "März",
+        "2027-04": "April",
+        "2027-05": "Mai",
+        "flexible": "Ich bin flexibel"
+      },
+      "travelers": {
+        "1": "Ich reise allein"
+      },
+      "levels": {
+        "beginner": {
+          "title": "Entspannt",
+          "text": "Breite Wege, kurze Anstiege. Trails sind noch neu für Dich."
         },
-        {
-          "value": "intermediate",
-          "label": "Fortgeschritten (leicht)",
-          "technik": "Sicher auf flüssigem Singletrail mit kleinen Hindernissen wie Wurzeln und Steinen.",
-          "kondition": "Etwas sportlicheres Tempo — etwa 10–25 km und bis zu 500 Höhenmeter pro Tag."
+        "intermediate-light": {
+          "title": "Flowig",
+          "text": "Kurven, Wurzeln, ein paar Höhenmeter. Du fährst regelmäßig."
         },
-        {
-          "value": "advanced",
-          "label": "Fortgeschritten",
-          "technik": "Souverän auf technischem Singletrail mit mittleren Hindernissen und losem Untergrund, Steigungen und Abfahrten bis etwa 20–40 % Gefälle.",
-          "kondition": "Sportliches Tempo — etwa 15–45 km und bis zu 1.000 Höhenmeter pro Tag."
-        },
-        {
-          "value": "expert",
-          "label": "Sehr fortgeschritten",
-          "technik": "Meistert große Hindernisse, steiles technisches Gelände (bis etwa 30 % Anstieg / 70 % Abfahrt) und enge Spitzkehren.",
-          "kondition": "Sehr sportliches Tempo — etwa 25–75 km und bis zu 1.500 Höhenmeter pro Tag."
+        "intermediate": {
+          "title": "Technisch",
+          "text": "Steile Stücke, Steine, lange Anstiege. Je mehr Trail, desto besser."
         }
-      ],
+      },
+      "levelInfo": {
+        "trigger": "Was bedeuten die Stufen?",
+        "title": "Welche Wege passen zu Dir?",
+        "close": "Schließen"
+      },
+      "mailingList": {
+        "label": "Schick mir eine Nachricht, sobald neue Reisen buchbar sind.",
+        "note": "Jederzeit abmeldbar."
+      },
       "buttons": {
         "submit": "Anfrage senden",
-        "submitting": "Wird gesendet..."
+        "submitting": "Wird gesendet …"
       },
-      "success": {
-        "title": "Anfrage gesendet!",
-        "message": "Vielen Dank für dein Interesse. Wir melden uns innerhalb von 24 Stunden, um deine Reise zu planen."
-      }
+      "legal": {
+        "response": "Ich melde mich innerhalb von 48 Stunden persönlich bei Dir.",
+        "text": "Deine Daten nutze ich nur, um Dir zu antworten.",
+        "privacy": "Datenschutz"
+      },
+      "submitError": "Da ist etwas schiefgelaufen. Bitte versuch es nochmal oder schreib mir direkt an <mail>julian@senderobiketrails.com</mail>."
+    },
+    "success": {
+      "eyebrow": "Anfrage erhalten",
+      "title": "Danke, {name}!",
+      "message": "Ich freue mich, dass Du dabei sein möchtest. In den nächsten 48 Stunden melde ich mich persönlich bei Dir – schau auch kurz in Deinen Spam-Ordner, falls nichts ankommt.",
+      "mailingList": "Und sobald neue Reisen buchbar sind, sage ich Dir Bescheid.",
+      "closing": "Bis bald auf dem Trail."
+    },
+    "gallery": {
+      "heading": "Was Dich erwartet",
+      "items": [
+        {
+          "caption": "Trails durch den Nebelwald",
+          "alt": "Nebel zieht durch den Bergwald"
+        },
+        {
+          "caption": "Kaffee direkt von der Finca",
+          "alt": "Kaffee und Frühstück auf der Terrasse einer Finca"
+        },
+        {
+          "caption": "Gastgeber, die man nicht vergisst",
+          "alt": "Obststand am Straßenrand, dahinter zwei Radfahrer"
+        },
+        {
+          "caption": "Kleine Gruppen, große Tage",
+          "alt": "Kleine Gruppe mit Mountainbikes auf einem Schotterweg"
+        }
+      ]
     }
   },
   "faqPage": {

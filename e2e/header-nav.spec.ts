@@ -27,9 +27,9 @@ const routes: { path: string; logoVariant: 'dark' | 'white' }[] = [
 ];
 
 const mtbNavLabel: Record<(typeof locales)[number], string> = {
-  en: 'Trips',
-  de: 'Reisen',
-  es: 'Viajes',
+  en: 'Explore your Trip',
+  de: 'Entdecke deine Reise',
+  es: 'Descubre tu Viaje',
 };
 
 test.describe('Header renders on every page and locale', () => {

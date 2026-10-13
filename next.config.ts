@@ -25,6 +25,23 @@ const nextConfig: NextConfig = {
   // Reverse-proxy PostHog through /ingest to avoid ad-blockers and keep events in-domain.
   // Targets EU region for GDPR compliance.
   skipTrailingSlashRedirect: true,
+
+  // The trip request page moved from /buchen to /anfragen — keep old links working.
+  async redirects() {
+    return [
+      {
+        source: '/:locale(de|en|es)/buchen',
+        destination: '/:locale/anfragen',
+        permanent: true,
+      },
+      {
+        source: '/buchen',
+        destination: '/anfragen',
+        permanent: true,
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {

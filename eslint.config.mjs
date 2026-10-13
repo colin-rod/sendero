@@ -64,6 +64,8 @@ export default [
         IntersectionObserver: 'readonly',
         Response: 'readonly',
         KeyboardEvent: 'readonly',
+        MouseEvent: 'readonly',
+        Node: 'readonly',
         TextEncoder: 'readonly',
         crypto: 'readonly',
         URL: 'readonly',

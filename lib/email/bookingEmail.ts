@@ -5,29 +5,33 @@ interface BookingEmailData extends BookingFormData {
 }
 
 /**
- * Generates email content for booking form submissions
+ * Generates the notification email Julian receives for trip request submissions
  */
 export function generateBookingEmail(data: BookingEmailData) {
+  const firstName = data.firstName.trim();
+  const months = data.months.length > 0 ? data.months.join(', ') : '–';
+
   const emailBody = `
-New booking inquiry from Sendero website:
+Neue Reiseanfrage über senderobiketrails.com:
 
-Name: ${data.name}
-Email: ${data.email}
-Country: ${data.country}
-Travelers: ${data.travelers}
-Tour date: ${data.tourDate}
-Technical level: ${data.technicalLevel}
-Language: ${data.locale}
+Vorname: ${firstName}
+E-Mail: ${data.email.trim()}
+Monate: ${months}
+Reisende: ${data.travelers ?? '–'}
+Level: ${data.level ?? '–'}
+Mailingliste: ${data.mailingList ? 'ja' : 'nein'}
+Sprache: ${data.locale}
+Quelle: ${data.source ?? '–'}
 
-Message:
-${data.message || 'None'}
+Nachricht:
+${data.message?.trim() || '–'}
 
 ---
-Submitted: ${new Date().toLocaleString()}
+Eingegangen: ${new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' })}
 `.trim();
 
   return {
-    subject: 'New Booking Inquiry',
+    subject: `Neue Reiseanfrage – ${firstName}`,
     text: emailBody,
   };
 }

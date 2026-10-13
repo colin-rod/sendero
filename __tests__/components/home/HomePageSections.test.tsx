@@ -89,7 +89,7 @@ describe('HomePage section flow', () => {
     const { container } = render(<HomePage />);
     const waitlist = container.querySelector('#waitlist') as HTMLElement;
 
-    expect(within(waitlist).getByRole('link', { name: 'requestCta' })).toHaveAttribute('href', '/buchen');
+    expect(within(waitlist).getByRole('link', { name: 'requestCta' })).toHaveAttribute('href', '/anfragen');
     expect(within(waitlist).getByTestId('bottom-email')).toBeInTheDocument();
   });
 });
