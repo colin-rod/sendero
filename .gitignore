@@ -40,3 +40,6 @@ next-env.d.ts
 
 # Claude Code
 .claude/settings.local.json
+
+# Raw source footage (838 MB) — web cuts live in public/videos/
+/public/Kolumbien Videos.mp4
