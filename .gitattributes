@@ -1,0 +1,7 @@
+# mtb-reisen is development-only. If it's ever merged into main via local
+# git (not GitHub's merge button), keep main's side (i.e. absent) instead of
+# taking development's changes.
+#
+# This requires a one-time local setup on any machine merging via CLI:
+#   git config merge.ours.driver true
+mtb-reisen/** merge=ours -diff

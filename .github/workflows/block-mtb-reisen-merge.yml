@@ -1,0 +1,26 @@
+name: Block mtb-reisen on main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  guard:
+    name: Fail if mtb-reisen/ is part of this PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Check diff for mtb-reisen/
+        run: |
+          CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          echo "$CHANGED"
+          if echo "$CHANGED" | grep -q '^mtb-reisen/'; then
+            echo "::error::This PR touches mtb-reisen/, which must never merge into main."
+            exit 1
+          fi
