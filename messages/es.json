@@ -7,7 +7,8 @@
     "nav": {
       "about": "Acerca de",
       "howItWorks": "Cómo Funciona",
-      "trails": "Senderos"
+      "trails": "Senderos",
+      "buchen": "Solicitar"
     },
     "mobileMenu": {
       "toggle": "Alternar menú de navegación",
@@ -100,11 +101,12 @@
   "nextTrips": {
     "heading": "Próximos viajes",
     "pioneerTrip": "Viaje pionero · 26.11.–04.12.2026",
-    "soldOut": "Plazas agotadas.",
+    "soldOut": "Plazas agotadas",
     "continuesHeading": "La aventura continúa.",
-    "continuesText": "En marzo, abril y mayo de 2027 te esperan nuevos y emocionantes senderos.",
-    "prompt": "¿Quieres acompañarnos? Inscríbete y entérate cuando se abran las reservas para los próximos viajes.",
-    "cta": "Quiero participar"
+    "continuesText": "En marzo, abril y mayo de 2027 te esperan nuevos y emocionantes senderos – <br></br>dos grupos por mes, pequeños y cercanos.",
+    "prompt": "¿Quieres acompañarnos?",
+    "requestCta": "Solicitar viaje",
+    "waitlistCta": "Mantenerme informado"
   },
   "form": {
     "labels": {

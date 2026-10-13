@@ -54,6 +54,26 @@ test.describe('Header logo link', () => {
   }
 });
 
+const requestNavLabel: Record<(typeof locales)[number], string> = {
+  en: 'Inquire',
+  de: 'Anfragen',
+  es: 'Solicitar',
+};
+
+test.describe('Header "Anfragen" link', () => {
+  for (const locale of locales) {
+    test(`links to the trip request page (${locale})`, async ({ page, isMobile }) => {
+      test.skip(isMobile, 'nav is hidden below md');
+      await page.goto(`/${locale}/trails`);
+
+      const link = page.locator('header').getByRole('link', { name: requestNavLabel[locale], exact: true });
+      await expect(link).toHaveAttribute('href', `/${locale}/anfragen`);
+      await link.click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/anfragen$`));
+    });
+  }
+});
+
 test.describe('Header scroll behavior', () => {
   test('toggles a solid background on scroll', async ({ page }) => {
     await page.goto('/en/trails');

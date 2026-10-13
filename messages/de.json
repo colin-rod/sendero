@@ -7,7 +7,8 @@
     "nav": {
       "about": "Über uns",
       "howItWorks": "Wie es funktioniert",
-      "trails": "Trails"
+      "trails": "Trails",
+      "buchen": "Anfragen"
     },
     "mobileMenu": {
       "toggle": "Navigationsmenü umschalten",
@@ -100,11 +101,12 @@
   "nextTrips": {
     "heading": "Die nächsten Reisen",
     "pioneerTrip": "Pionierreise · 26.11.–04.12.2026",
-    "soldOut": "Ausgebucht.",
+    "soldOut": "Ausgebucht",
     "continuesHeading": "Die Reise geht weiter.",
-    "continuesText": "Im März, April und Mai 2027 warten neue, spannende Trails auf Dich.",
-    "prompt": "Du möchtest dabei sein? Trag Dich jetzt ein und erfahre, sobald die nächsten Reisen buchbar sind.",
-    "cta": "Gerne teilnehmen"
+    "continuesText": "Im März, April und Mai 2027 warten neue, spannende Trails auf Dich – <br></br>zwei Gruppen pro Monat, klein und persönlich.",
+    "prompt": "Du möchtest dabei sein?",
+    "requestCta": "Reise anfragen",
+    "waitlistCta": "Informiert bleiben"
   },
   "form": {
     "labels": {

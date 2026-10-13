@@ -7,7 +7,8 @@
     "nav": {
       "about": "About",
       "howItWorks": "How It Works",
-      "trails": "Trails"
+      "trails": "Trails",
+      "buchen": "Inquire"
     },
     "mobileMenu": {
       "toggle": "Toggle navigation menu",
@@ -100,11 +101,12 @@
   "nextTrips": {
     "heading": "Upcoming Trips",
     "pioneerTrip": "Pioneer Trip · 26\u00a0Nov\u00a0–\u00a04\u00a0Dec\u00a02026",
-    "soldOut": "Sold out.",
+    "soldOut": "Sold out",
     "continuesHeading": "The journey continues.",
-    "continuesText": "New and exciting trails await you in March, April and May 2027.",
-    "prompt": "Would you like to join us? Sign up to be the first to know when bookings open for upcoming trips.",
-    "cta": "Count me in"
+    "continuesText": "New and exciting trails await you in March, April and May 2027 – <br></br>two groups per month, small and personal.",
+    "prompt": "Would you like to join us?",
+    "requestCta": "Request a trip",
+    "waitlistCta": "Stay informed"
   },
   "form": {
     "labels": {

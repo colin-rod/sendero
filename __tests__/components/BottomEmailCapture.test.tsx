@@ -47,6 +47,14 @@ describe('BottomEmailCapture', () => {
     expect(joinButton).toHaveClass('bg-primary-500', 'text-accent-400');
   });
 
+  it('renders the translucent secondary style when buttonVariant is hero-cta-secondary', () => {
+    render(<BottomEmailCapture buttonVariant="hero-cta-secondary" buttonClassName="w-[260px]" />);
+
+    const joinButton = screen.getByRole('button', { name: 'JOIN' });
+    expect(joinButton).toHaveClass('bg-background/30', 'text-white', 'w-[260px]');
+    expect(joinButton).not.toHaveClass('bg-primary-500');
+  });
+
   it('uses a custom collapsed button label and still switches to submit when expanded', async () => {
     const user = userEvent.setup();
     render(<BottomEmailCapture buttonLabel="Count me in" />);
