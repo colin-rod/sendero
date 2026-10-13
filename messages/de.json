@@ -8,7 +8,7 @@
       "about": "Über uns",
       "howItWorks": "Wie es funktioniert",
       "trails": "Trails",
-      "mtbReisen": "Entdecke deine Reise",
+      "mtbReisen": "Deine Reise",
       "mtbReisenNineDays": "9 Tage",
       "mtbReisenSevenDays": "7 Tage",
       "buchen": "Anfragen"
@@ -188,7 +188,7 @@
   },
   "footer": {
     "brandName": "sendero bike trails",
-    "tagline": "Pfade, die Leben verbinden.",
+    "tagline": "Fahrraderlebnisse in Kolumbiens Andenwäldern",
     "social": {
       "followUs": "Folge uns",
       "instagram": "Folge uns auf Instagram",

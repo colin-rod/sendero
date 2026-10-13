@@ -29,7 +29,7 @@ export function MtbReisenNavDropdown({ isWhiteLogo }: MtbReisenNavDropdownProps)
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`flex items-center gap-1.5 text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 cursor-pointer ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
+        className={`flex items-center gap-1.5 whitespace-nowrap text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 cursor-pointer ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
         aria-haspopup="true"
         aria-expanded={isOpen}
       >

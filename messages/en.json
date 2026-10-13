@@ -8,7 +8,7 @@
       "about": "About",
       "howItWorks": "How It Works",
       "trails": "Trails",
-      "mtbReisen": "Explore your Trip",
+      "mtbReisen": "Your Trip",
       "mtbReisenNineDays": "9 Days",
       "mtbReisenSevenDays": "7 Days",
       "buchen": "Inquire"
@@ -188,7 +188,7 @@
   },
   "footer": {
     "brandName": "sendero bike trails",
-    "tagline": "Paths that connect lives.",
+    "tagline": "Bike adventures in Colombia's Andean forests",
     "social": {
       "followUs": "Follow us",
       "instagram": "Follow us on Instagram",

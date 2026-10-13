@@ -55,19 +55,21 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
               </span>
             </Link>
 
-            {/* Nav */}
-            <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
-              <MtbReisenNavDropdown isWhiteLogo={isWhiteLogo} />
-              <Link
-                href="/anfragen"
-                className={`text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
-              >
-                {t('nav.buchen')}
-              </Link>
-            </nav>
+            <div className="flex items-center gap-8">
+              {/* Nav */}
+              <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
+                <MtbReisenNavDropdown isWhiteLogo={isWhiteLogo} />
+                <Link
+                  href="/anfragen"
+                  className={`text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
+                >
+                  {t('nav.buchen')}
+                </Link>
+              </nav>
 
-            {/* Language Switcher */}
-            <LanguageSwitcher />
+              {/* Language Switcher */}
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </header>
