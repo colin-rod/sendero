@@ -4,11 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
 
-type MtbReisenNavDropdownProps = {
-  isWhiteLogo: boolean;
-};
-
-export function MtbReisenNavDropdown({ isWhiteLogo }: MtbReisenNavDropdownProps) {
+export function MtbReisenNavDropdown() {
   const t = useTranslations('header');
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -29,7 +25,7 @@ export function MtbReisenNavDropdown({ isWhiteLogo }: MtbReisenNavDropdownProps)
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`flex items-center gap-1.5 whitespace-nowrap text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 cursor-pointer ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
+        className="flex items-center gap-1.5 whitespace-nowrap text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 cursor-pointer text-foreground"
         aria-haspopup="true"
         aria-expanded={isOpen}
       >

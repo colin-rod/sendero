@@ -1,9 +1,8 @@
 /**
  * E2E Tests: Header across every page and locale
  *
- * Regression coverage for the outline-logo swap (Logo_Dark.svg /
- * Logo_Light.svg) and the "Reisen/Trips/Viajes"
- * nav rename — confirms the header, logo variant, language switcher, and
+ * Regression coverage for the dark outline logo (Logo_Dark.svg) and the
+ * "Reisen/Trips/Viajes" nav rename — confirms the header, logo, language switcher, and
  * MTB trip dropdown all still render/behave correctly on every routed page,
  * in all three locales.
  */
@@ -12,18 +11,20 @@ import { test, expect } from '@playwright/test';
 
 const locales = ['en', 'de', 'es'] as const;
 
-const routes: { path: string; logoVariant: 'dark' | 'white' }[] = [
-  { path: '', logoVariant: 'dark' },
-  { path: '/trails', logoVariant: 'dark' },
-  { path: '/trails/sendero-del-tigre', logoVariant: 'dark' },
-  { path: '/contact', logoVariant: 'dark' },
-  { path: '/thank-you', logoVariant: 'dark' },
-  { path: '/datenschutz', logoVariant: 'dark' },
-  { path: '/faq', logoVariant: 'dark' },
-  { path: '/about', logoVariant: 'dark' },
-  { path: '/impressum', logoVariant: 'dark' },
-  { path: '/mtb-reisen', logoVariant: 'white' },
-  { path: '/mtb-reisen-7-tage', logoVariant: 'white' },
+const routes = [
+  '',
+  '/trails',
+  '/trails/sendero-del-tigre',
+  '/contact',
+  '/thank-you',
+  '/datenschutz',
+  '/faq',
+  '/about',
+  '/impressum',
+  '/agb',
+  '/anfragen',
+  '/mtb-reisen',
+  '/mtb-reisen-7-tage',
 ];
 
 const mtbNavLabel: Record<(typeof locales)[number], string> = {
@@ -35,21 +36,32 @@ const mtbNavLabel: Record<(typeof locales)[number], string> = {
 test.describe('Header renders on every page and locale', () => {
   for (const locale of locales) {
     for (const route of routes) {
-      test(`${locale}${route.path || '/'} shows the header with the ${route.logoVariant} logo`, async ({
-        page,
-      }) => {
-        await page.goto(`/${locale}${route.path}`);
+      test(`${locale}${route || '/'} shows the header with the dark logo`, async ({ page }) => {
+        await page.goto(`/${locale}${route}`);
 
         const header = page.locator('header');
         await expect(header).toBeVisible();
 
-        const expectedLogo = route.logoVariant === 'white' ? 'Logo_Light.svg' : 'Logo_Dark.svg';
         const logo = header.locator('img').first();
-        await expect(logo).toHaveAttribute('src', new RegExp(expectedLogo.replace('.', '\\.')));
+        await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
 
         await expect(header.getByLabel('Language selector')).toBeVisible();
       });
     }
+  }
+});
+
+test.describe('Header background on scroll', () => {
+  for (const route of ['', '/mtb-reisen', '/anfragen']) {
+    test(`de${route || '/'} is transparent at the top and white after scrolling`, async ({ page }) => {
+      await page.goto(`/de${route}`);
+
+      const header = page.locator('header');
+      await expect(header).toHaveClass(/bg-transparent/);
+
+      await page.evaluate(() => window.scrollTo(0, 400));
+      await expect(header).toHaveClass(/bg-white/);
+    });
   }
 });
 
@@ -95,12 +107,6 @@ test.describe('Header scroll behavior', () => {
     await expect(header).not.toHaveClass(/bg-white/);
 
     await page.mouse.wheel(0, 400);
-    // NOTE: on white-logo hero pages the header background still turns solid
-    // white on scroll while the logo/nav text stay white-styled — this is
-    // pre-existing Header.tsx behavior (the `scrolled` state only toggles
-    // the background, not `logoVariant`), not introduced by the logo swap.
-    // Recorded here as a known contrast issue rather than "fixed" — out of
-    // scope for this change.
     await expect(header).toHaveClass(/bg-white/);
   });
 });

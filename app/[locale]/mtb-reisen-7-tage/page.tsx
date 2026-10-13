@@ -64,7 +64,7 @@ export default async function MtbReisenSevenDaysPage({ params }: { params: Promi
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={breadcrumbs} />
-      <Header logoVariant="white" />
+      <Header />
       <main id="main-content">
         <MtbReisenHero title={t('hero.title')} subtitle={t('hero.subtitle')} heroImage={trip.images.hero} />
         <MtbReisenOverviewBar overview={t('overviewBar.overview')} included={t('overviewBar.included')} itinerary={t('overviewBar.itinerary')} dates={t('overviewBar.dates')} />

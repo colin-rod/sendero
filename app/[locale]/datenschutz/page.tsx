@@ -8,7 +8,7 @@ export default function DatenschutzPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header logoVariant="dark" />
+      <Header />
       <main id="main-content" className="flex-1">
         <section className="pt-32 pb-16 md:pt-24 md:pb-24">
           <Container>

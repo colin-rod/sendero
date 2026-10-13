@@ -74,7 +74,7 @@ export default async function MtbReisenPage({
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={breadcrumbs} />
-      <Header logoVariant="white" />
+      <Header />
       <main id="main-content">
         <MtbReisenHero
           title={t('hero.title')}

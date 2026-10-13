@@ -83,7 +83,7 @@ export default async function FAQPage({
     <div className="flex min-h-screen flex-col bg-muted/40">
       <JsonLd data={[faqSchema, breadcrumbs]} />
 
-      <Header logoVariant="dark" />
+      <Header />
 
       <main className="flex-1 py-12 md:py-16">
         <Container size="md">

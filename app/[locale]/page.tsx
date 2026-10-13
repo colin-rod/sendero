@@ -64,7 +64,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <JsonLd data={[breadcrumbs, itemList]} />
-      <Header logoVariant="dark" />
+      <Header />
       <main id="main-content" className="flex-1">
         {/* Hero Section - Full Screen */}
         <section className="relative h-[100svh] min-h-[100svh] bg-black flex flex-col overflow-hidden hero-section">

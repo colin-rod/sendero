@@ -7,14 +7,8 @@ import { Link } from '@/lib/i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { MtbReisenNavDropdown } from '@/components/layout/MtbReisenNavDropdown';
 
-type HeaderProps = {
-  logoVariant?: 'dark' | 'white';
-};
-
-export function Header({ logoVariant = 'dark' }: HeaderProps) {
+export function Header() {
   const t = useTranslations('header');
-  const isWhiteLogo = logoVariant === 'white';
-  const logoSrc = isWhiteLogo ? '/Logo_Light.svg' : '/Logo_Dark.svg';
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,14 +37,14 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
               aria-label={t('ariaLabel')}
             >
               <Image
-                src={logoSrc}
+                src="/Logo_Dark.svg"
                 alt={t('logoAlt')}
                 width={48}
                 height={48}
                 className="h-12 w-12 flex-none"
                 priority
               />
-              <span className={`text-caption font-medium leading-tight tracking-[0.06em] uppercase ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}>
+              <span className="text-caption font-medium leading-tight tracking-[0.06em] uppercase text-foreground">
                 Sendero<br />Bike Trails
               </span>
             </Link>
@@ -58,10 +52,10 @@ export function Header({ logoVariant = 'dark' }: HeaderProps) {
             <div className="flex items-center gap-8">
               {/* Nav */}
               <nav className="hidden md:flex items-center gap-6" aria-label={t('ariaLabel')}>
-                <MtbReisenNavDropdown isWhiteLogo={isWhiteLogo} />
+                <MtbReisenNavDropdown />
                 <Link
                   href="/anfragen"
-                  className={`text-caption font-medium tracking-[0.06em] uppercase transition-opacity hover:opacity-70 ${isWhiteLogo ? 'text-white' : 'text-foreground'}`}
+                  className="text-caption font-medium tracking-[0.06em] uppercase text-foreground transition-opacity hover:opacity-70"
                 >
                   {t('nav.buchen')}
                 </Link>
