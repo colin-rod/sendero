@@ -860,5 +860,117 @@
     "accept": "Aceptar",
     "decline": "Rechazar",
     "learnMore": "Privacidad"
+  },
+  "anfragenPage": {
+    "title": "Solicita tu viaje",
+    "description": "Cuéntame de ti y del viaje que tienes en mente – planeo contigo, de forma personal, tu viaje en bicicleta de montaña por los Andes colombianos.",
+    "hero": {
+      "title": "Vamos a rodar por los Andes.",
+      "subtitle": "Cuéntame de ti – el resto lo planeamos juntos."
+    },
+    "intro": {
+      "eyebrow": "Planeado personalmente",
+      "title": "Los Andes son mi hogar.",
+      "paragraphs": [
+        "Aquí, entre fincas cafeteras y bosques de niebla, te llevo a mi mundo sobre dos ruedas – por caminos que yo mismo aprendí a conocer y a querer.",
+        "Planeo cada viaje personalmente. Cuéntame qué tienes en mente y te respondo con una propuesta hecha a tu medida."
+      ],
+      "photoAlt": "Julian con su bicicleta de montaña"
+    },
+    "form": {
+      "heading": "¿Qué tienes en mente?",
+      "labels": {
+        "firstName": "Nombre",
+        "email": "Correo electrónico",
+        "months": "¿Cuándo te queda bien?",
+        "travelers": "¿Quién viene?",
+        "level": "¿Qué caminos prefieres?",
+        "message": "Cuéntame de ti y de lo que quieres vivir"
+      },
+      "placeholders": {
+        "firstName": "¿Cómo te llamo?",
+        "email": "tu@correo.com",
+        "message": "¿Cómo te gusta tomar el café?\n¿Qué quieres vivir en Colombia – también fuera de la bici?"
+      },
+      "errors": {
+        "firstNameRequired": "Por favor escribe tu nombre.",
+        "emailInvalid": "Por favor escribe un correo electrónico válido."
+      },
+      "hints": {
+        "months": "Cada mes salen dos grupos – uno en la primera semana y otro en la segunda.",
+        "travelers": "¿Viajas solo? Con mucho gusto – pronto serás parte del grupo.",
+        "level": "¿No estás seguro? Déjalo abierto – lo descubrimos juntos."
+      },
+      "months": {
+        "2027-03": "Marzo",
+        "2027-04": "Abril",
+        "2027-05": "Mayo",
+        "flexible": "Soy flexible"
+      },
+      "travelers": {
+        "1": "Viajo solo"
+      },
+      "levels": {
+        "beginner": {
+          "title": "Tranquilo",
+          "text": "Caminos anchos, subidas cortas. Los senderos aún son nuevos para ti."
+        },
+        "intermediate-light": {
+          "title": "Fluido",
+          "text": "Curvas, raíces, algo de desnivel. Montas con regularidad."
+        },
+        "intermediate": {
+          "title": "Técnico",
+          "text": "Tramos empinados, piedras, subidas largas. Entre más sendero, mejor."
+        }
+      },
+      "levelInfo": {
+        "trigger": "¿Qué significan los niveles?",
+        "title": "¿Qué caminos van contigo?",
+        "close": "Cerrar"
+      },
+      "mailingList": {
+        "label": "Avísame en cuanto se puedan reservar nuevos viajes.",
+        "note": "Puedes darte de baja cuando quieras."
+      },
+      "buttons": {
+        "submit": "Enviar solicitud",
+        "submitting": "Enviando …"
+      },
+      "legal": {
+        "response": "Te respondo personalmente en menos de 48 horas.",
+        "text": "Solo uso tus datos para responderte.",
+        "privacy": "Privacidad"
+      },
+      "submitError": "Algo salió mal. Inténtalo de nuevo o escríbeme directamente a <mail>julian@senderobiketrails.com</mail>."
+    },
+    "success": {
+      "eyebrow": "Solicitud recibida",
+      "title": "¡Gracias, {name}!",
+      "message": "Me alegra mucho que quieras venir. En las próximas 48 horas te escribo personalmente – revisa también tu carpeta de spam por si no te llega nada.",
+      "mailingList": "Y te aviso apenas haya nuevos viajes disponibles para reservar.",
+      "closing": "Nos vemos en el sendero."
+    },
+    "gallery": {
+      "heading": "Lo que te espera",
+      "items": [
+        {
+          "caption": "Senderos por el bosque de niebla",
+          "alt": "Niebla entre el bosque de montaña"
+        },
+        {
+          "caption": "Café directo de la finca",
+          "alt": "Café y desayuno en la terraza de una finca"
+        },
+        {
+          "caption": "Anfitriones que no olvidarás",
+          "alt": "Puesto de frutas al borde de la carretera con dos ciclistas atrás"
+        },
+        {
+          "caption": "Grupos pequeños, días grandes",
+          "alt": "Grupo pequeño con bicicletas de montaña en un camino destapado"
+        }
+      ]
+    }
   }
 }

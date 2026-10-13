@@ -860,5 +860,117 @@
     "accept": "Akzeptieren",
     "decline": "Ablehnen",
     "learnMore": "Datenschutz"
+  },
+  "anfragenPage": {
+    "title": "Reise anfragen",
+    "description": "Erzähl mir von Dir und Deiner Wunschreise – ich plane Deine Mountainbike-Reise durch die Anden Kolumbiens persönlich mit Dir.",
+    "hero": {
+      "title": "Lass uns in den Anden fahren.",
+      "subtitle": "Erzähl mir von Dir – den Rest planen wir gemeinsam."
+    },
+    "intro": {
+      "eyebrow": "Persönlich geplant",
+      "title": "Die Anden sind meine Heimat.",
+      "paragraphs": [
+        "Hier, zwischen Kaffeefincas und Nebelwäldern, nehme ich Dich mit in meine Welt auf zwei Rädern – auf Wege, die ich selbst kennen- und lieben gelernt habe.",
+        "Jede Reise plane ich persönlich. Du erzählst mir, was Dir vorschwebt, und ich melde mich mit einem Vorschlag, der zu Dir passt."
+      ],
+      "photoAlt": "Julian mit seinem Mountainbike"
+    },
+    "form": {
+      "heading": "Was schwebt Dir vor?",
+      "labels": {
+        "firstName": "Vorname",
+        "email": "E-Mail",
+        "months": "Wann passt es Dir?",
+        "travelers": "Wer kommt mit?",
+        "level": "Welche Wege fährst Du am liebsten?",
+        "message": "Erzähl mir von Dir und Deinen Wünschen"
+      },
+      "placeholders": {
+        "firstName": "Wie darf ich Dich nennen?",
+        "email": "deine@email.de",
+        "message": "Wie trinkst Du gerne Deinen Kaffee?\nWas möchtest Du in Kolumbien erleben – auch abseits vom Fahrradfahren?"
+      },
+      "errors": {
+        "firstNameRequired": "Bitte gib Deinen Vornamen an.",
+        "emailInvalid": "Bitte gib eine gültige E-Mail-Adresse an."
+      },
+      "hints": {
+        "months": "Pro Monat starten zwei Gruppen – in der ersten und in der zweiten Woche.",
+        "travelers": "Allein unterwegs? Sehr gern – Du wirst schnell Teil der Gruppe.",
+        "level": "Unsicher? Lass es einfach offen – das finden wir zusammen heraus."
+      },
+      "months": {
+        "2027-03": "März",
+        "2027-04": "April",
+        "2027-05": "Mai",
+        "flexible": "Ich bin flexibel"
+      },
+      "travelers": {
+        "1": "Ich reise allein"
+      },
+      "levels": {
+        "beginner": {
+          "title": "Entspannt",
+          "text": "Breite Wege, kurze Anstiege. Trails sind noch neu für Dich."
+        },
+        "intermediate-light": {
+          "title": "Flowig",
+          "text": "Kurven, Wurzeln, ein paar Höhenmeter. Du fährst regelmäßig."
+        },
+        "intermediate": {
+          "title": "Technisch",
+          "text": "Steile Stücke, Steine, lange Anstiege. Je mehr Trail, desto besser."
+        }
+      },
+      "levelInfo": {
+        "trigger": "Was bedeuten die Stufen?",
+        "title": "Welche Wege passen zu Dir?",
+        "close": "Schließen"
+      },
+      "mailingList": {
+        "label": "Schick mir eine Nachricht, sobald neue Reisen buchbar sind.",
+        "note": "Jederzeit abmeldbar."
+      },
+      "buttons": {
+        "submit": "Anfrage senden",
+        "submitting": "Wird gesendet …"
+      },
+      "legal": {
+        "response": "Ich melde mich innerhalb von 48 Stunden persönlich bei Dir.",
+        "text": "Deine Daten nutze ich nur, um Dir zu antworten.",
+        "privacy": "Datenschutz"
+      },
+      "submitError": "Da ist etwas schiefgelaufen. Bitte versuch es nochmal oder schreib mir direkt an <mail>julian@senderobiketrails.com</mail>."
+    },
+    "success": {
+      "eyebrow": "Anfrage erhalten",
+      "title": "Danke, {name}!",
+      "message": "Ich freue mich, dass Du dabei sein möchtest. In den nächsten 48 Stunden melde ich mich persönlich bei Dir – schau auch kurz in Deinen Spam-Ordner, falls nichts ankommt.",
+      "mailingList": "Und sobald neue Reisen buchbar sind, sage ich Dir Bescheid.",
+      "closing": "Bis bald auf dem Trail."
+    },
+    "gallery": {
+      "heading": "Was Dich erwartet",
+      "items": [
+        {
+          "caption": "Trails durch den Nebelwald",
+          "alt": "Nebel zieht durch den Bergwald"
+        },
+        {
+          "caption": "Kaffee direkt von der Finca",
+          "alt": "Kaffee und Frühstück auf der Terrasse einer Finca"
+        },
+        {
+          "caption": "Gastgeber, die man nicht vergisst",
+          "alt": "Obststand am Straßenrand, dahinter zwei Radfahrer"
+        },
+        {
+          "caption": "Kleine Gruppen, große Tage",
+          "alt": "Kleine Gruppe mit Mountainbikes auf einem Schotterweg"
+        }
+      ]
+    }
   }
 }
