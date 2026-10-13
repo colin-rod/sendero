@@ -299,7 +299,7 @@
     },
     "intro": {
       "eyebrow": "Personally planned",
-      "title": "The Andes are my home.",
+      "title": "The mountains are my home.",
       "paragraphs": [
         "Here, between coffee farms and cloud forests, I'll take you into my world on two wheels – along trails I've come to know and love myself.",
         "I plan every trip personally. Tell me what you have in mind, and I'll get back to you with a proposal that fits you."
@@ -331,9 +331,9 @@
         "level": "Not sure? Just leave it open – we'll figure it out together."
       },
       "months": {
-        "2027-03": "March",
-        "2027-04": "April",
-        "2027-05": "May",
+        "2027-03": "March 2027",
+        "2027-04": "April 2027",
+        "2027-05": "May 2027",
         "flexible": "I'm flexible"
       },
       "travelers": {
