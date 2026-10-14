@@ -12,7 +12,8 @@
     },
     "mobileMenu": {
       "toggle": "Navigationsmenü umschalten",
-      "ariaLabel": "Mobile Navigation"
+      "ariaLabel": "Mobile Navigation",
+      "language": "Sprache"
     }
   },
   "hero": {
