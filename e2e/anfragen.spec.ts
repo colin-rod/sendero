@@ -12,11 +12,10 @@ const pages = { de: de.anfragenPage, en: en.anfragenPage, es: es.anfragenPage };
 
 test.describe('Anfragen page', () => {
   for (const [locale, copy] of Object.entries(pages)) {
-    test(`renders hero, intro, form and gallery (${locale})`, async ({ page }) => {
+    test(`renders intro, form and gallery (${locale})`, async ({ page }) => {
       await page.goto(`/${locale}/anfragen`);
 
-      await expect(page.getByRole('heading', { level: 1, name: copy.hero.title })).toBeVisible();
-      await expect(page.getByRole('heading', { name: copy.intro.title })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 1, name: copy.intro.title })).toBeVisible();
       await expect(page.getByRole('heading', { name: copy.form.heading })).toBeVisible();
       await expect(page.getByRole('heading', { name: copy.gallery.heading })).toBeVisible();
       await expect(page.getByPlaceholder(copy.form.placeholders.firstName)).toBeVisible();

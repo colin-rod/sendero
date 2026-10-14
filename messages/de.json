@@ -8,7 +8,7 @@
       "about": "Über uns",
       "howItWorks": "Wie es funktioniert",
       "trails": "Trails",
-      "buchen": "Anfragen"
+      "buchen": "Los geht's!"
     },
     "mobileMenu": {
       "toggle": "Navigationsmenü umschalten",
@@ -867,27 +867,27 @@
     "title": "Reise anfragen",
     "description": "Erzähl mir von Dir und Deiner Wunschreise – ich plane Deine Mountainbike-Reise durch die Anden Kolumbiens persönlich mit Dir.",
     "hero": {
-      "title": "Lass uns in den Anden fahren.",
+      "title": "Kolumbien erwartet Dich.",
       "subtitle": "Erzähl mir von Dir – den Rest planen wir gemeinsam."
     },
     "intro": {
       "eyebrow": "Persönlich geplant",
-      "title": "Die Anden sind meine Heimat.",
+      "title": "Diese Berge sind meine Heimat.",
       "paragraphs": [
         "Hier, zwischen Kaffeefincas und Nebelwäldern, nehme ich Dich mit in meine Welt auf zwei Rädern – auf Wege, die ich selbst kennen- und lieben gelernt habe.",
-        "Jede Reise plane ich persönlich. Du erzählst mir, was Dir vorschwebt, und ich melde mich mit einem Vorschlag, der zu Dir passt."
+        "Jede Reise plane ich persönlich – nach Deinem Tempo, Deinen Wünschen und dem, was Dich neugierig macht. Ich melde mich mit einem Vorschlag, der zu Dir passt."
       ],
       "photoAlt": "Julian mit seinem Mountainbike"
     },
     "form": {
-      "heading": "Was schwebt Dir vor?",
+      "heading": "Erzähle mir von Dir",
       "labels": {
         "firstName": "Vorname",
         "email": "E-Mail",
         "months": "Wann passt es Dir?",
         "travelers": "Wer kommt mit?",
         "level": "Welche Wege fährst Du am liebsten?",
-        "message": "Erzähl mir von Dir und Deinen Wünschen"
+        "message": "Ein paar Worte über Dich"
       },
       "placeholders": {
         "firstName": "Wie darf ich Dich nennen?",
@@ -904,9 +904,9 @@
         "level": "Unsicher? Lass es einfach offen – das finden wir zusammen heraus."
       },
       "months": {
-        "2027-03": "März",
-        "2027-04": "April",
-        "2027-05": "Mai",
+        "2027-03": "März 2027",
+        "2027-04": "April 2027",
+        "2027-05": "Mai 2027",
         "flexible": "Ich bin flexibel"
       },
       "travelers": {
