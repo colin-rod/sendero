@@ -109,3 +109,61 @@ test.describe('Header scroll behavior', () => {
     await expect(header).toHaveClass(/bg-white/);
   });
 });
+
+test.describe('Mobile menu', () => {
+  const menuToggle: Record<(typeof locales)[number], string> = {
+    en: 'Toggle navigation menu',
+    de: 'Navigationsmenü umschalten',
+    es: 'Alternar menú de navegación',
+  };
+
+  const anfragenLabel: Record<(typeof locales)[number], string> = {
+    en: "Let's ride!",
+    de: "Los geht's!",
+    es: '¡Vámonos!',
+  };
+
+  test.beforeEach(async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+  });
+
+  for (const locale of locales) {
+    test(`burger menu opens /anfragen (${locale})`, async ({ page }) => {
+      await page.goto(`/${locale}`);
+
+      const header = page.locator('header');
+      await expect(header.getByLabel('Language selector')).toBeHidden();
+
+      const toggle = header.getByRole('button', { name: menuToggle[locale] });
+      await toggle.click();
+      await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+
+      const menu = page.locator('#mobile-menu');
+      await expect(menu.getByRole('link', { name: mtbNavLabel[locale] })).toBeVisible();
+      await menu.getByRole('link', { name: anfragenLabel[locale] }).click();
+
+      await expect(page).toHaveURL(new RegExp(`/${locale}/anfragen$`));
+      await expect(menu).toBeHidden();
+    });
+  }
+
+  test('switches language from the menu and stays on the page', async ({ page }) => {
+    await page.goto('/de/anfragen');
+
+    await page.getByRole('button', { name: menuToggle.de }).click();
+    await page.locator('#mobile-menu').getByRole('button', { name: 'EN' }).click();
+
+    await expect(page).toHaveURL(/\/en\/anfragen$/);
+    await expect(page.locator('#mobile-menu')).toBeHidden();
+  });
+
+  test('closes with Escape', async ({ page }) => {
+    await page.goto('/de');
+
+    await page.getByRole('button', { name: menuToggle.de }).click();
+    await expect(page.locator('#mobile-menu')).toBeVisible();
+
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#mobile-menu')).toBeHidden();
+  });
+});

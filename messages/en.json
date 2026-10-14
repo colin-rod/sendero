@@ -13,7 +13,8 @@
     },
     "mobileMenu": {
       "toggle": "Toggle navigation menu",
-      "ariaLabel": "Mobile navigation"
+      "ariaLabel": "Mobile navigation",
+      "language": "Language"
     }
   },
   "hero": {
