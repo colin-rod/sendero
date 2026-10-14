@@ -6,26 +6,36 @@ import { useRouter, usePathname } from '@/lib/i18n/routing';
 import { locales } from '@/lib/i18n/config';
 import posthog from 'posthog-js';
 
-export default function LanguageSwitcher() {
+export const localeLabels: Record<string, string> = {
+  en: 'EN',
+  de: 'DE',
+  es: 'ES',
+};
+
+/** Switches to another locale on the current path, keeping the scroll position. */
+export function useSwitchLocale() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const localeLabels: Record<string, string> = {
-    en: 'EN',
-    de: 'DE',
-    es: 'ES',
-  };
-
-  const switchLocale = (newLocale: string) => {
+  return (newLocale: string) => {
     if (newLocale !== locale) {
       posthog.capture('language_switched', { from: locale, to: newLocale });
     }
     sessionStorage.setItem('scrollAfterLocaleSwitch', window.scrollY.toString());
     const cleanPath = pathname.replace(new RegExp(`^/(${locales.join('|')})`), '') || '/';
     router.replace(cleanPath, { locale: newLocale });
+  };
+}
+
+export default function LanguageSwitcher() {
+  const locale = useLocale();
+  const switchTo = useSwitchLocale();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const switchLocale = (newLocale: string) => {
+    switchTo(newLocale);
     setIsOpen(false);
   };
 
