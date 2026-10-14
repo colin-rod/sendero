@@ -25,7 +25,7 @@ export function AnfragenIntro({ eyebrow, title, paragraphs, photoAlt }: Anfragen
         </div>
 
         <div className="min-w-0 max-w-[600px] flex-[999_1_420px]">
-          <p className="text-caption font-semibold uppercase tracking-[0.16em] text-primary-500">{eyebrow}</p>
+          <p className="text-caption font-light uppercase tracking-[0.16em] text-primary-500">{eyebrow}</p>
           <h1 className="my-5 text-balance text-[clamp(32px,4vw,48px)] font-bold leading-[1.45] text-foreground">
             {title}
           </h1>

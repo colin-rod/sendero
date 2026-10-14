@@ -875,19 +875,19 @@
       "title": "Estas montañas son mi hogar.",
       "paragraphs": [
         "Aquí, entre fincas cafeteras y bosques de niebla, te llevo a mi mundo sobre dos ruedas – por caminos que yo mismo aprendí a conocer y a querer.",
-        "Planeo cada viaje personalmente. Cuéntame qué tienes en mente y te respondo con una propuesta hecha a tu medida."
+        "Planeo cada viaje personalmente – a tu ritmo, según tus deseos y lo que despierta tu curiosidad. Te respondo con una propuesta hecha a tu medida."
       ],
       "photoAlt": "Julian con su bicicleta de montaña"
     },
     "form": {
-      "heading": "¿Qué tienes en mente?",
+      "heading": "Cuéntame de ti",
       "labels": {
         "firstName": "Nombre",
         "email": "Correo electrónico",
         "months": "¿Cuándo te queda bien?",
         "travelers": "¿Quién viene?",
         "level": "¿Qué caminos prefieres?",
-        "message": "Cuéntame de ti y de lo que quieres vivir"
+        "message": "Unas palabras sobre ti"
       },
       "placeholders": {
         "firstName": "¿Cómo te llamo?",
