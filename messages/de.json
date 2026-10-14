@@ -300,19 +300,19 @@
       "title": "Diese Berge sind meine Heimat.",
       "paragraphs": [
         "Hier, zwischen Kaffeefincas und Nebelwäldern, nehme ich Dich mit in meine Welt auf zwei Rädern – auf Wege, die ich selbst kennen- und lieben gelernt habe.",
-        "Jede Reise plane ich persönlich. Du erzählst mir, was Dir vorschwebt, und ich melde mich mit einem Vorschlag, der zu Dir passt."
+        "Jede Reise plane ich persönlich – nach Deinem Tempo, Deinen Wünschen und dem, was Dich neugierig macht. Ich melde mich mit einem Vorschlag, der zu Dir passt."
       ],
       "photoAlt": "Julian mit seinem Mountainbike"
     },
     "form": {
-      "heading": "Was schwebt Dir vor?",
+      "heading": "Erzähle mir von Dir",
       "labels": {
         "firstName": "Vorname",
         "email": "E-Mail",
         "months": "Wann passt es Dir?",
         "travelers": "Wer kommt mit?",
         "level": "Welche Wege fährst Du am liebsten?",
-        "message": "Erzähl mir von Dir und Deinen Wünschen"
+        "message": "Ein paar Worte über Dich"
       },
       "placeholders": {
         "firstName": "Wie darf ich Dich nennen?",
