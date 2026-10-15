@@ -117,11 +117,11 @@ middleware.ts               # Locale detection, routing & password protection
 
 ## 📋 Project Overview
 
-**Sendero** is a waitlist landing page for beginner-friendly hike & bike tours in Colombia's Coffee Region (Pereira-focused). This is a **smoke test** to validate market interest before building the full product.
+**Sendero** is a waitlist landing page for beginner-friendly hike & bike tours in the Colombian Andes, based in Pereira: mountain trails, the people who live along them, and the cultural history they pass through. This is a **smoke test** to validate market interest before building the full product.
 
 **Core Value Proposition:**
 
-> "Discover Colombia's Coffee Region, one pedal at a time"
+> "Ride into the Colombian Andes, where every trail carries a story"
 
 **Key Features:**
 
@@ -370,17 +370,38 @@ const t = useTranslations('form');
 - Uses Latin American Spanish (not European Spanish)
 - Target audience: Colombian locals + Latin American travelers
 - "Sendero" is already Spanish (means "trail/path")
-- "Región Cafetera" for "Coffee Region"
+- Lead with "los Andes colombianos" / "la montaña"; use "Eje Cafetero" / "Región Cafetera" only when naming the geographic region specifically (see Brand Voice & Copywriting)
 
 **German (DE):**
 - Uses standard German (Hochdeutsch)
 - Target audience: European travelers
 - Professional translations for marketing copy
+- Lead with "die kolumbianischen Anden" / "die Berge"; avoid "Kaffeeregion" or "Kaffee" as the hook
 
 **English (EN):**
 - Primary language and default
 - US English spelling and conventions
 - Source of truth for all translations
+
+---
+
+## ✍️ Brand Voice & Copywriting
+
+**❗ Standing preference for Claude Code when creating new content:**
+
+- **Evolve the voice, develop the copy.** Don't just fill in placeholder text or
+  reuse existing lines. Each new piece of content should push the Sendero voice
+  forward: write fresh, considered copy rather than a minimal or generic version.
+- **Lead with the mountains, not the coffee.** Don't frame Sendero mainly
+  around the "Coffee Region" / "Kaffeeregion" / "Kaffee" angle. Center the
+  landscape: the Andes, the mountains, the trails, the terrain.
+- **Bring in the depth of cultural history.** Draw on the region's people,
+  traditions and layered history, so the place reads as more than a coffee
+  destination.
+- Coffee can still appear as one detail among many, but it shouldn't be the
+  headline or the default hook.
+- This applies in all three languages (EN, DE, ES). Write each one with the
+  same intent rather than translating word for word.
 
 ---
 
