@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { LogoMark } from '@/components/ui/LogoMark';
 import { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Menu, X } from 'lucide-react';
@@ -82,16 +82,13 @@ export function Header({ overlay = false }: HeaderProps) {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3"
+              className="group flex items-center gap-3 focus-visible:outline-none"
               aria-label={t('ariaLabel')}
             >
-              <Image
-                src="/Logo_Dark.svg"
-                alt={t('logoAlt')}
-                width={48}
-                height={48}
-                className="h-12 w-12 flex-none"
-                priority
+              <LogoMark
+                label={t('logoAlt')}
+                className="h-12 w-12 flex-none rounded-full text-foreground transition-colors group-hover:text-white group-active:text-white group-focus-visible:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-500 group-focus-visible:ring-offset-2"
+                circleClassName="fill-transparent group-hover:fill-foreground group-active:fill-foreground group-focus-visible:fill-foreground"
               />
               <span className="text-caption font-medium leading-tight tracking-[0.06em] uppercase text-foreground">
                 Sendero<br />Bike Trails
