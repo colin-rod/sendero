@@ -1,7 +1,7 @@
 /**
  * E2E Tests: Header across every page and locale
  *
- * Regression coverage for the dark outline logo (Logo_Dark.svg) — confirms the header, logo, and language switcher all
+ * Regression coverage for the dark outline logo (inline LogoMark) — confirms the header, logo, and language switcher all
  * still render correctly on every routed page, in all three locales.
  */
 
@@ -32,8 +32,8 @@ test.describe('Header renders on every page and locale', () => {
         const header = page.locator('header');
         await expect(header).toBeVisible();
 
-        const logo = header.locator('img').first();
-        await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
+        const logo = header.locator('svg[role="img"]').first();
+        await expect(logo).toBeVisible();
 
         await expect(header.getByLabel('Language selector')).toBeVisible();
       });

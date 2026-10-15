@@ -2,11 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Footer } from '@/components/layout/Footer';
 
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: (props: React.ComponentProps<'img'>) => <img {...props} alt={props.alt ?? ''} />,
-}));
-
 jest.mock('next-intl', () => ({
   useTranslations: () => (key: string) => {
     const translations: Record<string, string> = {
@@ -42,11 +37,13 @@ jest.mock('@/lib/i18n/routing', () => ({
 }));
 
 describe('Footer', () => {
-  it('uses the light (white-stroke) logo asset for its dark background', () => {
+  it('renders a green logo badge with white lines that links home', () => {
     render(<Footer />);
 
-    const logo = screen.getByAltText('sendero bike trails');
-    expect(logo).toHaveAttribute('src', '/Logo_Light.svg');
+    const logo = screen.getByRole('img', { name: 'sendero bike trails' });
+    expect(logo.closest('a')).toHaveAttribute('href', '/');
+    expect(logo).toHaveClass('text-white', 'group-hover:text-foreground');
+    expect(logo.querySelector('circle')).toHaveClass('fill-river-forest', 'group-hover:fill-white', 'group-active:fill-white');
   });
 
   it('renders as a responsive 3-column grid', () => {
