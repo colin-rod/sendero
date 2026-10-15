@@ -1,7 +1,7 @@
 /**
  * E2E Tests: Header across every page and locale
  *
- * Regression coverage for the dark outline logo (Logo_Dark.svg) and the
+ * Regression coverage for the dark outline logo (inline LogoMark) and the
  * "Reisen/Trips/Viajes" nav rename — confirms the header, logo, language switcher, and
  * MTB trip link all still render/behave correctly on every routed page,
  * in all three locales.
@@ -41,8 +41,8 @@ test.describe('Header renders on every page and locale', () => {
         const header = page.locator('header');
         await expect(header).toBeVisible();
 
-        const logo = header.locator('img').first();
-        await expect(logo).toHaveAttribute('src', /Logo_Dark\.svg/);
+        const logo = header.locator('svg[role="img"]').first();
+        await expect(logo).toBeVisible();
 
         await expect(header.getByLabel('Language selector')).toBeVisible();
       });

@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { LogoMark } from '@/components/ui/LogoMark';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
 import { FaInstagram } from 'react-icons/fa6';
@@ -17,13 +17,13 @@ export function Footer() {
           {/* Column 1: Logo → brand name → tagline */}
           <div className="flex max-w-[300px] flex-col gap-4">
             <div className="h-12 flex items-center">
-              <Image
-                src="/Logo_Light.svg"
-                alt={t('brandName')}
-                width={48}
-                height={48}
-                className="h-12 w-12"
-              />
+              <Link href="/" className="group rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-river-forest">
+                <LogoMark
+                  label={t('brandName')}
+                  className="h-12 w-12 text-white transition-colors group-hover:text-foreground group-active:text-foreground group-focus-visible:text-foreground"
+                  circleClassName="fill-river-forest group-hover:fill-white group-active:fill-white group-focus-visible:fill-white"
+                />
+              </Link>
             </div>
             <p className="text-body font-bold text-white">{t('brandName')}</p>
             <p className="text-body leading-[26px] text-white">{t('tagline')}</p>
