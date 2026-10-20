@@ -10,7 +10,7 @@ describe('Container', () => {
       expect(screen.getByText('Test Content')).toBeInTheDocument();
     });
 
-    it('renders with default size (xl)', () => {
+    it('renders the frame by default', () => {
       const { container } = render(<Container>Content</Container>);
       const div = container.firstChild;
       expect(div).toHaveClass('max-w-7xl');
@@ -19,31 +19,13 @@ describe('Container', () => {
     it('applies default padding', () => {
       const { container } = render(<Container>Content</Container>);
       const div = container.firstChild;
-      expect(div).toHaveClass('px-4', 'sm:px-6', 'lg:px-8');
+      expect(div).toHaveClass('px-6', 'sm:px-10', 'lg:px-16');
     });
   });
 
   describe('Sizes', () => {
-    it('renders small size', () => {
-      const { container } = render(<Container size="sm">Content</Container>);
-      const div = container.firstChild;
-      expect(div).toHaveClass('max-w-2xl');
-    });
-
-    it('renders medium size', () => {
-      const { container } = render(<Container size="md">Content</Container>);
-      const div = container.firstChild;
-      expect(div).toHaveClass('max-w-4xl');
-    });
-
-    it('renders large size', () => {
-      const { container } = render(<Container size="lg">Content</Container>);
-      const div = container.firstChild;
-      expect(div).toHaveClass('max-w-6xl');
-    });
-
-    it('renders extra large size', () => {
-      const { container } = render(<Container size="xl">Content</Container>);
+    it('renders the frame size', () => {
+      const { container } = render(<Container size="frame">Content</Container>);
       const div = container.firstChild;
       expect(div).toHaveClass('max-w-7xl');
     });
@@ -59,21 +41,21 @@ describe('Container', () => {
     it('includes padding by default', () => {
       const { container } = render(<Container>Content</Container>);
       const div = container.firstChild;
-      expect(div).toHaveClass('px-4', 'sm:px-6', 'lg:px-8');
+      expect(div).toHaveClass('px-6', 'sm:px-10', 'lg:px-16');
     });
 
     it('removes padding when noPadding is true', () => {
       const { container } = render(<Container noPadding>Content</Container>);
       const div = container.firstChild;
-      expect(div).not.toHaveClass('px-4');
-      expect(div).not.toHaveClass('sm:px-6');
-      expect(div).not.toHaveClass('lg:px-8');
+      expect(div).not.toHaveClass('px-6');
+      expect(div).not.toHaveClass('sm:px-10');
+      expect(div).not.toHaveClass('lg:px-16');
     });
 
     it('includes padding when noPadding is false', () => {
       const { container } = render(<Container noPadding={false}>Content</Container>);
       const div = container.firstChild;
-      expect(div).toHaveClass('px-4', 'sm:px-6', 'lg:px-8');
+      expect(div).toHaveClass('px-6', 'sm:px-10', 'lg:px-16');
     });
   });
 

@@ -15,8 +15,8 @@ interface MtbReisenSafetyProps {
 export function MtbReisenSafety({ id, heading, items }: MtbReisenSafetyProps) {
   return (
     <section id={id} className="scroll-mt-[180px] bg-background py-20 md:py-28">
-      <Container size="lg" className="flex flex-col gap-12">
-        <h2 className="text-h2 text-foreground">{heading}</h2>
+      <Container className="flex flex-col gap-12">
+        <h2 className="text-h2 text-foreground max-w-heading">{heading}</h2>
 
         {/* TODO: fill in [Marke], [Federweg] and [S–XL] in mtbReisen.safety.items[0] (all three locales) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

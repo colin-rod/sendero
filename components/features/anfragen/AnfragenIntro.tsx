@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Container } from '@/components/ui/Container';
 import { Signature } from './Signature';
 
 interface AnfragenIntroProps {
@@ -12,8 +13,8 @@ const PHOTO_SRC = '/images/anfragen/julian-portrait.jpg';
 
 export function AnfragenIntro({ eyebrow, title, paragraphs, photoAlt }: AnfragenIntroProps) {
   return (
-    <section className="px-6 py-20 sm:px-10 lg:px-16">
-      <div className="mx-auto flex max-w-[1120px] flex-wrap items-center gap-12 lg:gap-[72px]">
+    <section className="py-20">
+      <Container className="flex flex-wrap items-center gap-12 lg:gap-[72px]">
         <div className="relative aspect-[326/485] w-full max-w-[424px] flex-[1_1_364px] overflow-hidden rounded-[5px] bg-gray-200">
           <Image
             src={PHOTO_SRC}
@@ -24,7 +25,7 @@ export function AnfragenIntro({ eyebrow, title, paragraphs, photoAlt }: Anfragen
           />
         </div>
 
-        <div className="min-w-0 max-w-[600px] flex-[999_1_420px]">
+        <div className="min-w-0 max-w-text flex-[999_1_420px]">
           <p className="text-caption font-normal uppercase tracking-[0.16em] text-primary-500">{eyebrow}</p>
           <h1 className="my-5 text-balance text-[clamp(32px,4vw,48px)] font-bold leading-[1.45] text-foreground">
             {title}
@@ -36,7 +37,7 @@ export function AnfragenIntro({ eyebrow, title, paragraphs, photoAlt }: Anfragen
           ))}
           <Signature />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -20,10 +20,10 @@ export function TrailBookingCTA({
 }: TrailBookingCTAProps) {
   return (
     <section className="py-20 md:py-32 bg-primary-500">
-      <Container size="md">
+      <Container>
         <div className="text-center">
-          <h2 className="text-h2 text-foreground mb-6">{heading}</h2>
-          <p className="text-body text-foreground/80 mb-8">{subtext}</p>
+          <h2 className="text-h2 text-foreground mx-auto max-w-heading mb-6">{heading}</h2>
+          <p className="text-body text-foreground/80 mx-auto max-w-text mb-8">{subtext}</p>
 
           {/* Placeholder - Link to waitlist */}
           <Link

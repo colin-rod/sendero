@@ -1,3 +1,4 @@
+import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Link } from '@/lib/i18n/routing';
 
@@ -16,10 +17,10 @@ interface MtbReisenOverviewBarProps {
 export function MtbReisenOverviewBar({ ariaLabel, links, ctaLabel }: MtbReisenOverviewBarProps) {
   return (
     <nav
-      className="sticky top-[116px] z-40 bg-gray-950 py-3 px-4"
+      className="sticky top-[116px] z-40 bg-gray-950 py-3"
       aria-label={ariaLabel}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
+      <Container className="flex items-center justify-between gap-6">
         <ul className="flex items-center gap-x-3 overflow-x-auto whitespace-nowrap">
           {links.map((link, index) => (
             <li key={link.href} className="flex items-center gap-3">
@@ -36,7 +37,7 @@ export function MtbReisenOverviewBar({ ariaLabel, links, ctaLabel }: MtbReisenOv
         <Link href="/anfragen" className="hidden sm:block flex-none">
           <Button variant="hero-cta">{ctaLabel}</Button>
         </Link>
-      </div>
+      </Container>
     </nav>
   );
 }

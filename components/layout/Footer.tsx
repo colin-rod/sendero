@@ -1,6 +1,7 @@
 'use client';
 
 import { LogoMark } from '@/components/ui/LogoMark';
+import { Container } from '@/components/ui/Container';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/routing';
 import { FaInstagram } from 'react-icons/fa6';
@@ -11,7 +12,7 @@ export function Footer() {
 
   return (
     <footer className="bg-river-forest text-white">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <Container className="py-16">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-8">
 
           {/* Column 1: Logo → brand name → tagline */}
@@ -73,7 +74,7 @@ export function Footer() {
           </div>
 
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

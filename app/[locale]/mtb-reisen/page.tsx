@@ -28,10 +28,12 @@ const SECTION_IDS = {
   faq: 'faq',
 } as const;
 
+/** Sections hidden for now (overview bar, facts, landscapes, safety); flip to bring them back */
+const SHOW_FULL_PAGE = false;
+
 interface DayCopy {
   title: string;
   text: string;
-  meals: string;
   note?: string;
 }
 
@@ -96,7 +98,6 @@ export default async function MtbReisenPage({
       image: day.image,
       title: copy.title,
       text: copy.text,
-      meals: copy.meals,
       stats,
     };
   });
@@ -125,36 +126,35 @@ export default async function MtbReisenPage({
           eyebrow={t('hero.eyebrow')}
           title={t('hero.title')}
           text={t('hero.text')}
-          primaryCta={t('hero.primaryCta')}
           secondaryCta={t('hero.secondaryCta')}
           secondaryHref={`#${SECTION_IDS.itinerary}`}
           heroImage={trip.images.hero}
         />
 
-        <MtbReisenOverviewBar ariaLabel={t('nav.ariaLabel')} links={navLinks} ctaLabel={t('nav.cta')} />
+        {SHOW_FULL_PAGE && (
+          <>
+            <MtbReisenOverviewBar ariaLabel={t('nav.ariaLabel')} links={navLinks} ctaLabel={t('nav.cta')} />
 
-        <MtbReisenFacts
-          id={SECTION_IDS.overview}
-          heading={t('nav.overview')}
-          facts={t.raw('facts.items') as string[]}
-        />
+            <MtbReisenFacts
+              id={SECTION_IDS.overview}
+              heading={t('nav.overview')}
+              facts={t.raw('facts.items') as string[]}
+            />
 
-        <MtbReisenLandscapes
-          heading={t('landscapes.heading')}
-          text={t('landscapes.text')}
-          items={t.raw('landscapes.items') as string[]}
-          images={trip.images.landscapes}
-        />
+            <MtbReisenLandscapes
+              heading={t('landscapes.heading')}
+              text={t('landscapes.text')}
+              items={t.raw('landscapes.items') as string[]}
+              images={trip.images.landscapes}
+            />
+          </>
+        )}
 
         <MtbReisenItinerary
           id={SECTION_IDS.itinerary}
           heading={t('itinerary.heading')}
           intro={t('itinerary.intro')}
-          toggleLabel={t('itinerary.toggleLabel')}
-          variantLabels={{ nine: t('itinerary.nine'), seven: t('itinerary.seven') }}
           dayLabel={t('itinerary.dayLabel')}
-          nineOnlyLabel={t('itinerary.nineOnly')}
-          mealsLabel={t('itinerary.mealsLabel')}
           days={days}
         />
 
@@ -171,11 +171,13 @@ export default async function MtbReisenPage({
           cta={t('fit.cta')}
         />
 
-        <MtbReisenSafety
-          id={SECTION_IDS.safety}
-          heading={t('safety.heading')}
-          items={t.raw('safety.items') as { title: string; text: string }[]}
-        />
+        {SHOW_FULL_PAGE && (
+          <MtbReisenSafety
+            id={SECTION_IDS.safety}
+            heading={t('safety.heading')}
+            items={t.raw('safety.items') as { title: string; text: string }[]}
+          />
+        )}
 
         <MtbReisenCasaTacay
           heading={t('casa.heading')}

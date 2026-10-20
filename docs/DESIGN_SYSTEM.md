@@ -349,39 +349,46 @@ import { spacing } from '@/lib/design-tokens';
 const desktopPadding = spacing.padding.l.desktop; // '3rem' (48px)
 ```
 
-**Known gap:** this scale isn't currently wired into `tailwind.config.ts` — no Tailwind utility classes are generated from it today (only an unrelated `spacing['4.5']` custom value lives directly in the Tailwind config). Out of scope for this pass; use the values directly via JS/inline style, or via arbitrary Tailwind values, until it's wired up.
+**Wiring:** `padding.leftRight` is the site gutter and is wired through `<Container>` (`px-6 sm:px-10 lg:px-16`, see Layout System below). The other steps aren't generated as Tailwind utilities yet; use the values via JS/inline style or arbitrary Tailwind values.
 
-### Layout Containers
+### Layout System
 
-#### Container Component
+One frame and one reading column for the whole site. Tokens live in
+[lib/design-tokens/layout.ts](../lib/design-tokens/layout.ts).
+
+| Token | Value | Use it as | For |
+|---|---|---|---|
+| Frame | 1280px (`layout.frame`) | `<Container>` | Every section, the header and the footer |
+| Gutter | 24 / 40 / 64px (`layout.gutter` = Figma `padding-left-right`) | built into `<Container>` | Breakpoints: base / `sm` / `lg` |
+| Text measure | 672px (`layout.measure.text`) | `max-w-text` | Paragraphs, intros, hero/CTA copy, legal pages |
+| Heading measure | 896px (`layout.measure.heading`) | `max-w-heading` | h1/h2, and any copy set in `text-h3` or larger |
+
+**Rules**
+
+- Every section wraps its content in `<Container>`, so the left edge of the content lines up with the header logo at every breakpoint. Don't add section-level `px-*` or `max-w-*` wrappers.
+- Constrain copy with `max-w-text` / `max-w-heading`, not with narrower containers. Centered copy uses the same measures plus `mx-auto`.
+- Grids (cards, galleries, multi-column lists, maps) span the full frame.
+- Component widths are not text measures and stay as they are: form cards (Anfragen 720px), the login form and email inputs (`max-w-md`/`max-w-xl`), the footer brand column (300px), the TourGrid overlays.
 
 ```tsx
 import { Container } from '@/components/ui/Container';
 
-// Default (max-width: 1280px)
-<Container>
-  Content
+<section className="py-20 md:py-28">
+  <Container className="flex flex-col gap-8">
+    <h2 className="text-h2 max-w-heading">Section title</h2>
+    <p className="max-w-text">Body copy runs to the same measure everywhere.</p>
+    <div className="grid md:grid-cols-3 gap-4">{/* full frame */}</div>
+  </Container>
+</section>
+
+// Centered block
+<Container className="text-center">
+  <h2 className="text-h2 mx-auto max-w-heading">…</h2>
+  <p className="mx-auto max-w-text">…</p>
 </Container>
 
-// Narrow (max-width: 672px) - for forms
-<Container size="sm">
-  <form>...</form>
-</Container>
-
-// Medium (max-width: 896px) - for articles
-<Container size="md">
-  <article>...</article>
-</Container>
-
-// Full width
-<Container size="full">
-  Full-width content
-</Container>
-
-// No padding
-<Container noPadding>
-  Content without horizontal padding
-</Container>
+// Full-bleed content with no max width
+<Container size="full">…</Container>
 ```
 
 ### Responsive Breakpoints

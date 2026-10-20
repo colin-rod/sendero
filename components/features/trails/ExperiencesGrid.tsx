@@ -16,8 +16,8 @@ export function ExperiencesGrid({
   return (
     <section className="py-20 md:py-32">
       <Container>
-        <h2 className="text-h2 text-center mb-12">{heading}</h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-5xl mx-auto">
+        <h2 className="text-h2 text-center mx-auto max-w-heading mb-12">{heading}</h2>
+        <div className="grid gap-8 md:grid-cols-2">
           {experiences.map((experience) => (
             <ExperienceCard
               key={experience.id}

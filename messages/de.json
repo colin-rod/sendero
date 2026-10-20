@@ -982,14 +982,13 @@
   },
   "mtbReisen": {
     "seo": {
-      "title": "Mountainbike-Reise Kolumbien – 7 oder 9 Tage im Kaffeeland",
+      "title": "Mountainbike-Reise Kolumbien – auf alten Pfaden durch die Anden",
       "description": "Kleine Gruppen, uralte Pfade und eine Kaffeefinca als Zuhause: Deine Mountainbike-Reise durch die Anden Kolumbiens, persönlich begleitet auf Deutsch. Ab 3.290 €."
     },
     "hero": {
-      "eyebrow": "Kolumbien mit dem Mountainbike · 7 oder 9 Tage",
+      "eyebrow": "Kolumbien mit dem Mountainbike",
       "title": "Zwischen Kaffee und Wolken.",
       "text": "Kleine Gruppen, uralte Pfade und eine Kaffeefinca als Zuhause – mitten in den Anden Kolumbiens.",
-      "primaryCta": "Reise anfragen",
       "secondaryCta": "Tag für Tag ansehen"
     },
     "nav": {
@@ -1028,59 +1027,45 @@
     "itinerary": {
       "heading": "Tag für Tag",
       "intro": "Rund 20 km am Tag, mit Zeit für Pausen, Gespräche und Aussichten. Jeden Abend zurück in der Casa Tacay.",
-      "toggleLabel": "Reisedauer",
-      "nine": "9 Tage",
-      "seven": "7 Tage",
       "dayLabel": "Tag",
-      "nineOnly": "Nur 9 Tage",
       "stats": "{km} km · {hm} Hm",
-      "mealsLabel": "Inklusive:",
       "days": {
         "arrival": {
           "title": "Ankommen",
-          "text": "Nach Deiner Ankunft am Flughafen Matecaña oder am Busbahnhof von Pereira bringen wir Dich zur Casa Tacay. Dort bleibt Zeit, in Ruhe anzukommen, die Gruppe kennenzulernen, die Bikes einzustellen und die wichtigsten Hinweise für die Reise durchzugehen. Beim ersten gemeinsamen Abendessen stoßen wir auf die kommenden Tage an.",
-          "meals": "Abendessen"
+          "text": "Nach Deiner Ankunft am Flughafen Matecaña oder am Busbahnhof von Pereira bringen wir Dich zur Casa Tacay. Dort bleibt Zeit, in Ruhe anzukommen, die Gruppe kennenzulernen, die Bikes einzustellen und die wichtigsten Hinweise für die Reise durchzugehen. Beim ersten gemeinsamen Abendessen stoßen wir auf die kommenden Tage an."
         },
         "tigre": {
           "title": "Sendero del Tigre",
-          "text": "Zum Akklimatisieren fahren wir auf bambusgesäumten Wegen und durch Obstplantagen zur Finca Ganday. Dort entdecken wir die Vielfalt kolumbianischer Nutzpflanzen und genießen einen traditionellen Caldo mit Zutaten von der Finca – nach einem Rezept aus den Bergen und dem Amazonas.",
-          "meals": "Frühstück, Mittagessen, Abendessen"
+          "text": "Zum Akklimatisieren fahren wir auf bambusgesäumten Wegen und durch Obstplantagen zur Finca Ganday. Dort entdecken wir die Vielfalt kolumbianischer Nutzpflanzen und genießen einen traditionellen Caldo mit Zutaten von der Finca – nach einem Rezept aus den Bergen und dem Amazonas."
         },
         "cafe": {
           "title": "Sendero del Café",
-          "text": "Auf ruhigen Landstraßen fahren wir durch die Kaffeekulturlandschaft der UNESCO – vorbei an Plantagen, kleinen Pueblos und bunten Häusern. Dazu gehört ein Kaffee- und Kunstworkshop bei unseren Gastgebern.",
-          "meals": "Frühstück, Mittagessen, Abendessen"
+          "text": "Auf ruhigen Landstraßen fahren wir durch die Kaffeekulturlandschaft der UNESCO – vorbei an Plantagen, kleinen Pueblos und bunten Häusern. Dazu gehört ein Kaffee- und Kunstworkshop bei unseren Gastgebern."
         },
         "agua": {
           "title": "Sendero del Agua",
-          "text": "Wir folgen kurvigen Wegen entlang von Flüssen und durch dichte Nebelwälder rund um La Florida. Unterwegs begegnen uns Brücken, Wasserfälle und mit etwas Glück kleine und große Tiere. Zum Mittag gibt es eine regionale Bergmahlzeit mit Aussicht.",
-          "meals": "Frühstück, Mittagessen, Abendessen"
+          "text": "Wir folgen kurvigen Wegen entlang von Flüssen und durch dichte Nebelwälder rund um La Florida. Unterwegs begegnen uns Brücken, Wasserfälle und mit etwas Glück kleine und große Tiere. Zum Mittag gibt es eine regionale Bergmahlzeit mit Aussicht."
         },
         "cacao": {
           "title": "Sendero del Cacao",
-          "text": "Wir lernen Kakao kennen, wie Du ihn noch nie geschmeckt hast: von der Frucht am Baum über die Fermentation bis zur fertigen Schokolade. Du röstest Deine eigenen Nibs und nimmst Deine Kreation mit nach Hause. Der Abend klingt mit Musik in der Casa Tacay aus.",
-          "meals": "Frühstück, Abendessen"
+          "text": "Wir lernen Kakao kennen, wie Du ihn noch nie geschmeckt hast: von der Frucht am Baum über die Fermentation bis zur fertigen Schokolade. Du röstest Deine eigenen Nibs und nimmst Deine Kreation mit nach Hause. Der Abend klingt mit Musik in der Casa Tacay aus."
         },
         "volcan": {
           "title": "Sendero del Volcán",
-          "text": "Zwischen Wachspalmen, dem Nationalbaum Kolumbiens, und Vulkanpanoramen erleben wir eine der spektakulärsten Touren der Reise. Am Nachmittag Halt in Salento – Zeit zum Bummeln, Stöbern und den Ort auf Dich wirken lassen.",
-          "meals": "Frühstück, Abendessen"
+          "text": "Zwischen Wachspalmen, dem Nationalbaum Kolumbiens, und Vulkanpanoramen erleben wir eine der spektakulärsten Touren der Reise. Am Nachmittag Halt in Salento – Zeit zum Bummeln, Stöbern und den Ort auf Dich wirken lassen."
         },
         "oro": {
           "title": "Sendero del Oro",
-          "text": "Heute verbinden wir Bewegung mit Geschichte. Nach dem Besuch des Goldmuseums in Armenia fahren wir auf ruhigen Nebenstraßen und alten Verbindungswegen durch das Land der Quimbaya und entdecken die Ursprünge der Kultur in der Region.",
-          "meals": "Frühstück, Abendessen"
+          "text": "Heute verbinden wir Bewegung mit Geschichte. Nach dem Besuch des Goldmuseums in Armenia fahren wir auf ruhigen Nebenstraßen und alten Verbindungswegen durch das Land der Quimbaya und entdecken die Ursprünge der Kultur in der Region."
         },
         "paramo": {
           "title": "Sendero del Páramo",
           "text": "Zum Abschluss erwartet uns eine der eindrucksvollsten Touren der Reise: hinauf auf bis zu 3.400 Meter, vorbei an Lagunen, Hochebenen und Pflanzen, die es nur hier gibt. Den letzten Abend feiern wir gemeinsam mit einem andinen Essen in der Casa Tacay.",
-          "meals": "Frühstück, Abendessen",
           "note": "bis 3.400 m"
         },
         "departure": {
           "title": "Abreise",
-          "text": "Nach dem letzten gemeinsamen Frühstück heißt es Abschied nehmen. Ab 11 Uhr ist Check-out, danach bringt Dich unser Fahrer zum Flughafen oder Busterminal.",
-          "meals": "Frühstück"
+          "text": "Nach dem letzten gemeinsamen Frühstück heißt es Abschied nehmen. Ab 11 Uhr ist Check-out, danach bringt Dich unser Fahrer zum Flughafen oder Busterminal."
         }
       }
     },

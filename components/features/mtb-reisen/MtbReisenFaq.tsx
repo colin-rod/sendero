@@ -18,11 +18,11 @@ interface MtbReisenFaqProps {
 export function MtbReisenFaq({ id, heading, groups, ctaQuestion, ctaLink }: MtbReisenFaqProps) {
   return (
     <section id={id} className="scroll-mt-[180px] bg-background py-20 md:py-28">
-      <Container size="md" className="flex flex-col gap-12">
-        <h2 className="text-h2 text-foreground">{heading}</h2>
+      <Container className="flex flex-col gap-12">
+        <h2 className="text-h2 text-foreground max-w-heading">{heading}</h2>
 
         {groups.map((group, groupIndex) => (
-          <div key={group.title} className="flex flex-col gap-4">
+          <div key={group.title} className="flex flex-col gap-4 max-w-heading">
             <h3 className="text-label text-primary-500 tracking-[0.06em] uppercase">{group.title}</h3>
             <Accordion type="multiple">
               {group.questions.map((qa, index) => (
@@ -37,7 +37,7 @@ export function MtbReisenFaq({ id, heading, groups, ctaQuestion, ctaLink }: MtbR
           </div>
         ))}
 
-        <p className="text-base leading-[26px] text-foreground">
+        <p className="text-base leading-[26px] text-foreground max-w-text">
           {ctaQuestion}{' '}
           <Link href="/anfragen" className="text-primary-500 underline hover:text-river-forest">
             {ctaLink}

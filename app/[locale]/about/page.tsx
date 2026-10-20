@@ -44,11 +44,11 @@ export default function AboutPage() {
       <Header />
 
       <main className="flex-1 py-12 md:py-16">
-        <Container size="lg">
+        <Container>
           {/* Page Header */}
           <div className="mb-12 text-center">
-            <h1 className="text-h1 mb-4 text-foreground">{t('heading')}</h1>
-            <p className="text-body mx-auto max-w-2xl text-muted-foreground">
+            <h1 className="text-h1 mb-4 mx-auto max-w-heading text-foreground">{t('heading')}</h1>
+            <p className="text-body mx-auto max-w-text text-muted-foreground">
               {t('subtitle')}
             </p>
           </div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
               <h2 className="text-h2 mb-4 text-foreground">
                 {t('sections.cta.heading')}
               </h2>
-              <p className="text-body mx-auto mb-6 max-w-2xl text-muted-foreground">
+              <p className="text-body mx-auto mb-6 max-w-text text-muted-foreground">
                 {t('sections.cta.content')}
               </p>
               <Link href="/#waitlist">

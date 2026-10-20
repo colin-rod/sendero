@@ -76,10 +76,10 @@ export default async function TrailsPage({
         {/* Hero Section */}
         <section className="py-20 md:py-32">
           <Container>
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-h1 mb-6">{t('title')}</h1>
-              <p className="text-h3 text-muted-foreground mb-8">{t('subtitle')}</p>
-              <p className="text-body text-muted-foreground">{t('description')}</p>
+            <div className="text-center">
+              <h1 className="text-h1 mx-auto max-w-heading mb-6">{t('title')}</h1>
+              <p className="text-h3 text-muted-foreground mx-auto max-w-heading mb-8">{t('subtitle')}</p>
+              <p className="text-body text-muted-foreground mx-auto max-w-text">{t('description')}</p>
             </div>
           </Container>
         </section>
@@ -87,7 +87,7 @@ export default async function TrailsPage({
         {/* Master SVG Illustration Placeholder */}
         <section className="py-20 md:py-32 bg-muted/50">
           <Container>
-            <div className="max-w-5xl mx-auto">
+            <div>
               <div className="aspect-[16/9] bg-white border-2 border-border rounded-lg flex items-center justify-center shadow-sm">
                 <div className="text-center p-8">
                   <p className="text-h3 text-muted-foreground mb-2">
@@ -105,7 +105,7 @@ export default async function TrailsPage({
         {/* Trail Cards */}
         <section className="py-20 md:py-32">
           <Container>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {trails.map((trail) => (
                 <TrailCard
                   key={trail.id}

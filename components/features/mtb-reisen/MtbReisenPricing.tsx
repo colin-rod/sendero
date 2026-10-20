@@ -38,8 +38,8 @@ export function MtbReisenPricing({
 }: MtbReisenPricingProps) {
   return (
     <section id={id} className="scroll-mt-[180px] bg-white py-20 md:py-28">
-      <Container size="lg" className="flex flex-col gap-10">
-        <div className="max-w-2xl">
+      <Container className="flex flex-col gap-10">
+        <div className="max-w-text">
           <h2 className="text-h2 text-foreground mb-6">{heading}</h2>
           <p className="text-base leading-[26px] text-foreground">{dates}</p>
         </div>
@@ -64,11 +64,11 @@ export function MtbReisenPricing({
 
         <div>
           <Link href="/anfragen">
-            <Button variant="hero-cta">{cta}</Button>
+            <Button variant="hero-cta" className="w-[260px]">{cta}</Button>
           </Link>
         </div>
 
-        <p className="text-base leading-[26px] text-foreground">
+        <p className="text-base leading-[26px] text-foreground max-w-text">
           {privateQuestion}{' '}
           {/* TODO: switch to /private-reisen once that page exists */}
           <Link href="/anfragen" className="text-primary-500 underline hover:text-river-forest">

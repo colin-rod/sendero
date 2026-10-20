@@ -9,9 +9,9 @@ interface WaypointsTimelineProps {
 export function WaypointsTimeline({ heading, waypoints }: WaypointsTimelineProps) {
   return (
     <section className="py-20 md:py-32 bg-muted/50">
-      <Container size="md">
-        <h2 className="text-h2 text-center mb-12">{heading}</h2>
-        <div className="max-w-2xl mx-auto">
+      <Container>
+        <h2 className="text-h2 text-center mx-auto max-w-heading mb-12">{heading}</h2>
+        <div className="max-w-text mx-auto">
           <ol className="relative border-l-2 border-primary-500 ml-4">
             {waypoints.map((waypoint, index) => (
               <li key={index} className="mb-10 ml-8">

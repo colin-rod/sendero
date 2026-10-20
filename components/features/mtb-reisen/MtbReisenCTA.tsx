@@ -26,14 +26,14 @@ export function MtbReisenCTA({ heading, text, buttonText, image }: MtbReisenCTAP
       />
       <div className="absolute inset-0 bg-black/50" />
 
-      <Container size="md" className="relative text-center flex flex-col items-center gap-8">
-        <h2 className="text-h3 text-white font-light tracking-[0.06em] max-w-xl">{heading}</h2>
-        <p className="text-base leading-[26px] text-white/90 max-w-xl">{text}</p>
+      <Container className="relative text-center flex flex-col items-center gap-8">
+        <h2 className="text-h3 text-white font-light tracking-[0.06em] max-w-heading">{heading}</h2>
+        <p className="text-base leading-[26px] text-white/90 max-w-text">{text}</p>
         <Link
           href="/anfragen"
           onClick={() => posthog.capture('mtb_reisen_cta_clicked', { source: 'mtb_reisen_page' })}
         >
-          <Button variant="hero-cta">{buttonText}</Button>
+          <Button variant="hero-cta" className="w-[260px]">{buttonText}</Button>
         </Link>
       </Container>
     </section>

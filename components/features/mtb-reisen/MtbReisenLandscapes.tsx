@@ -12,8 +12,8 @@ interface MtbReisenLandscapesProps {
 export function MtbReisenLandscapes({ heading, text, items, images }: MtbReisenLandscapesProps) {
   return (
     <section className="bg-background py-20 md:py-28">
-      <Container size="lg" className="flex flex-col gap-12">
-        <div className="max-w-2xl">
+      <Container className="flex flex-col gap-12">
+        <div className="max-w-text">
           <h2 className="text-h2 text-foreground text-balance mb-6">{heading}</h2>
           <p className="text-base leading-[26px] text-foreground">{text}</p>
         </div>

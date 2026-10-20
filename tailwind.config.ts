@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 import { colors, landscape } from './lib/design-tokens/colors';
 import { shadows } from './lib/design-tokens/shadows';
 import { radius } from './lib/design-tokens/radius';
+import { layout } from './lib/design-tokens/layout';
 import { animations } from './lib/design-tokens/animations';
 
 const config: Config = {
@@ -78,6 +79,12 @@ const config: Config = {
         'component-card': radius.component.card,
         'component-badge': radius.component.badge,
         'component-modal': radius.component.modal,
+      },
+
+      // Text measures from layout tokens (`max-w-text`, `max-w-heading`)
+      maxWidth: {
+        text: layout.measure.text,
+        heading: layout.measure.heading,
       },
 
       // Animation durations

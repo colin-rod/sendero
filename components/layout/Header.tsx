@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { Link } from '@/lib/i18n/routing';
 import { locales } from '@/lib/i18n/config';
 import LanguageSwitcher, { localeLabels, useSwitchLocale } from '@/components/LanguageSwitcher';
+import { Container } from '@/components/ui/Container';
 
 /** Header links, shared by the desktop nav and the mobile menu. */
 const navItems = [
@@ -78,7 +79,7 @@ export function Header({ overlay = false }: HeaderProps) {
                 : 'z-50 bg-transparent'
         }`}
       >
-        <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24">
+        <Container>
           <div className="flex py-[34px] gap-6 items-center justify-between">
             {/* Logo */}
             <Link
@@ -132,7 +133,7 @@ export function Header({ overlay = false }: HeaderProps) {
               </button>
             </div>
           </div>
-        </div>
+        </Container>
       </header>
 
       {/* Mobile menu */}

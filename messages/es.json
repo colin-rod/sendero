@@ -982,14 +982,13 @@
   },
   "mtbReisen": {
     "seo": {
-      "title": "Viaje en bicicleta de montaña por Colombia – 7 o 9 días en el Eje Cafetero",
+      "title": "Viaje en bicicleta de montaña por Colombia – caminos antiguos en los Andes",
       "description": "Grupos pequeños, caminos ancestrales y una finca cafetera como hogar: un viaje en bicicleta de montaña por los Andes colombianos, con acompañamiento personal. Desde 3.290 €."
     },
     "hero": {
-      "eyebrow": "Colombia en bicicleta de montaña · 7 o 9 días",
+      "eyebrow": "Colombia en bicicleta de montaña",
       "title": "Entre café y nubes.",
       "text": "Grupos pequeños, caminos ancestrales y una finca cafetera como hogar – en pleno corazón de los Andes colombianos.",
-      "primaryCta": "Solicitar viaje",
       "secondaryCta": "Ver día a día"
     },
     "nav": {
@@ -1028,59 +1027,45 @@
     "itinerary": {
       "heading": "Día a día",
       "intro": "Unos 20 km al día, con tiempo para pausas, conversaciones y miradores. Cada noche de vuelta en la Casa Tacay.",
-      "toggleLabel": "Duración del viaje",
-      "nine": "9 días",
-      "seven": "7 días",
       "dayLabel": "Día",
-      "nineOnly": "Solo 9 días",
       "stats": "{km} km · {hm} m de desnivel",
-      "mealsLabel": "Incluye:",
       "days": {
         "arrival": {
           "title": "Llegada",
-          "text": "Tras tu llegada al aeropuerto Matecaña o a la terminal de buses de Pereira, te llevamos a la Casa Tacay. Hay tiempo para llegar con calma, conocer al grupo, ajustar las bicis y repasar lo más importante del viaje. En la primera cena juntos brindamos por los días que vienen.",
-          "meals": "Cena"
+          "text": "Tras tu llegada al aeropuerto Matecaña o a la terminal de buses de Pereira, te llevamos a la Casa Tacay. Hay tiempo para llegar con calma, conocer al grupo, ajustar las bicis y repasar lo más importante del viaje. En la primera cena juntos brindamos por los días que vienen."
         },
         "tigre": {
           "title": "Sendero del Tigre",
-          "text": "Para aclimatarnos, rodamos por caminos bordeados de guadua y entre huertos frutales hasta la Finca Ganday. Allí descubrimos la diversidad de los cultivos colombianos y disfrutamos un caldo tradicional con ingredientes de la finca – con una receta de la montaña y del Amazonas.",
-          "meals": "Desayuno, almuerzo, cena"
+          "text": "Para aclimatarnos, rodamos por caminos bordeados de guadua y entre huertos frutales hasta la Finca Ganday. Allí descubrimos la diversidad de los cultivos colombianos y disfrutamos un caldo tradicional con ingredientes de la finca – con una receta de la montaña y del Amazonas."
         },
         "cafe": {
           "title": "Sendero del Café",
-          "text": "Por carreteras rurales tranquilas recorremos el Paisaje Cultural Cafetero de la UNESCO – entre cafetales, pequeños pueblos y casas de colores. Incluye un taller de café y arte con nuestros anfitriones.",
-          "meals": "Desayuno, almuerzo, cena"
+          "text": "Por carreteras rurales tranquilas recorremos el Paisaje Cultural Cafetero de la UNESCO – entre cafetales, pequeños pueblos y casas de colores. Incluye un taller de café y arte con nuestros anfitriones."
         },
         "agua": {
           "title": "Sendero del Agua",
-          "text": "Seguimos caminos sinuosos junto a ríos y por densos bosques de niebla alrededor de La Florida. En el camino encontramos puentes, cascadas y, con algo de suerte, animales grandes y pequeños. Al mediodía, un almuerzo típico de montaña con vista.",
-          "meals": "Desayuno, almuerzo, cena"
+          "text": "Seguimos caminos sinuosos junto a ríos y por densos bosques de niebla alrededor de La Florida. En el camino encontramos puentes, cascadas y, con algo de suerte, animales grandes y pequeños. Al mediodía, un almuerzo típico de montaña con vista."
         },
         "cacao": {
           "title": "Sendero del Cacao",
-          "text": "Conocemos el cacao como nunca lo has probado: desde el fruto en el árbol, pasando por la fermentación, hasta el chocolate terminado. Tuestas tus propios nibs y te llevas tu creación a casa. La noche termina con música en la Casa Tacay.",
-          "meals": "Desayuno, cena"
+          "text": "Conocemos el cacao como nunca lo has probado: desde el fruto en el árbol, pasando por la fermentación, hasta el chocolate terminado. Tuestas tus propios nibs y te llevas tu creación a casa. La noche termina con música en la Casa Tacay."
         },
         "volcan": {
           "title": "Sendero del Volcán",
-          "text": "Entre palmas de cera, el árbol nacional de Colombia, y panorámicas de volcanes vivimos una de las rutas más espectaculares del viaje. En la tarde paramos en Salento – tiempo para pasear, curiosear y dejar que el pueblo te envuelva.",
-          "meals": "Desayuno, cena"
+          "text": "Entre palmas de cera, el árbol nacional de Colombia, y panorámicas de volcanes vivimos una de las rutas más espectaculares del viaje. En la tarde paramos en Salento – tiempo para pasear, curiosear y dejar que el pueblo te envuelva."
         },
         "oro": {
           "title": "Sendero del Oro",
-          "text": "Hoy unimos movimiento e historia. Después de visitar el Museo del Oro en Armenia, rodamos por caminos secundarios tranquilos y antiguos caminos de herradura por la tierra de los Quimbaya y descubrimos los orígenes de la cultura de la región.",
-          "meals": "Desayuno, cena"
+          "text": "Hoy unimos movimiento e historia. Después de visitar el Museo del Oro en Armenia, rodamos por caminos secundarios tranquilos y antiguos caminos de herradura por la tierra de los Quimbaya y descubrimos los orígenes de la cultura de la región."
         },
         "paramo": {
           "title": "Sendero del Páramo",
           "text": "Para cerrar nos espera una de las rutas más impresionantes del viaje: subimos hasta 3.400 metros, entre lagunas, altiplanos y plantas que solo existen aquí. La última noche la celebramos juntos con una cena andina en la Casa Tacay.",
-          "meals": "Desayuno, cena",
           "note": "hasta 3.400 m"
         },
         "departure": {
           "title": "Regreso",
-          "text": "Después del último desayuno juntos llega la hora de despedirse. El check-out es a las 11, luego nuestro conductor te lleva al aeropuerto o a la terminal.",
-          "meals": "Desayuno"
+          "text": "Después del último desayuno juntos llega la hora de despedirse. El check-out es a las 11, luego nuestro conductor te lleva al aeropuerto o a la terminal."
         }
       }
     },

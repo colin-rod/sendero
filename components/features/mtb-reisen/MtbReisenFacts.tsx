@@ -10,7 +10,7 @@ interface MtbReisenFactsProps {
 export function MtbReisenFacts({ id, heading, facts }: MtbReisenFactsProps) {
   return (
     <section id={id} className="scroll-mt-[180px] bg-river-forest py-12 md:py-16">
-      <Container size="lg">
+      <Container>
         <h2 className="sr-only">{heading}</h2>
         <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-6 gap-y-8 text-center">
           {facts.map((fact) => (

@@ -982,14 +982,13 @@
   },
   "mtbReisen": {
     "seo": {
-      "title": "Mountain Bike Trip Colombia – 7 or 9 Days in Coffee Country",
+      "title": "Mountain Bike Trip Colombia – Old Trails Through the Andes",
       "description": "Small groups, ancient trails and a coffee finca as your home: a mountain bike trip through Colombia's Andes, personally guided. From €3,290."
     },
     "hero": {
-      "eyebrow": "Colombia by mountain bike · 7 or 9 days",
+      "eyebrow": "Colombia by mountain bike",
       "title": "Between coffee and clouds.",
       "text": "Small groups, ancient trails and a coffee finca as your home – right in the heart of Colombia's Andes.",
-      "primaryCta": "Request your trip",
       "secondaryCta": "See day by day"
     },
     "nav": {
@@ -1028,59 +1027,45 @@
     "itinerary": {
       "heading": "Day by day",
       "intro": "Around 20 km a day, with time for breaks, conversations and views. Back at Casa Tacay every evening.",
-      "toggleLabel": "Trip length",
-      "nine": "9 days",
-      "seven": "7 days",
       "dayLabel": "Day",
-      "nineOnly": "9 days only",
       "stats": "{km} km · {hm} m gain",
-      "mealsLabel": "Included:",
       "days": {
         "arrival": {
           "title": "Arrival",
-          "text": "After you land at Matecaña Airport or arrive at Pereira's bus terminal, we take you to Casa Tacay. There's time to settle in, meet the group, set up the bikes and go over the most important notes for the trip. At our first dinner together we raise a glass to the days ahead.",
-          "meals": "Dinner"
+          "text": "After you land at Matecaña Airport or arrive at Pereira's bus terminal, we take you to Casa Tacay. There's time to settle in, meet the group, set up the bikes and go over the most important notes for the trip. At our first dinner together we raise a glass to the days ahead."
         },
         "tigre": {
           "title": "Sendero del Tigre",
-          "text": "To acclimatize, we ride bamboo-lined paths and through fruit orchards to Finca Ganday. There we discover the variety of Colombian crops and enjoy a traditional caldo made with ingredients from the finca – following a recipe from the mountains and the Amazon.",
-          "meals": "Breakfast, lunch, dinner"
+          "text": "To acclimatize, we ride bamboo-lined paths and through fruit orchards to Finca Ganday. There we discover the variety of Colombian crops and enjoy a traditional caldo made with ingredients from the finca – following a recipe from the mountains and the Amazon."
         },
         "cafe": {
           "title": "Sendero del Café",
-          "text": "On quiet country roads we ride through the UNESCO Coffee Cultural Landscape – past plantations, small pueblos and colorful houses. Included: a coffee and art workshop with our hosts.",
-          "meals": "Breakfast, lunch, dinner"
+          "text": "On quiet country roads we ride through the UNESCO Coffee Cultural Landscape – past plantations, small pueblos and colorful houses. Included: a coffee and art workshop with our hosts."
         },
         "agua": {
           "title": "Sendero del Agua",
-          "text": "We follow winding paths along rivers and through dense cloud forest around La Florida. Along the way we cross bridges, pass waterfalls and, with a bit of luck, meet animals big and small. Lunch is a regional mountain meal with a view.",
-          "meals": "Breakfast, lunch, dinner"
+          "text": "We follow winding paths along rivers and through dense cloud forest around La Florida. Along the way we cross bridges, pass waterfalls and, with a bit of luck, meet animals big and small. Lunch is a regional mountain meal with a view."
         },
         "cacao": {
           "title": "Sendero del Cacao",
-          "text": "Get to know cacao like you've never tasted it: from the fruit on the tree through fermentation to finished chocolate. You roast your own nibs and take your creation home. The evening ends with music at Casa Tacay.",
-          "meals": "Breakfast, dinner"
+          "text": "Get to know cacao like you've never tasted it: from the fruit on the tree through fermentation to finished chocolate. You roast your own nibs and take your creation home. The evening ends with music at Casa Tacay."
         },
         "volcan": {
           "title": "Sendero del Volcán",
-          "text": "Between wax palms, Colombia's national tree, and volcano panoramas, this is one of the most spectacular rides of the trip. In the afternoon we stop in Salento – time to stroll, browse and take the place in.",
-          "meals": "Breakfast, dinner"
+          "text": "Between wax palms, Colombia's national tree, and volcano panoramas, this is one of the most spectacular rides of the trip. In the afternoon we stop in Salento – time to stroll, browse and take the place in."
         },
         "oro": {
           "title": "Sendero del Oro",
-          "text": "Today we combine riding with history. After visiting the Gold Museum in Armenia, we ride quiet back roads and old connecting paths through the land of the Quimbaya and discover the origins of the region's culture.",
-          "meals": "Breakfast, dinner"
+          "text": "Today we combine riding with history. After visiting the Gold Museum in Armenia, we ride quiet back roads and old connecting paths through the land of the Quimbaya and discover the origins of the region's culture."
         },
         "paramo": {
           "title": "Sendero del Páramo",
           "text": "To close, one of the most impressive rides of the trip awaits: up to 3,400 meters, past lagoons, high plateaus and plants found nowhere else. We celebrate the last evening together with an Andean dinner at Casa Tacay.",
-          "meals": "Breakfast, dinner",
           "note": "up to 3,400 m"
         },
         "departure": {
           "title": "Departure",
-          "text": "After a last breakfast together, it's time to say goodbye. Check-out is at 11 am, then our driver takes you to the airport or bus terminal.",
-          "meals": "Breakfast"
+          "text": "After a last breakfast together, it's time to say goodbye. Check-out is at 11 am, then our driver takes you to the airport or bus terminal."
         }
       }
     },

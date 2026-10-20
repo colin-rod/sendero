@@ -137,28 +137,6 @@
     @apply text-sm font-semibold;
   }
 
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80rem;
-    padding-left: 1.5rem; /* 24px mobile — Figma padding-left-right */
-    padding-right: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 2.5rem; /* 40px tablet */
-      padding-right: 2.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 4rem; /* 64px desktop */
-      padding-right: 4rem;
-    }
-  }
-
   .btn {
     display: inline-flex;
     align-items: center;

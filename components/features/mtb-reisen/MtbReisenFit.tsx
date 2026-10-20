@@ -32,14 +32,14 @@ export function MtbReisenFit({
 
   return (
     <section className="bg-white py-20 md:py-28">
-      <Container size="lg" className="flex flex-col gap-12">
-        <h2 className="text-h2 text-foreground">{heading}</h2>
+      <Container className="flex flex-col gap-12">
+        <h2 className="text-h2 text-foreground max-w-heading">{heading}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
           {blocks.map((block) => (
             <div key={block.title}>
               <p className="text-body-em text-primary-500 mb-4">{block.title}</p>
-              <p className="text-base leading-[26px] text-foreground">{block.text}</p>
+              <p className="text-base leading-[26px] text-foreground max-w-text">{block.text}</p>
             </div>
           ))}
 

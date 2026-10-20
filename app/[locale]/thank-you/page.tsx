@@ -50,7 +50,7 @@ export default function ThankYouPage() {
       <main className="flex-1">
         <section className="py-20 md:py-32">
           <Container>
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="mx-auto max-w-text text-center">
               {/* Success Icon */}
               <div className="mb-8 flex justify-center">
                 <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary-100">
