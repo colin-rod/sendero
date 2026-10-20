@@ -44,11 +44,11 @@ export default function ContactPage() {
       <Header />
 
       <main className="flex-1 py-12 md:py-16">
-        <Container size="lg">
+        <Container>
           {/* Page Header */}
           <div className="mb-12 text-center">
-            <h1 className="text-h1 mb-4 text-foreground">{t('title')}</h1>
-            <p className="text-body text-muted-foreground">
+            <h1 className="text-h1 mb-4 mx-auto max-w-heading text-foreground">{t('title')}</h1>
+            <p className="text-body mx-auto max-w-text text-muted-foreground">
               {t('description')}
             </p>
           </div>

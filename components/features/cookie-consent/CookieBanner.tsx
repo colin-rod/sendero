@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import posthog from "posthog-js";
+import { Container } from "@/components/ui/Container";
 
 const STORAGE_KEY = "cookie-consent";
 
@@ -39,9 +40,9 @@ export function CookieBanner() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed bottom-0 left-0 right-0 z-50 text-white px-4 py-4 shadow-lg backdrop-blur-sm bg-gray-950/80 border-t-[0.5px] border-white/25"
+      className="fixed bottom-0 left-0 right-0 z-50 text-white py-4 shadow-lg backdrop-blur-sm bg-gray-950/80 border-t-[0.5px] border-white/25"
     >
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+      <Container className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
         <p className="text-sm leading-relaxed flex-1 text-gray-200">
           {t("text")}{" "}
           <Link
@@ -65,7 +66,7 @@ export function CookieBanner() {
             {t("accept")}
           </button>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

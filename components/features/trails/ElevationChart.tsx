@@ -18,8 +18,8 @@ export function ElevationChart({
 }: ElevationChartProps) {
   return (
     <section className="py-20 md:py-32 bg-background">
-      <Container size="md">
-        <h2 className="text-h2 text-center mb-8">{heading}</h2>
+      <Container>
+        <h2 className="text-h2 text-center mx-auto max-w-heading mb-8">{heading}</h2>
 
         {/* Placeholder for elevation chart */}
         <div className="mb-8">
@@ -47,7 +47,7 @@ export function ElevationChart({
         </div>
 
         {/* Description */}
-        <p className="text-body text-center text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-body text-center text-muted-foreground max-w-text mx-auto">
           {profile.description}
         </p>
       </Container>

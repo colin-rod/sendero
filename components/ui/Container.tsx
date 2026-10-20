@@ -3,17 +3,19 @@ import React from 'react';
 /**
  * Container Component
  *
- * A responsive container component with configurable max-width.
- * Provides consistent horizontal padding and centering across breakpoints.
+ * The site frame: every section, the header and the footer use it, so content
+ * lines up with the logo at every breakpoint. Width and padding come from
+ * `layout` in lib/design-tokens (1280px frame, Figma 24/40/64px gutter).
+ *
+ * The frame splits into two halves with a `gap-8` gap. Constrain copy with
+ * the text measures instead of narrower containers: `max-w-text` (one half)
+ * for paragraphs, `max-w-heading` for headings.
  *
  * @example
  * ```tsx
  * <Container>
- *   <h1>Page content</h1>
- * </Container>
- *
- * <Container size="sm">
- *   <form>Narrow form</form>
+ *   <h2 className="text-h2 max-w-heading">Section title</h2>
+ *   <p className="max-w-text">Body copy</p>
  * </Container>
  *
  * <Container size="full">
@@ -26,10 +28,10 @@ export interface ContainerProps {
   /** Content to display inside the container */
   children: React.ReactNode;
 
-  /** Maximum width of the container */
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  /** `frame` (default) is the 1280px site frame; `full` drops the max width */
+  size?: 'frame' | 'full';
 
-  /** Whether to add responsive padding */
+  /** Whether to add the responsive gutter */
   noPadding?: boolean;
 
   /** Additional CSS classes */
@@ -40,26 +42,23 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
   (
     {
       children,
-      size = 'xl',
+      size = 'frame',
       noPadding = false,
       className = '',
     },
     ref
   ) => {
-    // Base classes
-    const baseClasses = 'mx-auto w-full';
+    // Base classes; `@container` lets `max-w-text` measure one half of the frame
+    const baseClasses = '@container mx-auto w-full';
 
     // Size classes (max-width)
     const sizeClasses = {
-      sm: 'max-w-2xl',   // 672px - Forms, narrow content
-      md: 'max-w-4xl',   // 896px - Articles, medium content
-      lg: 'max-w-6xl',   // 1152px - Wide content
-      xl: 'max-w-7xl',   // 1280px - Default, full site width
+      frame: 'max-w-7xl', // 1280px - layout.frame
       full: 'max-w-full', // No max width
     };
 
-    // Padding classes (responsive)
-    const paddingClasses = noPadding ? '' : 'px-4 sm:px-6 lg:px-8';
+    // Gutter (layout.gutter): 24px mobile, 40px tablet, 64px desktop
+    const paddingClasses = noPadding ? '' : 'px-6 sm:px-10 lg:px-16';
 
     const combinedClassName = `${baseClasses} ${sizeClasses[size]} ${paddingClasses} ${className}`.trim();
 

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
+import { Container } from '@/components/ui/Container';
 import type { TrailStats } from '@/lib/types/trails';
 import { getDifficultyBadgeProps } from '@/lib/utils/difficulty';
 
@@ -46,24 +47,24 @@ export function TrailHero({
 
         {/* Hero Content Overlay */}
         <div className="absolute inset-0 flex items-end">
-          <div className="w-full max-w-[1200px] mx-auto px-4 md:px-8 pb-12">
+          <Container className="pb-12">
             <div className="flex items-center gap-3 mb-4">
-              <h1 className="text-h1 text-white">{name}</h1>
+              <h1 className="text-h1 text-white max-w-heading">{name}</h1>
               <Badge variant={getDifficultyBadgeProps(difficulty).variant}>
                 {difficultyLabel}
               </Badge>
             </div>
-            <p className="text-h3 text-white/90 max-w-2xl">
+            <p className="text-h3 text-white/90 max-w-heading">
               {subtitle}
             </p>
-          </div>
+          </Container>
         </div>
       </div>
 
       {/* Stats Row */}
       <div className="bg-background border-b border-gray-200">
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <Container className="py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4">
             {/* Distance */}
             <div className="text-center md:text-left">
               <p className="text-label text-muted-foreground mb-1">
@@ -96,7 +97,7 @@ export function TrailHero({
               <p className="text-h3">-{stats.elevationLoss}m</p>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </section>
   );

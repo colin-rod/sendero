@@ -18,7 +18,7 @@ export const radius = {
 
   // Semantic radius tokens
   component: {
-    button: '0.375rem', // 6px - Buttons, links
+    button: '9999px', // Full - Buttons (pill shape, one radius for every variant)
     input: '0.375rem', // 6px - Form inputs
     card: '0.5rem', // 8px - Cards, panels
     badge: '9999px', // Full - Badges, pills
@@ -33,7 +33,7 @@ export const radius = {
  * Border radius usage guidelines:
  *
  * SMALL ELEMENTS
- * - Buttons: base (6px)
+ * - Buttons: full (pill shape)
  * - Inputs: base (6px)
  * - Badges: full (pill shape)
  * - Small icons: sm (2px) or base (6px)
