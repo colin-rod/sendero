@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="bg-river-forest text-white">
       <Container className="py-16">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 items-start gap-y-12 gap-x-8 lg:grid-cols-3">
 
           {/* Column 1: Logo → brand name → tagline */}
           <div className="flex max-w-[300px] flex-col gap-4">

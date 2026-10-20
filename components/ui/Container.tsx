@@ -7,8 +7,9 @@ import React from 'react';
  * lines up with the logo at every breakpoint. Width and padding come from
  * `layout` in lib/design-tokens (1280px frame, Figma 24/40/64px gutter).
  *
- * Constrain copy inside it with the text measures instead of narrower
- * containers: `max-w-text` for paragraphs, `max-w-heading` for headings.
+ * The frame splits into two halves with a `gap-8` gap. Constrain copy with
+ * the text measures instead of narrower containers: `max-w-text` (one half)
+ * for paragraphs, `max-w-heading` for headings.
  *
  * @example
  * ```tsx
@@ -47,8 +48,8 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
     },
     ref
   ) => {
-    // Base classes
-    const baseClasses = 'mx-auto w-full';
+    // Base classes; `@container` lets `max-w-text` measure one half of the frame
+    const baseClasses = '@container mx-auto w-full';
 
     // Size classes (max-width)
     const sizeClasses = {

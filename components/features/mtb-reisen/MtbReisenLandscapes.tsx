@@ -18,7 +18,7 @@ export function MtbReisenLandscapes({ heading, text, items, images }: MtbReisenL
           <p className="text-base leading-[26px] text-foreground">{text}</p>
         </div>
 
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
             <li key={item}>
               <figure className="m-0 flex flex-col gap-3">

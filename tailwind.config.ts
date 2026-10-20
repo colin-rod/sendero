@@ -81,9 +81,9 @@ const config: Config = {
         'component-modal': radius.component.modal,
       },
 
-      // Text measures from layout tokens (`max-w-text`, `max-w-heading`)
+      // Heading measure from layout tokens (`max-w-heading`);
+      // `max-w-text` is a fluid utility in app/globals.css
       maxWidth: {
-        text: layout.measure.text,
         heading: layout.measure.heading,
       },
 

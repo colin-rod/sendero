@@ -19,7 +19,7 @@ export function MtbReisenSafety({ id, heading, items }: MtbReisenSafetyProps) {
         <h2 className="text-h2 text-foreground max-w-heading">{heading}</h2>
 
         {/* TODO: fill in [Marke], [Federweg] and [S–XL] in mtbReisen.safety.items[0] (all three locales) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item) => (
             <Card key={item.title} padding="lg">
               <p className="text-body-em text-primary-500 mb-3">{item.title}</p>

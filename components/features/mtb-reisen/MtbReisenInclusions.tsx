@@ -20,7 +20,7 @@ export function MtbReisenInclusions({
 
   return (
     <section id="included" className="bg-gray-950 py-20 md:py-28">
-      <Container className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-12">
         {lists.map((list) => (
           <div key={list.heading}>
             <h3 className="text-h3 text-white mb-8">{list.heading}</h3>

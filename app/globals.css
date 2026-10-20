@@ -1,6 +1,22 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
+/*
+ * Layout grid (values mirror lib/design-tokens/layout.ts).
+ * The frame (<Container>) is a size container split into two halves with a
+ * 2rem gap (`gap-8`). The text measure is one half, so a single-column
+ * paragraph ends exactly where the first column of a 2-column grid ends.
+ * 35rem = (1280px frame - 2 x 64px gutter - 32px gap) / 2. Below lg everything
+ * stacks and copy is capped at 35rem.
+ */
+@utility max-w-text {
+  max-width: 35rem;
+
+  @media (width >= 64rem) {
+    max-width: min(35rem, calc((100cqw - 2rem) / 2));
+  }
+}
+
 @layer base {
   * {
     border-color: rgb(226 232 240);

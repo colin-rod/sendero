@@ -23,7 +23,7 @@ export function AnfragenGallery({ heading, items }: AnfragenGalleryProps) {
     <section className="py-20">
       <Container>
         <h2 className="text-h2 mb-8 max-w-heading font-normal text-foreground">{heading}</h2>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8">
           {items.map((item, index) => (
             <figure key={item.caption} className="m-0 flex flex-col gap-3">
               <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-gray-200">

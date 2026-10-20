@@ -35,7 +35,7 @@ export function MtbReisenFit({
       <Container className="flex flex-col gap-12">
         <h2 className="text-h2 text-foreground max-w-heading">{heading}</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10">
           {blocks.map((block) => (
             <div key={block.title}>
               <p className="text-body-em text-primary-500 mb-4">{block.title}</p>

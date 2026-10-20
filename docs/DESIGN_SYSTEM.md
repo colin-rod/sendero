@@ -353,21 +353,30 @@ const desktopPadding = spacing.padding.l.desktop; // '3rem' (48px)
 
 ### Layout System
 
-One frame and one reading column for the whole site. Tokens live in
-[lib/design-tokens/layout.ts](../lib/design-tokens/layout.ts).
+One frame, split into two halves, for the whole site. Tokens live in
+[lib/design-tokens/layout.ts](../lib/design-tokens/layout.ts); the fluid
+`max-w-text` utility lives in [app/globals.css](../app/globals.css).
+
+```
+|<--- 1280px frame: 64px gutter | 560 | 32 gap | 560 | 64px gutter --->|
+       TAG 9 / Abreise / paragraph ...
+       Kondition                       Fahrtechnik
+```
 
 | Token | Value | Use it as | For |
 |---|---|---|---|
 | Frame | 1280px (`layout.frame`) | `<Container>` | Every section, the header and the footer |
 | Gutter | 24 / 40 / 64px (`layout.gutter` = Figma `padding-left-right`) | built into `<Container>` | Breakpoints: base / `sm` / `lg` |
-| Text measure | 672px (`layout.measure.text`) | `max-w-text` | Paragraphs, intros, hero/CTA copy, legal pages |
+| Grid gap | 32px (`layout.gridGap`) | `gap-8` / `gap-x-8` | Between columns of every layout grid |
+| Text measure | one half of the frame, max 560px (`layout.measure.text`) | `max-w-text` | Paragraphs, intros, hero/CTA copy, legal pages |
 | Heading measure | 896px (`layout.measure.heading`) | `max-w-heading` | h1/h2, and any copy set in `text-h3` or larger |
 
 **Rules**
 
 - Every section wraps its content in `<Container>`, so the left edge of the content lines up with the header logo at every breakpoint. Don't add section-level `px-*` or `max-w-*` wrappers.
 - Constrain copy with `max-w-text` / `max-w-heading`, not with narrower containers. Centered copy uses the same measures plus `mx-auto`.
-- Grids (cards, galleries, multi-column lists, maps) span the full frame.
+- Grids (cards, galleries, multi-column lists, maps) span the full frame with a `gap-8` column gap. A single-column paragraph then ends exactly where the first column of a 2-column grid ends.
+- `max-w-text` is fluid: from `lg` up it is `min(35rem, 50cqw - 1rem)`, measured against the nearest `<Container>` (which is a size container, `@container`); below `lg` it is a 35rem cap and grids stack. Text grids with two columns split at `lg` so they match it.
 - Component widths are not text measures and stay as they are: form cards (Anfragen 720px), the login form and email inputs (`max-w-md`/`max-w-xl`), the footer brand column (300px), the TourGrid overlays.
 
 ```tsx

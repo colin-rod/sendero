@@ -64,7 +64,7 @@ export function TrailHero({
       {/* Stats Row */}
       <div className="bg-background border-b border-gray-200">
         <Container className="py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-4">
             {/* Distance */}
             <div className="text-center md:text-left">
               <p className="text-label text-muted-foreground mb-1">

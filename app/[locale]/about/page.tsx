@@ -55,7 +55,7 @@ export default function AboutPage() {
 
           {/* Section 1: Berlin */}
           <section className="mb-12">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="grid gap-8 lg:grid-cols-2">
               {/* Text Content */}
               <div className="flex flex-col justify-center">
                 <h2 className="text-h2 mb-4 text-foreground">
@@ -81,7 +81,7 @@ export default function AboutPage() {
 
           {/* Section 2: Andes */}
           <section className="mb-12">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="grid gap-8 lg:grid-cols-2">
               {/* Image - Left on desktop */}
               <div className="relative h-64 lg:h-auto lg:order-1">
                 <Image
@@ -107,7 +107,7 @@ export default function AboutPage() {
 
           {/* Section 3: The Journey */}
           <section className="mb-12">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+            <div className="grid gap-8 lg:grid-cols-2">
               {/* Text Content */}
               <div className="flex flex-col justify-center">
                 <h2 className="text-h2 mb-4 text-foreground">

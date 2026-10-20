@@ -44,7 +44,7 @@ export function MtbReisenPricing({
           <p className="text-base leading-[26px] text-foreground">{dates}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {options.map((option) => (
             <Card key={option.key} variant="bordered" padding="lg" className="flex flex-col gap-3">
               <p className="text-label text-primary-500 tracking-[0.06em] uppercase">{option.title}</p>
