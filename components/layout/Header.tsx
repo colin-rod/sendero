@@ -89,7 +89,7 @@ export function Header({ overlay = false }: HeaderProps) {
               <LogoMark
                 label={t('logoAlt')}
                 className="h-12 w-12 flex-none rounded-full text-foreground transition-colors group-hover:text-white group-active:text-white group-focus-visible:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-500 group-focus-visible:ring-offset-2"
-                circleClassName="fill-transparent group-hover:fill-foreground group-active:fill-foreground group-focus-visible:fill-foreground"
+                circleClassName="fill-transparent group-hover:fill-primary-500 group-hover:stroke-primary-500 group-active:fill-primary-500 group-active:stroke-primary-500 group-focus-visible:fill-primary-500 group-focus-visible:stroke-primary-500"
               />
               <span className="text-caption font-medium leading-tight tracking-[0.06em] uppercase text-foreground">
                 Sendero<br />Bike Trails
