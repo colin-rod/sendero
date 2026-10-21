@@ -9,30 +9,33 @@ export const mtbReise: MtbReisenTrip = {
   slug: 'mtb-reisen',
   currency: 'EUR',
   variants: [
-    { key: 'nine', priceFrom: 3890 },
-    { key: 'seven', priceFrom: 3290 },
+    { key: 'seven', days: 7, priceFrom: 3290 },
+    { key: 'nine', days: 9, priceFrom: 3890 },
   ],
+  singleSupplement: 300,
   images: {
     // TODO(image): Wide hero – riders on a ridge between coffee slopes and clouds (video optional)
     hero: '/images/mtb-reisen/hero.jpg',
-    landscapes: [
-      // TODO(image): Coffee cultural landscape – rows of coffee on steep green slopes
-      '/images/anfragen/gallery-gastgeber.jpg',
-      // TODO(image): Cacao plantation – ripe cacao pods on the tree
-      '/images/anfragen/gallery-finca.jpg',
-      // TODO(image): Colorful village – painted balconies in Salento or Filandia
-      '/images/mtb-reisen/gallery-1.jpg',
-      // TODO(image): Volcano landscape – Nevado del Ruiz / Los Nevados panorama
+    // TODO(image): Region chronicle – old mule track or bahareque village on a steep Andean slope
+    region: '/images/mtb-reisen/gallery-1.jpg',
+    gallery: [
+      // TODO(image): Páramo – frailejones and lagoon at 3,400 m
+      '/images/mtb-reisen/hero.jpg',
+      // TODO(image): Volcano landscape – wax palms with Los Nevados behind
       '/images/anfragen/hero-poster.jpg',
-      // TODO(image): Waterfall or hot spring in the cloud forest
+      // TODO(image): Cloud forest – river crossing or waterfall near La Florida
       '/images/anfragen/gallery-nebelwald.jpg',
       // TODO(image): Bamboo forest – guadua cathedral from below
       '/images/mtb-reisen/cta-alto-de-letras.jpg',
-      // TODO(image): Páramo – frailejones and lagoon at 3,400 m
-      '/images/mtb-reisen/hero.jpg',
+      // TODO(image): Colorful village – painted balconies in Salento or Filandia
+      '/images/mtb-reisen/gallery-2.jpg',
+      // TODO(image): Cacao – hands holding an opened cacao pod
+      '/images/mtb-reisen/gallery-3.jpg',
+      // TODO(image): Coffee slopes – rows of coffee on steep green hillsides
+      '/images/anfragen/gallery-gastgeber.jpg',
+      // TODO(image): The group at the Casa Tacay table at dusk
+      '/images/anfragen/gallery-gruppe.jpg',
     ],
-    // TODO(image): Casa Tacay – the finca house and terrace above the coffee slopes
-    casaTacay: '/images/anfragen/gallery-finca.jpg',
     // TODO(image): Final CTA – wide sunset over the Andes from the saddle
     cta: '/images/mtb-reisen/cta-alto-de-letras.jpg',
   },
@@ -68,3 +71,4 @@ export function daysForVariant<T extends Pick<MtbReisenDay, 'nineDaysOnly'>>(
     .filter((day) => variant === 'nine' || !day.nineDaysOnly)
     .map((day, index) => ({ ...day, number: index + 1 }));
 }
+

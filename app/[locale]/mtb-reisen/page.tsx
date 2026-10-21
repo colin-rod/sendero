@@ -6,30 +6,22 @@ import { breadcrumbSchema } from '@/lib/seo/jsonLd';
 import { buildAlternates } from '@/lib/seo/canonical';
 import { mtbReise } from '@/lib/data/mtbReisen';
 import { MtbReisenHero } from '@/components/features/mtb-reisen/MtbReisenHero';
-import { MtbReisenOverviewBar } from '@/components/features/mtb-reisen/MtbReisenOverviewBar';
+import { MtbReisenRegion } from '@/components/features/mtb-reisen/MtbReisenRegion';
 import { MtbReisenFacts } from '@/components/features/mtb-reisen/MtbReisenFacts';
-import { MtbReisenLandscapes } from '@/components/features/mtb-reisen/MtbReisenLandscapes';
 import { MtbReisenItinerary, type ItineraryDay } from '@/components/features/mtb-reisen/MtbReisenItinerary';
-import { MtbReisenFit } from '@/components/features/mtb-reisen/MtbReisenFit';
-import { MtbReisenSafety } from '@/components/features/mtb-reisen/MtbReisenSafety';
-import { MtbReisenCasaTacay } from '@/components/features/mtb-reisen/MtbReisenCasaTacay';
-import { MtbReisenPricing } from '@/components/features/mtb-reisen/MtbReisenPricing';
-import { MtbReisenInclusions } from '@/components/features/mtb-reisen/MtbReisenInclusions';
 import { MtbReisenFaq } from '@/components/features/mtb-reisen/MtbReisenFaq';
+import { MtbReisenGallery } from '@/components/features/mtb-reisen/MtbReisenGallery';
+import { MtbReisenInclusions } from '@/components/features/mtb-reisen/MtbReisenInclusions';
 import { MtbReisenCTA } from '@/components/features/mtb-reisen/MtbReisenCTA';
 
 const PAGE_PATH = '/mtb-reisen';
 
 const SECTION_IDS = {
-  overview: 'ueberblick',
+  region: 'region',
+  facts: 'auf-einen-blick',
   itinerary: 'tag-fuer-tag',
-  safety: 'sicherheit',
-  price: 'preis',
-  faq: 'faq',
+  faq: 'fragen',
 } as const;
-
-/** Sections hidden for now (overview bar, facts, landscapes, safety); flip to bring them back */
-const SHOW_FULL_PAGE = false;
 
 interface DayCopy {
   title: string;
@@ -102,20 +94,9 @@ export default async function MtbReisenPage({
     };
   });
 
-  const navLinks = [
-    { label: t('nav.overview'), href: `#${SECTION_IDS.overview}` },
-    { label: t('nav.itinerary'), href: `#${SECTION_IDS.itinerary}` },
-    { label: t('nav.safety'), href: `#${SECTION_IDS.safety}` },
-    { label: t('nav.price'), href: `#${SECTION_IDS.price}` },
-    { label: t('nav.faq'), href: `#${SECTION_IDS.faq}` },
-  ];
-
-  const priceOptions = trip.variants.map((variant) => ({
-    key: variant.key,
-    title: t(`pricing.variants.${variant.key}.title`),
-    price: priceFormatter.format(variant.priceFrom),
-    text: t(`pricing.variants.${variant.key}.text`),
-  }));
+  const prices = trip.variants.map((variant) =>
+    t('hero.priceLine', { price: priceFormatter.format(variant.priceFrom), days: variant.days })
+  );
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -126,29 +107,27 @@ export default async function MtbReisenPage({
           eyebrow={t('hero.eyebrow')}
           title={t('hero.title')}
           text={t('hero.text')}
+          prices={prices}
+          priceNote={t('hero.priceNote', { price: priceFormatter.format(trip.singleSupplement) })}
           secondaryCta={t('hero.secondaryCta')}
-          secondaryHref={`#${SECTION_IDS.itinerary}`}
+          secondaryHref={`#${SECTION_IDS.region}`}
           heroImage={trip.images.hero}
         />
 
-        {SHOW_FULL_PAGE && (
-          <>
-            <MtbReisenOverviewBar ariaLabel={t('nav.ariaLabel')} links={navLinks} ctaLabel={t('nav.cta')} />
+        <MtbReisenRegion
+          id={SECTION_IDS.region}
+          eyebrow={t('region.eyebrow')}
+          heading={t('region.heading')}
+          paragraphs={t.raw('region.paragraphs') as string[]}
+          image={trip.images.region}
+          imageAlt={t('region.imageAlt')}
+        />
 
-            <MtbReisenFacts
-              id={SECTION_IDS.overview}
-              heading={t('nav.overview')}
-              facts={t.raw('facts.items') as string[]}
-            />
-
-            <MtbReisenLandscapes
-              heading={t('landscapes.heading')}
-              text={t('landscapes.text')}
-              items={t.raw('landscapes.items') as string[]}
-              images={trip.images.landscapes}
-            />
-          </>
-        )}
+        <MtbReisenFacts
+          id={SECTION_IDS.facts}
+          heading={t('facts.heading')}
+          facts={t.raw('facts.items') as string[]}
+        />
 
         <MtbReisenItinerary
           id={SECTION_IDS.itinerary}
@@ -158,46 +137,20 @@ export default async function MtbReisenPage({
           days={days}
         />
 
-        <MtbReisenFit
-          heading={t('fit.heading')}
-          blocks={[
-            { title: t('fit.fitnessTitle'), text: t('fit.fitnessText') },
-            { title: t('fit.techniqueTitle'), text: t('fit.techniqueText') },
-          ]}
-          yesHeading={t('fit.yesHeading')}
-          yesItems={t.raw('fit.yesItems') as string[]}
-          noHeading={t('fit.noHeading')}
-          noItems={t.raw('fit.noItems') as string[]}
-          cta={t('fit.cta')}
+        <MtbReisenFaq
+          id={SECTION_IDS.faq}
+          eyebrow={t('faq.eyebrow')}
+          heading={t('faq.heading')}
+          items={t.raw('faq.items') as { question: string; paragraphs: string[] }[]}
+          ctaQuestion={t('faq.ctaQuestion')}
+          ctaLink={t('faq.ctaLink')}
+          faqPageLink={t('faq.faqPageLink')}
         />
 
-        {SHOW_FULL_PAGE && (
-          <MtbReisenSafety
-            id={SECTION_IDS.safety}
-            heading={t('safety.heading')}
-            items={t.raw('safety.items') as { title: string; text: string }[]}
-          />
-        )}
-
-        <MtbReisenCasaTacay
-          heading={t('casa.heading')}
-          text={t('casa.text')}
-          features={t.raw('casa.features') as string[]}
-          image={trip.images.casaTacay}
-          imageAlt={t('casa.imageAlt')}
-        />
-
-        <MtbReisenPricing
-          id={SECTION_IDS.price}
-          heading={t('pricing.heading')}
-          dates={t('pricing.dates')}
-          perPerson={t('pricing.perPerson')}
-          options={priceOptions}
-          note={t('pricing.note')}
-          trust={t('pricing.trust')}
-          cta={t('pricing.cta')}
-          privateQuestion={t('pricing.privateQuestion')}
-          privateLink={t('pricing.privateLink')}
+        <MtbReisenGallery
+          heading={t('gallery.heading')}
+          items={t.raw('gallery.items') as { caption: string; alt: string }[]}
+          images={trip.images.gallery}
         />
 
         <MtbReisenInclusions
@@ -205,14 +158,6 @@ export default async function MtbReisenPage({
           notIncludedHeading={t('inclusions.notIncludedHeading')}
           includedItems={t.raw('inclusions.includedItems') as string[]}
           notIncludedItems={t.raw('inclusions.notIncludedItems') as string[]}
-        />
-
-        <MtbReisenFaq
-          id={SECTION_IDS.faq}
-          heading={t('faq.heading')}
-          groups={t.raw('faq.groups') as { title: string; questions: { question: string; answer: string }[] }[]}
-          ctaQuestion={t('faq.ctaQuestion')}
-          ctaLink={t('faq.ctaLink')}
         />
 
         <MtbReisenCTA

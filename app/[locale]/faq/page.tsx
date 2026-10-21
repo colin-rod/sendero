@@ -6,16 +6,8 @@ import { FAQAccordion } from '@/components/features/faq/FAQAccordion';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
 import { buildAlternates, ogImages } from '@/lib/seo/canonical';
-
-const sectionKeys = [
-  'safety',
-  'weather',
-  'fitness',
-  'transport',
-  'gear',
-  'insurance',
-  'payments',
-] as const;
+import { FAQ_SECTION_KEYS } from '@/lib/data/faq';
+import { Link } from '@/lib/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -52,16 +44,16 @@ export default async function FAQPage({
     acceptedAnswer: { '@type': 'Answer'; text: string };
   }> = [];
 
-  for (const sectionKey of sectionKeys) {
+  for (const sectionKey of FAQ_SECTION_KEYS) {
     const questions = t.raw(`sections.${sectionKey}.questions`) as QA[] | undefined;
     if (Array.isArray(questions)) {
       for (const qa of questions) {
         mainEntity.push({
           '@type': 'Question',
-          name: qa.question.replace('[PLACEHOLDER] ', ''),
+          name: qa.question,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: qa.answer.replace(/\[TODO:.*?\]\s*/g, ''),
+            text: qa.answer,
           },
         });
       }
@@ -97,18 +89,16 @@ export default async function FAQPage({
 
           {/* FAQ Accordion */}
           <div className="mx-auto max-w-heading rounded-xl border border-border bg-white p-6 shadow-sm md:p-8">
-            <FAQAccordion sections={sectionKeys} />
+            <FAQAccordion sections={FAQ_SECTION_KEYS} />
           </div>
 
-          {/* Helper Note for Placeholder Content */}
-          <div className="mx-auto mt-6 max-w-heading rounded-lg border border-amber-300 bg-amber-50 p-4 text-caption">
-            <p className="text-amber-900">
-              <strong>Note:</strong> Content marked with{' '}
-              <span className="font-mono">[PLACEHOLDER]</span> and{' '}
-              <span className="font-mono">[TODO]</span> is temporary and will be
-              updated with final information.
-            </p>
-          </div>
+          {/* Trip-specific questions live on the trip page */}
+          <p className="text-body mx-auto mt-6 max-w-heading text-center text-foreground">
+            {t('tripNote')}{' '}
+            <Link href="/mtb-reisen#fragen" className="text-primary-500 underline hover:text-river-forest">
+              {t('tripLink')}
+            </Link>
+          </p>
         </Container>
       </main>
 

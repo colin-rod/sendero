@@ -9,18 +9,20 @@ export interface MtbReisenDay {
   image: string;
 }
 
-export type MtbReisenVariantKey = 'nine' | 'seven';
+export type MtbReisenVariantKey = 'seven' | 'nine';
 
 export interface MtbReisenVariant {
   key: MtbReisenVariantKey;
+  days: number;
   priceFrom: number;
 }
 
 export interface MtbReisenImages {
   hero: string;
-  /** One per highlight in `mtbReisen.landscapes.items` (same order) */
-  landscapes: string[];
-  casaTacay: string;
+  /** Photo beside the region chronicle */
+  region: string;
+  /** One per caption in `mtbReisen.gallery.items` (same order) */
+  gallery: string[];
   cta: string;
 }
 
@@ -29,6 +31,8 @@ export interface MtbReisenTrip {
   slug: string;
   currency: string;
   variants: MtbReisenVariant[];
+  /** Single room supplement, same currency */
+  singleSupplement: number;
   images: MtbReisenImages;
   days: MtbReisenDay[];
 }

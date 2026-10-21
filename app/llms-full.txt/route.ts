@@ -1,21 +1,12 @@
 import { getTranslations } from 'next-intl/server';
 import { getSiteUrl, localizedUrl } from '@/lib/seo/canonical';
 import { trailSummaries, senderoDelTigre } from '@/lib/data/trails';
+import { FAQ_SECTION_KEYS } from '@/lib/data/faq';
 
 export const dynamic = 'force-static';
 export const revalidate = 86400;
 
 const LOCALE = 'en';
-
-const FAQ_SECTIONS = [
-  'safety',
-  'weather',
-  'fitness',
-  'transport',
-  'gear',
-  'insurance',
-  'payments',
-] as const;
 
 type QA = { question: string; answer: string };
 
@@ -113,7 +104,7 @@ export async function GET() {
   out.push(`URL: ${localizedUrl(LOCALE, '/faq')}`);
   out.push('');
 
-  for (const sectionKey of FAQ_SECTIONS) {
+  for (const sectionKey of FAQ_SECTION_KEYS) {
     const heading = clean(tFaq(`sections.${sectionKey}.title`));
     out.push(`### ${heading}`);
     out.push('');

@@ -402,155 +402,99 @@
     }
   },
   "faqPage": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about Sendero bike tours",
+    "title": "Frequently asked questions",
+    "subtitle": "Getting there, health, weather, packing and booking: everything to know before your trip into the Andes.",
     "expandAll": "Expand All",
     "collapseAll": "Collapse All",
     "search": {
-      "placeholder": "Search FAQs...",
+      "placeholder": "Search questions…",
       "ariaLabel": "Search frequently asked questions",
       "clearAriaLabel": "Clear search",
       "results": "{{count}} question(s) found",
       "noResults": "No questions found",
-      "tryDifferent": "Try searching with different keywords"
+      "tryDifferent": "Try different keywords"
     },
     "metadata": {
-      "title": "FAQ - Sendero Bike Trails",
-      "description": "Answers to common questions about our beginner-friendly bike tours in Colombia's Coffee Region. Safety, weather, fitness levels, and more."
+      "title": "FAQ – Sendero Bike Trails",
+      "description": "Answers on getting there, entry, climate, packing and booking for your mountain bike trip through the Colombian Andes."
     },
+    "tripNote": "Fitness, where you stay, your own bike and safety:",
+    "tripLink": "Questions about the trip",
     "sections": {
-      "safety": {
-        "title": "Safety & Health",
-        "questions": [
-          {
-            "question": "[PLACEHOLDER] Are the tours safe for beginners?",
-            "answer": "[TODO: Update this content] Yes, all our tours are specifically designed with beginners in mind. We use well-maintained bikes, provide high-quality safety equipment, and our routes avoid heavy traffic. Our experienced guides are trained in first aid and carry safety equipment at all times."
-          },
-          {
-            "question": "[PLACEHOLDER] What safety equipment is provided?",
-            "answer": "[TODO: Update this content] We provide helmets for all riders, reflective vests for better visibility, and our guides carry comprehensive first aid kits. All equipment meets international safety standards."
-          },
-          {
-            "question": "[PLACEHOLDER] Are your guides trained in first aid?",
-            "answer": "[TODO: Update this content] Yes, all our guides are certified in wilderness first aid and CPR. They know the locations of the nearest medical facilities along all routes."
-          },
-          {
-            "question": "[PLACEHOLDER] What if I have a medical condition?",
-            "answer": "[TODO: Update this content] Please inform us of any medical conditions when booking. Our tours are suitable for people with moderate health, but we recommend consulting your doctor before participating. We can often accommodate specific needs with advance notice."
-          }
-        ]
-      },
-      "weather": {
-        "title": "Weather & Best Time to Visit",
-        "questions": [
-          {
-            "question": "[PLACEHOLDER] What's the weather like in Pereira?",
-            "answer": "[TODO: Update this content] Pereira has a mild tropical climate with temperatures ranging from 18-28°C (64-82°F) year-round. The Coffee Region enjoys pleasant weather thanks to its altitude."
-          },
-          {
-            "question": "[PLACEHOLDER] When is the best time to visit?",
-            "answer": "[TODO: Update this content] The region is beautiful year-round, but the dry seasons (December-March and July-August) offer the most consistent weather for cycling."
-          },
-          {
-            "question": "[PLACEHOLDER] What happens if it rains during the tour?",
-            "answer": "[TODO: Update this content] Light rain is common in the Coffee Region and actually adds to the experience. We provide rain gear and adjust routes if needed. Tours are only cancelled in severe weather conditions."
-          }
-        ]
-      },
-      "fitness": {
-        "title": "Fitness & Difficulty Levels",
-        "questions": [
-          {
-            "question": "[PLACEHOLDER] How fit do I need to be?",
-            "answer": "[TODO: Update this content] Our beginner tours require basic fitness - if you can walk for 2-3 hours comfortably, you can do our tours. E-bikes make cycling accessible even if you're not an experienced cyclist."
-          },
-          {
-            "question": "[PLACEHOLDER] What's the difference between beginner and moderate difficulty?",
-            "answer": "[TODO: Update this content] Beginner tours have flat to gentle terrain with frequent breaks, covering 15-25km. Moderate tours include some hills and cover 25-40km with good fitness recommended."
-          },
-          {
-            "question": "[PLACEHOLDER] Can I use an e-bike if I'm not confident?",
-            "answer": "[TODO: Update this content] Absolutely! E-bikes are available on all our tours and are perfect for those who want to enjoy the scenery without worrying about fitness level or hills."
-          },
-          {
-            "question": "[PLACEHOLDER] What are the average distances per day?",
-            "answer": "[TODO: Update this content] Day tours: 15-30km, Weekend tours: 20-40km per day, Week-long tours: 25-50km per day with rest days included."
-          }
-        ]
-      },
       "transport": {
-        "title": "Transport & Airport",
+        "title": "Getting there & transfers",
         "questions": [
           {
-            "question": "[PLACEHOLDER] How do I get to Pereira?",
-            "answer": "[TODO: Update this content] Pereira has an international airport (Matecaña Airport - PEI) with connections through Bogotá or Medellín. The airport is 15 minutes from the city center."
+            "question": "How do I get to Pereira?",
+            "answer": "Pereira has its own airport, Matecaña (PEI), with connections via Bogotá or Medellín. The city’s bus terminal is also well connected to the rest of the country."
           },
           {
-            "question": "[PLACEHOLDER] Do you offer airport pickup?",
-            "answer": "[TODO: Update this content] Yes, we can arrange airport transfers for an additional fee. Contact us when booking to arrange pickup details."
+            "question": "Will someone pick me up?",
+            "answer": "Yes. The transfer from the airport or bus terminal in Pereira to Casa Tacay and back is included, as are all journeys on site."
           },
           {
-            "question": "[PLACEHOLDER] Is transportation included between tour locations?",
-            "answer": "[TODO: Update this content] All transportation during the tour is included - we provide support vehicles and transfers between cycling segments."
-          }
-        ]
-      },
-      "gear": {
-        "title": "Gear & What to Bring",
-        "questions": [
-          {
-            "question": "[PLACEHOLDER] What equipment is provided?",
-            "answer": "[TODO: Update this content] We provide: bikes (standard or e-bike), helmets, water bottles, repair kits, and support vehicle. You just bring yourself and appropriate clothing."
-          },
-          {
-            "question": "[PLACEHOLDER] What should I pack for the tour?",
-            "answer": "[TODO: Update this content] Comfortable athletic clothing, cycling shorts (padded recommended), sunscreen, sunglasses, light rain jacket, comfortable shoes, and a small daypack. Detailed packing list sent upon booking."
-          },
-          {
-            "question": "[PLACEHOLDER] Do I need special cycling shoes?",
-            "answer": "[TODO: Update this content] No, comfortable athletic or hiking shoes work perfectly. Our bikes have platform pedals suitable for regular shoes."
-          },
-          {
-            "question": "[PLACEHOLDER] What about bike sizes?",
-            "answer": "[TODO: Update this content] We have bikes in all sizes from small to extra-large. We'll ask for your height when booking to ensure the right fit."
+            "question": "Can I extend my trip?",
+            "answer": "Yes. I'm happy to help with accommodation in Pereira and personal tips."
           }
         ]
       },
       "insurance": {
-        "title": "Insurance & Travel Requirements",
+        "title": "Entry, health & insurance",
         "questions": [
           {
-            "question": "[PLACEHOLDER] Do I need travel insurance?",
-            "answer": "[TODO: Update this content] Yes, we strongly recommend travel insurance that covers cycling activities, medical emergencies, and trip cancellation."
+            "question": "Do I need a visa?",
+            "answer": "Not for stays of up to 90 days if you hold an EU passport. Your passport must be valid for at least 6 more months. Please check the rules for your nationality."
           },
           {
-            "question": "[PLACEHOLDER] What should my insurance cover?",
-            "answer": "[TODO: Update this content] Your insurance should cover: medical expenses, emergency evacuation, cycling activities, trip cancellation, and personal belongings."
+            "question": "Which vaccinations do I need?",
+            "answer": "Colombia is in the tropics. For our route, the yellow fever vaccination is especially recommended. Best talk to your doctor or a travel medicine specialist 6–8 weeks ahead."
           },
           {
-            "question": "[PLACEHOLDER] Do I need a visa to visit Colombia?",
-            "answer": "[TODO: Update this content] Many nationalities can visit Colombia visa-free for up to 90 days. Check with your local Colombian embassy for specific requirements based on your nationality."
+            "question": "What insurance do I need?",
+            "answer": "Travel health insurance is mandatory and you take it out yourself – for example with HanseMerkur, SIGNAL IDUNA or BarmeniaGothaer (approx. €18–25)."
+          }
+        ]
+      },
+      "weather": {
+        "title": "Weather & climate",
+        "questions": [
+          {
+            "question": "What's the climate like?",
+            "answer": "Tropical mountain climate: sun, mist and short showers take turns. Usually 16–24 °C – up on the páramo at 3,400 m it can get chilly, so pack a warm layer."
+          }
+        ]
+      },
+      "gear": {
+        "title": "On site & packing",
+        "questions": [
+          {
+            "question": "Is there Wi-Fi and power?",
+            "answer": "There's Wi-Fi at Casa Tacay. Colombia uses 110 V with type A/B plugs – you can borrow adapters at the finca. For on the road I recommend an eSIM."
+          },
+          {
+            "question": "What about laundry?",
+            "answer": "Laundry service at Casa Tacay is included, so you can travel light."
+          },
+          {
+            "question": "What should I pack?",
+            "answer": "Comfortable riding clothes for a few days, a light rain jacket, a warm layer for the páramo, sun protection and sturdy shoes for evenings and outings."
           }
         ]
       },
       "payments": {
-        "title": "Payments & Booking Changes",
+        "title": "Booking & payment",
         "questions": [
           {
-            "question": "[PLACEHOLDER] How do I book a tour?",
-            "answer": "[TODO: Update this content] Join our waitlist using the form on our homepage. We'll contact you when tours are available with booking instructions and payment details."
+            "question": "How does booking work?",
+            "answer": "You send me a non-binding request and I'll get back to you within 48 hours. When booking you pay a 20% deposit, the balance 30 days before departure – protected by a security certificate."
           },
           {
-            "question": "[PLACEHOLDER] What payment methods do you accept?",
-            "answer": "[TODO: Update this content] We accept credit cards, bank transfers, and PayPal. Full payment details will be provided when tours launch."
+            "question": "Can I travel alone?",
+            "answer": "Absolutely. A single room is available for an extra €300."
           },
           {
-            "question": "[PLACEHOLDER] What's your cancellation policy?",
-            "answer": "[TODO: Update this content] Cancellation policy details will be provided when tours launch. We aim to offer flexible cancellation terms with full or partial refunds depending on notice period."
-          },
-          {
-            "question": "[PLACEHOLDER] Can I change my tour dates?",
-            "answer": "[TODO: Update this content] Yes, we understand plans change. Date changes are possible subject to availability and our cancellation policy terms."
+            "question": "How do I pay on site?",
+            "answer": "VISA is accepted almost everywhere. For small purchases in the countryside I recommend some cash in pesos (COP)."
           }
         ]
       }
@@ -989,18 +933,22 @@
       "eyebrow": "Colombia by mountain bike",
       "title": "Between coffee and clouds.",
       "text": "Small groups, ancient trails and a coffee finca as your home – right in the heart of Colombia's Andes.",
-      "secondaryCta": "See day by day"
+      "secondaryCta": "Discover the trip",
+      "priceLine": "{price} / {days} days",
+      "priceNote": "*Single room +{price}"
     },
-    "nav": {
-      "ariaLabel": "Trip sections",
-      "overview": "Overview",
-      "itinerary": "Day by day",
-      "safety": "Safety",
-      "price": "Price",
-      "faq": "FAQ",
-      "cta": "Request your trip"
+    "region": {
+      "eyebrow": "The region",
+      "heading": "Mountains written by people.",
+      "paragraphs": [
+        "In 2011, UNESCO declared these Andean slopes a World Heritage Site – not as untouched wilderness, but as a cultural landscape: mountains shaped by generations of people, terrace by terrace, trail by trail.",
+        "Long before the first coffee bush, this was Quimbaya country. Their goldsmiths made figures so fine they now fill display cases in Bogotá and Madrid. In the 19th century, settlers from Antioquia cut mule trails through the cloud forest and built villages of bamboo and mud on slopes that are really too steep for them. Many of those paths are still here.",
+        "A mountain bike is the right pace for this land: slow enough for a chat over a fence, a break beneath wax palms, a look into a roadside workshop – and fast enough to climb, in a single week, from warm bamboo valleys to the páramo at 3,400 meters."
+      ],
+      "imageAlt": "An old trail on a steep Andean slope"
     },
     "facts": {
+      "heading": "At a glance",
       "items": [
         "Around 20 km a day",
         "110–145 km in total",
@@ -1008,20 +956,7 @@
         "1,200–3,400 m above sea level",
         "16–24 °C",
         "4–7 travelers",
-        "from €3,290"
-      ]
-    },
-    "landscapes": {
-      "heading": "As diverse as few regions in the world.",
-      "text": "On a single trip you ride through several climate zones – from warm valleys with bamboo and orchards up to the páramo at 3,400 meters. A different landscape every day.",
-      "items": [
-        "Picturesque coffee landscapes",
-        "Fragrant cacao plantations",
-        "Colorful villages",
-        "Striking volcanic landscapes",
-        "Wild waterfalls and springs",
-        "Cathedral-like bamboo forests",
-        "Magical high moorlands"
+        "7 or 9 days"
       ]
     },
     "itinerary": {
@@ -1069,79 +1004,92 @@
         }
       }
     },
-    "fit": {
-      "heading": "Is this for me?",
-      "fitnessTitle": "Fitness",
-      "fitnessText": "Enjoying being active is enough. You should be able to sit comfortably in the saddle for a few hours – no pressure to perform, but up for small challenges.",
-      "techniqueTitle": "Riding skills",
-      "techniqueText": "You don't need to be a mountain bike pro. If you ride confidently and feel at ease on gravel, forest tracks and unpaved trails, you have everything you need.",
-      "yesHeading": "The trip suits you if …",
-      "yesItems": [
-        "you're after landscapes and encounters as much as kilometers",
-        "you enjoy traveling in a small group",
-        "you'd rather have one place to come home to than a new hotel every day"
-      ],
-      "noHeading": "Probably not if …",
-      "noItems": [
-        "you're chasing personal bests and long trail descents",
-        "you want to sleep somewhere new every night"
-      ],
-      "cta": "Not sure it's for you? Ask me."
-    },
-    "safety": {
-      "heading": "Well guided, well equipped.",
+    "faq": {
+      "eyebrow": "FAQ",
+      "heading": "Questions about the trip",
       "items": [
         {
-          "title": "Your bike",
-          "text": "High-quality full-suspension mountain bikes from [Brand], [travel], sizes [S–XL]. You're welcome to bring your own pedals and saddle."
+          "question": "Is this trip for me?",
+          "paragraphs": [
+            "If you enjoy being active, yes. You should be able to sit comfortably in the saddle for a few hours – no pressure to perform, but up for small challenges. You don't need to be a mountain bike pro: if you ride confidently and feel at ease on gravel, forest tracks and unpaved trails, you have everything you need.",
+            "The trip is made for people who are after landscapes and encounters as much as kilometers, who enjoy a small group, and who'd rather come home to one familiar place each evening than check into a new hotel. If you're chasing personal bests and long trail descents, or want to sleep somewhere new every night, another trip will make you happier."
+          ]
         },
         {
-          "title": "I ride with you",
-          "text": "I personally guide every trip – from the first day to the last."
+          "question": "Where do I stay during the trip?",
+          "paragraphs": [
+            "At Casa Tacay, a family home in the mountains near Pereira. Every riding day starts here and ends here too: you unpack once and only pack again when you leave.",
+            "Every room has its own bathroom, and there is Wi-Fi in the house. If you travel alone and want a single room, it costs an extra €300."
+          ]
         },
         {
-          "title": "Guide & mechanic",
-          "text": "My local partner is a certified bike guide and mechanic who keeps the bikes in shape every day."
+          "question": "Can I bring my own bike?",
+          "paragraphs": [
+            "Yes. If you'd rather ride your own, we'll work out the best way to get it to Pereira when you send your request. Our mechanic checks it before the first ride and keeps it in shape for the whole trip.",
+            "If you don't bring one, you ride a high-quality full-suspension mountain bike in your size, with helmet and gear included. You're welcome to bring your own pedals and saddle."
+          ]
         },
         {
-          "title": "Support vehicle",
-          "text": "Comes along on every ride. Need a break? Just hop in. Nobody gets left behind."
+          "question": "Can I do this trip privately?",
+          "paragraphs": [
+            "Yes. For friends, family or your club, I'll plan your own trip – on your dates and at your pace. We shape the length, routes and program together."
+          ]
         },
         {
-          "title": "Ready for emergencies",
-          "text": "Safety briefing on day one, first aid, an emergency protocol and satellite communication."
+          "question": "Can I ride all year round?",
+          "paragraphs": [
+            "Yes. Close to the equator, the Andes have no winter: the climate stays mild all year, usually between 16 and 24 °C. Drier and wetter months take turns, but we ride in all of them. Group trips run in March, April and May 2027; private trips are possible all year.",
+            "Short showers are part of the mountain climate and usually pass quickly. Pack a light rain jacket; in heavy rain we adjust the route or set off a little later."
+          ]
+        },
+        {
+          "question": "How safe is the trip?",
+          "paragraphs": [
+            "The mountains around Pereira are among the most stable regions in Colombia. We move within a network of partners, families and guides I know personally. I guide every trip myself, together with my local partner, a certified bike guide and mechanic, and a support vehicle that comes along on every ride.",
+            "There's a safety briefing on day one. Our guides are trained in first aid, we follow an emergency protocol and carry satellite communication. And if a ride is ever too much, we adjust the route or you hop into the support vehicle. Nobody gets left behind."
+          ]
+        }
+      ],
+      "ctaQuestion": "Your question isn't here?",
+      "ctaLink": "Write to me.",
+      "faqPageLink": "Travel, booking and life on site: more answers in the FAQ"
+    },
+    "gallery": {
+      "heading": "The trip in pictures.",
+      "items": [
+        {
+          "caption": "The páramo at 3,400 meters",
+          "alt": "Frailejones and a lagoon in the páramo"
+        },
+        {
+          "caption": "Wax palms and volcanoes",
+          "alt": "Wax palms in front of the Los Nevados volcanoes"
+        },
+        {
+          "caption": "Cloud forest and rivers",
+          "alt": "A river in the cloud forest near La Florida"
+        },
+        {
+          "caption": "Cathedrals of bamboo",
+          "alt": "A guadua bamboo forest seen from below"
+        },
+        {
+          "caption": "Villages full of color",
+          "alt": "Painted balconies in an Andean village"
+        },
+        {
+          "caption": "Cacao, straight from the tree",
+          "alt": "Hands holding an opened cacao pod"
+        },
+        {
+          "caption": "Coffee on steep slopes",
+          "alt": "Coffee bushes on a steep green hillside"
+        },
+        {
+          "caption": "Evenings at a shared table",
+          "alt": "The group at dinner at Casa Tacay"
         }
       ]
-    },
-    "casa": {
-      "heading": "One home for the whole trip.",
-      "text": "You stay at Casa Tacay the whole time, an eco coffee finca near Pereira. Every morning we set off from here, every evening we come back – no packing, no hotel changes.",
-      "features": [
-        "Rooms with private bathroom",
-        "Wi-Fi",
-        "Laundry service included"
-      ],
-      "imageAlt": "Casa Tacay, eco coffee finca near Pereira"
-    },
-    "pricing": {
-      "heading": "Clear, with no fine print.",
-      "dates": "March · April · May 2027 – two groups per month, 4 to 7 travelers.",
-      "perPerson": "per person",
-      "variants": {
-        "nine": {
-          "title": "9 days",
-          "text": "7 riding days, with cacao workshop and Gold Museum"
-        },
-        "seven": {
-          "title": "7 days",
-          "text": "5 riding days, from the coffee slopes up to the páramo"
-        }
-      },
-      "note": "Single room + €[X] · 20% deposit when booking, balance due 30 days before departure",
-      "trust": "Your money is protected – with a security certificate under German travel law.",
-      "cta": "Request a date",
-      "privateQuestion": "Traveling with friends, family or your club?",
-      "privateLink": "I'll plan your own trip – on your dates."
     },
     "inclusions": {
       "includedHeading": "Included",
@@ -1164,92 +1112,9 @@
         "Extensions before or after the trip – I'm happy to help"
       ]
     },
-    "faq": {
-      "heading": "FAQ",
-      "groups": [
-        {
-          "title": "Safety",
-          "questions": [
-            {
-              "question": "How safe is the region?",
-              "answer": "The coffee country around Pereira is one of the most stable regions in Colombia. We move within a network of partners, families and guides I know personally."
-            },
-            {
-              "question": "What happens in an emergency?",
-              "answer": "There's a safety briefing on day one. Our guides are trained in first aid, we follow an emergency protocol and can organize medical help quickly."
-            },
-            {
-              "question": "What if I can't manage a ride?",
-              "answer": "No problem. We adjust the route to you, or you hop into the support vehicle. Nobody gets left behind."
-            }
-          ]
-        },
-        {
-          "title": "Trip & preparation",
-          "questions": [
-            {
-              "question": "Which vaccinations do I need?",
-              "answer": "Colombia is in the tropics. For our route, the yellow fever vaccination is especially recommended. Best talk to your doctor or a travel medicine specialist 6–8 weeks ahead."
-            },
-            {
-              "question": "Do I need a visa?",
-              "answer": "Not for stays of up to 90 days if you hold an EU passport. Your passport must be valid for at least 6 more months. Please check the rules for your nationality."
-            },
-            {
-              "question": "What insurance do I need?",
-              "answer": "Travel health insurance is mandatory and you take it out yourself – for example with HanseMerkur, SIGNAL IDUNA or BarmeniaGothaer (approx. €18–25)."
-            }
-          ]
-        },
-        {
-          "title": "On site",
-          "questions": [
-            {
-              "question": "What's the climate like?",
-              "answer": "Tropical mountain climate: sun, mist and short showers take turns. Usually 16–24 °C – up on the páramo at 3,400 m it can get chilly, so pack a warm layer."
-            },
-            {
-              "question": "Is there Wi-Fi and power?",
-              "answer": "There's Wi-Fi at Casa Tacay. Colombia uses 110 V with type A/B plugs – you can borrow adapters at the finca. For on the road I recommend an eSIM."
-            },
-            {
-              "question": "What about laundry?",
-              "answer": "Laundry service is included."
-            },
-            {
-              "question": "How do I pay on site?",
-              "answer": "VISA is accepted almost everywhere. For small purchases in the countryside I recommend some cash in pesos (COP)."
-            }
-          ]
-        },
-        {
-          "title": "Booking",
-          "questions": [
-            {
-              "question": "Can I travel alone?",
-              "answer": "Absolutely. A single room is available for a supplement."
-            },
-            {
-              "question": "Can I bring my own bike?",
-              "answer": "Yes. High-quality full-suspension bikes are included, but if you'd rather ride your own, we'll discuss it when you send your request."
-            },
-            {
-              "question": "How does booking work?",
-              "answer": "You send me a non-binding request and I'll get back to you within 48 hours. When booking you pay a 20% deposit, the balance 30 days before departure – protected by a security certificate."
-            },
-            {
-              "question": "Can I extend my trip?",
-              "answer": "Yes. I'm happy to help with accommodation in Pereira and personal tips."
-            }
-          ]
-        }
-      ],
-      "ctaQuestion": "Your question isn't here?",
-      "ctaLink": "Write to me."
-    },
     "cta": {
-      "heading": "Your trip starts with a message.",
-      "text": "I'll get back to you personally within 48 hours.",
+      "heading": "Start your journey in the Andes.",
+      "text": "7 or 9 days, a home in the mountains and a different trail every day. Write to me – I'll get back to you personally within 48 hours.",
       "button": "Request your trip"
     }
   }

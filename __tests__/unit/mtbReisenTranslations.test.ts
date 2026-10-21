@@ -24,11 +24,11 @@ describe('mtbReisen translations', () => {
     expect(keyPaths(esMessages.mtbReisen).sort()).toEqual(deKeys);
   });
 
-  it('has copy for every day and landscape image in the trip data', () => {
+  it('has copy for every day and gallery image in the trip data', () => {
     for (const messages of [deMessages, enMessages, esMessages]) {
       const days = messages.mtbReisen.itinerary.days as Record<string, unknown>;
       expect(Object.keys(days)).toEqual(mtbReise.days.map((day) => day.key));
-      expect(messages.mtbReisen.landscapes.items).toHaveLength(mtbReise.images.landscapes.length);
+      expect(messages.mtbReisen.gallery.items).toHaveLength(mtbReise.images.gallery.length);
     }
   });
 

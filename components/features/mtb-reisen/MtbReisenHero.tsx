@@ -5,8 +5,12 @@ interface MtbReisenHeroProps {
   eyebrow: string;
   title: string;
   text: string;
+  /** Pre-formatted price lines, e.g. "3.290 € / 7 Tage" */
+  prices: string[];
+  /** Footnote under the prices, e.g. "*Einzelzimmer +300 €" */
+  priceNote: string;
   secondaryCta: string;
-  /** In-page anchor for the secondary CTA, e.g. `#tag-fuer-tag` */
+  /** In-page anchor for the secondary CTA, e.g. `#region` */
   secondaryHref: string;
   heroImage: string;
 }
@@ -15,6 +19,8 @@ export function MtbReisenHero({
   eyebrow,
   title,
   text,
+  prices,
+  priceNote,
   secondaryCta,
   secondaryHref,
   heroImage,
@@ -38,6 +44,14 @@ export function MtbReisenHero({
           <p className="text-caption text-white/90 tracking-[0.06em] uppercase">{eyebrow}</p>
           <h1 className="text-display text-white text-balance">{title}</h1>
           <p className="text-base leading-[26px] text-white/90 max-w-text">{text}</p>
+        </div>
+        <div className="flex flex-col items-center gap-2 text-center">
+          <p className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-h3 text-white">
+            {prices.map((price) => (
+              <span key={price}>{price}</span>
+            ))}
+          </p>
+          <p className="text-caption text-white/80">{priceNote}</p>
         </div>
         <a href={secondaryHref}>
           <Button variant="hero-cta-secondary" className="w-[260px]">{secondaryCta}</Button>
