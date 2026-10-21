@@ -43,3 +43,6 @@ next-env.d.ts
 
 # Raw source footage (838 MB) — web cuts live in public/videos/
 /public/Kolumbien Videos.mp4
+
+# Datos personales de viajeros (salud, teléfonos)
+viajeros.csv
