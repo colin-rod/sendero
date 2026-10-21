@@ -1,21 +1,14 @@
-import { Analytics } from '@vercel/analytics/react';
-import { getLocale } from 'next-intl/server';
-import { aboreto } from '@/lib/fonts';
 import './globals.css';
 
-export default async function RootLayout({
+/**
+ * Root layout. <html> and <body> are rendered by the top-level layouts
+ * (app/[locale]/layout.tsx with the request locale as `lang`, and
+ * app/login/layout.tsx), so the document is never nested.
+ */
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = await getLocale();
-
-  return (
-    <html lang={locale} className={aboreto.variable}>
-      <body className="font-sans antialiased">
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
+  return children;
 }

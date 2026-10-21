@@ -5,8 +5,7 @@ interface ExperienceCardProps {
   id: string;
   title: string;
   description: string;
-  location: number;
-  locationLabel: string;
+  locationText: string;
   image: string;
 }
 
@@ -14,8 +13,7 @@ export function ExperienceCard({
   id,
   title,
   description,
-  location,
-  locationLabel,
+  locationText,
   image,
 }: ExperienceCardProps) {
   return (
@@ -41,7 +39,7 @@ export function ExperienceCard({
           {description}
         </p>
         <span className="text-label text-primary-500">
-          {locationLabel.replace('{km}', location.toString())}
+          {locationText}
         </span>
       </div>
     </Card>

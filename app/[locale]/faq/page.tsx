@@ -85,7 +85,7 @@ export default async function FAQPage({
 
       <Header />
 
-      <main className="flex-1 py-12 md:py-16">
+      <main className="flex-1 pt-[164px] pb-12 md:pt-[180px] md:pb-16">
         <Container>
           {/* Page Header */}
           <div className="mb-8 text-center">

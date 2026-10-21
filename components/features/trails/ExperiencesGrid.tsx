@@ -4,14 +4,13 @@ import type { Experience } from '@/lib/types/trails';
 
 interface ExperiencesGridProps {
   heading: string;
-  experiences: Experience[];
-  locationLabel: string;
+  /** `locationText` is the translated, locale-formatted "km …" label */
+  experiences: (Experience & { locationText: string })[];
 }
 
 export function ExperiencesGrid({
   heading,
   experiences,
-  locationLabel,
 }: ExperiencesGridProps) {
   return (
     <section className="py-20 md:py-32">
@@ -24,8 +23,7 @@ export function ExperiencesGrid({
               id={experience.id}
               title={experience.title}
               description={experience.description}
-              location={experience.location}
-              locationLabel={locationLabel}
+              locationText={experience.locationText}
               image={experience.image}
             />
           ))}

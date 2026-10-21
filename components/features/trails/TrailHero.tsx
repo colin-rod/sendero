@@ -34,7 +34,8 @@ export function TrailHero({
   return (
     <section className="relative w-full">
       {/* Hero Image */}
-      <div className="relative h-[400px] md:h-[500px] w-full">
+      {/* Grows with its copy; top padding keeps the copy clear of the fixed header (116px) */}
+      <div className="relative flex min-h-[400px] md:min-h-[500px] w-full items-end">
         <Image
           src={heroImage}
           alt={name}
@@ -45,20 +46,18 @@ export function TrailHero({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-        {/* Hero Content Overlay */}
-        <div className="absolute inset-0 flex items-end">
-          <Container className="pb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <h1 className="text-h1 text-white max-w-heading">{name}</h1>
-              <Badge variant={getDifficultyBadgeProps(difficulty).variant}>
-                {difficultyLabel}
-              </Badge>
-            </div>
-            <p className="text-h3 text-white/90 max-w-heading">
-              {subtitle}
-            </p>
-          </Container>
-        </div>
+        {/* Hero Content */}
+        <Container className="relative pt-[148px] pb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <h1 className="text-h1 text-white max-w-heading">{name}</h1>
+            <Badge variant={getDifficultyBadgeProps(difficulty).variant}>
+              {difficultyLabel}
+            </Badge>
+          </div>
+          <p className="text-h3 text-white/90 max-w-heading">
+            {subtitle}
+          </p>
+        </Container>
       </div>
 
       {/* Stats Row */}

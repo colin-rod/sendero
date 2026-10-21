@@ -627,7 +627,7 @@
         "stream": {
           "title": "Cruce del Arroyo El Tigre",
           "description": "Cruza aguas cristalinas de montaña donde la vida silvestre viene a beber. Este tranquilo cruce de arroyo es un punto destacado del sendero, ofreciendo una pausa refrescante en tu viaje.",
-          "location": "km {km}"
+          "location": "km {km, number}"
         },
         "bamboo": {
           "title": "Sendero del Bosque de Bambú",

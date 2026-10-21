@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/react';
+import { aboreto } from '@/lib/fonts';
 import { Container } from '@/components/ui/Container';
 
 // Force dynamic rendering for login page
@@ -11,43 +13,48 @@ export default function LoginLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      {/* Simple header without translations */}
-      <header className="sticky top-0 z-50 w-full bg-[rgba(27,27,27,1.0)]">
-        <Container>
-          <div className="flex h-16 items-center justify-between">
-            <Link
-              href="/"
-              className="flex items-center space-x-3"
-              aria-label="Sendero - Home"
-            >
-              <Image
-                src="/Logo_Light.svg"
-                alt="Sendero Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-              />
-              <span className="text-h3 text-primary-500">
-                Sendero
-              </span>
-            </Link>
-          </div>
-        </Container>
-      </header>
+    <html lang="en" className={aboreto.variable}>
+      <body className="font-sans antialiased">
+        <div className="flex flex-col min-h-screen bg-background">
+          {/* Simple header without translations */}
+          <header className="sticky top-0 z-50 w-full bg-[rgba(27,27,27,1.0)]">
+            <Container>
+              <div className="flex h-16 items-center justify-between">
+                <Link
+                  href="/"
+                  className="flex items-center space-x-3"
+                  aria-label="Sendero - Home"
+                >
+                  <Image
+                    src="/Logo_Light.svg"
+                    alt="Sendero Logo"
+                    width={40}
+                    height={40}
+                    className="h-10 w-auto"
+                  />
+                  <span className="text-h3 text-primary-500">
+                    Sendero
+                  </span>
+                </Link>
+              </div>
+            </Container>
+          </header>
 
-      <main className="flex-grow">{children}</main>
+          <main className="flex-grow">{children}</main>
 
-      {/* Simple footer without translations */}
-      <footer className="bg-foreground text-background py-6">
-        <Container>
-          <div className="text-center">
-            <p className="text-caption">
-              © {new Date().getFullYear()} Sendero. All rights reserved.
-            </p>
-          </div>
-        </Container>
-      </footer>
-    </div>
+          {/* Simple footer without translations */}
+          <footer className="bg-foreground text-background py-6">
+            <Container>
+              <div className="text-center">
+                <p className="text-caption">
+                  © {new Date().getFullYear()} Sendero. All rights reserved.
+                </p>
+              </div>
+            </Container>
+          </footer>
+        </div>
+        <Analytics />
+      </body>
+    </html>
   );
 }
