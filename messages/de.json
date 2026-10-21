@@ -511,7 +511,7 @@
         "stream": {
           "title": "El Tigre Bach-Überquerung",
           "description": "Wade durch kristallklares Bergwasser, wo Wildtiere zum Trinken kommen. Diese friedliche Bachüberquerung ist ein Höhepunkt des Trails und bietet eine erfrischende Pause.",
-          "location": "km {km}"
+          "location": "km {km, number}"
         },
         "bamboo": {
           "title": "Bambuswald-Trail",

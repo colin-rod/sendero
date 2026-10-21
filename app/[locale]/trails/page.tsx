@@ -72,7 +72,7 @@ export default async function TrailsPage({
     <div className="flex min-h-screen flex-col">
       <JsonLd data={[breadcrumbs, itemList]} />
       <Header />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 pt-[116px]">
         {/* Hero Section */}
         <section className="py-20 md:py-32">
           <Container>

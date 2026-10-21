@@ -1,25 +1,14 @@
-import { Aboreto } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
-const aboreto = Aboreto({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-aboreto',
-  display: 'swap',
-});
-
+/**
+ * Root layout. <html> and <body> are rendered by the top-level layouts
+ * (app/[locale]/layout.tsx with the request locale as `lang`, and
+ * app/login/layout.tsx), so the document is never nested.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html className={`${aboreto.variable}`}>
-      <body className="font-sans antialiased">
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
+  return children;
 }
