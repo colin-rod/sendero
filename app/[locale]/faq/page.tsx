@@ -85,23 +85,23 @@ export default async function FAQPage({
 
       <Header />
 
-      <main className="flex-1 py-12 md:py-16">
-        <Container size="md">
+      <main className="flex-1 pt-[164px] pb-12 md:pt-[180px] md:pb-16">
+        <Container>
           {/* Page Header */}
           <div className="mb-8 text-center">
-            <h1 className="text-h1 mb-3 text-foreground">{t('title')}</h1>
-            <p className="text-body text-muted-foreground">
+            <h1 className="text-h1 mb-3 mx-auto max-w-heading text-foreground">{t('title')}</h1>
+            <p className="text-body mx-auto max-w-text text-muted-foreground">
               {t('subtitle')}
             </p>
           </div>
 
           {/* FAQ Accordion */}
-          <div className="rounded-xl border border-border bg-white p-6 shadow-sm md:p-8">
+          <div className="mx-auto max-w-heading rounded-xl border border-border bg-white p-6 shadow-sm md:p-8">
             <FAQAccordion sections={sectionKeys} />
           </div>
 
           {/* Helper Note for Placeholder Content */}
-          <div className="mt-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-caption">
+          <div className="mx-auto mt-6 max-w-heading rounded-lg border border-amber-300 bg-amber-50 p-4 text-caption">
             <p className="text-amber-900">
               <strong>Note:</strong> Content marked with{' '}
               <span className="font-mono">[PLACEHOLDER]</span> and{' '}

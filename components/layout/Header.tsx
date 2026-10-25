@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { Link } from '@/lib/i18n/routing';
 import { locales } from '@/lib/i18n/config';
 import LanguageSwitcher, { localeLabels, useSwitchLocale } from '@/components/LanguageSwitcher';
+import { Container } from '@/components/ui/Container';
 
 /** Header links, shared by the desktop nav and the mobile menu. */
 const navItems = [
@@ -77,7 +78,7 @@ export function Header({ overlay = false }: HeaderProps) {
                 : 'z-50 bg-transparent'
         }`}
       >
-        <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-24">
+        <Container>
           <div className="flex py-[34px] gap-6 items-center justify-between">
             {/* Logo */}
             <Link
@@ -88,7 +89,7 @@ export function Header({ overlay = false }: HeaderProps) {
               <LogoMark
                 label={t('logoAlt')}
                 className="h-12 w-12 flex-none rounded-full text-foreground transition-colors group-hover:text-white group-active:text-white group-focus-visible:text-white group-focus-visible:ring-2 group-focus-visible:ring-primary-500 group-focus-visible:ring-offset-2"
-                circleClassName="fill-transparent group-hover:fill-foreground group-active:fill-foreground group-focus-visible:fill-foreground"
+                circleClassName="fill-transparent group-hover:fill-primary-500 group-hover:stroke-primary-500 group-active:fill-primary-500 group-active:stroke-primary-500 group-focus-visible:fill-primary-500 group-focus-visible:stroke-primary-500"
               />
               <span className="text-caption font-medium leading-tight tracking-[0.06em] uppercase text-foreground">
                 Sendero<br />Bike Trails
@@ -131,7 +132,7 @@ export function Header({ overlay = false }: HeaderProps) {
               </button>
             </div>
           </div>
-        </div>
+        </Container>
       </header>
 
       {/* Mobile menu */}

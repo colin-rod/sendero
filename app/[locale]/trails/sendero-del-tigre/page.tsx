@@ -101,6 +101,7 @@ export default async function SenderoDelTigrePage({
       ...exp,
       title: t(`experiences.${expKey}.title`),
       description: t(`experiences.${expKey}.description`),
+      locationText: t('experiences.stream.location', { km: exp.location }),
     };
   });
 
@@ -137,7 +138,6 @@ export default async function SenderoDelTigrePage({
         <ExperiencesGrid
           heading={t('experiences.heading')}
           experiences={translatedExperiences}
-          locationLabel={t('experiences.stream.location')}
         />
 
         {/* 5. Waypoints Timeline */}

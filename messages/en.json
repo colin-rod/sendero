@@ -511,7 +511,7 @@
         "stream": {
           "title": "El Tigre Stream Crossing",
           "description": "Wade through crystal-clear mountain waters where wildlife comes to drink. This peaceful stream crossing is a highlight of the trail, offering a refreshing pause in your journey.",
-          "location": "km {km}"
+          "location": "km {km, number}"
         },
         "bamboo": {
           "title": "Bamboo Forest Trail",

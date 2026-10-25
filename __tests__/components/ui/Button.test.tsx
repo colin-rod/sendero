@@ -69,7 +69,7 @@ describe('Button', () => {
         'hover:bg-river-forest',
         'active:bg-primary-700',
         'text-accent-400',
-        'rounded-[20px]',
+        'rounded-component-button',
         'uppercase',
         'font-medium',
         'tracking-[0.06em]',

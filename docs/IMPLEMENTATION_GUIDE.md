@@ -310,19 +310,10 @@ import { Skeleton, SkeletonCard, SkeletonText } from '@/components/ui/Skeleton';
 ```tsx
 import { Container } from '@/components/ui/Container';
 
-// Default container (1280px max-width)
+// The site frame (1280px, Figma gutter) — every section uses it
 <Container>
-  <h1>Page content</h1>
-</Container>
-
-// Narrow container for forms
-<Container size="sm">
-  <form>...</form>
-</Container>
-
-// Article container
-<Container size="md">
-  <article>...</article>
+  <h1 className="max-w-heading">Page content</h1>
+  <p className="max-w-text">Copy is constrained by the text measure, not by narrower containers</p>
 </Container>
 
 // Full-width

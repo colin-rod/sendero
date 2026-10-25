@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { CookieBanner } from '@/components/features/cookie-consent/CookieBanner';
@@ -14,6 +15,7 @@ import {
   websiteSchema,
 } from '@/lib/seo/jsonLd';
 import { buildAlternates, getSiteUrl, ogImages } from '@/lib/seo/canonical';
+import { aboreto } from '@/lib/fonts';
 
 type Props = {
   children: React.ReactNode;
@@ -83,8 +85,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages({ locale: validatedLocale });
 
   return (
-    <html lang={validatedLocale}>
-      <body>
+    <html lang={validatedLocale} className={aboreto.variable}>
+      <body className="font-sans antialiased">
         <ScrollRestorer />
         <JsonLd
           data={[
@@ -100,6 +102,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           </PostHogProvider>
           <CookieBanner />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

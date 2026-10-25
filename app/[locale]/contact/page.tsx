@@ -43,12 +43,12 @@ export default function ContactPage() {
       <JsonLd data={breadcrumbs} />
       <Header />
 
-      <main className="flex-1 py-12 md:py-16">
-        <Container size="lg">
+      <main className="flex-1 pt-[164px] pb-12 md:pt-[180px] md:pb-16">
+        <Container>
           {/* Page Header */}
           <div className="mb-12 text-center">
-            <h1 className="text-h1 mb-4 text-foreground">{t('title')}</h1>
-            <p className="text-body text-muted-foreground">
+            <h1 className="text-h1 mb-4 mx-auto max-w-heading text-foreground">{t('title')}</h1>
+            <p className="text-body mx-auto max-w-text text-muted-foreground">
               {t('description')}
             </p>
           </div>

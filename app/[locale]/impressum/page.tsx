@@ -9,10 +9,10 @@ export default function ImpressumPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main id="main-content" className="flex-1">
-        <section className="pt-32 pb-16 md:pt-24 md:pb-24">
+      <main id="main-content" className="flex-1 pt-[116px]">
+        <section className="py-16 md:py-24">
           <Container>
-            <div className="max-w-2xl mx-auto flex flex-col gap-8">
+            <div className="max-w-text flex flex-col gap-8">
 
               {/* Title */}
               <h1 className="text-h1 font-bold text-foreground">{t('title')}</h1>

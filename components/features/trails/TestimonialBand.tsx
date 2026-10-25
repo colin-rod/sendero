@@ -14,9 +14,9 @@ export function TestimonialBand({ heading, testimonials }: TestimonialBandProps)
 
   return (
     <section className="py-20 md:py-32">
-      <Container size="md">
-        <h2 className="text-h2 text-center mb-12">{heading}</h2>
-        <div className="max-w-3xl mx-auto text-center">
+      <Container>
+        <h2 className="text-h2 text-center mx-auto max-w-heading mb-12">{heading}</h2>
+        <div className="max-w-heading mx-auto text-center">
           <blockquote className="mb-6">
             <p className="text-h3 text-foreground mb-4 italic">
               "{testimonial.quote}"

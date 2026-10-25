@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Container } from '@/components/ui/Container';
 
 interface GalleryItem {
   caption: string;
@@ -19,10 +20,10 @@ const IMAGE_SRCS = [
 
 export function AnfragenGallery({ heading, items }: AnfragenGalleryProps) {
   return (
-    <section className="px-6 py-20 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-[1344px]">
-        <h2 className="text-h2 mb-8 font-normal text-foreground">{heading}</h2>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+    <section className="py-20">
+      <Container>
+        <h2 className="text-h2 mb-8 max-w-heading font-normal text-foreground">{heading}</h2>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8">
           {items.map((item, index) => (
             <figure key={item.caption} className="m-0 flex flex-col gap-3">
               <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-gray-200">
@@ -38,7 +39,7 @@ export function AnfragenGallery({ heading, items }: AnfragenGalleryProps) {
             </figure>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

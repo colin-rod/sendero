@@ -48,7 +48,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     // Base classes with semantic transitions
     const baseClasses =
-      'inline-flex items-center justify-center font-medium transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 rounded-component-button';
+      'inline-flex items-center justify-center font-medium transition-[color,background-color,border-color,scale] duration-fast ease-out-strong motion-safe:enabled:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 rounded-component-button';
 
     // Variant classes using semantic color tokens
     const variantClasses = {
@@ -69,9 +69,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'secondary-oro-outline':
         'bg-transparent text-secondary-oro-600 border-2 border-secondary-oro-500 hover:bg-secondary-oro-50 active:bg-secondary-oro-100 disabled:border-secondary-oro-300 disabled:text-secondary-oro-300 focus-visible:ring-secondary-oro-500',
       'hero-cta':
-        'bg-primary-500 text-accent-400 hover:bg-river-forest active:bg-primary-700 focus-visible:ring-primary-500 rounded-[20px] h-[42px] min-w-[140px] px-6 py-3 gap-2 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans',
+        'bg-primary-500 text-accent-400 hover:bg-river-forest active:bg-primary-700 focus-visible:ring-primary-500 h-[42px] min-w-[140px] px-6 py-3 gap-2 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans',
       'hero-cta-secondary':
-        'bg-background/30 text-white hover:bg-background/40 active:bg-background/50 focus-visible:ring-white rounded-[30px] h-[42px] min-w-[140px] px-6 py-3 gap-2 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans',
+        'bg-background/30 text-white hover:bg-background/40 active:bg-background/50 focus-visible:ring-white h-[42px] min-w-[140px] px-6 py-3 gap-2 uppercase font-medium text-caption leading-tight tracking-[0.06em] font-sans',
     };
 
     // Size classes

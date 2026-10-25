@@ -72,7 +72,7 @@ export function CarouselSection({
         <h2 className="text-h2 text-foreground mb-4">{heading}</h2>
 
         {/* Description */}
-        <p className="text-body text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-body text-muted-foreground max-w-text mx-auto">
           {description}
         </p>
       </div>

@@ -33,9 +33,9 @@ export function AnfragenHero({ title, subtitle }: AnfragenHeroProps) {
       <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
 
       {/* Mirrors the landing page hero: full viewport, title centered. */}
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 text-center">
-        <h1 className="hero-title-animate max-w-3xl text-h1 text-white">{title}</h1>
-        <p className="mt-5 text-xl leading-[1.6] text-white">{subtitle}</p>
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center sm:px-10 lg:px-16">
+        <h1 className="hero-title-animate max-w-heading text-h1 text-white">{title}</h1>
+        <p className="mt-5 max-w-text text-xl leading-[1.6] text-white">{subtitle}</p>
       </div>
     </section>
   );

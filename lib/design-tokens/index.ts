@@ -19,6 +19,7 @@ export { typography, type TypographyToken } from './typography';
 export { spacing, type SpacingToken } from './spacing';
 export { shadows, type ShadowToken } from './shadows';
 export { radius, type RadiusToken } from './radius';
+export { layout, type LayoutToken } from './layout';
 export { animations, type AnimationToken } from './animations';
 export { glyphs, type GlyphToken } from './glyphs';
 
@@ -32,6 +33,7 @@ export const designTokens = {
   spacing: require('./spacing').spacing,
   shadows: require('./shadows').shadows,
   radius: require('./radius').radius,
+  layout: require('./layout').layout,
   animations: require('./animations').animations,
   glyphs: require('./glyphs').glyphs,
 } as const;

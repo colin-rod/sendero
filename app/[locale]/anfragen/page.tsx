@@ -2,6 +2,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { Container } from '@/components/ui/Container';
 import { AnfragenIntro } from '@/components/features/anfragen/AnfragenIntro';
 import { AnfragenForm } from '@/components/features/anfragen/AnfragenForm';
 import { AnfragenGallery } from '@/components/features/anfragen/AnfragenGallery';
@@ -50,8 +51,10 @@ export default function AnfragenPage() {
           photoAlt={t('intro.photoAlt')}
         />
 
-        <section className="px-5 py-20">
-          <AnfragenForm />
+        <section className="py-20">
+          <Container>
+            <AnfragenForm />
+          </Container>
         </section>
 
         <AnfragenGallery

@@ -185,7 +185,7 @@ export function TourGrid({ cards, heading, subheading }: TourGridProps) {
           {subheading && <p className="text-body">{subheading}</p>}
         </div>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {cards.map((card) => (
           <TourCard key={card.id} {...card} />
         ))}

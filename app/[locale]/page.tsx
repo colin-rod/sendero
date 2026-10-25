@@ -72,49 +72,51 @@ export default function HomePage() {
           <HeroVideo />
 
           {/* Content */}
-          <div className="relative z-10 flex flex-1 flex-col items-center justify-center text-center px-4">
+          <div className="relative z-10 flex flex-1 flex-col items-center justify-center text-center px-6 sm:px-10 lg:px-16">
             <HeroTitle title={tHero('title')} />
           </div>
         </section>
 
         {/* Hero Intro Section */}
         <ScrollReveal>
-          <section className="flex flex-col items-center justify-center gap-8 self-stretch bg-foreground px-4 sm:px-8 lg:px-16 py-20">
-            <div className="text-center max-w-4xl flex flex-col gap-2">
-              <h2 className="text-h2 font-bold text-white">
-                {tHeroIntro('heading')}
-              </h2>
-              <p className="text-h2 font-light text-white">
-                {tHeroIntro('subheading')
-                  .split(/\.\s+/)
-                  .filter(Boolean)
-                  .map((sentence, i, arr) => {
-                    const trimmed = sentence.trim();
-                    const needsPeriod = !trimmed.endsWith('.');
-                    return (
-                      <span key={i} className="block sm:inline">
-                        {trimmed}
-                        {needsPeriod ? '.' : ''}
-                        {i < arr.length - 1 ? ' ' : ''}
-                      </span>
-                    );
-                  })}
-              </p>
-            </div>
-            <svg width="72" height="16" viewBox="0 0 72 16" fill="none" aria-hidden="true" className="text-accent-400">
-              <path
-                d="M2 10 C10 2, 18 14, 26 10 C34 6, 42 2, 50 10 C58 14, 66 6, 70 10"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-            <div className="text-center max-w-2xl">
-              <p className="text-lg leading-relaxed font-normal text-center text-white/90">
-                {tHeroIntro('subtitle')}
-              </p>
-            </div>
+          <section className="self-stretch bg-foreground py-20">
+            <Container className="flex flex-col items-center justify-center gap-8">
+              <div className="text-center max-w-heading flex flex-col gap-2">
+                <h2 className="text-h2 font-bold text-white">
+                  {tHeroIntro('heading')}
+                </h2>
+                <p className="text-h2 font-light text-white">
+                  {tHeroIntro('subheading')
+                    .split(/\.\s+/)
+                    .filter(Boolean)
+                    .map((sentence, i, arr) => {
+                      const trimmed = sentence.trim();
+                      const needsPeriod = !trimmed.endsWith('.');
+                      return (
+                        <span key={i} className="block sm:inline">
+                          {trimmed}
+                          {needsPeriod ? '.' : ''}
+                          {i < arr.length - 1 ? ' ' : ''}
+                        </span>
+                      );
+                    })}
+                </p>
+              </div>
+              <svg width="72" height="16" viewBox="0 0 72 16" fill="none" aria-hidden="true" className="text-accent-400">
+                <path
+                  d="M2 10 C10 2, 18 14, 26 10 C34 6, 42 2, 50 10 C58 14, 66 6, 70 10"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+              </svg>
+              <div className="text-center max-w-text">
+                <p className="text-lg leading-relaxed font-normal text-center text-white/90">
+                  {tHeroIntro('subtitle')}
+                </p>
+              </div>
+            </Container>
           </section>
         </ScrollReveal>
 
@@ -243,7 +245,7 @@ export default function HomePage() {
                 <p className="font-light">{tNextTrips('soldOut')}</p>
               </div>
 
-              <div className="mb-10 max-w-5xl flex flex-col gap-3 text-h3 font-light leading-8 tracking-wide text-background">
+              <div className="mb-10 max-w-heading flex flex-col gap-3 text-h3 font-light leading-8 tracking-wide text-background">
                 <p className="font-bold text-white">{tNextTrips('continuesHeading')}</p>
                 <p>{tNextTrips.rich('continuesText', { br: () => <span className="hidden md:block" /> })}</p>
                 <p>{tNextTrips('prompt')}</p>

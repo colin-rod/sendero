@@ -175,7 +175,7 @@ export default function BottomEmailCapture({
             disabled={isSubmitting}
             loading={isSubmitting}
             variant={buttonVariant}
-            className={`whitespace-nowrap rounded-full! transition-all duration-300 ${buttonClassName}`}
+            className={`whitespace-nowrap transition-all duration-300 ${buttonClassName}`}
           >
             {isExpanded ? t('buttonSubmit') : (buttonLabel ?? tWaitlist('joinButton'))}
           </Button>
