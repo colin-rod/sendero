@@ -143,7 +143,7 @@ export function AnfragenForm() {
       className="mx-auto max-w-[720px] scroll-mt-28 rounded-[10px] bg-white px-6 py-14 sm:px-[clamp(24px,6vw,64px)]"
     >
       {submitted ? (
-        <div ref={successRef} tabIndex={-1} className="flex flex-col gap-[22px] outline-none" aria-live="polite">
+        <div ref={successRef} tabIndex={-1} className="success-reveal flex flex-col gap-[22px] outline-none" aria-live="polite">
           <p className="text-caption font-semibold uppercase tracking-[0.16em] text-primary-500">
             {tSuccess('eyebrow')}
           </p>
@@ -155,7 +155,7 @@ export function AnfragenForm() {
             <p className="text-lg leading-[1.7] text-gray-800">{tSuccess('mailingList')}</p>
           )}
           <p className="text-lg leading-[1.7] text-gray-800">{tSuccess('closing')}</p>
-          <Signature />
+          <Signature className="success-signature" />
         </div>
       ) : (
         <>
