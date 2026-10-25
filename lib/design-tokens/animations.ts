@@ -28,6 +28,9 @@ export const animations = {
     out: 'cubic-bezier(0, 0, 0.2, 1)',
     inOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
 
+    // Strong ease-out (for entrances and press feedback)
+    outStrong: 'cubic-bezier(0.23, 1, 0.32, 1)',
+
     // Spring-like (for bouncy effects)
     spring: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
 
@@ -103,7 +106,7 @@ export const animations = {
     // Button interactions
     buttonPress: {
       duration: '150ms',
-      easing: 'cubic-bezier(0.4, 0, 1, 1)',
+      easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
       transform: 'scale(0.98)',
     },
 

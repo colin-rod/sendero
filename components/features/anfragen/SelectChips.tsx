@@ -72,7 +72,7 @@ export function SelectChips<T extends string>({
             aria-pressed={isOn}
             disabled={disabled}
             onClick={() => handleClick(option)}
-            className={`min-h-[46px] min-w-[56px] rounded-full border px-5 text-base transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${focusRing} ${
+            className={`min-h-[46px] min-w-[56px] rounded-full border px-5 text-base transition-[color,background-color,border-color,scale] duration-fast ease-out-strong motion-safe:enabled:active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-60 ${focusRing} ${
               isOn
                 ? 'border-primary-500 bg-primary-500 text-white'
                 : 'border-gray-400 bg-white text-foreground hover:border-foreground'

@@ -48,7 +48,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     // Base classes with semantic transitions
     const baseClasses =
-      'inline-flex items-center justify-center font-medium transition-colors duration-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 rounded-component-button';
+      'inline-flex items-center justify-center font-medium transition-[color,background-color,border-color,scale] duration-fast ease-out-strong motion-safe:enabled:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 rounded-component-button';
 
     // Variant classes using semantic color tokens
     const variantClasses = {
