@@ -60,7 +60,7 @@ git commit -m "Initial commit: Sendero waitlist landing page
 Co-Authored-By: Claude <noreply@anthropic.com>"
 
 # Add remote (if not already added)
-git remote add origin https://github.com/colin-rod/sendero.git
+git remote add origin https://github.com/flowlian/sendero.git
 
 # Push to GitHub
 git branch -M main
@@ -82,7 +82,7 @@ git checkout main
 
 - [ ] Go to [Vercel Dashboard](https://vercel.com/new)
 - [ ] Click "Import Project"
-- [ ] Select your GitHub repository: `colin-rod/sendero`
+- [ ] Select your GitHub repository: `flowlian/sendero`
 - [ ] Configure project settings:
   - **Framework Preset**: Next.js
   - **Root Directory**: `./`
@@ -101,7 +101,7 @@ git checkout main
 
 ### 7. Configure GitHub Secrets for CI/CD (5 minutes)
 
-Go to: https://github.com/colin-rod/sendero/settings/secrets/actions
+Go to: https://github.com/flowlian/sendero/settings/secrets/actions
 
 Add these secrets:
 
@@ -131,7 +131,7 @@ git merge main
 git push origin deployment
 ```
 
-- [ ] Check GitHub Actions: https://github.com/colin-rod/sendero/actions
+- [ ] Check GitHub Actions: https://github.com/flowlian/sendero/actions
 - [ ] Verify all CI checks pass (lint, type-check, tests, build)
 - [ ] Verify Vercel deployment succeeded
 - [ ] Visit your production URL
@@ -174,7 +174,7 @@ Your Sendero waitlist is now live! Here's what you have:
 
 - **View Signups**: [Supabase Table Editor](https://supabase.com/dashboard/project/vasyimaemvirnrgekzmu/editor/waitlist_signups)
 - **Analytics**: Vercel Analytics dashboard in your project
-- **CI/CD Status**: https://github.com/colin-rod/sendero/actions
+- **CI/CD Status**: https://github.com/flowlian/sendero/actions
 
 ## 🚀 Next Steps
 
