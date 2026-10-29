@@ -554,20 +554,21 @@ git push origin main
 | `development`  | Preview     | ✅ Yes      | 📋 Pending |
 | `feature/*`    | Preview     | ✅ Yes      | 📋 Pending |
 
-**Required GitHub Secrets:**
+**Required GitHub Secrets** (the only values the workflows read):
 
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `NEXT_PUBLIC_SITE_URL`
-- `RESEND_API_KEY`
-- `RESEND_FROM_EMAIL`
-- `GOOGLE_SHEETS_WEBHOOK_URL`
-- `PASSWORD_PROTECTION_ENABLED` (optional)
-- `SITE_PASSWORD` (optional, required if password protection enabled)
-- `SESSION_SECRET` (optional, required if password protection enabled)
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
 - `VERCEL_PROJECT_ID`
+
+**Vercel Environment Variables** (runtime only, configured in the Vercel dashboard, not GitHub):
+
+- `RESEND_API_KEY`, `RESEND_FROM_EMAIL`
+- `GOOGLE_SHEETS_WEBHOOK_URL`
+- `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`
+- `PASSWORD_PROTECTION_ENABLED`, `SITE_PASSWORD`, `SESSION_SECRET` (optional)
 
 **Linear Integration (Supabase Edge Function env vars — configured in Supabase Dashboard):**
 - `LINEAR_API_KEY`
@@ -828,15 +829,10 @@ npm run dev
 npm run build
 npm run start
 
-# 2. Push to main
-git add .
-git commit -m "feat: ready for production"
-git push origin main
+# 2. Push to development (CI runs, Vercel builds a preview)
+git push origin development
 
-# 3. Merge to deployment
-git checkout deployment
-git merge main
-git push origin deployment
+# 3. Open a PR from development → main and merge it once CI passes
 
 # 4. GitHub Actions will automatically:
 #    - Run all CI checks
@@ -938,7 +934,7 @@ git push origin deployment
 
 ### Tools
 
-- [GitHub Repository](https://github.com/colin-rod/sendero)
+- [GitHub Repository](https://github.com/flowlian/sendero)
 - [Vercel Dashboard](https://vercel.com) (📋 to be configured)
 - [Supabase Dashboard](https://app.supabase.com) (📋 to be configured)
 

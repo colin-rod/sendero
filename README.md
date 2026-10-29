@@ -2,8 +2,8 @@
 
 Beginner-friendly, sustainable hike & bike tours in Colombia's Coffee Region.
 
-[![CI](https://github.com/colin-rod/sendero/actions/workflows/ci.yml/badge.svg)](https://github.com/colin-rod/sendero/actions/workflows/ci.yml)
-[![Deploy](https://github.com/colin-rod/sendero/actions/workflows/deploy.yml/badge.svg)](https://github.com/colin-rod/sendero/actions/workflows/deploy.yml)
+[![CI](https://github.com/flowlian/sendero/actions/workflows/ci.yml/badge.svg)](https://github.com/flowlian/sendero/actions/workflows/ci.yml)
+[![Deploy](https://github.com/flowlian/sendero/actions/workflows/deploy.yml/badge.svg)](https://github.com/flowlian/sendero/actions/workflows/deploy.yml)
 
 ---
 
@@ -91,7 +91,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/colin-rod/sendero)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/flowlian/sendero)
 
 1. Click the button above or manually import to Vercel
 2. Add environment variables in Vercel project settings

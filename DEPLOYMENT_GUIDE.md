@@ -2,14 +2,14 @@
 
 ## Prerequisites
 
-- GitHub repository: https://github.com/colin-rod/sendero ✅
+- GitHub repository: https://github.com/flowlian/sendero ✅
 - Supabase project: vasyimaemvirnrgekzmu ✅
 - Code pushed to main branch ✅
 
 ## Step 1: Create Vercel Project
 
 1. Go to https://vercel.com/new
-2. Import your GitHub repository: `colin-rod/sendero`
+2. Import your GitHub repository: `flowlian/sendero`
 3. Vercel will auto-detect Next.js settings
 
 ## Step 2: Configure Environment Variables

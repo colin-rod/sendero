@@ -4,7 +4,7 @@ Get your waitlist up and running in under 15 minutes.
 
 ## 🎯 Prerequisites
 
-- ✅ GitHub repo: https://github.com/colin-rod/sendero
+- ✅ GitHub repo: https://github.com/flowlian/sendero
 - ✅ Supabase project: https://supabase.com/dashboard/project/vasyimaemvirnrgekzmu
 - ⏳ Node.js 20+ installed
 - ⏳ Vercel account (free)
@@ -53,7 +53,7 @@ git push -u origin deployment
 ### Set Up Vercel
 
 1. Go to: https://vercel.com/new
-2. Import `colin-rod/sendero`
+2. Import `flowlian/sendero`
 3. Add environment variables:
    - `NEXT_PUBLIC_SUPABASE_URL=https://vasyimaemvirnrgekzmu.supabase.co`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY=your-key`
