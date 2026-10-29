@@ -5,7 +5,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import { ContactForm } from '@/components/features/contact/ContactForm';
 import { Link } from '@/lib/i18n/routing';
-import { Mail, MessageCircle, Instagram, HelpCircle } from 'lucide-react';
+import { Mail, MessageCircle, HelpCircle } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa6';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbSchema } from '@/lib/seo/jsonLd';
 import { buildAlternates, ogImages } from '@/lib/seo/canonical';
@@ -98,7 +99,7 @@ export default function ContactPage() {
 
                   {/* Instagram */}
                   <div className="flex items-start gap-4">
-                    <Instagram className="mt-1 h-5 w-5 flex-shrink-0 text-primary-600" />
+                    <FaInstagram className="mt-1 h-5 w-5 flex-shrink-0 text-primary-600" />
                     <div>
                       <p className="text-label mb-1 font-semibold text-foreground">
                         {t('contactInfo.instagram.label')}

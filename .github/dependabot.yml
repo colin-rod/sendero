@@ -14,6 +14,18 @@ updates:
       major:
         update-types:
           - major
+    # Majors the toolchain can't take yet: typescript-eslint doesn't support
+    # TypeScript 7, eslint-config-next doesn't support ESLint 10, and
+    # @types/node must track the Node 22 runtime (engines.node).
+    ignore:
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
+      - dependency-name: eslint
+        update-types: [version-update:semver-major]
+      - dependency-name: "@eslint/js"
+        update-types: [version-update:semver-major]
+      - dependency-name: "@types/node"
+        update-types: [version-update:semver-major]
 
   - package-ecosystem: github-actions
     directory: /
