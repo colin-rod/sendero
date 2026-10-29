@@ -8,8 +8,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { Check, Link as LinkIcon, MessageCircle, Facebook } from 'lucide-react';
-import { FaXTwitter } from 'react-icons/fa6';
+import { Check, Link as LinkIcon, MessageCircle } from 'lucide-react';
+import { FaFacebook, FaXTwitter } from 'react-icons/fa6';
 import posthog from 'posthog-js';
 
 type ShareChannel = 'clipboard' | 'whatsapp' | 'twitter' | 'facebook';
@@ -163,7 +163,7 @@ export default function ThankYouPage() {
                     onClick={() => trackShare('facebook')}
                   >
                     <Button variant="outline" className="flex items-center gap-2">
-                      <Facebook className="h-4 w-4" />
+                      <FaFacebook className="h-4 w-4" />
                       <span>{t('share.buttons.facebook')}</span>
                     </Button>
                   </a>
