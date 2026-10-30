@@ -103,7 +103,7 @@ export function Header({ overlay = false }: HeaderProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-caption font-medium tracking-[0.06em] uppercase text-foreground transition-opacity hover:opacity-70"
+                    className="text-caption font-medium tracking-[0.06em] uppercase text-foreground transition-colors hover:text-primary-500"
                   >
                     {t(item.labelKey)}
                   </Link>
@@ -147,7 +147,7 @@ export function Header({ overlay = false }: HeaderProps) {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-h3 text-foreground transition-opacity hover:opacity-70"
+                className="text-h3 text-foreground transition-colors hover:text-primary-500"
               >
                 {t(item.labelKey)}
               </Link>
