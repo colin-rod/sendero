@@ -33,7 +33,7 @@ test.describe('Landing Page & Email Capture', () => {
 
     // Next trips + email capture CTA
     await expect(page.getByRole('heading', { name: /upcoming trips/i })).toBeVisible();
-    await expect(page.getByText(/would you like to join us/i)).toBeVisible();
+    await expect(page.getByText(/would you like to join us/i).first()).toBeVisible();
     await expect(page.getByRole('button', { name: /^stay informed$/i })).toBeVisible();
     await expect(page.getByRole('link', { name: /^request a trip$/i })).toHaveAttribute('href', '/en/anfragen');
   });

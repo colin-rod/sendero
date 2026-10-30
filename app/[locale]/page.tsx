@@ -111,10 +111,21 @@ export default function HomePage() {
                   fill="none"
                 />
               </svg>
-              <div className="text-center max-w-text">
-                <p className="text-lg leading-relaxed font-normal text-center text-white/90">
+              <div className="text-center max-w-heading">
+                <p className="text-h3 font-light leading-8 tracking-wide text-background">
                   {tHeroIntro('subtitle')}
                 </p>
+              </div>
+              {/* Waitlist email capture */}
+              <div className="flex flex-col items-center gap-6">
+                <p className="text-h3 font-light leading-8 tracking-wide text-background">
+                  {tHeroIntro('prompt')}
+                </p>
+                <BottomEmailCapture
+                  buttonLabel={tNextTrips('waitlistCta')}
+                  buttonVariant="hero-cta"
+                  buttonClassName="w-[260px]"
+                />
               </div>
             </Container>
           </section>
@@ -251,14 +262,9 @@ export default function HomePage() {
                 <p>{tNextTrips('prompt')}</p>
               </div>
 
-              {/* CTAs: trip inquiry (primary) + waitlist email capture (secondary) */}
-              <div className="max-w-md mx-auto flex flex-col items-center gap-12">
+              {/* CTA: trip inquiry (the waitlist email capture lives in the hero intro) */}
+              <div className="max-w-md mx-auto flex flex-col items-center">
                 <RequestTripCta label={tNextTrips('requestCta')} source="home_next_trips" />
-                <BottomEmailCapture
-                  buttonLabel={tNextTrips('waitlistCta')}
-                  buttonVariant="hero-cta-secondary"
-                  buttonClassName="w-[260px]"
-                />
               </div>
             </Container>
           </section>
