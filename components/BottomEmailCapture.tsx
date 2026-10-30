@@ -131,10 +131,11 @@ export default function BottomEmailCapture({
           isExpanded ? 'gap-3' : 'gap-0'
         }`}
       >
-        {/* Email input — revealed inline when expanded */}
+        {/* Email input — revealed inline when expanded. The padding leaves room
+            for the input's focus ring, which overflow-hidden would otherwise clip. */}
         <div
           className={`min-w-0 overflow-hidden transition-all duration-300 ease-in-out ${
-            isExpanded ? 'w-full opacity-100' : 'w-0 opacity-0'
+            isExpanded ? 'w-full p-1 opacity-100' : 'w-0 opacity-0'
           }`}
         >
           <input

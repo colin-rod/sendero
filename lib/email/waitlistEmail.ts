@@ -28,16 +28,16 @@ Get ready — adventure in Colombia's Coffee Region is on its way.
     subject: 'Willkommen auf der Warteliste von Sendero Bike Trails!',
     html: `
       <h2>Du stehst auf der Liste!</h2>
-      <p>Danke, dass du dich auf die Warteliste von <strong>Sendero Bike Trails</strong> eingetragen hast. Wir melden uns, sobald unsere ersten Touren buchbar sind.</p>
-      <p>Mach dich bereit — das Abenteuer in Kolumbiens Kaffeeregion steht bevor.</p>
+      <p>Danke, dass Du Dich auf die Warteliste von <strong>Sendero Bike Trails</strong> eingetragen hast. Wir melden uns, sobald unsere ersten Touren buchbar sind.</p>
+      <p>Mach Dich bereit — das Abenteuer in Kolumbiens Kaffeeregion steht bevor.</p>
       <br/>
       <p>— Julián</p>
     `,
     text: `Du stehst auf der Liste!
 
-Danke, dass du dich auf die Warteliste von Sendero Bike Trails eingetragen hast. Wir melden uns, sobald unsere ersten Touren buchbar sind.
+Danke, dass Du Dich auf die Warteliste von Sendero Bike Trails eingetragen hast. Wir melden uns, sobald unsere ersten Touren buchbar sind.
 
-Mach dich bereit — das Abenteuer in Kolumbiens Kaffeeregion steht bevor.
+Mach Dich bereit — das Abenteuer in Kolumbiens Kaffeeregion steht bevor.
 
 — Julián`,
   },

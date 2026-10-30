@@ -61,15 +61,15 @@ jest.mock('@/components/seo/JsonLd', () => ({
 }));
 
 describe('HomePage section flow', () => {
-  it('renders waitlist email capture after the tour grid', () => {
+  it('renders waitlist email capture in the video hero, before the tour grid', () => {
     render(<HomePage />);
 
     const tourGrid = screen.getByTestId('tour-grid');
-    const bottomEmail = screen.getByTestId('bottom-email');
-    const DOCUMENT_POSITION_FOLLOWING = 4;
+    const heroEmail = screen.getByTestId('bottom-email');
+    const DOCUMENT_POSITION_PRECEDING = 2;
 
     expect(
-      tourGrid.compareDocumentPosition(bottomEmail) & DOCUMENT_POSITION_FOLLOWING
+      tourGrid.compareDocumentPosition(heroEmail) & DOCUMENT_POSITION_PRECEDING
     ).toBeTruthy();
 
     expect(screen.queryByTestId('newsletter-hero')).not.toBeInTheDocument();
@@ -80,7 +80,7 @@ describe('HomePage section flow', () => {
     const waitlist = container.querySelector('#waitlist') as HTMLElement;
 
     expect(within(waitlist).getByRole('heading', { name: 'heading' })).toBeInTheDocument();
-    ['pioneerTrip', 'soldOut', 'continuesHeading', 'continuesText', 'prompt'].forEach((key) => {
+    ['pioneerTrip', 'soldOut', 'continuesHeading', 'continuesText'].forEach((key) => {
       expect(within(waitlist).getByText(key)).toBeInTheDocument();
     });
   });
@@ -90,6 +90,6 @@ describe('HomePage section flow', () => {
     const waitlist = container.querySelector('#waitlist') as HTMLElement;
 
     expect(within(waitlist).getByRole('link', { name: 'requestCta' })).toHaveAttribute('href', '/anfragen');
-    expect(within(waitlist).getByTestId('bottom-email')).toBeInTheDocument();
+    expect(within(waitlist).queryByTestId('bottom-email')).not.toBeInTheDocument();
   });
 });
