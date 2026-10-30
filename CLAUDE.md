@@ -541,10 +541,8 @@ git push origin main
 3. ✅ Unit Tests (Jest)
 4. ✅ Build Check (Next.js)
 
-**On push to `main` branch:**
-
-5. ✅ All CI checks (above)
-6. ✅ Deploy to Vercel production
+**Deployment:** handled by Vercel's Git integration (no GitHub Actions deploy
+workflow). Pushing to `main` deploys production; other branches get previews.
 
 ### Vercel Deployment
 
