@@ -234,6 +234,25 @@ middleware.ts               # Locale detection, routing & password protection
 
 ---
 
+## ✅ Plan First, Then Change
+
+**❗ Standing rule for Claude Code (set by Julian, the owner):**
+
+Before making ANY change to this project (code, copy, translations, config,
+docs, git operations), present a short plan of what you will change and wait
+for explicit approval. Do not edit files, commit or push until the plan is
+approved. If something new comes up mid-task that isn't in the approved plan,
+stop and present it as an addition first.
+
+---
+
+## ✍️ German Copy: "Du" Is Always Capitalized
+
+In German texts, the informal address is always capitalized: **Du, Dich, Dir,
+Dein, Deine, Deinen, Deinem, Deiner, Deines**. Never write them lowercase.
+
+---
+
 ## 🏗️ Tech Stack
 
 ### Frontend - ✅ Implemented

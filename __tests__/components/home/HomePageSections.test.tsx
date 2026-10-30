@@ -61,7 +61,7 @@ jest.mock('@/components/seo/JsonLd', () => ({
 }));
 
 describe('HomePage section flow', () => {
-  it('renders waitlist email capture in the hero intro, before the tour grid', () => {
+  it('renders waitlist email capture in the video hero, before the tour grid', () => {
     render(<HomePage />);
 
     const tourGrid = screen.getByTestId('tour-grid');
@@ -80,7 +80,7 @@ describe('HomePage section flow', () => {
     const waitlist = container.querySelector('#waitlist') as HTMLElement;
 
     expect(within(waitlist).getByRole('heading', { name: 'heading' })).toBeInTheDocument();
-    ['pioneerTrip', 'soldOut', 'continuesHeading', 'continuesText', 'prompt'].forEach((key) => {
+    ['pioneerTrip', 'soldOut', 'continuesHeading', 'continuesText'].forEach((key) => {
       expect(within(waitlist).getByText(key)).toBeInTheDocument();
     });
   });

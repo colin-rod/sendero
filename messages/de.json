@@ -17,8 +17,9 @@
     }
   },
   "hero": {
+    "prompt": "Möchtest Du dabei sein?",
     "title": "Fahrraderlebnisse in Kolumbiens Andenwäldern",
-    "subtitle": "Wir verbinden dich auf dem Rad mit den Bergen und gestalten einzigartige Augenblicke für all deine Sinne.",
+    "subtitle": "Wir verbinden Dich auf dem Rad mit den Bergen und gestalten einzigartige Augenblicke für all Deine Sinne.",
     "description": "Anfängerfreundliche, nachhaltige Wander- und Radtouren durch die atemberaubenden Landschaften Pereiras. E-Bikes, reine Frauengruppen und authentische Kaffeefarmerlebnisse.",
     "features": {
       "eBikes": "E-Bikes verfügbar",
@@ -31,7 +32,7 @@
       "buttonSent": "VERSENDET",
       "placeholder": "E-Mail-Adresse eingeben",
       "helperText": "Kein Spam, nur Updates zum Start",
-      "successMessage": "✓ Danke! Wir halten dich auf dem Laufenden."
+      "successMessage": "✓ Danke! Wir halten Dich auf dem Laufenden."
     },
     "exploreTrails": "TRAILS ENTDECKEN",
     "discoverTrails": "TRAILS ENTDECKEN"
@@ -39,20 +40,19 @@
   "heroIntro": {
     "heading": "Lass los. Kolumbien wartet.",
     "subheading": "7–9 Tage. Kleine Gruppen. Uralte Pfade",
-    "subtitle": "Begib dich auf eine mehrtägige Mountainbike-Reise durch Berglandschaften, Kaffeekultur und tropische Trails. Geführt, kuratiert, unverwechselbar.",
-    "prompt": "Möchtest du dabei sein?"
+    "subtitle": "Begib Dich auf eine mehrtägige Mountainbike-Reise durch Berglandschaften, Kaffeekultur und tropische Trails. Geführt, kuratiert, unverwechselbar."
   },
   "howItWorks": {
     "heading": "Wie es funktioniert",
-    "description": "Trage dich heute in die Warteliste ein und erfahre als Erste/r, wenn die Touren starten. Einfach, unkompliziert und ohne Verpflichtung.",
+    "description": "Trage Dich heute in die Warteliste ein und erfahre als Erste/r, wenn die Touren starten. Einfach, unkompliziert und ohne Verpflichtung.",
     "steps": {
       "signUp": {
         "title": "Anmelden",
-        "description": "Fülle das kurze Formular mit deiner E-Mail und Tourpräferenzen aus."
+        "description": "Fülle das kurze Formular mit Deiner E-Mail und Tourpräferenzen aus."
       },
       "stayTuned": {
         "title": "Dran bleiben",
-        "description": "Wir halten dich auf dem Laufenden, während wir Tourdaten und Pakete finalisieren."
+        "description": "Wir halten Dich auf dem Laufenden, während wir Tourdaten und Pakete finalisieren."
       },
       "bookAdventure": {
         "title": "Abenteuer buchen",
@@ -97,7 +97,7 @@
     "nextDate": "",
     "nextDateLabel": "",
     "nextDateValue": "",
-    "ctaPrompt": "Trag dich ein und erfahre, wann deine nächste Reise startet.",
+    "ctaPrompt": "Trag Dich ein und erfahre, wann Deine nächste Reise startet.",
     "joinButton": "TEILNEHMEN"
   },
   "nextTrips": {
@@ -106,7 +106,6 @@
     "soldOut": "Ausgebucht",
     "continuesHeading": "Die Reise geht weiter.",
     "continuesText": "Im März, April und Mai 2027 warten neue, spannende Trails auf Dich – <br></br>zwei Gruppen pro Monat, klein und persönlich.",
-    "prompt": "Du möchtest dabei sein?",
     "requestCta": "Reise anfragen",
     "waitlistCta": "Informiert bleiben"
   },
@@ -114,12 +113,12 @@
     "labels": {
       "email": "E-Mail-Adresse *",
       "tourDuration": "Bevorzugte Tourdauer *",
-      "interestTypes": "Woran bist du interessiert? (alle zutreffenden auswählen) *",
+      "interestTypes": "Woran bist Du interessiert? (alle zutreffenden auswählen) *",
       "fitnessLevel": "Fitnesslevel *",
-      "travelTimeline": "Wann planst du zu reisen? *"
+      "travelTimeline": "Wann planst Du zu reisen? *"
     },
     "placeholders": {
-      "email": "deine@email.de"
+      "email": "Deine@email.de"
     },
     "tourDuration": {
       "oneDay": {
@@ -161,7 +160,7 @@
       "submit": "Zur Warteliste",
       "submitting": "Wird eingetragen..."
     },
-    "helperText": "Wir respektieren deine Privatsphäre. Kein Spam, nur Updates zu Touren."
+    "helperText": "Wir respektieren Deine Privatsphäre. Kein Spam, nur Updates zu Touren."
   },
   "validation": {
     "emailRequired": "E-Mail ist erforderlich",
@@ -169,10 +168,10 @@
     "tourDurationRequired": "Bitte wähle eine Tourdauer",
     "interestTypesRequired": "Bitte wähle mindestens ein Interesse",
     "fitnessLevelRequired": "Bitte wähle ein Fitnesslevel",
-    "travelTimelineRequired": "Bitte wähle, wann du reisen möchtest",
+    "travelTimelineRequired": "Bitte wähle, wann Du reisen möchtest",
     "emailDuplicate": "Diese E-Mail ist bereits auf der Warteliste",
     "generalError": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
-    "networkError": "Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es erneut.",
+    "networkError": "Netzwerkfehler. Bitte überprüfe Deine Verbindung und versuche es erneut.",
     "nameRequired": "Name ist erforderlich",
     "nameTooShort": "Name muss mindestens 2 Zeichen lang sein",
     "messageRequired": "Nachricht ist erforderlich",
@@ -196,7 +195,7 @@
   },
   "thankYou": {
     "heading": "Du bist auf der Liste!",
-    "message": "Danke, dass du dich zur Sendero Bike Trails Warteliste angemeldet hast. Wir melden uns, wenn Touren starten, mit exklusivem Frühzugang für Wartelistenmitglieder.",
+    "message": "Danke, dass Du Dich zur Sendero Bike Trails Warteliste angemeldet hast. Wir melden uns, wenn Touren starten, mit exklusivem Frühzugang für Wartelistenmitglieder.",
     "whatHappensNext": {
       "heading": "Was passiert als Nächstes?",
       "steps": {
@@ -206,7 +205,7 @@
         },
         "stayTuned": {
           "title": "Dran bleiben",
-          "description": "Wir halten dich über Tourdaten und Pakete auf dem Laufenden"
+          "description": "Wir halten Dich über Tourdaten und Pakete auf dem Laufenden"
         },
         "beFirst": {
           "title": "Gehöre zu den Ersten",
@@ -216,7 +215,7 @@
     },
     "share": {
       "heading": "Teile das Abenteuer",
-      "description": "Kennst du jemanden, dem das gefallen würde? Erzähle es weiter!",
+      "description": "Kennst Du jemanden, dem das gefallen würde? Erzähle es weiter!",
       "buttons": {
         "copyLink": "Link kopieren",
         "copied": "Kopiert!",
@@ -224,14 +223,14 @@
         "twitter": "Twitter",
         "facebook": "Facebook"
       },
-      "shareText": "Schau dir Sendero Bike Trails an - kuratierte Fahrradurlaub in den kolumbianischen Andenwäldern. Tauche tief in die Berge ein."
+      "shareText": "Schau Dir Sendero Bike Trails an - kuratierte Fahrradurlaub in den kolumbianischen Andenwäldern. Tauche tief in die Berge ein."
     },
     "backToHome": "Zurück zur Startseite"
   },
   "contactPage": {
     "title": "Kontakt",
     "subtitle": "Kontaktiere uns",
-    "description": "Hast du Fragen zu unseren Touren? Wir helfen dir gerne weiter!",
+    "description": "Hast Du Fragen zu unseren Touren? Wir helfen Dir gerne weiter!",
     "contactInfo": {
       "heading": "Kontaktinformationen",
       "email": {
@@ -258,9 +257,9 @@
       },
       "placeholders": {
         "name": "Dein Name",
-        "email": "deine@email.de",
+        "email": "Deine@email.de",
         "subject": "Wähle ein Thema...",
-        "message": "Sag uns, wie wir dir helfen können..."
+        "message": "Sag uns, wie wir Dir helfen können..."
       },
       "subjects": {
         "general": "Allgemeine Anfrage",
@@ -274,12 +273,12 @@
       },
       "success": {
         "title": "Nachricht gesendet!",
-        "message": "Vielen Dank für deine Nachricht. Wir melden uns innerhalb von 24 Stunden bei dir."
+        "message": "Vielen Dank für Deine Nachricht. Wir melden uns innerhalb von 24 Stunden bei Dir."
       }
     },
     "faqLink": {
-      "text": "Suchst du schnelle Antworten?",
-      "linkText": "Schau dir unsere FAQ an"
+      "text": "Suchst Du schnelle Antworten?",
+      "linkText": "Schau Dir unsere FAQ an"
     },
     "whatsappMessage": "Hallo! Ich interessiere mich für Sendero Radtouren."
   },
@@ -457,7 +456,7 @@
       },
       "partners": {
         "heading": "[PLACEHOLDER] Wie wir mit lokalen Fincas arbeiten",
-        "content": "[TODO: Inhalt hinzufügen] Unsere Partnerschaften mit lokalen Kaffeefarmen (Fincas) sind das Herzstück unserer Arbeit. Wir arbeiten direkt mit familiengeführten Farmen zusammen, um authentische Erlebnisse zu schaffen, die den lokalen Gemeinschaften zugutekommen. Wenn du mit Sendero reist, besuchst du nicht nur – du unterstützt nachhaltige Landwirtschaft, Fair-Trade-Praktiken und die Bewahrung traditioneller Kaffeekultur. Unsere Finca-Partner heißen dich in ihren Häusern willkommen, teilen ihre Geschichten und bieten dir praktische Erfahrungen, die du sonst nirgendwo findest.",
+        "content": "[TODO: Inhalt hinzufügen] Unsere Partnerschaften mit lokalen Kaffeefarmen (Fincas) sind das Herzstück unserer Arbeit. Wir arbeiten direkt mit familiengeführten Farmen zusammen, um authentische Erlebnisse zu schaffen, die den lokalen Gemeinschaften zugutekommen. Wenn Du mit Sendero reist, besuchst Du nicht nur – Du unterstützt nachhaltige Landwirtschaft, Fair-Trade-Praktiken und die Bewahrung traditioneller Kaffeekultur. Unsere Finca-Partner heißen Dich in ihren Häusern willkommen, teilen ihre Geschichten und bieten Dir praktische Erfahrungen, die Du sonst nirgendwo findest.",
         "imageAlt": "Lokale Kaffeefarm-Familie begrüßt Besucher auf ihrer Finca"
       },
       "cta": {
@@ -472,7 +471,7 @@
   },
   "metadata": {
     "title": "Fahrraderlebnisse in Kolumbiens Andenwäldern",
-    "description": "Begib dich auf eine mehrtägige Mountainbike-Reise durch Berglandschaften, Kaffeekultur und tropische Trails. Geführt, kuratiert, unverwechselbar.",
+    "description": "Begib Dich auf eine mehrtägige Mountainbike-Reise durch Berglandschaften, Kaffeekultur und tropische Trails. Geführt, kuratiert, unverwechselbar.",
     "siteName": "sendero bike trails | 7–9 Tage ⋄ Kleine Gruppen ⋄ Uralte Pfade",
     "keywords": "kolumbien touren, kaffeeregion touren, pereira fahrradtouren, e-bike touren, nachhaltiges reisen kolumbien, kaffeefarm touren"
   },
@@ -492,7 +491,7 @@
       "subtitle": "Eine geführte Reise durch Bambuswälder und Bergbäche",
       "story": {
         "paragraph1": "Folge den Fußstapfen des scheuen Tigre, durch hohe Gräser, Bambushaine und den Duft der Bergwälder.",
-        "paragraph2": "Eine ruhige, immersive Fahrt, die dich mit der Natur verbindet – perfekt für Fahrer aller Levels, die ein authentisches kolumbianisches Abenteuer suchen."
+        "paragraph2": "Eine ruhige, immersive Fahrt, die Dich mit der Natur verbindet – perfekt für Fahrer aller Levels, die ein authentisches kolumbianisches Abenteuer suchen."
       },
       "stats": {
         "distance": "Entfernung",
@@ -530,7 +529,7 @@
       "waypoints": {
         "heading": "Wegpunkte",
         "start": "Startpunkt - Stadtplatz in Pereira",
-        "startDescription": "Treffen mit deinem Guide und Ausrüstungsübergabe",
+        "startDescription": "Treffen mit Deinem Guide und Ausrüstungsübergabe",
         "stream": "El Tigre Bach",
         "streamDescription": "Friedliche Flussüberquerung mit Bergblick",
         "bambooRidge": "Bambus-Höhenzug",
@@ -573,9 +572,9 @@
       },
       "booking": {
         "heading": "Buche diesen geführten Trail",
-        "button": "Reserviere deinen Platz",
+        "button": "Reserviere Deinen Platz",
         "subtext": "Kleine Gruppen · Erfahrene lokale Guides · Gesamte Ausrüstung inklusive",
-        "placeholder": "Buchung öffnet bald - Trage dich in unsere Warteliste ein, um benachrichtigt zu werden"
+        "placeholder": "Buchung öffnet bald - Trage Dich in unsere Warteliste ein, um benachrichtigt zu werden"
       },
       "backToAll": "Alle Sendero Trails erkunden"
     },
@@ -752,7 +751,7 @@
   },
   "qr": {
     "headline": "Entdecke Kolumbiens Kaffeeregion",
-    "subheadline": "Trage dich in die Warteliste für geführte Rad- & Wandertouren ein"
+    "subheadline": "Trage Dich in die Warteliste für geführte Rad- & Wandertouren ein"
   },
   "impressum": {
     "title": "Impressum",
@@ -773,23 +772,23 @@
     "metaTitle": "Datenschutz — Sendero",
     "backAriaLabel": "Zurück zur Startseite",
     "generalTitle": "Allgemeine Hinweise",
-    "generalText": "Wir freuen uns über dein Interesse an sendero bike trails. Der Schutz deiner persönlichen Daten ist uns wichtig. Im Folgenden informieren wir dich darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte du hast.",
+    "generalText": "Wir freuen uns über Dein Interesse an sendero bike trails. Der Schutz Deiner persönlichen Daten ist uns wichtig. Im Folgenden informieren wir Dich darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Du hast.",
     "controllerTitle": "Verantwortlicher",
     "collectionTitle": "Erhebung und Speicherung personenbezogener Daten",
-    "collectionText": "Wir erheben personenbezogene Daten nur, wenn du sie uns freiwillig mitteilst. Auf dieser Website betrifft das insbesondere deine E-Mail-Adresse, wenn du dich über das Formular einträgst.",
+    "collectionText": "Wir erheben personenbezogene Daten nur, wenn Du sie uns freiwillig mitteilst. Auf dieser Website betrifft das insbesondere Deine E-Mail-Adresse, wenn Du Dich über das Formular einträgst.",
     "purposeTitle": "Zweck der Datenverarbeitung",
-    "purposeText1": "Wir verwenden deine Daten ausschließlich, um dir Informationen und Updates zu unseren Bike Tours zu senden sowie um dich im Zusammenhang mit deinem Interesse an unseren Angeboten zu kontaktieren.",
-    "purposeText2": "Die Verarbeitung erfolgt nur auf Grundlage deiner Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.",
+    "purposeText1": "Wir verwenden Deine Daten ausschließlich, um Dir Informationen und Updates zu unseren Bike Tours zu senden sowie um Dich im Zusammenhang mit Deinem Interesse an unseren Angeboten zu kontaktieren.",
+    "purposeText2": "Die Verarbeitung erfolgt nur auf Grundlage Deiner Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.",
     "storageTitle": "Speicherung der Daten",
     "storageText1": "Deine Daten werden in einer internen Liste gespeichert und nicht an Dritte weitergegeben.",
-    "storageText2": "Wir speichern deine Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder bis du deine Einwilligung widerrufst.",
+    "storageText2": "Wir speichern Deine Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder bis Du Deine Einwilligung widerrufst.",
     "transferTitle": "Weitergabe von Daten",
-    "transferText": "Wir geben deine personenbezogenen Daten nicht an Dritte weiter und verkaufen sie nicht.",
+    "transferText": "Wir geben Deine personenbezogenen Daten nicht an Dritte weiter und verkaufen sie nicht.",
     "securityTitle": "Datensicherheit",
-    "securityText": "Wir treffen angemessene technische und organisatorische Maßnahmen, um deine Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.",
+    "securityText": "Wir treffen angemessene technische und organisatorische Maßnahmen, um Deine Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.",
     "rightsTitle": "Deine Rechte",
-    "rightsText1": "Du hast jederzeit das Recht auf Auskunft über deine gespeicherten Daten, auf Berichtigung unrichtiger Daten, auf Löschung deiner Daten, auf Einschränkung der Verarbeitung sowie auf Widerruf deiner Einwilligung.",
-    "rightsText2": "Zur Ausübung deiner Rechte genügt eine E-Mail an:",
+    "rightsText1": "Du hast jederzeit das Recht auf Auskunft über Deine gespeicherten Daten, auf Berichtigung unrichtiger Daten, auf Löschung Deiner Daten, auf Einschränkung der Verarbeitung sowie auf Widerruf Deiner Einwilligung.",
+    "rightsText2": "Zur Ausübung Deiner Rechte genügt eine E-Mail an:",
     "cookiesTitle": "Cookies",
     "cookiesText": "Diese Website verwendet Analyse-Cookies (Vercel Analytics und PostHog), um zu verstehen, wie Besucher unsere Website nutzen, und um Ihr Erlebnis zu verbessern. Ihre Cookie-Einstellungen können Sie über das Banner verwalten, das bei Ihrem ersten Besuch angezeigt wird.",
     "changesTitle": "Änderungen dieser Datenschutzerklärung",
@@ -801,7 +800,7 @@
     "backAriaLabel": "Zurück zur Startseite",
     "notice": {
       "title": "Hinweis: Vorläufige Fassung",
-      "text": "Diese Reisebedingungen werden derzeit rechtlich und von unseren Versicherungspartnern geprüft und können sich noch ändern. Verbindlich ist die Fassung, die du mit deiner Reisebestätigung erhältst. Fragen? Schreib uns an julian@senderobiketrails.com."
+      "text": "Diese Reisebedingungen werden derzeit rechtlich und von unseren Versicherungspartnern geprüft und können sich noch ändern. Verbindlich ist die Fassung, die Du mit Deiner Reisebestätigung erhältst. Fragen? Schreib uns an julian@senderobiketrails.com."
     },
     "scope": {
       "title": "Geltungsbereich",
@@ -1255,7 +1254,7 @@
     "lastUpdated": "Stand: 27.10.2026"
   },
   "cookieBanner": {
-    "text": "Wir nutzen Cookies, um zu verstehen, wie du unsere Seite verwendest – und sie für dich besser zu machen.",
+    "text": "Wir nutzen Cookies, um zu verstehen, wie Du unsere Seite verwendest – und sie für Dich besser zu machen.",
     "accept": "Akzeptieren",
     "decline": "Ablehnen",
     "learnMore": "Datenschutz"
@@ -1288,7 +1287,7 @@
       },
       "placeholders": {
         "firstName": "Wie darf ich Dich nennen?",
-        "email": "deine@email.de",
+        "email": "Deine@email.de",
         "message": "Wie trinkst Du gerne Deinen Kaffee?\nWas möchtest Du in Kolumbien erleben – auch abseits vom Fahrradfahren?"
       },
       "errors": {

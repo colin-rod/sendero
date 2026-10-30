@@ -17,6 +17,7 @@
     }
   },
   "hero": {
+    "prompt": "¿Quieres acompañarnos?",
     "title": "Experiencias en bicicleta por los Bosques Andinos Colombianos",
     "subtitle": "Te conectamos en bicicleta con las montañas y creamos momentos únicos para todos tus sentidos.",
     "description": "Tours de senderismo y ciclismo para principiantes, sostenibles a través de los impresionantes paisajes de Pereira. Bicicletas eléctricas, grupos solo para mujeres y experiencias auténticas en fincas cafeteras.",
@@ -39,8 +40,7 @@
   "heroIntro": {
     "heading": "Déjate llevar. Colombia te espera.",
     "subheading": "7–9 días. Grupos pequeños. Senderos ancestrales",
-    "subtitle": "Embárcate en un viaje de mountain bike de varios días por paisajes montañosos, cultura cafetera y senderos tropicales. Guiado, curado, inconfundible.",
-    "prompt": "¿Quieres acompañarnos?"
+    "subtitle": "Embárcate en un viaje de mountain bike de varios días por paisajes montañosos, cultura cafetera y senderos tropicales. Guiado, curado, inconfundible."
   },
   "howItWorks": {
     "heading": "Cómo Funciona",
@@ -106,7 +106,6 @@
     "soldOut": "Plazas agotadas",
     "continuesHeading": "La aventura continúa.",
     "continuesText": "En marzo, abril y mayo de 2027 te esperan nuevos y emocionantes senderos – <br></br>dos grupos por mes, pequeños y cercanos.",
-    "prompt": "¿Quieres acompañarnos?",
     "requestCta": "Solicitar viaje",
     "waitlistCta": "Mantenerme informado"
   },
